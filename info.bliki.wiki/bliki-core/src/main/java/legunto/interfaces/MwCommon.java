@@ -1,19 +1,28 @@
 package legunto.interfaces;
 
+import info.bliki.wiki.filter.AbstractParser.ParsedPageName;
+import info.bliki.wiki.model.IWikiModel;
+import info.bliki.wiki.model.WikiModelContentException;
+import info.bliki.wiki.namespaces.INamespace.NamespaceCode;
+import info.bliki.wiki.namespaces.Namespace;
+import info.bliki.wiki.namespaces.Namespace.NamespaceValue;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.StringBufferInputStream;
+
 import legunto.Importer;
 import legunto.template.Frame;
+
 import org.luaj.vm2.Globals;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.ThreeArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
-
-import info.bliki.wiki.filter.AbstractParser.ParsedPageName;
-import info.bliki.wiki.model.IWikiModel;
-import info.bliki.wiki.model.WikiModelContentException;
-
-import java.io.*;
 
 public class MwCommon extends MwInterface {
 	private final Globals globals;
@@ -203,8 +212,9 @@ public class MwCommon extends MwInterface {
 			if (model != null) {
 				try {
 					String content = model.getRawWikiContent(
-							new ParsedPageName(model.getNamespace()
-									.getModule(), moduleName, true), null);
+							new ParsedPageName(
+									model.getNamespace().getModule(),
+									moduleName, true), null);
 					if (content != null) {
 						return new StringBufferInputStream(content);
 					}

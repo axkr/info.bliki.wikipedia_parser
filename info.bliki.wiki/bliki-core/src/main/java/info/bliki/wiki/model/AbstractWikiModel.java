@@ -136,6 +136,8 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 
 	protected ModuleExecutor fModuleExecutor;
 
+	protected Frame fFrame;
+	
 	public AbstractWikiModel() {
 		this(Configuration.DEFAULT_CONFIGURATION);
 	}
@@ -2000,7 +2002,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 	}
 
 	public Frame getFrame() {
-		return null;
+		return fFrame;
 	}
 
 	public ModuleExecutor getModuleExecutor() {
@@ -2008,6 +2010,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 	}
 
 	public void setFrame(Frame frame) {
+		fFrame = frame;
 	}
 
 	public void setModuleExecutor(ModuleExecutor executor) {

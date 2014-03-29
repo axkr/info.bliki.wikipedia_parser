@@ -14,7 +14,7 @@ import legunto.template.Frame;
 import legunto.template.ModuleExecutor;
 
 /**
- * A template parser function for <code>{{ #invoke: ... }}</code> syntax. 
+ * A template parser function for <code>{{ #invoke: ... }}</code> syntax.
  * 
  */
 public class Invoke extends AbstractTemplateFunction {
@@ -23,6 +23,7 @@ public class Invoke extends AbstractTemplateFunction {
 	public Invoke() {
 
 	}
+
 	@Override
 	public String parseFunction(List<String> parts, IWikiModel model,
 			char[] src, int beginIndex, int endIndex, boolean isSubst)
@@ -32,14 +33,19 @@ public class Invoke extends AbstractTemplateFunction {
 		}
 
 		ModuleExecutor executor = model.getModuleExecutor();
-		if (executor==null){
+		if (executor == null) {
 			throw new AssertionError("no ModuleExecutor defined");
 		}
 		String module = parts.get(0);
 		String method = parts.get(1);
-
-		return executor.run(model, module, method, new Frame(
-				getParameters(parts, model), model.getFrame()));
+		Frame parentFrame = model.getFrame();
+		try {
+			Frame newFrame = new Frame(getParameters(parts, model), parentFrame);
+			model.setFrame(newFrame);
+			return executor.run(model, module, method, newFrame);
+		} finally {
+			model.setFrame(parentFrame);
+		}
 	}
 
 	private Map<String, String> getParameters(List<String> parts,
@@ -48,8 +54,8 @@ public class Invoke extends AbstractTemplateFunction {
 		if (parts.size() > 1) {
 			List<String> unnamedParameters = new ArrayList<String>();
 			for (int i = 1; i < parts.size(); i++) {
-				createSingleParameter(parts.get(i), model,
-						parameterMap, unnamedParameters);
+				createSingleParameter(parts.get(i), model, parameterMap,
+						unnamedParameters);
 			}
 			mergeParameters(parameterMap, unnamedParameters);
 		}
@@ -60,5 +66,5 @@ public class Invoke extends AbstractTemplateFunction {
 	public String getFunctionDoc() {
 		return null;
 	}
-	 
+
 }
