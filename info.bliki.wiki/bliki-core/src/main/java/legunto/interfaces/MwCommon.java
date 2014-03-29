@@ -191,6 +191,7 @@ public class MwCommon extends MwInterface {
 		// name = Importer.MODULE + name;
 		// }
 		name = name.replaceAll("/", "_");
+		name = name.replaceAll(":", "_");
 		File file = null;
 		for (File path : searchPath) {
 			File f = new File(path, name);
