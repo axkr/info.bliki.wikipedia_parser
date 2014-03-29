@@ -1,0 +1,7 @@
+<includeonly>{{#invoke:links/templates|l_term_t|face=term|compat=y}}<!--
+
+Add categories for certain bad or missing parameters.
+-->{{#invoke:term cleanup|cleanup}}</includeonly><noinclude>
+
+{{documentation}}
+</noinclude>

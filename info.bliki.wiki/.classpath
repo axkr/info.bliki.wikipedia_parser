@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="bliki-core/src/main/java"/>
+	<classpathentry kind="src" path="bliki-core/src/test/resources"/>
+	<classpathentry kind="src" path="bliki-core/src/main/resources"/>
+	<classpathentry kind="src" path="bliki-core/src/test/java"/>
+	<classpathentry kind="src" path="bliki-pdf/src/main/java"/>
+	<classpathentry kind="src" path="bliki-pdf/src/main/resources"/>
+	<classpathentry kind="src" path="bliki-pdf/src/test/java"/>
+	<classpathentry excluding="**" kind="src" path="bliki-pdf/src/test/resources"/>
+	<classpathentry kind="src" path="bliki-addons/src/main/java"/>
+	<classpathentry excluding="**" kind="src" path="bliki-addons/src/main/resources"/>
+	<classpathentry kind="src" path="bliki-addons/src/test/java"/>
+	<classpathentry excluding="**" kind="src" path="bliki-addons/src/test/resources"/>
+	<classpathentry exported="true" kind="var" path="M2_REPO/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar"/>
+	<classpathentry exported="true" kind="var" path="M2_REPO/org/apache/commons/commons-compress/1.4.1/commons-compress-1.4.1.jar"/>
+	<classpathentry exported="true" kind="var" path="M2_REPO/com/lowagie/itext/2.1.7/itext-2.1.7.jar"/>
+	<classpathentry exported="true" kind="var" path="M2_REPO/org/xhtmlrenderer/flying-saucer-pdf/9.0.1/flying-saucer-pdf-9.0.1.jar"/>
+	<classpathentry exported="true" kind="var" path="M2_REPO/org/apache/derby/derby/10.4.2.0/derby-10.4.2.0.jar"/>
+	<classpathentry exported="true" kind="var" path="M2_REPO/junit/junit/4.5/junit-4.5.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/commons-compress-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="lib/luaj-jse-3.0-beta3.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

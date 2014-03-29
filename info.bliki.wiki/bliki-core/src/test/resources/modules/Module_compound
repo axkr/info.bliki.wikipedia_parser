@@ -1,0 +1,273 @@
+local m_links = require("Module:links")
+
+local export = {}
+
+-- TODO: If we can assume that all terms will have the same script,
+-- then we can do script detection before calling full_link,
+-- rather than letting it try to detect the script for each term individually.
+
+function export.template_compound(frame)
+	local args = frame:getParent().args
+	NAMESPACE = mw.title.getCurrentTitle().nsText
+	
+	local lang = args["lang"]; if not lang or lang == "" then lang = "en" end
+	lang = require("Module:languages").getLanguageByCode(lang)
+	local sc = args["sc"] or ""; if sc == "" then sc = nil end
+	local sort_key = args["sort"]; if sort_key == "" then sort_key = nil end
+	local nocat = args["nocat"]; if not nocat or nocat == "" then nocat = false else nocat = true end
+	
+	local parts = get_parts(args)
+	
+	-- Just to make sure someone didn't use the template in a silly way
+	if #parts < 2 then
+		if NAMESPACE == "Template" then
+			parts = { {term = "first", annotations = {}}, {term = "second", annotations = {}} }
+		else
+			error("You must provide at least two parts of a compound.")
+		end
+	end
+	
+	-- Add categories, if any
+	local categories = ""
+	
+	if not nocat then
+		local m_utilities = require("Module:utilities")
+		
+		categories = m_utilities.format_categories({lang:getCanonicalName() .. " compound words"}, lang, sort_key)
+	end
+	
+	-- Make links out of all the parts
+	for i, part in ipairs(parts) do
+		parts[i] = m_links.full_link(part.term, part.alt, lang, sc, "term", part.id, part.annotations)
+	end
+	
+	return table.concat(parts, " +&lrm; ") .. categories
+end
+
+function export.template_prefix(frame)
+	local args = frame:getParent().args
+	NAMESPACE = mw.title.getCurrentTitle().nsText
+	
+	local lang = args["lang"]; if not lang or lang == "" then lang = "en" end
+	lang = require("Module:languages").getLanguageByCode(lang)
+	local sc = args["sc"] or ""; if sc == "" then sc = nil end
+	local sort_key = args["sort"]; if sort_key == "" then sort_key = nil end
+	local nocat = args["nocat"]; if not nocat or nocat == "" then nocat = false else nocat = true end
+	local pos = args["pos"]; if pos == "" then pos = nil end
+	
+	local affixes = get_parts(args)
+	local base = nil
+	
+	if #affixes > 1 then
+		base = affixes[#affixes]
+		affixes[#affixes] = nil
+	end
+	
+	-- Hyphenate the affixes
+	for i, aff in ipairs(affixes) do
+		if aff.term then
+			affixes[i].term = export.make_affix(aff.term, lang, sc, false)
+		end
+		if aff.alt then
+			affixes[i].alt = export.make_affix(aff.alt, lang, sc, false)
+		end
+		if aff.annotations.tr then
+			affixes[i].annotations.tr = export.make_affix(aff.annotations.tr, lang, "Latn", false)
+		end
+	end
+	
+	-- Just to make sure someone didn't use the template in a silly way
+	if #affixes < 1 then
+		if NAMESPACE == "Template" then
+			base = {term = "base", annotations = {}}
+			affixes = { {term = "prefix", annotations = {}} }
+		else
+			error("You must provide at least one prefix.")
+		end
+	end
+	
+	-- Add categories, if any
+	local categories = ""
+	
+	if not nocat then
+		local m_utilities = require("Module:utilities")
+		
+		-- Pluralize the part of speech name, if given
+		if pos then
+			pos = frame:expandTemplate{title = "theplural", args = {pos}}
+		else
+			pos = "words"
+		end
+		
+		-- Insert the categories
+		categories = {}
+		for i, aff in ipairs(affixes) do
+			table.insert(categories, lang:getCanonicalName() .. " " .. pos .. " prefixed with " .. lang:makeEntryName(aff.term, lang))
+		end
+		
+		-- The fourth parameter is sort_base. It sets the base term (without the prefixes)
+		-- as the basic sort key to which further processing is applied.
+		categories = m_utilities.format_categories(categories, lang, sort_key, (base and lang:makeEntryName(base.term) or nil))
+	end
+	
+	-- Make links out of all the parts
+	if base then
+		base = m_links.full_link(base.term, base.alt, lang, sc, "term", base.id, base.annotations)
+	end
+	
+	for i, aff in ipairs(affixes) do
+		affixes[i] = m_links.full_link(aff.term, aff.alt, lang, sc, "term", aff.id, aff.annotations)
+	end
+	
+	return table.concat(affixes, " +&lrm; ") .. " +&lrm; " .. (base or "") .. categories
+end
+
+function export.template_suffix(frame)
+	local args = frame:getParent().args
+	NAMESPACE = mw.title.getCurrentTitle().nsText
+	
+	local lang = args["lang"]; if not lang or lang == "" then lang = "en" end
+	lang = require("Module:languages").getLanguageByCode(lang)
+	local sc = args["sc"] or ""; if sc == "" then sc = nil end
+	local sort_key = args["sort"]; if sort_key == "" then sort_key = nil end
+	local nocat = args["nocat"]; if not nocat or nocat == "" then nocat = false else nocat = true end
+	local pos = args["pos"]; if pos == "" then pos = nil end
+	
+	local base = get_part(args, 1)
+	local affixes = get_parts(args, 2)
+	
+	-- Hyphenate the affixes
+	for i, aff in ipairs(affixes) do
+		if aff.term then
+			affixes[i].term = export.make_affix(aff.term, lang, sc, true)
+		end
+		if aff.alt then
+			affixes[i].alt = export.make_affix(aff.alt, lang, sc, true)
+		end
+		if aff.annotations.tr then
+			affixes[i].annotations.tr = export.make_affix(aff.annotations.tr, lang, "Latn", true)
+		end
+	end
+	
+	-- Just to make sure someone didn't use the template in a silly way
+	if #affixes < 1 then
+		if NAMESPACE == "Template" then
+			base = {term = "base", annotations = {}}
+			affixes = { {term = "suffix", annotations = {}} }
+		else
+			error("You must provide at least one suffix.")
+		end
+	end
+	
+	-- Add categories, if any
+	local categories = ""
+	
+	if not nocat then
+		local m_utilities = require("Module:utilities")
+		
+		-- Pluralize the part of speech name, if given
+		if pos then
+			pos = frame:expandTemplate{title = "theplural", args = {pos}}
+		else
+			pos = "words"
+		end
+		
+		-- Insert the categories
+		categories = {}
+		for i, aff in ipairs(affixes) do
+			table.insert(categories, lang:getCanonicalName() .. " " .. pos .. " suffixed with " .. lang:makeEntryName(aff.term))
+		end
+		
+		categories = m_utilities.format_categories(categories, lang, sort_key)
+	end
+	
+	-- Make links out of all the parts
+	if base then
+		base = m_links.full_link(base.term, base.alt, lang, sc, "term", base.id, base.annotations)
+	end
+	
+	for i, aff in ipairs(affixes) do
+		affixes[i] = m_links.full_link(aff.term, aff.alt, lang, sc, "term", aff.id, aff.annotations)
+	end
+	
+	return (base or "") .. " +&lrm; " .. table.concat(affixes, " +&lrm; ") .. categories
+end
+
+function get_part(args, i)
+	local term = args[i]; if term == "" then term = nil end
+	local alt = args["alt" .. i]; if alt == "" then alt = nil end
+	local id = args["id" .. i]; if id == "" then id = nil end
+	
+	local tr = args["tr" .. i]; if tr == "" then tr = nil end
+	local gloss = args["t" .. i] or args["gloss" .. i]; if gloss == "" then gloss = nil end
+	local pos = args["pos" .. i]; if pos == "" then pos = nil end
+	local lit = args["lit" .. i]; if lit == "" then lit = nil end
+	
+	if not term and not alt and not tr then
+		return nil
+	-- Embedded wikilinks should not be allowed in parts of a compound;
+		-- this would just confuse things a lot.
+	elseif term and term:find("[[", nil, true) then
+		error("Embedded wikilinks should not be used in the parts of a compound.")
+	else
+		return {term = term, alt = alt, id = id, annotations = {tr = tr, gloss = gloss, pos = pos, lit = lit}}
+	end
+end
+
+function get_parts(args, start)
+	local parts = {}
+	
+	local i = start or 1
+	
+	while true do
+		local part = get_part(args, i)
+		
+		if not part then
+			break
+		end
+		
+		table.insert(parts, part)
+		
+		i = i + 1
+	end
+	
+	return parts
+end
+
+-- Adds a hyphen to a word in the appropriate place
+-- This is exported for the benefit of {{suffixcat}}
+function export.make_affix(word, lang, sc, isSuffix)
+	if type(word) == "table" then
+		local args = word.args
+		
+		word = args[1] or error("Parameter 1 (word) has not been provided.")
+		lang = args["lang"] or error("Parameter lang= has not been provided.")
+		lang = require("Module:languages").getLanguageByCode(lang)
+		sc = args["sc"]; if sc == "" then sc = nil end
+		isSuffix = args["suffix"]; if not isSuffix or isSuffix == "" then isSuffix = false else isSuffix = true end
+	end
+	
+	local hyphen = "-"
+	if sc ~= "Latn" then
+		-- FIXME: should be script-based
+		if lang:getCode() == "he" or lang:getCode() == "yi" then
+			hyphen = "־"
+		elseif lang:getCode() == "ja" or lang:getCode() == "ko" then
+			hyphen = ""
+		elseif lang:getCode() == "fa" then
+			hyphen = "ـ"
+		end
+	end
+	
+	if isSuffix then
+		if word:find("^*") then
+			return (word:gsub("^*", "*" .. hyphen))
+		else
+			return hyphen .. word
+		end
+	else
+		return word .. hyphen
+	end
+end
+
+return export

@@ -1,0 +1,1839 @@
+# MediaWiki Parser test cases
+# Some taken from http://meta.wikimedia.org/wiki/Parser_testing
+# All (C) their respective authors and released under the GPL
+#
+# The syntax should be fairly self-explanatory.
+#
+# Currently supported test options:
+# One of the following three:
+#
+#  (default)  generate HTML output
+#  pst        apply pre-save transform
+#  msg        apply message transform
+#
+# Plus any combination of these:
+#
+# cat           add category links
+# ill           add inter-language links
+# subpage       enable subpages (disabled by default)
+# noxml         don't check for XML well formdness
+# title=[[XXX]] run test using article title XXX
+# language=XXX  set content language to XXX for this test
+# variant=XXX   set the variant of language for this test (eg zh-tw)
+# disabled      do not run test
+# showtitle     make the first line the title
+# comment       run through Linker::formatComment() instead of main parser
+# local         format section links in edit comment text as local links
+#
+# For testing purposes, temporary articles can created:
+# !!article / NAMESPACE:TITLE / !!text / ARTICLE TEXT / !!endarticle
+# where '/' denotes a newline.
+
+# This is the standard article assumed to exist.
+!! article
+Main Page
+!! text
+blah blah
+!! endarticle
+
+!!article 
+Template:Foo
+!!text
+FOO
+!!endarticle
+
+!! article 
+Template:Blank
+!! text
+!! endarticle
+
+!! article
+Template:!
+!! text
+|
+!! endarticle
+
+!!article
+MediaWiki:bad image list
+!!text
+* [[File:Bad.jpg]] except [[Nasty page]]
+!!endarticle
+
+###
+### Basic tests
+###
+!! test
+Blank input
+!! input
+!! result
+!! end
+
+
+!! test
+Simple paragraph
+!! input
+This is a simple paragraph.
+!! result
+<p>This is a simple paragraph.</p>
+!! end
+
+!! test
+Simple list
+!! input
+* Item 1
+* Item 2
+!! result
+<ul>
+<li>Item 1</li>
+<li>Item 2</li>
+</ul>
+!! end
+
+!! test
+Italics and bold
+!! options
+disabled
+!! input
+* plain
+* plain''italic''plain
+* plain''italic''plain''italic''plain
+* plain'''bold'''plain
+* plain'''bold'''plain'''bold'''plain
+* plain''italic''plain'''bold'''plain
+* plain'''bold'''plain''italic''plain
+* plain''italic'''bold-italic'''italic''plain
+* plain'''bold''bold-italic''bold'''plain
+* plain'''''bold-italic'''italic''plain
+* plain'''''bold-italic''bold'''plain
+* plain''italic'''bold-italic'''''plain
+* plain'''bold''bold-italic'''''plain
+* plain l'''italic''plain
+* plain l''''bold''' plain
+!! result
+<ul>
+<li>plain</li>
+<li>plain<i>italic</i>plain</li>
+<li>plain<i>italic</i>plain<i>italic</i>plain</li>
+<li>plain<b>bold</b>plain</li>
+<li>plain<b>bold</b>plain<b>bold</b>plain</li>
+<li>plain<i>italic</i>plain<b>bold</b>plain</li>
+<li>plain<b>bold</b>plain<i>italic</i>plain</li>
+<li>plain<i>italic<b>bold-italic</b>italic</i>plain</li>
+<li>plain<b>bold<i>bold-italic</i>bold</b>plain</li>
+<li>plain<i><b>bold-italic</b>italic</i>plain</li>
+<li>plain<b><i>bold-italic</i>bold</b>plain</li>
+<li>plain<i>italic<b>bold-italic</b></i>plain</li>
+<li>plain<b>bold<i>bold-italic</i></b>plain</li>
+<li>plain l'<i>italic</i>plain</li>
+<li>plain l'<b>bold</b> plain</li></ul>
+!! end
+
+###
+### <nowiki> test cases
+###
+
+!! test
+<nowiki> unordered list
+!! input
+<nowiki>* This is not an unordered list item.</nowiki>
+!! result
+<p>* This is not an unordered list item.</p>
+!! end
+
+!! test
+<nowiki> spacing
+!! input
+<nowiki>Lorem ipsum dolor
+
+sed abit.
+  sed nullum.
+
+:and a colon
+</nowiki>
+!! result
+<p>Lorem ipsum dolor
+
+sed abit.
+  sed nullum.
+
+:and a colon
+</p>
+!! end
+
+!! test
+nowiki 3
+!! input
+:There is not nowiki.
+:There is <nowiki>nowiki</nowiki>.
+
+#There is not nowiki.
+#There is <nowiki>nowiki</nowiki>.
+
+*There is not nowiki.
+*There is <nowiki>nowiki</nowiki>.
+!! result
+<dl>
+<dd>There is not nowiki.</dd>
+<dd>There is nowiki.</dd>
+</dl>
+
+
+<ol>
+<li>There is not nowiki.</li>
+<li>There is nowiki.</li>
+</ol>
+
+
+<ul>
+<li>There is not nowiki.</li>
+<li>There is nowiki.</li>
+</ul>
+!! end
+
+
+###
+### Comments
+###
+!! test
+Comment test 1
+!! options
+disabled
+!! input
+<!-- comment 1 --> asdf
+<!-- comment 2 -->
+!! result
+<pre>asdf
+</pre>
+
+!! end
+
+!! test
+Comment test 2
+!! input
+asdf
+<!-- comment 1 -->
+jkl
+!! result
+<p>asdf
+jkl</p>
+!! end
+
+!! test
+Comment test 3
+!! input
+asdf
+<!-- comment 1 -->
+<!-- comment 2 -->
+jkl
+!! result
+<p>asdf
+jkl</p>
+!! end
+
+!! test
+Comment test 4
+!! input
+asdf<!-- comment 1 -->jkl
+!! result
+<p>asdfjkl</p>
+!! end
+
+!! test
+Comment spacing
+!! options
+disabled
+!! input
+a
+ <!-- foo --> b <!-- bar -->
+c
+!! result
+<p>a</p>
+<pre> b 
+</pre>
+<p>c</p>
+!! end
+
+!! test
+Comment whitespace
+!! input
+<!-- returns a single newline, not nothing, since the newline after > is not stripped -->
+!! result
+
+!! end
+
+!! test
+Comment semantics and delimiters
+!! input
+<!-- --><!----><!-----><!------>
+!! result
+
+!! end
+
+!! test
+Comment semantics and delimiters, redux
+!! input
+<!-- In SGML every "foo" here would actually show up in the text -- foo -- bar
+-- foo -- funky huh? ... -->
+!! result
+
+!! end
+
+!! test
+Comment semantics and delimiters: directors cut
+!! options
+disabled
+!! input
+<!-- ... However we like to keep things simple and somewhat XML-ish so we eat
+everything starting with < followed by !-- until the first -- and > we see,
+that wouldn't be valid XML however, since in XML -- has to terminate a comment
+-->-->
+!! result
+<p>--&gt;</p>
+!! end
+
+!! test
+Comment semantics: nesting
+!! options
+disabled
+!! input
+<!--<!-- no, we're not going to do anything fancy here -->-->
+!! result
+<p>--&gt;</p>
+!! end
+
+!! test
+Comment semantics: unclosed comment at end
+!! input
+<!--This comment will run out to the end of the document
+!! result
+
+!! end
+
+!! test
+Comment in template title
+!! input
+{{f<!---->oo}}
+!! result
+<p>FOO</p>
+!! end
+
+!! test
+Comment on its own line post-expand
+!! input
+a
+{{blank}}<!---->
+b
+!! result
+<p>a</p>
+<p>b</p>
+!! end
+
+###
+### Preformatted text
+###
+!! test
+Preformatted text
+!! input
+ This is some
+ Preformatted text
+ With ''italic''
+ And '''bold'''
+ And a [[Main Page|link]]
+!! result
+<pre>This is some
+Preformatted text
+With <i>italic</i>
+And <b>bold</b>
+And a <a href="/wiki/Main_Page" title="Main Page">link</a>
+</pre>
+!! end
+
+!! test
+<pre> with <nowiki> inside (compatibility with 1.6 and earlier)
+!! input
+<pre><nowiki>
+<b>
+<cite>
+<em>
+</nowiki></pre>
+!! result
+<pre>
+&lt;b&gt;
+&lt;cite&gt;
+&lt;em&gt;
+</pre>
+!! end
+
+!! test
+Regression with preformatted in <center>
+!! options
+disabled
+!! input
+<center>
+ Blah
+</center>
+!! result
+<center>
+<pre>Blah
+</pre>
+</center>
+
+!! end
+
+# Expected output in the following test is not really expected (there should be
+# <pre> in the output) -- it's only testing for well-formedness.
+!! test
+Bug 6200: Preformatted in <blockquote>
+!! input
+<blockquote>
+ Blah
+</blockquote>
+!! result
+<blockquote>
+ Blah
+</blockquote>
+!! end
+
+!! test
+<pre> with attributes (bug 3202)
+!! input
+<pre style="background: blue; color:white">Bluescreen of WikiDeath</pre>
+!! result
+<pre style="background: blue; color:white">Bluescreen of WikiDeath</pre>
+!! end
+
+!! test
+<pre> with width attribute (bug 3202)
+!! input
+<pre width="8">Narrow screen goodies</pre>
+!! result
+<pre width="8">Narrow screen goodies</pre>
+!! end
+
+!! test
+<pre> with forbidden attribute (bug 3202)
+!! input
+<pre width="8" onmouseover="alert(document.cookie)">Narrow screen goodies</pre>
+!! result
+<pre width="8">Narrow screen goodies</pre>
+!! end
+
+!! test
+<pre> with forbidden attribute values (bug 3202)
+!! input
+<pre width="8" style="border-width: expression(alert(document.cookie))">Narrow screen goodies</pre>
+!! result
+<pre width="8">Narrow screen goodies</pre>
+!! end
+
+!! test
+<nowiki> inside <pre> (bug 13238)
+!! options
+disabled
+!! input
+<pre>
+<nowiki>
+</pre>
+<pre>
+<nowiki></nowiki>
+</pre>
+<pre><nowiki><nowiki></nowiki>Foo<nowiki></nowiki></nowiki></pre>
+!! result
+<pre>
+&lt;nowiki&gt;
+</pre>
+<pre>
+
+</pre>
+<pre>&lt;nowiki&gt;Foo&lt;/nowiki&gt;</pre>
+
+!! end
+
+!! test
+<nowiki> and <pre> preference (first one wins)
+!! options
+disabled
+!! input
+<pre>
+<nowiki>
+</pre>
+</nowiki>
+</pre>
+
+<nowiki>
+<pre>
+<nowiki>
+</pre>
+</nowiki>
+</pre>
+
+!! result
+<pre>
+&lt;nowiki&gt;
+</pre>
+<p>&lt;/nowiki&gt;
+&lt;/pre&gt;
+</p><p>
+&lt;pre&gt;
+&lt;nowiki&gt;
+&lt;/pre&gt;
+
+&lt;/pre&gt;
+</p>
+!! end
+
+
+###
+### Definition lists
+###
+!! test
+Simple definition
+!! options
+disabled
+!! input
+; name : Definition
+!! result
+<dl>
+<dt>name&#160;</dt>
+<dd>Definition</dd>
+</dl>
+!! end
+
+!! test
+Definition list for indentation only
+!! input
+: Indented text
+!! result
+<dl>
+<dd>Indented text</dd>
+</dl>
+!! end
+
+!! test
+Definition list with no space
+!! input
+;name:Definition
+!! result
+<dl>
+<dt>name</dt>
+<dd>Definition</dd>
+</dl>
+!!end
+
+!! test
+Definition list with URL link
+!! options
+disabled
+!! input
+; http://example.com/ : definition
+!! result
+<dl>
+<dt><a class="external free" href="http://example.com/" rel="nofollow">http://example.com/</a>&#160;</dt>
+<dd>definition</dd>
+</dl>
+!! end
+
+!! test
+Definition list with bracketed URL link
+!! input
+;[http://www.example.com/ Example]:Something about it
+!! result
+<dl>
+<dt><a class="external text" href="http://www.example.com/" rel="nofollow">Example</a></dt>
+<dd>Something about it</dd>
+</dl>
+!! end
+
+!! test
+Definition list with wikilink containing colon
+!! input
+; [[Help:FAQ]]: The least-read page on Wikipedia
+!! result
+<dl>
+<dt><a class="new" href="/wiki/Help:FAQ?action=edit&amp;redlink=1" title="Help:FAQ (page does not exist)">Help:FAQ</a></dt>
+<dd>The least-read page on Wikipedia</dd>
+</dl>
+!! end
+
+# At Brion's and JeLuF's insistence... :)
+!! test
+Definition list with news link containing colon
+!! options
+disabled
+!! input
+;  news:alt.wikipedia.rox: This isn't even a real newsgroup!
+!! result
+<dl>
+<dt><a class="external free" href="news:alt.wikipedia.rox" rel="nofollow">news:alt.wikipedia.rox</a></dt>
+<dd>This isn't even a real newsgroup!</dd>
+</dl>
+!! end
+
+!! test
+Malformed definition list with colon
+!! options
+disabled
+!! input
+;  news:alt.wikipedia.rox -- don't crash or enter an infinite loop
+!! result
+<dl>
+<dt><a rel="nofollow" class="external free" href="news:alt.wikipedia.rox">news:alt.wikipedia.rox</a> -- don't crash or enter an infinite loop
+</dt>
+</dl>
+!! end
+
+!! test
+Definition lists: colon in external link text
+!! options
+disabled
+!! input
+; [http://www.wikipedia2.org/ Wikipedia : The Next Generation]: OK, I made that up
+!! result
+<dl><dt> <a rel="nofollow" class="external text" href="http://www.wikipedia2.org/">Wikipedia&#160;: The Next Generation</a></dt><dd> OK, I made that up
+</dd></dl>
+
+!! end
+
+!! test
+Definition lists: colon in HTML attribute
+!! input
+;<b style="display: inline">bold</b>
+!! result
+<dl>
+<dt><b style="display: inline">bold</b></dt>
+</dl>
+!! end
+
+
+!! test
+Definition lists: self-closed tag
+!! options
+disabled
+!! input
+;one<br/>two : two-line fun
+!! result
+<dl>
+<dt>one<br />two&#160;</dt>
+<dd>two-line fun</dd>
+</dl>
+!! end
+
+!! test
+Bug 11748: Literal closing tags
+!! options
+disabled
+!! input
+<dl>
+<dt>test 1</dt>
+<dd>test test test test test</dd>
+<dt>test 2</dt>
+<dd>test test test test test</dd>
+</dl>
+!! result
+<dl>
+<dt>test 1</dt>
+<dd>test test test test test</dd>
+<dt>test 2</dt>
+<dd>test test test test test</dd>
+</dl>
+!! end
+
+###
+### External links
+###
+!! test
+External links: non-bracketed
+!! input
+Non-bracketed: http://example.com
+!! result
+<p>Non-bracketed: <a class="external free" href="http://example.com" rel="nofollow">http://example.com</a></p>
+!! end
+
+!! test
+External links: numbered
+!! input
+Numbered: [http://example.com]
+Numbered: [http://example.net]
+Numbered: [http://example.com]
+!! result
+<p>Numbered: <a class="external autonumber" href="http://example.com" rel="nofollow">[1]</a>
+Numbered: <a class="external autonumber" href="http://example.net" rel="nofollow">[2]</a>
+Numbered: <a class="external autonumber" href="http://example.com" rel="nofollow">[3]</a></p>
+!!end
+
+!! test
+External links: specified text
+!! input
+Specified text: [http://example.com link]
+!! result
+<p>Specified text: <a class="external text" href="http://example.com" rel="nofollow">link</a></p>
+!!end
+
+!! test
+External links: trail
+!! input
+Linktrails should not work for external links: [http://example.com link]s
+!! result
+<p>Linktrails should not work for external links: <a class="external text" href="http://example.com" rel="nofollow">link</a>s</p>
+!! end
+
+!! test
+External links: dollar sign in URL
+!! input
+http://example.com/1$2345
+!! result
+<p><a class="external free" href="http://example.com/1$2345" rel="nofollow">http://example.com/1$2345</a></p>
+!! end
+
+!! test
+External links: dollar sign in URL (named)
+!! input
+[http://example.com/1$2345]
+!! result
+<p><a class="external autonumber" href="http://example.com/1$2345" rel="nofollow">[1]</a></p>
+!!end
+
+!! test
+External links: open square bracket forbidden in URL (bug 4377)
+!! input
+http://example.com/1[2345
+!! result
+<p><a class="external free" href="http://example.com/1" rel="nofollow">http://example.com/1</a>[2345</p>
+!! end
+
+!! test
+External links: open square bracket forbidden in URL (named) (bug 4377)
+!! input
+[http://example.com/1[2345]
+!! result
+<p><a class="external text" href="http://example.com/1" rel="nofollow">[2345</a></p>
+!!end
+
+!! test
+External links: nowiki in URL link text (bug 6230)
+!! options
+disabled
+!!input
+[http://example.com/ <nowiki>''example site''</nowiki>]
+!! result
+<p><a class="external text" href="http://example.com/" rel="nofollow">''example site''</a></p>
+!! end
+
+!! test
+External links: newline forbidden in text (bug 6230 regression check)
+!! input
+[http://example.com/ first
+second]
+!! result
+<p>[<a class="external free" href="http://example.com/" rel="nofollow">http://example.com/</a> first
+second]</p>
+!!end
+
+!! test
+External links: protocol-relative URL in brackets
+!! input
+[//example.com/ Test]
+!! result
+<p><a class="external text" href="//example.com/" rel="nofollow">Test</a></p>
+!! end
+
+!! test
+External links: protocol-relative URL in brackets without text
+!! input
+[//example.com]
+!! result
+<p><a class="external autonumber" href="//example.com" rel="nofollow">[1]</a></p>
+!! end
+
+!! test
+External links: protocol-relative URL in free text is left alone
+!! input
+//example.com/Foo
+!! result
+<p>//example.com/Foo</p>
+!!end
+
+!! test
+External links: protocol-relative URL in the middle of a word is left alone (bug 30269)
+!! input
+foo//example.com/Foo
+!! result
+<p>foo//example.com/Foo</p>
+!! end
+
+!! test
+External image
+!! options
+disabled
+!! input
+External image: http://meta.wikimedia.org/upload/f/f1/Ncwikicol.png
+!! result
+<p>External image: <img src="http://meta.wikimedia.org/upload/f/f1/Ncwikicol.png" alt="Ncwikicol.png" /></p>
+!! end
+
+!! test
+External image from https
+!! options
+disabled
+!! input
+External image from https: https://meta.wikimedia.org/upload/f/f1/Ncwikicol.png
+!! result
+<p>External image from https: <img src="https://meta.wikimedia.org/upload/f/f1/Ncwikicol.png" alt="Ncwikicol.png" /></p>
+!! end
+
+!! test
+Link to non-http image, no img tag
+!! input
+Link to non-http image, no img tag: ftp://example.com/test.jpg
+!! result
+<p>Link to non-http image, no img tag: <a class="external free" href="ftp://example.com/test.jpg" rel="nofollow">ftp://example.com/test.jpg</a></p>
+!! end
+
+!! test
+External links: terminating separator
+!! input
+Terminating separator: http://example.com/thing,
+!! result
+<p>Terminating separator: <a class="external free" href="http://example.com/thing" rel="nofollow">http://example.com/thing</a>,</p>
+!! end
+
+!! test
+External links: intervening separator
+!! input
+Intervening separator: http://example.com/1,2,3
+!! result
+<p>Intervening separator: <a class="external free" href="http://example.com/1,2,3" rel="nofollow">http://example.com/1,2,3</a></p>
+!! end
+
+!! test
+External links: old bug with URL in query
+!! input
+Old bug with URL in query: [http://example.com/thing?url=http://example.com link]
+!! result
+<p>Old bug with URL in query: <a class="external text" href="http://example.com/thing?url=http://example.com" rel="nofollow">link</a></p>
+!! end
+
+!! test
+External links: old URL-in-URL bug, mixed protocols
+!! input
+And again with mixed protocols: [ftp://example.com?url=http://example.com link]
+!! result
+<p>And again with mixed protocols: <a class="external text" href="ftp://example.com?url=http://example.com" rel="nofollow">link</a></p>
+!!end
+
+!! test
+External links: URL in text
+!! options
+disabled
+!! input
+URL in text: [http://example.com http://example.com]
+!! result
+<p>URL in text: <a class="external free" href="http://example.com" rel="nofollow">http://example.com</a></p>
+!! end
+
+!! test
+External links: Clickable images
+!! options
+disabled
+!! input
+ja-style clickable images: [http://example.com http://meta.wikimedia.org/upload/f/f1/Ncwikicol.png]
+!! result
+<p>ja-style clickable images: <a class="external text" href="http://example.com" rel="nofollow"><img src="http://meta.wikimedia.org/upload/f/f1/Ncwikicol.png" alt="Ncwikicol.png" /></a></p>
+!!end
+
+!! test
+External links: raw ampersand
+!! options
+disabled
+!! input
+Old &amp; use: http://x&y
+!! result
+<p>Old &amp; use: <a class="external free" href="http://x&amp;y" rel="nofollow">http://x&amp;y</a></p>
+!! end
+
+!! test
+External links: encoded ampersand
+!! options
+disabled
+!! input
+Old &amp; use: http://x&amp;y
+!! result
+<p>Old &amp; use: <a class="external free" href="http://x&amp;y" rel="nofollow">http://x&amp;y</a></p>
+!! end
+
+!! test
+External links: encoded equals (bug 6102)
+!! options
+disabled
+!! input
+http://example.com/?foo&#61;bar
+!! result
+<p><a class="external free" href="http://example.com/?foo=bar" rel="nofollow">http://example.com/?foo=bar</a></p>
+!! end
+
+!! test
+External links: [raw ampersand]
+!! options
+disabled
+!! input
+Old &amp; use: [http://x&y]
+!! result
+<p>Old &amp; use: <a class="external autonumber" href="http://x&amp;y" rel="nofollow">[1]</a></p>
+!! end
+
+!! test
+External links: [encoded ampersand]
+!! options
+disabled
+!! input
+Old &amp; use: [http://x&amp;y]
+!! result
+<p>Old &amp; use: <a class="external autonumber" href="http://x&amp;y" rel="nofollow">[1]</a></p>
+!! end
+
+!! test
+External links: [encoded equals] (bug 6102)
+!! options
+disabled
+!! input
+[http://example.com/?foo&#61;bar]
+!! result
+<p><a class="external autonumber" href="http://example.com/?foo=bar" rel="nofollow">[1]</a></p>
+!! end
+
+!! test
+External links: [IDN ignored character reference in hostname; strip it right off]
+!! options
+disabled
+!! input
+[http://e&zwnj;xample.com/]
+!! result
+<p><a class="external autonumber" href="http://example.com/" rel="nofollow">[1]</a></p>
+!! end
+
+!! test
+External links: IDN ignored character reference in hostname; strip it right off
+!! options
+disabled
+!! input
+http://e&zwnj;xample.com/
+!! result
+<p><a class="external free" href="http://example.com/" rel="nofollow">http://example.com/</a></p>
+!! end
+
+!! test
+External links: www.jpeg.org (bug 554)
+!! input
+http://www.jpeg.org
+!!result
+<p><a class="external free" href="http://www.jpeg.org" rel="nofollow">http://www.jpeg.org</a></p>
+!! end
+
+!! test
+External links: URL within URL (original bug 2)
+!! input
+[http://www.unausa.org/newindex.asp?place=http://www.unausa.org/programs/mun.asp]
+!! result
+<p><a class="external autonumber" href="http://www.unausa.org/newindex.asp?place=http://www.unausa.org/programs/mun.asp" rel="nofollow">[1]</a></p>
+!! end
+
+!! test
+BUG 361: URL inside bracketed URL
+!! options
+disabled
+!! input
+[http://www.example.com/foo http://www.example.com/bar]
+!! result
+<p><a class="external text" href="http://www.example.com/foo" rel="nofollow">http://www.example.com/bar</a></p>
+!! end
+
+!! test
+BUG 361: URL within URL, not bracketed
+!! input
+http://www.example.com/foo?=http://www.example.com/bar
+!! result
+<p><a class="external free" href="http://www.example.com/foo?=http://www.example.com/bar" rel="nofollow">http://www.example.com/foo?=http://www.example.com/bar</a></p>
+!! end
+
+!! test
+BUG 289: ">"-token in URL-tail
+!! options
+disabled
+!! input
+http://www.example.com/<hello>
+!! result
+<p><a class="external free" href="http://www.example.com/" rel="nofollow">http://www.example.com/</a>&lt;hello&gt;</p>
+!!end
+
+!! test
+BUG 289: literal ">"-token in URL-tail
+!! input
+http://www.example.com/<b>html</b>
+!! result
+<p><a class="external free" href="http://www.example.com/" rel="nofollow">http://www.example.com/</a><b>html</b></p>
+!!end
+
+!! test
+BUG 289: ">"-token in bracketed URL
+!! options
+disabled
+!! input
+[http://www.example.com/<hello> stuff]
+!! result
+<p><a class="external text" href="http://www.example.com/" rel="nofollow">&lt;hello&gt; stuff</a></p>
+!!end
+
+!! test
+BUG 289: literal ">"-token in bracketed URL
+!! input
+[http://www.example.com/<b>html</b> stuff]
+!! result
+<p><a class="external text" href="http://www.example.com/" rel="nofollow"><b>html</b> stuff</a></p>
+!!end
+
+!! test
+BUG 289: literal double quote at end of URL
+!! options
+disabled
+!! input
+http://www.example.com/"hello"
+!! result
+<p><a class="external free" href="http://www.example.com/" rel="nofollow">http://www.example.com/</a>"hello"</p>
+!!end
+
+!! test
+BUG 289: literal double quote in bracketed URL
+!! options
+disabled
+!! input
+[http://www.example.com/"hello" stuff]
+!! result
+<p><a class="external text" href="http://www.example.com/" rel="nofollow">"hello" stuff</a></p>
+!!end
+
+!! test
+External links: multiple legal whitespace is fine, Magnus. Don't break it please. (bug 5081)
+!! input
+[http://www.example.com  test]
+!! result
+<p><a class="external text" href="http://www.example.com" rel="nofollow">test</a></p>
+!! end
+
+!! test
+External links: wiki links within external link (Bug 3695)
+!! options
+disabled
+!! input
+[http://example.com [[wikilink]] embedded in ext link]
+!! result
+<p><a class="external text" href="http://example.com" rel="nofollow"></a><a class="new" href="/wiki/Wikilink?action=edit&amp;redlink=1" title="Wikilink (page does not exist)">wikilink</a><a class="external text" href="http://example.com" rel="nofollow"> embedded in ext link</a></p>
+!! end
+
+!! test
+BUG 787: Links with one slash after the url protocol are invalid
+!! input
+http:/example.com
+
+[http:/example.com title]
+!! result
+<p>http:/example.com</p>
+<p>[http:/example.com title]</p>
+!! end
+
+!! test
+Bug 2702: Mismatched <i>, <b> and <a> tags are invalid
+!! options
+disabled
+!! input
+''[http://example.com text'']
+[http://example.com '''text]'''
+''Something [http://example.com in italic'']
+''Something [http://example.com mixed''''', even bold]'''
+'''''Now [http://example.com both''''']
+!! result
+<p><a class="external text" href="http://example.com" rel="nofollow"><i>text</i></a>
+<a class="external text" href="http://example.com" rel="nofollow"><b>text</b></a>
+<i>Something </i><a class="external text" href="http://example.com" rel="nofollow"><i>in italic</i></a>
+<i>Something </i><a class="external text" href="http://example.com" rel="nofollow"><i>mixed</i><b>, even bold</b></a>
+<i><b>Now </b></i><a class="external text" href="http://example.com" rel="nofollow"><i><b>both</b></i></a></p>
+!! end
+
+
+!! test
+Bug 4781: %26 in URL
+!! input
+http://www.example.com/?title=AT%26T
+!! result
+<p><a class="external free" href="http://www.example.com/?title=AT%26T" rel="nofollow">http://www.example.com/?title=AT%26T</a></p>
+!! end
+
+!! test
+Bug 4781, 5267: %26 in URL
+!! input
+http://www.example.com/?title=100%25_Bran
+!! result
+<p><a class="external free" href="http://www.example.com/?title=100%25_Bran" rel="nofollow">http://www.example.com/?title=100%25_Bran</a></p>
+!! end
+
+!! test
+Bug 4781, 5267: %28, %29 in URL
+!! input
+http://www.example.com/?title=Ben-Hur_%281959_film%29
+!! result
+<p><a class="external free" href="http://www.example.com/?title=Ben-Hur_%281959_film%29" rel="nofollow">http://www.example.com/?title=Ben-Hur_%281959_film%29</a></p>
+!! end
+
+
+!! test
+Bug 4781: %26 in autonumber URL
+!! input
+[http://www.example.com/?title=AT%26T]
+!! result
+<p><a class="external autonumber" href="http://www.example.com/?title=AT%26T" rel="nofollow">[1]</a></p>
+!! end
+
+!! test
+Bug 4781, 5267: %26 in autonumber URL
+!! input
+[http://www.example.com/?title=100%25_Bran]
+!! result
+<p><a class="external autonumber" href="http://www.example.com/?title=100%25_Bran" rel="nofollow">[1]</a></p>
+!! end
+
+!! test
+Bug 4781, 5267: %28, %29 in autonumber URL
+!! input
+[http://www.example.com/?title=Ben-Hur_%281959_film%29]
+!! result
+<p><a class="external autonumber" href="http://www.example.com/?title=Ben-Hur_%281959_film%29" rel="nofollow">[1]</a></p>
+!! end
+
+
+!! test
+Bug 4781: %26 in bracketed URL
+!! input
+[http://www.example.com/?title=AT%26T link]
+!! result
+<p><a class="external text" href="http://www.example.com/?title=AT%26T" rel="nofollow">link</a></p>
+!! end
+
+!! test
+Bug 4781, 5267: %26 in bracketed URL
+!! input
+[http://www.example.com/?title=100%25_Bran link]
+!! result
+<p><a class="external text" href="http://www.example.com/?title=100%25_Bran" rel="nofollow">link</a></p>
+!! end
+
+!! test
+Bug 4781, 5267: %28, %29 in bracketed URL
+!! input
+[http://www.example.com/?title=Ben-Hur_%281959_film%29 link]
+!! result
+<p><a class="external text" href="http://www.example.com/?title=Ben-Hur_%281959_film%29" rel="nofollow">link</a></p>
+!! end
+
+!! test
+External link containing double-single-quotes in text '' (bug 4598 sanity check)
+!! options
+disabled
+!! input
+Some [http://example.com/ pretty ''italics'' and stuff]!
+!! result
+<p>Some <a class="external text" href="http://example.com/" rel="nofollow">pretty <i>italics</i> and stuff</a>!</p>
+!! end
+
+!! test
+External link containing double-single-quotes in text embedded in italics (bug 4598 sanity check)
+!! options
+disabled
+!! input
+''Some [http://example.com/ pretty ''italics'' and stuff]!''
+!! result
+<p><i>Some </i><a class="external text" href="http://example.com/" rel="nofollow"><i>pretty </i>italics<i> and stuff</i></a><i>!</i></p>
+!! end
+
+!! test
+External link containing double-single-quotes with no space separating the url from text in italics
+!! options
+disabled
+!! input
+[http://www.musee-picasso.fr/pages/page_id18528_u1l2.htm''La muerte de Casagemas'' (1901) en el sitio de [[Museo Picasso (París)|Museo Picasso]].]
+!! result
+<p><a class="external text" href="http://www.musee-picasso.fr/pages/page_id18528_u1l2.htm" rel="nofollow"><i>La muerte de Casagemas</i> (1901) en el sitio de <a class="new" href="/wiki/Museo_Picasso_(Par%C3%ADs)?action=edit&amp;redlink=1" title="Museo Picasso (París) (page does not exist)">Museo Picasso</a>.</a></p>
+!! end
+
+!! test
+URL-encoding in URL functions (single parameter)
+!! options
+disabled
+!! input
+{{localurl:Some page|amp=&}}
+!! result
+<p>/index.php?title=Some_page&amp;amp=&amp;
+</p>
+!! end
+
+!! test
+URL-encoding in URL functions (multiple parameters)
+!! options
+disabled
+!! input
+{{localurl:Some page|q=?&amp=&}}
+!! result
+<p>/index.php?title=Some_page&amp;q=?&amp;amp=&amp;
+</p>
+!! end
+
+###
+### Quotes
+###
+
+!! test
+Quotes
+!! options
+disabled
+!! input
+Normal text. '''Bold text.''' Normal text. ''Italic text.''
+
+Normal text. '''''Bold italic text.''''' Normal text.
+!!result
+<p>Normal text. <b>Bold text.</b> Normal text. <i>Italic text.</i></p>
+<p>Normal text. <i><b>Bold italic text.</b></i> Normal text.</p>
+!! end
+
+
+!! test
+Unclosed and unmatched quotes
+!! options
+disabled
+!! input
+'''''Bold italic text '''with bold deactivated''' in between.'''''
+
+'''''Bold italic text ''with italic deactivated'' in between.'''''
+
+'''Bold text..
+
+..spanning two paragraphs (should not work).'''
+
+'''Bold tag left open
+
+''Italic tag left open
+
+Normal text.
+
+<!-- Unmatching number of opening, closing tags: -->
+'''This year''''s election ''should'' beat '''last year''''s.
+
+''Tom'''s car is bigger than ''Susan'''s.
+!! result
+<p><i><b>Bold italic text </b>with bold deactivated<b> in between.</b></i></p>
+<p><b><i>Bold italic text </i>with italic deactivated<i> in between.</i></b></p>
+<p><b>Bold text..</b></p>
+<p>..spanning two paragraphs (should not work).</p>
+<p><b>Bold tag left open</b></p>
+<p><i>Italic tag left open</i></p>
+<p>Normal text.</p>
+<p><b>This year'</b>s election <i>should</i> beat <b>last year'</b>s.</p>
+<p><i>Tom<b>s car is bigger than </b></i><b>Susan</b>s.</p>
+!! end
+
+###
+### Tables
+###
+### some content taken from http://meta.wikimedia.org/wiki/MediaWiki_User%27s_Guide:_Using_tables
+###
+
+# This should not produce <table></table> as <table><tr><td></td></tr></table>
+# is the bare minimun required by the spec, see:
+# http://www.w3.org/TR/xhtml-modularization/dtd_module_defs.html#a_module_Basic_Tables
+!! test
+A table with no data.
+!! input
+{||}
+!! result
+!! end
+
+# A table with nothing but a caption is invalid XHTML, we might want to render
+# this as <p>caption</p>
+!! test
+A table with nothing but a caption
+!! input 
+{|
+|+ caption
+|}
+!! result
+<table>
+<caption>caption</caption>
+<tr>
+<td></td></tr></table>
+!! end
+
+!! test
+Simple table
+!! input
+{| 
+| 1 || 2
+|- 
+| 3 || 4
+|}
+!! result
+<table>
+<tr>
+<td>1 </td>
+<td>2</td></tr>
+<tr>
+<td>3 </td>
+<td>4</td></tr></table>
+!! end
+
+!! test
+Multiplication table
+!! input
+{| border="1" cellpadding="2"
+|+Multiplication table
+|-
+! &times; !! 1 !! 2 !! 3
+|-
+! 1
+| 1 || 2 || 3
+|-
+! 2
+| 2 || 4 || 6
+|-
+! 3
+| 3 || 6 || 9
+|-
+! 4
+| 4 || 8 || 12
+|-
+! 5
+| 5 || 10 || 15
+|}
+!! result
+<table border="1" cellpadding="2">
+<caption>Multiplication table</caption>
+<tr>
+<th>× </th>
+<th>1 </th>
+<th>2 </th>
+<th>3</th></tr>
+<tr>
+<th>1</th>
+<td>1 </td>
+<td>2 </td>
+<td>3</td></tr>
+<tr>
+<th>2</th>
+<td>2 </td>
+<td>4 </td>
+<td>6</td></tr>
+<tr>
+<th>3</th>
+<td>3 </td>
+<td>6 </td>
+<td>9</td></tr>
+<tr>
+<th>4</th>
+<td>4 </td>
+<td>8 </td>
+<td>12</td></tr>
+<tr>
+<th>5</th>
+<td>5 </td>
+<td>10 </td>
+<td>15</td></tr></table>
+!! end
+
+!! test
+Table rowspan
+!! input
+{| align=right border=1
+| Cell 1, row 1 
+|rowspan=2| Cell 2, row 1 (and 2) 
+| Cell 3, row 1 
+|- 
+| Cell 1, row 2 
+| Cell 3, row 2 
+|}
+!! result
+<table align="right" border="1">
+<tr>
+<td>Cell 1, row 1 </td>
+<td rowspan="2">Cell 2, row 1 (and 2) </td>
+<td>Cell 3, row 1 </td></tr>
+<tr>
+<td>Cell 1, row 2 </td>
+<td>Cell 3, row 2 </td></tr></table>
+!! end
+
+!! test
+Nested table
+!! input
+{| border=1
+| &alpha;
+|
+{| bgcolor=#ABCDEF border=2
+|nested
+|-
+|table
+|}
+|the original table again
+|}
+!! result
+<table border="1">
+<tr>
+<td>α</td>
+<td>
+
+<table bgcolor="#ABCDEF" border="2">
+<tr>
+<td>nested</td></tr>
+<tr>
+<td>table</td></tr></table></td>
+<td>the original table again</td></tr></table>
+!! end
+
+!! test
+Invalid attributes in table cell (bug 1830)
+!! input
+{|
+|Cell:|broken
+|}
+!! result
+<table>
+<tr>
+<td>broken</td></tr></table>
+!! end
+
+
+!! test
+Table security: embedded pipes (http://lists.wikimedia.org/mailman/htdig/wikitech-l/2006-April/022293.html)
+!! options
+disabled
+!! input
+{|
+| |[ftp://|x||]" onmouseover="alert(document.cookie)">test
+!! result
+<table>
+<tr>
+<td>[<a rel="nofollow" class="external free" href="ftp://%7Cx">ftp://%7Cx</a></td>
+<td>]" onmouseover="alert(document.cookie)"&gt;test</td></tr></table>
+!! end
+
+
+
+###
+### Internal links
+###
+!! test
+Plain link, capitalized
+!! input
+[[Main Page]]
+!! result
+<p><a href="/wiki/Main_Page" title="Main Page">Main Page</a></p>
+!! end
+
+!! test
+Plain link, uncapitalized
+!! input
+[[main Page]]
+!! result
+<p><a href="/wiki/Main_Page" title="Main Page">main Page</a></p>
+!! end
+
+!! test
+Piped link
+!! input
+[[Main Page|The Main Page]]
+!! result
+<p><a href="/wiki/Main_Page" title="Main Page">The Main Page</a></p>
+!! end
+
+!! test
+Broken link
+!! input
+[[Zigzagzogzagzig]]
+!! result
+<p><a class="new" href="/wiki/Zigzagzogzagzig?action=edit&amp;redlink=1" title="Zigzagzogzagzig (page does not exist)">Zigzagzogzagzig</a></p>
+!! end
+
+!! test
+Broken link with fragment
+!! input
+[[Zigzagzogzagzig#zug]]
+!! result
+<p><a class="new" href="/wiki/Zigzagzogzagzig?action=edit&amp;redlink=1" title="Zigzagzogzagzig (page does not exist)">Zigzagzogzagzig#zug</a></p>
+!! end
+
+!! test
+Special page link with fragment
+!! input
+[[Special:Version#anchor]]
+!! result
+<p><a href="/wiki/Special:Version#anchor" title="Special:Version">Special:Version#anchor</a></p>
+!! end
+
+!! test
+Nonexistent special page link with fragment
+!! options
+disabled
+!! input
+[[Special:ThisNameWillHopefullyNeverBeUsed#anchor]]
+!! result
+<p><a href="/wiki/Special:ThisNameWillHopefullyNeverBeUsed" class="new" title="Special:ThisNameWillHopefullyNeverBeUsed (page does not exist)">Special:ThisNameWillHopefullyNeverBeUsed#anchor</a></p>
+!! end
+
+!! test
+Link with prefix
+!! input
+xxx[[main Page]], xxx[[Main Page]], Xxx[[main Page]] XXX[[main Page]], XXX[[Main Page]]
+!! result
+<p>xxx<a href="/wiki/Main_Page" title="Main Page">main Page</a>, xxx<a href="/wiki/Main_Page" title="Main Page">Main Page</a>, Xxx<a href="/wiki/Main_Page" title="Main Page">main Page</a> XXX<a href="/wiki/Main_Page" title="Main Page">main Page</a>, XXX<a href="/wiki/Main_Page" title="Main Page">Main Page</a></p>
+!! end
+
+!! test
+Link with suffix
+!! input
+[[Main Page]]xxx, [[Main Page]]XXX, [[Main Page]]!!!
+!! result
+<p><a href="/wiki/Main_Page" title="Main Page">Main Pagexxx</a>, <a href="/wiki/Main_Page" title="Main Page">Main Page</a>XXX, <a href="/wiki/Main_Page" title="Main Page">Main Page</a>!!!</p>
+!! end
+
+!! test
+Link with 3 brackets
+!! options
+disabled
+!! input
+[[[main page]]]
+!! result
+<p>[[[main page]]]</p>
+!! end
+
+!! test
+Piped link with 3 brackets
+!! options
+disabled
+!! input
+[[[main page|the main page]]]
+!! result
+<p>[[[main page|the main page]]]</p>
+!! end
+
+!! test
+Link with multiple pipes
+!! input
+[[Main Page|The|Main|Page]]
+!! result
+<p><a href="/wiki/Main_Page" title="Main Page">The|Main|Page</a></p>
+!! end
+
+!! test
+Link to namespaces
+!! input
+[[Talk:Parser testing]], [[Meta:Disclaimers]]
+!! result
+<p><a class="new" href="/wiki/Talk:Parser_testing?action=edit&amp;redlink=1" title="Talk:Parser testing (page does not exist)">Talk:Parser testing</a>, <a class="new" href="/wiki/Meta:Disclaimers?action=edit&amp;redlink=1" title="Meta:Disclaimers (page does not exist)">Meta:Disclaimers</a></p>
+!! end
+
+!! test
+Piped link to namespace
+!! input
+[[Meta:Disclaimers|The disclaimers]]
+!! result
+<p><a class="new" href="/wiki/Meta:Disclaimers?action=edit&amp;redlink=1" title="Meta:Disclaimers (page does not exist)">The disclaimers</a></p>
+!! end
+
+!! test
+Link containing }
+!! input
+[[Usually caused by a typo (oops}]]
+!! result
+<p>[[Usually caused by a typo (oops}]]</p>
+!! end
+
+!! test
+Link containing % (not as a hex sequence)
+!! input
+[[7% Solution]]
+!! result
+<p><a class="new" href="/wiki/7%25_Solution?action=edit&amp;redlink=1" title="7% Solution (page does not exist)">7% Solution</a></p>
+!! end
+
+!! test
+Link containing % as a single hex sequence interpreted to char
+!! options
+disabled
+!! input
+[[7%25 Solution]]
+!! result
+<p><a class="new" href="/wiki/7%25_Solution?action=edit&amp;redlink=1" title="7% Solution (page does not exist)">7% Solution</a></p>
+!!end
+
+!! test
+Link containing % as a double hex sequence interpreted to hex sequence
+!! options
+disabled
+!! input
+[[7%2525 Solution]]
+!! result
+<p>[[7%2525 Solution]]</p>
+!!end
+
+!! test
+Link containing "#<" and "#>" % as a hex sequences- these are valid section anchors
+Example for such a section: == < ==
+!! options
+disabled
+!! input
+[[%23%3c]][[%23%3e]]
+!! result
+<p><a href="#.3C">#&lt;</a><a href="#.3E">#&gt;</a></p>
+!! end
+
+!! test
+Link containing "<#" and ">#" as a hex sequences
+!! options
+disabled
+!! input
+[[%3c%23]][[%3e%23]]
+!! result
+<p>[[%3c%23]][[%3e%23]]</p>
+!! end
+
+!! test
+Link containing double-single-quotes '' (bug 4598)
+!! options
+disabled
+!! input
+[[Lista d''e paise d''o munno]]
+!! result
+<p><a class="new" href="/wiki/Lista_d&#39;&#39;e_paise_d&#39;&#39;o_munno?action=edit&amp;redlink=1" title="Lista d&#39;&#39;e paise d&#39;&#39;o munno (page does not exist)">Lista d&#39;&#39;e paise d&#39;&#39;o munno</a></p>
+!! end
+
+!! test
+Link containing double-single-quotes '' in text (bug 4598 sanity check)
+!! input
+Some [[Link|pretty ''italics'' and stuff]]!
+!! result
+<p>Some <a class="new" href="/wiki/Link?action=edit&amp;redlink=1" title="Link (page does not exist)">pretty <i>italics</i> and stuff</a>!</p>
+!! end
+
+!! test
+Link containing double-single-quotes '' in text embedded in italics (bug 4598 sanity check)
+!! input
+''Some [[Link|pretty ''italics'' and stuff]]!
+!! result
+<p><i>Some <a class="new" href="/wiki/Link?action=edit&amp;redlink=1" title="Link (page does not exist)">pretty <i>italics</i> and stuff</a>!</i></p>
+!! end
+
+!! test
+Link with double quotes in title part (literal) and alternate part (interpreted)
+!! options
+disabled
+!! input
+[[File:Denys Savchenko ''Pentecoste''.jpg]]
+
+[[''Pentecoste'']]
+
+[[''Pentecoste''|Pentecoste]]
+
+[[''Pentecoste''|''Pentecoste'']]
+!! result
+<p><a href="/index.php?title=Special:Upload&amp;wpDestFile=Denys_Savchenko_&#39;&#39;Pentecoste&#39;&#39;.jpg" class="new" title="File:Denys Savchenko &#39;&#39;Pentecoste&#39;&#39;.jpg">File:Denys Savchenko <i>Pentecoste</i>.jpg</a></p>
+<p><a class="new" href="/wiki/&#39;&#39;Pentecoste&#39;&#39;?action=edit&amp;redlink=1" title="''Pentecoste'' (page does not exist)">''Pentecoste''</a></p>
+<p><a class="new" href="/wiki/&#39;&#39;Pentecoste&#39;&#39;?action=edit&amp;redlink=1" title="''Pentecoste'' (page does not exist)">Pentecoste</a></p>
+<p><a class="new" href="/wiki/&#39;&#39;Pentecoste&#39;&#39;?action=edit&amp;redlink=1" title="''Pentecoste'' (page does not exist)"><i>Pentecoste</i></a></p>
+!! end
+
+!! test
+Plain link to URL
+!! options
+disabled
+!! input
+[[http://www.example.com]]
+!! result
+<p>[<a class="external autonumber" href="http://www.example.com" rel="nofollow">[1]</a>]</p>
+!! end
+
+!! test
+Plain link to URL with link text
+!! options
+disabled
+!! input
+[[http://www.example.com Link text]]
+!! result
+<p>[<a class="external text" href="http://www.example.com" rel="nofollow">Link text</a>]
+</p>
+!! end
+
+!! test
+Plain link to protocol-relative URL
+!! options
+disabled
+!! input
+[[//www.example.com]]
+!! result
+<p>[<a class="external autonumber" href="//www.example.com" rel="nofollow">[1]</a>]</p>
+!! end
+
+!! test
+Plain link to protocol-relative URL with link text
+!! options
+disabled
+!! input
+[[//www.example.com Link text]]
+!! result
+<p>[<a class="external text" href="//www.example.com" rel="nofollow">Link text</a>]</p>
+!! end
+
+
+# I'm fairly sure the expected result here is wrong.
+# We want these to be URL links, not pseudo-pages with URLs for titles....
+# However the current output is also pretty screwy.
+#
+# ----
+# I'm changing it to match the current output--it arguably makes more
+# sense in the light of the test above. Old expected result was:
+#<p>Piped link to URL: <a href="/index.php?title=Http://www.example.com&amp;action=edit" class="new">an example URL</a>
+#</p>
+# But I think this test is bordering on "garbage in, garbage out" anyway.
+# -- wtm
+!! test
+Piped link to URL
+!! options
+disabled
+!! input
+Piped link to URL: [[http://www.example.com|an example URL]]
+!! result
+<p>Piped link to URL: [<a rel="nofollow" class="external text" href="http://www.example.com%7Can">example URL</a>]</p>
+!! end
+
+!! test
+BUG 2: [[page|http://url/]] should link to page, not http://url/
+!! options
+disabled
+!! input
+[[Main Page|http://url/]]
+!! result
+<p><a href="/wiki/Main_Page" title="Main Page">http://url/</a></p>
+!! end
+
+!! test
+BUG 337: Escaped self-links should be bold
+!! options
+disabled
+title=[[Bug462]]
+!! input
+[[Bu&#103;462]] [[Bug462]]
+!! result
+<p><strong class="selflink">Bu&#103;462</strong> <strong class="selflink">Bug462</strong></p>
+!! end
+
+!! test
+Self-link to section should not be bold
+!! options
+title=[[Main Page]]
+!! input
+[[Main Page#section]]
+!! result
+<p><a href="/wiki/Main_Page#section" title="Main Page">Main Page#section</a></p>
+!! end
+
+!! article
+00
+!! text
+This is 00.
+!! endarticle
+
+!!test
+Self-link to numeric title
+!!options
+title=[[0]]
+!!input
+[[0]]
+!!result
+<p><strong class="selflink">0</strong></p>
+!!end
+
+!!test
+Link to numeric-equivalent title
+!!options
+title=[[0]]
+!!input
+[[00]]
+!!result
+<p><a href="/wiki/00" title="00">00</a></p>
+!!end
+
+!! test
+<nowiki> inside a link
+!! input
+[[Main<nowiki> Page</nowiki>]] [[Main Page|the main page <nowiki>[it's not very good]</nowiki>]]
+!! result
+<p>[[Main Page]] <a href="/wiki/Main_Page" title="Main Page">the main page [it&#39;s not very good]</a></p>
+!! end
+
+!! test
+Non-breaking spaces in title
+!! options
+disabled
+!! input
+[[&nbsp; Main &nbsp; Page &nbsp;]]
+!! result
+<p><a href="/wiki/Main_Page" title="Main Page">&#160; Main &#160; Page &#160;</a></p>
+!!end
+
+!! test
+Internal link with ca linktrail, surrounded by bold apostrophes (bug 27473 primary issue)
+!! options
+disabled
+language=ca
+!! input
+'''[[Main Page]]'''
+!! result
+<p><b><a href="/wiki/Main_Page" title="Main Page">Main Page</a></b></p>
+!! end
+
+!! test
+Internal link with ca linktrail, surrounded by italic apostrophes (bug 27473 primary issue)
+!! options
+disabled
+language=ca
+!! input
+''[[Main Page]]''
+!! result
+<p><i><a href="/wiki/Main_Page" title="Main Page">Main Page</a></i></p>
+!! end
+
+!! test
+Internal link with en linktrail: no apostrophes (bug 27473)
+!! options
+language=en
+!! input
+[[Something]]'nice
+!! result
+<p><a class="new" href="/wiki/Something?action=edit&amp;redlink=1" title="Something (page does not exist)">Something</a>&#39;nice</p>
+!! end
+
+!! test
+Internal link with ca linktrail with apostrophes (bug 27473)
+!! options
+disabled
+language=ca
+!! input
+[[Something]]'nice
+!! result
+<p><a class="new" href="/wiki/Something?action=edit&amp;redlink=1" title="Something (encara no existeix)">Something'nice</a></p>
+!! end
+
+!! test
+Internal link with kaa linktrail with apostrophes (bug 27473)
+!! options
+disabled
+language=kaa
+!! input
+[[Something]]'nice
+!! result
+<p><a class="new" href="/wiki/Something?action=edit&amp;redlink=1" title="Something (bet ele jaratılmag'an)">Something'nice</a></p>
+!! end

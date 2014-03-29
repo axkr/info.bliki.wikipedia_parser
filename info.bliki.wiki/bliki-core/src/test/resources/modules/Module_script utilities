@@ -1,0 +1,135 @@
+local m_scripts = mw.loadData("Module:scripts/tempdata")
+
+local export = {}
+
+-- Called from templates
+function export.lookup_script(frame)
+	local args = frame.args
+	local script = args[1] or error("Script code has not been specified. Please pass parameter 1 to the module invocation.")
+	local scriptinfo = m_scripts[script] or error("The script code \"" .. script .. "\" is not valid.")
+	
+	-- The item that the caller wanted to look up
+	local itemname = args[2] or error("Type of information to look up has not been specified. Please pass parameter 2 to the module invocation.")
+	local item = scriptinfo[itemname] or ""
+	
+	if type(item) == "table" then
+		return item[tonumber(args[3] or 1)] or ""
+	else
+		return item or ""
+	end
+end
+
+-- Called from templates
+function export.script_exists(frame)
+	local args = frame.args
+	local script = args[1] or error("Script code has not been specified. Please pass parameter 1 to the module invocation.")
+	
+	if m_scripts[script] then
+		return "1"
+	else
+		return ""
+	end
+end
+
+-- Wrap text in the appropriate HTML tags with language and script class.
+function export.tag_text(text, lang, sc, face)
+	-- Is the script valid?
+	if not m_scripts[sc] then
+		error("The script code \"" .. sc .. "\" is not valid.")
+	end
+	
+	-- Add a script wrapper
+	if face == "term" then
+		return '<i class="' .. sc .. ' mention" lang="' .. lang:getCode() .. '">' .. text .. '</i>'
+	elseif face == "head" then
+		return '<strong class="' .. sc .. ' headword" lang="' .. lang:getCode() .. '">' .. text .. '</strong>'
+	elseif face == "bold" then
+		return '<b class="' .. sc .. '" lang="' .. lang:getCode() .. '">' .. text .. '</b>'
+	elseif face == nil then
+		return '<span class="' .. sc .. '" lang="' .. lang:getCode() .. '">' .. text .. '</span>'
+	else
+		error("Invalid script face \"" .. face .. "\".")
+	end
+end
+
+-- Add a notice to request the native script of a word
+function export.request_script(lang, sc)
+	NAMESPACE = mw.title.getCurrentTitle().nsText
+	
+	local scripts = mw.loadData("Module:languages/alldata")[lang:getCode()].scripts
+	
+	-- By default, request for "native" script
+	local cat_script = "native"
+	local disp_script = "script"
+	
+	-- If the script was not specified, and the language has only one script, use that.
+	if not sc and not scripts[2] then
+		sc = scripts[1]
+	end
+	
+	-- Is the script known?
+	if sc then
+		-- If the script is Latin, return nothing.
+		if is_Latin_script(sc) then
+			return ""
+		end
+		
+		local scriptinfo = m_scripts[sc] or error("The script code \"" .. sc .. "\" is not valid.")
+		
+		if sc ~= scripts[1] then
+			disp_script = scriptinfo.names[1]
+		end
+		
+		-- The category needs to be specific to script only if there is chance
+		-- of ambiguity. This occurs when lang=und, or when the language has
+		-- multiple scripts.
+		if lang:getCode() == "und" or scripts[2] then
+			cat_script = scriptinfo.names[1]
+		end
+	else
+		-- The script is not known.
+		-- Does the language have at least one non-Latin script in its list?
+		local has_nonlatin = false
+		
+		for i, val in ipairs(scripts) do
+			if not is_Latin_script(val) then
+				has_nonlatin = true
+				break
+			end
+		end
+		
+		-- If there are non-Latin scripts, return nothing.
+		if not has_nonlatin then
+			return ""
+		end
+	end
+	
+	local category = ""
+	
+	if NAMESPACE ~= "Template" then
+		category = "[[Category:" .. lang:getCanonicalName() .. " terms needing " .. cat_script .. " script]]"
+	end
+	
+	return "<small>[" .. disp_script .. "?]</small>" .. category
+end
+
+function export.template_rfscript(frame)
+	local args = frame.args
+	local lang = args[1] or error("The first parameter (language code) has not been given")
+	local sc = args["sc"]; if sc == "" then sc = nil end
+	lang = require("Module:languages").getLanguageByCode(lang)
+	
+	local ret = export.request_script(lang, sc)
+	
+	if ret == "" then
+		error("This language is written in the Latin alphabet. It does not need a native script.")
+	else
+		return ret
+	end
+end
+
+function is_Latin_script(sc)
+	return (sc:find("Latn", nil, true)) or sc == "Latinx" or sc == "unicode"
+end
+
+return export
