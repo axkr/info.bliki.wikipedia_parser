@@ -84,6 +84,7 @@ public class Namespace implements INamespace {
 	 * The &quot;MediaWiki&quot; namespace for the current language.
 	 */
 	public final NamespaceValue MEDIAWIKI = new NamespaceValue(NamespaceCode.MEDIAWIKI_NAMESPACE_KEY, MEDIAWIKI_TALK, "MediaWiki");
+	
 	/**
 	 * The &quot;Template talk&quot; namespace for the current language.
 	 */
@@ -92,6 +93,10 @@ public class Namespace implements INamespace {
 	 * The &quot;Template&quot; namespace for the current language.
 	 */
 	public final NamespaceValue TEMPLATE = new NamespaceValue(NamespaceCode.TEMPLATE_NAMESPACE_KEY, TEMPLATE_TALK, "Template");
+	/**
+	 * The &quot;Template&quot; namespace for the current language.
+	 */
+	public final NamespaceValue MODULE = new NamespaceValue(NamespaceCode.TEMPLATE_NAMESPACE_KEY, TEMPLATE_TALK, "Module");
 	/**
 	 * The &quot;Help talk&quot; namespace for the current language.
 	 */
@@ -554,6 +559,11 @@ public class Namespace implements INamespace {
 		return MEDIAWIKI_TALK;
 	}
 
+	@Override
+	public INamespaceValue getModule() {
+		return MODULE;
+	}
+	
 	@Override
 	public INamespaceValue getTemplate() {
 		return TEMPLATE;

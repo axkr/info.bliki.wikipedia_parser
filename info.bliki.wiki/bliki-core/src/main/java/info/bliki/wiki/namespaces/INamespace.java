@@ -288,6 +288,13 @@ public interface INamespace {
 	public INamespaceValue getMediaWiki_talk();
 
 	/**
+	 * The &quot;Module&quot; namespace for the current language.
+	 * 
+	 * @return the namespace
+	 */
+	public INamespaceValue getModule();
+	
+	/**
 	 * The &quot;Template&quot; namespace for the current language.
 	 * 
 	 * @return the namespace

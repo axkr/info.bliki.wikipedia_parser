@@ -1,6 +1,12 @@
 package legunto.template;
 
+import info.bliki.wiki.model.IWikiModel;
+
+import java.io.File;
+import java.io.IOException;
+
 import legunto.interfaces.MwCommon;
+
 import org.luaj.vm2.Globals;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
@@ -9,9 +15,6 @@ import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
 import org.luaj.vm2.lib.VarArgFunction;
 import org.luaj.vm2.lib.jse.JsePlatform;
-
-import java.io.File;
-import java.io.IOException;
 
 public class ModuleExecutor {
     private final File moduleDir;
@@ -22,15 +25,15 @@ public class ModuleExecutor {
         this.scribuntoDir = new File("C:\\temp\\lualib");
     }
 
-    public String run(String module, String method, Frame frame) throws IOException {
+    public String run(IWikiModel model, String module, String method, Frame frame) throws IOException {
         final Globals globals = getGlobals();
-        MwCommon common = new MwCommon(globals,
+        MwCommon common = new MwCommon(model, globals,
             moduleDir,
             scribuntoDir,
             new File(scribuntoDir, "ustring"),
             new File(scribuntoDir, "luabit"));
 
-        return common.execute(module, method, frame);
+        return common.execute(model, module, method, frame);
     }
 
     private Globals getGlobals() {

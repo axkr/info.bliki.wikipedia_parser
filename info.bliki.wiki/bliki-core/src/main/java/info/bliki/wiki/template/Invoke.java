@@ -38,7 +38,7 @@ public class Invoke extends AbstractTemplateFunction {
 		String module = parts.get(0);
 		String method = parts.get(1);
 
-		return executor.run(module, method, new Frame(
+		return executor.run(model, module, method, new Frame(
 				getParameters(parts, model), model.getFrame()));
 	}
 

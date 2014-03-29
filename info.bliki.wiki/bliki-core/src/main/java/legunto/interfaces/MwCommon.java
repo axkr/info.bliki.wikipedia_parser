@@ -9,6 +9,10 @@ import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.ThreeArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
 
+import info.bliki.wiki.filter.AbstractParser.ParsedPageName;
+import info.bliki.wiki.model.IWikiModel;
+import info.bliki.wiki.model.WikiModelContentException;
+
 import java.io.*;
 
 public class MwCommon extends MwInterface {
@@ -25,10 +29,11 @@ public class MwCommon extends MwInterface {
 	// "mw.html"
 	};
 
-	public MwCommon(Globals globals, File... searchPath) throws IOException {
+	public MwCommon(IWikiModel model, Globals globals, File... searchPath)
+			throws IOException {
 		this.globals = globals;
 		this.searchPath = searchPath;
-		load();
+		load(model);
 	}
 
 	@Override
@@ -36,13 +41,14 @@ public class MwCommon extends MwInterface {
 		return "mw";
 	}
 
-	public String execute(String module, String method, Frame frame)
-			throws IOException {
-		if (!module.startsWith(Importer.MODULE)) {
-			module = Importer.MODULE + module;
+	public String execute(IWikiModel model, String module, String method,
+			Frame frame) throws IOException {
+		String name = module;
+		if (!name.startsWith(Importer.MODULE)) {
+			name = Importer.MODULE + name;
 		}
-		LuaValue chunk = globals.load(findModule(module), module, "t", globals)
-				.call();
+		LuaValue chunk = globals.load(findModule(model, module), name, "t",
+				globals).call();
 		LuaValue luaFunction = chunk.get(method);
 		LuaValue executeFunction = globals.get("mw").get("executeFunction");
 
@@ -54,16 +60,17 @@ public class MwCommon extends MwInterface {
 		}
 	}
 
-	private void load() throws IOException {
-		load(this);
+	private void load(IWikiModel model) throws IOException {
+		load(model, this);
 		for (MwInterface iface : INTERFACES) {
-			load(iface);
+			load(model, iface);
 		}
 	}
 
-	private void load(MwInterface luaInterface) throws IOException {
+	private void load(IWikiModel model, MwInterface luaInterface)
+			throws IOException {
 		// logger.debug("loading interface " + luaInterface);
-		InputStream is = findModule(luaInterface.name());
+		InputStream is = findModule(model, luaInterface.name());
 		globals.set("mw_interface", luaInterface.getInterface());
 		LuaValue pkg = globals.load(is, luaInterface.name(), "t", globals)
 				.call();
@@ -156,7 +163,7 @@ public class MwCommon extends MwInterface {
 				String name = arg.tojstring();
 				// logger.debug("loadPackage: " + name);
 				try {
-					InputStream is = findModule(name);
+					InputStream is = findModule(null, name);
 					if (is != null) {
 						return globals.load(is, name, "t", globals);
 					}
@@ -168,7 +175,12 @@ public class MwCommon extends MwInterface {
 		};
 	}
 
-	private InputStream findModule(String name) throws IOException {
+	private InputStream findModule(IWikiModel model, String moduleName)
+			throws IOException {
+		String name = moduleName;
+		// if (!name.startsWith(Importer.MODULE)) {
+		// name = Importer.MODULE + name;
+		// }
 		name = name.replaceAll("/", "_");
 		File file = null;
 		for (File path : searchPath) {
@@ -188,6 +200,17 @@ public class MwCommon extends MwInterface {
 			// TestHelper.copyModule(file);
 			return new FileInputStream(file);
 		} else {
+			if (model != null) {
+				try {
+					String content = model.getRawWikiContent(
+							new ParsedPageName(model.getNamespace()
+									.getModule(), moduleName, true), null);
+					if (content != null) {
+						return new StringBufferInputStream(content);
+					}
+				} catch (WikiModelContentException e) {
+				}
+			}
 			throw new FileNotFoundException("could not find module " + name);
 		}
 	}
