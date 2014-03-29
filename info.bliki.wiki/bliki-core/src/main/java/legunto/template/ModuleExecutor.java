@@ -19,7 +19,7 @@ public class ModuleExecutor {
 
     public ModuleExecutor(File moduleDir) {
         this.moduleDir = moduleDir;
-        this.scribuntoDir = new File("scribunto/engines/LuaCommon/lualib");
+        this.scribuntoDir = new File("C:\\temp\\lualib");
     }
 
     public String run(String module, String method, Frame frame) throws IOException {
