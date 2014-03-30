@@ -6,6 +6,7 @@ import info.bliki.wiki.filter.HTMLConverter;
 import info.bliki.wiki.impl.APIWikiModel;
 import info.bliki.wiki.model.Configuration;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Locale;
@@ -46,12 +47,12 @@ public class HTMLCreatorExample {
         String[] listOfTitleStrings = { title };
         String titleURL = Encoder.encodeTitleLocalUrl(title);
         User user = new User("", "", apiLink);
-        String mainDirectory = "c:/temp/";
+        String mainDirectory = System.getProperty("java.io.tmpdir");
         // the following subdirectory should not exist if you would like to create a
         // new database
         String databaseSubdirectory = "WikiDB";
         // the following directory must exist for image downloads
-        String imageDirectory = "c:/temp/WikiImages";
+        String imageDirectory = new File(mainDirectory, "WikiImages").getAbsolutePath();
         // the generated HTML will be stored in this file name:
         String generatedHTMLFilename = mainDirectory + titleURL + ".html";
 
@@ -108,12 +109,12 @@ public class HTMLCreatorExample {
         String titleURL = Encoder.encodeTitleLocalUrl(title);
         User user = new User("", "", apiLink);
         user.login();
-        String mainDirectory = "c:/temp/";
+        String mainDirectory =  System.getProperty("java.io.tmpdir");
         // the following subdirectory should not exist if you would like to create a
         // new database
         String databaseSubdirectory = "WikiDB";
         // the following directory must exist for image downloads
-        String imageDirectory = "c:/temp/WikiImages";
+        String imageDirectory = new File(mainDirectory, "WikiImages").getAbsolutePath();
         // the generated HTML will be stored in this file name:
         String generatedHTMLFilename = mainDirectory + titleURL + ".html";
 
