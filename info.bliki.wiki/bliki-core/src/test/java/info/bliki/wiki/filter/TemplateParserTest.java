@@ -1,12 +1,11 @@
 package info.bliki.wiki.filter;
 
 import info.bliki.wiki.model.WikiModel;
+import junit.framework.Test;
+import junit.framework.TestSuite;
 
 import java.util.HashMap;
 import java.util.Locale;
-
-import junit.framework.Test;
-import junit.framework.TestSuite;
 
 public class TemplateParserTest extends FilterTestSupport {
 
@@ -761,7 +760,7 @@ public class TemplateParserTest extends FilterTestSupport {
         assertEquals("0.037037037037037035", wikiModel.parseTemplates("{{#expr:3 ^ (-3)}}", false));
         assertEquals("NAN", wikiModel.parseTemplates("{{#expr:(-4) ^ (-1/2)}}", false));
         assertEquals("1", wikiModel.parseTemplates("{{#expr:ln EXp 1 }}", false));
-        assertEquals("2.718281828459045", wikiModel.parseTemplates("{{#expr:exp ln e }}", false));
+        assertEquals("2.7182818284590455", wikiModel.parseTemplates("{{#expr:exp ln e }}", false));
         assertEquals("1", wikiModel.parseTemplates("{{#expr:sin (pi/2) }}", false));
         assertEquals("6.123233995736766E-17", wikiModel.parseTemplates("{{#expr:(sin pi)/2 }}", false));
         assertEquals("6.123233995736766E-17", wikiModel.parseTemplates("{{#expr:sin pi/2 }}", false));
