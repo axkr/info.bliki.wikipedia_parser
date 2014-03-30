@@ -16,12 +16,12 @@ import org.xml.sax.helpers.DefaultHandler;
 
 /**
  * TODO: delete this class file!
- * 
+ *
  * Sources adopted from the article <a href=
  * "http://www.javaworld.com/javaworld/jw-08-2008/jw-08-java-wiki-extensions.html"
  * >Add Java extensions to your wiki</a> with permission from Randall Scarberry.
- * 
- * 
+ *
+ *
  */
 public class HtmlUtilities {
 
@@ -36,7 +36,7 @@ public class HtmlUtilities {
 
 	/**
 	 * Extracts and parses an HTML form from a page of HTML.
-	 * 
+	 *
 	 * @param formID
 	 * @param html
 	 * @return
@@ -124,13 +124,13 @@ public class HtmlUtilities {
 
 		/**
 		 * Receive notification of the start of an element.
-		 * 
+		 *
 		 * <p>
 		 * By default, do nothing. Application writers may override this method in a
 		 * subclass to take specific actions at the start of each element (such as
 		 * allocating a new tree node or writing output to a file).
 		 * </p>
-		 * 
+		 *
 		 * @param uri
 		 *          The Namespace URI, or the empty string if the element has no
 		 *          Namespace URI or if Namespace processing is not being performed.
@@ -206,13 +206,13 @@ public class HtmlUtilities {
 
 		/**
 		 * Receive notification of the end of an element.
-		 * 
+		 *
 		 * <p>
 		 * By default, do nothing. Application writers may override this method in a
 		 * subclass to take specific actions at the end of each element (such as
 		 * finalising a tree node or writing output to a file).
 		 * </p>
-		 * 
+		 *
 		 * @param uri
 		 *          The Namespace URI, or the empty string if the element has no
 		 *          Namespace URI or if Namespace processing is not being performed.
@@ -247,13 +247,13 @@ public class HtmlUtilities {
 
 		/**
 		 * Receive notification of character data inside an element.
-		 * 
+		 *
 		 * <p>
 		 * By default, do nothing. Application writers may override this method to
 		 * take specific actions for each chunk of character data (such as adding
 		 * the data to a node or buffer, or printing it to a file).
 		 * </p>
-		 * 
+		 *
 		 * @param ch
 		 *          The characters.
 		 * @param start

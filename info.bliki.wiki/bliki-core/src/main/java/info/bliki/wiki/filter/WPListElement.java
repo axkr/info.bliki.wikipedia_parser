@@ -7,7 +7,7 @@ import info.bliki.wiki.tags.util.TagStack;
  * Entry for a Wikipedia list string (i.e. a line which starts with '*', '#',
  * ':', ';'). See <a href="http://meta.wikimedia.org/wiki/Help:List"
  * >http://meta.wikimedia.org/wiki/Help:List</a>
- * 
+ *
  * @see info.bliki.wiki.filter.WPList
  */
 public class WPListElement {
@@ -34,7 +34,7 @@ public class WPListElement {
 
 	/**
 	 * Create the internal TagNodes stack for a single list line
-	 * 
+	 *
 	 * @param endPos
 	 *          The endPos to set.
 	 */
@@ -70,7 +70,7 @@ public class WPListElement {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return <code>null</code> or the internally created TagStack
 	 */
 	public TagStack getTagStack() {

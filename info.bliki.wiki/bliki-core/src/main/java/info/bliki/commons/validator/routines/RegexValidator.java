@@ -23,7 +23,7 @@ import java.util.regex.Matcher;
 /**
  * <b>Regular Expression</b> validation (using JDK 1.4+ regex support).
  * <p>
- * Construct the validator either for a single regular expression or a set (array) of 
+ * Construct the validator either for a single regular expression or a set (array) of
  * regular expressions. By default validation is <i>case sensitive</i> but constructors
  * are provided to allow  <i>case in-sensitive</i> validation. For example to create
  * a validator which does <i>case in-sensitive</i> validation for a set of regular
@@ -124,7 +124,7 @@ public class RegexValidator implements Serializable {
      * Validate a value against the set of regular expressions.
      *
      * @param value The value to validate.
-     * @return <code>true</code> if the value is valid 
+     * @return <code>true</code> if the value is valid
      * otherwise <code>false</code>.
      */
     public boolean isValid(String value) {
@@ -145,7 +145,7 @@ public class RegexValidator implements Serializable {
      *
      * @param value The value to validate.
      * @return String array of the <i>groups</i> matched if
-     * valid or <code>null</code> if invalid 
+     * valid or <code>null</code> if invalid
      */
     public String[] match(String value) {
         if (value == null) {
@@ -184,7 +184,7 @@ public class RegexValidator implements Serializable {
                 int count = matcher.groupCount();
                 if (count == 1) {
                     return matcher.group(1);
-                } 
+                }
                 StringBuffer buffer = new StringBuffer();
                 for (int j = 0; j < count; j++) {
                     String component = matcher.group(j+1);

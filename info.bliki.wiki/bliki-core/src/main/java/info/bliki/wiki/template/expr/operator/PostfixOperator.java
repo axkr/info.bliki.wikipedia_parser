@@ -7,7 +7,7 @@ public class PostfixOperator extends Operator {
 
 	public PostfixOperator(final String oper, final String functionName, final int precedence) {
 		super(oper, functionName, precedence);
-	} 
+	}
 
 	public ASTNode createFunction(final IParserFactory factory,
 			final ASTNode argument) {

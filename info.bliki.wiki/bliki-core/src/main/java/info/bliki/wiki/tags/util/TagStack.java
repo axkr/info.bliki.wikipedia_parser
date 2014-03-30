@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Stack which contains the currently generated HTML/Wiki tags from the parsing
  * process.
- * 
+ *
  */
 public class TagStack extends ArrayList<TagToken> {
 
@@ -33,7 +33,7 @@ public class TagStack extends ArrayList<TagToken> {
 	/**
 	 * Looks at the <code>TagToken</code> at the top of this stack without
 	 * removing it from the stack.
-	 * 
+	 *
 	 * @return the object at the top of this stack.
 	 */
 	public TagToken peek() {
@@ -43,7 +43,7 @@ public class TagStack extends ArrayList<TagToken> {
 	/**
 	 * Removes the <code>TagToken</code> at the top of this stack and returns that
 	 * <code>TagToken</code>.
-	 * 
+	 *
 	 * @return The <code>TagToken</code> at the top of this stack.
 	 */
 	public TagToken pop() {
@@ -67,7 +67,7 @@ public class TagStack extends ArrayList<TagToken> {
 
 	/**
 	 * Pushes a <code>TagToken</code> item onto the top of this stack.
-	 * 
+	 *
 	 * @param item
 	 *          the <code>TagToken</code> item to be pushed onto this stack.
 	 * @return <code>true</code> if this collection changed as a result of the
@@ -80,7 +80,7 @@ public class TagStack extends ArrayList<TagToken> {
 	/**
 	 * Pushes a new <code>TagNode</code> created from the nodeString onto the top
 	 * of this stack.
-	 * 
+	 *
 	 * @param nodeString
 	 *          the string for the new <code>TagNode</code> item to be pushed onto
 	 *          this stack.
@@ -93,7 +93,7 @@ public class TagStack extends ArrayList<TagToken> {
 
 	/**
 	 * Return the internal list of nodes (size maybe 0)
-	 * 
+	 *
 	 * @return
 	 */
 	public List<BaseToken> getNodeList() {

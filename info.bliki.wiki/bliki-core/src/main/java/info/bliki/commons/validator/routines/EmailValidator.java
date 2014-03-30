@@ -74,7 +74,7 @@ public class EmailValidator implements Serializable {
         return EMAIL_VALIDATOR;
     }
 
-    /**                                       
+    /**
      * Protected constructor for subclasses to use.
      */
     protected EmailValidator() {

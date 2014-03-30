@@ -3,13 +3,13 @@ package info.bliki.wiki.model;
 /**
  * A wiki event listener which will trigger the <code>on....</code> event
  * methods during the parsing process.
- * 
+ *
  */
 public interface IEventListener {
 
 	/**
 	 * Notify the listener about a parsed header.
-	 * 
+	 *
 	 * @param src
 	 *          the currently parsed raw wikitext character array
 	 * @param startPosition
@@ -29,7 +29,7 @@ public interface IEventListener {
 
 	/**
 	 * Notify the listener about a parsed wiki link.
-	 * 
+	 *
 	 * @param src
 	 *          the currently parsed raw wikitext character array
 	 * @param rawStart
@@ -41,9 +41,9 @@ public interface IEventListener {
 	 * @param suffix
 	 *          a suffix string eventually written directly behind the wiki link
 	 *          (useful for plurals).
-	 * 
+	 *
 	 *          Example:
-	 * 
+	 *
 	 *          <pre>
 	 * Dolphins are [[aquatic mammal]]s that are closely related to [[whale]]s and [[porpoise]]s.
 	 * </pre>
@@ -52,7 +52,7 @@ public interface IEventListener {
 
 	/**
 	 * Notify the listener about a parsed template.
-	 * 
+	 *
 	 * @param src
 	 *          the currently parsed raw wikitext character array
 	 * @param rawStart

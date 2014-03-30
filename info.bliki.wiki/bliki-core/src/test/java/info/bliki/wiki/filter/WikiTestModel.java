@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * Wiki model implementation which allows some special JUnit tests with
  * namespaces and predefined templates
- * 
+ *
  */
 public class WikiTestModel extends WikiModel {
 	/**
@@ -2525,7 +2525,7 @@ public class WikiTestModel extends WikiModel {
 
 	/**
 	 * Add German namespaces to the wiki model
-	 * 
+	 *
 	 * @param imageBaseURL
 	 * @param linkBaseURL
 	 */
@@ -2543,7 +2543,7 @@ public class WikiTestModel extends WikiModel {
 	/**
 	 * Add templates: &quot;Test&quot;, &quot;Templ1&quot;, &quot;Templ2&quot;,
 	 * &quot;Include Page&quot;
-	 * 
+	 *
 	 */
 	@Override
 	public String getRawWikiContent(ParsedPageName parsedPagename, Map<String, String> map) throws WikiModelContentException {

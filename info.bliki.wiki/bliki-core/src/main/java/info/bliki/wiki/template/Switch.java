@@ -7,11 +7,11 @@ import java.util.List;
 
 /**
  * A template parser function for <code>{{ #switch: ... }}</code> syntax.
- * 
+ *
  * See <a href
  * ="http://www.mediawiki.org/wiki/Help:Extension:ParserFunctions">Mediwiki's
  * Help:Extension:ParserFunctions</a>
- * 
+ *
  */
 public class Switch extends AbstractTemplateFunction {
 	public final static ITemplateFunction CONST = new Switch();
@@ -27,12 +27,12 @@ public class Switch extends AbstractTemplateFunction {
 			String conditionString = isSubst ? list.get(0) : parseTrim(list.get(0), model);
 			boolean checkNumerically = false;
 			if (conditionString.length() > 0) {
-				if (conditionString.charAt(0) == '+' || 
-						conditionString.charAt(0) == '-' ||  
+				if (conditionString.charAt(0) == '+' ||
+						conditionString.charAt(0) == '-' ||
 						conditionString.charAt(0) == '0' ||
-						conditionString.charAt(0) == '.' || 
-						conditionString.charAt(0) == ',' || 
-						conditionString.charAt(0) == 'e' || 
+						conditionString.charAt(0) == '.' ||
+						conditionString.charAt(0) == ',' ||
+						conditionString.charAt(0) == 'e' ||
 						conditionString.charAt(0) == 'E') {
 					checkNumerically = true;
 				} else {

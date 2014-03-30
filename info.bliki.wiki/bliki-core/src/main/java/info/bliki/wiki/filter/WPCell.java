@@ -15,7 +15,7 @@ import java.util.Map;
  * Represents a single cell in a wiki table (i.e. table syntax bordered by
  * <code>{| ..... |}</code> ). See: <a
  * href="http://meta.wikimedia.org/wiki/Help:Table">Help - Table</a>
- * 
+ *
  */
 public class WPCell {
 	public static final int ALIGN_NOT_SET = 0;
@@ -79,7 +79,7 @@ public class WPCell {
 
 	/**
 	 * Create the internal TagNodes stack for a single table cell
-	 * 
+	 *
 	 * @param endPos
 	 *          The endPos to set.
 	 */

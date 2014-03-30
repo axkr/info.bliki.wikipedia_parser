@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * A template parser function for <code>{{localurl: ... }}</code> syntax
- * 
+ *
  */
 public class Localurl extends AbstractTemplateFunction {
 	public final static ITemplateFunction CONST = new Localurl();

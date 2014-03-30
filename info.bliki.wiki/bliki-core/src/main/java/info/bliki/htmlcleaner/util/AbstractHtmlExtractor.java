@@ -18,14 +18,14 @@ public abstract class AbstractHtmlExtractor<T> {
 
 	/**
 	 * Append the content of the nodes to the given result object.
-	 * 
+	 *
 	 * @param nodes
 	 */
 	protected abstract void appendContent(List<Object> nodes);
 
 	/**
 	 * Append the content of the given <code>TagNode</code> to the resultObject
-	 * 
+	 *
 	 * @param tagNode
 	 * @return <code>true</code> if <code>appendContent()</code> should be
 	 *         called.
@@ -68,7 +68,7 @@ public abstract class AbstractHtmlExtractor<T> {
 
 	/**
 	 * Extract the information from the given html text.
-	 * 
+	 *
 	 * @param html
 	 */
 	public void extractContent(String html) {

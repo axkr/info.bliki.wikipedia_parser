@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * A template parser function for <code>{{fullurl: ... }}</code> syntax
- * 
+ *
  */
 public class Fullurl extends AbstractTemplateFunction {
 	public final static ITemplateFunction CONST = new Fullurl();

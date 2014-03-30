@@ -8,16 +8,16 @@ import java.util.List;
 
 /**
  * Interface for a template parser function (i.e. <code>{{ #if: ... }}</code> )
- * 
+ *
  */
 public interface ITemplateFunction {
 
 	/**
 	 * Parse a template function (like for example <code>{{ #if: ... }}</code>).
-	 * 
+	 *
 	 * The result is also a text string in Wikipedia syntax notation which will be
 	 * parsed again (recursively) in the TemplateParser step.
-	 * 
+	 *
 	 * @param parts
 	 *          the parser function arguments (extracted from the wiki text by
 	 *          splitting the string at the pipe symbol &acute;|&acute;)
@@ -43,7 +43,7 @@ public interface ITemplateFunction {
 
 	/**
 	 * Return a short description of the implemented template function
-	 * 
+	 *
 	 * @return
 	 */
 	public String getFunctionDoc();

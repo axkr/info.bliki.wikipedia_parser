@@ -19,7 +19,7 @@ import java.util.Map;
 
 /**
  * Convert HTML text to Google Code wiki syntax
- * 
+ *
  */
 public class ToJSPWiki extends AbstractHTMLToWiki implements IHTMLToWiki {
 	static private final Map<String, HTMLTag> TAG_MAP = new HashMap<String, HTMLTag>();

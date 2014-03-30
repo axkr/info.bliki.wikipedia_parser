@@ -10,7 +10,7 @@ import java.util.List;
  * some of those segments as output. See <a href=
  * "https://www.mediawiki.org/wiki/Help:Extension:ParserFunctions#.23titleparts"
  * >Mediawiki - Help:Extension:ParserFunctions - Titleparts</a>
- * 
+ *
  */
 public class Titleparts extends AbstractTemplateFunction {
 	public final static ITemplateFunction CONST = new Titleparts();

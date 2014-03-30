@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * A Wikipedia syntax parser for the second pass in the parsing of a Wikipedia
  * source text.
- * 
+ *
  * @see TemplateParser for the first pass
  */
 public class WikipediaParser extends AbstractParser implements IParser {
@@ -67,7 +67,7 @@ public class WikipediaParser extends AbstractParser implements IParser {
 
 	/**
 	 * Copy the read ahead content in the resulting HTML text token.
-	 * 
+	 *
 	 * @param diff
 	 *            subtract <code>diff</code> form the current parser position to
 	 *            get the HTML text token end position.
@@ -390,7 +390,7 @@ public class WikipediaParser extends AbstractParser implements IParser {
 
 	/**
 	 * Parse nowiki tags.
-	 * 
+	 *
 	 * @param input
 	 * @return
 	 */
@@ -524,7 +524,7 @@ public class WikipediaParser extends AbstractParser implements IParser {
 
 	/**
 	 * See <a href="http://en.wikipedia.org/wiki/URI_scheme">URI scheme</a>
-	 * 
+	 *
 	 * @return <code>true</code> if a registered URI scheme was found in the
 	 *         wiki models configuration..
 	 */
@@ -618,7 +618,7 @@ public class WikipediaParser extends AbstractParser implements IParser {
 
 	/**
 	 * Parse a wiki section starting with a '[' character
-	 * 
+	 *
 	 * @return <code>true</code> if a correct link was found
 	 */
 	private boolean parseWikiLink() {
@@ -662,7 +662,7 @@ public class WikipediaParser extends AbstractParser implements IParser {
 
 	/**
 	 * Parse a wiki section starting with a '[[' sequence
-	 * 
+	 *
 	 * @return <code>true</code> if a correct link was found
 	 */
 	private boolean parseWikiTag() {
@@ -784,7 +784,7 @@ public class WikipediaParser extends AbstractParser implements IParser {
 
 	/**
 	 * Parse <code>----</code> as &lt;hr&gt; tag
-	 * 
+	 *
 	 * @return
 	 */
 	private boolean parseHorizontalRuler() {
@@ -817,13 +817,13 @@ public class WikipediaParser extends AbstractParser implements IParser {
 	 * Parse a wiki list <br/>
 	 * <br/>
 	 * Example:<br/>
-	 * 
+	 *
 	 * <pre>
 	 * * first line
 	 * * second line
 	 * ** third line
 	 * </pre>
-	 * 
+	 *
 	 * @return
 	 */
 	private boolean parseLists() {
@@ -848,7 +848,7 @@ public class WikipediaParser extends AbstractParser implements IParser {
 	 * <br/>
 	 * Example wiki syntax header line: <br/>
 	 * <code>== Test header 2 ==</code>
-	 * 
+	 *
 	 * @return <code>true</code> if a header line could be parsed correctly,
 	 *         <code>false</code> otherwise.
 	 */
@@ -957,7 +957,7 @@ public class WikipediaParser extends AbstractParser implements IParser {
 
 	/**
 	 * Parse special identifiers like __TOC__, __NOTOC__, __FORCETOC__
-	 * 
+	 *
 	 * @return
 	 */
 	private boolean parseSpecialIdentifiers() {
@@ -1020,7 +1020,7 @@ public class WikipediaParser extends AbstractParser implements IParser {
 
 	/**
 	 * Check if the scanners cursor position is at the beginning of a line.
-	 * 
+	 *
 	 * @return <code>true</code> if the scanners cursor points to the beginning
 	 *         of a line, <code>false</code> otherwise.
 	 */
@@ -1321,13 +1321,13 @@ public class WikipediaParser extends AbstractParser implements IParser {
 	/**
 	 * Call the parser on the first recursion level, where the text can contain
 	 * a table of contents (TOC).
-	 * 
+	 *
 	 * <br/>
 	 * <br/>
 	 * <b>Note:</b> in this level the wiki model will call the
 	 * <code>setUp()</code> method before parsing and the
 	 * <code>tearDown()</code> method after the parser has finished.
-	 * 
+	 *
 	 * @param rawWikiText
 	 *            the raw text of the article
 	 * @param wikiModel
@@ -1338,7 +1338,7 @@ public class WikipediaParser extends AbstractParser implements IParser {
 	 *            if the <code>templateParserBuffer != null</code> the
 	 *            <code>templateParserBuffer</code> will be used to append the
 	 *            result of the template expansion step
-	 * 
+	 *
 	 */
 	public static void parse(String rawWikiText, IWikiModel wikiModel,
 			boolean parseTemplates, Appendable templateParserBuffer) {
@@ -1387,11 +1387,11 @@ public class WikipediaParser extends AbstractParser implements IParser {
 	 * Call the parser on the subsequent recursion levels, where the subtexts
 	 * (of templates, table cells, list items or image captions) don't contain a
 	 * table of contents (TOC)
-	 * 
+	 *
 	 * <b>Note:</b> the wiki model doesn't call the <code>setUp()</code> or
 	 * <code>tearDown()</code> methods for the subsequent recursive parser
 	 * steps.
-	 * 
+	 *
 	 * @param rawWikitext
 	 * @param wikiModel
 	 */
@@ -1403,11 +1403,11 @@ public class WikipediaParser extends AbstractParser implements IParser {
 	 * Call the parser on the subsequent recursion levels, where the subtexts
 	 * (of templates, table cells, list items or image captions) don't contain a
 	 * table of contents (TOC)
-	 * 
+	 *
 	 * <b>Note:</b> the wiki model doesn't call the <code>setUp()</code> or
 	 * <code>tearDown()</code> methods for the subsequent recursive parser
 	 * steps.
-	 * 
+	 *
 	 * @param rawWikitext
 	 * @param wikiModel
 	 * @param noTOC
@@ -1423,7 +1423,7 @@ public class WikipediaParser extends AbstractParser implements IParser {
 
 	/**
 	 * Determine if the currently parsed wiki text is a template text.
-	 * 
+	 *
 	 * @return <code>true</code> if the currently parsed wiki text is a template
 	 */
 	@Override

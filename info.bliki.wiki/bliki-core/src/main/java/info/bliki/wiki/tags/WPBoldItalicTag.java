@@ -7,7 +7,7 @@ import info.bliki.wiki.model.IWikiModel;
 
 /**
  * A special Wikipedia tag (i.e. ==, ===, ''', '', ...)
- * 
+ *
  */
 public class WPBoldItalicTag extends WPTag {
 	String outerTag;

@@ -22,7 +22,7 @@ import java.net.URL;
  * href="http://en.wikipedia.org/w/api.php"
  * >http://en.wikipedia.org/w/api.php</a>.
  * </p>
- * 
+ *
  */
 public class DumpDocumentCreator {
 
@@ -43,7 +43,7 @@ public class DumpDocumentCreator {
 
 	/**
 	 * Render the given Wikipedia texts into a string for a given converter
-	 * 
+	 *
 	 * @param converter
 	 *          a text converter. <b>Note</b> the converter may be
 	 *          <code>null</code>, if you only would like to analyze the raw wiki
@@ -73,7 +73,7 @@ public class DumpDocumentCreator {
 	/**
 	 * Render the given Wikipedia texts into an HTML string and use the default
 	 * HTMLConverter.
-	 * 
+	 *
 	 */
 	public void render(Appendable appendable) throws IOException {
 		render(new HTMLConverter(), appendable);
@@ -83,7 +83,7 @@ public class DumpDocumentCreator {
 	 * Render the given Wikipedia texts into an HTML string and use the default
 	 * PDFConverter. The resulting XHTML could be used as input for the Flying
 	 * Saucer PDF renderer
-	 * 
+	 *
 	 */
 	public void renderPDF(Appendable appendable) throws IOException {
 		render(new PDFConverter(), appendable);
@@ -91,7 +91,7 @@ public class DumpDocumentCreator {
 
 	/**
 	 * Render the given Wikipedia texts into an HTML file for the given converter.
-	 * 
+	 *
 	 */
 	public void renderToFile(ITextConverter converter, String filename) throws IOException {
 		File file = new File(filename);
@@ -109,7 +109,7 @@ public class DumpDocumentCreator {
 
 	/**
 	 * Render the given Wikipedia texts into an HTML file.
-	 * 
+	 *
 	 */
 	public void renderToFile(String filename) throws IOException {
 		renderToFile(new HTMLConverter(), filename);
@@ -117,7 +117,7 @@ public class DumpDocumentCreator {
 
 	/**
 	 * Render the given Wikipedia texts into a PDF file.
-	 * 
+	 *
 	 * @param baseDirectoryName
 	 *          the base directory, where all files should be stored
 	 * @param filename
@@ -144,7 +144,7 @@ public class DumpDocumentCreator {
 
 	/**
 	 * Get the HTML header of this creator.
-	 * 
+	 *
 	 * @return <code>null</code> if no HTML header is set
 	 */
 	public String getHeader() {
@@ -153,7 +153,7 @@ public class DumpDocumentCreator {
 
 	/**
 	 * Set the HTML header set of this creator.
-	 * 
+	 *
 	 */
 	public void setHeader(String header) {
 		this.fHeader = header;
@@ -161,7 +161,7 @@ public class DumpDocumentCreator {
 
 	/**
 	 * Get the HTML footer of this creator.
-	 * 
+	 *
 	 * @return <code>null</code> if no HTML footer is set
 	 */
 	public String getFooter() {
@@ -170,7 +170,7 @@ public class DumpDocumentCreator {
 
 	/**
 	 * Set the HTML footer of this creator.
-	 * 
+	 *
 	 */
 	public void setFooter(String footer) {
 		this.fFooter = footer;

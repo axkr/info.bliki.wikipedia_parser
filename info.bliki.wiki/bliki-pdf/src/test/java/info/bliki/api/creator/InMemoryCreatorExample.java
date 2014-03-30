@@ -16,7 +16,7 @@ import java.util.Map;
  * render it to the string / console output. This is happening completely in
  * memory without downloading files to the hard-disk and without creating a
  * local database.
- * 
+ *
  * @see HTMLCreatorExample
  */
 public class InMemoryCreatorExample {

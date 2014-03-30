@@ -6,13 +6,13 @@ import java.util.List;
 
 public class OpenCloseTag extends AbstractHTMLTag {
 	protected String openStr;
-	
+
 	protected String closeStr;
 
 	protected final boolean formatContent;
 
 	/**
-	 * 
+	 *
 	 * @param opener
 	 *          opening string for this tag
 	 * @param closer
@@ -111,7 +111,7 @@ public class OpenCloseTag extends AbstractHTMLTag {
 	public void close(TagNode node, StringBuilder resultBuffer) {
 		resultBuffer.append(closeStr);
 	}
-	
+
 	public String getOpenStr() {
 		return openStr;
 	}

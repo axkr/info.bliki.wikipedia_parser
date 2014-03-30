@@ -11,11 +11,11 @@ import java.util.Map;
 
 /**
  * Allows source code to be syntax highlighted on the wiki pages.
- * 
+ *
  * The syntax is similar to this <a
  * href="http://www.mediawiki.org/wiki/Extension:SyntaxHighlight_GeSHi">syntax
  * highlighting extension</a>.
- * 
+ *
  */
 public class SourceTag extends HTMLBlockTag implements INoBodyParsingTag {
 
@@ -32,7 +32,7 @@ public class SourceTag extends HTMLBlockTag implements INoBodyParsingTag {
 		SourceTag st = new SourceTag();
 		return st;
 	}
-	
+
 	@Override
 	public void renderHTML(ITextConverter converter, Appendable writer, IWikiModel model) throws IOException {
 
@@ -80,7 +80,7 @@ public class SourceTag extends HTMLBlockTag implements INoBodyParsingTag {
 	/**
 	 * Determine the source code type by heuristics. If nothing found take the
 	 * <code>xml</code> formatter.
-	 * 
+	 *
 	 * @param src
 	 *          the source code snippet
 	 * @return the source code language

@@ -12,7 +12,7 @@ import java.util.Map;
 
 /**
  * Wiki tag for the yacas eval tag which sends an expression to an applet
- * 
+ *
  */
 public class YacasEvalTag extends NowikiTag {
 	public YacasEvalTag() {

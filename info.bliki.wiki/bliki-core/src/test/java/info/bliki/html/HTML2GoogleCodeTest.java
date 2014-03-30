@@ -9,7 +9,7 @@ public class HTML2GoogleCodeTest extends TestCase {
 	public HTML2GoogleCodeTest(String name) {
 		super(name);
 	}
-	
+
 	public void test0() {
 		HTML2WikiConverter conv = new HTML2WikiConverter();
 		conv.setInputHTML("<b>hello<em>world</em></b>");
@@ -21,13 +21,13 @@ public class HTML2GoogleCodeTest extends TestCase {
 		HTML2WikiConverter conv = new HTML2WikiConverter();
 		conv.setInputHTML("<ul><li>hello world<ol><li>hello subworld1<ul><li>sub sub test1</li>\n<li>sub sub test2</li></ul></li><li>hello subworld2</li></ol></li><li>second line</li></ul>");
 		String result = conv.toWiki(new ToGoogleCode());
-		assertEquals(result, "\n" + 
-				"* hello world\n" + 
-				" # hello subworld1\n" + 
-				"  * sub sub test1\n" + 
-				"  * sub sub test2\n" + 
-				" # hello subworld2\n" + 
-				"* second line\n" + 
+		assertEquals(result, "\n" +
+				"* hello world\n" +
+				" # hello subworld1\n" +
+				"  * sub sub test1\n" +
+				"  * sub sub test2\n" +
+				" # hello subworld2\n" +
+				"* second line\n" +
 				"");
 	}
 
@@ -146,31 +146,31 @@ public class HTML2GoogleCodeTest extends TestCase {
 
 	public void test16() {
 		HTML2WikiConverter conv = new HTML2WikiConverter();
-		conv.setInputHTML(" <table>\n<tr>\n" + 
-				"                    <td align=\"left\" valign=\"top\">accesskey</td>\n" + 
-				"                    <td align=\"left\" valign=\"top\">false</td>\n" + 
-				"                    <td align=\"left\" valign=\"top\"></td>              <!----  empty cell -->\n" + 
-				"                    <td align=\"left\" valign=\"top\">false</td>\n" + 
-				"                    <td align=\"left\" valign=\"top\">String</td>\n" + 
-				"                    <td align=\"left\" valign=\"top\">Set the html accesskey attribute on rendered html element</td>\n" + 
+		conv.setInputHTML(" <table>\n<tr>\n" +
+				"                    <td align=\"left\" valign=\"top\">accesskey</td>\n" +
+				"                    <td align=\"left\" valign=\"top\">false</td>\n" +
+				"                    <td align=\"left\" valign=\"top\"></td>              <!----  empty cell -->\n" +
+				"                    <td align=\"left\" valign=\"top\">false</td>\n" +
+				"                    <td align=\"left\" valign=\"top\">String</td>\n" +
+				"                    <td align=\"left\" valign=\"top\">Set the html accesskey attribute on rendered html element</td>\n" +
 				"   </tr></table>");
 		String result = conv.toWiki(new ToGoogleCode());
-		assertEquals(result, "          \n" + 
-				"||accesskey||false|| ||false||String||Set the html accesskey attribute on rendered html element||\n" + 
+		assertEquals(result, "          \n" +
+				"||accesskey||false|| ||false||String||Set the html accesskey attribute on rendered html element||\n" +
 				"");
 	}
-	
+
 	public void test17() {
 		HTML2WikiConverter conv = new HTML2WikiConverter();
-		conv.setInputHTML(" <table>\n<tr>\n" + 
-				"                    <td align=\"left\" valign=\"top\"></td>             \n" + 
+		conv.setInputHTML(" <table>\n<tr>\n" +
+				"                    <td align=\"left\" valign=\"top\"></td>             \n" +
 				"   </tr></table>");
 		String result = conv.toWiki(new ToGoogleCode());
-		assertEquals(result, "    \n" + 
-				"|| ||\n" + 
+		assertEquals(result, "    \n" +
+				"|| ||\n" +
 				"");
 	}
-	
+
 	public static void main(String[] args) {
 		try {
 			HTML2WikiConverter conv = new HTML2WikiConverter();

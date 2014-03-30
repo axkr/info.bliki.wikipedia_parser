@@ -3,7 +3,7 @@ package info.bliki.wiki.tags;
 
 /**
  * A wiki tag that's partitioning the HTML document
- * 
+ *
  */
 public class HTMLBlockTag extends HTMLTag {
 
@@ -42,7 +42,7 @@ public class HTMLBlockTag extends HTMLTag {
 
 	/**
 	 * Use this tag if no parent tag was found on the wiki model's tag stack.
-	 * 
+	 *
 	 * @return the default parent tag
 	 */
 	@Override

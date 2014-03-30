@@ -6,7 +6,7 @@ package info.bliki.api.query;
  * Query API interface currently available on all MediaWiki servers. All data
  * modifications will first have to use query to acquire a token to prevent
  * abuse from malicious sites.
- * 
+ *
  * <pre>
  * Parameters:
  *   titles         - A list of titles to work on
@@ -23,13 +23,13 @@ package info.bliki.api.query;
  *   redirects      - Automatically resolve redirects
  *   indexpageids   - Include an additional pageids section listing all returned page IDs.
  * </pre>
- * 
+ *
  * Example: <a href="http://en.wikipedia.org/w/api.php?action=query&amp;prop=revisions&amp;meta=siteinfo&amp;titles=Main%20Page&amp;rvprop=user%7Ccomment"
  * >api.php?action=query&amp;prop=revisions&amp;meta=siteinfo&amp;titles=Main%20
  * Page&amp;rvprop=user|comment</a>
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class Query extends RequestBuilder {
 	public Query() {
@@ -43,7 +43,7 @@ public class Query extends RequestBuilder {
 
 	/**
 	 * One title to work on
-	 * 
+	 *
 	 * @param titles
 	 * @return
 	 */
@@ -54,7 +54,7 @@ public class Query extends RequestBuilder {
 
 	/**
 	 * A list of titles to work on
-	 * 
+	 *
 	 * @param titles
 	 * @return
 	 */
@@ -65,7 +65,7 @@ public class Query extends RequestBuilder {
 
 	/**
 	 * A list of page IDs to work on
-	 * 
+	 *
 	 * @param pageids
 	 * @return
 	 */
@@ -76,7 +76,7 @@ public class Query extends RequestBuilder {
 
 	/**
 	 * A list of revision IDs to work on
-	 * 
+	 *
 	 * @param revids
 	 * @return
 	 */
@@ -89,7 +89,7 @@ public class Query extends RequestBuilder {
 	 * Which property to get for the titles/revisions/pageids.<br/> Values info,
 	 * revisions, links, langlinks, images, imageinfo, templates, categories,
 	 * extlinks, categoryinfo, duplicatefiles
-	 * 
+	 *
 	 * @param prop
 	 * @return
 	 */
@@ -102,7 +102,7 @@ public class Query extends RequestBuilder {
 	 * Which properties to get for the titles/revisions/pageids.<br/> Values
 	 * (internally separated with '|'): info, revisions, links, langlinks, images,
 	 * imageinfo, templates, categories, extlinks, categoryinfo, duplicatefiles
-	 * 
+	 *
 	 * @param prop
 	 * @return
 	 */
@@ -116,7 +116,7 @@ public class Query extends RequestBuilder {
 	 * alllinks, allcategories, allusers, backlinks, blocks, categorymembers,
 	 * deletedrevs, embeddedin, imageusage, logevents, recentchanges, search,
 	 * usercontribs, watchlist, exturlusage, users, random
-	 * 
+	 *
 	 * @param lists
 	 * @return
 	 */
@@ -128,7 +128,7 @@ public class Query extends RequestBuilder {
 	/**
 	 * Which meta data to get about the site.<br/> Values (separate with '|'):
 	 * siteinfo, userinfo, allmessages
-	 * 
+	 *
 	 * @param metadata
 	 * @return
 	 */
@@ -142,7 +142,7 @@ public class Query extends RequestBuilder {
 	 * One value: links, images, templates, categories, duplicatefiles, allimages,
 	 * allpages, alllinks, allcategories, backlinks, categorymembers, embeddedin,
 	 * imageusage, search, watchlist, exturlusage, random
-	 * 
+	 *
 	 * @param generator
 	 * @return
 	 */
@@ -153,7 +153,7 @@ public class Query extends RequestBuilder {
 
 	/**
 	 * Automatically resolve redirects.
-	 * 
+	 *
 	 * @return
 	 */
 	public Query redirects() {
@@ -163,7 +163,7 @@ public class Query extends RequestBuilder {
 
 	/**
 	 * Include an additional pageids section listing all returned page IDs.
-	 * 
+	 *
 	 * @return
 	 */
 	public Query indexpageids() {
@@ -177,7 +177,7 @@ public class Query extends RequestBuilder {
 	 * non-talk page "subjectid" - The page ID of the parent page for each talk
 	 * page Values (separate with '|'): protection, talkid, subjectid, url,
 	 * readable
-	 * 
+	 *
 	 * @param prop
 	 * @return
 	 */
@@ -192,7 +192,7 @@ public class Query extends RequestBuilder {
 	 * non-talk page "subjectid" - The page ID of the parent page for each talk
 	 * page Values (separate with '|'): protection, talkid, subjectid, url,
 	 * readable
-	 * 
+	 *
 	 * @param prop
 	 * @return
 	 */
@@ -203,7 +203,7 @@ public class Query extends RequestBuilder {
 
 	/**
 	 * The page title to start enumerating from.
-	 * 
+	 *
 	 * @param title
 	 * @return
 	 */
@@ -215,7 +215,7 @@ public class Query extends RequestBuilder {
 	/**
 	 * How many total pages to return. No more than 500 (5000 for bots) allowed.
 	 * Default: 10
-	 * 
+	 *
 	 * @param limit
 	 * @return
 	 */

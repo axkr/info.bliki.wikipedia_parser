@@ -25,7 +25,7 @@ public class PageInfo {
 	public int hashCode() {
 		return title.hashCode();
 	}
-	
+
 	public String getNs() {
 		return ns;
 	}

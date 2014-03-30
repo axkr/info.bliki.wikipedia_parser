@@ -16,7 +16,7 @@ public class ItalicFilterTest extends FilterTestSupport {
 		assertEquals("\n" + "<p>a <em> project </em>.</p>", wikiModel.render("a <em> project </em>.", false));
 	}
 
-	public void testItalic01() { 
+	public void testItalic01() {
 		assertEquals("\n" + "<p><i>Text</i></p>", wikiModel.render("''Text''", false));
 	}
 

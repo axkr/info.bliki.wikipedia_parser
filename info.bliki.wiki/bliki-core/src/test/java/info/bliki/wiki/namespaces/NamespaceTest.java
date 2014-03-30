@@ -11,12 +11,12 @@ import junit.framework.TestSuite;
 
 /**
  * Tests for {@link Namespace}.
- * 
+ *
  * @author Nico Kruber, kruber@zib.de
  */
 public class NamespaceTest extends TestCase {
 	protected Namespace namespace = null;
-	
+
 	public NamespaceTest(String name) {
 		super(name);
 	}

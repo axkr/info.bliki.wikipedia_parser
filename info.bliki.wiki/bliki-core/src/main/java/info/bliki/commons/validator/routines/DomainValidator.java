@@ -207,7 +207,7 @@ public class DomainValidator implements Serializable {
         "ai",                 // Anguilla
         "al",                 // Albania
         "am",                 // Armenia
-        "an",                 // Netherlands Antilles  
+        "an",                 // Netherlands Antilles
         "ao",                 // Angola
         "aq",                 // Antarctica
         "ar",                 // Argentina

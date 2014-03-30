@@ -4,7 +4,7 @@ import info.bliki.wiki.namespaces.INamespace.NamespaceCode;
 
 /**
  * Represents a single wiki page from a Mediawiki dump.
- * 
+ *
  */
 public class WikiArticle {
 	private String id = null;
@@ -32,7 +32,7 @@ public class WikiArticle {
 	 * associated. For example in an english Mediawiki installation <i>10</i> is
 	 * typically the <i>Template</i> namespace and <i>14</i> is typically the
 	 * <i>Category</i> namespace.
-	 * 
+	 *
 	 * @return the integerNamespace
 	 */
 	public Integer getIntegerNamespace() {
@@ -67,7 +67,7 @@ public class WikiArticle {
 
 	/**
 	 * Does the title belong to the <i>Category</i> namespace?
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isCategory() {
@@ -80,7 +80,7 @@ public class WikiArticle {
 
 	/**
 	 * &quot;Real&quot; content articles (i.e. the title has no namespace prefix)?
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isMain() {
@@ -93,7 +93,7 @@ public class WikiArticle {
 
 	/**
 	 * Does the title belong to the <i>Template</i> namespace?
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isTemplate() {
@@ -102,7 +102,7 @@ public class WikiArticle {
 
 	/**
 	 * The ID of the wiki article to set.
-	 * 
+	 *
 	 * @param id
 	 *          the id to set
 	 */
@@ -128,7 +128,7 @@ public class WikiArticle {
 
 	/**
 	 * The ID of the revision of the wiki article to set.
-	 * 
+	 *
 	 * @param revisionId
 	 *          the revisisonId to set
 	 */

@@ -2,7 +2,7 @@ package info.bliki.wiki.template.expr.ast;
 
 /**
  * The basic node for a parsed expression string
- * 
+ *
  */
 public abstract class NumberNode extends ASTNode {
 

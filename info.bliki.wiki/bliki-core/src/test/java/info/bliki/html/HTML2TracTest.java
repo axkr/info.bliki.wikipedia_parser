@@ -60,13 +60,13 @@ public class HTML2TracTest extends TestCase {
 				+ "<td><i><a href=\"/wiki/Art_%28Biologie%29\" title=\"Art (Biologie)\">Art</a>:</i></td>\n"
 				+ "<td>Afrikanischer Strauß</td>\n" + "</tr>\n" + "</table>");
 		String result = conv.toWiki(new ToTrac());
-		assertEquals(result, "                         \n" + 
-				"||\'\'[wiki:Klasse]:\'\'||[wiki:Vögel] (Aves)||\n" + 
-				"||\'\'[wiki:Unterklasse]:\'\'||[wiki:Urkiefervögel] (Palaeognathae)||\n" + 
-				"||\'\'[wiki:Ordnung]:\'\'||[wiki:Laufvögel] (Struthioniformes)||\n" + 
-				"||\'\'[wiki:Familie]:\'\'||Strauße (Struthionidae)||\n" + 
-				"||\'\'[wiki:Gattung]:\'\'||Strauße (\'\'Struthio\'\')||\n" + 
-				"||\'\'[wiki:Art]:\'\'||Afrikanischer Strauß||\n" + 
+		assertEquals(result, "                         \n" +
+				"||\'\'[wiki:Klasse]:\'\'||[wiki:Vögel] (Aves)||\n" +
+				"||\'\'[wiki:Unterklasse]:\'\'||[wiki:Urkiefervögel] (Palaeognathae)||\n" +
+				"||\'\'[wiki:Ordnung]:\'\'||[wiki:Laufvögel] (Struthioniformes)||\n" +
+				"||\'\'[wiki:Familie]:\'\'||Strauße (Struthionidae)||\n" +
+				"||\'\'[wiki:Gattung]:\'\'||Strauße (\'\'Struthio\'\')||\n" +
+				"||\'\'[wiki:Art]:\'\'||Afrikanischer Strauß||\n" +
 				"");
 	}
 

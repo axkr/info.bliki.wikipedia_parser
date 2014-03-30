@@ -29,7 +29,7 @@ public class XMLCodeFilter extends AbstractCPPBasedCodeFilter implements SourceC
 
 	@Override
 	public String filter(String input) {
-		char[] source = input.toCharArray(); 
+		char[] source = input.toCharArray();
 		int currentPosition = 0;
 		char currentChar = ' ';
 		StringBuilder result = new StringBuilder(input.length() + input.length() / 4);
@@ -127,7 +127,7 @@ public class XMLCodeFilter extends AbstractCPPBasedCodeFilter implements SourceC
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	@Override
 	public boolean isPHPTag() {

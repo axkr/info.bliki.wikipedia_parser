@@ -11,7 +11,7 @@ public class AllCodeTests extends TestCase {
 
   public static Test suite() {
     TestSuite s = new TestSuite();
-    
+
     s.addTestSuite(ABAPTest.class);
     s.addTestSuite(CSharpTest.class);
     s.addTestSuite(JavaTest.class);
@@ -20,7 +20,7 @@ public class AllCodeTests extends TestCase {
     s.addTestSuite(PythonTest.class);
     s.addTestSuite(SQLTest.class);
     s.addTestSuite(XMLTest.class);
-    
+
     s.addTestSuite(GroovyTest.class);
     return s;
   }

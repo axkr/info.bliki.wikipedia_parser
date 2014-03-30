@@ -7,7 +7,7 @@ import java.io.IOException;
 
 /**
  * A special Wikipedia tag (i.e. ==, ===, ''', '', ...)
- * 
+ *
  */
 public class WPTag extends HTMLTag {
 

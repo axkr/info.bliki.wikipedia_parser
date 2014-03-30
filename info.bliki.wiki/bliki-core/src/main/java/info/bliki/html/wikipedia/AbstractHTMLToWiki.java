@@ -10,7 +10,7 @@ import java.util.Map;
 
 /**
  * Base class for all HTML to wiki text converters.
- * 
+ *
  * @see info.bliki.html.wikipedia.ToWikipedia
  * @see info.bliki.html.googlecode.ToGoogleCode
  */

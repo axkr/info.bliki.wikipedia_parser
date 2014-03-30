@@ -17,28 +17,28 @@ public class BasicFilterTest extends FilterTestSupport {
 		return new TestSuite(BasicFilterTest.class);
 	}
 
-	
+
 	/**
 	 * Issue 149
 	 */
 	public void testIssue149() {
-		assertEquals("\n" + 
+		assertEquals("\n" +
 				"<p>mit <b>db2 connect to &#60;db&#62;</b> mit der Datenbank v</p>", wikiModel.render("mit '''db2 connect to <db>''' mit der Datenbank v", false));
 	}
-	
+
 	/**
 	 * Issue 135
 	 */
 	public void testIssue135() {
-		assertEquals("\n" + 
+		assertEquals("\n" +
 				"<p>Test_</p>", wikiModel.render("Test_", false));
 	}
-	
+
 	/**
 	 * Issue 135
 	 */
 	public void testIssue135b() {
-		assertEquals("\n" + 
+		assertEquals("\n" +
 				"<p>Test__</p>", wikiModel.render("Test__", false));
 	}
 	/**
@@ -250,22 +250,22 @@ public class BasicFilterTest extends FilterTestSupport {
 	public void testReuseModel001() {
 		wikiModel.setUp();
 		try {
-			assertEquals("<h1><span class=\"mw-headline\" id=\"My_Title_1\">My Title 1</span></h1>\n" + 
-					"<table id=\"toc\" class=\"toc\" summary=\"Contents\">\n" + 
-					"<tr>\n" + 
-					"<td>\n" + 
-					"<div id=\"toctitle\">\n" + 
-					"<h2>Contents</h2>\n" + 
-					"</div>\n" + 
-					"<ul>\n" + 
-					"<li class=\"toclevel-1\"><a href=\"#My_Title_1\">My Title 1</a>\n" + 
-					"<ul>\n" + 
-					"<li class=\"toclevel-2\"><a href=\"#secA\">secA</a>\n" + 
-					"</li>\n" + 
-					"</ul>\n" + 
-					"</li>\n" + 
-					"</ul></td></tr></table><hr/>\n" + 
-					"\n" + 
+			assertEquals("<h1><span class=\"mw-headline\" id=\"My_Title_1\">My Title 1</span></h1>\n" +
+					"<table id=\"toc\" class=\"toc\" summary=\"Contents\">\n" +
+					"<tr>\n" +
+					"<td>\n" +
+					"<div id=\"toctitle\">\n" +
+					"<h2>Contents</h2>\n" +
+					"</div>\n" +
+					"<ul>\n" +
+					"<li class=\"toclevel-1\"><a href=\"#My_Title_1\">My Title 1</a>\n" +
+					"<ul>\n" +
+					"<li class=\"toclevel-2\"><a href=\"#secA\">secA</a>\n" +
+					"</li>\n" +
+					"</ul>\n" +
+					"</li>\n" +
+					"</ul></td></tr></table><hr/>\n" +
+					"\n" +
 					"<h2><span class=\"mw-headline\" id=\"secA\">secA</span></h2>", wikiModel
 					.render("= My Title 1=\n" + "__TOC__\n" + "== secA ==", false));
 		} finally {
@@ -273,22 +273,22 @@ public class BasicFilterTest extends FilterTestSupport {
 		}
 		wikiModel.setUp();
 		try {
-			assertEquals("<h1><span class=\"mw-headline\" id=\"My_Title_2\">My Title 2</span></h1>\n" + 
-					"<table id=\"toc\" class=\"toc\" summary=\"Contents\">\n" + 
-					"<tr>\n" + 
-					"<td>\n" + 
-					"<div id=\"toctitle\">\n" + 
-					"<h2>Contents</h2>\n" + 
-					"</div>\n" + 
-					"<ul>\n" + 
-					"<li class=\"toclevel-1\"><a href=\"#My_Title_2\">My Title 2</a>\n" + 
-					"<ul>\n" + 
-					"<li class=\"toclevel-2\"><a href=\"#secB\">secB</a>\n" + 
-					"</li>\n" + 
-					"</ul>\n" + 
-					"</li>\n" + 
-					"</ul></td></tr></table><hr/>\n" + 
-					"\n" + 
+			assertEquals("<h1><span class=\"mw-headline\" id=\"My_Title_2\">My Title 2</span></h1>\n" +
+					"<table id=\"toc\" class=\"toc\" summary=\"Contents\">\n" +
+					"<tr>\n" +
+					"<td>\n" +
+					"<div id=\"toctitle\">\n" +
+					"<h2>Contents</h2>\n" +
+					"</div>\n" +
+					"<ul>\n" +
+					"<li class=\"toclevel-1\"><a href=\"#My_Title_2\">My Title 2</a>\n" +
+					"<ul>\n" +
+					"<li class=\"toclevel-2\"><a href=\"#secB\">secB</a>\n" +
+					"</li>\n" +
+					"</ul>\n" +
+					"</li>\n" +
+					"</ul></td></tr></table><hr/>\n" +
+					"\n" +
 					"<h2><span class=\"mw-headline\" id=\"secB\">secB</span></h2>", wikiModel
 					.render("= My Title 2=\n" + "__TOC__\n" + "== secB ==", false));
 		} finally {
@@ -309,7 +309,7 @@ public class BasicFilterTest extends FilterTestSupport {
 	public void testIFrame01() {
 		assertEquals("<iframe height=\"180\" name=\"inlineframe\" src=\"float.html\" width=\"500\"> </iframe>", wikiModel.render("<iframe name=\"inlineframe\" src=\"float.html\" frameborder=\"0\" scrolling=\"auto\" width=\"500\" height=\"180\" marginwidth=\"5\" marginheight=\"5\" >&nbsp;</iframe>", false));
 	}
-	
+
 	// TODO: should this work, too?!
 	// public void testAbbr03() {
 	// assertEquals("\n" + "<p>" + "<abbr title=\"test\">[?]</abbr></p>",

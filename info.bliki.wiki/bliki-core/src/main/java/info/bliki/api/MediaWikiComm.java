@@ -21,7 +21,7 @@ import org.apache.commons.httpclient.util.EncodingUtil;
  * Sources adopted from the article <a
  * href="http://www.javaworld.com/javaworld/jw-08-2008/jw-08-java-wiki-extensions.html">Add
  * Java extensions to your wiki</a> with permission from Randall Scarberry.
- * 
+ *
  * @author R. Scarberry
  */
 public class MediaWikiComm {
@@ -67,7 +67,7 @@ public class MediaWikiComm {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param pageURL
 	 *          the page URL
 	 * @param cookiePairs
@@ -87,10 +87,10 @@ public class MediaWikiComm {
 
 	/**
 	 * Method which loads downloads the data from the wiki page.
-	 * 
+	 *
 	 * @return an instance of EditFormData, which encapsulates the important
 	 *         elements of the page's editform.
-	 * 
+	 *
 	 * @throws IOException
 	 */
 	public EditFormData loadEditFormData(String title) throws IOException {
@@ -230,11 +230,11 @@ public class MediaWikiComm {
 
 	/**
 	 * Saves data back to the wiki page.
-	 * 
+	 *
 	 * @param settings
 	 *          an array of <code>ClusteringDemoSetting</code>s object, which
 	 *          are converted into a block of XML and embedded on the page.
-	 * 
+	 *
 	 * @throws IOException
 	 */
 	public void saveData(String title, String newEditText) throws IOException {
@@ -291,7 +291,7 @@ public class MediaWikiComm {
 
 	/**
 	 * Returns a cookie string suitable for placing in the Cookie request header.
-	 * 
+	 *
 	 * @return
 	 */
 	private String getCookieString() {
@@ -309,7 +309,7 @@ public class MediaWikiComm {
 
 	/**
 	 * Log-in
-	 * 
+	 *
 	 * @param loginUrl
 	 * @param actionUrl
 	 * @param user
@@ -509,7 +509,7 @@ public class MediaWikiComm {
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 * @param startTime
 		 * @param editTime
 		 * @param editText

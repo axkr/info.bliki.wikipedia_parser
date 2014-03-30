@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 
 /**
  * A template parser for the first pass in the parsing of a Wikipedia text
- * 
+ *
  * @see WikipediaParser for the second pass
  */
 public class TemplateParser extends AbstractParser {
@@ -50,7 +50,7 @@ public class TemplateParser extends AbstractParser {
 	/**
 	 * Parse the wiki texts templates, comments and signatures into the given
 	 * <code>StringBuilder</code>.
-	 * 
+	 *
 	 * @param rawWikitext
 	 * @param wikiModel
 	 * @param writer
@@ -72,7 +72,7 @@ public class TemplateParser extends AbstractParser {
 	/**
 	 * Preprocess parsing of the <code>&lt;includeonly&gt;</code>,
 	 * <code>&lt;onlyinclude&gt;</code> and <code>&lt;noinclude&gt;</code> tags
-	 * 
+	 *
 	 * @param writer
 	 * @param diff
 	 * @throws IOException
@@ -91,7 +91,7 @@ public class TemplateParser extends AbstractParser {
 	/**
 	 * Preprocess parsing of the <code>&lt;includeonly&gt;</code>,
 	 * <code>&lt;onlyinclude&gt;</code> and <code>&lt;noinclude&gt;</code> tags
-	 * 
+	 *
 	 * @param rawWikitext
 	 * @param wikiModel
 	 * @param writer
@@ -122,7 +122,7 @@ public class TemplateParser extends AbstractParser {
 				}
 			}
 			writer.append(sb);
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			writer.append(e.getClass().getSimpleName());
@@ -197,7 +197,7 @@ public class TemplateParser extends AbstractParser {
 	 * <code>&lt;onlyinclude&gt;</code> and <code>&lt;noinclude&gt;</code> tags,
 	 * HTML comments and <code>&lt;nowiki&gt;</code>, <code>&lt;source&gt;</code>
 	 * and <code>&lt;math&gt;</code> tags.
-	 * 
+	 *
 	 * @param writer
 	 * @param ignoreTemplateTags
 	 *          don't parse special template tags like &lt;includeonly&gt;,
@@ -213,7 +213,7 @@ public class TemplateParser extends AbstractParser {
 	 * <code>&lt;onlyinclude&gt;</code> and <code>&lt;noinclude&gt;</code> tags,
 	 * HTML comments and <code>&lt;nowiki&gt;</code>, <code>&lt;source&gt;</code>
 	 * and <code>&lt;math&gt;</code> tags.
-	 * 
+	 *
 	 * @param writer
 	 * @param whiteStartPosition
 	 *          the position to start the <i>normal content</i> before the first
@@ -378,7 +378,7 @@ public class TemplateParser extends AbstractParser {
 	 * See <a href=
 	 * "http://en.wikipedia.org/wiki/Help:Template#Controlling_what_gets_transcluded"
 	 * >Help:Template#Controlling what gets transcluded</a>
-	 * 
+	 *
 	 * @param writer
 	 * @param ignoreTemplateTags
 	 *          don't parse special template tags like &lt;includeonly&gt;,
@@ -666,7 +666,7 @@ public class TemplateParser extends AbstractParser {
 	 * template parameters with their value in
 	 * <code>TemplateParser.parseRecursive()</code method.</li>
 	 * </ol>
-	 * 
+	 *
 	 * @param writer
 	 * @param startTemplatePosition
 	 * @param templateEndPosition
@@ -733,11 +733,11 @@ public class TemplateParser extends AbstractParser {
 	 * If template calls have a mix between named and unnamed parameters, the
 	 * collected <code>unnamedParameters</code> are merged into the
 	 * <code>parameterMap</code>.
-	 * 
-	 * 
+	 *
+	 *
 	 * See <a href="http://meta.wikimedia.org/wiki/Help:Template#Mix_of_named_and_unnamed_parameters"
 	 * >Help:Template#Mix_of_named_and_unnamed_parameters</a>
-	 * 
+	 *
 	 * @param parameterMap
 	 * @param unnamedParameters
 	 */
@@ -755,7 +755,7 @@ public class TemplateParser extends AbstractParser {
 
 	/**
 	 * Parse a single template parameter {{{...}}}
-	 * 
+	 *
 	 * @param writer
 	 * @param startTemplatePosition
 	 * @param templateEndPosition
@@ -779,10 +779,10 @@ public class TemplateParser extends AbstractParser {
 
 	/**
 	 * Create a map from the parameters defined in a template call
-	 * 
+	 *
 	 * @return the templates parameters <code>java.util.List</code> at index [0]
 	 *         and the template name at index [1]
-	 * 
+	 *
 	 */
 	public static Object[] createParameterMap(char[] src, int startOffset, int len) {
 		Object[] objs = new Object[2];
@@ -803,7 +803,7 @@ public class TemplateParser extends AbstractParser {
 	/**
 	 * Create a single parameter, defined in a template call, and add it to the
 	 * <b>named parmeters map</b> or <b>unnamed parameter list</b>
-	 * 
+	 *
 	 * <p>
 	 * See <a href="http://en.wikipedia.org/wiki/Help:Template">Help:Template</a>:
 	 * <i>Remember that whitespace characters (spaces, tabs, carriage returns and
@@ -814,7 +814,7 @@ public class TemplateParser extends AbstractParser {
 	 * designers can use {{StripWhitespace}} to remove unwanted whitespace in
 	 * unnamed parameters.)</i>
 	 * </p>
-	 * 
+	 *
 	 * @param srcString
 	 * @param namedParameterMap
 	 *          a key/value pairs for name and value of a template parameter
@@ -902,10 +902,10 @@ public class TemplateParser extends AbstractParser {
 
 	/**
 	 * Check if this template contains a template function
-	 * 
+	 *
 	 * Note: repositions this#fCurrentPosition behind the parser function string
 	 * if possible
-	 * 
+	 *
 	 * @param plainContent
 	 * @return the offset behind the &acute;:&acute; character at the end of the
 	 *         parser function name or <code>-1</code> if no parser function can

@@ -11,7 +11,7 @@ import java.util.Map;
 
 /**
  * Wiki tag rendering TeX math with the mathtran.org service
- * 
+ *
  */
 public class TeXTag extends NowikiTag {
 	public TeXTag() {

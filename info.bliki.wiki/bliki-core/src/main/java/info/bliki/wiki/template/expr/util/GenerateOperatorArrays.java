@@ -26,7 +26,7 @@ import java.util.StringTokenizer;
  * Utility for generating source codes for the
  * <code>info.bliki.wiki.template.expr.operator.ASTNodeFactory's HEADER_STRINGS, OPERATOR_STRINGS, OPERATORS</code>
  * arrays from the operators.txt textfile description
- * 
+ *
  */
 public class GenerateOperatorArrays {
 
@@ -34,7 +34,7 @@ public class GenerateOperatorArrays {
 	 * Utility for generating source codes for the
 	 * <code>ASTNodeFactory's HEADER_STRINGS, OPERATOR_STRINGS, OPERATORS</code>
 	 * arrays from an operator's text file description
-	 * 
+	 *
 	 * @param args
 	 *          if <code>args.length==0</code> take the default
 	 *          <code>/opertors.txt</code> file for generating the arrays; if

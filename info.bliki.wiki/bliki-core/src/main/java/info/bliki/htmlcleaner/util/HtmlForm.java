@@ -5,13 +5,13 @@ import java.util.List;
 
 /**
  * Represents form data parsed from HTML.
- * 
+ *
  * Sources adopted from the article <a
  * href="http://www.javaworld.com/javaworld/jw-08-2008/jw-08-java-wiki-extensions.html">Add
  * Java extensions to your wiki</a> with permission from Randall Scarberry.
- * 
+ *
  * @author R.Scarberry
- * 
+ *
  */
 public class HtmlForm {
 
@@ -33,7 +33,7 @@ public class HtmlForm {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param id
 	 *          element id, which is usually the same as the name when both are
 	 *          supplied.
@@ -64,7 +64,7 @@ public class HtmlForm {
 	/**
 	 * Constructor for which everything is specified but the name. The name
 	 * defaults to the empty string.
-	 * 
+	 *
 	 * @param id
 	 *          element id.
 	 * @param method
@@ -112,9 +112,9 @@ public class HtmlForm {
 
 	/**
 	 * Class to encapsulate the data found in HTML form elements.
-	 * 
+	 *
 	 * @author R. Scarberry
-	 * 
+	 *
 	 */
 	public static class Element {
 
@@ -185,9 +185,9 @@ public class HtmlForm {
 
 	/**
 	 * Class representing an HTML form element attribute.
-	 * 
+	 *
 	 * @author R. Scarberry
-	 * 
+	 *
 	 */
 	public static class ElementAttribute {
 
@@ -195,7 +195,7 @@ public class HtmlForm {
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 * @param name
 		 *          name of the attribute.
 		 * @param atype

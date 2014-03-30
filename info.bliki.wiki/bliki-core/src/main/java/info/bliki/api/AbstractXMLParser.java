@@ -63,7 +63,7 @@ public abstract class AbstractXMLParser extends DefaultHandler {
 
 	/**
 	 * parse an unlimited amount of characters between 2 enclosing XML-Tags
-	 * 
+	 *
 	 * @see org.xml.sax.helpers.DefaultHandler#characters(char[], int, int)
 	 */
 	@Override

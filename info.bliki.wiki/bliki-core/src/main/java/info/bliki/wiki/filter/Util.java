@@ -14,7 +14,7 @@ public class Util {
 
 	/**
 	 * Scan the attributes string and add the attributes to the given node
-	 * 
+	 *
 	 * @param node
 	 * @param attributesString
 	 */
@@ -67,7 +67,7 @@ public class Util {
 	 * Returns the index within the searchable string of the first occurrence of
 	 * the concatenated <i>start</i> and <i>end</i> substring. The end substring
 	 * is matched ignoring case considerations.
-	 * 
+	 *
 	 * @param searchableString
 	 *          the searchable string
 	 * @param startPattern
@@ -103,7 +103,7 @@ public class Util {
 	 * Returns the nested index within the searchable string of the first
 	 * occurrence of <code>&lt;</code> and the <i>end</i> string. The end string
 	 * is matched ignoring case considerations.
-	 * 
+	 *
 	 * @param searchableString
 	 *          the searchable string
 	 * @param endPattern
@@ -152,7 +152,7 @@ public class Util {
 	 * Trim whitespace characters from the left and right side of the string,
 	 * until we find a non whitespace character or a new line character on the
 	 * righ side. Delete the first newline found on the right side of the string.
-	 * 
+	 *
 	 * @param str
 	 * @return
 	 */
@@ -178,7 +178,7 @@ public class Util {
 
 	/**
 	 * Check if the template name contains an invalid (ISO Control) character.
-	 * 
+	 *
 	 * @param templateName
 	 * @return
 	 */
@@ -203,7 +203,7 @@ public class Util {
 	/**
 	 * Get the first position of the <code>rawWikitext</code> string, which
 	 * contains a character requiring template parsing.
-	 * 
+	 *
 	 * @param rawWikitext
 	 *          the raw wiki text
 	 * @return <code>-1</code> if character is found, which requires template

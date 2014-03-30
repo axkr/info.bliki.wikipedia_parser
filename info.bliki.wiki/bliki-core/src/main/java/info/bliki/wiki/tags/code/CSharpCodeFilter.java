@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 /**
  * Syntax highlighting support for C# source codes
- *   
+ *
  */
 public class CSharpCodeFilter extends AbstractCPPBasedCodeFilter implements SourceCodeFormatter {
 
@@ -95,7 +95,7 @@ public class CSharpCodeFilter extends AbstractCPPBasedCodeFilter implements Sour
       "double",
       "long",
       "string" };
-  
+
   private static HashMap<String, String> OBJECT_SET = new HashMap<String, String>();
 
   static {

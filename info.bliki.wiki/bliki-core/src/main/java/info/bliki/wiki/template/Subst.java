@@ -8,7 +8,7 @@ import java.util.List;
  * A template parser function for <code>{{subst: ... }}</code>. See <a
  * href="http://en.wikipedia.org/wiki/Help:Substitution"
  * >Wikipedia-Help:Substitution</a>
- * 
+ *
  */
 public class Subst extends Safesubst {
 	public final static ITemplateFunction CONST = new Subst();

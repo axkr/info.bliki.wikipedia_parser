@@ -23,7 +23,7 @@ public class AddonConfiguration extends Configuration {
 		TAG_TOKEN_MAP.put("sample", new SampleTag());
 		TAG_TOKEN_MAP.put("wcm", new WCMTag());
 		TAG_TOKEN_MAP.put("yacas", new YacasTag());
-		TAG_TOKEN_MAP.put("yacaseval", new YacasEvalTag()); 
+		TAG_TOKEN_MAP.put("yacaseval", new YacasEvalTag());
 		TAG_TOKEN_MAP.put("tex", new TeXTag());
 		TAG_TOKEN_MAP.put("ctex", new CTeXTag());
 	}

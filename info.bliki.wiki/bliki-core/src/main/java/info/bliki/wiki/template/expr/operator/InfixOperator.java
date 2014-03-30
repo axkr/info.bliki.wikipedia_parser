@@ -21,7 +21,7 @@ public class InfixOperator extends Operator {
 	/**
 	 * Return the grouping of the Infix-Operator (i.e. NONE,LEFT_ASSOCIATIVE,
 	 * RIGHT_ASSOCIATIVE)
-	 * 
+	 *
 	 * @return
 	 */
 	public int getGrouping() {

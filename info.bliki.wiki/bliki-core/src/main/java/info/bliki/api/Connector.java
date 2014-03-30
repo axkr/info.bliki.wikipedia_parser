@@ -27,7 +27,7 @@ import org.xml.sax.SAXException;
  * Manages the queries for the <a
  * href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>. See the <a
  * href="http://www.mediawiki.org/wiki/API:Main_page">API Documentation</a>.
- * 
+ *
  * The queries set their own user-agent string. See <a
  * href="http://meta.wikimedia.org/wiki/User-Agent_policy">User-Agent policy</a>
  */
@@ -54,7 +54,7 @@ public class Connector {
 	 * href="http://en.wikipedia.org/wiki/Byte_order_mark ">byte order mark</a>
 	 * cases. See <a
 	 * href="http://code.google.com/p/gwtwiki/issues/detail?id=33">Issue #33</a>
-	 * 
+	 *
 	 * @param method
 	 * @return XML string
 	 * @throws IOException
@@ -133,7 +133,7 @@ public class Connector {
 	 * Complete the users login information. The user must contain a username,
 	 * password and actionURL. See <a
 	 * href="http://www.mediawiki.org/wiki/API:Login">Mediawiki API:Login</a>
-	 * 
+	 *
 	 * @param user
 	 *          a user account from a Mediawiki installation with filled out user
 	 *          name, password and the installations API url.
@@ -201,7 +201,7 @@ public class Connector {
 
 	/**
 	 * Get the HttpClient.
-	 * 
+	 *
 	 * @return http client
 	 */
 	public HttpClient getClient() {
@@ -210,7 +210,7 @@ public class Connector {
 
 	/**
 	 * Get the HttpConnection manager.
-	 * 
+	 *
 	 * @return http connection manager
 	 */
 	public MultiThreadedHttpConnectionManager getManager() {
@@ -219,7 +219,7 @@ public class Connector {
 
 	/**
 	 * Get the content of Mediawiki wiki pages.
-	 * 
+	 *
 	 * @param user
 	 *          user login data
 	 * @param listOfTitleStrings
@@ -233,7 +233,7 @@ public class Connector {
 
 	/**
 	 * List all categories the page(s) belong to.
-	 * 
+	 *
 	 * @param user
 	 *          user login data
 	 * @param listOfTitleStrings
@@ -247,7 +247,7 @@ public class Connector {
 
 	/**
 	 * Get basic page information such as namespace, title, last touched date, ..
-	 * 
+	 *
 	 * @param user
 	 *          user login data
 	 * @param listOfTitleStrings
@@ -261,7 +261,7 @@ public class Connector {
 
 	/**
 	 * Returns all links from the given page(s).
-	 * 
+	 *
 	 * @param user
 	 *          user login data
 	 * @param listOfTitleStrings
@@ -278,7 +278,7 @@ public class Connector {
 	 * image will be returned in the page data. Use
 	 * {@link #queryImageinfo(User, List, int)} if you need additional information
 	 * about the URL of the scaled image.
-	 * 
+	 *
 	 * @param user
 	 *          user login data
 	 * @param listOfImageStrings
@@ -292,7 +292,7 @@ public class Connector {
 
 	/**
 	 * Returns image information and upload history
-	 * 
+	 *
 	 * @param user
 	 *          user login data
 	 * @param listOfImageStrings
@@ -309,7 +309,7 @@ public class Connector {
 
 	/**
 	 * Returns page info with edit token which is required for the edit action.
-	 * 
+	 *
 	 * @param user
 	 *          user login data
 	 * @param title
@@ -323,7 +323,7 @@ public class Connector {
 
 	/**
 	 * Query the Mediawiki API for some wiki pages.
-	 * 
+	 *
 	 * @param user
 	 *          user login data
 	 * @param query
@@ -344,7 +344,7 @@ public class Connector {
 
 	/**
 	 * Query the Mediawiki API for some wiki pages.
-	 * 
+	 *
 	 * @param user
 	 *          user login data
 	 * @param listOfTitleStrings
@@ -374,7 +374,7 @@ public class Connector {
 
 	/**
 	 * Get the raw XML result from the Mediawiki API
-	 * 
+	 *
 	 * @param user
 	 *          user login data
 	 * @param valuePairs
@@ -389,7 +389,7 @@ public class Connector {
 
 	/**
 	 * Get the raw XML result from the Mediawiki API
-	 * 
+	 *
 	 * @param user
 	 *          user login data
 	 * @param listOfTitleStrings
@@ -479,7 +479,7 @@ public class Connector {
 
 	/**
 	 * Sends request to get the raw format from the Wikipedia API.
-	 * 
+	 *
 	 * @param user
 	 *          user login data
 	 * @param requestBuilder

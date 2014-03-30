@@ -2,7 +2,7 @@ package info.bliki.wiki.template.expr.ast;
 
 /**
  * The basic node for a parsed expression string
- * 
+ *
  */
 public abstract class ASTNode {
 
@@ -14,7 +14,7 @@ public abstract class ASTNode {
 
 	/**
 	 * Returns the parsed string of this node.
-	 * 
+	 *
 	 * @return <code>null</code> if there's another representation in the
 	 *         derived class
 	 */

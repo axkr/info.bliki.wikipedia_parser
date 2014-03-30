@@ -8,7 +8,7 @@ import java.io.IOException;
 
 /**
  * Converts a given HTML string into a wiki text string
- * 
+ *
  */
 public class HTML2WikiConverter {
 	String fInputHTML;
@@ -23,7 +23,7 @@ public class HTML2WikiConverter {
 
 	/**
 	 * Converts a given HTML string into a wiki text string
-	 * 
+	 *
 	 * @param converter
 	 *          for creating the resulting wiki text string
 	 * @return

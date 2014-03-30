@@ -3,7 +3,7 @@ package info.bliki.wiki.template.expr.eval;
 import info.bliki.wiki.template.expr.ast.ASTNode;
 
 /**
- * 
+ *
  */
 public class DoubleNode extends ASTNode {
 

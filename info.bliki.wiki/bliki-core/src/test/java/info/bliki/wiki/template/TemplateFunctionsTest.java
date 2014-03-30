@@ -123,7 +123,7 @@ public class TemplateFunctionsTest extends TestCase {
 		String expecting = "The names: TER and N/A and SRIRAM";
 		assertEquals(expecting, wikiModel.parseTemplates("The names: {{#$:names|upper|' and '|n/a}}"));
 	}
-	
+
 	/**
 	 * Test from <a href=
 	 * "https://meta.wikimedia.org/wiki/Help:Calculation#Operators.2C_numbers.2C_and_constants"

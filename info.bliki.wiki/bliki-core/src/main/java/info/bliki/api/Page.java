@@ -42,7 +42,7 @@ public class Page extends PageInfo {
 	 * Set the <code>imageUrl</code> of this page if this is an
 	 * <code>[[Image:...]]</code> page. Information retrieved with
 	 * <code>prop=imageinfo</code>
-	 * 
+	 *
 	 * @param fImageUrl
 	 *          the image url if possible; the empty string <code>""</code>
 	 *          otherwise.
@@ -59,7 +59,7 @@ public class Page extends PageInfo {
 	 * Set the <code>imageUrl</code> of this page if this is an
 	 * <code>[[Image:...]]</code> page. Information retrieved with
 	 * <code>prop=imageinfo</code>
-	 * 
+	 *
 	 * @param imageUrl
 	 */
 	public void setImageUrl(String imageUrl) {
@@ -121,7 +121,7 @@ public class Page extends PageInfo {
 	 * If this page was created with User#queryImageinfo() you can download the
 	 * image with this method. <br/> <b>Note:</b> this method doesn't close the
 	 * given output stream!
-	 * 
+	 *
 	 * @param outputStream
 	 *          the output stream where the image should be written to. For
 	 *          example, if you would save the image in a file, you can use
@@ -135,7 +135,7 @@ public class Page extends PageInfo {
 	 * If this page was created with User#queryImageinfo() you can download the
 	 * image with this method. <br/> <b>Note:</b> this method doesn't close the
 	 * given output stream!
-	 * 
+	 *
 	 * @param outputStream
 	 *          the output stream where the image should be written to. For
 	 *          example, if you would save the image in a file, you can use

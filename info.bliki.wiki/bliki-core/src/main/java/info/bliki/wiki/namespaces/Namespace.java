@@ -15,7 +15,7 @@ import java.util.TreeMap;
  * Mediawiki Namespaces. See <a
  * href="http://www.mediawiki.org/wiki/Manual:Namespace#Built-in_namespaces"
  * >Mediawiki - Manual:Namespace</a>
- * 
+ *
  */
 public class Namespace implements INamespace {
 	/**
@@ -28,7 +28,7 @@ public class Namespace implements INamespace {
 	/**
 	 * Fast access to each {@link NamespaceValue} via an integer index similar
 	 * to its number code.
-	 * 
+	 *
 	 * @see Namespace#numberCodeToInt(int)
 	 * @see Namespace#intToNumberCode(int)
 	 */
@@ -145,7 +145,7 @@ public class Namespace implements INamespace {
 
 	/**
 	 * Base class for all namespace constants.
-	 * 
+	 *
 	 * @author Nico Kruber, kruber@zib.de
 	 */
 	public class NamespaceValue implements INamespaceValue {
@@ -156,7 +156,7 @@ public class Namespace implements INamespace {
 
 		/**
 		 * Constructor for talk namespaces.
-		 * 
+		 *
 		 * @param code
 		 *            the (internal) integer code of this namespace
 		 * @param isTalkspace
@@ -192,7 +192,7 @@ public class Namespace implements INamespace {
 
 		/**
 		 * Constructor for content namespaces.
-		 * 
+		 *
 		 * @param code
 		 *            the (internal) integer code of this namespace
 		 * @param talkspace
@@ -220,7 +220,7 @@ public class Namespace implements INamespace {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see info.bliki.wiki.namespaces.INamespaceValue#getCode()
 		 */
 		@Override
@@ -230,7 +230,7 @@ public class Namespace implements INamespace {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see
 		 * info.bliki.wiki.namespaces.INamespaceValue#setTexts(java.lang.String)
 		 */
@@ -253,7 +253,7 @@ public class Namespace implements INamespace {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see
 		 * info.bliki.wiki.namespaces.INamespaceValue#addAlias(java.lang.String)
 		 */
@@ -269,7 +269,7 @@ public class Namespace implements INamespace {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see info.bliki.wiki.namespaces.INamespaceValue#getPrimaryText()
 		 */
 		@Override
@@ -279,7 +279,7 @@ public class Namespace implements INamespace {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see info.bliki.wiki.namespaces.INamespaceValue#getTexts()
 		 */
 		@Override
@@ -289,7 +289,7 @@ public class Namespace implements INamespace {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see info.bliki.wiki.namespaces.INamespaceValue#getTalkspace()
 		 */
 		@Override
@@ -299,7 +299,7 @@ public class Namespace implements INamespace {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see info.bliki.wiki.namespaces.INamespaceValue#getContentspace()
 		 */
 		@Override
@@ -309,7 +309,7 @@ public class Namespace implements INamespace {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see
 		 * info.bliki.wiki.namespaces.INamespaceValue#makeFullPagename(String)
 		 */
@@ -325,7 +325,7 @@ public class Namespace implements INamespace {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see
 		 * info.bliki.wiki.namespaces.INamespace.INamespaceValue#isType(info
 		 * .bliki .wiki.namespaces.INamespace.NamespaceCode)
@@ -337,7 +337,7 @@ public class Namespace implements INamespace {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see java.lang.Object#toString()
 		 */
 		@Override
@@ -402,10 +402,10 @@ public class Namespace implements INamespace {
 	/**
 	 * Converts an (external) namespace number code to the position in the
 	 * {@link #INT_TO_NAMESPACE} array.
-	 * 
+	 *
 	 * @param numberCode
 	 *            a code like {@link INamespace#MEDIA_NAMESPACE_KEY}
-	 * 
+	 *
 	 * @return an array index
 	 */
 	protected static int numberCodeToInt(int numberCode) {
@@ -422,10 +422,10 @@ public class Namespace implements INamespace {
 	/**
 	 * Converts an (internal) namespace number code (the position in the
 	 * {@link #INT_TO_NAMESPACE} array) to the external namespace number.
-	 * 
+	 *
 	 * @param numberCode
 	 *            internal array index
-	 * 
+	 *
 	 * @return a number code like {@link INamespace#MEDIA_NAMESPACE_KEY}
 	 */
 	protected static int intToNumberCode(int numberCode) {
@@ -451,7 +451,7 @@ public class Namespace implements INamespace {
 	/**
 	 * Extracts the two namespace strings from the resource bundle into the
 	 * {@link #fNamespaces1} and {@link #fNamespaces2} arrays.
-	 * 
+	 *
 	 * @param ns1Id
 	 *            the first id in the bundle, e.g.
 	 *            {@link Messages#WIKI_API_MEDIA1}

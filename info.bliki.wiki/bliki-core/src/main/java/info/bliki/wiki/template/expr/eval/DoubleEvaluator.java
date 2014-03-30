@@ -14,7 +14,7 @@ import java.util.Map;
 
 /**
  * Evaluate math expressions to <code>double</code> numbers.
- * 
+ *
  * Use the expression syntax describe here: <a
  * href="http://meta.wikimedia.org/wiki/Help:ParserFunctions#.23expr:"
  * >http://meta.wikimedia.org/wiki/Help:ParserFunctions#.23expr:</a>
@@ -22,13 +22,13 @@ import java.util.Map;
 public class DoubleEvaluator {
 	/**
 	 * A "close to zero" double epsilon value for use to compare with 0.0
-	 * 
+	 *
 	 */
 	public static double EPSILON = 1.0e-17d;
 
 	/**
 	 * A "close to zero" double epsilon value for use in the Round function
-	 * 
+	 *
 	 */
 	public static double EPSILON_ROUND = 1.0e-15d;
 
@@ -288,7 +288,7 @@ public class DoubleEvaluator {
 	/**
 	 * Parse the given <code>expression String</code> and store the resulting
 	 * ASTNode in this DoubleEvaluator
-	 * 
+	 *
 	 * @param expression
 	 * @return
 	 * @throws SyntaxError
@@ -305,7 +305,7 @@ public class DoubleEvaluator {
 	/**
 	 * Parse the given <code>expression String</code> and return the resulting
 	 * ASTNode
-	 * 
+	 *
 	 * @param expression
 	 * @return
 	 * @throws SyntaxError
@@ -360,7 +360,7 @@ public class DoubleEvaluator {
 	/**
 	 * Parse the given <code>expression String</code> and evaluate it to a double
 	 * value
-	 * 
+	 *
 	 * @param expression
 	 * @return
 	 * @throws SyntaxError
@@ -386,7 +386,7 @@ public class DoubleEvaluator {
 	/**
 	 * Reevaluate the <code>expression</code> (possibly after a new Variable
 	 * assignment)
-	 * 
+	 *
 	 * @param expression
 	 * @return
 	 * @throws SyntaxError
@@ -401,12 +401,12 @@ public class DoubleEvaluator {
 	/**
 	 * Evaluate an already parsed in abstract syntax tree node into a
 	 * <code>double</code> number value.
-	 * 
+	 *
 	 * @param node
 	 *          abstract syntax tree node
-	 * 
+	 *
 	 * @return the evaluated double number
-	 * 
+	 *
 	 * @throws ArithmeticException
 	 *           if the <code>node</code> cannot be evaluated.
 	 */
@@ -433,10 +433,10 @@ public class DoubleEvaluator {
 	/**
 	 * Evaluate an already parsed in <code>FunctionNode</code> into a
 	 * <code>souble</code> number value.
-	 * 
+	 *
 	 * @param functionNode
 	 * @return
-	 * 
+	 *
 	 * @throws ArithmeticException
 	 *           if the <code>functionNode</code> cannot be evaluated.
 	 */
@@ -511,10 +511,10 @@ public class DoubleEvaluator {
 	/**
 	 * Optimize an already parsed in <code>functionNode</code> into an
 	 * <code>ASTNode</code>.
-	 * 
+	 *
 	 * @param functionNode
 	 * @return
-	 * 
+	 *
 	 */
 	public ASTNode optimizeFunction(final FunctionNode functionNode) {
 		if (functionNode.size() > 0) {

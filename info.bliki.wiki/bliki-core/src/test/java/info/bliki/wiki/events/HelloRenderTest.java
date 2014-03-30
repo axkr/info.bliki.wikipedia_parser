@@ -127,30 +127,30 @@ public class HelloRenderTest extends TestCase {
 		assertEquals(listener.getCollectorBuffer().toString(), "First use\n" + "Etymology\n" + "Telephone\n" + "Hullo\n" + "Hallo\n"
 				+ "External links\n" + "References\n" + "");
 	}
-  
+
 	public void test999() {
 		HelloTemplateListener listener = new HelloTemplateListener();
 		wikiModel.parseEvents(listener, HELLO_TEXT);
 		assertEquals(
 				listener.getCollectorBuffer().toString(),
-				"wiktionarypar|hello\n" + 
-				"otheruses|Hello (disambiguation)\n" + 
-				"cite web|url=http://www.etymonline.com/index.php?search=hello&searchmode=none|title=Online Etymology Dictionary\n" + 
-				"cite web|url=http://etext.lib.virginia.edu/railton/roughingit/rihp.html|title=Roughing It|publisher=UVa Library\n" + 
-				"cite book |last= Foster |first= George G |title= New York in Slices |url= http://name.umdl.umich.edu/AJA2254.0001.001 |accessdate= 2006-08-15 |year= 1849  |publisher= W. F. Burgess|location= New York |pages= [http://www.hti.umich.edu/cgi/t/text/pageviewer-idx?c=moa;cc=moa;g=moagrp;xc=1;q1=hello;rgn=full%20text;idno=aja2254.0001.001;didno=aja2254.0001.001;view=image;seq=0122 p120] \n" + 
-				"cite web|url=http://books.google.com/|title=Google books\n" + 
-				"cite book |last= Lester |first= Charles Edwards |title= The Artists of America: A Series of Biographical Sketches of American Artists with Portraits and Designs on Steel |url= http://books.google.com/books?id=IiUEAAAAYAAJ |accessdate= 2007-10-18 |year= 1846  |publisher= Baker & Scribner |location= New York |pages= [http://books.google.com/books?id=IiUEAAAAYAAJ&pg=RA2-PA62&dq=hello+date:0-1876&as_brr=0#PRA2-PA62,M1 p62] \n" + 
-				"cite web|url=http://www.etymonline.com/index.php?search=hello&searchmode=none|title=Online Etymology Dictionary\n" + 
-				"cite web|url=http://books.google.com/|title=Google books\n" + 
-				"cite web|url=http://books.google.com/|title=Google books\n" + 
-				"cite book |author=Bryson, Bill|title=Mother Tongue: English & How It Got That Way |url=http://www.ralphmag.org/mothertongue.html\n" + 
-				"Fact|date=September 2007\n" + 
-				"cite web|url=http://www.collectorcafe.com/article_archive.asp?article=800&id=1507|title=The First “Hello!”: Thomas Edison, the Phonograph and the Telephone – Part 2|author=Allen Koenigsberg|publisher=Antique Phonograph Magazine, Vol.VIII No.6|accessdate=2006-09-13\n" + 
-				"cite web|url=http://www2.cs.uh.edu/~klong/papers/hello.txt|title=All Things Considered|author=Allen Koenigsberg|publisher=National Public Radio|accessdate=2006-09-13|date=1999\n" + 
-				"cn|date=October 2007\n" + 
-				"cn|date=October 2007\n" + 
-				"cite web|url=http://www.m-w.com/dictionary/hello|title=Hello|publisher=Merriam-Webster Online\n" + 
-				"cite web|url=http://www.bartelby.com/61/60/H0136000.html|title=Hello|publisher= The American Heritage® Dictionary of the English Language: Fourth Edition.|date=2000|accessdate=2006-09-01\n" + 
+				"wiktionarypar|hello\n" +
+				"otheruses|Hello (disambiguation)\n" +
+				"cite web|url=http://www.etymonline.com/index.php?search=hello&searchmode=none|title=Online Etymology Dictionary\n" +
+				"cite web|url=http://etext.lib.virginia.edu/railton/roughingit/rihp.html|title=Roughing It|publisher=UVa Library\n" +
+				"cite book |last= Foster |first= George G |title= New York in Slices |url= http://name.umdl.umich.edu/AJA2254.0001.001 |accessdate= 2006-08-15 |year= 1849  |publisher= W. F. Burgess|location= New York |pages= [http://www.hti.umich.edu/cgi/t/text/pageviewer-idx?c=moa;cc=moa;g=moagrp;xc=1;q1=hello;rgn=full%20text;idno=aja2254.0001.001;didno=aja2254.0001.001;view=image;seq=0122 p120] \n" +
+				"cite web|url=http://books.google.com/|title=Google books\n" +
+				"cite book |last= Lester |first= Charles Edwards |title= The Artists of America: A Series of Biographical Sketches of American Artists with Portraits and Designs on Steel |url= http://books.google.com/books?id=IiUEAAAAYAAJ |accessdate= 2007-10-18 |year= 1846  |publisher= Baker & Scribner |location= New York |pages= [http://books.google.com/books?id=IiUEAAAAYAAJ&pg=RA2-PA62&dq=hello+date:0-1876&as_brr=0#PRA2-PA62,M1 p62] \n" +
+				"cite web|url=http://www.etymonline.com/index.php?search=hello&searchmode=none|title=Online Etymology Dictionary\n" +
+				"cite web|url=http://books.google.com/|title=Google books\n" +
+				"cite web|url=http://books.google.com/|title=Google books\n" +
+				"cite book |author=Bryson, Bill|title=Mother Tongue: English & How It Got That Way |url=http://www.ralphmag.org/mothertongue.html\n" +
+				"Fact|date=September 2007\n" +
+				"cite web|url=http://www.collectorcafe.com/article_archive.asp?article=800&id=1507|title=The First “Hello!”: Thomas Edison, the Phonograph and the Telephone – Part 2|author=Allen Koenigsberg|publisher=Antique Phonograph Magazine, Vol.VIII No.6|accessdate=2006-09-13\n" +
+				"cite web|url=http://www2.cs.uh.edu/~klong/papers/hello.txt|title=All Things Considered|author=Allen Koenigsberg|publisher=National Public Radio|accessdate=2006-09-13|date=1999\n" +
+				"cn|date=October 2007\n" +
+				"cn|date=October 2007\n" +
+				"cite web|url=http://www.m-w.com/dictionary/hello|title=Hello|publisher=Merriam-Webster Online\n" +
+				"cite web|url=http://www.bartelby.com/61/60/H0136000.html|title=Hello|publisher= The American Heritage® Dictionary of the English Language: Fourth Edition.|date=2000|accessdate=2006-09-01\n" +
 				"reflist|2\n");
 	}
 }

@@ -6,7 +6,7 @@ import java.util.ResourceBundle;
 
 /**
  * Handles the <code>Messages_XX.properties</code> files for I18N support.
- * 
+ *
  */
 public class Messages {
 	public final static String RESOURCE_BUNDLE = "Messages";//$NON-NLS-1$
@@ -47,10 +47,10 @@ public class Messages {
 
 	public final static String WIKI_API_MEDIAWIKI1 = "wiki.api.mediawiki1";
 	public final static String WIKI_API_MEDIAWIKI2 = "wiki.api.mediawiki2";
-	
+
 	public final static String WIKI_API_MEDIAWIKITALK1 = "wiki.api.mediawikitalk1";
 	public final static String WIKI_API_MEDIAWIKITALK2 = "wiki.api.mediawikitalk2";
-	
+
 	public final static String WIKI_API_TEMPLATE1 = "wiki.api.template1";
 	public final static String WIKI_API_TEMPLATE2 = "wiki.api.template2";
 

@@ -18,7 +18,7 @@ public class Counter {
 	public int dec() {
 		return --fValue;
 	}
-	
+
 	public int getCounter() {
 		return fValue;
 	}

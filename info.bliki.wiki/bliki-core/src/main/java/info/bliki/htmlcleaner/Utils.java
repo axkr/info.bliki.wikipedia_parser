@@ -1,35 +1,35 @@
 /*  Copyright (c) 2006-2007, Vladimir Nikic
  All rights reserved.
- 
- Redistribution and use of this software in source and binary forms, 
- with or without modification, are permitted provided that the following 
+
+ Redistribution and use of this software in source and binary forms,
+ with or without modification, are permitted provided that the following
  conditions are met:
- 
+
  * Redistributions of source code must retain the above
  copyright notice, this list of conditions and the
  following disclaimer.
- 
+
  * Redistributions in binary form must reproduce the above
  copyright notice, this list of conditions and the
  following disclaimer in the documentation and/or other
  materials provided with the distribution.
- 
- * The name of HtmlCleaner may not be used to endorse or promote 
+
+ * The name of HtmlCleaner may not be used to endorse or promote
  products derived from this software without specific prior
  written permission.
 
- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
- AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
- IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
- ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE 
- LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
- CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
- INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
- CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
- ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+ LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  POSSIBILITY OF SUCH DAMAGE.
- 
+
  You can contact Vladimir Nikic by sending e-mail to
  nikic_vladimir@yahoo.com. Please include the word "HtmlCleaner" in the
  subject line.
@@ -51,7 +51,7 @@ import java.util.Map;
  * <p>
  * Common utilities.
  * </p>
- * 
+ *
  * Created by: Vladimir Nikic<br/>
  * Date: November, 2006.
  */
@@ -61,7 +61,7 @@ public class Utils {
 
 	/**
 	 * Trims specified string from left.
-	 * 
+	 *
 	 * @param s
 	 */
 	public static String ltrim(String s) {
@@ -84,7 +84,7 @@ public class Utils {
 
 	/**
 	 * Trims specified string from right.
-	 * 
+	 *
 	 * @param s
 	 */
 	public static String rtrim(String s) {
@@ -107,7 +107,7 @@ public class Utils {
 
 	/**
 	 * Trims specified string from left and stop at <code>\n</code> character
-	 * 
+	 *
 	 * @param s
 	 */
 	public static String ltrimNewline(String s) {
@@ -133,7 +133,7 @@ public class Utils {
 	/**
 	 * Trims specified string from left and stops at <code>\n</code> character on
 	 * the left
-	 * 
+	 *
 	 * @param s
 	 */
 	public static String trimNewlineLeft(String s) {
@@ -174,7 +174,7 @@ public class Utils {
 	/**
 	 * Trims specified string from right and stops at <code>\n</code> character on
 	 * the right
-	 * 
+	 *
 	 * @param s
 	 */
 	public static String trimNewlineRight(String s) {
@@ -214,7 +214,7 @@ public class Utils {
 
 	/**
 	 * Reads content from the specified URL with specified charset into string
-	 * 
+	 *
 	 * @param url
 	 * @param charset
 	 * @throws IOException
@@ -497,7 +497,7 @@ public class Utils {
 	 * can contain dynamic parts in the form of ${VARNAME}. Each such part is
 	 * replaced with value of the variable if such exists in the map, or with
 	 * empty string otherwise.
-	 * 
+	 *
 	 * @param template
 	 *          Template string
 	 * @param variables

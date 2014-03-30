@@ -123,7 +123,7 @@ public class HTMLTag extends TagNode {
 	/**
 	 * Set if the text is rendered as a template. This method is a placeholder, it
 	 * can be overridden in subclasses.
-	 * 
+	 *
 	 * @param isTemplate
 	 *          <code>true</code>, if the text is rendered as a template. See
 	 *          {@link info.bliki.wiki.filter.WikipediaParser#isTemplate()}
@@ -134,7 +134,7 @@ public class HTMLTag extends TagNode {
 
 	/**
 	 * Use this tag if no parent tag was found on the wiki model's tag stack.
-	 * 
+	 *
 	 * @return the default parent tag or <code>null</code>, if there's no default
 	 *         parent tag
 	 */

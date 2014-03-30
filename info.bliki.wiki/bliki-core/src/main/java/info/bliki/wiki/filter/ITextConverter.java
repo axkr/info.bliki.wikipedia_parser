@@ -11,12 +11,12 @@ import java.util.List;
 /**
  * Interface for converters which renders the internal node representation into
  * a string representation
- * 
+ *
  */
 public interface ITextConverter {
 	/**
 	 * Convert the list of TagTokens into a given HTML string buffer
-	 * 
+	 *
 	 * @param nodes
 	 *          list of TagToken
 	 * @param resultBuffer
@@ -28,7 +28,7 @@ public interface ITextConverter {
 
 	/**
 	 * Convert the imageTagNode into a given HTML string buffer
-	 * 
+	 *
 	 * @param imageTagNode
 	 *          the tag which carries the imageFormat wiki object as an object
 	 *          attribute
@@ -44,7 +44,7 @@ public interface ITextConverter {
 	 * If this method returns true, then the &lt;a&gt; tag should only render the
 	 * title of the link and not a link to another HTML document, but only the
 	 * link text.
-	 * 
+	 *
 	 * @return
 	 */
 	public abstract boolean noLinks();

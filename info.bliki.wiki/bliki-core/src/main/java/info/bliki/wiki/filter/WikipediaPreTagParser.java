@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * A Wikipedia syntax parser for parsing in wiki preformatted blocks (rendered
  * as &lt;pre&gt;...&lt;/pre&gt;)
- * 
+ *
  */
 public class WikipediaPreTagParser extends AbstractParser {
 
@@ -223,7 +223,7 @@ public class WikipediaPreTagParser extends AbstractParser {
 
 	/**
 	 * Parse a wiki section starting with a '[' character
-	 * 
+	 *
 	 * @return <code>true</code> if a correct link was found
 	 */
 	private boolean parseWikiLink() {
@@ -263,7 +263,7 @@ public class WikipediaPreTagParser extends AbstractParser {
 
 	/**
 	 * Parse a wiki section starting with a '[[' sequence
-	 * 
+	 *
 	 * @return <code>true</code> if a correct link was found
 	 */
 	private boolean parseWikiTag() {
@@ -449,10 +449,10 @@ public class WikipediaPreTagParser extends AbstractParser {
 	 * Call the parser on the subsequent recursion levels, where the subtexts (of
 	 * templates, table cells, list items or image captions) don't contain a table
 	 * of contents (TOC)
-	 * 
+	 *
 	 * <b>Note:</b> the wiki model doesn't call the <code>setUp()</code> or
 	 * <code>tearDown()</code> methods for the subsequent recursive parser steps.
-	 * 
+	 *
 	 * @param rawWikitext
 	 * @param wikiModel
 	 * @return
@@ -465,10 +465,10 @@ public class WikipediaPreTagParser extends AbstractParser {
 	 * Call the parser on the subsequent recursion levels, where the subtexts (of
 	 * templates, table cells, list items or image captions) don't contain a table
 	 * of contents (TOC)
-	 * 
+	 *
 	 * <b>Note:</b> the wiki model doesn't call the <code>setUp()</code> or
 	 * <code>tearDown()</code> methods for the subsequent recursive parser steps.
-	 * 
+	 *
 	 * @param rawWikitext
 	 * @param wikiModel
 	 * @param noTOC

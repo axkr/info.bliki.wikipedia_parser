@@ -18,7 +18,7 @@ import java.io.Serializable;
  * the constructors where it's obvious, but in general, you need to set them
  * explicitly when building an attribute. For example to construct the attribute
  * <b><code>label="A multi word value."</code></b> you could use:
- * 
+ *
  * <pre>
  * attribute = new Attribute();
  * attribute.setName(&quot;label&quot;);
@@ -26,22 +26,22 @@ import java.io.Serializable;
  * attribute.setValue(&quot;A multi word value.&quot;);
  * attribute.setQuote('&quot;');
  * </pre>
- * 
+ *
  * or
- * 
+ *
  * <pre>
  * attribute = new Attribute();
  * attribute.setName(&quot;label&quot;);
  * attribute.setAssignment(&quot;=&quot;);
  * attribute.setRawValue(&quot;A multi word value.&quot;);
  * </pre>
- * 
+ *
  * or
- * 
+ *
  * <pre>
  * attribute = new Attribute(&quot;label&quot;, &quot;A multi word value.&quot;);
  * </pre>
- * 
+ *
  * Note that the assignment value and quoting need to be set separately when
  * building the attribute from scratch using the properties.
  * <p>
@@ -153,7 +153,7 @@ import java.io.Serializable;
  * tag. They may appear in any order.
  * <p>
  * In this example, the id attribute is set for an H1 element:
- * 
+ *
  * <pre>
  * &lt;code&gt;
  *  {@.html
@@ -163,7 +163,7 @@ import java.io.Serializable;
  * }
  * &lt;/code&gt;
  * </pre>
- * 
+ *
  * By default, SGML requires that all attribute values be delimited using either
  * double quotation marks (ASCII decimal 34) or single quotation marks (ASCII
  * decimal 39). Single quote marks can be included within the attribute value
@@ -192,7 +192,7 @@ import java.io.Serializable;
  */
 public abstract class Attribute implements Serializable {
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1010771448030194792L;
 
@@ -225,7 +225,7 @@ public abstract class Attribute implements Serializable {
 	 * Create an attribute with the name, assignment, value and quote given. If
 	 * the quote value is zero, assigns the value using {@link #setRawValue} which
 	 * sets the quote character to a proper value if necessary.
-	 * 
+	 *
 	 * @param name
 	 *          The name of this attribute.
 	 * @param assignment
@@ -255,7 +255,7 @@ public abstract class Attribute implements Serializable {
 	 * sign as the assignment string if the value is not <code>null</code>, and
 	 * calls {@link #setRawValue} to get the correct quoting if <code>quote</code>
 	 * is zero.
-	 * 
+	 *
 	 * @param name
 	 *          The name of this attribute.
 	 * @param value
@@ -269,7 +269,7 @@ public abstract class Attribute implements Serializable {
 
 	/**
 	 * Create a whitespace attribute with the value given.
-	 * 
+	 *
 	 * @param value
 	 *          The value of this attribute.
 	 * @exception IllegalArgumentException
@@ -295,7 +295,7 @@ public abstract class Attribute implements Serializable {
 	 * Create an attribute with the name and value given. Uses an equals sign as
 	 * the assignment string if the value is not <code>null</code>, and calls
 	 * {@link #setRawValue} to get the correct quoting.
-	 * 
+	 *
 	 * @param name
 	 *          The name of this attribute.
 	 * @param value
@@ -308,7 +308,7 @@ public abstract class Attribute implements Serializable {
 	/**
 	 * Create an attribute with the name, assignment string and value given. Calls
 	 * {@link #setRawValue} to get the correct quoting.
-	 * 
+	 *
 	 * @param name
 	 *          The name of this attribute.
 	 * @param assignment
@@ -331,7 +331,7 @@ public abstract class Attribute implements Serializable {
 	/**
 	 * Get the name of this attribute. The part before the equals sign, or the
 	 * contents of the stand-alone attribute.
-	 * 
+	 *
 	 * @return The name, or <code>null</code> if it's just a whitepace
 	 *         'attribute'.
 	 * @see #setName
@@ -342,7 +342,7 @@ public abstract class Attribute implements Serializable {
 
 	/**
 	 * Get the name of this attribute.
-	 * 
+	 *
 	 * @param buffer
 	 *          The buffer to place the name in.
 	 * @see #getName()
@@ -358,7 +358,7 @@ public abstract class Attribute implements Serializable {
 	 * contents of the stand-alone attribute. <em>WARNING:</em> Setting this to
 	 * <code>null</code> can result in malformed HTML if the assignment string is
 	 * not <code>null</code>.
-	 * 
+	 *
 	 * @param name
 	 *          The new name.
 	 * @see #getName
@@ -372,7 +372,7 @@ public abstract class Attribute implements Serializable {
 	 * Get the assignment string of this attribute. This is usually just an equals
 	 * sign, but in poorly formed attributes it can include whitespace on either
 	 * or both sides of an equals sign.
-	 * 
+	 *
 	 * @return The assignment string.
 	 * @see #setAssignment
 	 */
@@ -382,7 +382,7 @@ public abstract class Attribute implements Serializable {
 
 	/**
 	 * Get the assignment string of this attribute.
-	 * 
+	 *
 	 * @param buffer
 	 *          The buffer to place the assignment string in.
 	 * @see #getAssignment()
@@ -398,7 +398,7 @@ public abstract class Attribute implements Serializable {
 	 * property to other than an equals sign or <code>null</code> will result in
 	 * malformed HTML. In the case of a <code>null</code>, the {@link #setValue
 	 * value} should also be set to <code>null</code>.
-	 * 
+	 *
 	 * @param assignment
 	 *          The new assignment string.
 	 * @see #getAssignment
@@ -413,7 +413,7 @@ public abstract class Attribute implements Serializable {
 	 * if it's just a whitepace 'attribute'. <em>NOTE:</em> This does not include
 	 * any quotes that may have enclosed the value when it was read. To get the
 	 * un-stripped value use {@link #getRawValue}.
-	 * 
+	 *
 	 * @return The value, or <code>null</code> if it's a stand-alone or empty
 	 *         attribute, or the text if it's just a whitepace 'attribute'.
 	 * @see #setValue
@@ -424,7 +424,7 @@ public abstract class Attribute implements Serializable {
 
 	/**
 	 * Get the value of the attribute.
-	 * 
+	 *
 	 * @param buffer
 	 *          The buffer to place the value in.
 	 * @see #getValue()
@@ -440,7 +440,7 @@ public abstract class Attribute implements Serializable {
 	 * if it's a whitepace 'attribute'. <em>WARNING:</em> Setting this property to
 	 * a value that needs to be quoted without also setting the quote character
 	 * will result in malformed HTML.
-	 * 
+	 *
 	 * @param value
 	 *          The new value.
 	 * @see #getValue
@@ -452,7 +452,7 @@ public abstract class Attribute implements Serializable {
 
 	/**
 	 * Get the quote, if any, surrounding the value of the attribute, if any.
-	 * 
+	 *
 	 * @return Either ' or " if the attribute value was quoted, or zero if there
 	 *         are no quotes around it.
 	 * @see #setQuote
@@ -463,7 +463,7 @@ public abstract class Attribute implements Serializable {
 
 	/**
 	 * Get the quote, if any, surrounding the value of the attribute, if any.
-	 * 
+	 *
 	 * @param buffer
 	 *          The buffer to place the quote in.
 	 * @see #getQuote()
@@ -478,7 +478,7 @@ public abstract class Attribute implements Serializable {
 	 * Set the quote surrounding the value of the attribute. <em>WARNING:</em>
 	 * Setting this property to zero will result in malformed HTML if the
 	 * {@link #getValue value} needs to be quoted (i.e. contains whitespace).
-	 * 
+	 *
 	 * @param quote
 	 *          The new quote value.
 	 * @see #getQuote
@@ -492,7 +492,7 @@ public abstract class Attribute implements Serializable {
 	 * Get the raw value of the attribute. The part after the equals sign, or the
 	 * text if it's just a whitepace 'attribute'. This includes the quotes around
 	 * the value if any.
-	 * 
+	 *
 	 * @return The value, or <code>null</code> if it's a stand-alone attribute, or
 	 *         the text if it's just a whitepace 'attribute'.
 	 * @see #setRawValue
@@ -505,7 +505,7 @@ public abstract class Attribute implements Serializable {
 		if (isValued()) {
 			quote = getQuote();
 			if (0 != quote) {
-				buffer = new StringBuilder(16);  
+				buffer = new StringBuilder(16);
 				// length?
 				buffer.append(quote);
 				getValue(buffer);
@@ -523,7 +523,7 @@ public abstract class Attribute implements Serializable {
 	 * Get the raw value of the attribute. The part after the equals sign, or the
 	 * text if it's just a whitepace 'attribute'. This includes the quotes around
 	 * the value if any.
-	 * 
+	 *
 	 * @param buffer
 	 *          The string buffer to append the attribute value to.
 	 * @see #getRawValue()
@@ -545,7 +545,7 @@ public abstract class Attribute implements Serializable {
 	 * the real value. Otherwise, examine the string to determine if quotes are
 	 * needed and an appropriate quote character if so. This may involve changing
 	 * double quotes within the string to character references.
-	 * 
+	 *
 	 * @param value
 	 *          The new value.
 	 * @see #getRawValue
@@ -621,7 +621,7 @@ public abstract class Attribute implements Serializable {
 
 	/**
 	 * Predicate to determine if this attribute is whitespace.
-	 * 
+	 *
 	 * @return <code>true</code> if this attribute is whitespace,
 	 *         <code>false</code> if it is a real attribute.
 	 */
@@ -631,7 +631,7 @@ public abstract class Attribute implements Serializable {
 
 	/**
 	 * Predicate to determine if this attribute has no equals sign (or value).
-	 * 
+	 *
 	 * @return <code>true</code> if this attribute is a standalone attribute.
 	 *         <code>false</code> if has an equals sign.
 	 */
@@ -641,7 +641,7 @@ public abstract class Attribute implements Serializable {
 
 	/**
 	 * Predicate to determine if this attribute has an equals sign but no value.
-	 * 
+	 *
 	 * @return <code>true</code> if this attribute is an empty attribute.
 	 *         <code>false</code> if has an equals sign and a value.
 	 */
@@ -651,7 +651,7 @@ public abstract class Attribute implements Serializable {
 
 	/**
 	 * Predicate to determine if this attribute has a value.
-	 * 
+	 *
 	 * @return <code>true</code> if this attribute has a value. <code>false</code>
 	 *         if it is empty or standalone.
 	 */
@@ -661,7 +661,7 @@ public abstract class Attribute implements Serializable {
 
 	/**
 	 * Get the length of the string value of this attribute.
-	 * 
+	 *
 	 * @return The number of characters required to express this attribute.
 	 */
 	public int getLength() {
@@ -700,7 +700,7 @@ public abstract class Attribute implements Serializable {
 	 *  name=&quot;value&quot;
 	 * </pre>
 	 * </code>
-	 * 
+	 *
 	 * @return A string that can be used within a tag.
 	 */
 	@Override
@@ -718,7 +718,7 @@ public abstract class Attribute implements Serializable {
 
 	/**
 	 * Get a text representation of this attribute.
-	 * 
+	 *
 	 * @param buffer
 	 *          The accumulator for placing the text into.
 	 * @see #toString()

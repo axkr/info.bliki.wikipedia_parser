@@ -12,12 +12,12 @@ import java.util.Map;
 
 /**
  * Wiki tag for the yacas CAS applet
- * 
+ *
  */
 public class YacasTag extends NowikiTag {
 	public YacasTag() {
 		super("yacas");
-	} 
+	}
 
 	@Override
 	public void renderHTML(ITextConverter converter, Appendable buf, IWikiModel model) throws IOException {
@@ -31,7 +31,7 @@ public class YacasTag extends NowikiTag {
 		TagNode node = this;
 		Map<String, String> tagAtttributes = node.getAttributes();
 
-		buf.append("\n"); 
+		buf.append("\n");
 		String attValue = (String) tagAtttributes.get("init1");
 		if (attValue == null) {
 			buf.append("  <param name=\"init1\" value=\"Load(\'\'yacasinit.ys\'\')\">\n");

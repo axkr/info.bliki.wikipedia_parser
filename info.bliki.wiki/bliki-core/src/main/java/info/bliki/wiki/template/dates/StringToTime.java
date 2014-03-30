@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  * A Java implementation of the PHP function strtotime(String, int): accepts
  * various expressions of time in <code>String</code> format, and instantiates a
  * {@link java.util.Date} object.
- * 
+ *
  * <p>
  * There are two ways to use <code>StringToTime</code> to parse dates:
  * <ul>
@@ -24,14 +24,14 @@ import java.util.regex.Pattern;
  * {@link #StringToTime(Object)}</li>
  * </ul>
  * </p>
- * 
+ *
  * <p>
  * The static methods provide a UNIX-style timestamp, a {@link java.util.Date}
  * instance, or a {@link java.util.Calendar} instance. In the event the time
  * expression provided is invalid, these methods return
  * <code>Boolean.FALSE</code>.
  * </p>
- * 
+ *
  * <p>
  * Instances of <code>StringToTime</code> inherit from {@link java.util.Date};
  * so, when instantiated with an expression that the algorithm recognizes, the
@@ -40,13 +40,13 @@ import java.util.regex.Pattern;
  * methods, attempting to create a <code>StringToTime</code> instance with an
  * invalid expression of time results in a {@link StringToTimeException}.
  * </p>
- * 
+ *
  * <h2>Valid expressions of time</h2>
- * 
+ *
  * <p>
  * All expressions are case-insensitive.
  * </p>
- * 
+ *
  * <ul>
  * <li><code>now</code> (equal to <code>new Date()</code>)</li>
  * <li><code>today</code> (equal to <code>StringToTime("00:00:00.000")</code>)</li>
@@ -84,12 +84,12 @@ import java.util.regex.Pattern;
  * <li><code>1981/10/26</code> or <code>1981-10-26</code></li>
  * <li><code>10/26</code> or <code>10-26</code></li>
  * </ul>
- * 
+ *
  * <p>
  * Copied from <a href="https://github.com/collegeman/stringtotime/blob/master/src/main/java/com/clutch/dates/StringToTime.java"
  * >github.com/collegeman/stringtotime</a >
  * </p>
- * 
+ *
  * @author Aaron Collegeman acollegeman@clutch-inc.com
  * @since JRE 1.5.0
  * @see "http://us3.php.net/manual/en/function.strtotime.php"
@@ -281,7 +281,7 @@ public class StringToTime extends Date {
 	/**
 	 * A single parameter version of {@link #time(Object, Date)}, passing a new
 	 * instance of {@link java.util.Date} as the second parameter.
-	 * 
+	 *
 	 * @param dateTimeString
 	 * @return A {@link java.lang.Long} timestamp representative of
 	 *         <code>dateTimeString</code>, or {@link java.lang.Boolean}
@@ -294,7 +294,7 @@ public class StringToTime extends Date {
 
 	/**
 	 * Parse <code>dateTimeString</code> and produce a timestamp.
-	 * 
+	 *
 	 * @param dateTimeString
 	 * @param now
 	 * @return <ul>

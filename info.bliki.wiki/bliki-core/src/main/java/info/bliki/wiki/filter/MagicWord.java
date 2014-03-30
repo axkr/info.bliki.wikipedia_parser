@@ -211,9 +211,9 @@ public class MagicWord {
 
 		/**
 		 * Tries to convert a text to the according enum value.
-		 * 
+		 *
 		 * @param text the text to convert
-		 * 
+		 *
 		 * @return the according enum value
 		 */
 		public static MagicWordE fromString(String text) {
@@ -225,7 +225,7 @@ public class MagicWord {
 	}
 	/**
 	 * Magic words in lower case.
-	 * 
+	 *
 	 * Note: MediaWiki tolerates some variations in the case but they do not
 	 * seem consistent, e.g.
 	 * <code>{{CURRENTYEAR}} {{currentyear}} {{Currentyear}}</code>
@@ -233,7 +233,7 @@ public class MagicWord {
 	 * <code>{{CURRENTYeAR}} {{cURRENTYEAR}}</code> don't.
 	 * The following variations of {{SERVERNAME}} however all return the server name:
 	 * <code>{{SERVERNAME}} {{SERVeRNAMe}} {{sERVERNAME}} {{servername}} {{Servername}}</code>
-	 * 
+	 *
 	 * Therefore, tolerate any case here and use lower-case in this hashmap.
 	 */
 	protected final static HashMap<String, MagicWordE> MAGIC_WORDS = new HashMap<String, MagicWord.MagicWordE>(100);
@@ -245,7 +245,7 @@ public class MagicWord {
 	 * handling. See <a
 	 * href="http://www.mediawiki.org/wiki/Help:Magic_words">Help:Magic words</a>
 	 * for a list of Mediawiki magic words.
-	 * 
+	 *
 	 * @param name
 	 *            the potential magic word
 	 * @return <tt>true</tt> if <tt>name</tt> was a magic word,
@@ -260,7 +260,7 @@ public class MagicWord {
 	 * special handling. See <a
 	 * href="http://www.mediawiki.org/wiki/Help:Magic_words">Help:Magic words</a>
 	 * for a list of Mediawiki magic words.
-	 * 
+	 *
 	 * @param name
 	 *            the potential magic word
 	 * @return if <tt>name</tt> was a magic word: the corresponding
@@ -275,14 +275,14 @@ public class MagicWord {
 	 * value. See <a
 	 * href="http://www.mediawiki.org/wiki/Help:Magic_words">Help:Magic words</a>
 	 * for a list of Mediawiki magic words.
-	 * 
+	 *
 	 * @param magicWord
 	 *            the magic word to process
 	 * @param parameter
 	 *            the parameter of the magic word (may be <tt>null</tt> if no parameter supplied)
 	 * @param model
 	 *            the wiki model to use while rendering
-	 * 
+	 *
 	 * @return the processed magic word content or its name if unprocessed
 	 */
 	public static String processMagicWord(MagicWordE magicWord, String parameter, IWikiModel model) {
@@ -435,12 +435,12 @@ public class MagicWord {
 	/**
 	 * Gets the sub page name of a given non-<tt>null</tt> parameter or the
 	 * current model's pagename and namespace.
-	 * 
+	 *
 	 * @param parameter
 	 *            the parameter of the magic word
 	 * @param model
 	 *            the model being used
-	 * 
+	 *
 	 * @return the sub page name (or the pagename if there is no sub-page)
 	 */
 	protected static String getSubPageName(String parameter, IWikiModel model) {
@@ -455,12 +455,12 @@ public class MagicWord {
 	/**
 	 * Gets the base page name of a given non-<tt>null</tt> parameter or the
 	 * current model's pagename and namespace.
-	 * 
+	 *
 	 * @param parameter
 	 *            the parameter of the magic word
 	 * @param model
 	 *            the model being used
-	 * 
+	 *
 	 * @return the base page name
 	 */
 	protected static String getBasePageName(String parameter, IWikiModel model) {
@@ -482,12 +482,12 @@ public class MagicWord {
 	/**
 	 * Gets the full page's name of a given non-<tt>null</tt> parameter or the
 	 * current model's pagename and namespace.
-	 * 
+	 *
 	 * @param parameter
 	 *            the parameter of the magic word (may be <tt>null</tt>)
 	 * @param model
 	 *            the model being used
-	 * 
+	 *
 	 * @return the (normalised) name of the page
 	 */
 	protected static String getFullpagename(String parameter, IWikiModel model) {
@@ -507,12 +507,12 @@ public class MagicWord {
 	/**
 	 * Gets the talkpage's name of a given non-<tt>null</tt> parameter or the
 	 * current model's pagename and namespace.
-	 * 
+	 *
 	 * @param parameter
 	 *            the parameter of the magic word (may be <tt>null</tt>)
 	 * @param model
 	 *            the model being used
-	 * 
+	 *
 	 * @return the name of the talkpage
 	 */
 	protected static String getSubjectpage(String parameter, IWikiModel model) {
@@ -532,12 +532,12 @@ public class MagicWord {
 	/**
 	 * Gets the talkpage's name of a given non-<tt>null</tt> parameter or the
 	 * current model's pagename and namespace.
-	 * 
+	 *
 	 * @param parameter
 	 *            the parameter of the magic word (may be <tt>null</tt>)
 	 * @param model
 	 *            the model being used
-	 * 
+	 *
 	 * @return the name of the talkpage
 	 */
 	protected static String getTalkpage(String parameter, IWikiModel model) {
@@ -557,7 +557,7 @@ public class MagicWord {
 	/**
 	 * Gets the talkspace of a given non-<tt>null</tt> parameter
 	 * or the current model's namespace.
-	 * 
+	 *
 	 * @param parameter
 	 *            the parameter of the magic word (may be <tt>null</tt>)
 	 * @param model
@@ -577,7 +577,7 @@ public class MagicWord {
 	/**
 	 * Gets the subject/articlespace of a given non-<tt>null</tt> parameter
 	 * or the current model's namespace.
-	 * 
+	 *
 	 * @param parameter
 	 *            the parameter of the magic word (may be <tt>null</tt>)
 	 * @param model
@@ -597,12 +597,12 @@ public class MagicWord {
 	/**
 	 * Helper to get the namespace of either a given non-<tt>null</tt> parameter
 	 * or the current model's namespace.
-	 * 
+	 *
 	 * @param parameter
 	 *            the parameter of the magic word (may be <tt>null</tt>)
 	 * @param model
 	 *            the model being used
-	 * 
+	 *
 	 * @return the extracted namespace or <tt>""</tt> if the parameter was empty
 	 */
 	protected static String getNamespace(String parameter, IWikiModel model) {
@@ -617,12 +617,12 @@ public class MagicWord {
 	/**
 	 * Helper to get the namespace of either a given non-<tt>null</tt> parameter
 	 * or the current model's namespace.
-	 * 
+	 *
 	 * @param parameter
 	 *            the parameter of the magic word (may be <tt>null</tt>)
 	 * @param model
 	 *            the model being used
-	 * 
+	 *
 	 * @return the extracted namespace or <tt>null</tt> if the parameter was empty
 	 */
 	protected static INamespaceValue getNamespaceHelper(String parameter, IWikiModel model) {
@@ -642,12 +642,12 @@ public class MagicWord {
 	/**
 	 * Helper to get the pagename (excluding the namespace) of either a given
 	 * non-<tt>null</tt> parameter or the current model's pagename.
-	 * 
+	 *
 	 * @param parameter
 	 *            the parameter of the magic word (may be <tt>null</tt>)
 	 * @param model
 	 *            the model being used
-	 * 
+	 *
 	 * @return the extracted pagename or <tt>null</tt> if the parameter was
 	 *         empty
 	 */
@@ -666,12 +666,12 @@ public class MagicWord {
 	/**
 	 * Helper to get the pagename and the namespace of either a given non-
 	 * <tt>null</tt> parameter or the current model's pagename and namespace.
-	 * 
+	 *
 	 * @param parameter
 	 *            the parameter of the magic word (may be <tt>null</tt>)
 	 * @param model
 	 *            the model being used
-	 * 
+	 *
 	 * @return a 2-element array with the namespace (index 0) and the page title
 	 *         (index 1) or <tt>null</tt> if the parameter was empty
 	 */

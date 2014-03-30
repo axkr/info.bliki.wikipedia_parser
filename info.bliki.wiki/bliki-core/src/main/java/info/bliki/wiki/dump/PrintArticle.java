@@ -6,9 +6,9 @@ import org.xml.sax.SAXException;
 
 /**
  * Example filter which prints the rendered HTML articles to System.out
- * 
+ *
  * The number of processed articles is limited by a maximum counter
- * 
+ *
  */
 public class PrintArticle implements IArticleFilter {
 
@@ -18,10 +18,10 @@ public class PrintArticle implements IArticleFilter {
 
 	/**
 	 * Example filter which prints the rendered HTML articles to System.out
-	 * 
+	 *
 	 * The number of processed articles is limited by a maximum counter
 	 * <code>max_count</code>
-	 * 
+	 *
 	 */
 	public PrintArticle(int max_count) {
 		counter = 0;

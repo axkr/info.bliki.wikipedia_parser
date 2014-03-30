@@ -10,7 +10,7 @@ import java.util.Set;
 /**
  * Extracts a &lt;div class=&quot;errorbox&quot;&gt;...error text...&lt;/div&gt;
  * content.
- * 
+ *
  */
 public class HtmlFormExtractor extends AbstractHtmlExtractor<HtmlForm> {
 	public static final String FORM_TAG = "form";

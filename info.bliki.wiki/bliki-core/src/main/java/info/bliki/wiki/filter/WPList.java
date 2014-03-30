@@ -12,9 +12,9 @@ import java.util.ArrayList;
  * Represents a Wikipedia list. See <a
  * href="http://meta.wikimedia.org/wiki/Help:List"
  * >http://meta.wikimedia.org/wiki/Help:List</a>
- * 
+ *
  * @see info.bliki.wiki.filter.WPListElement
- * 
+ *
  */
 public class WPList extends WPTag {
 	public final static char DL_DD_CHAR = ':';
@@ -32,7 +32,7 @@ public class WPList extends WPTag {
 	public static class InternalList extends ArrayList<Object> {
 
 		/**
-		 * 
+		 *
 		 */
 		private static final long serialVersionUID = -3760843632697162014L;
 
@@ -60,7 +60,7 @@ public class WPList extends WPTag {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param listElement
 	 * @return <tt>true</tt>
 	 */

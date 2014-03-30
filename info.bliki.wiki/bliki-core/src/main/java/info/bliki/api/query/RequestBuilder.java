@@ -91,7 +91,7 @@ public class RequestBuilder {
 	/**
 	 * The format of the output One value: json, jsonfm, php, phpfm, wddx, wddxfm,
 	 * xml, xmlfm, yaml, yamlfm, rawfm, txt, txtfm, dbg, dbgfm Default: xmlfm
-	 * 
+	 *
 	 * @param lType
 	 * @return
 	 */
@@ -105,7 +105,7 @@ public class RequestBuilder {
 	 * login, logout, query, expandtemplates, parse, feedwatchlist, help,
 	 * paraminfo, purge, rollback, delete, undelete, protect, block, unblock,
 	 * move, edit, emailuser, watch, patrol Default: help
-	 * 
+	 *
 	 * @param lType
 	 * @return
 	 */
@@ -116,7 +116,7 @@ public class RequestBuilder {
 
 	/**
 	 * When showing help, include version for each module
-	 * 
+	 *
 	 * @param lType
 	 * @return
 	 */
@@ -127,7 +127,7 @@ public class RequestBuilder {
 
 	/**
 	 * Maximum lag
-	 * 
+	 *
 	 * @param maxlag
 	 * @return
 	 */
@@ -139,7 +139,7 @@ public class RequestBuilder {
 	/**
 	 * Set the s-maxage header to this many seconds. Errors are never cached
 	 * Default: 0
-	 * 
+	 *
 	 * @param smaxage
 	 * @return
 	 */
@@ -151,7 +151,7 @@ public class RequestBuilder {
 	/**
 	 * Set the max-age header to this many seconds. Errors are never cached
 	 * Default: 0
-	 * 
+	 *
 	 * @param maxage
 	 * @return
 	 */
@@ -162,7 +162,7 @@ public class RequestBuilder {
 
 	/**
 	 * Request ID to distinguish requests. This will just be output back to you
-	 * 
+	 *
 	 * @param requestid
 	 * @return
 	 */
@@ -184,7 +184,7 @@ public class RequestBuilder {
 	/**
 	 * Utility method to convert an array of strings into a piped
 	 * separated/formatted string
-	 * 
+	 *
 	 * @param pipedValues
 	 * @return
 	 */

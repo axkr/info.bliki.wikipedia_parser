@@ -2,7 +2,7 @@ package info.bliki.wiki.filter;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
- 
+
 public class HTMLTableFilterTest extends FilterTestSupport {
   public HTMLTableFilterTest(String name) {
     super(name);
@@ -13,7 +13,7 @@ public class HTMLTableFilterTest extends FilterTestSupport {
   }
 
   public void testHTMLTable2() {
-  assertEquals("\n" + 
+  assertEquals("\n" +
   		"<table>\ntest\n</table>", wikiModel.render("<table 250px>test</table>", false));
   }
 }

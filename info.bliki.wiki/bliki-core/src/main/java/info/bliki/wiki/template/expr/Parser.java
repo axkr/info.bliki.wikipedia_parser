@@ -12,7 +12,7 @@ import info.bliki.wiki.template.expr.operator.PrefixOperator;
 /**
  * Create an expression of the <code>ASTNode</code> class-hierarchy from a math
  * formulas string representation.
- * 
+ *
  * See <a
  * href="http://en.wikipedia.org/wiki/Operator-precedence_parser">Operator
  * -precedence parser</a> for the idea, how to parse the operators depending on
@@ -48,7 +48,7 @@ public class Parser extends Scanner {
 
 	/**
 	 * Determine the current PrefixOperator
-	 * 
+	 *
 	 * @return <code>null</code> if no prefix operator could be determined
 	 */
 	private PrefixOperator determinePrefixOperator() {
@@ -64,7 +64,7 @@ public class Parser extends Scanner {
 
 	/**
 	 * Determine the current PostfixOperator
-	 * 
+	 *
 	 * @return <code>null</code> if no postfix operator could be determined
 	 */
 	private PostfixOperator determinePostfixOperator() {
@@ -80,7 +80,7 @@ public class Parser extends Scanner {
 
 	/**
 	 * Determine the current BinaryOperator
-	 * 
+	 *
 	 * @return <code>null</code> if no binary operator could be determined
 	 */
 	private InfixOperator determineBinaryOperator() {
@@ -156,7 +156,7 @@ public class Parser extends Scanner {
 	 * href="http://en.wikipedia.org/wiki/Operator-precedence_parser">Operator
 	 * -precedence parser</a> for the idea, how to parse the operators depending
 	 * on their precedence.
-	 * 
+	 *
 	 * @param lhs
 	 *          the already parsed left-hand-side of the operator
 	 * @param min_precedence
@@ -195,7 +195,7 @@ public class Parser extends Scanner {
 
 	/**
 	 * Parse the given <code>expression</code> String into an ASTNode.
-	 * 
+	 *
 	 * @param expression
 	 *          a formula string which should be parsed.
 	 * @return the parsed ASTNode representation of the given formula string
@@ -220,7 +220,7 @@ public class Parser extends Scanner {
 
 	/**
 	 * Method Declaration.
-	 * 
+	 *
 	 * @return
 	 * @see
 	 */

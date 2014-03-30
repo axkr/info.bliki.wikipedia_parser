@@ -10,7 +10,7 @@ import java.util.ResourceBundle;
  * Mediawiki namespace for a specific language. See <a
  * href="http://www.mediawiki.org/wiki/Manual:Namespace#Built-in_namespaces"
  * >Mediawiki - Manual:Namespace</a>
- * 
+ *
  */
 public interface INamespace {
 	/**
@@ -38,7 +38,7 @@ public interface INamespace {
 		TALK_NAMESPACE_KEY(Integer.valueOf(1)),
 
 		/**
-		 * 
+		 *
 		 */
 		USER_NAMESPACE_KEY(Integer.valueOf(2)),
 
@@ -54,7 +54,7 @@ public interface INamespace {
 		PROJECT_NAMESPACE_KEY(Integer.valueOf(4)),
 
 		/**
-		 * 
+		 *
 		 */
 		PROJECT_TALK_NAMESPACE_KEY(Integer.valueOf(5)),
 
@@ -64,7 +64,7 @@ public interface INamespace {
 		FILE_NAMESPACE_KEY(Integer.valueOf(6)),
 
 		/**
-		 * 
+		 *
 		 */
 		FILE_TALK_NAMESPACE_KEY(Integer.valueOf(7)),
 
@@ -74,7 +74,7 @@ public interface INamespace {
 		MEDIAWIKI_NAMESPACE_KEY(Integer.valueOf(8)),
 
 		/**
-		 * 
+		 *
 		 */
 		MEDIAWIKI_TALK_NAMESPACE_KEY(Integer.valueOf(9)),
 
@@ -84,7 +84,7 @@ public interface INamespace {
 		TEMPLATE_NAMESPACE_KEY(Integer.valueOf(10)),
 
 		/**
-		 * 
+		 *
 		 */
 		TEMPLATE_TALK_NAMESPACE_KEY(Integer.valueOf(11)),
 
@@ -94,7 +94,7 @@ public interface INamespace {
 		HELP_NAMESPACE_KEY(Integer.valueOf(12)),
 
 		/**
-		 * 
+		 *
 		 */
 		HELP_TALK_NAMESPACE_KEY(Integer.valueOf(13)),
 
@@ -104,7 +104,7 @@ public interface INamespace {
 		CATEGORY_NAMESPACE_KEY(Integer.valueOf(14)),
 
 		/**
-		 * 
+		 *
 		 */
 		CATEGORY_TALK_NAMESPACE_KEY(Integer.valueOf(15)),
 
@@ -129,7 +129,7 @@ public interface INamespace {
 
 	/**
 	 * Interface for all namespace constants.
-	 * 
+	 *
 	 * @author Nico Kruber, kruber@zib.de
 	 */
 	public interface INamespaceValue {
@@ -142,7 +142,7 @@ public interface INamespace {
 		/**
 		 * Re-sets the texts used for this namespace. The first will be the
 		 * primary text.
-		 * 
+		 *
 		 * @param aliases
 		 *            all aliases for the namespace
 		 */
@@ -150,7 +150,7 @@ public interface INamespace {
 
 		/**
 		 * Adds a single alias to the namespace.
-		 * 
+		 *
 		 * @param alias
 		 *            the alias
 		 */
@@ -158,7 +158,7 @@ public interface INamespace {
 
 		/**
 		 * Provided for convenience.
-		 * 
+		 *
 		 * @return the primary text for the namespace, i.e. the first value of
 		 *         {@link #getTexts()}.
 		 */
@@ -183,20 +183,20 @@ public interface INamespace {
 		 * Prepends the namespace to the given pagename and returns the full
 		 * name with a separation character between a (non-empty) namespace and
 		 * the page name.
-		 * 
+		 *
 		 * @param pageName
 		 *            the page name without a namespace, e.g. &quot;Test&quot;
-		 * 
+		 *
 		 * @return the full page name, e.g. &quot;Template:Test&quot;
 		 */
 		public abstract String makeFullPagename(String pageName);
 
 		/**
 		 * Checks whether the namespace is a namespace of the given type.
-		 * 
+		 *
 		 * @param code
 		 *            the code
-		 * 
+		 *
 		 * @return <tt>true</tt> if the namespace is of the given code,
 		 *         <tt>false</tt> otherwise
 		 */
@@ -205,126 +205,126 @@ public interface INamespace {
 	}
 	/**
 	 * Get the &quot;Media&quot; namespace for the current language.
-	 * 
+	 *
 	 * @return the namespace
 	 */
 	public INamespaceValue getMedia();
 
 	/**
 	 * Get the &quot;Special&quot; namespace for the current language.
-	 * 
+	 *
 	 * @return the namespace
 	 */
 	public INamespaceValue getSpecial();
 
 	/**
 	 * The main namespace for the current language.
-	 * 
+	 *
 	 * @return the namespace
 	 */
 	public INamespaceValue getMain();
 
 	/**
 	 * The &quot;Talk&quot; namespace for the current language.
-	 * 
+	 *
 	 * @return the namespace
 	 */
 	public INamespaceValue getTalk();
 
 	/**
 	 * The &quot;User&quot; namespace for the current language.
-	 * 
+	 *
 	 * @return the namespace
 	 */
 	public INamespaceValue getUser();
 
 	/**
 	 * The &quot;User talk&quot; namespace for the current language.
-	 * 
+	 *
 	 * @return the namespace
 	 */
 	public INamespaceValue getUser_talk();
 
 	/**
 	 * The &quot;Meta&quot; namespace for the current language.
-	 * 
+	 *
 	 * @return the namespace
 	 */
 	public INamespaceValue getMeta();
 
 	/**
 	 * The &quot;Meta talk&quot; namespace for the current language.
-	 * 
+	 *
 	 * @return the namespace
 	 */
 	public INamespaceValue getMeta_talk();
 
 	/**
 	 * The &quot;File&quot; namespace for the current language.
-	 * 
+	 *
 	 * @return the namespace
 	 */
 	public INamespaceValue getImage();
 
 	/**
 	 * The &quot;File talk&quot; namespace for the current language.
-	 * 
+	 *
 	 * @return the namespace
 	 */
 	public INamespaceValue getImage_talk();
 
 	/**
 	 * The &quot;MediaWiki&quot; namespace for the current language.
-	 * 
+	 *
 	 * @return the namespace
 	 */
 	public INamespaceValue getMediaWiki();
 
 	/**
 	 * The &quot;MediaWiki talk&quot; namespace for the current language.
-	 * 
+	 *
 	 * @return the namespace
 	 */
 	public INamespaceValue getMediaWiki_talk();
 
 	/**
 	 * The &quot;Module&quot; namespace for the current language.
-	 * 
+	 *
 	 * @return the namespace
 	 */
 	public INamespaceValue getModule();
-	
+
 	/**
 	 * The &quot;Template&quot; namespace for the current language.
-	 * 
+	 *
 	 * @return the namespace
 	 */
 	public INamespaceValue getTemplate();
 
 	/**
 	 * The &quot;Template talk&quot; namespace for the current language.
-	 * 
+	 *
 	 * @return the namespace
 	 */
 	public INamespaceValue getTemplate_talk();
 
 	/**
 	 * The &quot;Help&quot; namespace for the current language.
-	 * 
+	 *
 	 * @return the namespace
 	 */
 	public INamespaceValue getHelp();
 
 	/**
 	 * The &quot;Help talk&quot; namespace for the current language.
-	 * 
+	 *
 	 * @return the namespace
 	 */
 	public INamespaceValue getHelp_talk();
 
 	/**
 	 * The &quot;Category&quot; namespace for the current language.
-	 * 
+	 *
 	 * @return the namespace
 	 */
 	public INamespaceValue getCategory();
@@ -336,7 +336,7 @@ public interface INamespace {
 
 	/**
 	 * The &quot;Portal&quot; namespace for the current language.
-	 * 
+	 *
 	 * @return the namespace
 	 */
 	public INamespaceValue getPortal();
@@ -348,12 +348,12 @@ public interface INamespace {
 
 	/**
 	 * Checks whether the given string is a valid namespace of the given type.
-	 * 
+	 *
 	 * @param namespace
 	 *            the potential namespace string
 	 * @param code
 	 *            the code
-	 * 
+	 *
 	 * @return <tt>true</tt> if the given namespace is of the given code,
 	 *         <tt>false</tt> otherwise
 	 */
@@ -361,12 +361,12 @@ public interface INamespace {
 
 	/**
 	 * Checks whether the given namespace is a namespace of the given type.
-	 * 
+	 *
 	 * @param namespace
 	 *            the namespace
 	 * @param code
 	 *            the code
-	 * 
+	 *
 	 * @return <tt>true</tt> if the given namespace is of the given code,
 	 *         <tt>false</tt> otherwise
 	 */
@@ -381,24 +381,24 @@ public interface INamespace {
 
 	/**
 	 * Get the Talk namespace.
-	 * 
+	 *
 	 * @param namespace
 	 *          the namespace
 	 * @return the talk namespace for the given namespace or <tt>null</tt> if the
 	 *         namespace is invalid or there is no talk namespace
-	 * 
+	 *
 	 * @see #getContentspace(String)
 	 */
 	public INamespaceValue getTalkspace(String namespace);
 
 	/**
 	 * Gets the content namespace for a given (talk) namespace.
-	 * 
+	 *
 	 * @param talkNamespace
 	 *          the namespace, potentially a talkspace
-	 * 
+	 *
 	 * @return the content namespace or <tt>null</tt>
-	 * 
+	 *
 	 * @see #getTalkspace(String)
 	 */
 	public INamespaceValue getContentspace(String talkNamespace);
@@ -409,10 +409,10 @@ public interface INamespace {
 	 * {@link Encoder#normaliseTitle(String, boolean, char, boolean)}. Assumes
 	 * <tt>underScoreIsWhitespace</tt>, uses a space as <tt>whiteSpaceChar</tt>
 	 * and capitalises the first character.
-	 * 
+	 *
 	 * @param fullTitle
 	 *            the (full) title including a namespace (if present)
-	 * 
+	 *
 	 * @return a 2-element array with the raw namespace string (index 0) and the
 	 *         page title (index 1)
 	 * @see #splitNsTitle(String, boolean, char, boolean)
@@ -423,7 +423,7 @@ public interface INamespace {
 	 * Splits the given full title into its namespace and page title components
 	 * and normalises both components using
 	 * {@link Encoder#normaliseTitle(String, boolean, char, boolean)}.
-	 * 
+	 *
 	 * @param fullTitle
 	 *            the (full) title including a namespace (if present)
 	 * @param underScoreIsWhitespace
@@ -432,7 +432,7 @@ public interface INamespace {
 	 *            the character to replace whitespace with
 	 * @param firstCharacterAsUpperCase
 	 *          if <code>true</code> convert the first of the title to upper case
-	 * 
+	 *
 	 * @return a 2-element array with the raw namespace string (index 0) and the
 	 *         page title (index 1)
 	 */

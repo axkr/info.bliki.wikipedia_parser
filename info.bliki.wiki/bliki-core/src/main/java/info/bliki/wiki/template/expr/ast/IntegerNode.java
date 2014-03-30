@@ -2,12 +2,12 @@ package info.bliki.wiki.template.expr.ast;
 
 /**
  * A node for a parsed integer string
- * 
+ *
  */
 public class IntegerNode extends NumberNode {
 	public final static IntegerNode C1 = new IntegerNode("1", 10);
 
-	private final int fNumberFormat; 
+	private final int fNumberFormat;
 
 	private final int fIntValue;
 
@@ -59,7 +59,7 @@ public class IntegerNode extends NumberNode {
 		}
 		return false;
 	}
- 
+
 	@Override
 	public int hashCode() {
 		if (fStringValue == null) {

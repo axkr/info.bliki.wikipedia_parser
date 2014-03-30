@@ -33,8 +33,8 @@ public class DumpWikiModel extends WikiModel {
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param wikiDB
 	 *          a wiki database to retrieve already cached templates
 	 * @param imageBaseURL
@@ -54,7 +54,7 @@ public class DumpWikiModel extends WikiModel {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param wikiDB
 	 *          a wiki database to retrieve already cached templates
 	 * @param locale
@@ -97,15 +97,15 @@ public class DumpWikiModel extends WikiModel {
 	 * Get the raw wiki text for the given namespace and article name. This model
 	 * implementation uses a Derby database to cache downloaded wiki template
 	 * texts.
-	 * 
+	 *
 	 * @param parsedPagename
 	 *          the parsed template name
 	 * @param templateParameters
 	 *          if the namespace is the <b>Template</b> namespace, the current
 	 *          template parameters are stored as <code>String</code>s in this map
-	 * 
+	 *
 	 * @return <code>null</code> if no content was found
-	 * 
+	 *
 	 * @see info.bliki.api.User#queryContent(String[])
 	 */
 	@Override

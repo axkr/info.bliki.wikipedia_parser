@@ -59,9 +59,9 @@ public class WikipediaScanner {
 
 	/**
 	 * Scan a wikipedia table.
-	 * 
+	 *
 	 * See: <a href="http://meta.wikimedia.org/wiki/Help:Table">Help - Table</a>
-	 * 
+	 *
 	 * @param tableOfContentTag
 	 * @return <code>null</code> if no wiki table was found
 	 */
@@ -235,7 +235,7 @@ public class WikipediaScanner {
 
 	/**
 	 * Scan a Trac simple wiki table
-	 * 
+	 *
 	 * @param tableOfContentTag
 	 * @return
 	 */
@@ -490,7 +490,7 @@ public class WikipediaScanner {
 
 	/**
 	 * Get the offset position behind the next closing HTML comment tag (--&gt;).
-	 * 
+	 *
 	 * @return the offset position behind the next closing HTML comment tag or
 	 *         <code>-1</code> if no tag could be found.
 	 */
@@ -507,7 +507,7 @@ public class WikipediaScanner {
 
 	/**
 	 * Get the offset position behind the next &lt;/nowiki&gt; tag.
-	 * 
+	 *
 	 * @return the offset position behind the &lt;/nowiki&gt; tag or
 	 *         <code>-1</code> if no tag could be found.
 	 */
@@ -529,7 +529,7 @@ public class WikipediaScanner {
 	 * (i.e. <code>|}</code>). The scanner detects HTML comment tags,
 	 * &lt;nowiki&gt; tags and nested wiki table tags (i.e.
 	 * <code>{|... {|...  ...|} ...|}</code>).
-	 * 
+	 *
 	 * @return the offset position behind the corresponding wiki table closing tag
 	 *         or <code>-1</code> if no corresponding tag could be found.
 	 */
@@ -586,7 +586,7 @@ public class WikipediaScanner {
 	 * Check if a String starts with a specified prefix (optionally case
 	 * insensitive).
 	 * </p>
-	 * 
+	 *
 	 * @see java.lang.String#startsWith(String)
 	 * @param str
 	 *          the String to check, may be null
@@ -618,12 +618,12 @@ public class WikipediaScanner {
 
 	/**
 	 * Replace the wiki template parameters in the given template string
-	 * 
+	 *
 	 * @param templateParameters
 	 * @param curlyBraceOffset
 	 *          TODO
 	 * @param template
-	 * 
+	 *
 	 * @return <code>null</code> if no replacement could be found
 	 */
 	public StringBuilder replaceTemplateParameters(Map<String, String> templateParameters, int curlyBraceOffset) {
@@ -718,7 +718,7 @@ public class WikipediaScanner {
 
 	/**
 	 * Split the given src string by pipe symbol (i.e. &quot;|&quot;)
-	 * 
+	 *
 	 * @param sourceString
 	 * @param resultList
 	 *          the list which contains the splitted strings
@@ -731,7 +731,7 @@ public class WikipediaScanner {
 	/**
 	 * Split the given <code>srcArray</code> character array by pipe symbol (i.e.
 	 * &quot;|&quot;).
-	 * 
+	 *
 	 * @param srcArray
 	 *          the array to split
 	 * @param currOffset
@@ -740,7 +740,7 @@ public class WikipediaScanner {
 	 *          end position in <tt>srcArray</tt>
 	 * @param resultList
 	 *          the list which contains the splitted strings
-	 * 
+	 *
 	 * @return splitted strings
 	 */
 	public static List<String> splitByPipe(char[] srcArray, int currOffset, int endOffset, List<String> resultList) {
@@ -749,7 +749,7 @@ public class WikipediaScanner {
 
 	/**
 	 * Split the given src string by pipe symbol (i.e. &quot;|&quot;)
-	 * 
+	 *
 	 * @param splitChar
 	 *          the character to split by
 	 * @param sourceString
@@ -770,7 +770,7 @@ public class WikipediaScanner {
 	/**
 	 * Split the given <code>srcArray</code> character array by the given
 	 * character.
-	 * 
+	 *
 	 * @param splitChar
 	 *          the character to split by
 	 * @param srcArray
@@ -785,7 +785,7 @@ public class WikipediaScanner {
 	 *          max number of parts to split the source into (less than <tt>0</tt>
 	 *          for infinite number of parts, otherwise only values greater than
 	 *          <tt>0</tt> allowed!)
-	 * 
+	 *
 	 * @return splitted strings
 	 */
 	protected static List<String> splitByChar(final char splitChar, char[] srcArray, int currOffset, int endOffset,
@@ -850,7 +850,7 @@ public class WikipediaScanner {
 	/**
 	 * Read until the end of a nested block i.e. something like
 	 * <code>[[...[[  ]]...]]</code>
-	 * 
+	 *
 	 * @param sourceArray
 	 * @param startCh
 	 * @param endChar
@@ -885,7 +885,7 @@ public class WikipediaScanner {
 	/**
 	 * Read until the end of a nested block i.e. something like
 	 * <code>{{{...{...{{  }}...}...}}}</code>
-	 * 
+	 *
 	 * @param sourceArray
 	 * @param startCh
 	 * @param endChar
@@ -945,7 +945,7 @@ public class WikipediaScanner {
 	/**
 	 * Find the end of a template parameter declaration or the end of a template
 	 * declaration.
-	 * 
+	 *
 	 * @param sourceArray
 	 * @param startPosition
 	 * @return an array of two integers. If <code>array[0] > 0</code> the scanner
@@ -1075,7 +1075,7 @@ public class WikipediaScanner {
 	 * etc. Attributes are stored in a <code>Vector</code> having one slot for
 	 * each whitespace or attribute/value pair. The first slot is for attribute
 	 * name (kind of like a standalone attribute).
-	 * 
+	 *
 	 * @param start
 	 *          The position at which to start scanning.
 	 * @return The parsed tag.
@@ -1383,7 +1383,7 @@ public class WikipediaScanner {
 
 	/**
 	 * Create a tag node based on the current cursor and the one provided.
-	 * 
+	 *
 	 * @param start
 	 *          The starting point of the node.
 	 * @param end
@@ -1410,7 +1410,7 @@ public class WikipediaScanner {
 
 	/**
 	 * Generate a whitespace 'attribute',
-	 * 
+	 *
 	 * @param attributes
 	 *          The list so far.
 	 * @param bookmarks
@@ -1424,7 +1424,7 @@ public class WikipediaScanner {
 
 	/**
 	 * Generate a standalone attribute -- font.
-	 * 
+	 *
 	 * @param attributes
 	 *          The list so far.
 	 * @param bookmarks
@@ -1436,7 +1436,7 @@ public class WikipediaScanner {
 
 	/**
 	 * Generate an empty attribute -- color=.
-	 * 
+	 *
 	 * @param attributes
 	 *          The list so far.
 	 * @param bookmarks
@@ -1448,7 +1448,7 @@ public class WikipediaScanner {
 
 	/**
 	 * Generate an unquoted attribute -- size=1.
-	 * 
+	 *
 	 * @param attributes
 	 *          The list so far.
 	 * @param bookmarks
@@ -1460,7 +1460,7 @@ public class WikipediaScanner {
 
 	/**
 	 * Generate an single quoted attribute -- width='100%'.
-	 * 
+	 *
 	 * @param attributes
 	 *          The list so far.
 	 * @param bookmarks
@@ -1472,7 +1472,7 @@ public class WikipediaScanner {
 
 	/**
 	 * Generate an double quoted attribute -- CONTENT="Test Development".
-	 * 
+	 *
 	 * @param attributes
 	 *          The list so far.
 	 * @param bookmarks
@@ -1504,7 +1504,7 @@ public class WikipediaScanner {
 	 * Read the characters until the concatenated <i>start</i> and <i>end</i>
 	 * substring is found. The end substring is matched ignoring case
 	 * considerations.
-	 * 
+	 *
 	 * @param startString
 	 *          the start string which should be searched in exact case mode
 	 * @param endString
@@ -1523,7 +1523,7 @@ public class WikipediaScanner {
 	 * Read the characters until no more letters are found or the given
 	 * <code>testChar</code> is found. If <code>testChar</code> was found, return
 	 * the offset position.
-	 * 
+	 *
 	 * @param testCh
 	 *          the test character
 	 * @param fromIndex

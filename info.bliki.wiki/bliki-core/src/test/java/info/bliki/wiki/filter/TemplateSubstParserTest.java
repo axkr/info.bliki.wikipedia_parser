@@ -59,7 +59,7 @@ public class TemplateSubstParserTest extends FilterTestSupport {
 		assertEquals("IN", wikiModel.parseTemplates("{{subst:UC:{{subst:tc}}}}", false));
 	}
 
-	public void testSubst006() { 
+	public void testSubst006() {
 		// http://www.mediawiki.org/wiki/Manual:Substitution#Predefined_templates
 		wikiModel.setNamespaceName("help");
 		assertEquals("startHelpend", wikiModel.parseTemplates("{{subst:t1|{{subst:NAMESPACE}}}}", true));

@@ -15,7 +15,7 @@ import java.util.Locale;
  * into an HTML file. The CSS is always included in the generated HTML text
  * which blows up the size of the HTML file. This is happening by using a local
  * Derby database for caching the templates content.
- * 
+ *
  * @see InMemoryCreatorExample
  */
 public class HTMLCreatorExample {
@@ -92,7 +92,7 @@ public class HTMLCreatorExample {
 	 * href="http://en.wikipedia.org/w/api.php"
 	 * >http://en.wikipedia.org/w/api.php</a> for the english Wikipedia) and write
 	 * the generated HTML file to the<code>c:/temp/</code> Windows directory.
-	 * 
+	 *
 	 * @param title
 	 *          the wiki article's title
 	 * @param apiLink
@@ -217,15 +217,15 @@ public class HTMLCreatorExample {
 	public static void testCreator016() {
 		testWikipediaENAPI("Acute disseminated encephalomyelitis");
 	}
-	
+
 	public static void testCreator017() {
 		testWikipediaENAPI("Apatosaurus");
 	}
-	
+
 	public static void testCreator018() {
 		testWikipediaENAPI("Batman Returns");
 	}
-	
+
 	public static void testCreateText001() {
 		testWikipediaText(TEXT_ISSUE_96, "Wikipedia:Hauptseite/Artikel des Tages/Donnerstag", "http://de.wikipedia.org/w/api.php",
 				Locale.GERMAN);

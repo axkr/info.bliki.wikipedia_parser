@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 /**
  * Syntax highlighting support for ABAP source codes
- * 
+ *
  */
 public class ABAPCodeFilter extends AbstractCodeFormatter {
 
@@ -204,7 +204,7 @@ public class ABAPCodeFilter extends AbstractCodeFormatter {
 	}
 
 	/**
-   *  
+   *
    */
 	public boolean isPHPTag() {
 		return false;

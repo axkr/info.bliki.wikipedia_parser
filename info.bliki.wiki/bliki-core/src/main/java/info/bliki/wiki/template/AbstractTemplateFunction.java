@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * An abstract template parser function.
- * 
+ *
  */
 public abstract class AbstractTemplateFunction implements ITemplateFunction {
 
@@ -30,7 +30,7 @@ public abstract class AbstractTemplateFunction implements ITemplateFunction {
 
 	/**
 	 * Parse the given content string with the template parser.
-	 * 
+	 *
 	 * @param content
 	 *          the raw content string
 	 * @param model
@@ -53,7 +53,7 @@ public abstract class AbstractTemplateFunction implements ITemplateFunction {
 	/**
 	 * Parse the given content string with the template parser and
 	 * <code>trim()</code> the resulting string.
-	 * 
+	 *
 	 * @param content
 	 *          the raw content string
 	 * @param model

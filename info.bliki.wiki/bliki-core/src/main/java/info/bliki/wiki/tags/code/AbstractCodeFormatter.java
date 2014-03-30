@@ -3,8 +3,8 @@ package info.bliki.wiki.tags.code;
 import java.util.HashMap;
 
 /**
- * Abstract base class for alle SourceCodeFormatters  
- * 
+ * Abstract base class for alle SourceCodeFormatters
+ *
  */
 abstract public class AbstractCodeFormatter implements SourceCodeFormatter {
 	public final static String FONT_KEYWORD = "<span style=\"color:#7F0055; font-weight: bold; \">";

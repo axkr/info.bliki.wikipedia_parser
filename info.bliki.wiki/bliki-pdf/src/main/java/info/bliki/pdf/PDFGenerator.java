@@ -23,11 +23,11 @@ import com.lowagie.text.DocumentException;
 
 /**
  * Create a PDF document from a given rendered XHTML text.
- * 
+ *
  * Uses the <a href="https://xhtmlrenderer.dev.java.net/">Flying Saucer Project</a>
  * and <a href="http://en.wikipedia.org/wiki/IText">iText</a> Open Source
  * libraries for creating and manipulating PDF.
- * 
+ *
  */
 public class PDFGenerator {
 	public final static String HEADER_TEMPLATE = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
@@ -45,7 +45,7 @@ public class PDFGenerator {
 
 	/**
 	 * Create a PDF document from a given rendered XHTML text.
-	 * 
+	 *
 	 * @param outputFileName
 	 *          the PDF output file name (example: c:/temp/test.pdf)
 	 * @param xhtmlText

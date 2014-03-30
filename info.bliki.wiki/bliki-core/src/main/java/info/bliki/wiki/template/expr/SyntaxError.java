@@ -3,12 +3,12 @@ package info.bliki.wiki.template.expr;
 /**
  * Exception for a syntax error detected by the parser for a Mediawiki template
  * expression.
- * 
+ *
  */
 public class SyntaxError extends RuntimeException {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1849387697719679119L;
 
@@ -38,10 +38,10 @@ public class SyntaxError extends RuntimeException {
 
 	/**
 	 * SyntaxError exception
-	 * 
+	 *
 	 * @param startOffset
 	 * @param length
-	 * 
+	 *
 	 * @see
 	 */
 	public SyntaxError(final int startOffset, final int rowIndx, final int columnIndx, final String currentLine, final String error,

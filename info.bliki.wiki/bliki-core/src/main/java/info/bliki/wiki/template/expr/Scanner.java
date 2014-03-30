@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * Determine the tokens from a math formulas string representation.
- * 
+ *
  * See <a
  * href="http://en.wikipedia.org/wiki/Lexical_analysis">Lexical analysis</a>.
  */
@@ -93,7 +93,7 @@ public class Scanner {
 
 	/**
 	 * Initialize Scanner without a math-expression
-	 * 
+	 *
 	 */
 	public Scanner() {
 		initializeNullScanner();
@@ -117,7 +117,7 @@ public class Scanner {
 
 	/**
 	 * get the next Character from the input string
-	 * 
+	 *
 	 */
 	private void getChar() {
 		if (fInputString.length() > fCurrentPosition) {

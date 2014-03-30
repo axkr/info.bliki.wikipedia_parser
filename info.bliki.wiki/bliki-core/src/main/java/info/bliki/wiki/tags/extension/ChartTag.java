@@ -15,7 +15,7 @@ import java.util.Set;
 /**
  * Wiki tag for the <a href="http://code.google.com/apis/chart/">Google Chart
  * API</a>
- * 
+ *
  */
 public class ChartTag extends HTMLTag implements INoBodyParsingTag {
 	final static public HashSet<String> ALLOWED_ATTRIBUTES_SET = new HashSet<String>(997);

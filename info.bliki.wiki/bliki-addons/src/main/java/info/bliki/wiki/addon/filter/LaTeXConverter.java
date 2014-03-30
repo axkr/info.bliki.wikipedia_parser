@@ -27,7 +27,7 @@ import java.util.Map;
 
 /**
  * A converter which renders the internal node representation as LaTeX text
- * 
+ *
  */
 public class LaTeXConverter implements ITextConverter {
 
@@ -209,7 +209,7 @@ public class LaTeXConverter implements ITextConverter {
 			if (!list.isEmpty()) {
 
 				// fInternalListStack = null;
-				
+
 				for (int i = 0; i < list.getNestedElements().size(); i++) {
 					Object element = list.getNestedElements().get(i);
 					if (element instanceof WPList.InternalList) {

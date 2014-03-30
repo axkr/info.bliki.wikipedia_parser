@@ -60,13 +60,13 @@ public class HTML2MoinMoinTest extends TestCase {
 				+ "<td><i><a href=\"/wiki/Art_%28Biologie%29\" title=\"Art (Biologie)\">Art</a>:</i></td>\n"
 				+ "<td>Afrikanischer Strauß</td>\n" + "</tr>\n" + "</table>");
 		String result = conv.toWiki(new ToMoinMoin());
-		assertEquals(result, "                         \n" + 
-				"||\'\'[[Klasse]]:\'\'||[[Vögel]] (Aves)||\n" + 
-				"||\'\'[[Unterklasse]]:\'\'||[[Urkiefervögel]] (Palaeognathae)||\n" + 
-				"||\'\'[[Ordnung]]:\'\'||[[Laufvögel]] (Struthioniformes)||\n" + 
-				"||\'\'[[Familie]]:\'\'||Strauße (Struthionidae)||\n" + 
-				"||\'\'[[Gattung]]:\'\'||Strauße (\'\'Struthio\'\')||\n" + 
-				"||\'\'[[Art]]:\'\'||Afrikanischer Strauß||\n" + 
+		assertEquals(result, "                         \n" +
+				"||\'\'[[Klasse]]:\'\'||[[Vögel]] (Aves)||\n" +
+				"||\'\'[[Unterklasse]]:\'\'||[[Urkiefervögel]] (Palaeognathae)||\n" +
+				"||\'\'[[Ordnung]]:\'\'||[[Laufvögel]] (Struthioniformes)||\n" +
+				"||\'\'[[Familie]]:\'\'||Strauße (Struthionidae)||\n" +
+				"||\'\'[[Gattung]]:\'\'||Strauße (\'\'Struthio\'\')||\n" +
+				"||\'\'[[Art]]:\'\'||Afrikanischer Strauß||\n" +
 				"");
 	}
 

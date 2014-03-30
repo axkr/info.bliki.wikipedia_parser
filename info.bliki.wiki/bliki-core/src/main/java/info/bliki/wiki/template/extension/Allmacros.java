@@ -13,7 +13,7 @@ import java.util.Map;
  * The function lists all available template functions documentation. To show
  * the documentation of a function, the ITemplateFunction#getFunctionDoc() must
  * be implemented.
- * 
+ *
  * This function isn't included in the <i>default parser functions map</i>. Use
  * Configuration.addTemplateFunction(&quot;#all_macros&quot;, Allmacros.CONST)
  * to add the template to your configuration.

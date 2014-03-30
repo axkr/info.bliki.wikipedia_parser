@@ -9,7 +9,7 @@ import java.util.List;
  * character to upper case</i> syntax. See <a
  * href="http://en.wikipedia.org/wiki/Help:Variable#Formatting">Wikipedia -
  * Help:Variable#Formatting</a>
- * 
+ *
  */
 public class UCFirst extends AbstractTemplateFunction {
 	public final static ITemplateFunction CONST = new UCFirst();

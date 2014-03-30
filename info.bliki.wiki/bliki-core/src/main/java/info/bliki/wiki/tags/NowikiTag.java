@@ -8,7 +8,7 @@ import java.io.IOException;
 
 /**
  * Wiki tag for escaping the wiki syntax.
- * 
+ *
  */
 public class NowikiTag extends HTMLTag implements INoBodyParsingTag {
 	protected NowikiTag(String name) {
@@ -102,7 +102,7 @@ public class NowikiTag extends HTMLTag implements INoBodyParsingTag {
 	/**
 	 * Copy the text in the resulting buffer and escape special html characters
 	 * (&lt; &gt; &quot; &amp; &#39;)
-	 * 
+	 *
 	 * @param replaceAmpersand
 	 *          replace the ampersand character with the HTML number entity
 	 */

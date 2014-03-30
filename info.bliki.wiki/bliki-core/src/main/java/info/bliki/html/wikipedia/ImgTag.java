@@ -20,11 +20,11 @@ public class ImgTag extends AbstractHTMLTag {
 				}
 				if (srcValue.endsWith(".jpg") || srcValue.endsWith(".jpeg") || srcValue.endsWith(".png") || srcValue.endsWith(".gif")) {
 					String altValue = tagAtttributes.get("alt");
-					
+
 					resultBuffer.append("[[Image:");
 					resultBuffer.append(srcValue);
 					if (altValue != null) {
-						resultBuffer.append("|"); 
+						resultBuffer.append("|");
 						resultBuffer.append(altValue);
 					}
 					resultBuffer.append("]]");

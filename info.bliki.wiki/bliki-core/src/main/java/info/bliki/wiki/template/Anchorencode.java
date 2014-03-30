@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * A template parser function for <code>{{urlencode: ... }}</code> syntax
- * 
+ *
  */
 public class Anchorencode extends AbstractTemplateFunction {
 	public final static ITemplateFunction CONST = new Anchorencode();

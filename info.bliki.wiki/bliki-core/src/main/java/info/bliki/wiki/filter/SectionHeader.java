@@ -2,7 +2,7 @@ package info.bliki.wiki.filter;
 
 /**
  * A pair of <code>String's</code> used for the creation of "table of contents" (TOC)
- * 
+ *
  */
 public class SectionHeader extends StringPair {
 

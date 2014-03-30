@@ -29,7 +29,7 @@ public class XMLParseParser extends AbstractXMLParser{
         fAttributes = attributes;
 
         if (PARSE_TAG.equalsIgnoreCase(qName)) {
-            parse.setDisplaytitle(fAttributes.getValue(DISPLAY_TITLE_ATTR));            
+            parse.setDisplaytitle(fAttributes.getValue(DISPLAY_TITLE_ATTR));
         }
     }
 

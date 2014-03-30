@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * Wiki model implementation which allows some special JUnit tests with
  * namespaces and predefined templates
- * 
+ *
  */
 public class MediaWikiTestModel extends WikiModel {
 	final protected Map<String, String> db;
@@ -40,7 +40,7 @@ public class MediaWikiTestModel extends WikiModel {
 
 	/**
 	 * Add German namespaces to the wiki model
-	 * 
+	 *
 	 * @param imageBaseURL
 	 * @param linkBaseURL
 	 */
@@ -62,7 +62,7 @@ public class MediaWikiTestModel extends WikiModel {
 	/**
 	 * Add templates: &quot;Test&quot;, &quot;Templ1&quot;, &quot;Templ2&quot;,
 	 * &quot;Include Page&quot;
-	 * 
+	 *
 	 */
 	@Override
 	public String getRawWikiContent(ParsedPageName parsedPagename, Map<String, String> templateParameters) throws WikiModelContentException {
@@ -97,7 +97,7 @@ public class MediaWikiTestModel extends WikiModel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see info.bliki.wiki.model.WikiModel#appendInternalLink(java.lang.String,
 	 * java.lang.String, java.lang.String, java.lang.String, boolean)
 	 */

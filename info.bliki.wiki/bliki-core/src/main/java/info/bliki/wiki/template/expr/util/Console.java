@@ -14,7 +14,7 @@ import java.io.PrintStream;
  * A java console program to run the evaluator interactively. Utility for
  * testing the <code>{{ #expr: ... }}</code> and
  * <code>{{ #ifexpr: ... }}</code> expression evaluator.
- * 
+ *
  */
 public class Console {
 
@@ -89,7 +89,7 @@ public class Console {
 
 	/**
 	 * Sets the arguments for the <code>main</code> method
-	 * 
+	 *
 	 * @param args
 	 *          the aruments of the program
 	 */
@@ -123,9 +123,9 @@ public class Console {
 	/**
 	 * Evaluates the given string-expression and returns the result in
 	 * <code>OutputForm</code>
-	 * 
+	 *
 	 * @param strEval
-	 * 
+	 *
 	 */
 	public String interpreter(final String strEval) {
 		try {
@@ -143,11 +143,11 @@ public class Console {
 
 	/**
 	 * prints a prompt on the console but doesn't print a newline
-	 * 
+	 *
 	 * @param out
 	 * @param prompt
 	 *          the prompt string to display
-	 * 
+	 *
 	 */
 	public void printPrompt(final PrintStream out, final String prompt) {
 		out.print(prompt);
@@ -156,7 +156,7 @@ public class Console {
 
 	/**
 	 * read a string from the console. The string is terminated by a newline
-	 * 
+	 *
 	 * @param out
 	 *          Description of Parameter
 	 * @return the input string (without the newline)
@@ -191,7 +191,7 @@ public class Console {
 
 	/**
 	 * read a string from the console. The string is terminated by a newline
-	 * 
+	 *
 	 * @param prompt
 	 *          the prompt string to display
 	 * @param out

@@ -3,10 +3,10 @@ package info.bliki.api.query;
 /**
  * Module Parse <b> action=parse </b>.<br/> Parses wikitext pages and
  * returns parser output
- * 
+ *
  * Example: <a href="http://en.wikipedia.org/w/api.php?action=parse">api.php
  * ?action=parse</a>
- * 
+ *
  */
 public class Parse extends RequestBuilder {
 	public Parse() {
@@ -17,10 +17,10 @@ public class Parse extends RequestBuilder {
 	public static Parse create() {
 		return new Parse();
 	}
-	
+
 	/**
 	 * Title of page the text belongs to. Default: API
-	 * 
+	 *
 	 * @param title
 	 * @return
 	 */
@@ -31,7 +31,7 @@ public class Parse extends RequestBuilder {
 
 	/**
 	 * Wikitext to parse
-	 * 
+	 *
 	 * @param text
 	 * @return
 	 */
@@ -42,7 +42,7 @@ public class Parse extends RequestBuilder {
 
 	/**
 	 * Parse the content of this page. Cannot be used together with text and title
-	 * 
+	 *
 	 * @param page
 	 * @return
 	 */
@@ -58,7 +58,7 @@ public class Parse extends RequestBuilder {
 
 	/**
 	 * Parse the content of this revision. Overrides page
-	 * 
+	 *
 	 * @param oldid
 	 * @return
 	 */
@@ -84,7 +84,7 @@ public class Parse extends RequestBuilder {
 	/**
 	 * Do a pre-save transform on the input before parsing it.
    * Ignored if page or oldid is used.
-   * 
+   *
 	 * @param pst
 	 * @return
 	 */

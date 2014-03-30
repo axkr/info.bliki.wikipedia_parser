@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 /**
  * Syntax highlighting support for Groovy source codes
- * 
+ *
  */
 public class GroovyCodeFilter extends AbstractCPPBasedCodeFilter implements SourceCodeFormatter {
 

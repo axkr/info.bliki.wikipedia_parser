@@ -15,7 +15,7 @@ import legunto.template.ModuleExecutor;
 
 /**
  * A template parser function for <code>{{ #invoke: ... }}</code> syntax.
- * 
+ *
  */
 public class Invoke extends AbstractTemplateFunction {
 	public final static ITemplateFunction CONST = new Invoke();
@@ -41,7 +41,7 @@ public class Invoke extends AbstractTemplateFunction {
 		Frame parentFrame = model.getFrame();
 		try {
 			Map<String, String> map = getParameters(parts, model);
-			System.out.println(module + " - " + method + " - " + map.toString()); 
+			System.out.println(module + " - " + method + " - " + map.toString());
 			Frame newFrame = new Frame(map, parentFrame);
 			model.setFrame(newFrame);
 			return executor.run(model, module, method, newFrame);

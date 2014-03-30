@@ -9,7 +9,7 @@ import java.util.List;
  * a string with a character to the specified width</i>. See: <a
  * href="http://meta.wikimedia.org/wiki/Help:Magic_words#Formatting">Magic words
  * - Formatting</a>
- * 
+ *
  */
 public class Padleft extends AbstractTemplateFunction {
 	public final static ITemplateFunction CONST = new Padleft();

@@ -18,7 +18,7 @@ public class Revision {
 		this.anon = "";
 		this.content = "";
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Revision) {
@@ -31,7 +31,7 @@ public class Revision {
 	public int hashCode() {
 		return content.hashCode();
 	}
-	
+
 	public String getAnon() {
 		return anon;
 	}

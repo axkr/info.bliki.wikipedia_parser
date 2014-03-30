@@ -102,7 +102,7 @@ public class Console {
 	 * is specified (i.e. if length != -1), only length chars are returned.
 	 * Otherwise all chars in the stream are returned. Note this doesn't close the
 	 * stream.
-	 * 
+	 *
 	 * @throws IOException
 	 *           if a problem occurred reading the stream.
 	 */

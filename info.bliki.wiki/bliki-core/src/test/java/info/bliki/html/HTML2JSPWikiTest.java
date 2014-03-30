@@ -39,12 +39,12 @@ public class HTML2JSPWikiTest extends TestCase {
 		// invalid nested html test
 		conv.setInputHTML("<h2>the good</h2><h3>the bad</h3><h4>and the ugly</h4>");
 		String result = conv.toWiki(new ToJSPWiki());
-		assertEquals(result, "\n" + 
-				"!!!the good\n" + 
-				"\n" + 
-				"!!the bad\n" + 
-				"\n" + 
-				"!and the ugly\n" + 
+		assertEquals(result, "\n" +
+				"!!!the good\n" +
+				"\n" +
+				"!!the bad\n" +
+				"\n" +
+				"!and the ugly\n" +
 				"");
 	}
 
@@ -66,13 +66,13 @@ public class HTML2JSPWikiTest extends TestCase {
 				+ "<td><i><a href=\"/wiki/Art_%28Biologie%29\" title=\"Art (Biologie)\">Art</a>:</i></td>\n"
 				+ "<td>Afrikanischer Strauß</td>\n" + "</tr>\n" + "</table>");
 		String result = conv.toWiki(new ToJSPWiki());
-		assertEquals(result, "                         \n" + 
-				"|''[Klasse]:''|[Vögel] (Aves)\n" + 
-				"|''[Unterklasse]:''|[Urkiefervögel] (Palaeognathae)\n" + 
-				"|''[Ordnung]:''|[Laufvögel] (Struthioniformes)\n" + 
-				"|''[Familie]:''|Strauße (Struthionidae)\n" + 
-				"|''[Gattung]:''|Strauße (''Struthio'')\n" + 
-				"|''[Art]:''|Afrikanischer Strauß\n" + 
+		assertEquals(result, "                         \n" +
+				"|''[Klasse]:''|[Vögel] (Aves)\n" +
+				"|''[Unterklasse]:''|[Urkiefervögel] (Palaeognathae)\n" +
+				"|''[Ordnung]:''|[Laufvögel] (Struthioniformes)\n" +
+				"|''[Familie]:''|Strauße (Struthionidae)\n" +
+				"|''[Gattung]:''|Strauße (''Struthio'')\n" +
+				"|''[Art]:''|Afrikanischer Strauß\n" +
 				"");
 	}
 
@@ -87,8 +87,8 @@ public class HTML2JSPWikiTest extends TestCase {
 		HTML2WikiConverter conv = new HTML2WikiConverter();
 		conv.setInputHTML("<html><body><table>\n<tr>\n<td>hello world</td>\n</tr></table></body></html>");
 		String result = conv.toWiki(new ToJSPWiki());
-		assertEquals(result, "   \n" + 
-				"|hello world\n" + 
+		assertEquals(result, "   \n" +
+				"|hello world\n" +
 				"");
 	}
 
@@ -103,8 +103,8 @@ public class HTML2JSPWikiTest extends TestCase {
 		HTML2WikiConverter conv = new HTML2WikiConverter();
 		conv.setInputHTML("<h2>hello \n world\n</h2>");
 		String result = conv.toWiki(new ToJSPWiki(true, true));
-		assertEquals(result, "\n" + 
-				"!!!hello   world\n" + 
+		assertEquals(result, "\n" +
+				"!!!hello   world\n" +
 				"");
 	}
 
@@ -142,12 +142,12 @@ public class HTML2JSPWikiTest extends TestCase {
 		conv
 				.setInputHTML("<h2>the <a href=\"http://good\">good</a></h2><h3>the <div>bad</div></h3><h2>and <b><i>the</i> ugly</b></h2>");
 		String result = conv.toWiki(new ToJSPWiki());
-		assertEquals(result, "\n" + 
-				"!!!the good\n" + 
-				"\n" + 
-				"!!the bad\n" + 
-				"\n" + 
-				"!!!and the ugly\n" + 
+		assertEquals(result, "\n" +
+				"!!!the good\n" +
+				"\n" +
+				"!!the bad\n" +
+				"\n" +
+				"!!!and the ugly\n" +
 				"");
 	}
 

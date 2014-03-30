@@ -33,7 +33,7 @@ public class ParseTest extends BaseQueryTest {
 	 * To make this test work correctly uncomment it and the
 	 * <code>assertNotNull(user);</code> line and define a correct user in the
 	 * <code>getRegisteredUser()</code> method
-	 * 
+	 *
 	 * @see BaseQueryTest#getRegisteredUser()
 	 */
 	// public void __testParseRegisteredQuery() {

@@ -29,7 +29,7 @@ public abstract class BaseQueryTest extends TestCase {
 	 * correct user/password and modify the
 	 * <code>ParseTest#testParseRegisteredQuery()</code> JUnit method to test your
 	 * user.
-	 * 
+	 *
 	 * @return
 	 * @see ParseTest#testParseRegisteredQuery()
 	 */

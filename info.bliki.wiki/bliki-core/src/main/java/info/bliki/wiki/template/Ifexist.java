@@ -12,7 +12,7 @@ import java.util.List;
  * A template parser function for <code>{{ #ifexist: ... }}</code> syntax. See
  * <a href="http://www.mediawiki.org/wiki/Help:Extension:ParserFunctions">
  * Mediwiki's Help:Extension:ParserFunctions</a>
- * 
+ *
  */
 public class Ifexist extends AbstractTemplateFunction {
 	public final static ITemplateFunction CONST = new Ifexist();

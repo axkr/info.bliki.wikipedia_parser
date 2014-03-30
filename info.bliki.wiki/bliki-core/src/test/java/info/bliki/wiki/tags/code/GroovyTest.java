@@ -38,25 +38,25 @@ public class GroovyTest extends FilterTestSupport {
 				+ "  <category type=\"present\">\n" + "      <item when=\"Aug 10\">Kathryn's Birthday</item>\n" + "  </category>\n"
 				+ "</shopping>\n" + "'''\n" + "</source>", false);
 		assertEquals(
-				"<pre class=\"groovy\">\n" + 
-				"<span style=\"color:#7F0055; font-weight: bold; \">import</span> groovy.xml.StreamingMarkupBuilder\n" + 
-				"<span style=\"color:#7F0055; font-weight: bold; \">import</span> groovy.xml.XmlUtil\n" + 
-				"\n" + 
-				"<span style=\"color:#7F0055; font-weight: bold; \">def</span> input = <span style=\"color:#2A00FF; \">&#39;&#39;&#39;\n" + 
-				"&#60;shopping&#62;\n" + 
-				"  &#60;category type=&#34;groceries&#34;&#62;\n" + 
-				"      &#60;item&#62;Chocolate&#60;/item&#62;\n" + 
-				"      &#60;item&#62;Coffee&#60;/item&#62;\n" + 
-				"  &#60;/category&#62;\n" + 
-				"  &#60;category type=&#34;supplies&#34;&#62;\n" + 
-				"      &#60;item&#62;Paper&#60;/item&#62;\n" + 
-				"      &#60;item quantity=&#34;4&#34;&#62;Pens&#60;/item&#62;\n" + 
-				"  &#60;/category&#62;\n" + 
-				"  &#60;category type=&#34;present&#34;&#62;\n" + 
-				"      &#60;item when=&#34;Aug 10&#34;&#62;Kathryn&#39;s Birthday&#60;/item&#62;\n" + 
-				"  &#60;/category&#62;\n" + 
-				"&#60;/shopping&#62;\n" + 
-				"&#39;</span><span style=\"color:#2A00FF; \">&#39;&#39;</span>\n" + 
+				"<pre class=\"groovy\">\n" +
+				"<span style=\"color:#7F0055; font-weight: bold; \">import</span> groovy.xml.StreamingMarkupBuilder\n" +
+				"<span style=\"color:#7F0055; font-weight: bold; \">import</span> groovy.xml.XmlUtil\n" +
+				"\n" +
+				"<span style=\"color:#7F0055; font-weight: bold; \">def</span> input = <span style=\"color:#2A00FF; \">&#39;&#39;&#39;\n" +
+				"&#60;shopping&#62;\n" +
+				"  &#60;category type=&#34;groceries&#34;&#62;\n" +
+				"      &#60;item&#62;Chocolate&#60;/item&#62;\n" +
+				"      &#60;item&#62;Coffee&#60;/item&#62;\n" +
+				"  &#60;/category&#62;\n" +
+				"  &#60;category type=&#34;supplies&#34;&#62;\n" +
+				"      &#60;item&#62;Paper&#60;/item&#62;\n" +
+				"      &#60;item quantity=&#34;4&#34;&#62;Pens&#60;/item&#62;\n" +
+				"  &#60;/category&#62;\n" +
+				"  &#60;category type=&#34;present&#34;&#62;\n" +
+				"      &#60;item when=&#34;Aug 10&#34;&#62;Kathryn&#39;s Birthday&#60;/item&#62;\n" +
+				"  &#60;/category&#62;\n" +
+				"&#60;/shopping&#62;\n" +
+				"&#39;</span><span style=\"color:#2A00FF; \">&#39;&#39;</span>\n" +
 				"</pre>", result);
 	}
 }

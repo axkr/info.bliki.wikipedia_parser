@@ -9,7 +9,7 @@ import java.util.List;
  * case</i> syntax. See <a
  * href="http://en.wikipedia.org/wiki/Help:Variable#Formatting">Wikipedia -
  * Help:Variable#Formatting</a>
- * 
+ *
  */
 public class Plural extends AbstractTemplateFunction {
 	public final static ITemplateFunction CONST = new Plural();

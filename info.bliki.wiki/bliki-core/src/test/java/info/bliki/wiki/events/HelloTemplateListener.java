@@ -5,8 +5,8 @@ import info.bliki.wiki.model.DefaultEventListener;
 /**
  * A test wiki event listener implementation which will trigger the
  * <code>on....</code> event methods during the parsing process.
- * 
- * 
+ *
+ *
  */
 public class HelloTemplateListener extends DefaultEventListener {
 	StringBuffer collectorBuffer = new StringBuffer();

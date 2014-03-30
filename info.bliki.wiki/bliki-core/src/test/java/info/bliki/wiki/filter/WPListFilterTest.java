@@ -117,30 +117,30 @@ public class WPListFilterTest extends FilterTestSupport {
 	}
 
 	public void testList13() {
-		assertEquals("\n" + 
-				"test 1\n" + 
-				"test 2\n" + 
-				"test 3\n" + 
-				"\n" + 
-				"hello\n" + 
-				"\n" + 
-				"\n" + 
-				"test 4\n" + 
+		assertEquals("\n" +
+				"test 1\n" +
+				"test 2\n" +
+				"test 3\n" +
+				"\n" +
+				"hello\n" +
+				"\n" +
+				"\n" +
+				"test 4\n" +
 				"", wikiModel.render(
 				new PlainTextConverter(), LIST3, false));
 	}
 
 	public void testList14() {
-		assertEquals("\n" + 
-				"\n" + 
-				"<ul>\n" + 
-				"<li>item 1\n" + 
-				"<ol>\n" + 
-				"<li>item 1.1</li>\n" + 
-				"<li>item 1.2</li>\n</ol></li>\n" + 
+		assertEquals("\n" +
+				"\n" +
+				"<ul>\n" +
+				"<li>item 1\n" +
+				"<ol>\n" +
+				"<li>item 1.1</li>\n" +
+				"<li>item 1.2</li>\n</ol></li>\n" +
 				"<li>item 2</li>\n</ul>", wikiModel.render("\n" + "*item 1\n" + "*# item 1.1\n" + "*# item 1.2\n" + "* item 2", false));
-	} 
-	
+	}
+
 	public void testListContinuation01() {
 		assertEquals("\n" + "<dl>\n" + "<dd><span>simple definition</span></dd>\n</dl>", wikiModel
 				.render(": <span>simple definition</span>", false));

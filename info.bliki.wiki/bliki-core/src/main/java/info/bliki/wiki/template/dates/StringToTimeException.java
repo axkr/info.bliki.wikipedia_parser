@@ -1,7 +1,7 @@
 package info.bliki.wiki.template.dates;
 
 /**
- * 
+ *
  * <p>
  * Copied from <a href="https://github.com/collegeman/stringtotime/blob/master/src/main/java/com/clutch/dates/StringToTime.java"
  * >github.com/collegeman/stringtotime</a >

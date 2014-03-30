@@ -13,12 +13,12 @@ public class FontFilterTest extends FilterTestSupport {
   }
 
   public void testFont1() {
-    assertEquals("\n" + 
+    assertEquals("\n" +
     		"<p><font color=\"red\">Text</font></p>", wikiModel.render("<font color=\"red\">Text</font>", false));
   }
 
   public void testFont4() {
-    assertEquals("\n" + 
+    assertEquals("\n" +
     		"<p><font color=\"red\">Text</font></p>", wikiModel.render("<font color=red>Text</font>", false));
   }
 }

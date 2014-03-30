@@ -15,7 +15,7 @@ import java.util.Map;
 /**
  * Wiki model implementation which allows some special JUnit tests for template
  * parser functions
- * 
+ *
  */
 public class ParserFunctionModel extends WikiModel {
 	final static String CONCAT = "{{{1|}}}{{{2|}}}{{{3|}}}{{{4|}}}{{{5|}}}{{{6|}}}{{{7|}}}{{{8|}}}{{{9|}}}{{{10|}}}";
@@ -53,7 +53,7 @@ public class ParserFunctionModel extends WikiModel {
 
 	/**
 	 * Add German namespaces to the wiki model
-	 * 
+	 *
 	 * @param imageBaseURL
 	 * @param linkBaseURL
 	 */
@@ -68,7 +68,7 @@ public class ParserFunctionModel extends WikiModel {
 	/**
 	 * Add templates: &quot;Test&quot;, &quot;Templ1&quot;, &quot;Templ2&quot;,
 	 * &quot;Include Page&quot;
-	 * 
+	 *
 	 */
 	@Override
 	public String getRawWikiContent(ParsedPageName parsedPagename, Map<String, String> map) throws WikiModelContentException {

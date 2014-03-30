@@ -2,25 +2,25 @@ package info.bliki.api.query;
 
 /**
  * <b> action=opensearch </b> <br/> This module implements OpenSearch protocol
- * 
+ *
  * <pre>
- * Parameters: 
- *   search    - Search string 
- *   limit     - Maximum amount of results to return 
- *               No more than 100 (100 for bots) allowed. 
+ * Parameters:
+ *   search    - Search string
+ *   limit     - Maximum amount of results to return
+ *               No more than 100 (100 for bots) allowed.
  *               Default: 10
- *   namespace - Namespaces to search 
+ *   namespace - Namespaces to search
  *               Values (separate with '|'): 0, 1, 2, 3, 4, 5, 6, 7, 8,
- *               9, 10, 11, 12, 13, 14, 15, 100, 101 Default: 0 
+ *               9, 10, 11, 12, 13, 14, 15, 100, 101 Default: 0
  *   format -
- * 
+ *
  * </pre>
- * 
+ *
  * Example: <a
  * href="http://en.wikipedia.org/w/api.php?action=opensearch&amp;search=Te"
  * >api.php?action=opensearch&amp;search=Te</a>
- * 
- * 
+ *
+ *
  */
 public class OpenSearch extends RequestBuilder {
 	public OpenSearch() {
@@ -32,11 +32,11 @@ public class OpenSearch extends RequestBuilder {
 		put("search", search);
 		return this;
 	}
-	
+
 	public static OpenSearch create() {
 		return new OpenSearch();
 	}
-	
+
 	public OpenSearch limit(int limit) {
 		put("limit", Integer.toString(limit));
 		return this;
@@ -45,7 +45,7 @@ public class OpenSearch extends RequestBuilder {
 	/**
 	 * namespace - a Namespace to search<br/>Values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
 	 * 10, 11, 12, 13, 14, 15, 100, 101 Default: 0
-	 * 
+	 *
 	 * @param namespaces
 	 * @return
 	 */
@@ -58,7 +58,7 @@ public class OpenSearch extends RequestBuilder {
 	 * namespace - Namespaces to search<br/> Values (internally separated with
 	 * '|'): 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 100, 101
 	 * Default: 0
-	 * 
+	 *
 	 * @param namespaces
 	 * @return
 	 */

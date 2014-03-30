@@ -73,7 +73,7 @@ public class ASTNodeFactory implements IParserFactory {
 
 	/**
 	 * Create a default ASTNode factory
-	 * 
+	 *
 	 */
 	public ASTNodeFactory() {
 	}

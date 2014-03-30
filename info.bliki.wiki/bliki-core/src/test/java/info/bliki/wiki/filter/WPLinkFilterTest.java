@@ -14,17 +14,17 @@ public class WPLinkFilterTest extends FilterTestSupport {
 	public static Test suite() {
 		return new TestSuite(WPLinkFilterTest.class);
 	}
-	
+
   public void testIssue136() {
 		assertEquals(
-				"\n" + 
+				"\n" +
 				"<p><a href=\"http://www.bliki.info/wiki/Test:http://somesite.org\" title=\"Test:http://somesite.org\">Test:http://somesite.org</a></p>",
 				wikiModel
 						.render(
 								"[[Test:http://somesite.org]]",
 								false));
 	}
-  
+
 	public void testLinkHash() {
 		assertEquals(
 				"\n"
@@ -67,7 +67,7 @@ public class WPLinkFilterTest extends FilterTestSupport {
 
 	/**
 	 * Categories are not rendered
-	 * 
+	 *
 	 */
 	public void testCategory01() {
 		assertEquals("", wikiModel.render("[[Category:Tips and Tricks]]", false));
@@ -122,11 +122,11 @@ public class WPLinkFilterTest extends FilterTestSupport {
 	}
 
 	public void testLink11() {
-			assertEquals("\n" + 
-					"<p>test\n" + 
-					"</p>\n" + 
-					"<ul>\n" + 
-					"<li>blabla<a href=\"http://www.bliki.info/wiki/List_of_cities_by_country#Morocco\" title=\"List of cities by country\">Cities in Morocco</a></li>\n" + 
+			assertEquals("\n" +
+					"<p>test\n" +
+					"</p>\n" +
+					"<ul>\n" +
+					"<li>blabla<a href=\"http://www.bliki.info/wiki/List_of_cities_by_country#Morocco\" title=\"List of cities by country\">Cities in Morocco</a></li>\n" +
 					"</ul>", wikiModel.render("test\n*blabla[[List of cities by country#Morocco|\nCities in Morocco]]",
 				false));
 	}
@@ -156,25 +156,25 @@ public class WPLinkFilterTest extends FilterTestSupport {
 						+ "<p>Dolphins are <a href=\"http://www.bliki.info/wiki/Aquatic_mammal\" title=\"Aquatic mammal\">aquatic mammals</a> that are closely related to <a href=\"http://www.bliki.info/wiki/Whale\" title=\"Whale\">whales</a> and <a href=\"http://www.bliki.info/wiki/Porpoise\" title=\"Porpoise\">porpoises</a>.</p>",
 				wikiModel.render("Dolphins are [[aquatic mammal]]s that are closely related to [[whale]]s and [[porpoise]]s.", false));
 	}
-	
+
 	public void testLink15() {
 		assertEquals(
 				"\n<p><a href=\"http://www.bliki.info/wiki/Main_Page\" title=\"Main Page\">main Page</a></p>",
 				wikiModel.render("[[main Page]]", false));
 	}
-	
+
 	public void testLink16() {
 		assertEquals(
 				"\n<p><a href=\"http://www.bliki.info/wiki/Main_Page\" title=\"Main Page\">main  Page</a></p>",
 				wikiModel.render("[[main  Page]]", false));
 	}
-	
+
 	public void testLink17() {
 		assertEquals(
 				"\n<p><a href=\"http://www.bliki.info/wiki/Main_Page\" title=\"Main Page\">main__Page</a></p>",
 				wikiModel.render("[[main__Page]]", false));
 	}
-	
+
 	public void testLink18() {
 		assertEquals(
 				"\n<p><a href=\"http://www.bliki.info/wiki/Main_Page\" title=\"Main Page\">main_ Page</a></p>",
@@ -251,7 +251,7 @@ public class WPLinkFilterTest extends FilterTestSupport {
 	}
 
 	public void testPlainTextConverter001() {
-		assertEquals("\n" + 
+		assertEquals("\n" +
 				"An external link. ", wikiModel.render(new PlainTextConverter(), "An [http://www.example.com external link]. ",
 				false));
 	}
@@ -261,7 +261,7 @@ public class WPLinkFilterTest extends FilterTestSupport {
 				+ "<!--Note: French does not have tonic accents, so do not add stress marks to this pronunciation-->)"
 				+ " is a 19th century ";
 
-		assertEquals("\n" + 
+		assertEquals("\n" +
 				"The Eiffel Tower,[tuʀ ɛfɛl]) is a 19th century ", wikiModel.render(
 				new PlainTextConverter(), wikitext, false));
 	}
@@ -271,7 +271,7 @@ public class WPLinkFilterTest extends FilterTestSupport {
 				+ "<!--Note: French does not have tonic accents, so do not add stress marks to this pronunciation-->)"
 				+ " is a 19th century ";
 
-		assertEquals("\n" + 
+		assertEquals("\n" +
 				"The Eiffel Tower,French pronunciation: [tuʀ ɛfɛl]) is a 19th century ", wikiModel.render(
 				new PlainTextConverter(), wikitext, false));
 	}
@@ -281,7 +281,7 @@ public class WPLinkFilterTest extends FilterTestSupport {
 				+ "<!--Note: French does not have tonic accents, so do not add stress marks to this pronunciation-->)"
 				+ " is a 19th century ";
 
-		assertEquals("\n" + 
+		assertEquals("\n" +
 				"The Eiffel Tower,French: [tuʀ ɛfɛl]) is a 19th century ", wikiModel.render(
 				new PlainTextConverter(), wikitext, false));
 	}
@@ -291,7 +291,7 @@ public class WPLinkFilterTest extends FilterTestSupport {
 				+ "<!--Note: French does not have tonic accents, so do not add stress marks to this pronunciation-->)"
 				+ " is a 19th century ";
 
-		assertEquals("\n" + 
+		assertEquals("\n" +
 				"The Eiffel Tower,[tuʀ ɛfɛl]) is a 19th century ", wikiModel.render(
 				new PlainTextConverter(), wikitext, false));
 	}

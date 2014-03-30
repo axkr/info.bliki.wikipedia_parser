@@ -85,7 +85,7 @@ public class PlainTextCreatorExample {
 	public static void testCreator007() {
 		testWikipediaENAPI("Batman Returns");
 	}
-	
+
 	public static void main(String[] args) {
 		testCreator007();
 	}

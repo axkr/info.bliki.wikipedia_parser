@@ -1,35 +1,35 @@
 /*  Copyright (c) 2006-2007, Vladimir Nikic
  All rights reserved.
- 
- Redistribution and use of this software in source and binary forms, 
- with or without modification, are permitted provided that the following 
+
+ Redistribution and use of this software in source and binary forms,
+ with or without modification, are permitted provided that the following
  conditions are met:
- 
+
  * Redistributions of source code must retain the above
  copyright notice, this list of conditions and the
  following disclaimer.
- 
+
  * Redistributions in binary form must reproduce the above
  copyright notice, this list of conditions and the
  following disclaimer in the documentation and/or other
  materials provided with the distribution.
- 
- * The name of HtmlCleaner may not be used to endorse or promote 
+
+ * The name of HtmlCleaner may not be used to endorse or promote
  products derived from this software without specific prior
  written permission.
 
- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
- AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
- IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
- ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE 
- LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
- CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
- INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
- CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
- ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+ LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  POSSIBILITY OF SUCH DAMAGE.
- 
+
  You can contact Vladimir Nikic by sending e-mail to
  nikic_vladimir@yahoo.com. Please include the word "HtmlCleaner" in the
  subject line.
@@ -62,7 +62,7 @@ import java.util.TreeSet;
 
 /**
  * Main HtmlCleaner class.
- * 
+ *
  * <p>
  * It represents public interface to the user. It's task is to call tokenizer
  * with specified source HTML, traverse list of produced token list and create
@@ -72,12 +72,12 @@ import java.util.TreeSet;
  * <p>
  * Typical usage is the following:
  * </p>
- * 
+ *
  * <xmp> HtmlCleaner cleaner = new HtmlCleaner(...); // one of few constructors
  * cleaner.setXXX(...) // optionally, set cleaner's behaviour clener.clean(); //
  * calls cleaning process cleaner.writeXmlXXX(...) // writes resulting XML to
  * string, file or any output stream </xmp>
- * 
+ *
  * Created by: Vladimir Nikic <br/> Date: November, 2006
  */
 public class HtmlCleaner {
@@ -193,7 +193,7 @@ public class HtmlCleaner {
 
 		/**
 		 * Checks if any of tags specified in the set are already open.
-		 * 
+		 *
 		 * @param tags
 		 */
 		private boolean someAlreadyOpen(Set<String> tags) {
@@ -249,7 +249,7 @@ public class HtmlCleaner {
 
 	/**
 	 * Constructor - creates the instance with specified html content as String.
-	 * 
+	 *
 	 * @param htmlContent
 	 */
 	public HtmlCleaner(String htmlContent, ITagInfoProvider tagInfoProvider) {
@@ -259,7 +259,7 @@ public class HtmlCleaner {
 
 	/**
 	 * Constructor - creates the instance with specified html content as String.
-	 * 
+	 *
 	 * @param htmlContent
 	 */
 	public HtmlCleaner(String htmlContent) {
@@ -268,7 +268,7 @@ public class HtmlCleaner {
 
 	/**
 	 * Constructor - creates the instance for specified file.
-	 * 
+	 *
 	 * @param file
 	 * @param charset
 	 * @throws IOException
@@ -281,7 +281,7 @@ public class HtmlCleaner {
 
 	/**
 	 * Constructor - creates the instance for specified file.
-	 * 
+	 *
 	 * @param file
 	 * @param charset
 	 * @throws IOException
@@ -292,7 +292,7 @@ public class HtmlCleaner {
 
 	/**
 	 * Constructor - creates the instance for specified file and charset.
-	 * 
+	 *
 	 * @param file
 	 * @throws IOException
 	 */
@@ -302,7 +302,7 @@ public class HtmlCleaner {
 
 	/**
 	 * Constructor - creates the instance for specified file and charset.
-	 * 
+	 *
 	 * @param file
 	 * @throws IOException
 	 */
@@ -312,7 +312,7 @@ public class HtmlCleaner {
 
 	/**
 	 * Constructor - creates the instance for specified URL and charset.
-	 * 
+	 *
 	 * @param url
 	 * @param charset
 	 * @throws IOException
@@ -325,7 +325,7 @@ public class HtmlCleaner {
 
 	/**
 	 * Constructor - creates the instance for specified URL and charset.
-	 * 
+	 *
 	 * @param url
 	 * @param tagInfoProvider
 	 * @throws IOException
@@ -336,7 +336,7 @@ public class HtmlCleaner {
 
 	/**
 	 * Constructor - creates the instance for specified URL and charset.
-	 * 
+	 *
 	 * @param url
 	 * @param charset
 	 * @throws IOException
@@ -347,7 +347,7 @@ public class HtmlCleaner {
 
 	/**
 	 * Constructor - creates the instance for specified URL and charset.
-	 * 
+	 *
 	 * @param url
 	 * @throws IOException
 	 */
@@ -357,7 +357,7 @@ public class HtmlCleaner {
 
 	/**
 	 * Constructor - creates the instance for the specified inpout stream
-	 * 
+	 *
 	 * @param in
 	 * @param tagInfoProvider
 	 */
@@ -368,7 +368,7 @@ public class HtmlCleaner {
 
 	/**
 	 * Constructor - creates the instance for the specified inpout stream
-	 * 
+	 *
 	 * @param in
 	 */
 	public HtmlCleaner(InputStream in) {
@@ -386,7 +386,7 @@ public class HtmlCleaner {
 	/**
 	 * Constructor - creates the instance for the specified inpout stream and the
 	 * charset
-	 * 
+	 *
 	 * @param in
 	 * @param charset
 	 * @throws IOException
@@ -439,7 +439,7 @@ public class HtmlCleaner {
 	/**
 	 * Add attributes from specified map to the specified tag. If some attribute
 	 * already exist it is preserved.
-	 * 
+	 *
 	 * @param tag
 	 * @param attributes
 	 */
@@ -459,7 +459,7 @@ public class HtmlCleaner {
 	/**
 	 * Checks if open fatal tag is missing if there is a fatal tag for the
 	 * specified tag.
-	 * 
+	 *
 	 * @param tag
 	 */
 	private boolean isFatalTagSatisfied(TagInfo tag) {
@@ -474,7 +474,7 @@ public class HtmlCleaner {
 	/**
 	 * Check if specified tag requires parent tag, but that parent tag is missing
 	 * in the appropriate context.
-	 * 
+	 *
 	 * @param tag
 	 */
 	private boolean mustAddRequiredParent(TagInfo tag) {
@@ -870,7 +870,7 @@ public class HtmlCleaner {
 
 	/**
 	 * The most general way to serialize resulting XML.
-	 * 
+	 *
 	 * @param xmlSerializer
 	 * @throws IOException
 	 */

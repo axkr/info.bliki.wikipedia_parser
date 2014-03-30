@@ -27,10 +27,10 @@ import java.util.Properties;
  * Manages access to the property file. All properties can be prefixed, this
  * must be set in the init() method. Note that this PropertyManager is not
  * limited to access the latex.properties file.
- * 
+ *
  * @author Steffen Schramm
- * 
- */ 
+ *
+ */
 public class PropertyManager {
 
 	/** The prefix of all properties */

@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Wiki tag for rendering the &quot;table of contents&quot inside a wikipedia
  * article
- * 
+ *
  */
 public class TableOfContentTag extends HTMLTag implements IBodyTag,
 		ITableOfContent {
@@ -103,7 +103,7 @@ public class TableOfContentTag extends HTMLTag implements IBodyTag,
 
 	/**
 	 * Enable or disable the rendering of the &quot;table of content&quot;
-	 * 
+	 *
 	 * @param showToC
 	 *            if <code>true</code> render the &quot;table of content&quot;
 	 */

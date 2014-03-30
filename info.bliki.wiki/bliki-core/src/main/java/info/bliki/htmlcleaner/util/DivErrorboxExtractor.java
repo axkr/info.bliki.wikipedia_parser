@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * Extracts a &lt;div class=&quot;errorbox&quot;&gt;...error text...&lt;/div&gt;
  * content.
- * 
+ *
  */
 public class DivErrorboxExtractor extends AbstractHtmlExtractor<StringBuilder> {
 

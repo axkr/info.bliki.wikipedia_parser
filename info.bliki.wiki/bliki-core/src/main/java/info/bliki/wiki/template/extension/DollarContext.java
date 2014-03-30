@@ -11,9 +11,9 @@ import java.util.List;
 /**
  * A template parser function for Java attributes. You can use the following
  * syntax: <code>{{#$:object|formatstring|separator|null-value}}</code>.
- * 
+ *
  * Example:
- * 
+ *
  * <pre>
  * public void testRendererForST() throws Exception {
  * 	wikiModel.setAttribute(&quot;created&quot;, new GregorianCalendar(2005, 07 - 1, 05));
@@ -21,13 +21,13 @@ import java.util.List;
  * 	String expecting = &quot;date: 2005.07.05&quot;;
  * 	assertEquals(expecting, wikiModel.parseTemplates(&quot;date: {{#$:created}}&quot;));
  * }
- * 
+ *
  * public class DateRenderer implements AttributeRenderer {
  * 	public String toString(Object o) {
  * 		SimpleDateFormat f = new SimpleDateFormat(&quot;yyyy.MM.dd&quot;);
  * 		return f.format(((Calendar) o).getTime());
  * 	}
- * 
+ *
  * 	public String toString(Object o, String formatString) {
  * 		return toString(o);
  * 	}

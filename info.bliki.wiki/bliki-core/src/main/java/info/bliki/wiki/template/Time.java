@@ -15,9 +15,9 @@ import java.util.Map;
 
 /**
  * A template parser function for <code>{{ #time: ... }}</code> syntax.
- * 
+ *
  * Supporting more control flags, but still not complete though.
- * 
+ *
  * See <a
  * href="http://www.mediawiki.org/wiki/Help:Extension:ParserFunctions#.23time">
  * Mediwiki's Help:Extension:ParserFunctions - #time</a>

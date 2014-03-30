@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class WikiTagNode extends AbstractNode {
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = -5135255005207719745L;
 
@@ -35,7 +35,7 @@ public class WikiTagNode extends AbstractNode {
 
 	/**
 	 * Create a tag with the location and attributes provided
-	 * 
+	 *
 	 * @param page
 	 *          The page this tag was read from.
 	 * @param start
@@ -65,7 +65,7 @@ public class WikiTagNode extends AbstractNode {
 
 	/**
 	 * Returns the value of an attribute.
-	 * 
+	 *
 	 * @param name
 	 *          Name of attribute, case insensitive.
 	 * @return The value associated with the attribute or null if it does not
@@ -87,7 +87,7 @@ public class WikiTagNode extends AbstractNode {
 	/**
 	 * Set attribute with given key, value pair. Figures out a quote character to
 	 * use if necessary.
-	 * 
+	 *
 	 * @param key
 	 *          The name of the attribute.
 	 * @param value
@@ -159,7 +159,7 @@ public class WikiTagNode extends AbstractNode {
 
 	/**
 	 * Remove the attribute with the given key, if it exists.
-	 * 
+	 *
 	 * @param key
 	 *          The name of the attribute.
 	 */
@@ -174,7 +174,7 @@ public class WikiTagNode extends AbstractNode {
 	/**
 	 * Set attribute with given key, value pair where the value is quoted by
 	 * quote.
-	 * 
+	 *
 	 * @param key
 	 *          The name of the attribute.
 	 * @param value
@@ -189,7 +189,7 @@ public class WikiTagNode extends AbstractNode {
 
 	/**
 	 * Returns the attribute with the given name.
-	 * 
+	 *
 	 * @param name
 	 *          Name of attribute, case insensitive.
 	 * @return The attribute or null if it does not exist.
@@ -221,7 +221,7 @@ public class WikiTagNode extends AbstractNode {
 
 	/**
 	 * Set an attribute.
-	 * 
+	 *
 	 * @param attribute
 	 *          The attribute to set.
 	 * @see #setAttribute(Attribute)
@@ -233,7 +233,7 @@ public class WikiTagNode extends AbstractNode {
 	/**
 	 * Set an attribute. This replaces an attribute of the same name. To set the
 	 * zeroth attribute (the tag name), use setTagName().
-	 * 
+	 *
 	 * @param attribute
 	 *          The attribute to set.
 	 */
@@ -270,7 +270,7 @@ public class WikiTagNode extends AbstractNode {
 
 	/**
 	 * Gets the attributes in the tag.
-	 * 
+	 *
 	 * @return Returns the list of {@link Attribute Attributes} in the tag. The
 	 *         first element is the tag name, subsequent elements being either
 	 *         whitespace or real attributes.
@@ -290,7 +290,7 @@ public class WikiTagNode extends AbstractNode {
 	 * {@link #getRawTagName getRawTagName()}.
 	 * The conversion to uppercase is performed with an ENGLISH locale.
 	 * </em>
-	 * 
+	 *
 	 * @return The tag name.
 	 */
 	public String getTagName() {
@@ -310,7 +310,7 @@ public class WikiTagNode extends AbstractNode {
 
 	/**
 	 * Return the name of this tag.
-	 * 
+	 *
 	 * @return The tag name or null if this tag contains nothing or only
 	 *         whitespace.
 	 */
@@ -330,7 +330,7 @@ public class WikiTagNode extends AbstractNode {
 	/**
 	 * Set the name of this tag. This creates or replaces the first attribute of
 	 * the tag (the zeroth element of the attribute vector).
-	 * 
+	 *
 	 * @param name
 	 *          The tag name.
 	 */
@@ -360,7 +360,7 @@ public class WikiTagNode extends AbstractNode {
 
 	/**
 	 * Return the text contained in this tag.
-	 * 
+	 *
 	 * @return The complete contents of the tag (within the angle brackets).
 	 */
 	@Override
@@ -377,7 +377,7 @@ public class WikiTagNode extends AbstractNode {
 	 * Sets the attributes. NOTE: Values of the extended hashtable are two element
 	 * arrays of String, with the first element being the original name (not
 	 * uppercased), and the second element being the value.
-	 * 
+	 *
 	 * @param attribs
 	 *          The attribute collection to set.
 	 */
@@ -387,7 +387,7 @@ public class WikiTagNode extends AbstractNode {
 
 	/**
 	 * Sets the nodeBegin.
-	 * 
+	 *
 	 * @param tagBegin
 	 *          The nodeBegin to set
 	 */
@@ -397,7 +397,7 @@ public class WikiTagNode extends AbstractNode {
 
 	/**
 	 * Gets the nodeBegin.
-	 * 
+	 *
 	 * @return The nodeBegin value.
 	 */
 	public int getTagBegin() {
@@ -406,7 +406,7 @@ public class WikiTagNode extends AbstractNode {
 
 	/**
 	 * Sets the nodeEnd.
-	 * 
+	 *
 	 * @param tagEnd
 	 *          The nodeEnd to set
 	 */
@@ -416,7 +416,7 @@ public class WikiTagNode extends AbstractNode {
 
 	/**
 	 * Gets the nodeEnd.
-	 * 
+	 *
 	 * @return The nodeEnd value.
 	 */
 	public int getTagEnd() {
@@ -425,7 +425,7 @@ public class WikiTagNode extends AbstractNode {
 
 	/**
 	 * Get the plain text from this node.
-	 * 
+	 *
 	 * @return An empty string (tag contents do not display in a browser). If you
 	 *         want this tags HTML equivalent, use {@link #toHtml toHtml()}.
 	 */
@@ -437,7 +437,7 @@ public class WikiTagNode extends AbstractNode {
 	/**
 	 * Render the tag as HTML. A call to a tag's <code>toHtml()</code> method will
 	 * render it in HTML.
-	 * 
+	 *
 	 * @param verbatim
 	 *          If <code>true</code> return as close to the original page text as
 	 *          possible.
@@ -475,7 +475,7 @@ public class WikiTagNode extends AbstractNode {
 
 	/**
 	 * Print the contents of the tag.
-	 * 
+	 *
 	 * @return An string describing the tag. For text that looks like HTML use
 	 *         #toHtml().
 	 */
@@ -509,12 +509,12 @@ public class WikiTagNode extends AbstractNode {
 	// }
 	// else
 	// ret.append (text);
-	//        
+	//
 	// return (ret.toString ());
 	// }
 	/**
 	 * Is this an empty xml tag of the form &lt;tag/&gt;.
-	 * 
+	 *
 	 * @return true if the last character of the last attribute is a '/'.
 	 */
 	public boolean isEmptyXmlTag() {
@@ -544,7 +544,7 @@ public class WikiTagNode extends AbstractNode {
 	/**
 	 * Set this tag to be an empty xml node, or not. Adds or removes an ending
 	 * slash on the tag.
-	 * 
+	 *
 	 * @param emptyXmlTag
 	 *          If true, ensures there is an ending slash in the node, i.e.
 	 *          &lt;tag/&gt;, otherwise removes it.
@@ -617,7 +617,7 @@ public class WikiTagNode extends AbstractNode {
 
 	/**
 	 * Predicate to determine if this tag is an end tag (i.e. &lt;/HTML&gt;).
-	 * 
+	 *
 	 * @return <code>true</code> if this tag is an end tag.
 	 */
 	public boolean isEndTag() {
@@ -631,7 +631,7 @@ public class WikiTagNode extends AbstractNode {
 	/**
 	 * Return the set of names handled by this tag. Since this a a generic tag, it
 	 * has no ids.
-	 * 
+	 *
 	 * @return The names to be matched that create tags of this type.
 	 */
 	public String[] getIds() {
@@ -643,7 +643,7 @@ public class WikiTagNode extends AbstractNode {
 	 * normal (non end tags) that if encountered while scanning (a composite tag)
 	 * will cause the generation of a virtual tag. Since this a a non-composite
 	 * tag, the default is no enders.
-	 * 
+	 *
 	 * @return The names of following tags that stop further scanning.
 	 */
 	public String[] getEnders() {
@@ -655,7 +655,7 @@ public class WikiTagNode extends AbstractNode {
 	 * the end tags that if encountered while scanning (a composite tag) will
 	 * cause the generation of a virtual tag. Since this a a non-composite tag, it
 	 * has no end tag enders.
-	 * 
+	 *
 	 * @return The names of following end tags that stop further scanning.
 	 */
 	public String[] getEndTagEnders() {

@@ -913,11 +913,11 @@ public class TemplateFilterTest extends FilterTestSupport {
 	}
 
 	public void testUnknownTag001() {
-		assertEquals("\n" + 
-				"<p>start&#60;unknowntag&#62;\n" + 
-				"some text</p>\n" + 
-				"<pre>new line\n" + 
-				"</pre>\n" + 
+		assertEquals("\n" +
+				"<p>start&#60;unknowntag&#62;\n" +
+				"some text</p>\n" +
+				"<pre>new line\n" +
+				"</pre>\n" +
 				"<p>test&#60;/unknowntag&#62;end</p>",
 				wikiModel.render("start<unknowntag>\nsome text\n new line\ntest</unknowntag>end", false));
 	}
@@ -1259,7 +1259,7 @@ public class TemplateFilterTest extends FilterTestSupport {
 	}
 
 	public void testSelfRecusion005a() {
-		assertEquals("\n" + 
+		assertEquals("\n" +
 				"<p>foo|bar</p>", wikiModel.render("{{1x|{{1x|foo{{!}}bar}}}}"));
 	}
 	/**

@@ -49,7 +49,7 @@ public class MediaWikiParserTest extends TestCase {
 	 * foo=bar,"baz quux"
 	 */
 	protected static final Pattern OPTION = Pattern.compile(
-			"\\b" + 
+			"\\b" +
 			"([\\w-]+)" + // Key
 			"\\b" +
 			"(?:\\s*" +
@@ -94,10 +94,10 @@ public class MediaWikiParserTest extends TestCase {
 
     /**
      * Splits the given full title at the first colon.
-     * 
+     *
      * @param fullTitle
      *            the (full) title including a namespace (if present)
-     * 
+     *
      * @return a 2-element array with the two components - the first may be
      *         empty if no colon is found
      */
@@ -143,7 +143,7 @@ public class MediaWikiParserTest extends TestCase {
 				options.remove("language");
 			}
 		}
-		
+
 		wikiModel = newWikiTestModel(locale);
 		String title = (String) options.get("title");
 		if (title == null) {
@@ -169,14 +169,14 @@ public class MediaWikiParserTest extends TestCase {
 			return;
 		}
 		assumeTrue(config.isEmpty());
-		
+
 		String title = (String) options.get("title");
 		if (title != null) {
 			options.remove("title");
 			wikiModel.setPageName(title);
 		}
 		assumeTrue(options.isEmpty());
-		
+
 		String actualResult = wikiModel.render(input, true);
 		Matcher matcher = NEWLINE_BLOCK.matcher(actualResult);
 		if (matcher.matches()) {
@@ -278,7 +278,7 @@ public class MediaWikiParserTest extends TestCase {
 						continue;
 					}
 					if (section != null) {
-						data.put(section, data.get(section) + line + "\n"); 
+						data.put(section, data.get(section) + line + "\n");
 					}
 				}
 			} catch (FileNotFoundException e) {
@@ -299,7 +299,7 @@ public class MediaWikiParserTest extends TestCase {
 		}
 		return suite;
 	}
-	
+
 	static protected Map<String, Object> parseConfig(String configs) {
 		HashMap<String, Object> result = new HashMap<String, Object>();
 		for (String config : configs.split("\n")) {
@@ -324,7 +324,7 @@ public class MediaWikiParserTest extends TestCase {
 		}
 		return result;
 	}
-	
+
 	static protected Map<String, Object> parseOptions(String options) {
 		HashMap<String, Object> result = new HashMap<String, Object>();
 		Matcher matcher = OPTION.matcher(options);
@@ -347,7 +347,7 @@ public class MediaWikiParserTest extends TestCase {
 		}
 		return result;
 	}
-	
+
 	static protected String cleanupOption(String option) {
 		if (option.startsWith("\"")) {
 			return option.substring(1, option.length() - 1);
@@ -357,7 +357,7 @@ public class MediaWikiParserTest extends TestCase {
 		}
 		return option;
 	}
-	
+
 	static protected String removeNewlineAtEnd(String value) {
 		if (value.endsWith("\n")) {
 			return value.substring(0, value.length() - 1);

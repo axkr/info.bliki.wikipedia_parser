@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * A template parser function for <code>{{ #tag: ... }}</code> syntax.
- * 
+ *
  * See <a
  * href="http://www.mediawiki.org/wiki/Help:Magic_words#Miscellaneous">Magic
  * words-Miscellaneous</a>

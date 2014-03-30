@@ -8,7 +8,7 @@ import java.util.List;
 public interface IHTMLToWiki {
 
 	/**
-	 * 
+	 *
 	 * @param nodes
 	 * @param resultBuffer
 	 *          the converted Wiki string
@@ -17,7 +17,7 @@ public interface IHTMLToWiki {
 
 	/**
 	 * Convert the given HTML <code>node</code> into a <code>wikiText</code>
-	 * 
+	 *
 	 * @param node
 	 * @param wikiText
 	 */

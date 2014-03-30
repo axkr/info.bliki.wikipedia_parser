@@ -4,23 +4,23 @@ import info.bliki.htmlcleaner.TagNode;
 
 /**
  * Interface for HTML to Wiki Tag conversion
- * 
+ *
  */
 public interface HTMLTag {
 
 	/**
 	 * Write the closing wiki syntax for this tag to the result buffer
-	 * 
+	 *
 	 * @param node
 	 * @param resultBuffer
-	 * 
+	 *
 	 * @see HTMLTag#open(TagNode, StringBuilder)
 	 */
 	public void close(TagNode node, StringBuilder resultBuffer);
 
 	/**
 	 * Convert the current HTML node, which has no children nodes into wiki text.
-	 * 
+	 *
 	 * @param html2WikiConverter
 	 *          the converter which contains the special wiki tag conversion
 	 *          rules.
@@ -36,7 +36,7 @@ public interface HTMLTag {
 
 	/**
 	 * Convert the current HTML node into wiki text.
-	 * 
+	 *
 	 * @param html2WikiConverter
 	 *          the converter which contains the special wiki tag conversion
 	 *          rules.
@@ -52,10 +52,10 @@ public interface HTMLTag {
 
 	/**
 	 * Write the opening wiki syntax for this tag to the result buffer
-	 * 
+	 *
 	 * @param node
 	 * @param resultBuffer
-	 * 
+	 *
 	 * @see HTMLTag#close(TagNode, StringBuilder)
 	 */
 	public void open(TagNode node, StringBuilder resultBuffer);

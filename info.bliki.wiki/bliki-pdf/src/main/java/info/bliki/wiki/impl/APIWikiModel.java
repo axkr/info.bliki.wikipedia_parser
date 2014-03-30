@@ -32,7 +32,7 @@ import legunto.template.ModuleExecutor;
 /**
  * Wiki model implementation which uses the <code>info.bliki.api</code> package
  * for downloading templates and images from a defined wiki.
- * 
+ *
  */
 public class APIWikiModel extends WikiModel {
 	private WikiDB fWikiDB;
@@ -47,7 +47,7 @@ public class APIWikiModel extends WikiModel {
 	/**
 	 * WikiModel which loads the templates and images through the <a
 	 * href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>
-	 * 
+	 *
 	 * @param user
 	 *          a user for the <a
 	 *          href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>
@@ -73,7 +73,7 @@ public class APIWikiModel extends WikiModel {
 	/**
 	 * WikiModel which loads the templates and images through the <a
 	 * href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>
-	 * 
+	 *
 	 * @param user
 	 *          a user for the <a
 	 *          href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>
@@ -119,15 +119,15 @@ public class APIWikiModel extends WikiModel {
 	 * Get the raw wiki text for the given namespace and article name. This model
 	 * implementation uses a Derby database to cache downloaded wiki template
 	 * texts.
-	 * 
+	 *
 	 * @param parsedPagename
 	 *          the parsed template name
 	 * @param templateParameters
 	 *          if the namespace is the <b>Template</b> namespace, the current
 	 *          template parameters are stored as <code>String</code>s in this map
-	 * 
+	 *
 	 * @return <code>null</code> if no content was found
-	 * 
+	 *
 	 * @see info.bliki.api.User#queryContent(String[])
 	 */
 	@Override

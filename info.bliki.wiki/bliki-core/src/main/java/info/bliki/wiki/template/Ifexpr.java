@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * A template parser function for <code>{{ #ifexpr: ... }}</code> syntax
- * 
+ *
  * See <a href="http://www.mediawiki.org/wiki/Help:Extension:ParserFunctions">
  * Mediwiki's Help:Extension:ParserFunctions</a> See: <a href="http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/ParserFunctions/Expr.php?view=markup"
  * >Expr.php in MediaWiki SVN</a>

@@ -11,7 +11,7 @@ import java.util.Map;
 
 /**
  * Wiki tag for simple calculation sheets
- * 
+ *
  */
 public class CalcTag extends NowikiTag {
 	public CalcTag() {
@@ -43,8 +43,8 @@ public class CalcTag extends NowikiTag {
 		buf.append(" codebase=\"../static/lib\" archive=\"meapplets.jar\">\n");
 		// List children = node.getChildren();
 		// if (children.size() == 0) {
-		// } else { 
-		//			
+		// } else {
+		//
 		// }
 		String content = getBodyString();
 		if (content != null) {

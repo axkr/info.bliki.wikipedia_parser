@@ -22,13 +22,13 @@ import org.xml.sax.helpers.XMLReaderFactory;
 
 /**
  * A Wikipedia XML dump file parser
- * 
+ *
  * Original version with permission from Marco Schmidt. See: <a
  * href="http://schmidt.devlib.org/software/lucene-wikipedia.html"
  * >http://schmidt.devlib.org/software/lucene-wikipedia.html</a>
- * 
+ *
  * @author Marco Schmidt
- * 
+ *
  */
 public class WikiXMLParser extends DefaultHandler {
 	private static final String WIKIPEDIA_SITEINFO = "siteinfo";
@@ -91,10 +91,10 @@ public class WikiXMLParser extends DefaultHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return a BufferedReader created from wikiDumpFilename
 	 * @throws UnsupportedEncodingException
-	 * 
+	 *
 	 */
 	public static BufferedReader getBufferedReader(String wikiDumpFilename) throws UnsupportedEncodingException,
 			FileNotFoundException, IOException {
@@ -206,7 +206,7 @@ public class WikiXMLParser extends DefaultHandler {
 
 	/**
 	 * parse an unlimited amount of characters between 2 enclosing XML-Tags
-	 * 
+	 *
 	 * @see org.xml.sax.helpers.DefaultHandler#characters(char[], int, int)
 	 */
 	@Override

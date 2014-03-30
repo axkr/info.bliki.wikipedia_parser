@@ -7,7 +7,7 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 
 /**
- * 
+ *
  * Initial source copied from the <a href="https://textile-j.dev.java.net/">Textile-J</a> project
  *
  */
@@ -17,7 +17,7 @@ public class FormattingXMLStreamWriter implements XMLStreamWriter {
 	private int indentLevel;
 	private Stack<Integer> childCounts = new Stack<Integer>();
 	private int childCount;
-	
+
 	public FormattingXMLStreamWriter(XMLStreamWriter delegate) {
 		this.delegate = delegate;
 	}
@@ -84,7 +84,7 @@ public class FormattingXMLStreamWriter implements XMLStreamWriter {
 	}
 
 	public void writeCharacters(String text) throws XMLStreamException {
-		if (text == null) { 
+		if (text == null) {
 			return;
 		}
 		delegate.writeCharacters(text);
@@ -201,5 +201,5 @@ public class FormattingXMLStreamWriter implements XMLStreamWriter {
 		}
 		writeCharacters(buf.toString());
 	}
-	
+
 }

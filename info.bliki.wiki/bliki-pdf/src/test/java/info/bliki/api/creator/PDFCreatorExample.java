@@ -6,7 +6,7 @@ import info.bliki.wiki.impl.APIWikiModel;
 
 /**
  * Test to load a page from en.wikipedia.org and render it to a PDF file
- * 
+ *
  */
 public class PDFCreatorExample {
 

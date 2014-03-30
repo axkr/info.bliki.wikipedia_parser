@@ -9,24 +9,24 @@ import java.util.Map;
 
 /**
  * Factory for creating the ASTNodes from the parser
- * 
+ *
  */
 public interface IParserFactory {
-	/** 
+	/**
 	 * The default set of characters, which could form an operator
-	 * 
+	 *
 	 */
 	public final static String DEFAULT_OPERATOR_CHARACTERS = "-=<>*+/!^";
 
 	/**
 	 * The set of characters, which could form an operator
-	 * 
+	 *
 	 */
 	public String getOperatorCharacters();
 
 	/**
 	 * Get the identifier to operator map
-	 * 
+	 *
 	 * @return the map which stores the Operators for a given head string like
 	 *         Times, Plus, Sin,...
 	 */
@@ -34,7 +34,7 @@ public interface IParserFactory {
 
 	/**
 	 * Get the operator-string to possible operator-list map
-	 * 
+	 *
 	 * @return the map which stores the operator-list for a given operator string
 	 *         like *, +, ==...
 	 */
@@ -42,7 +42,7 @@ public interface IParserFactory {
 
 	/**
 	 * Get the operator for a given identifier string like Times, Plus, Sin,...
-	 * 
+	 *
 	 * @param identifier
 	 * @return
 	 */
@@ -50,13 +50,13 @@ public interface IParserFactory {
 
 	/**
 	 * Get the operator-list for a given operator-string
-	 * 
+	 *
 	 * @return the operator-list for a given operator string like *, +, ==...
 	 */
 	public List<Operator> getOperatorList(String operatorString);
 
 	public String getConstantSymbol(String symbolString);
-	
+
 	/**
 	 * Creates a new function with head <code>head</code> and 0 arguments.
 	 */
@@ -79,7 +79,7 @@ public interface IParserFactory {
 
 	/**
 	 * Create an double node from the given double value string
-	 * 
+	 *
 	 * @param doubleString
 	 * @return
 	 */
@@ -87,7 +87,7 @@ public interface IParserFactory {
 
 	/**
 	 * Create an integer node from the given string
-	 * 
+	 *
 	 * @param integerString
 	 *          the integer number represented as a String
 	 * @param numberFormat
@@ -98,7 +98,7 @@ public interface IParserFactory {
 
 	/**
 	 * Create an integer node from the given value
-	 * 
+	 *
 	 * @param integerValue
 	 *          the integer number's value
 	 * @return IInteger
@@ -107,7 +107,7 @@ public interface IParserFactory {
 
 	/**
 	 * Create a "fractional" number
-	 * 
+	 *
 	 * @param numerator
 	 *          numerator of the fractional number
 	 * @param denominator
@@ -118,7 +118,7 @@ public interface IParserFactory {
 
 	/**
 	 * Create a symbol from the scanned identifier string
-	 * 
+	 *
 	 * @param symbolName
 	 * @return
 	 */

@@ -6,16 +6,16 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * 
+ *
  * Can be used as a stand alone class to pattern match parts of the wiki
  * formatted text.
- * 
- * 
+ *
+ *
  * Copied and modified from the <a
  * href="http://code.google.com/p/wikixmlj/">WikiXMLJ project</a>.
- * 
+ *
  * @author Delip Rao modified by Axel Kramer
- * 
+ *
  */
 public class WikiPatternMatcher {
 
@@ -105,7 +105,7 @@ public class WikiPatternMatcher {
 
 	/**
 	 * Strip wiki formatting characters from the given wiki text.
-	 * 
+	 *
 	 * @return
 	 */
 	public String getPlainText() {
@@ -125,7 +125,7 @@ public class WikiPatternMatcher {
 	/**
 	 * Parse the Infobox template (i.e. parsing a string starting with
 	 * &quot;{{Infobox&quot; and ending with &quot;}}&quot;)
-	 * 
+	 *
 	 * @return <code>null</code> if the Infobox template wasn't found.
 	 */
 	public InfoBox getInfoBox() {
@@ -138,7 +138,7 @@ public class WikiPatternMatcher {
 	/**
 	 * Parse the Infobox template (i.e. parsing a string starting with
 	 * &quot;{{Infobox&quot; and ending with &quot;}}&quot;)
-	 * 
+	 *
 	 * @return <code>null</code> if the Infobox template wasn't found.
 	 */
 	private InfoBox parseInfoBox() {

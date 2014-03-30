@@ -15,7 +15,7 @@ import java.util.Map;
  * Represents a wiki table (i.e. table syntax bordered by
  * <code>{| ..... |}</code> ). See: <a
  * href="http://meta.wikimedia.org/wiki/Help:Table">Help - Table</a>
- * 
+ *
  */
 public class WPTable extends WPTag {
 

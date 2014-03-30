@@ -11,7 +11,7 @@ import java.util.Map;
 
 /**
  * Wiki tag for Java Applets: &lt;applet&gt;reference text...&lt;/applet&gt;
- * 
+ *
  */
 public class WCMTag extends NowikiTag {
 	public WCMTag() {
@@ -43,8 +43,8 @@ public class WCMTag extends NowikiTag {
 		buf.append(" codebase=\"../static/lib\" archive=\"webcompmath.jar\">\n");
 		// List children = node.getChildren();
 		// if (children.size() == 0) {
-		// } else { 
-		//			
+		// } else {
+		//
 		// }
 		String content = getBodyString();
 		if (content != null) {
@@ -54,7 +54,7 @@ public class WCMTag extends NowikiTag {
 
 		buf.append("\n</applet>");
 	}
-	
+
 	@Override
 	public boolean isReduceTokenStack() {
 		return true;

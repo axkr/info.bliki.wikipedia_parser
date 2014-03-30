@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 /**
  * Syntax highlighting support for Python source codes
- * 
+ *
  */
 public class PythonCodeFilter extends AbstractCPPBasedCodeFilter implements SourceCodeFormatter {
 

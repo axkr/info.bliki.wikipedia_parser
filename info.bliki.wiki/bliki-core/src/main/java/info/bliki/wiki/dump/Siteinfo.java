@@ -4,7 +4,7 @@ import info.bliki.wiki.namespaces.Namespace;
 
 /**
  * The site and namespace information found in the header of a Mediawiki dump
- * 
+ *
  * TODO: use the {@link info.bliki.wiki.namespaces.Namespace} class for mapping namespaces
  */
 public class Siteinfo {
@@ -32,17 +32,17 @@ public class Siteinfo {
 	 * an english Mediawiki installation <i>10</i> is typically the
 	 * <i>Template</i> namespace and <i>14</i> is typically the <i>Category</i>
 	 * namespace.
-	 * 
+	 *
 	 * @param key
 	 * @return <code>null</code> if no namespace is defined for the given key.
 	 */
 	public String getNamespace(Integer key) {
 		return fnamespace.getNamespaceByNumber(key).getPrimaryText();
 	}
-	
+
 	/**
 	 * Gets the full namespace mappings.
-	 * 
+	 *
 	 * @return the namespace object
 	 */
 	public Namespace getNamespace() {
@@ -54,7 +54,7 @@ public class Siteinfo {
 	 * an english Mediawiki installation <i>10</i> is typically the
 	 * <i>Template</i> namespace and <i>14</i> is typically the <i>Category</i>
 	 * namespace.
-	 * 
+	 *
 	 * @param namespace
 	 * @return <code>null</code> if no integer value is defined for the given
 	 *         namespace.
@@ -65,7 +65,7 @@ public class Siteinfo {
 
 	/**
 	 * Get the "MainPage" URL of the wiki.
-	 * 
+	 *
 	 * @return the base
 	 */
 	public String getBase() {
@@ -75,7 +75,7 @@ public class Siteinfo {
 	/**
 	 * Get the character case of the wiki. For example <i>first-letter</i> is set,
 	 * if the first letter of a wiki title is converted to an upper case letter.
-	 * 
+	 *
 	 * @return the characterCase
 	 */
 	public String getCharacterCase() {
@@ -84,7 +84,7 @@ public class Siteinfo {
 
 	/**
 	 * Get the generator signature of the wiki (i.e. <i>MediaWiki 1.xx.....</i>).
-	 * 
+	 *
 	 * @return the generator
 	 */
 	public String getGenerator() {
@@ -93,7 +93,7 @@ public class Siteinfo {
 
 	/**
 	 * Get the site name of the wiki.
-	 * 
+	 *
 	 * @return the sitename
 	 */
 	public String getSitename() {

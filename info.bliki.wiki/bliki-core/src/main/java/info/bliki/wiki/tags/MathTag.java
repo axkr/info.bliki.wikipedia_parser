@@ -10,7 +10,7 @@ import info.bliki.wiki.model.IWikiModel;
 
 /**
  * Wiki tag rendering TeX math
- * 
+ *
  */
 public class MathTag extends NowikiTag {
 	public MathTag() {

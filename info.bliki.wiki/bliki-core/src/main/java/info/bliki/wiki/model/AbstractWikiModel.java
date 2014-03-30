@@ -51,7 +51,7 @@ import legunto.template.ModuleExecutor;
 
 /**
  * Standard model implementation for the Wikipedia syntax
- * 
+ *
  */
 public abstract class AbstractWikiModel implements IWikiModel, IContext {
 	private static int fNextNumberCounter = 0;
@@ -94,7 +94,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 
 	/**
 	 * A tag that manages the &quot;table of content&quot;
-	 * 
+	 *
 	 */
 	protected TableOfContentTag fTableOfContentTag = null;
 
@@ -102,7 +102,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 
 	/**
 	 * &quot;table of content&quot;
-	 * 
+	 *
 	 */
 	protected List<Object> fTableOfContent = null;
 
@@ -127,7 +127,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 	 * A Map<Class,Object> that allows people to register a renderer for a
 	 * particular kind of object to be displayed in this template. This
 	 * overrides any renderer set for this template's group.
-	 * 
+	 *
 	 * Most of the time this map is not used because the StringTemplateGroup has
 	 * the general renderer map for all templates in that group. Sometimes
 	 * though you want to override the group's renderers.
@@ -137,7 +137,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 	protected ModuleExecutor fModuleExecutor;
 
 	protected Frame fFrame;
-	
+
 	public AbstractWikiModel() {
 		this(Configuration.DEFAULT_CONFIGURATION);
 	}
@@ -287,7 +287,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 	/**
 	 * Add a section header with the given <code>headLevel</code> to the
 	 * &quot;table of content&quot;
-	 * 
+	 *
 	 * @param toc
 	 *            the &quot;table of content list&quot;
 	 * @param strPair
@@ -343,7 +343,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 	 * Append an external link (starting with http, https, ftp,...) as described
 	 * in <a href="http://en.wikipedia.org/wiki/Help:Link#External_links">Help
 	 * Links</a>
-	 * 
+	 *
 	 * @param uriSchemeName
 	 *            the top level URI (Uniform Resource Identifier) scheme name
 	 *            (without the following colon character ":"). Example "ftp",
@@ -398,7 +398,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 
 	/**
 	 * Append a new head to the table of content
-	 * 
+	 *
 	 * @param rawHead
 	 * @param headLevel
 	 */
@@ -502,7 +502,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 	 * Set the default thumb format width. This method sets a &quot;default
 	 * width&quot; (220px) for images of type &quot;thumb&quot;, if no width is
 	 * set in the image format string.
-	 * 
+	 *
 	 * @param imageFormat
 	 */
 	protected void setDefaultThumbWidth(ImageFormat imageFormat) {
@@ -844,7 +844,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param isTOCIdentifier
 	 *            <code>true</code> if the __TOC__ keyword was parsed
 	 */
@@ -917,14 +917,14 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 
 	/**
 	 * Resolve an attribute reference. It can be in four possible places:
-	 * 
+	 *
 	 * 1. the attribute list for the current template 2. if self is an embedded
 	 * template, somebody invoked us possibly with arguments--check the argument
 	 * context 3. if self is an embedded template, the attribute list for the
 	 * enclosing instance (recursively up the enclosing instance chain) 4. if
 	 * nothing is found in the enclosing instance chain, then it might be a map
 	 * defined in the group or the its supergroup etc...
-	 * 
+	 *
 	 * Attribute references are checked for validity. If an attribute has a
 	 * value, its validity was checked before template rendering. If the
 	 * attribute has no value, then we must check to ensure it is a valid
@@ -933,12 +933,12 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 	 * a validity check. So, if no value, walk up the enclosed template tree
 	 * again, this time checking formal parameters not attributes Map. The
 	 * formal definition must exist even if no value.
-	 * 
+	 *
 	 * To avoid infinite recursion in toString(), we have another condition to
 	 * check regarding attribute values. If your template has a formal argument,
 	 * foo, then foo will hide any value available from "above" in order to
 	 * prevent infinite recursion.
-	 * 
+	 *
 	 * This method is not static so people can override functionality.
 	 */
 	@Override
@@ -1753,7 +1753,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 	/**
 	 * Substitute the template name by the template content and parameters and
 	 * append the new content to the writer.
-	 * 
+	 *
 	 * @param templateName
 	 *            the name of the template
 	 * @param parameterMap

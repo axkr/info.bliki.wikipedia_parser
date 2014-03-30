@@ -9,7 +9,7 @@ import java.io.IOException;
 
 /**
  * Wiki tag for the HTML <code>pre</code> Tag.
- * 
+ *
  * @see WPPreTag
  */
 public class PreTag extends HTMLBlockTag implements INoBodyParsingTag {// implements
@@ -25,7 +25,7 @@ public class PreTag extends HTMLBlockTag implements INoBodyParsingTag {// implem
 		PreTag pt = new PreTag( );
 		return pt;
 	}
-	
+
 	@Override
 	public void renderHTML(ITextConverter converter, Appendable writer, IWikiModel model) throws IOException {
 		String content = getBodyString();

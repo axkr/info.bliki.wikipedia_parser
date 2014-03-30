@@ -6,12 +6,12 @@ import org.xml.sax.SAXException;
  * Demo application which reads a compressed or uncompressed Wikipedia XML dump
  * file (depending on the given file extension <i>.gz</i>, <i>.bz2</i> or
  * <i>.xml</i>) and prints the title and wiki text.
- * 
+ *
  */
 public class DumpExample {
 	/**
 	 * Print title an content of all the wiki pages in the dump.
-	 * 
+	 *
 	 */
 	static class DemoArticleFilter implements IArticleFilter {
 

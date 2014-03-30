@@ -7,11 +7,11 @@ import java.util.List;
 
 /**
  * Represents an [[Image:....]] wiki link with all the possible attributes.
- * 
+ *
  * Copied from Patch #1488331 sf.net user: o_rossmueller; modified by axelclk
  * http ://sourceforge.net/tracker/index.php?func=detail&aid=1488331&group_id=
  * 128886 &atid=713150
- * 
+ *
  */
 public class ImageFormat {
 
@@ -113,7 +113,7 @@ public class ImageFormat {
 
 	/**
 	 * Get the &quote;link=&quote; attribute from the [[Image:...]] wiki link.
-	 * 
+	 *
 	 * @return the &quote;link=&quote; attribute
 	 */
 	public String getLink() {
@@ -122,9 +122,9 @@ public class ImageFormat {
 
 	/**
 	 * Get the width of the image in pixel (example: "600px")
-	 * 
+	 *
 	 * @param size
-	 * 
+	 *
 	 * @return <code>-1</code> if no width is specified
 	 */
 	public int getWidth() {
@@ -133,9 +133,9 @@ public class ImageFormat {
 
 	/**
 	 * Get the width of the image as a string
-	 * 
+	 *
 	 * @param size
-	 * 
+	 *
 	 * @return <code>null</code> if no width is specified
 	 */
 	public String getWidthStr() {
@@ -144,9 +144,9 @@ public class ImageFormat {
 
 	/**
 	 * Get the height of the image in pixel (example: "600px")
-	 * 
+	 *
 	 * @param size
-	 * 
+	 *
 	 * @return <code>-1</code> if no width is specified
 	 */
 	public int getHeight() {
@@ -155,9 +155,9 @@ public class ImageFormat {
 
 	/**
 	 * Get the height of the image as a string
-	 * 
+	 *
 	 * @param size
-	 * 
+	 *
 	 * @return <code>null</code> if no width is specified
 	 */
 	public String getHeightStr() {
@@ -196,11 +196,11 @@ public class ImageFormat {
 	 * Set the size of the image in pixel. If the given string ends with "px"
 	 * additionally calculate the integer value of the width and optionally the
 	 * size of the height (example: "600px"). If the size is negative ignore it.
-	 * 
+	 *
 	 * See <a href="http://en.wikipedia.org/wiki/Image_markup#Size">Image
 	 * markup#Size</a> and See <a
 	 * href="http://www.mediawiki.org/wiki/Help:Images">Help:Images</a>
-	 * 
+	 *
 	 * @param size
 	 */
 	public void setSize(String size) {
@@ -247,7 +247,7 @@ public class ImageFormat {
 	 * Set the width of the image in pixel. This method is typically used to set a
 	 * &quot;default width&quot; (220px) for images of type &quot;thumb&quot; if
 	 * no width is set in the image format string.
-	 * 
+	 *
 	 * @param width
 	 * @see AbstractWikiModel#setDefaultThumbWidth(ImageFormat)
 	 */

@@ -25,7 +25,7 @@ public abstract class AbstractNode implements Serializable
 	/**
 	 * Create an abstract node with the page positions given. Remember the
 	 * start & end cursor positions.
-	 * 
+	 *
 	 * @param start
 	 *            The starting offset of this node within the page.
 	 * @param end
@@ -39,7 +39,7 @@ public abstract class AbstractNode implements Serializable
 
 	/**
 	 * Clone this object. Exposes java.lang.Object clone as a public method.
-	 * 
+	 *
 	 * @return A clone of this object.
 	 * @exception CloneNotSupportedException
 	 */
@@ -54,7 +54,7 @@ public abstract class AbstractNode implements Serializable
 	 * transformation of a web page, regardless of node type.<br>
 	 * Typical application code (for extracting only the text from a web page)
 	 * would then be simplified to:<br>
-	 * 
+	 *
 	 * <pre>
 	 * Node node;
 	 * for (Enumeration e = parser.elements(); e.hasMoreElements();) {
@@ -63,7 +63,7 @@ public abstract class AbstractNode implements Serializable
 	 * 	// or do whatever processing you wish with the plain text string
 	 * }
 	 * </pre>
-	 * 
+	 *
 	 * @return The 'browser' content of this node.
 	 */
 	public abstract String toPlainTextString();
@@ -75,7 +75,7 @@ public abstract class AbstractNode implements Serializable
 	 * encountered and fixed. Applications reproducing html can use this method
 	 * on nodes which are to be used or transferred as they were received or
 	 * created.
-	 * 
+	 *
 	 * @return The sequence of characters that would cause this node to be
 	 *         returned by the parser or lexer.
 	 */
@@ -91,7 +91,7 @@ public abstract class AbstractNode implements Serializable
 	 * remarks) have been encountered and fixed. Applications reproducing html
 	 * can use this method on nodes which are to be used or transferred as they
 	 * were received or created.
-	 * 
+	 *
 	 * @param verbatim
 	 *            If <code>true</code> return as close to the original page
 	 *            text as possible.
@@ -102,7 +102,7 @@ public abstract class AbstractNode implements Serializable
 
 	/**
 	 * Gets the starting position of the node.
-	 * 
+	 *
 	 * @return The start position.
 	 */
 	public int getStartPosition()
@@ -112,7 +112,7 @@ public abstract class AbstractNode implements Serializable
 
 	/**
 	 * Sets the starting position of the node.
-	 * 
+	 *
 	 * @param position
 	 *            The new start position.
 	 */
@@ -123,7 +123,7 @@ public abstract class AbstractNode implements Serializable
 
 	/**
 	 * Gets the ending position of the node.
-	 * 
+	 *
 	 * @return The end position.
 	 */
 	public int getEndPosition()
@@ -133,7 +133,7 @@ public abstract class AbstractNode implements Serializable
 
 	/**
 	 * Sets the ending position of the node.
-	 * 
+	 *
 	 * @param position
 	 *            The new end position.
 	 */
@@ -144,7 +144,7 @@ public abstract class AbstractNode implements Serializable
 
 	/**
 	 * Returns the text of the node.
-	 * 
+	 *
 	 * @return The text of this node. The default is <code>null</code>.
 	 */
 	public String getText()
@@ -154,7 +154,7 @@ public abstract class AbstractNode implements Serializable
 
 	/**
 	 * Sets the string contents of the node.
-	 * 
+	 *
 	 * @param text
 	 *            The new text for the node.
 	 */

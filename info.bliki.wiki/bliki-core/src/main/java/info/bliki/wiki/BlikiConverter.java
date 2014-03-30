@@ -18,7 +18,7 @@ import javax.swing.JScrollPane;
 /**
  * A converter tool for using the Wiki2HTML, Plain2Wiki and HTML2Wiki conversion
  * functions in a Java Swing GUI.
- * 
+ *
  */
 public class BlikiConverter extends JFrame {
 	class ClearListener implements java.awt.event.ActionListener {

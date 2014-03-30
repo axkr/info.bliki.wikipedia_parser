@@ -69,11 +69,11 @@ public class BoldFilterTest extends FilterTestSupport {
 	public void testBoldWithPunctuation() {
 		assertEquals("\n" + "<p><b>Text</b>:</p>", wikiModel.render("'''Text''':", false));
 	}
-	 
+
 	public void testOpenBold() {
-		assertEquals("\n" + 
-				"<p>para test <b>bold</b>\n" + 
-				"next para</p>", wikiModel.render("para test '''bold\n" + 
+		assertEquals("\n" +
+				"<p>para test <b>bold</b>\n" +
+				"next para</p>", wikiModel.render("para test '''bold\n" +
 				"next para", false));
 	}
 }

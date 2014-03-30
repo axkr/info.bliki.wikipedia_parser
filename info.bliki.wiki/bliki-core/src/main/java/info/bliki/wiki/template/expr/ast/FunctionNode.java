@@ -43,7 +43,7 @@ public class FunctionNode extends ASTNode implements java.util.List<ASTNode> {
 
 	/**
 	 * Appends the node to the end of this list.
-	 * 
+	 *
 	 * @param node
 	 *          element to be appended to this list
 	 * @return <tt>true</tt> (as specified by {@link Collection#add})
@@ -92,11 +92,11 @@ public class FunctionNode extends ASTNode implements java.util.List<ASTNode> {
 
 	/**
 	 * Returns the node at the specified position in this list.
-	 * 
+	 *
 	 * @param index
 	 *          index of the ASTNode to return
 	 * @return the ASTNode at the specified position in this list
-	 * 
+	 *
 	 * @throws IndexOutOfBoundsException
 	 */
 	@Override

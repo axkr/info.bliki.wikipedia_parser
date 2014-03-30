@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Manages user data from the <a
  * href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>.
- * 
+ *
  * See also <a href="http://www.mediawiki.org/wiki/API:Login">Mediawiki
  * API:Login</a>
  */
@@ -37,7 +37,7 @@ public class User {
 
 	/**
 	 * Create a User for a Mediawiki wiki
-	 * 
+	 *
 	 * @param lgname
 	 *          User Name
 	 * @param lgpassword
@@ -53,7 +53,7 @@ public class User {
 
 	/**
 	 * Create a User for a Mediawiki wiki
-	 * 
+	 *
 	 * @param lgname
 	 *          User Name
 	 * @param lgpassword
@@ -95,7 +95,7 @@ public class User {
 	 * Complete the users login information. The user must contain a username,
 	 * password and actionURL. See <a
 	 * href="http://www.mediawiki.org/wiki/API:Login">Mediawiki API:Login</a>
-	 * 
+	 *
 	 * @return <code>true</code> if th login was successful; <code>false</code>
 	 *         otherwise.
 	 * @see User#getActionUrl()
@@ -106,7 +106,7 @@ public class User {
 
 	/**
 	 * Get the content of Mediawiki wiki pages.
-	 * 
+	 *
 	 * @param listOfTitleStrings
 	 *          a list of title Strings "ArticleA,ArticleB,..."
 	 * @return a list of downloaded Mediawiki pages.
@@ -117,7 +117,7 @@ public class User {
 
 	/**
 	 * Get the content of Mediawiki wiki pages.
-	 * 
+	 *
 	 * @param listOfTitleStrings
 	 *          a list of title Strings "ArticleA,ArticleB,..."
 	 * @return a list of downloaded Mediawiki pages.
@@ -200,7 +200,7 @@ public class User {
 
 	/**
 	 * Get the user name defined for this user.
-	 * 
+	 *
 	 * @return
 	 */
 	public String getUsername() {
@@ -222,7 +222,7 @@ public class User {
 
 	/**
 	 * Get the password defined for this user.
-	 * 
+	 *
 	 * @return
 	 */
 	public String getPassword() {

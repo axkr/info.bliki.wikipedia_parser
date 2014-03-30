@@ -71,7 +71,7 @@ public abstract class AbstractParser extends WikipediaScanner {
 	/**
 	 * Read the characters until the given string is found and set the current
 	 * position of the parser behind the found string.
-	 * 
+	 *
 	 * @param untilString
 	 * @return <code>true</code> if the string was found; <code>false</code>
 	 *         otherwise
@@ -90,7 +90,7 @@ public abstract class AbstractParser extends WikipediaScanner {
 	 * Read the characters until the concatenated <i>start</i> and <i>end</i>
 	 * substring is found. The end substring is matched ignoring case
 	 * considerations.
-	 * 
+	 *
 	 * @param startString
 	 *          the start string which should be searched in exact case mode
 	 * @param endString
@@ -111,7 +111,7 @@ public abstract class AbstractParser extends WikipediaScanner {
 	 * Read the characters until the <code>&lt;</code> character with following
 	 * <i>end</i> string is found. The end string is matched ignoring case
 	 * considerations.
-	 * 
+	 *
 	 * @param endString
 	 *          the end string which should be searched in ignore case mode
 	 * @return
@@ -129,7 +129,7 @@ public abstract class AbstractParser extends WikipediaScanner {
 
 	/**
 	 * Read until character is found
-	 * 
+	 *
 	 * @param testedChar
 	 *          search the next position of this char
 	 * @return <code>true</code> if the tested character can be found
@@ -148,7 +148,7 @@ public abstract class AbstractParser extends WikipediaScanner {
 
 	/**
 	 * Read until character is found or stop at end-of-line
-	 * 
+	 *
 	 * @param testedChar
 	 *          search the next position of this char
 	 * @return <code>true</code> if the tested character can be found
@@ -181,10 +181,10 @@ public abstract class AbstractParser extends WikipediaScanner {
 	/**
 	 * Read until the end-of-line characters (i.e. '\r' or '\n') or the end of the
 	 * string is reached
-	 * 
+	 *
 	 * @return <code>true</code> if the end-of-line characters or the end of the
 	 *         string is reached
-	 * 
+	 *
 	 */
 	protected final boolean readUntilEOL() {
 		try {
@@ -596,7 +596,7 @@ public abstract class AbstractParser extends WikipediaScanner {
 
 	/**
 	 * Parse an HTML comment.
-	 * 
+	 *
 	 * @return
 	 */
 	protected boolean parseHTMLCommentTags() {
@@ -703,7 +703,7 @@ public abstract class AbstractParser extends WikipediaScanner {
 	/**
 	 * Read the characters until the end position of the current wiki link is
 	 * found.
-	 * 
+	 *
 	 * @return <code>true</code> if the end of the wiki link was found.
 	 */
 	protected final boolean findWikiLinkEnd() {
@@ -753,11 +753,11 @@ public abstract class AbstractParser extends WikipediaScanner {
 
 	/**
 	 * Represents the result of parsing a (potential) page name.
-	 * 
+	 *
 	 * Note that {@link #magicWord} takes precedence over {@link #pagename}, i.e.
 	 * if {@link #magicWord} if not <tt>null</tt>, the parsed name is a magic
 	 * word!
-	 * 
+	 *
 	 * @author Nico Kruber, kruber@zib.de
 	 */
 	public static class ParsedPageName {
@@ -776,7 +776,7 @@ public abstract class AbstractParser extends WikipediaScanner {
 		/**
 		 * If the pagename was a magic word it will be this, otherwise <tt>null</tt>
 		 * .
-		 * 
+		 *
 		 * The object type depends on the concrete
 		 * {@link info.bliki.wiki.filter.MagicWord} implementation used by the
 		 * {@link IWikiModel}, e.g.
@@ -791,7 +791,7 @@ public abstract class AbstractParser extends WikipediaScanner {
 
 		/**
 		 * Creates a new parsed page name object (no magic word).
-		 * 
+		 *
 		 * @param namespace
 		 *          the namespace the page is in
 		 * @param pagename
@@ -809,7 +809,7 @@ public abstract class AbstractParser extends WikipediaScanner {
 
 		/**
 		 * Creates a new parsed page name object.
-		 * 
+		 *
 		 * @param namespace
 		 *          the namespace the page is in
 		 * @param pagename
@@ -834,7 +834,7 @@ public abstract class AbstractParser extends WikipediaScanner {
 	/**
 	 * Parses a given page name into its components, e.g. namespace and pagename
 	 * or magic word and parameters.
-	 * 
+	 *
 	 * @param wikiModel
 	 *          the wiki model to use
 	 * @param pagename
@@ -846,7 +846,7 @@ public abstract class AbstractParser extends WikipediaScanner {
 	 *          whether the <tt>pagename</tt> may be a magic word or not (if it is
 	 *          a magic word and this is set to <tt>false</tt>, it will be parsed
 	 *          as if it is a page name)
-	 * 
+	 *
 	 * @return a parsed page name
 	 */
 	public static ParsedPageName parsePageName(IWikiModel wikiModel, String pagename, INamespaceValue namespace,
@@ -913,12 +913,12 @@ public abstract class AbstractParser extends WikipediaScanner {
 	public static String getRedirectedRawContent(IWikiModel wikiModel, ParsedPageName parsedPagename,
 			Map<String, String> templateParameters) {
 		try {
-			int level = wikiModel.incrementRecursionLevel(); 
+			int level = wikiModel.incrementRecursionLevel();
 			if (level > Configuration.PARSER_RECURSION_LIMIT || !parsedPagename.valid) {
 				return "<span class=\"error\">Error - getting content of redirected link: " + parsedPagename.namespace + ":"
 						+ parsedPagename.pagename + "<span>";
 			}
-			try { 
+			try {
 				return wikiModel.getRawWikiContent(parsedPagename, templateParameters);
 			} catch (WikiModelContentException e) {
 				return "<span class=\"error\">Error - getting content of redirected link: " + parsedPagename.namespace + ":"
@@ -932,7 +932,7 @@ public abstract class AbstractParser extends WikipediaScanner {
 	/**
 	 * Check the text for a <code>#REDIRECT [[...]]</code> or
 	 * <code>#redirect [[...]]</code> link
-	 * 
+	 *
 	 * @param rawWikiText
 	 *          the wiki text
 	 * @param wikiModel
@@ -970,7 +970,7 @@ public abstract class AbstractParser extends WikipediaScanner {
 
 	/**
 	 * Copy the read ahead content in the resulting HTML text token.
-	 * 
+	 *
 	 * @param diff
 	 *          subtract <code>diff</code> form the current parser position to get
 	 *          the HTML text token end position.

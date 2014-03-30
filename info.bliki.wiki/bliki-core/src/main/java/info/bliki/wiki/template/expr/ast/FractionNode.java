@@ -2,7 +2,7 @@ package info.bliki.wiki.template.expr.ast;
 
 /**
  * A node for a parsed fraction string
- * 
+ *
  */
 public class FractionNode extends NumberNode {
 	protected final IntegerNode fNumerator;

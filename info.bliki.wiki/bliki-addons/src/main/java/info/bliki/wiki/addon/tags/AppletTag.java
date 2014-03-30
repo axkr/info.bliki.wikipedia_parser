@@ -11,7 +11,7 @@ import java.util.Map;
 
 /**
  * Wiki tag for Java Applets: &lt;applet&gt;reference text...&lt;/applet&gt;
- * 
+ *
  */
 public class AppletTag extends NowikiTag {
 	public AppletTag() {
@@ -31,7 +31,7 @@ public class AppletTag extends NowikiTag {
 		// List children = node.getChildren();
 		// if (children.size() == 0) {
 		// } else {
-		//			
+		//
 		// }
 		String content = getBodyString();
 		if (content != null) {

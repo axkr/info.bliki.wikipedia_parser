@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 /**
  * Syntax highlighting support for PHP source codes
- * 
+ *
  */
 public class PHPCodeFilter extends AbstractCPPBasedCodeFilter implements SourceCodeFormatter {
 
@@ -159,7 +159,7 @@ public class PHPCodeFilter extends AbstractCPPBasedCodeFilter implements SourceC
             if (currentChar == '\'') {
               break;
             }
-          } 
+          }
           result.append(FONT_END);
           continue;
         } else if (currentChar == '/' && currentPosition < input.length() && source[currentPosition] == '/') {
@@ -217,12 +217,12 @@ public class PHPCodeFilter extends AbstractCPPBasedCodeFilter implements SourceC
     }
     return result.toString();
   }
-  
+
   @Override
 	public boolean isKeywordCaseSensitive() {
     return false;
   }
-  
+
   @Override
 	public boolean isPHPTag() {
     return true;

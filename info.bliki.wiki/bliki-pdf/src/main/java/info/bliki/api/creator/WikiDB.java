@@ -9,7 +9,7 @@ import java.util.Properties;
 
 /**
  * A simple Apache Derby Database to store the retrieved Wiki contents
- * 
+ *
  */
 public class WikiDB {
 	/**
@@ -47,8 +47,8 @@ public class WikiDB {
 	/**
 	 * The Wiki database constructor. Creates a new Derby Wiki database, if it
 	 * doesn't already exists.
-	 * 
-	 * 
+	 *
+	 *
 	 * @param directory
 	 *          the main directory name where the database subdirectory should be
 	 *          created
@@ -97,7 +97,7 @@ public class WikiDB {
 
 	/**
 	 * Select the topic data from the database
-	 * 
+	 *
 	 * @param name
 	 *          the name of the topic
 	 * @return <code>null</code> if no data was found
@@ -132,7 +132,7 @@ public class WikiDB {
 
 	/**
 	 * Select the image data from the database
-	 * 
+	 *
 	 * @param imageName
 	 *          the name of the image
 	 * @return <code>null</code> if no data was found

@@ -26,12 +26,12 @@ public class HeaderFilterTest extends FilterTestSupport {
 
 	public void testH2OneCharacter() {
 		assertEquals("<h2><span class=\"mw-headline\" id=\"a\">a</span></h2>", wikiModel.render("==a==", false));
-		assertEquals("\n" + 
-				"<p>line 1\n" + 
+		assertEquals("\n" +
+				"<p>line 1\n" +
 				"</p><h2><span class=\"mw-headline\" id=\"a\">a</span></h2>", wikiModel.render("line 1\n==a==", false));
 		assertEquals("<h3><span class=\"mw-headline\" id=\"a\">a</span></h3>", wikiModel.render("===a===", false));
-		assertEquals("\n" + 
-				"<p>line 1\n" + 
+		assertEquals("\n" +
+				"<p>line 1\n" +
 				"</p><h3><span class=\"mw-headline\" id=\"a\">a</span></h3>", wikiModel.render("line 1\n===a===", false));
 	}
 	public void testH2() {
@@ -94,28 +94,28 @@ public class HeaderFilterTest extends FilterTestSupport {
 	}
 
 	public void testH2Multiple() {
-		assertEquals(" \n" + 
-				"<table id=\"toc\" class=\"toc\" summary=\"Contents\">\n" + 
-				"<tr>\n" + 
-				"<td>\n" + 
-				"<div id=\"toctitle\">\n" + 
-				"<h2>Contents</h2>\n" + 
-				"</div>\n" + 
-				"<ul>\n" + 
-				"<ul>\n" + 
-				"<li class=\"toclevel-1\"><a href=\"#Head_1\">Head 1</a>\n" + 
-				"</li>\n" + 
-				"<li class=\"toclevel-1\"><a href=\"#Head_1_2\">Head 1</a>\n" + 
-				"</li>\n" + 
-				"<li class=\"toclevel-1\"><a href=\"#Head_1_3\">Head 1</a>\n" + 
-				"</li>\n" + 
-				"</ul>\n" + 
-				"</ul></td></tr></table><hr/>\n" + 
-				"<h2><span class=\"mw-headline\" id=\"Head_1\">Head 1</span></h2>\n" + 
-				"<p>A first line.\n" + 
-				"</p><h2><span class=\"mw-headline\" id=\"Head_1_2\">Head 1</span></h2>\n" + 
-				"<p>A second line.\n" + 
-				"</p><h2><span class=\"mw-headline\" id=\"Head_1_3\">Head 1</span></h2>\n" + 
+		assertEquals(" \n" +
+				"<table id=\"toc\" class=\"toc\" summary=\"Contents\">\n" +
+				"<tr>\n" +
+				"<td>\n" +
+				"<div id=\"toctitle\">\n" +
+				"<h2>Contents</h2>\n" +
+				"</div>\n" +
+				"<ul>\n" +
+				"<ul>\n" +
+				"<li class=\"toclevel-1\"><a href=\"#Head_1\">Head 1</a>\n" +
+				"</li>\n" +
+				"<li class=\"toclevel-1\"><a href=\"#Head_1_2\">Head 1</a>\n" +
+				"</li>\n" +
+				"<li class=\"toclevel-1\"><a href=\"#Head_1_3\">Head 1</a>\n" +
+				"</li>\n" +
+				"</ul>\n" +
+				"</ul></td></tr></table><hr/>\n" +
+				"<h2><span class=\"mw-headline\" id=\"Head_1\">Head 1</span></h2>\n" +
+				"<p>A first line.\n" +
+				"</p><h2><span class=\"mw-headline\" id=\"Head_1_2\">Head 1</span></h2>\n" +
+				"<p>A second line.\n" +
+				"</p><h2><span class=\"mw-headline\" id=\"Head_1_3\">Head 1</span></h2>\n" +
 				"<p>A third line.</p>",
 				wikiModel.render("__FORCETOC__ \n==Head 1==\nA first line.\n==Head 1==\nA second line.\n==Head 1==\nA third line.", false));
 	}

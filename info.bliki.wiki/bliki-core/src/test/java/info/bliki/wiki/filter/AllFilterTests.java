@@ -30,7 +30,7 @@ public class AllFilterTests extends TestCase {
 		s.addTestSuite(IgnoreFilterTest.class);
 		s.addTestSuite(InterwikiTest.class);
 		s.addTestSuite(ItalicFilterTest.class);
-		
+
 		s.addTestSuite(MathFilterTest.class);
 		s.addTestSuite(PreFilterTest.class);
 		s.addTestSuite(PreFormattedFilterTest.class);
@@ -47,9 +47,9 @@ public class AllFilterTests extends TestCase {
 		s.addTestSuite(WPSemanticLinkTest.class);
 		s.addTestSuite(TemplateParserTest.class);
 		s.addTestSuite(TemplateSubstParserTest.class);
-		
+
 		s.addTestSuite(TemplateFunctionsTest.class);
-		
+
 		s.addTestSuite(ChartFilterTest.class);
 		s.addTestSuite(ToHtmlTest.class);
 		return s;

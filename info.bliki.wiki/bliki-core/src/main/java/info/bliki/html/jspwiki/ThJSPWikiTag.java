@@ -11,5 +11,5 @@ public class ThJSPWikiTag extends ConvertEmptyHTMLTag {
 	public void open(TagNode node, StringBuilder resultBuffer) {
 		resultBuffer.append("||");
 	}
-	
+
 }

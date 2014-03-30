@@ -7,7 +7,7 @@ import java.io.IOException;
 /**
  * Some helper methods for encoding strings to HTML, URL or local files system
  * names
- * 
+ *
  */
 public class Encoder {
 
@@ -72,38 +72,38 @@ public class Encoder {
 	 * UTF-8-in-URL proposal. This is what happens: See
 	 * http://www.w3.org/International/URLUTF8Encoder.java ) Exception: a ' '
 	 * (space) will be replaced by a '_' (underscore) not '+' (plus); a '#' remain the same.
-	 * 
+	 *
 	 * <ul>
 	 * <li>
 	 * <p>
 	 * The ASCII characters 'a' through 'z', 'A' through 'Z', and '0' through '9'
 	 * remain the same.
-	 * 
+	 *
 	 * <li>
 	 * <p>
 	 * The unreserved characters - _ . ! ~ * ' ( ) / remain the same.
-	 * 
+	 *
 	 * <li>
 	 * <p>
 	 * The '#' character remains the same.
-	 * 
+	 *
 	 * <li>
 	 * <p>
 	 * The space character ' ' is converted into a underscore sign '_' (not a plus
 	 * sign '+'!).
-	 * 
+	 *
 	 * <li>
 	 * <p>
 	 * All other ASCII characters are converted into the 3-character string "%xy",
 	 * where xy is the two-digit hexadecimal representation of the character code
-	 * 
+	 *
 	 * <li>
 	 * <p>
 	 * All non-ASCII characters are encoded in two steps: first to a sequence of 2
 	 * or 3 bytes, using the UTF-8 algorithm; secondly each of these bytes is
 	 * encoded as ".xx".
 	 * </ul>
-	 * 
+	 *
 	 * @param s
 	 *          The string to be encoded
 	 * @return The encoded string
@@ -156,34 +156,34 @@ public class Encoder {
 	 * UTF-8-in-URL proposal. This is what happens: 8see
 	 * http://www.w3.org/International/URLUTF8Encoder.java ) Exception: a ' '
 	 * (space) will be replaced by a '_' (underscore) not '+' (plus)
-	 * 
+	 *
 	 * <ul>
 	 * <li>
 	 * <p>
 	 * The ASCII characters 'a' through 'z', 'A' through 'Z', and '0' through '9'
 	 * remain the same.
-	 * 
+	 *
 	 * <li>
 	 * <p>
 	 * The unreserved characters - _ . ! ~ * ' ( ) / remain the same.
-	 * 
+	 *
 	 * <li>
 	 * <p>
 	 * The space character ' ' is converted into a underscore sign '_' (not a plus
 	 * sign '+').
-	 * 
+	 *
 	 * <li>
 	 * <p>
 	 * All other ASCII characters are converted into the 3-character string "%xy",
 	 * where xy is the two-digit hexadecimal representation of the character code
-	 * 
+	 *
 	 * <li>
 	 * <p>
 	 * All non-ASCII characters are encoded in two steps: first to a sequence of 2
 	 * or 3 bytes, using the UTF-8 algorithm; secondly each of these bytes is
 	 * encoded as ".xx".
 	 * </ul>
-	 * 
+	 *
 	 * @param s
 	 *          The string to be encoded
 	 * @return The encoded string
@@ -229,7 +229,7 @@ public class Encoder {
 
 	/**
 	 * Encode character for local file system
-	 * 
+	 *
 	 * @param sbuf
 	 * @param ch
 	 */
@@ -265,7 +265,7 @@ public class Encoder {
 	 * get the behavior of the MediaWiki software, which is configured to convert
 	 * the first letter to upper case, the <code>firstCharacterAsUpperCase</code>
 	 * parameters must be set to <code>true</code>.
-	 * 
+	 *
 	 * @param wikiTitle
 	 *          the raw wiki title
 	 * @param firstCharacterAsUpperCase
@@ -311,7 +311,7 @@ public class Encoder {
 
 	/**
 	 * Encode name for local file system
-	 * 
+	 *
 	 */
 	public static String encodeTitleLocalUrl(final String title) {
 		String wikiTitle = title;
@@ -355,7 +355,7 @@ public class Encoder {
 		}
 		return buffer.toString();
 	}
-	
+
 
 
     /**
@@ -363,7 +363,7 @@ public class Encoder {
 	 * replaces whitespace with <tt>whitespaceChar</tt>, also multiple
 	 * consecutive whitespace characters will be replaced by one
 	 * <tt>whitespaceChar</tt>.
-	 * 
+	 *
 	 * @param value
 	 *            the string
 	 * @param underScoreIsWhitespace
@@ -372,7 +372,7 @@ public class Encoder {
 	 *            the character to replace whitespace with
 	 * @param firstCharacterAsUpperCase
 	 *          if <code>true</code> convert the first of the title to upper case
-	 * 
+	 *
 	 * @return a normalised title
 	 */
     public static String normaliseTitle(final String value, boolean underScoreIsWhitespace,
@@ -388,7 +388,7 @@ public class Encoder {
      * <tt>whitespaceChar</tt>. If <tt>encodeUrl</tt> is set, each character
      * will be mangled through {@link #encodeUrl(StringBuilder, int)} after all
      * the previous replacements!
-     * 
+     *
      * @param value
      *            the string
      * @param underScoreIsWhitespace
@@ -401,7 +401,7 @@ public class Encoder {
      * @param encodeUrl
      *            finally mangles each character through
      *            {@link #encodeUrl(StringBuilder, int)}
-     * 
+     *
      * @return a normalised title
      */
 	public static String normaliseTitle(final String value, boolean underScoreIsWhitespace,
@@ -441,7 +441,7 @@ public class Encoder {
 	/**
 	 * copy the text in the resulting buffer and escape special html characters
 	 * (&lt; &gt; &#34; ( &quot; ) &amp; &#39;)
-	 * 
+	 *
 	 * @param buffer
 	 *          add converted text into the resulting buffer
 	 */
@@ -454,7 +454,7 @@ public class Encoder {
 		} catch (IOException e) {
 			buffer.append("Error in encodeHtml: IOException");
 		}
-		//	    
+		//
 		// final int len = text.length();
 		// if (len == 0) {
 		// return;

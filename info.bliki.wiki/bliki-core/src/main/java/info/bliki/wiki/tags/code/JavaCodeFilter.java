@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 /**
  * Syntax highlighting support for Java source codes
- * 
+ *
  */
 public class JavaCodeFilter extends AbstractCPPBasedCodeFilter implements SourceCodeFormatter {
 
@@ -65,7 +65,7 @@ public class JavaCodeFilter extends AbstractCPPBasedCodeFilter implements Source
       "while",
       "assert",
       "enum",
-      
+
       "boolean",
       "char",
       "byte",
@@ -138,5 +138,5 @@ public class JavaCodeFilter extends AbstractCPPBasedCodeFilter implements Source
 	public HashMap<String, String> getObjectSet() {
     return OBJECT_SET;
   }
-  
+
 }

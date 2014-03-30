@@ -25,7 +25,7 @@ public class WPSemanticLinkTest extends FilterTestSupport {
 
 	/*
 	 * Test a semantic relation
-	 * 
+	 *
 	 * See <a href="http://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic
 	 * MediaWiki</a> for more information.
 	 */
@@ -43,7 +43,7 @@ public class WPSemanticLinkTest extends FilterTestSupport {
 
 	/*
 	 * Test a semantic attribute
-	 * 
+	 *
 	 * See <a href="http://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic
 	 * MediaWiki</a> for more information.
 	 */
@@ -80,7 +80,7 @@ public class WPSemanticLinkTest extends FilterTestSupport {
 
 	public void testLink05() {
 
-		assertEquals("\n" + 
+		assertEquals("\n" +
 				"<p>The <a href=\"http://www.bliki.info/wiki/C%2B%2B_::_operator\" title=\"C++ :: operator\">C++ :: operator</a>.</p>", wikiModel
 				.render("The [[:C++ :: operator]].", false));
 		List<SemanticRelation> list = wikiModel.getSemanticRelations();

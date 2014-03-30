@@ -9,7 +9,7 @@ import java.util.List;
  * href
  * ="http://www.mediawiki.org/wiki/Help:Extension:ParserFunctions">Mediwiki's
  * Help:Extension:ParserFunctions</a>
- * 
+ *
  */
 public class Ifeq extends AbstractTemplateFunction {
 	public final static ITemplateFunction CONST = new Ifeq();

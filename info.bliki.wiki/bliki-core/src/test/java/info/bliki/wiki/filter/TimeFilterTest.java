@@ -6,7 +6,7 @@ import junit.framework.TestSuite;
 /**
  * JUnit tests for time parser function. Uncomment the test method below if you
  * would test a new time formatter.
- * 
+ *
  */
 public class TimeFilterTest extends FilterTestSupport {
 	public TimeFilterTest(String name) {

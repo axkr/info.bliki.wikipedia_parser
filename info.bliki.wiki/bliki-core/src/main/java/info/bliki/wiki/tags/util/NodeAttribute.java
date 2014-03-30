@@ -15,7 +15,7 @@ package info.bliki.wiki.tags.util;
  */
 public class NodeAttribute extends Attribute {
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = -7794436167788452243L;
 
@@ -49,7 +49,7 @@ public class NodeAttribute extends Attribute {
 
 	/**
 	 * Create an attribute.
-	 * 
+	 *
 	 * @param name_start
 	 *            The starting offset of the name within the page. If this is
 	 *            negative, the name is considered null.
@@ -105,7 +105,7 @@ public class NodeAttribute extends Attribute {
 	 * given. If the quote value is zero, assigns the value using
 	 * {@link #setRawValue} which sets the quote character to a proper value if
 	 * necessary.
-	 * 
+	 *
 	 * @param name
 	 *            The name of this attribute.
 	 * @param assignment
@@ -126,7 +126,7 @@ public class NodeAttribute extends Attribute {
 	 * sign as the assignment string if the value is not <code>null</code>,
 	 * and calls {@link #setRawValue} to get the correct quoting if
 	 * <code>quote</code> is zero.
-	 * 
+	 *
 	 * @param name
 	 *            The name of this attribute.
 	 * @param value
@@ -141,7 +141,7 @@ public class NodeAttribute extends Attribute {
 
 	/**
 	 * Create a whitespace attribute with the value given.
-	 * 
+	 *
 	 * @param value
 	 *            The value of this attribute.
 	 * @exception IllegalArgumentException
@@ -157,7 +157,7 @@ public class NodeAttribute extends Attribute {
 	 * Create an attribute with the name and value given. Uses an equals sign as
 	 * the assignment string if the value is not <code>null</code>, and calls
 	 * {@link #setRawValue} to get the correct quoting.
-	 * 
+	 *
 	 * @param name
 	 *            The name of this attribute.
 	 * @param value
@@ -171,7 +171,7 @@ public class NodeAttribute extends Attribute {
 	/**
 	 * Create an attribute with the name, assignment string and value given.
 	 * Calls {@link #setRawValue} to get the correct quoting.
-	 * 
+	 *
 	 * @param name
 	 *            The name of this attribute.
 	 * @param assignment
@@ -196,7 +196,7 @@ public class NodeAttribute extends Attribute {
 	/**
 	 * Get the name of this attribute. The part before the equals sign, or the
 	 * contents of the stand-alone attribute.
-	 * 
+	 *
 	 * @return The name, or <code>null</code> if it's just a whitepace
 	 *         'attribute'.
 	 */
@@ -222,7 +222,7 @@ public class NodeAttribute extends Attribute {
 
 	/**
 	 * Get the name of this attribute.
-	 * 
+	 *
 	 * @param buffer
 	 *            The buffer to place the name in.
 	 * @see #getName()
@@ -245,7 +245,7 @@ public class NodeAttribute extends Attribute {
 	 * Get the assignment string of this attribute. This is usually just an
 	 * equals sign, but in poorly formed attributes it can include whitespace on
 	 * either or both sides of an equals sign.
-	 * 
+	 *
 	 * @return The assignment string.
 	 */
 	public String getAssignment(String text) {
@@ -270,7 +270,7 @@ public class NodeAttribute extends Attribute {
 
 	/**
 	 * Get the assignment string of this attribute.
-	 * 
+	 *
 	 * @param buffer
 	 *            The buffer to place the assignment string in.
 	 * @see #getAssignment()
@@ -302,7 +302,7 @@ public class NodeAttribute extends Attribute {
 	 * text if it's just a whitepace 'attribute'. <em>NOTE:</em> This does not
 	 * include any quotes that may have enclosed the value when it was read. To
 	 * get the un-stripped value use {@link  #getRawValue}.
-	 * 
+	 *
 	 * @return The value, or <code>null</code> if it's a stand-alone or empty
 	 *         attribute, or the text if it's just a whitepace 'attribute'.
 	 */
@@ -324,7 +324,7 @@ public class NodeAttribute extends Attribute {
 
 	/**
 	 * Get the value of the attribute.
-	 * 
+	 *
 	 * @param buffer
 	 *            The buffer to place the value in.
 	 * @see #getValue()
@@ -348,7 +348,7 @@ public class NodeAttribute extends Attribute {
 	 * Get the raw value of the attribute. The part after the equals sign, or
 	 * the text if it's just a whitepace 'attribute'. This includes the quotes
 	 * around the value if any.
-	 * 
+	 *
 	 * @return The value, or <code>null</code> if it's a stand-alone
 	 *         attribute, or the text if it's just a whitepace 'attribute'.
 	 */
@@ -374,7 +374,7 @@ public class NodeAttribute extends Attribute {
 	 * Get the raw value of the attribute. The part after the equals sign, or
 	 * the text if it's just a whitepace 'attribute'. This includes the quotes
 	 * around the value if any.
-	 * 
+	 *
 	 * @param buffer
 	 *            The string buffer to append the attribute value to.
 	 * @see #getRawValue()
@@ -405,7 +405,7 @@ public class NodeAttribute extends Attribute {
 
 	/**
 	 * Get the starting position of the attribute name.
-	 * 
+	 *
 	 * @return The offset into the page at which the name begins.
 	 */
 	public int getNameStartPosition() {
@@ -414,7 +414,7 @@ public class NodeAttribute extends Attribute {
 
 	/**
 	 * Set the starting position of the attribute name.
-	 * 
+	 *
 	 * @param start
 	 *            The new offset into the page at which the name begins.
 	 */
@@ -425,7 +425,7 @@ public class NodeAttribute extends Attribute {
 
 	/**
 	 * Get the ending position of the attribute name.
-	 * 
+	 *
 	 * @return The offset into the page at which the name ends.
 	 */
 	public int getNameEndPosition() {
@@ -434,7 +434,7 @@ public class NodeAttribute extends Attribute {
 
 	/**
 	 * Set the ending position of the attribute name.
-	 * 
+	 *
 	 * @param end
 	 *            The new offset into the page at which the name ends.
 	 */
@@ -446,7 +446,7 @@ public class NodeAttribute extends Attribute {
 
 	/**
 	 * Get the starting position of the attribute value.
-	 * 
+	 *
 	 * @return The offset into the page at which the value begins.
 	 */
 	public int getValueStartPosition() {
@@ -455,7 +455,7 @@ public class NodeAttribute extends Attribute {
 
 	/**
 	 * Set the starting position of the attribute value.
-	 * 
+	 *
 	 * @param start
 	 *            The new offset into the page at which the value begins.
 	 */
@@ -467,7 +467,7 @@ public class NodeAttribute extends Attribute {
 
 	/**
 	 * Get the ending position of the attribute value.
-	 * 
+	 *
 	 * @return The offset into the page at which the value ends.
 	 */
 	public int getValueEndPosition() {
@@ -476,7 +476,7 @@ public class NodeAttribute extends Attribute {
 
 	/**
 	 * Set the ending position of the attribute value.
-	 * 
+	 *
 	 * @param end
 	 *            The new offset into the page at which the value ends.
 	 */
@@ -487,7 +487,7 @@ public class NodeAttribute extends Attribute {
 
 	/**
 	 * Predicate to determine if this attribute is whitespace.
-	 * 
+	 *
 	 * @return <code>true</code> if this attribute is whitespace,
 	 *         <code>false</code> if it is a real attribute.
 	 */
@@ -498,7 +498,7 @@ public class NodeAttribute extends Attribute {
 
 	/**
 	 * Predicate to determine if this attribute has no equals sign (or value).
-	 * 
+	 *
 	 * @return <code>true</code> if this attribute is a standalone attribute.
 	 *         <code>false</code> if has an equals sign.
 	 */
@@ -515,7 +515,7 @@ public class NodeAttribute extends Attribute {
 
 	/**
 	 * Predicate to determine if this attribute has an equals sign but no value.
-	 * 
+	 *
 	 * @return <code>true</code> if this attribute is an empty attribute.
 	 *         <code>false</code> if has an equals sign and a value.
 	 */
@@ -532,7 +532,7 @@ public class NodeAttribute extends Attribute {
 
 	/**
 	 * Predicate to determine if this attribute has a value.
-	 * 
+	 *
 	 * @return <code>true</code> if this attribute has a value.
 	 *         <code>false</code> if it is empty or standalone.
 	 */
@@ -545,7 +545,7 @@ public class NodeAttribute extends Attribute {
 
 	/**
 	 * Get the length of the string value of this attribute.
-	 * 
+	 *
 	 * @return The number of characters required to express this attribute.
 	 */
 	@Override

@@ -13,9 +13,9 @@ import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
- 
+
 /**
- * 
+ *
  * Initial source copied from the <a href="https://textile-j.dev.java.net/">Textile-J</a> project
  *
  */
@@ -32,7 +32,7 @@ class HtmlToDocbookContentHandler implements ContentHandler {
 	private Map<String, String> acronyms = new HashMap<String, String>();
 
 	/**
-	 * 
+	 *
 	 * @param writer
 	 *          the writer to which docbook content is created.
 	 */
@@ -187,7 +187,7 @@ class HtmlToDocbookContentHandler implements ContentHandler {
 
 	private interface Emitter {
 		/**
-		 * 
+		 *
 		 * @return true if the emitter started successfully, otherwise false
 		 */
 		public boolean start(XMLStreamWriter writer, String htmlElementName, Attributes atts) throws XMLStreamException;
@@ -195,7 +195,7 @@ class HtmlToDocbookContentHandler implements ContentHandler {
 		public void content(XMLStreamWriter writer, char[] ch, int start, int length) throws XMLStreamException;
 
 		/**
-		 * 
+		 *
 		 * @return true if the emitter is done
 		 */
 		public boolean end(XMLStreamWriter writer, String htmlElementName) throws XMLStreamException;
@@ -216,7 +216,7 @@ class HtmlToDocbookContentHandler implements ContentHandler {
 
 		/**
 		 * Add an attribute to the last of the tags
-		 * 
+		 *
 		 * @param name
 		 *          the attribute name
 		 * @param value

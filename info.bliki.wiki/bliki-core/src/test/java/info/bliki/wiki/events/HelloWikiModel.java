@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * Wiki model implementation which allows some special JUnit tests with
  * predefined templates
- * 
+ *
  * Uses a modified template from: <a
  * href="http://en.wikipedia.org/wiki/Template:Reflist"
  * >http://en.wikipedia.org/wiki/Template:Reflist</a>
@@ -28,7 +28,7 @@ public class HelloWikiModel extends WikiModel {
 
 	/**
 	 * Add template: &quot;Reflist&quot;
-	 * 
+	 *
 	 */
 	@Override
 	public String getRawWikiContent(ParsedPageName parsedPagename, Map<String, String> templateParameters) throws WikiModelContentException {

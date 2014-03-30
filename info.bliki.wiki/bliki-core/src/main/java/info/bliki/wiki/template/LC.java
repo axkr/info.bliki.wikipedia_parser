@@ -9,7 +9,7 @@ import java.util.List;
  * syntax. See <a
  * href="http://en.wikipedia.org/wiki/Help:Variable#Formatting">Wikipedia -
  * Help:Variable#Formatting</a>
- * 
+ *
  */
 public class LC extends AbstractTemplateFunction {
 	public final static ITemplateFunction CONST = new LC();

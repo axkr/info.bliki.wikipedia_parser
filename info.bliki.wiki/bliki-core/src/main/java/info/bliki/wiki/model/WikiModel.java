@@ -24,7 +24,7 @@ import java.util.Set;
 
 /**
  * Standard model implementation
- * 
+ *
  */
 public class WikiModel extends AbstractWikiModel {
 	/**
@@ -47,7 +47,7 @@ public class WikiModel extends AbstractWikiModel {
 	private String fExternalWikiBaseURL;
 
 	/**
-	 * 
+	 *
 	 * @param imageBaseURL
 	 *            a url string which must contains a &quot;${image}&quot;
 	 *            variable which will be replaced by the image name, to create
@@ -227,7 +227,7 @@ public class WikiModel extends AbstractWikiModel {
 
 	/**
 	 * Get the set of Wikipedia category names used in this text
-	 * 
+	 *
 	 * @return the set of category strings
 	 */
 	public Map<String, String> getCategories() {
@@ -236,7 +236,7 @@ public class WikiModel extends AbstractWikiModel {
 
 	/**
 	 * Get the set of Wikipedia links used in this text
-	 * 
+	 *
 	 * @return the set of category strings
 	 */
 	@Override
@@ -262,7 +262,7 @@ public class WikiModel extends AbstractWikiModel {
 
 	/**
 	 * Gets the names of all included pages in the template namespace.
-	 * 
+	 *
 	 * @return page names without the template namespace prefix
 	 */
 	public Set<String> getTemplates() {
@@ -271,7 +271,7 @@ public class WikiModel extends AbstractWikiModel {
 
 	/**
 	 * Gets the names of all included pages outside the template namespace.
-	 * 
+	 *
 	 * @return page names including their namespace prefix
 	 */
 	public Set<String> getIncludes() {
@@ -280,7 +280,7 @@ public class WikiModel extends AbstractWikiModel {
 
 	/**
 	 * Append the internal wiki image link to this model.
-	 * 
+	 *
 	 * <br/>
 	 * <br/>
 	 * <b>Note</b>: the pipe symbol (i.e. &quot;|&quot;) splits the
@@ -288,19 +288,19 @@ public class WikiModel extends AbstractWikiModel {
 	 * used as the <code>&lt;image-name&gt;</code> and typically ends with
 	 * extensions like <code>.png</code>, <code>.gif</code>, <code>.jpg</code>
 	 * or <code>.jpeg</code>.
-	 * 
+	 *
 	 * <br/>
 	 * <br/>
 	 * <b>Note</b>: if the image link contains a "width" attribute, the filename
 	 * is constructed as <code>&lt;size&gt;px-&lt;image-name&gt;</code>,
 	 * otherwise it's only the <code>&lt;image-name&gt;</code>.
-	 * 
+	 *
 	 * <br/>
 	 * <br/>
 	 * See <a href="http://en.wikipedia.org/wiki/Image_markup">Image markup</a>
 	 * and see <a
 	 * href="http://www.mediawiki.org/wiki/Help:Images">Help:Images</a>
-	 * 
+	 *
 	 * @param imageNamespace
 	 *            the image namespace
 	 * @param rawImageLink
@@ -400,7 +400,7 @@ public class WikiModel extends AbstractWikiModel {
 
 	/**
 	 * Convert a given text in wiki notation into another format.
-	 * 
+	 *
 	 * @param model
 	 *            a wiki model
 	 * @param converter
@@ -430,7 +430,7 @@ public class WikiModel extends AbstractWikiModel {
 
 	/**
 	 * Convert a given text in wiki notation into HTML text.
-	 * 
+	 *
 	 * @param rawWikiText
 	 *            a raw wiki text
 	 * @param resultBuffer
@@ -453,7 +453,7 @@ public class WikiModel extends AbstractWikiModel {
 
 	/**
 	 * Convert a given text in wiki notation into HTML text.
-	 * 
+	 *
 	 * @param rawWikiText
 	 *            a raw wiki text
 	 * @param resultBuffer
@@ -468,7 +468,7 @@ public class WikiModel extends AbstractWikiModel {
 
 	/**
 	 * Convert a given text in wiki notation into HTML text.
-	 * 
+	 *
 	 * @param rawWikiText
 	 *            a raw wiki text
 	 * @return the resulting HTML text; nay returns <code>null</code>, if an

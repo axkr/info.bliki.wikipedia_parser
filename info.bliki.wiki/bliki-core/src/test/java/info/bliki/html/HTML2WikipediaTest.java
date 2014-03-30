@@ -170,19 +170,19 @@ public class HTML2WikipediaTest extends TestCase {
 		HTML2WikiConverter conv = new HTML2WikiConverter();
 		conv.setInputHTML("<br>fsafds\n<br>");
 		String result = conv.toWiki(new ToWikipedia());
-		assertEquals(result, "<br>fsafds\n" + 
+		assertEquals(result, "<br>fsafds\n" +
 				"<br>");
 	}
-	
+
 	public void test20() {
 		HTML2WikiConverter conv = new HTML2WikiConverter();
 		conv.setInputHTML("<a id=\"TST\" name=\"TST\"></a><h2>TST</h2>");
 		String result = conv.toWiki(new ToWikipedia());
-		assertEquals(result, "\n" + 
-				"== TST ==\n" + 
+		assertEquals(result, "\n" +
+				"== TST ==\n" +
 				"");
 	}
-	
+
 	public static void main(String[] args) {
 		try {
 			HTML2WikiConverter conv = new HTML2WikiConverter();

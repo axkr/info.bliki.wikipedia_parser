@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 /**
  * Syntax highlighting support for C++ based source codes
- * 
+ *
  */
 abstract public class AbstractCPPBasedCodeFilter extends AbstractCodeFormatter {
 
@@ -155,7 +155,7 @@ abstract public class AbstractCPPBasedCodeFilter extends AbstractCodeFormatter {
 	/**
 	 * Test if the keywords are case sensitive. Returns <code>true</code> by
 	 * default.
-	 * 
+	 *
 	 * @return <code>true</code> if the keywords are case sensitive
 	 */
 	public boolean isKeywordCaseSensitive() {
@@ -163,7 +163,7 @@ abstract public class AbstractCPPBasedCodeFilter extends AbstractCodeFormatter {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	public boolean isPHPTag() {
 		return false;

@@ -15,7 +15,7 @@ import java.util.Map;
 /**
  * A converter which renders the internal tree node representation as plain text
  * without HTML tags and images
- * 
+ *
  */
 public class PlainTextConverter implements ITextConverter {
 	boolean fNoLinks;

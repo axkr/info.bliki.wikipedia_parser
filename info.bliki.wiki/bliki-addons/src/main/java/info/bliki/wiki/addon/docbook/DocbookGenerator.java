@@ -21,7 +21,7 @@ import org.xml.sax.XMLReader;
 /**
  * Create a <a href="http://en.wikipedia.org/wiki/DocBook">DocBook</a> document
  * from a wiki string
- * 
+ *
  */
 public class DocbookGenerator {
 	public final static String HEADER_TEMPLATE = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
@@ -40,7 +40,7 @@ public class DocbookGenerator {
 	/**
 	 * Create a <a href="http://en.wikipedia.org/wiki/DocBook">DocBook</a> string
 	 * from a given rendered XHTML text.
-	 * 
+	 *
 	 * @param xhtmlContent
 	 * @return
 	 * @throws IOException

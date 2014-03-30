@@ -14,9 +14,9 @@ public class CiteFilterTest extends FilterTestSupport {
 
 	public void testDivTag1() {
 		assertEquals(
-				"\n" + 
-				"<p><cite id=\"Test\">\n" + 
-				"a cite text\n" + 
+				"\n" +
+				"<p><cite id=\"Test\">\n" +
+				"a cite text\n" +
 				"</cite></p>",
 				wikiModel
 						.render("<cite id=\"Test\">\n"

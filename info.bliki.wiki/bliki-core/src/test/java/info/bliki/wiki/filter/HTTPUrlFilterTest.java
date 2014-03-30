@@ -41,7 +41,7 @@ public class HTTPUrlFilterTest extends FilterTestSupport {
 	}
 
 	public void testIssue90b() {
-		assertEquals("\n" + 
+		assertEquals("\n" +
 				"<p>start [www.google.de Google DE ] end</p>", wikiModel.render("start [www.google.de Google DE ] end", false));
 	}
 
@@ -155,7 +155,7 @@ public class HTTPUrlFilterTest extends FilterTestSupport {
 	      "<p>mailto someone@domain.com or \n" +
 		    "[mailto someone@domain.com someone]</p>", wikiModel.render("mailto someone@domain.com or \n" + "[mailto someone@domain.com someone]", false));
 	}
-	
+
 	public void testUrlWithSpan() {
 		assertEquals(
 				"\n"

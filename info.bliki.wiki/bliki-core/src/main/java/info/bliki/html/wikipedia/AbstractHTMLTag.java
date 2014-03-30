@@ -67,7 +67,7 @@ public abstract class AbstractHTMLTag implements HTMLTag {
 
 	/**
 	 * Get the first ContentToken or TagNode with the given <code>tagName</code>.
-	 * 
+	 *
 	 * @param children
 	 * @param tagName
 	 * @return

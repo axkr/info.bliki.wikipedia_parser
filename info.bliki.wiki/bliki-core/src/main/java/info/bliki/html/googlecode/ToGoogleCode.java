@@ -12,10 +12,10 @@ import java.util.Map;
 
 /**
  * Convert HTML text to Google Code wiki syntax.
- * 
+ *
  * See: <a href="http://code.google.com/p/support/wiki/WikiSyntax">Google code
  * WikiSyntax</a>
- * 
+ *
  */
 public class ToGoogleCode extends AbstractHTMLToWiki implements IHTMLToWiki {
 	static private final Map<String, HTMLTag> TAG_MAP = new HashMap<String, HTMLTag>();

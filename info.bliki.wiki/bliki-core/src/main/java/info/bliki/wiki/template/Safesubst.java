@@ -19,7 +19,7 @@ import java.util.Map;
  * A template parser function for <code>{{safesubst: ... }}</code>. See <a
  * href="http://en.wikipedia.org/wiki/en:Help:Substitution#safesubst:"
  * >Wikipedia-Help:Substitution</a>
- * 
+ *
  */
 public class Safesubst extends AbstractTemplateFunction {
 	public final static ITemplateFunction CONST = new Safesubst();
@@ -93,7 +93,7 @@ public class Safesubst extends AbstractTemplateFunction {
 	/**
 	 * Parse the preprocess step for the given content string with the template
 	 * parser and <code>Utils#trimNewlineLeft()</code> the resulting string.
-	 * 
+	 *
 	 * @param content
 	 * @param model
 	 * @return parsed content

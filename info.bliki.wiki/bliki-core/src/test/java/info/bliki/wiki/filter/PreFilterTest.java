@@ -8,117 +8,117 @@ public class PreFilterTest extends FilterTestSupport {
 		super(name);
 	}
 
-	public static Test suite() { 
+	public static Test suite() {
 		return new TestSuite(PreFilterTest.class);
 	}
 
-	/** 
+	/**
 	 * See Issue 106
-	 * 
+	 *
 	 */
 	public void testPre4() {
-	  assertEquals("<h2><span class=\"mw-headline\" id=\"Peanut_Butter_.28variant_1.29\">Peanut Butter (variant 1)</span></h2>\n" + 
-	 		"<div class=\"thumb tright\">\n" + 
-	 		"<div class=\"thumbinner\" style=\"width:222px;\"><a class=\"internal\" href=\"http://www.bliki.info/wiki/Image:PeanutButter.jpg\" title=\"&#34;Smooth&#34; peanut butter in a jar\"><img src=\"http://www.bliki.info/wiki/PeanutButter.jpg\" alt=\"&#34;Smooth&#34; peanut butter in a jar\" title=\"&#34;Smooth&#34; peanut butter in a jar\" class=\"type-thumb\" width=\"220\" />\n" + 
-	 		"</a>\n" + 
-	 		"<div class=\"thumbcaption\">&#34;Smooth&#34; peanut butter in a jar</div></div>\n" + 
-	 		"</div>\n" + 
-	 		"", 
+	  assertEquals("<h2><span class=\"mw-headline\" id=\"Peanut_Butter_.28variant_1.29\">Peanut Butter (variant 1)</span></h2>\n" +
+	 		"<div class=\"thumb tright\">\n" +
+	 		"<div class=\"thumbinner\" style=\"width:222px;\"><a class=\"internal\" href=\"http://www.bliki.info/wiki/Image:PeanutButter.jpg\" title=\"&#34;Smooth&#34; peanut butter in a jar\"><img src=\"http://www.bliki.info/wiki/PeanutButter.jpg\" alt=\"&#34;Smooth&#34; peanut butter in a jar\" title=\"&#34;Smooth&#34; peanut butter in a jar\" class=\"type-thumb\" width=\"220\" />\n" +
+	 		"</a>\n" +
+	 		"<div class=\"thumbcaption\">&#34;Smooth&#34; peanut butter in a jar</div></div>\n" +
+	 		"</div>\n" +
+	 		"",
 			 wikiModel.render("== Peanut Butter (variant 1) ==\n" +
 	       " [[Image:PeanutButter.jpg|thumb|\"Smooth\" peanut butter in a jar]]",
 	  false));
 	}
-	
-	/** 
+
+	/**
 	 * See Issue 106
-	 * 
+	 *
 	 */
 	public void testPre5() {
-	  assertEquals("<h2><span class=\"mw-headline\" id=\"Peanut_Butter_.28variant_2.29\">Peanut Butter (variant 2)</span></h2>\n" + 
-	  		"<pre>" + 
-	  		"test0\n" + 
-	  		"\n" + 
-	  		"</pre>\n" + 
-	  		"<div class=\"thumb tright\">\n" + 
-	  		"<div class=\"thumbinner\" style=\"width:222px;\"><a class=\"internal\" href=\"http://www.bliki.info/wiki/Image:PeanutButter.jpg\" title=\"&#34;Smooth&#34; peanut butter in a jar\"><img src=\"http://www.bliki.info/wiki/PeanutButter.jpg\" alt=\"&#34;Smooth&#34; peanut butter in a jar\" title=\"&#34;Smooth&#34; peanut butter in a jar\" class=\"type-thumb\" width=\"220\" />\n" + 
-	  		"</a>\n" + 
-	  		"<div class=\"thumbcaption\">&#34;Smooth&#34; peanut butter in a jar</div></div>\n" + 
-	  		"</div>\n" + 
-	  		"\n" + 
-	  		"<pre>" + 
-	  		"test2\n" + 
-	  		"</pre>\n" + 
-	  		"<p><b>Peanut butter</b> is a food paste made primarily from ...</p>", 
-			 wikiModel.render("== Peanut Butter (variant 2) ==\n" + 
-			 		" test0\n" + 
-			 		" [[Image:PeanutButter.jpg|thumb|\"Smooth\" peanut butter in a jar]]\n" + 
-			 		" test2\n" + 
-			 		"\n" + 
+	  assertEquals("<h2><span class=\"mw-headline\" id=\"Peanut_Butter_.28variant_2.29\">Peanut Butter (variant 2)</span></h2>\n" +
+	  		"<pre>" +
+	  		"test0\n" +
+	  		"\n" +
+	  		"</pre>\n" +
+	  		"<div class=\"thumb tright\">\n" +
+	  		"<div class=\"thumbinner\" style=\"width:222px;\"><a class=\"internal\" href=\"http://www.bliki.info/wiki/Image:PeanutButter.jpg\" title=\"&#34;Smooth&#34; peanut butter in a jar\"><img src=\"http://www.bliki.info/wiki/PeanutButter.jpg\" alt=\"&#34;Smooth&#34; peanut butter in a jar\" title=\"&#34;Smooth&#34; peanut butter in a jar\" class=\"type-thumb\" width=\"220\" />\n" +
+	  		"</a>\n" +
+	  		"<div class=\"thumbcaption\">&#34;Smooth&#34; peanut butter in a jar</div></div>\n" +
+	  		"</div>\n" +
+	  		"\n" +
+	  		"<pre>" +
+	  		"test2\n" +
+	  		"</pre>\n" +
+	  		"<p><b>Peanut butter</b> is a food paste made primarily from ...</p>",
+			 wikiModel.render("== Peanut Butter (variant 2) ==\n" +
+			 		" test0\n" +
+			 		" [[Image:PeanutButter.jpg|thumb|\"Smooth\" peanut butter in a jar]]\n" +
+			 		" test2\n" +
+			 		"\n" +
 			 		"'''Peanut butter''' is a food paste made primarily from ...",
 	  false));
 	}
-	/** 
+	/**
 	 * See Issue 106
-	 * 
+	 *
 	 */
 	public void testPre6() {
-	  assertEquals("<h2><span class=\"mw-headline\" id=\"Peanut_Butter_.28variant_3.29\">Peanut Butter (variant 3)</span></h2>\n" + 
-	  		"<pre>" + 
-	  		"test0\n" + 
-	  		"\n" + 
-	  		"</pre>\n" + 
-	  		"<p>test</p>\n" + 
-	  		"<div class=\"thumb tright\">\n" + 
-	  		"<div class=\"thumbinner\" style=\"width:222px;\"><a class=\"internal\" href=\"http://www.bliki.info/wiki/Image:PeanutButter.jpg\" title=\"&#34;Smooth&#34; peanut butter in a jar\"><img src=\"http://www.bliki.info/wiki/PeanutButter.jpg\" alt=\"&#34;Smooth&#34; peanut butter in a jar\" title=\"&#34;Smooth&#34; peanut butter in a jar\" class=\"type-thumb\" width=\"220\" />\n" + 
-	  		"</a>\n" + 
-	  		"<div class=\"thumbcaption\">&#34;Smooth&#34; peanut butter in a jar</div></div>\n" + 
-	  		"</div>\n" + 
-	  		"\n" + 
-	  		"<pre>" + 
-	  		"test2\n" + 
-	  		"</pre>\n" + 
-	  		"<p><b>Peanut butter</b> is a food paste made primarily from ...</p>", 
-			 wikiModel.render("== Peanut Butter (variant 3) ==\n" + 
-			 		" test0\n" + 
-			 		" test[[Image:PeanutButter.jpg|thumb|\"Smooth\" peanut butter in a jar]]\n" + 
-			 		" test2\n" + 
-			 		"\n" + 
+	  assertEquals("<h2><span class=\"mw-headline\" id=\"Peanut_Butter_.28variant_3.29\">Peanut Butter (variant 3)</span></h2>\n" +
+	  		"<pre>" +
+	  		"test0\n" +
+	  		"\n" +
+	  		"</pre>\n" +
+	  		"<p>test</p>\n" +
+	  		"<div class=\"thumb tright\">\n" +
+	  		"<div class=\"thumbinner\" style=\"width:222px;\"><a class=\"internal\" href=\"http://www.bliki.info/wiki/Image:PeanutButter.jpg\" title=\"&#34;Smooth&#34; peanut butter in a jar\"><img src=\"http://www.bliki.info/wiki/PeanutButter.jpg\" alt=\"&#34;Smooth&#34; peanut butter in a jar\" title=\"&#34;Smooth&#34; peanut butter in a jar\" class=\"type-thumb\" width=\"220\" />\n" +
+	  		"</a>\n" +
+	  		"<div class=\"thumbcaption\">&#34;Smooth&#34; peanut butter in a jar</div></div>\n" +
+	  		"</div>\n" +
+	  		"\n" +
+	  		"<pre>" +
+	  		"test2\n" +
+	  		"</pre>\n" +
+	  		"<p><b>Peanut butter</b> is a food paste made primarily from ...</p>",
+			 wikiModel.render("== Peanut Butter (variant 3) ==\n" +
+			 		" test0\n" +
+			 		" test[[Image:PeanutButter.jpg|thumb|\"Smooth\" peanut butter in a jar]]\n" +
+			 		" test2\n" +
+			 		"\n" +
 			 		"'''Peanut butter''' is a food paste made primarily from ...",
 	  false));
 	}
-	/** 
+	/**
 	 * See Issue 104
-	 * 
+	 *
 	 */
 	public void testPre7() {
-			assertEquals("<h2><span class=\"mw-headline\" id=\"TestLBPre\">TestLBPre</span></h2>\n" + 
-					"<pre>" + 
-					"test1\n" + 
-					"</pre>\n" + 
-					"<pre>" + 
-					"test2\n" + 
-					"</pre>", wikiModel.render("== TestLBPre ==\n" + 
-					" test1\n" + 
-					"\n" + 
+			assertEquals("<h2><span class=\"mw-headline\" id=\"TestLBPre\">TestLBPre</span></h2>\n" +
+					"<pre>" +
+					"test1\n" +
+					"</pre>\n" +
+					"<pre>" +
+					"test2\n" +
+					"</pre>", wikiModel.render("== TestLBPre ==\n" +
+					" test1\n" +
+					"\n" +
 					" test2", false));
 	}
-	
-	/** 
+
+	/**
 	 * See Issue 104
-	 * 
+	 *
 	 */
 	public void testPre8() {
-			assertEquals("<h2><span class=\"mw-headline\" id=\"TestLBPre\">TestLBPre</span></h2>\n" + 
-					"<pre>" + 
-					"test1\n" + 
-					"\n" + 
-					"test2\n" + 
-					"</pre>", wikiModel.render("== TestLBPre ==\n" + 
-					" test1\n" + 
-					" \n" + 
+			assertEquals("<h2><span class=\"mw-headline\" id=\"TestLBPre\">TestLBPre</span></h2>\n" +
+					"<pre>" +
+					"test1\n" +
+					"\n" +
+					"test2\n" +
+					"</pre>", wikiModel.render("== TestLBPre ==\n" +
+					" test1\n" +
+					" \n" +
 					" test2", false));
 	}
-	
+
 	public void testPre0() {
 		assertEquals("\n" + "<p>\n" + "The nowiki tag ignores [[Wiki]] &#39;&#39;markup&#39;&#39;.\n"
 				+ "It reformats text by removing\n" + "newlines    and multiple spaces.\n" + "It still interprets special\n"
@@ -149,13 +149,13 @@ public class PreFilterTest extends FilterTestSupport {
 	// "</nowiki>\n</pre>"));
 	// }
 	public void testPre2() {
-		assertEquals("\n" + 
-				"<pre>" + 
-				"pre text\n" + 
-				"</pre>\n" + 
-				"\n" + 
-				"\n" + 
-				"<p>last line</p>", 
+		assertEquals("\n" +
+				"<pre>" +
+				"pre text\n" +
+				"</pre>\n" +
+				"\n" +
+				"\n" +
+				"<p>last line</p>",
 				wikiModel.render("\n" + " pre text\n" + "\n"
 				+ "\n" + "\n" + "last line", false));
 	}

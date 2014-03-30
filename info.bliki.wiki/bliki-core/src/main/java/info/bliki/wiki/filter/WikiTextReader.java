@@ -45,7 +45,7 @@ public class WikiTextReader {
 	 * length is specified (ie. if length != -1), only length chars are
 	 * returned. Otherwise all chars in the stream are returned. Note this
 	 * doesn't close the stream.
-	 * 
+	 *
 	 * @throws IOException
 	 *             if a problem occured reading the stream.
 	 */
