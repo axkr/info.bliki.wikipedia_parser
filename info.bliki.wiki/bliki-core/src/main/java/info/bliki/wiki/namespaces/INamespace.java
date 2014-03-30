@@ -20,103 +20,109 @@ public interface INamespace {
         /**
          * Alias for direct links to media files.
          */
-        MEDIA_NAMESPACE_KEY(Integer.valueOf(-2)),
+        MEDIA_NAMESPACE_KEY(-2),
 
         /**
          * Holds special pages.
          */
-        SPECIAL_NAMESPACE_KEY(Integer.valueOf(-1)),
+        SPECIAL_NAMESPACE_KEY(-1),
 
         /**
          * "Real" content; articles. Has no prefix.
          */
-        MAIN_NAMESPACE_KEY(Integer.valueOf(0)),
+        MAIN_NAMESPACE_KEY(0),
 
         /**
          * Talk pages of "Real" content
          */
-        TALK_NAMESPACE_KEY(Integer.valueOf(1)),
+        TALK_NAMESPACE_KEY(1),
 
         /**
          *
          */
-        USER_NAMESPACE_KEY(Integer.valueOf(2)),
+        USER_NAMESPACE_KEY(2),
 
         /**
          * Talk pages for User Pages
          */
-        USER_TALK_NAMESPACE_KEY(Integer.valueOf(3)),
+        USER_TALK_NAMESPACE_KEY(3),
 
         /**
          * Information about the wiki. Prefix is the same as $wgSitename of the PHP
          * installation.
          */
-        PROJECT_NAMESPACE_KEY(Integer.valueOf(4)),
+        PROJECT_NAMESPACE_KEY(4),
 
         /**
          *
          */
-        PROJECT_TALK_NAMESPACE_KEY(Integer.valueOf(5)),
+        PROJECT_TALK_NAMESPACE_KEY(5),
 
         /**
          * Media description pages.
          */
-        FILE_NAMESPACE_KEY(Integer.valueOf(6)),
+        FILE_NAMESPACE_KEY(6),
 
         /**
          *
          */
-        FILE_TALK_NAMESPACE_KEY(Integer.valueOf(7)),
+        FILE_TALK_NAMESPACE_KEY(7),
 
         /**
          * Site interface customisation. Protected.
          */
-        MEDIAWIKI_NAMESPACE_KEY(Integer.valueOf(8)),
+        MEDIAWIKI_NAMESPACE_KEY(8),
 
         /**
          *
          */
-        MEDIAWIKI_TALK_NAMESPACE_KEY(Integer.valueOf(9)),
+        MEDIAWIKI_TALK_NAMESPACE_KEY(9),
 
         /**
          * Template pages.
          */
-        TEMPLATE_NAMESPACE_KEY(Integer.valueOf(10)),
+        TEMPLATE_NAMESPACE_KEY(10),
 
         /**
          *
          */
-        TEMPLATE_TALK_NAMESPACE_KEY(Integer.valueOf(11)),
+        TEMPLATE_TALK_NAMESPACE_KEY(11),
 
         /**
          * Help pages.
          */
-        HELP_NAMESPACE_KEY(Integer.valueOf(12)),
+        HELP_NAMESPACE_KEY(12),
 
         /**
          *
          */
-        HELP_TALK_NAMESPACE_KEY(Integer.valueOf(13)),
+        HELP_TALK_NAMESPACE_KEY(13),
 
         /**
          * Category description pages.
          */
-        CATEGORY_NAMESPACE_KEY(Integer.valueOf(14)),
+        CATEGORY_NAMESPACE_KEY(14),
 
         /**
          *
          */
-        CATEGORY_TALK_NAMESPACE_KEY(Integer.valueOf(15)),
+        CATEGORY_TALK_NAMESPACE_KEY(15),
 
         /**
          * Portal pages.
          */
-        PORTAL_NAMESPACE_KEY(Integer.valueOf(100)),
+        PORTAL_NAMESPACE_KEY(100),
 
         /**
          * Talk pages for portal pages.
          */
-        PORTAL_TALK_NAMESPACE_KEY(Integer.valueOf(101));
+        PORTAL_TALK_NAMESPACE_KEY(101),
+
+        /**
+         * Scribunto
+         */
+        MODULE_NAMESPACE_KEY(828),      // NS_MODULE
+        MODULE_TALK_NAMESPACE_KEY(829); // NS_MODULE_TALK
 
         /**
          * The integer number code of this namespace.

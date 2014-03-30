@@ -32,7 +32,7 @@ public class Namespace implements INamespace {
      * @see Namespace#numberCodeToInt(int)
      * @see Namespace#intToNumberCode(int)
      */
-    protected final NamespaceValue[] INT_TO_NAMESPACE = new NamespaceValue[20];
+    protected final NamespaceValue[] INT_TO_NAMESPACE = new NamespaceValue[22];
 
     /**
      * The &quot;Media&quot; namespace for the current language.
@@ -97,10 +97,16 @@ public class Namespace implements INamespace {
             NamespaceCode.MEDIAWIKI_NAMESPACE_KEY, MEDIAWIKI_TALK, "MediaWiki");
 
     /**
+     * The &quot;Module talk&quot; namespace for the current language.
+     */
+    public final NamespaceValue MODULE_TALK = new NamespaceValue(
+            NamespaceCode.MODULE_TALK_NAMESPACE_KEY, true, "Module_talk");
+
+    /**
      * The &quot;Module&quot; namespace for the current language.
      */
     public final NamespaceValue MODULE = new NamespaceValue(
-            NamespaceCode.TEMPLATE_NAMESPACE_KEY, "Module");
+            NamespaceCode.MODULE_NAMESPACE_KEY, MODULE_TALK, "Module");
     /**
      * The &quot;Template talk&quot; namespace for the current language.
      */
@@ -413,6 +419,8 @@ public class Namespace implements INamespace {
             return numberCode + 2;
         } else if (numberCode >= 100 && numberCode <= 101) {
             return numberCode - 100 + 18;
+        } else if (numberCode >= 828 && numberCode <= 829) {
+            return numberCode - 828 + 20;
         } else {
             throw new InvalidParameterException("unknown number code: "
                     + numberCode);
@@ -433,6 +441,8 @@ public class Namespace implements INamespace {
             return numberCode - 2;
         } else if (numberCode >= 18 && numberCode <= 19) {
             return numberCode + 100 - 18;
+        } else if (numberCode >= 20 && numberCode <= 21) {
+            return numberCode + 828 - 20;
         } else {
             throw new InvalidParameterException("unknown number code: "
                     + numberCode);

@@ -2,12 +2,11 @@ package info.bliki.wiki.namespaces;
 
 import info.bliki.wiki.namespaces.INamespace.NamespaceCode;
 import info.bliki.wiki.namespaces.Namespace.NamespaceValue;
-
-import java.util.Locale;
-
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+
+import java.util.Locale;
 
 /**
  * Tests for {@link Namespace}.
@@ -44,7 +43,7 @@ public class NamespaceTest extends TestCase {
      * Checks whether all content spaces are set.
      */
     public void testNumberCodeConversion02() {
-        for (int i = 0; i <= 19; ++i) {
+        for (int i = 0; i <= NamespaceCode.values().length-1; ++i) {
             assertEquals(i, Namespace.numberCodeToInt(Namespace.intToNumberCode(i)));
         }
     }
@@ -91,5 +90,11 @@ public class NamespaceTest extends TestCase {
         namespace.getCategory_talk().setTexts("Kategorie Diskussion");
         assertEquals(null, namespace.getNamespace("Category talk"));
         assertEquals(null, namespace.getNamespace("Category_talk"));
+    }
+
+    public void testModuleNamespace() {
+        assertEquals(namespace.MODULE, namespace.getNamespace("Module"));
+        assertEquals(namespace.MODULE, namespace.getContentspace("Module_talk"));
+        assertEquals(namespace.MODULE_TALK, namespace.getNamespace("Module_talk"));
     }
 }
