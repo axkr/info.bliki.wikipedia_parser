@@ -47,95 +47,95 @@ package info.bliki.htmlcleaner;
  */
 public abstract class TagToken implements BaseToken, Cloneable {
 
-	protected String name;
+    protected String name;
 
-	protected String originalSource = "";
+    protected String originalSource = "";
 
-	public TagToken() {
-	}
+    public TagToken() {
+    }
 
-	public TagToken(String name) {
-		this.name = name;
-	}
+    public TagToken(String name) {
+        this.name = name;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getOriginalSource() {
-		return originalSource;
-	}
+    public String getOriginalSource() {
+        return originalSource;
+    }
 
-	public void setOriginalSource(String originalSource) {
-		this.originalSource = originalSource;
-	}
+    public void setOriginalSource(String originalSource) {
+        this.originalSource = originalSource;
+    }
 
-	@Override
-	public String toString() {
-		return name;
-	}
+    @Override
+    public String toString() {
+        return name;
+    }
 
-	/**
-	 * Add an attribute to this tag.
-	 *
-	 * @param attName
-	 *          the attribute name
-	 * @param attValue
-	 *          the attribute's value string
-	 * @param checkXSS
-	 *          check the attributes for allowed names to avoid cross side
-	 *          scripting
-	 * @return
-	 */
-	public abstract boolean addAttribute(String attName, String attValue, boolean checkXSS);
+    /**
+     * Add an attribute to this tag.
+     *
+     * @param attName
+     *          the attribute name
+     * @param attValue
+     *          the attribute's value string
+     * @param checkXSS
+     *          check the attributes for allowed names to avoid cross side
+     *          scripting
+     * @return
+     */
+    public abstract boolean addAttribute(String attName, String attValue, boolean checkXSS);
 
-	/**
-	 * Check, if the attName is allowed.
-	 *
-	 * @param attName
-	 * @return
-	 */
-	public abstract boolean isAllowedAttribute(String attName);
+    /**
+     * Check, if the attName is allowed.
+     *
+     * @param attName
+     * @return
+     */
+    public abstract boolean isAllowedAttribute(String attName);
 
-	/**
-	 * Get the allowed parent tags for this tag
-	 *
-	 * @return <code>null</code> if no parent tags are allowed
-	 */
-	abstract public String getParents();
+    /**
+     * Get the allowed parent tags for this tag
+     *
+     * @return <code>null</code> if no parent tags are allowed
+     */
+    abstract public String getParents();
 
-	@Override
-	public boolean equals(Object obj) {
-		if (obj instanceof TagToken) {
-			return name.equals(obj.toString());
-		}
-		return false;
-	}
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof TagToken) {
+            return name.equals(obj.toString());
+        }
+        return false;
+    }
 
-	@Override
-	public int hashCode() {
-		return name.hashCode();
-	}
+    @Override
+    public int hashCode() {
+        return name.hashCode();
+    }
 
-	@Override
-	public Object clone() {
-		TagToken tt;
-		try {
-			tt = (TagToken) super.clone();
-			tt.name = name;
-			tt.originalSource = originalSource;
-			return tt;
-		} catch (CloneNotSupportedException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
+    @Override
+    public Object clone() {
+        TagToken tt;
+        try {
+            tt = (TagToken) super.clone();
+            tt.name = name;
+            tt.originalSource = originalSource;
+            return tt;
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
-	public boolean isReduceTokenStack() {
-		return false;
-	}
+    public boolean isReduceTokenStack() {
+        return false;
+    }
 }

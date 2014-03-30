@@ -15,71 +15,71 @@ import java.util.List;
  * See <a href="http://en.wikipedia.org/wiki/Wikipedia:Footnotes">Footnotes</a>
  */
 public class ReferencesTag extends HTMLTag {
-	public ReferencesTag() {
-		super("references");
-	}
+    public ReferencesTag() {
+        super("references");
+    }
 
-	@Override
-	public void renderHTML(ITextConverter converter, Appendable writer, IWikiModel model) throws IOException {
-		List<Reference> list = model.getReferences();
-		if (list != null) {
-			Reference ref;
-			int counter;
-			writer.append("<ol class=\"references\">\n");
-			for (int i = 0; i < list.size(); i++) {
-				ref = list.get(i);
-				counter = ref.getCounter();
-				writer.append("<li id=\"_note-");
-				String nameAttribute = Encoder.encodeDotUrl(ref.getAttribute());
-				if (counter == 0) {
-					if (nameAttribute.length() == 0) {
-						String i1 = Integer.toString(i + 1);
-						writer.append(i1);
-						writer.append("\"><b><a href=\"#_ref-");
-						writer.append(i1);
-					} else {
-						writer.append(nameAttribute);
-						writer.append("\"><b><a href=\"#_ref-");
-						writer.append(nameAttribute);
-					}
-					// upwards arrow
-					writer.append("\" title=\"\">&#8593;</a></b> ");// &uarr;
-				} else {
-					String note;
-					char ch;
-					writer.append(nameAttribute);
-					writer.append("\">&#8593; "); // &uarr;
-					for (int j = 0; j <= counter; j++) {
+    @Override
+    public void renderHTML(ITextConverter converter, Appendable writer, IWikiModel model) throws IOException {
+        List<Reference> list = model.getReferences();
+        if (list != null) {
+            Reference ref;
+            int counter;
+            writer.append("<ol class=\"references\">\n");
+            for (int i = 0; i < list.size(); i++) {
+                ref = list.get(i);
+                counter = ref.getCounter();
+                writer.append("<li id=\"_note-");
+                String nameAttribute = Encoder.encodeDotUrl(ref.getAttribute());
+                if (counter == 0) {
+                    if (nameAttribute.length() == 0) {
+                        String i1 = Integer.toString(i + 1);
+                        writer.append(i1);
+                        writer.append("\"><b><a href=\"#_ref-");
+                        writer.append(i1);
+                    } else {
+                        writer.append(nameAttribute);
+                        writer.append("\"><b><a href=\"#_ref-");
+                        writer.append(nameAttribute);
+                    }
+                    // upwards arrow
+                    writer.append("\" title=\"\">&#8593;</a></b> ");// &uarr;
+                } else {
+                    String note;
+                    char ch;
+                    writer.append(nameAttribute);
+                    writer.append("\">&#8593; "); // &uarr;
+                    for (int j = 0; j <= counter; j++) {
 
-						if (j >= Reference.CHARACTER_REFS.length()) {
-							ch = 'Z';
-						} else {
-							ch = Reference.CHARACTER_REFS.charAt(j);
-						}
-						if (j != 0) {
-							note = nameAttribute + '_' + ch;
-						} else {
-							note = nameAttribute;
-						}
-						writer.append("<a href=\"#_ref-");
-						writer.append(note);
-						writer.append("\" title=\"\"><sup><i><b>" + ch + "</b></i></sup></a> ");
-					}
-				}
-				writer.append(ref.getRefString());
-				writer.append("</li>");
-			}
-			writer.append("\n</ol>");
-		}
-	}
+                        if (j >= Reference.CHARACTER_REFS.length()) {
+                            ch = 'Z';
+                        } else {
+                            ch = Reference.CHARACTER_REFS.charAt(j);
+                        }
+                        if (j != 0) {
+                            note = nameAttribute + '_' + ch;
+                        } else {
+                            note = nameAttribute;
+                        }
+                        writer.append("<a href=\"#_ref-");
+                        writer.append(note);
+                        writer.append("\" title=\"\"><sup><i><b>" + ch + "</b></i></sup></a> ");
+                    }
+                }
+                writer.append(ref.getRefString());
+                writer.append("</li>");
+            }
+            writer.append("\n</ol>");
+        }
+    }
 
-	@Override
-	public boolean isReduceTokenStack() {
-		return false;
-	}
+    @Override
+    public boolean isReduceTokenStack() {
+        return false;
+    }
 
-	@Override
-	public String getParents() {
-		return Configuration.SPECIAL_BLOCK_TAGS;
-	}
+    @Override
+    public String getParents() {
+        return Configuration.SPECIAL_BLOCK_TAGS;
+    }
 }

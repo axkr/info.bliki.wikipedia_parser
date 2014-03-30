@@ -42,10 +42,10 @@ import java.util.regex.Pattern;
 public class EmailValidator implements Serializable {
 
     /**
-	 * Auto-generated serial version UID.
-	 */
-	private static final long serialVersionUID = 3799186064442277754L;
-	private static final String SPECIAL_CHARS = "\\p{Cntrl}\\(\\)<>@,;:'\\\\\\\"\\.\\[\\]";
+     * Auto-generated serial version UID.
+     */
+    private static final long serialVersionUID = 3799186064442277754L;
+    private static final String SPECIAL_CHARS = "\\p{Cntrl}\\(\\)<>@,;:'\\\\\\\"\\.\\[\\]";
     private static final String VALID_CHARS = "[^\\s" + SPECIAL_CHARS + "]";
     private static final String QUOTED_USER = "(\"[^\"]*\")";
     private static final String WORD = "((" + VALID_CHARS + "|')+|" + QUOTED_USER + ")";

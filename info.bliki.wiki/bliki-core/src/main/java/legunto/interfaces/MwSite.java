@@ -25,7 +25,7 @@ public class MwSite extends MwInterface {
         return new OneArgFunction() {
             @Override
             public LuaValue call(LuaValue arg) {
-				// logger.debug("getNsIndex(" + arg + ")");
+                // logger.debug("getNsIndex(" + arg + ")");
                 return NIL;
             }
         };

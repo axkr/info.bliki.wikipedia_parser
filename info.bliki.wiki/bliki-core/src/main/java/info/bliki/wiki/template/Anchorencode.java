@@ -10,18 +10,18 @@ import java.util.List;
  *
  */
 public class Anchorencode extends AbstractTemplateFunction {
-	public final static ITemplateFunction CONST = new Anchorencode();
+    public final static ITemplateFunction CONST = new Anchorencode();
 
-	public Anchorencode() {
+    public Anchorencode() {
 
-	}
+    }
 
-	@Override
-	public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
-		if (list.size() > 0) {
-			String result = isSubst ? list.get(0) : parseTrim(list.get(0), model);
-			return Encoder.encodeDotUrl(result);
-		}
-		return null;
-	}
+    @Override
+    public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
+        if (list.size() > 0) {
+            String result = isSubst ? list.get(0) : parseTrim(list.get(0), model);
+            return Encoder.encodeDotUrl(result);
+        }
+        return null;
+    }
 }

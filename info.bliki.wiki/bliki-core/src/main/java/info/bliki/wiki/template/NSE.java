@@ -21,19 +21,19 @@ import java.util.List;
  * it replaces spaces with underscores, making it usable in external links.
  */
 public class NSE extends NS {
-	public final static ITemplateFunction CONST = new NSE();
+    public final static ITemplateFunction CONST = new NSE();
 
-	public NSE() {
+    public NSE() {
 
-	}
+    }
 
-	@Override
-	public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
-		String namespace = super.parseFunction(list, model, src, beginIndex, endIndex, isSubst);
-		if (namespace != null) {
-			namespace = namespace.replace(' ', '_');
-		}
-		return namespace;
-	}
+    @Override
+    public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
+        String namespace = super.parseFunction(list, model, src, beginIndex, endIndex, isSubst);
+        if (namespace != null) {
+            namespace = namespace.replace(' ', '_');
+        }
+        return namespace;
+    }
 
 }

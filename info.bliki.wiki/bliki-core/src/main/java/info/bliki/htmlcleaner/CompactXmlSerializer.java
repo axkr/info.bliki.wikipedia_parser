@@ -49,34 +49,34 @@ import java.util.List;
  */
 public class CompactXmlSerializer extends XmlSerializer {
 
-	protected CompactXmlSerializer(Writer writer, HtmlCleaner htmlCleaner) {
-		super(writer, htmlCleaner);
-	}
+    protected CompactXmlSerializer(Writer writer, HtmlCleaner htmlCleaner) {
+        super(writer, htmlCleaner);
+    }
 
     private void serialize(List<Object> nodes, TagNode tagNode) throws IOException {
         if ( nodes != null && !nodes.isEmpty() ) {
-        	for (Object item : nodes) {
+            for (Object item : nodes) {
                 if (item != null) {
-                	if (item instanceof List) {
-                    	@SuppressWarnings("unchecked")
-						final List<Object> list = (List<Object>) item;
-						serialize(list, tagNode);
+                    if (item instanceof List) {
+                        @SuppressWarnings("unchecked")
+                        final List<Object> list = (List<Object>) item;
+                        serialize(list, tagNode);
                     } else if ( item instanceof ContentToken ) {
-                    	ContentToken contentToken = (ContentToken) item;
-                    	String content = contentToken.getContent().trim();
-                    	if ( !dontEscape(tagNode) ) {
-                    		content = escapeXml(content);
-                    	} else {
-                    		content = content.replaceAll("]]>", "]]&amp;");
-                    	}
-                    	if (content.length() != 0) {
-                    		writer.write(content + "\n");
-                    	}
+                        ContentToken contentToken = (ContentToken) item;
+                        String content = contentToken.getContent().trim();
+                        if ( !dontEscape(tagNode) ) {
+                            content = escapeXml(content);
+                        } else {
+                            content = content.replaceAll("]]>", "]]&amp;");
+                        }
+                        if (content.length() != 0) {
+                            writer.write(content + "\n");
+                        }
                     } else if (item instanceof CommentToken) {
-                    	String content = ((CommentToken) item).getContent().toString().trim();
-                    	writer.write(content);
+                        String content = ((CommentToken) item).getContent().toString().trim();
+                        writer.write(content);
                     } else {
-                    	((BaseToken)item).serialize(this);
+                        ((BaseToken)item).serialize(this);
                     }
                 }
             }
@@ -84,7 +84,7 @@ public class CompactXmlSerializer extends XmlSerializer {
     }
 
     @Override
-		protected void serialize(TagNode tagNode) throws IOException {
+        protected void serialize(TagNode tagNode) throws IOException {
         serializeOpenTag(tagNode, false);
 
         List<Object> tagChildren = tagNode.getChildren();
@@ -92,6 +92,6 @@ public class CompactXmlSerializer extends XmlSerializer {
             serialize(tagChildren, tagNode);
             serializeEndTag(tagNode, false);
         }
-	}
+    }
 
 }

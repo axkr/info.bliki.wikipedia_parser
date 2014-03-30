@@ -46,37 +46,37 @@ package info.bliki.htmlcleaner;
  */
 public class EndTagToken extends TagToken {
 
-	public EndTagToken() {
-	}
+    public EndTagToken() {
+    }
 
-	public EndTagToken(String name) {
-		super(name.toLowerCase());
-	}
+    public EndTagToken(String name) {
+        super(name.toLowerCase());
+    }
 
-	@Override
-	public boolean addAttribute(String attName, String attValue, boolean checkXSS) {
-		// do nothing - simply ignore attributes in closing tag
-		return true;
-	}
+    @Override
+    public boolean addAttribute(String attName, String attValue, boolean checkXSS) {
+        // do nothing - simply ignore attributes in closing tag
+        return true;
+    }
 
-	@Override
-	public boolean isAllowedAttribute(String attName) {
-		return false;
-	}
+    @Override
+    public boolean isAllowedAttribute(String attName) {
+        return false;
+    }
 
-	@Override
-	public void serialize(XmlSerializer xmlSerializer) {
-		// do nothing - simply ignore serialization
-	}
+    @Override
+    public void serialize(XmlSerializer xmlSerializer) {
+        // do nothing - simply ignore serialization
+    }
 
-	@Override
-	public Object clone()  {
-		EndTagToken et = (EndTagToken) super.clone();
-		return et;
-	}
+    @Override
+    public Object clone()  {
+        EndTagToken et = (EndTagToken) super.clone();
+        return et;
+    }
 
-	@Override
-	public String getParents() {
-		return null;
-	}
+    @Override
+    public String getParents() {
+        return null;
+    }
 }

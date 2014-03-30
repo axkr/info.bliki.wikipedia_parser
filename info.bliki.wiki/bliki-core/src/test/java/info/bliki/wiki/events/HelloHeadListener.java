@@ -9,26 +9,26 @@ import info.bliki.wiki.model.DefaultEventListener;
  *
  */
 public class HelloHeadListener extends DefaultEventListener {
-	StringBuffer collectorBuffer = new StringBuffer();
+    StringBuffer collectorBuffer = new StringBuffer();
 
-	public HelloHeadListener() {
+    public HelloHeadListener() {
 
-	}
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public void onHeader(char[] src, int startPosition, int endPosition, int rawStart, int rawEnd, int level) {
-		collectorBuffer.append(src, rawStart, rawEnd - rawStart);
-		collectorBuffer.append("\n");
-	}
+    /** {@inheritDoc} */
+    @Override
+    public void onHeader(char[] src, int startPosition, int endPosition, int rawStart, int rawEnd, int level) {
+        collectorBuffer.append(src, rawStart, rawEnd - rawStart);
+        collectorBuffer.append("\n");
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public void onWikiLink(char[] src, int rawStart, int rawEnd, String suffix) {
-	}
+    /** {@inheritDoc} */
+    @Override
+    public void onWikiLink(char[] src, int rawStart, int rawEnd, String suffix) {
+    }
 
-	public StringBuffer getCollectorBuffer() {
-		return collectorBuffer;
-	}
+    public StringBuffer getCollectorBuffer() {
+        return collectorBuffer;
+    }
 
 }

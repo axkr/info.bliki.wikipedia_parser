@@ -21,34 +21,34 @@ import java.util.List;
  * {{ns:Datei}} (the localisation of "File" into German) would not.
  */
 public class NS extends AbstractTemplateFunction {
-	public final static ITemplateFunction CONST = new NS();
+    public final static ITemplateFunction CONST = new NS();
 
-	public NS() {
+    public NS() {
 
-	}
+    }
 
-	@Override
-	public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
-		if (list.size() > 0) {
-			String arg0 = isSubst ? list.get(0) : parseTrim(list.get(0), model);
-			INamespace namespace = model.getNamespace();
-			try {
-				int numberCode = Integer.valueOf(arg0).intValue();
-				try {
-					return namespace.getNamespaceByNumber(numberCode).toString();
-				} catch (InvalidParameterException ipe) {
-					// nothing to do
-				}
-			} catch (NumberFormatException nfe) {
-				// the given argument could not be parsed as integer number
-				INamespaceValue value = namespace.getNamespace(arg0);
-				if (value != null) {
-					return value.getPrimaryText();
-				}
-				return "[[:" + namespace.getTemplate().getPrimaryText() + ":Ns:" + arg0 + "]]";
-			}
-		}
-		return null;
-	}
+    @Override
+    public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
+        if (list.size() > 0) {
+            String arg0 = isSubst ? list.get(0) : parseTrim(list.get(0), model);
+            INamespace namespace = model.getNamespace();
+            try {
+                int numberCode = Integer.valueOf(arg0).intValue();
+                try {
+                    return namespace.getNamespaceByNumber(numberCode).toString();
+                } catch (InvalidParameterException ipe) {
+                    // nothing to do
+                }
+            } catch (NumberFormatException nfe) {
+                // the given argument could not be parsed as integer number
+                INamespaceValue value = namespace.getNamespace(arg0);
+                if (value != null) {
+                    return value.getPrimaryText();
+                }
+                return "[[:" + namespace.getTemplate().getPrimaryText() + ":Ns:" + arg0 + "]]";
+            }
+        }
+        return null;
+    }
 
 }

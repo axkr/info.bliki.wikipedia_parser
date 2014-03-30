@@ -22,96 +22,96 @@ import java.util.Map;
  *
  */
 public class Safesubst extends AbstractTemplateFunction {
-	public final static ITemplateFunction CONST = new Safesubst();
+    public final static ITemplateFunction CONST = new Safesubst();
 
-	public Safesubst() {
+    public Safesubst() {
 
-	}
+    }
 
-	@Override
-	public String parseFunction(List<String> parts1, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
-		String substArg = new String(src, beginIndex, endIndex - beginIndex);
-		String substituted = Safesubst.parsePreprocess(substArg, model, null);
-		char[] src2 = substituted.toCharArray();
+    @Override
+    public String parseFunction(List<String> parts1, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
+        String substArg = new String(src, beginIndex, endIndex - beginIndex);
+        String substituted = Safesubst.parsePreprocess(substArg, model, null);
+        char[] src2 = substituted.toCharArray();
 
-		Object[] objs = TemplateParser.createParameterMap(src2, 0, src2.length);
-		@SuppressWarnings("unchecked")
-		List<String> parts = (List<String>) objs[0];
-		String templateName = ((String) objs[1]);
+        Object[] objs = TemplateParser.createParameterMap(src2, 0, src2.length);
+        @SuppressWarnings("unchecked")
+        List<String> parts = (List<String>) objs[0];
+        String templateName = ((String) objs[1]);
 
-		int currOffset = TemplateParser.checkParserFunction(substituted);
-		if (currOffset > 0) {
-			String function = substituted.substring(0, currOffset - 1).trim();
-			if (function != null) {
-				ITemplateFunction templateFunction = model.getTemplateFunction(function);
-				if (templateFunction != null) {
-					// if (function.charAt(0) == '#') {
-					// #if:, #ifeq:,...
-					parts.set(0, templateName.substring(currOffset));
-					String plainContent;
-					try {
-						plainContent = templateFunction.parseFunction(parts, model, src2, currOffset, src2.length, true);
-						if (plainContent != null) {
-							return plainContent;
-						}
-					} catch (IOException e) {
-					}
-				}
-				return "";
-			}
-		}
+        int currOffset = TemplateParser.checkParserFunction(substituted);
+        if (currOffset > 0) {
+            String function = substituted.substring(0, currOffset - 1).trim();
+            if (function != null) {
+                ITemplateFunction templateFunction = model.getTemplateFunction(function);
+                if (templateFunction != null) {
+                    // if (function.charAt(0) == '#') {
+                    // #if:, #ifeq:,...
+                    parts.set(0, templateName.substring(currOffset));
+                    String plainContent;
+                    try {
+                        plainContent = templateFunction.parseFunction(parts, model, src2, currOffset, src2.length, true);
+                        if (plainContent != null) {
+                            return plainContent;
+                        }
+                    } catch (IOException e) {
+                    }
+                }
+                return "";
+            }
+        }
 
-		LinkedHashMap<String, String> parameterMap = new LinkedHashMap<String, String>();
-		List<String> unnamedParameters = new ArrayList<String>();
-		for (int i = 1; i < parts.size(); i++) {
-			if (i == parts.size() - 1) {
-				TemplateParser.createSingleParameter(parts.get(i), model, parameterMap, unnamedParameters);
-			} else {
-				TemplateParser.createSingleParameter(parts.get(i), model, parameterMap, unnamedParameters);
-			}
-		}
-		TemplateParser.mergeParameters(parameterMap, unnamedParameters);
+        LinkedHashMap<String, String> parameterMap = new LinkedHashMap<String, String>();
+        List<String> unnamedParameters = new ArrayList<String>();
+        for (int i = 1; i < parts.size(); i++) {
+            if (i == parts.size() - 1) {
+                TemplateParser.createSingleParameter(parts.get(i), model, parameterMap, unnamedParameters);
+            } else {
+                TemplateParser.createSingleParameter(parts.get(i), model, parameterMap, unnamedParameters);
+            }
+        }
+        TemplateParser.mergeParameters(parameterMap, unnamedParameters);
 
-		final INamespace namespace = model.getNamespace();
-		// TODO: remove trailing "#section"?!
-		ParsedPageName parsedPagename = AbstractParser.parsePageName(model, templateName, namespace.getTemplate(), true, false);
-		if (!parsedPagename.valid) {
-			return "{{" + parsedPagename.pagename + "}}";
-		}
+        final INamespace namespace = model.getNamespace();
+        // TODO: remove trailing "#section"?!
+        ParsedPageName parsedPagename = AbstractParser.parsePageName(model, templateName, namespace.getTemplate(), true, false);
+        if (!parsedPagename.valid) {
+            return "{{" + parsedPagename.pagename + "}}";
+        }
 
-		String plainContent = null;
-		try {
-			plainContent = model.getRawWikiContent(parsedPagename, parameterMap);
-		} catch (WikiModelContentException e) {
-		}
-		if (plainContent != null) {
-			return Safesubst.parsePreprocess(plainContent, model, parameterMap);
-		}
-		return "";
-	}
+        String plainContent = null;
+        try {
+            plainContent = model.getRawWikiContent(parsedPagename, parameterMap);
+        } catch (WikiModelContentException e) {
+        }
+        if (plainContent != null) {
+            return Safesubst.parsePreprocess(plainContent, model, parameterMap);
+        }
+        return "";
+    }
 
-	/**
-	 * Parse the preprocess step for the given content string with the template
-	 * parser and <code>Utils#trimNewlineLeft()</code> the resulting string.
-	 *
-	 * @param content
-	 * @param model
-	 * @return parsed content
-	 */
-	public static String parsePreprocess(String content, IWikiModel model, Map<String, String> templateParameterMap) {
-		if (content == null || content.length() == 0) {
-			return "";
-		}
-		int startIndex = Util.indexOfTemplateParsing(content);
-		if (startIndex < 0) {
-			return Utils.trimNewlineLeft(content);
-		}
-		StringBuilder buf = new StringBuilder(content.length());
-		try {
-			TemplateParser.parsePreprocessRecursive(startIndex, content, model, buf, false, false, templateParameterMap);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return Utils.trimNewlineLeft(buf.toString());
-	}
+    /**
+     * Parse the preprocess step for the given content string with the template
+     * parser and <code>Utils#trimNewlineLeft()</code> the resulting string.
+     *
+     * @param content
+     * @param model
+     * @return parsed content
+     */
+    public static String parsePreprocess(String content, IWikiModel model, Map<String, String> templateParameterMap) {
+        if (content == null || content.length() == 0) {
+            return "";
+        }
+        int startIndex = Util.indexOfTemplateParsing(content);
+        if (startIndex < 0) {
+            return Utils.trimNewlineLeft(content);
+        }
+        StringBuilder buf = new StringBuilder(content.length());
+        try {
+            TemplateParser.parsePreprocessRecursive(startIndex, content, model, buf, false, false, templateParameterMap);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return Utils.trimNewlineLeft(buf.toString());
+    }
 }

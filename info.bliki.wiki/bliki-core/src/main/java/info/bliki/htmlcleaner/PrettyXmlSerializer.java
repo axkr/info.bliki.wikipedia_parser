@@ -51,21 +51,21 @@ import java.util.StringTokenizer;
  */
 public class PrettyXmlSerializer extends XmlSerializer {
 
-	private static final String INDENTATION_STRING = "\t";
+    private static final String INDENTATION_STRING = "\t";
 
-	protected PrettyXmlSerializer(Writer writer, HtmlCleaner htmlCleaner) {
-		super(writer, htmlCleaner);
-	}
+    protected PrettyXmlSerializer(Writer writer, HtmlCleaner htmlCleaner) {
+        super(writer, htmlCleaner);
+    }
 
-	@Override
-	protected void serialize(TagNode tagNode) throws IOException {
-		serializePrettyXml(tagNode, 0);
-	}
+    @Override
+    protected void serialize(TagNode tagNode) throws IOException {
+        serializePrettyXml(tagNode, 0);
+    }
 
-	/**
-	 * @param level
-	 * @return Appropriate indentation for the specified depth.
-	 */
+    /**
+     * @param level
+     * @return Appropriate indentation for the specified depth.
+     */
     private String indent(int level) {
         String result = "";
         while (level > 0) {
@@ -107,12 +107,12 @@ public class PrettyXmlSerializer extends XmlSerializer {
 
                 // if first item trims it from left
                 if (isFirst) {
-                	content = Utils.ltrim(content);
+                    content = Utils.ltrim(content);
                 }
 
                 // if last item trims it from right
                 if (!childrenIt.hasNext()) {
-                	content = Utils.rtrim(content);
+                    content = Utils.rtrim(content);
                 }
 
                 if ( content.indexOf("\n") >= 0 || content.indexOf("\r") >= 0 ) {
@@ -134,22 +134,22 @@ public class PrettyXmlSerializer extends XmlSerializer {
             if (child instanceof TagNode) {
                 serializePrettyXml( (TagNode)child, level + 1 );
             } else if (child instanceof ContentToken) {
-            	ContentToken contentToken = (ContentToken) child;
-            	String content = contentToken.getContent();
-            	if ( !dontEscape ) {
-                	content = escapeXml(content);
-            	} else {
-            		content = content.replaceAll("]]>", "]]&amp;");
-            	}
-            	writer.write( getIndentedText(content, level + 1) );
+                ContentToken contentToken = (ContentToken) child;
+                String content = contentToken.getContent();
+                if ( !dontEscape ) {
+                    content = escapeXml(content);
+                } else {
+                    content = content.replaceAll("]]>", "]]&amp;");
+                }
+                writer.write( getIndentedText(content, level + 1) );
             } else if (child instanceof CommentToken) {
-            	CommentToken commentToken = (CommentToken) child;
-            	String content = commentToken.getContent();
-            	writer.write( getIndentedText(content, level + 1) );
+                CommentToken commentToken = (CommentToken) child;
+                String content = commentToken.getContent();
+                writer.write( getIndentedText(content, level + 1) );
             } else if (child instanceof List) {
-            	@SuppressWarnings("unchecked")
-				final List<Object> list = (List<Object>) child;
-				serializePrettyXml(list, level, true );
+                @SuppressWarnings("unchecked")
+                final List<Object> list = (List<Object>) child;
+                serializePrettyXml(list, level, true );
             }
         }
     }
@@ -165,18 +165,18 @@ public class PrettyXmlSerializer extends XmlSerializer {
             String singleLine = getSingleLineOfChildren(tagChildren);
             boolean dontEscape = dontEscape(tagNode);
             if (singleLine != null) {
-            	if ( !dontEscape(tagNode) ) {
-            		writer.write( escapeXml(singleLine) );
-            	} else {
-            		writer.write( singleLine.replaceAll("]]>", "]]&amp;") );
-            	}
+                if ( !dontEscape(tagNode) ) {
+                    writer.write( escapeXml(singleLine) );
+                } else {
+                    writer.write( singleLine.replaceAll("]]>", "]]&amp;") );
+                }
             } else {
-            	writer.write("\n");
-            	serializePrettyXml(tagChildren, level, dontEscape);
+                writer.write("\n");
+                serializePrettyXml(tagChildren, level, dontEscape);
             }
 
             if (singleLine == null) {
-            	writer.write(indent);
+                writer.write(indent);
             }
 
             serializeEndTag(tagNode);

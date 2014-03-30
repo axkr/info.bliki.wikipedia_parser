@@ -35,11 +35,11 @@ import java.io.Serializable;
 public class InetAddressValidator implements Serializable {
 
     /**
-	 * Auto-generated serial version UID.
-	 */
-	private static final long serialVersionUID = 7891213173320479141L;
+     * Auto-generated serial version UID.
+     */
+    private static final long serialVersionUID = 7891213173320479141L;
 
-	private static final String IPV4_REGEX =
+    private static final String IPV4_REGEX =
             "^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$";
 
     /**

@@ -52,106 +52,106 @@ import java.util.Map;
  */
 public abstract class XmlSerializer {
 
-	protected final String XML_DECLARATION = "<?xml version=\"1.0\"?>";
+    protected final String XML_DECLARATION = "<?xml version=\"1.0\"?>";
 
-	protected HtmlCleaner htmlCleaner;
+    protected HtmlCleaner htmlCleaner;
 
-	protected BufferedWriter writer;
+    protected BufferedWriter writer;
 
-	protected XmlSerializer() {
-	}
+    protected XmlSerializer() {
+    }
 
-	protected XmlSerializer(Writer writer, HtmlCleaner htmlCleaner) {
-		this.writer = new BufferedWriter(writer);
-		this.htmlCleaner = htmlCleaner;
-	}
+    protected XmlSerializer(Writer writer, HtmlCleaner htmlCleaner) {
+        this.writer = new BufferedWriter(writer);
+        this.htmlCleaner = htmlCleaner;
+    }
 
-	protected void createXml(TagNode tagNode) throws IOException {
-		if (!htmlCleaner.isOmitXmlDeclaration()) {
-			writer.write(XML_DECLARATION + "\n");
-		}
+    protected void createXml(TagNode tagNode) throws IOException {
+        if (!htmlCleaner.isOmitXmlDeclaration()) {
+            writer.write(XML_DECLARATION + "\n");
+        }
 
-		if (!htmlCleaner.isOmitDoctypeDeclaration()) {
-			DoctypeToken doctypeToken = htmlCleaner.getDoctype();
-			if (doctypeToken != null) {
-				doctypeToken.serialize(this);
-			}
-		}
+        if (!htmlCleaner.isOmitDoctypeDeclaration()) {
+            DoctypeToken doctypeToken = htmlCleaner.getDoctype();
+            if (doctypeToken != null) {
+                doctypeToken.serialize(this);
+            }
+        }
 
-		serialize(tagNode);
+        serialize(tagNode);
 
-		writer.flush();
-		writer.close();
-	}
+        writer.flush();
+        writer.close();
+    }
 
-	protected String escapeXml(String xmlContent) {
-		return Utils.escapeXml(xmlContent, htmlCleaner.isAdvancedXmlEscape(), htmlCleaner.isRecognizeUnicodeChars(), htmlCleaner
-				.isTranslateSpecialEntities());
-	}
+    protected String escapeXml(String xmlContent) {
+        return Utils.escapeXml(xmlContent, htmlCleaner.isAdvancedXmlEscape(), htmlCleaner.isRecognizeUnicodeChars(), htmlCleaner
+                .isTranslateSpecialEntities());
+    }
 
-	protected boolean dontEscape(TagNode tagNode) {
-		String tagName = tagNode.getName();
-		return htmlCleaner.isUseCdataForScriptAndStyle() && ("script".equalsIgnoreCase(tagName) || "style".equalsIgnoreCase(tagName));
-	}
+    protected boolean dontEscape(TagNode tagNode) {
+        String tagName = tagNode.getName();
+        return htmlCleaner.isUseCdataForScriptAndStyle() && ("script".equalsIgnoreCase(tagName) || "style".equalsIgnoreCase(tagName));
+    }
 
-	protected boolean isScriptOrStyle(TagNode tagNode) {
-		String tagName = tagNode.getName();
-		return "script".equalsIgnoreCase(tagName) || "style".equalsIgnoreCase(tagName);
-	}
+    protected boolean isScriptOrStyle(TagNode tagNode) {
+        String tagName = tagNode.getName();
+        return "script".equalsIgnoreCase(tagName) || "style".equalsIgnoreCase(tagName);
+    }
 
-	protected void serializeOpenTag(TagNode tagNode, boolean newLine) throws IOException {
-		String tagName = tagNode.getName();
-		Map<String, String> tagAtttributes = tagNode.getAttributes();
-		List<Object> tagChildren = tagNode.getChildren();
+    protected void serializeOpenTag(TagNode tagNode, boolean newLine) throws IOException {
+        String tagName = tagNode.getName();
+        Map<String, String> tagAtttributes = tagNode.getAttributes();
+        List<Object> tagChildren = tagNode.getChildren();
 
-		writer.write("<" + tagName);
-		for (Map.Entry<String, String> currEntry : tagAtttributes.entrySet()) {
-			String attName = currEntry.getKey();
-			String attValue = currEntry.getValue();
-			if (htmlCleaner.isOmitXmlnsAttributes() && "xmlns".equals(attName)) {
-				continue;
-			}
-			writer.write(" " + attName + "=\"" + escapeXml(attValue) + "\"");
-		}
+        writer.write("<" + tagName);
+        for (Map.Entry<String, String> currEntry : tagAtttributes.entrySet()) {
+            String attName = currEntry.getKey();
+            String attValue = currEntry.getValue();
+            if (htmlCleaner.isOmitXmlnsAttributes() && "xmlns".equals(attName)) {
+                continue;
+            }
+            writer.write(" " + attName + "=\"" + escapeXml(attValue) + "\"");
+        }
 
-		if (tagChildren.size() == 0) {
-			writer.write("/>");
-			if (newLine) {
-				writer.write("\n");
-			}
-		} else if (dontEscape(tagNode)) {
-			writer.write("><![CDATA[");
-		} else {
-			writer.write(">");
-		}
-	}
+        if (tagChildren.size() == 0) {
+            writer.write("/>");
+            if (newLine) {
+                writer.write("\n");
+            }
+        } else if (dontEscape(tagNode)) {
+            writer.write("><![CDATA[");
+        } else {
+            writer.write(">");
+        }
+    }
 
-	protected void serializeOpenTag(TagNode tagNode) throws IOException {
-		serializeOpenTag(tagNode, true);
-	}
+    protected void serializeOpenTag(TagNode tagNode) throws IOException {
+        serializeOpenTag(tagNode, true);
+    }
 
-	protected void serializeEndTag(TagNode tagNode, boolean newLine) throws IOException {
-		String tagName = tagNode.getName();
+    protected void serializeEndTag(TagNode tagNode, boolean newLine) throws IOException {
+        String tagName = tagNode.getName();
 
-		if (dontEscape(tagNode)) {
-			writer.write("]]>");
-		}
+        if (dontEscape(tagNode)) {
+            writer.write("]]>");
+        }
 
-		writer.write("</" + tagName + ">");
+        writer.write("</" + tagName + ">");
 
-		if (newLine) {
-			writer.write("\n");
-		}
-	}
+        if (newLine) {
+            writer.write("\n");
+        }
+    }
 
-	Writer getWriter() {
-		return writer;
-	}
+    Writer getWriter() {
+        return writer;
+    }
 
-	protected void serializeEndTag(TagNode tagNode) throws IOException {
-		serializeEndTag(tagNode, true);
-	}
+    protected void serializeEndTag(TagNode tagNode) throws IOException {
+        serializeEndTag(tagNode, true);
+    }
 
-	protected abstract void serialize(TagNode tagNode) throws IOException;
+    protected abstract void serialize(TagNode tagNode) throws IOException;
 
 }

@@ -7,12 +7,12 @@ package info.bliki.wiki.filter;
  *
  */
 public class InvalidPreWikiTag extends RuntimeException {
-	/**
-	 *
-	 */
-	private static final long serialVersionUID = -3851294684136165109L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = -3851294684136165109L;
 
-	public InvalidPreWikiTag(String message) {
-		super(message);
-	}
+    public InvalidPreWikiTag(String message) {
+        super(message);
+    }
 }

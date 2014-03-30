@@ -12,21 +12,21 @@ import java.util.List;
  *
  */
 public class LCFirst extends AbstractTemplateFunction {
-	public final static ITemplateFunction CONST = new LCFirst();
+    public final static ITemplateFunction CONST = new LCFirst();
 
-	public LCFirst() {
+    public LCFirst() {
 
-	}
+    }
 
-	@Override
-	public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
-		if (list.size() > 0) {
-			String word = isSubst ? list.get(0) : parseTrim(list.get(0), model);
-			if (word.length() > 0) {
-				return Character.toLowerCase(word.charAt(0)) + word.substring(1);
-			}
-			return "";
-		}
-		return null;
-	}
+    @Override
+    public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
+        if (list.size() > 0) {
+            String word = isSubst ? list.get(0) : parseTrim(list.get(0), model);
+            if (word.length() > 0) {
+                return Character.toLowerCase(word.charAt(0)) + word.substring(1);
+            }
+            return "";
+        }
+        return null;
+    }
 }

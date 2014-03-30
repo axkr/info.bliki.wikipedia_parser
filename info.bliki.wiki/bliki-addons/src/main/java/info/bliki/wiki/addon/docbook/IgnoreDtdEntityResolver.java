@@ -15,16 +15,16 @@ import org.xml.sax.SAXException;
  *
  */
 public class IgnoreDtdEntityResolver implements EntityResolver {
-	protected static final IgnoreDtdEntityResolver instance = new IgnoreDtdEntityResolver();
+    protected static final IgnoreDtdEntityResolver instance = new IgnoreDtdEntityResolver();
 
-	public static IgnoreDtdEntityResolver getInstance() {
-		return instance;
-	}
+    public static IgnoreDtdEntityResolver getInstance() {
+        return instance;
+    }
 
-	public InputSource resolveEntity(String publicId, String systemId) throws SAXException, IOException {
-		if ((publicId != null && publicId.indexOf("//DTD") != -1) || (systemId != null && systemId.endsWith(".dtd"))) {
-			return new InputSource(new StringReader(""));
-		}
-		return null;
-	}
+    public InputSource resolveEntity(String publicId, String systemId) throws SAXException, IOException {
+        if ((publicId != null && publicId.indexOf("//DTD") != -1) || (systemId != null && systemId.endsWith(".dtd"))) {
+            return new InputSource(new StringReader(""));
+        }
+        return null;
+    }
 }

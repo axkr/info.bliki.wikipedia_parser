@@ -7,9 +7,9 @@ import info.bliki.htmlcleaner.TagNode;
 
 public class ThJSPWikiTag extends ConvertEmptyHTMLTag {
 
-	@Override
-	public void open(TagNode node, StringBuilder resultBuffer) {
-		resultBuffer.append("||");
-	}
+    @Override
+    public void open(TagNode node, StringBuilder resultBuffer) {
+        resultBuffer.append("||");
+    }
 
 }

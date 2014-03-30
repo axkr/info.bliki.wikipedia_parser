@@ -14,18 +14,18 @@ import java.io.IOException;
  */
 public class IgnoreTag extends HTMLTag implements INoBodyParsingTag {
 
-	public IgnoreTag(String tagName) {
-		super(tagName);
-	}
+    public IgnoreTag(String tagName) {
+        super(tagName);
+    }
 
-	@Override
-	public void renderHTML(ITextConverter converter, Appendable buf, IWikiModel model) throws IOException {
-		// doesn't add any output to the buffer
-	}
+    @Override
+    public void renderHTML(ITextConverter converter, Appendable buf, IWikiModel model) throws IOException {
+        // doesn't add any output to the buffer
+    }
 
-	@Override
-	public boolean isAllowedAttribute(String attName) {
-		return true;
-	}
+    @Override
+    public boolean isAllowedAttribute(String attName) {
+        return true;
+    }
 
 }

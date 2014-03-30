@@ -14,45 +14,45 @@ import java.util.List;
  * >Expr.php in MediaWiki SVN</a>
  */
 public class Ifexpr extends AbstractTemplateFunction {
-	public final static ITemplateFunction CONST = new Ifexpr();
+    public final static ITemplateFunction CONST = new Ifexpr();
 
-	public Ifexpr() {
+    public Ifexpr() {
 
-	}
+    }
 
-	@Override
-	public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
-		if (list.size() > 1) {
-			String condition = isSubst ? list.get(0) : parseTrim(list.get(0), model);
-			if (condition.length() > 0) {
-				try {
-					DoubleEvaluator engine = new DoubleEvaluator();
-					double d = engine.evaluate(condition);
-					// if (d == 0.0) {
-					if (Math.abs(d - 0.0) < DoubleEvaluator.EPSILON) {
-						if (list.size() >= 3) {
-							// &lt;else text&gt;
-							return isSubst ? list.get(2) : parseTrim(list.get(2), model);
-						}
-						return null;
-					}
-					return isSubst ? list.get(1) : parseTrim(list.get(1), model);
-				} catch (Exception e) {
-					if (Configuration.DEBUG) {
-						System.out.println("#ifexpr error: "+condition);
-					}
-					if (Configuration.STACKTRACE) {
-						e.printStackTrace();
-					}
-					return "<div class=\"error\">Expression error: " + e.getMessage() + "</div>";
-				}
-			} else {
-				if (list.size() >= 3) {
-					// &lt;else text&gt;
-					return isSubst ? list.get(2) : parseTrim(list.get(2), model);
-				}
-			}
-		}
-		return null;
-	}
+    @Override
+    public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
+        if (list.size() > 1) {
+            String condition = isSubst ? list.get(0) : parseTrim(list.get(0), model);
+            if (condition.length() > 0) {
+                try {
+                    DoubleEvaluator engine = new DoubleEvaluator();
+                    double d = engine.evaluate(condition);
+                    // if (d == 0.0) {
+                    if (Math.abs(d - 0.0) < DoubleEvaluator.EPSILON) {
+                        if (list.size() >= 3) {
+                            // &lt;else text&gt;
+                            return isSubst ? list.get(2) : parseTrim(list.get(2), model);
+                        }
+                        return null;
+                    }
+                    return isSubst ? list.get(1) : parseTrim(list.get(1), model);
+                } catch (Exception e) {
+                    if (Configuration.DEBUG) {
+                        System.out.println("#ifexpr error: "+condition);
+                    }
+                    if (Configuration.STACKTRACE) {
+                        e.printStackTrace();
+                    }
+                    return "<div class=\"error\">Expression error: " + e.getMessage() + "</div>";
+                }
+            } else {
+                if (list.size() >= 3) {
+                    // &lt;else text&gt;
+                    return isSubst ? list.get(2) : parseTrim(list.get(2), model);
+                }
+            }
+        }
+        return null;
+    }
 }

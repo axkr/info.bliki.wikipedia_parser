@@ -15,45 +15,45 @@ import java.util.Map;
  *
  */
 public class YacasEvalTag extends NowikiTag {
-	public YacasEvalTag() {
-		super("yacaseval");
-	}
+    public YacasEvalTag() {
+        super("yacaseval");
+    }
 
-	@Override
-	public void renderHTML(ITextConverter converter, Appendable buf, IWikiModel model) throws IOException {
+    @Override
+    public void renderHTML(ITextConverter converter, Appendable buf, IWikiModel model) throws IOException {
 
-		TagNode node = this;
-		Map<String, String> tagAttributes = node.getAttributes();
+        TagNode node = this;
+        Map<String, String> tagAttributes = node.getAttributes();
 
-		String exprValue = (String) tagAttributes.get("expr");
-		if (exprValue == null) {
-			buf.append("<a href=\"javascript:yacasEval(\'NIL\');\">NIL</a>");
-			return;
-		}
+        String exprValue = (String) tagAttributes.get("expr");
+        if (exprValue == null) {
+            buf.append("<a href=\"javascript:yacasEval(\'NIL\');\">NIL</a>");
+            return;
+        }
     exprValue = Utils.escapeXml(exprValue, false, false, false);
-		buf.append("<a href=\"javascript:yacasEval(\'");
-		buf.append(exprValue);
-		buf.append("\');\">");
+        buf.append("<a href=\"javascript:yacasEval(\'");
+        buf.append(exprValue);
+        buf.append("\');\">");
 
-		String titleValue = (String) tagAttributes.get("title");
-		if (titleValue == null) {
-			buf.append(exprValue);
-			buf.append("</a>");
-		} else {
-			titleValue = Utils.escapeXml(titleValue, false, false, false);
-			buf.append(titleValue);
-			buf.append("</a>");
-		}
-		// String content = getBodyString();
-		// if (content != null) {
-		// content = content.trim();
-		// buf.append(content);
-		// }
+        String titleValue = (String) tagAttributes.get("title");
+        if (titleValue == null) {
+            buf.append(exprValue);
+            buf.append("</a>");
+        } else {
+            titleValue = Utils.escapeXml(titleValue, false, false, false);
+            buf.append(titleValue);
+            buf.append("</a>");
+        }
+        // String content = getBodyString();
+        // if (content != null) {
+        // content = content.trim();
+        // buf.append(content);
+        // }
 
-	}
+    }
 
-	@Override
-	public boolean isReduceTokenStack() {
-		return true;
-	}
+    @Override
+    public boolean isReduceTokenStack() {
+        return true;
+    }
 }

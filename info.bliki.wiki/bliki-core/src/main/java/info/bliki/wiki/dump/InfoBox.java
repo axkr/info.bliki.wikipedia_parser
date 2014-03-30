@@ -10,13 +10,13 @@ package info.bliki.wiki.dump;
  * @author Delip Rao modified by Axel Kramer
  */
 public class InfoBox {
-	String infoBoxWikiText = null;
+    String infoBoxWikiText = null;
 
-	InfoBox(String infoBoxWikiText) {
-		this.infoBoxWikiText = infoBoxWikiText;
-	}
+    InfoBox(String infoBoxWikiText) {
+        this.infoBoxWikiText = infoBoxWikiText;
+    }
 
-	public String dumpRaw() {
-		return infoBoxWikiText;
-	}
+    public String dumpRaw() {
+        return infoBoxWikiText;
+    }
 }

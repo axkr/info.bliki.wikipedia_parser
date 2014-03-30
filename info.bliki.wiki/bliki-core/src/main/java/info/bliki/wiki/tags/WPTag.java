@@ -11,29 +11,29 @@ import java.io.IOException;
  */
 public class WPTag extends HTMLTag {
 
-	public WPTag(String htmlName) {
-		super(htmlName);
-	}
+    public WPTag(String htmlName) {
+        super(htmlName);
+    }
 
-	@Override
-	public boolean isReduceTokenStack() {
-		return false;
-	}
+    @Override
+    public boolean isReduceTokenStack() {
+        return false;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (obj instanceof WPTag) {
-			// distinguish wikipedia tags from other tags
-			return super.equals(obj);
-		}
-		return false;
-	}
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof WPTag) {
+            // distinguish wikipedia tags from other tags
+            return super.equals(obj);
+        }
+        return false;
+    }
 
-	@Override
-	public void renderHTML(ITextConverter converter, Appendable buf, IWikiModel model) throws IOException {
-		if (getChildren().size() != 0) {
-			super.renderHTML(converter, buf, model);
-		}
-	}
+    @Override
+    public void renderHTML(ITextConverter converter, Appendable buf, IWikiModel model) throws IOException {
+        if (getChildren().size() != 0) {
+            super.renderHTML(converter, buf, model);
+        }
+    }
 
 }

@@ -11,28 +11,28 @@ import java.util.Map;
 
 
 public class EvalTag extends HTMLTag {
-	// http://matheclipse.org/eval.jsp?ci=x:namex:i:value|z:namez|ta::t:valueta&ca=LabelD:D[x,z]|Binomial:Binomial[x,z]
-	public EvalTag() {
-		super("eval");
-	}
+    // http://matheclipse.org/eval.jsp?ci=x:namex:i:value|z:namez|ta::t:valueta&ca=LabelD:D[x,z]|Binomial:Binomial[x,z]
+    public EvalTag() {
+        super("eval");
+    }
 
-	@Override
-	public void renderHTML(ITextConverter converter, Appendable buf, IWikiModel model) throws IOException {
+    @Override
+    public void renderHTML(ITextConverter converter, Appendable buf, IWikiModel model) throws IOException {
 
-		TagNode node = this;
-		Map<String, String> tagAtttributes = node.getAttributes();
+        TagNode node = this;
+        Map<String, String> tagAtttributes = node.getAttributes();
 
-		StringBuilder evalUrl = new StringBuilder(512);
-		// eval input fields/textareas
-		Utils.appendAmpersandEscapedAttribute(evalUrl, "ci", tagAtttributes);
-		// eval actions
-		Utils.appendAmpersandEscapedAttribute(evalUrl, "ca", tagAtttributes);
-		// URL points to http://matheclipse.org/eval.jsp
-		buf.append("<a href=\"../eval.jsp?");
-		buf.append(evalUrl);
-		buf.append("\" >");
-		renderHTMLWithoutTag(converter, buf, model);
-		buf.append("</a>");
-	}
+        StringBuilder evalUrl = new StringBuilder(512);
+        // eval input fields/textareas
+        Utils.appendAmpersandEscapedAttribute(evalUrl, "ci", tagAtttributes);
+        // eval actions
+        Utils.appendAmpersandEscapedAttribute(evalUrl, "ca", tagAtttributes);
+        // URL points to http://matheclipse.org/eval.jsp
+        buf.append("<a href=\"../eval.jsp?");
+        buf.append(evalUrl);
+        buf.append("\" >");
+        renderHTMLWithoutTag(converter, buf, model);
+        buf.append("</a>");
+    }
 
 }

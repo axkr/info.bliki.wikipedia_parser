@@ -49,34 +49,34 @@ import java.io.IOException;
  */
 public class ContentToken implements BaseToken {
 
-	private final String content;
+    private final String content;
 
-	public ContentToken(String content) {
-		this.content = content;
-	}
+    public ContentToken(String content) {
+        this.content = content;
+    }
 
-	public String getContent() {
-		return content;
-	}
+    public String getContent() {
+        return content;
+    }
 
-	@Override
-	public String toString() {
-		return content.trim();
-	}
+    @Override
+    public String toString() {
+        return content.trim();
+    }
 
-	@Override
-	public void serialize(XmlSerializer xmlSerializer) throws IOException {
-		xmlSerializer.getWriter().write(getContent());
-	}
+    @Override
+    public void serialize(XmlSerializer xmlSerializer) throws IOException {
+        xmlSerializer.getWriter().write(getContent());
+    }
 
-	public void appendPlainText(Appendable buf) throws IOException {
-		if (content.length() > 0) {
-			Utils.escapeXmlToBuffer(content, buf, false, true, true, true);
-			char ch = content.charAt(content.length() - 1);
-			if (ch == '.' || ch == '!' || ch == '?') {
-				// issue117 add a SPACE behind the end of a sentence
-				buf.append(" ");
-			}
-		}
-	}
+    public void appendPlainText(Appendable buf) throws IOException {
+        if (content.length() > 0) {
+            Utils.escapeXmlToBuffer(content, buf, false, true, true, true);
+            char ch = content.charAt(content.length() - 1);
+            if (ch == '.' || ch == '!' || ch == '?') {
+                // issue117 add a SPACE behind the end of a sentence
+                buf.append(" ");
+            }
+        }
+    }
 }

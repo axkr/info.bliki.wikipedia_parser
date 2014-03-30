@@ -13,62 +13,62 @@ import junit.framework.TestCase;
  *
  */
 public class FilterTestSupport extends TestCase {
-	public static final String WINDOWS_NEWLINE = "\r\n";
+    public static final String WINDOWS_NEWLINE = "\r\n";
 
-	public static final String UNIX_NEWLINE = "\n";
+    public static final String UNIX_NEWLINE = "\n";
 
-	public static final String NEWLINE = WINDOWS_NEWLINE;
+    public static final String NEWLINE = WINDOWS_NEWLINE;
 
-	protected WikiModel wikiModel = null;
+    protected WikiModel wikiModel = null;
 
-	static {
-		Configuration.DEFAULT_CONFIGURATION.addTokenTag("iframe", new HTMLBlockTag("iframe", Configuration.SPECIAL_BLOCK_TAGS));
-	}
+    static {
+        Configuration.DEFAULT_CONFIGURATION.addTokenTag("iframe", new HTMLBlockTag("iframe", Configuration.SPECIAL_BLOCK_TAGS));
+    }
 
-	public FilterTestSupport(String s) {
-		super(s);
-	}
+    public FilterTestSupport(String s) {
+        super(s);
+    }
 
-	/**
-	 * Set up a test model, which contains predefined templates
-	 */
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp();
-		wikiModel = newWikiTestModel();
-	}
+    /**
+     * Set up a test model, which contains predefined templates
+     */
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+        wikiModel = newWikiTestModel();
+    }
 
-	protected final WikiModel newWikiTestModel() {
-		return newWikiTestModel(Locale.ENGLISH);
-	}
+    protected final WikiModel newWikiTestModel() {
+        return newWikiTestModel(Locale.ENGLISH);
+    }
 
-	protected WikiModel newWikiTestModel(Locale locale) {
-		WikiTestModel wikiModel = new WikiTestModel(locale,
-				"http://www.bliki.info/wiki/${image}",
-				"http://www.bliki.info/wiki/${title}");
-		wikiModel.setUp();
-		return wikiModel;
-	}
+    protected WikiModel newWikiTestModel(Locale locale) {
+        WikiTestModel wikiModel = new WikiTestModel(locale,
+                "http://www.bliki.info/wiki/${image}",
+                "http://www.bliki.info/wiki/${title}");
+        wikiModel.setUp();
+        return wikiModel;
+    }
 
-	public void testStub() {
-	}
+    public void testStub() {
+    }
 
-	/**
-	 * simple example
-	 */
-	public static void main(String[] args) {
-		WikiModel wikiModel = new WikiModel(
-				Configuration.DEFAULT_CONFIGURATION, Locale.GERMAN,
-				"http://www.bliki.info/wiki/${image}",
-				"http://www.bliki.info/wiki/${title}");
-		try {
-			wikiModel.setUp();
+    /**
+     * simple example
+     */
+    public static void main(String[] args) {
+        WikiModel wikiModel = new WikiModel(
+                Configuration.DEFAULT_CONFIGURATION, Locale.GERMAN,
+                "http://www.bliki.info/wiki/${image}",
+                "http://www.bliki.info/wiki/${title}");
+        try {
+            wikiModel.setUp();
 
-			String htmlStr = wikiModel.render(
-					"This is a simple [[Hello World]] wiki tag", false);
-			System.out.print(htmlStr);
-		} finally {
-			wikiModel.tearDown();
-		}
-	}
+            String htmlStr = wikiModel.render(
+                    "This is a simple [[Hello World]] wiki tag", false);
+            System.out.print(htmlStr);
+        } finally {
+            wikiModel.tearDown();
+        }
+    }
 }

@@ -10,14 +10,14 @@ package info.bliki.wiki.model;
  */
 public class BBCodeModel extends WikiModel
 {
-	public BBCodeModel(String imageBaseURL, String linkBaseURL)
-	{
-		super(imageBaseURL, linkBaseURL);
-	}
+    public BBCodeModel(String imageBaseURL, String linkBaseURL)
+    {
+        super(imageBaseURL, linkBaseURL);
+    }
 
-	@Override
-	public boolean parseBBCodes()
-	{
-		return true;
-	}
+    @Override
+    public boolean parseBBCodes()
+    {
+        return true;
+    }
 }

@@ -6,15 +6,15 @@ package info.bliki.wiki.template.expr.ast;
  *
  */
 public class FloatNode extends NumberNode {
-	public FloatNode(final String value) {
-		super(value);
-	}
+    public FloatNode(final String value) {
+        super(value);
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (obj instanceof FloatNode) {
-			return fStringValue.equals(((NumberNode) obj).fStringValue) && sign == ((NumberNode) obj).sign;
-		}
-		return false;
-	}
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof FloatNode) {
+            return fStringValue.equals(((NumberNode) obj).fStringValue) && sign == ((NumberNode) obj).sign;
+        }
+        return false;
+    }
 }

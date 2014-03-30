@@ -14,36 +14,36 @@ import java.util.Map;
  *
  */
 public class AppletTag extends NowikiTag {
-	public AppletTag() {
-		super("applet");
-	}
+    public AppletTag() {
+        super("applet");
+    }
 
-	@Override
-	public void renderHTML(ITextConverter converter, Appendable buf, IWikiModel model) throws IOException {
+    @Override
+    public void renderHTML(ITextConverter converter, Appendable buf, IWikiModel model) throws IOException {
 
-		buf.append('\n');
-		buf.append("<applet");
-		TagNode node = this;
-		Map<String, String> tagAtttributes = node.getAttributes();
+        buf.append('\n');
+        buf.append("<applet");
+        TagNode node = this;
+        Map<String, String> tagAtttributes = node.getAttributes();
 
-		appendAttributes(buf, tagAtttributes);
-		buf.append(">\n");
-		// List children = node.getChildren();
-		// if (children.size() == 0) {
-		// } else {
-		//
-		// }
-		String content = getBodyString();
-		if (content != null) {
-			content = content.trim();
-			buf.append(content);
-		}
+        appendAttributes(buf, tagAtttributes);
+        buf.append(">\n");
+        // List children = node.getChildren();
+        // if (children.size() == 0) {
+        // } else {
+        //
+        // }
+        String content = getBodyString();
+        if (content != null) {
+            content = content.trim();
+            buf.append(content);
+        }
 
-		buf.append("\n</applet>");
-	}
+        buf.append("\n</applet>");
+    }
 
-	@Override
-	public boolean isReduceTokenStack() {
-		return true;
-	}
+    @Override
+    public boolean isReduceTokenStack() {
+        return true;
+    }
 }

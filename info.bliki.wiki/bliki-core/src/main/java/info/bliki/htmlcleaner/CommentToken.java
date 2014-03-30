@@ -58,13 +58,13 @@ public class CommentToken implements BaseToken {
     }
 
     @Override
-		public String toString() {
+        public String toString() {
         return content;
     }
 
     @Override
-	public void serialize(XmlSerializer xmlSerializer) throws IOException {
-    	xmlSerializer.getWriter().write( getContent() );
+    public void serialize(XmlSerializer xmlSerializer) throws IOException {
+        xmlSerializer.getWriter().write( getContent() );
     }
 
 }

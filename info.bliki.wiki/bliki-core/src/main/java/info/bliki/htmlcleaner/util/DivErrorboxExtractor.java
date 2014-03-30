@@ -14,39 +14,39 @@ import java.util.Map;
  */
 public class DivErrorboxExtractor extends AbstractHtmlExtractor<StringBuilder> {
 
-	public DivErrorboxExtractor(StringBuilder resultBuffer) {
-		super(resultBuffer);
-	}
+    public DivErrorboxExtractor(StringBuilder resultBuffer) {
+        super(resultBuffer);
+    }
 
-	@Override
-	public void appendContent(List<Object> nodes) {
-		if (nodes != null && !nodes.isEmpty()) {
-			for (Object item : nodes) {
-				if (item != null && (item instanceof ContentToken)) {
-					ContentToken contentToken = (ContentToken) item;
-					String content = contentToken.getContent();
-					fResultObject.append(content.trim());
-				} else if (item instanceof List) {
-					@SuppressWarnings("unchecked")
-					final List<Object> list = (List<Object>) item;
-					appendContent(list);
-				}
-			}
-		}
-	}
+    @Override
+    public void appendContent(List<Object> nodes) {
+        if (nodes != null && !nodes.isEmpty()) {
+            for (Object item : nodes) {
+                if (item != null && (item instanceof ContentToken)) {
+                    ContentToken contentToken = (ContentToken) item;
+                    String content = contentToken.getContent();
+                    fResultObject.append(content.trim());
+                } else if (item instanceof List) {
+                    @SuppressWarnings("unchecked")
+                    final List<Object> list = (List<Object>) item;
+                    appendContent(list);
+                }
+            }
+        }
+    }
 
-	@Override
-	public boolean isFound(TagNode tagNode) {
-		String name = tagNode.getName();
-		if (name.equals("div")) {
-			Map<String, String> atts = tagNode.getAttributes();
-			String attributeValue = atts.get("class");
-			if (attributeValue != null && attributeValue.toLowerCase().equals("errorbox")) {
-//				appendContent(tagNode.getChildren());
-				return true;
-			}
-		}
-		return false;
-	}
+    @Override
+    public boolean isFound(TagNode tagNode) {
+        String name = tagNode.getName();
+        if (name.equals("div")) {
+            Map<String, String> atts = tagNode.getAttributes();
+            String attributeValue = atts.get("class");
+            if (attributeValue != null && attributeValue.toLowerCase().equals("errorbox")) {
+//                appendContent(tagNode.getChildren());
+                return true;
+            }
+        }
+        return false;
+    }
 
 }

@@ -60,42 +60,42 @@ public class DoctypeToken implements BaseToken {
     }
 
     private String clean(String s) {
-    	if (s != null) {
-	    	s = s.replace('>', ' ');
-	    	s = s.replace('<', ' ');
-	    	s = s.replace('&', ' ');
-	    	s = s.replace('\'', ' ');
-	    	s = s.replace('\"', ' ');
-    	}
+        if (s != null) {
+            s = s.replace('>', ' ');
+            s = s.replace('<', ' ');
+            s = s.replace('&', ' ');
+            s = s.replace('\'', ' ');
+            s = s.replace('\"', ' ');
+        }
 
-    	return s;
+        return s;
     }
 
     public boolean isValid() {
-    	if ( part1 == null || "".equals(part1) ) {
-    		return false;
-    	}
+        if ( part1 == null || "".equals(part1) ) {
+            return false;
+        }
 
-    	if ( !"public".equalsIgnoreCase(part2) && !"system".equalsIgnoreCase(part2) ) {
-    		return false;
-    	}
+        if ( !"public".equalsIgnoreCase(part2) && !"system".equalsIgnoreCase(part2) ) {
+            return false;
+        }
 
-    	if ( "system".equalsIgnoreCase(part2) && part4 != null && !"".equals(part4) ) {
-    		return false;
-    	}
+        if ( "system".equalsIgnoreCase(part2) && part4 != null && !"".equals(part4) ) {
+            return false;
+        }
 
-    	if ( "public".equalsIgnoreCase(part2) && (part4 == null || "".equals(part4)) ) {
-    		return false;
-    	}
+        if ( "public".equalsIgnoreCase(part2) && (part4 == null || "".equals(part4)) ) {
+            return false;
+        }
 
-    	return true;
+        return true;
     }
 
     public String getContent() {
         String result = "<!DOCTYPE " + part1 + " ";
         result += part2 + " \"" + part3 + "\"";
         if ( part4 != null && !"".equals(part4) ) {
-        	result += " \"" + part4 + "\"";
+            result += " \"" + part4 + "\"";
         }
 
         result += ">";
@@ -104,17 +104,17 @@ public class DoctypeToken implements BaseToken {
     }
 
     @Override
-		public String toString() {
+        public String toString() {
         return getContent();
     }
 
     public String getName() {
-    	return "";
+        return "";
     }
 
     @Override
-	public void serialize(XmlSerializer xmlSerializer) throws IOException {
-    	xmlSerializer.getWriter().write(getContent() + "\n");
+    public void serialize(XmlSerializer xmlSerializer) throws IOException {
+        xmlSerializer.getWriter().write(getContent() + "\n");
     }
 
 }

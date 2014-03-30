@@ -33,83 +33,83 @@ import java.util.Properties;
  */
 public class PropertyManager {
 
-	/** The prefix of all properties */
-	private static String prefix = "";
+    /** The prefix of all properties */
+    private static String prefix = "";
 
-	/** The Properties object */
-	private static Properties props = null;
+    /** The Properties object */
+    private static Properties props = null;
 
-	/** Returns the property for the given key. */
-	public static String get(String key) {
-		if (props == null) {
-			throw new RuntimeException("PropertyManager not initialized");
-		}
-		return props.getProperty(prefix + key);
-	}
+    /** Returns the property for the given key. */
+    public static String get(String key) {
+        if (props == null) {
+            throw new RuntimeException("PropertyManager not initialized");
+        }
+        return props.getProperty(prefix + key);
+    }
 
-	/** Convenience method. Returns a property formatted with the given arg */
-	public static String get(String key, Object arg) {
-		Object[] args = new Object[] { arg };
-		return get(key, args);
-	}
+    /** Convenience method. Returns a property formatted with the given arg */
+    public static String get(String key, Object arg) {
+        Object[] args = new Object[] { arg };
+        return get(key, args);
+    }
 
-	/** Convenience method. Returns a property formatted with the given args */
-	public static String get(String key, Object arg1, Object arg2) {
-		Object[] args = new Object[] { arg1, arg2 };
-		return get(key, args);
-	}
+    /** Convenience method. Returns a property formatted with the given args */
+    public static String get(String key, Object arg1, Object arg2) {
+        Object[] args = new Object[] { arg1, arg2 };
+        return get(key, args);
+    }
 
-	/** Convenience method. Returns a property formatted with the given args */
-	public static String get(String key, Object arg1, Object arg2, Object arg3) {
-		Object[] args = new Object[] { arg1, arg2, arg3 };
-		return get(key, args);
-	}
+    /** Convenience method. Returns a property formatted with the given args */
+    public static String get(String key, Object arg1, Object arg2, Object arg3) {
+        Object[] args = new Object[] { arg1, arg2, arg3 };
+        return get(key, args);
+    }
 
-	/** Convenience method. Returns a property formatted with the given args */
-	public static String get(String key, Object[] args) {
-		String str = null;
-		String value = get(key);
-		try {
-			str = MessageFormat.format(value, args);
-		} catch (IllegalArgumentException e) {
-			return e.getMessage();
-		}
-		return str;
-	}
+    /** Convenience method. Returns a property formatted with the given args */
+    public static String get(String key, Object[] args) {
+        String str = null;
+        String value = get(key);
+        try {
+            str = MessageFormat.format(value, args);
+        } catch (IllegalArgumentException e) {
+            return e.getMessage();
+        }
+        return str;
+    }
 
-	public static Properties getProperties() {
-		return props;
-	}
+    public static Properties getProperties() {
+        return props;
+    }
 
-	private static final String RESOURCE_NAME = "latex.properties";
+    private static final String RESOURCE_NAME = "latex.properties";
 
-	/** Loads the properties file */
-	static {
-		try {
-			// initialize through input stream:
-//			Class config_class = PropertyManager.class;
-			final InputStream is = PropertyManager.class.getResourceAsStream(RESOURCE_NAME);
-			props = new Properties();
-			props.load(is);
-			prefix = "latex.";
+    /** Loads the properties file */
+    static {
+        try {
+            // initialize through input stream:
+//            Class config_class = PropertyManager.class;
+            final InputStream is = PropertyManager.class.getResourceAsStream(RESOURCE_NAME);
+            props = new Properties();
+            props.load(is);
+            prefix = "latex.";
 
-			// System.out.println("};");
-			// props = IOHelper.loadProperties(engine.getServletContext(),
-			// propertyFile);
-			// } catch (ClassNotFoundException e) {
-			// e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+            // System.out.println("};");
+            // props = IOHelper.loadProperties(engine.getServletContext(),
+            // propertyFile);
+            // } catch (ClassNotFoundException e) {
+            // e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-	// public static void main(String[] args) {
-	// init();
-	// }
-	/** Loads the properties file and sets the prefix */
-	// public static void init(WikiEngine engine, String propertyFile,
-	// String prefix) {
-	// init(engine, propertyFile);
-	// PropertyManager.prefix = prefix;
-	// }
+    // public static void main(String[] args) {
+    // init();
+    // }
+    /** Loads the properties file and sets the prefix */
+    // public static void init(WikiEngine engine, String propertyFile,
+    // String prefix) {
+    // init(engine, propertyFile);
+    // PropertyManager.prefix = prefix;
+    // }
 }

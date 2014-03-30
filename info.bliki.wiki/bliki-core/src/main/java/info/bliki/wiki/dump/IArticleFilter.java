@@ -8,16 +8,16 @@ import org.xml.sax.SAXException;
  *
  */
 public interface IArticleFilter {
-	/**
-	 * Process a single Wikipedia article
-	 *
-	 * @param article
-	 *          a Wikipedia article
-	 * @param siteinfo
-	 *          the site and namespace information found in the header of a
-	 *          Mediawiki dump. Maybe <code>null</code>
-	 * @throws SAXException
-	 *           throw a SAXException for stopping the processing
-	 */
-	public void process(WikiArticle article, Siteinfo siteinfo) throws SAXException;
+    /**
+     * Process a single Wikipedia article
+     *
+     * @param article
+     *          a Wikipedia article
+     * @param siteinfo
+     *          the site and namespace information found in the header of a
+     *          Mediawiki dump. Maybe <code>null</code>
+     * @throws SAXException
+     *           throw a SAXException for stopping the processing
+     */
+    public void process(WikiArticle article, Siteinfo siteinfo) throws SAXException;
 }

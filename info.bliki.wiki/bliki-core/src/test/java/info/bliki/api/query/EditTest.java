@@ -9,26 +9,26 @@ import info.bliki.api.User;
  */
 public class EditTest extends BaseQueryTest {
 
-	public void testDummy() {
-		// ..
-	}
+    public void testDummy() {
+        // ..
+    }
 
-	/**
-	 * To make this test work correctly uncomment it and be sure that you have a
-	 * internet connection running.
-	 */
-	// public void testSmokeTest() {
-	// User user = getAnonymousUser();
-	// Connector connector = new Connector();
-	// connector.login(user);
-	//
-	// try {
-	// // there is no rights to do this action. The error must be received.
-	// connector.edit(user, Edit.create().title("MainTestTest").text("blabla"));
-	// fail("UnexpectedAnswerException must be thrown");
-	// } catch (UnexpectedAnswerException e) {
-	// // ok
-	// }
-	// }
+    /**
+     * To make this test work correctly uncomment it and be sure that you have a
+     * internet connection running.
+     */
+    // public void testSmokeTest() {
+    // User user = getAnonymousUser();
+    // Connector connector = new Connector();
+    // connector.login(user);
+    //
+    // try {
+    // // there is no rights to do this action. The error must be received.
+    // connector.edit(user, Edit.create().title("MainTestTest").text("blabla"));
+    // fail("UnexpectedAnswerException must be thrown");
+    // } catch (UnexpectedAnswerException e) {
+    // // ok
+    // }
+    // }
 
 }

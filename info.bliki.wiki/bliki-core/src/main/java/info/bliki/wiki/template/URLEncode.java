@@ -12,18 +12,18 @@ import java.util.List;
  *
  */
 public class URLEncode extends AbstractTemplateFunction {
-	public final static ITemplateFunction CONST = new URLEncode();
+    public final static ITemplateFunction CONST = new URLEncode();
 
-	public URLEncode() {
+    public URLEncode() {
 
-	}
+    }
 
-	@Override
-	public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) throws IOException {
-		if (list.size() > 0) {
-			String result = isSubst ? list.get(0) : parseTrim(list.get(0), model);
-			return URLEncoder.encode(result, Connector.UTF8_CHARSET);
-		}
-		return null;
-	}
+    @Override
+    public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) throws IOException {
+        if (list.size() > 0) {
+            String result = isSubst ? list.get(0) : parseTrim(list.get(0), model);
+            return URLEncoder.encode(result, Connector.UTF8_CHARSET);
+        }
+        return null;
+    }
 }

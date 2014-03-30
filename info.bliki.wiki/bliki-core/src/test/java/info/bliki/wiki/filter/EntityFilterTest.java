@@ -14,15 +14,15 @@ public class EntityFilterTest extends FilterTestSupport {
 
   public void testEntity0() {
     assertEquals("\n" +
-    		"<p>jklöäüpoißutz</p>", wikiModel.render("jklöäüpoißutz", false));
+            "<p>jklöäüpoißutz</p>", wikiModel.render("jklöäüpoißutz", false));
   }
 
   public void testEntity1() {
     assertEquals("\n" +
-    		"<p>jklöäüpoißutz</p>", wikiModel.render("jkl&ouml;&auml;&uuml;poi&szlig;utz", false));
+            "<p>jklöäüpoißutz</p>", wikiModel.render("jkl&ouml;&auml;&uuml;poi&szlig;utz", false));
   }
   public void testEntity2() {
     assertEquals("\n" +
-    		"<p>jklöutz</p>", wikiModel.render("jkl&#246;utz", false));
+            "<p>jklöutz</p>", wikiModel.render("jkl&#246;utz", false));
   }
 }

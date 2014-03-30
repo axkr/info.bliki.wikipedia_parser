@@ -10,12 +10,12 @@ package info.bliki.api.query;
  *
  */
 public class Sitematrix extends RequestBuilder {
-	public Sitematrix() {
-		super();
-		action("sitematrix");
-	}
+    public Sitematrix() {
+        super();
+        action("sitematrix");
+    }
 
-	public static Sitematrix create() {
-		return new Sitematrix();
-	}
+    public static Sitematrix create() {
+        return new Sitematrix();
+    }
 }

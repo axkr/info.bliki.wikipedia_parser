@@ -6,8 +6,8 @@ package info.bliki.wiki.model;
  *
  */
 public class WikiModelContentException extends Exception {
-	public WikiModelContentException(String message, Throwable exception) {
-		super(message, exception);
+    public WikiModelContentException(String message, Throwable exception) {
+        super(message, exception);
 
-	}
+    }
 }

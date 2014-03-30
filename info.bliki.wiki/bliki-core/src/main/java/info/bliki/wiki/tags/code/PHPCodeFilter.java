@@ -91,7 +91,7 @@ public class PHPCodeFilter extends AbstractCPPBasedCodeFilter implements SourceC
    * @return Returns the KEYWORD_SET.
    */
   @Override
-	public HashMap<String, String> getKeywordSet() {
+    public HashMap<String, String> getKeywordSet() {
     return KEYWORD_SET;
   }
 
@@ -99,12 +99,12 @@ public class PHPCodeFilter extends AbstractCPPBasedCodeFilter implements SourceC
    * @return Returns the OBJECT_SET.
    */
   @Override
-	public HashMap<String, String> getObjectSet() {
+    public HashMap<String, String> getObjectSet() {
     return null;
   }
 
   @Override
-	public String filter(String input) {
+    public String filter(String input) {
     char[] source = input.toCharArray();
     int currentPosition = 0;
     int identStart = 0;
@@ -135,10 +135,10 @@ public class PHPCodeFilter extends AbstractCPPBasedCodeFilter implements SourceC
             currentChar = source[currentPosition++];
             appendChar(result, currentChar);
             if (currentChar == '\\') {
-							currentChar = source[currentPosition++];
-							appendChar(result, currentChar);
-							continue;
-						}
+                            currentChar = source[currentPosition++];
+                            appendChar(result, currentChar);
+                            continue;
+                        }
             if (currentChar == '\"') {
               break;
             }
@@ -152,10 +152,10 @@ public class PHPCodeFilter extends AbstractCPPBasedCodeFilter implements SourceC
             currentChar = source[currentPosition++];
             appendChar(result, currentChar);
             if (currentChar == '\\') {
-							currentChar = source[currentPosition++];
-							appendChar(result, currentChar);
-							continue;
-						}
+                            currentChar = source[currentPosition++];
+                            appendChar(result, currentChar);
+                            continue;
+                        }
             if (currentChar == '\'') {
               break;
             }
@@ -219,12 +219,12 @@ public class PHPCodeFilter extends AbstractCPPBasedCodeFilter implements SourceC
   }
 
   @Override
-	public boolean isKeywordCaseSensitive() {
+    public boolean isKeywordCaseSensitive() {
     return false;
   }
 
   @Override
-	public boolean isPHPTag() {
+    public boolean isPHPTag() {
     return true;
   }
 }

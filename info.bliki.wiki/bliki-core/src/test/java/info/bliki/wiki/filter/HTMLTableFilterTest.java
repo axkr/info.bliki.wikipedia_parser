@@ -14,6 +14,6 @@ public class HTMLTableFilterTest extends FilterTestSupport {
 
   public void testHTMLTable2() {
   assertEquals("\n" +
-  		"<table>\ntest\n</table>", wikiModel.render("<table 250px>test</table>", false));
+          "<table>\ntest\n</table>", wikiModel.render("<table 250px>test</table>", false));
   }
 }

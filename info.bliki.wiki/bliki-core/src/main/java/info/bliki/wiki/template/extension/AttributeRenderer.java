@@ -19,5 +19,5 @@ package info.bliki.wiki.template.extension;
 public interface AttributeRenderer {
     public String toString(Object o);
 
-	  public String toString(Object o, String formatName);
+      public String toString(Object o, String formatName);
 }

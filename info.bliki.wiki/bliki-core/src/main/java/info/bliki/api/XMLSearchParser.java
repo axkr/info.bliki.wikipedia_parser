@@ -12,75 +12,75 @@ import org.xml.sax.SAXException;
  * <code>search</code> query.
  */
 public class XMLSearchParser extends AbstractXMLParser {
-	private static final String SEARCH_TAG = "search";
-	private static final String SIZE_ID = "size";
-	private static final String SNIPPET_ID = "snippet";
-	private static final String SROFFSET_ID = "sroffset";
-	private static final String TIMESTAMP_ID = "timestamp";
-	private static final String WORDCOUNT_ID = "wordcount";
+    private static final String SEARCH_TAG = "search";
+    private static final String SIZE_ID = "size";
+    private static final String SNIPPET_ID = "snippet";
+    private static final String SROFFSET_ID = "sroffset";
+    private static final String TIMESTAMP_ID = "timestamp";
+    private static final String WORDCOUNT_ID = "wordcount";
 
-	private SearchResult fSearchResult;
+    private SearchResult fSearchResult;
 
-	private List<SearchResult> searchResultsList;
+    private List<SearchResult> searchResultsList;
 
-	private String srOffset;
+    private String srOffset;
 
-	public XMLSearchParser(String xmlText) throws SAXException {
-		super(xmlText);
-		this.searchResultsList = new ArrayList<SearchResult>();
-		this.srOffset = "";
-	}
+    public XMLSearchParser(String xmlText) throws SAXException {
+        super(xmlText);
+        this.searchResultsList = new ArrayList<SearchResult>();
+        this.srOffset = "";
+    }
 
-	@Override
-	public void endElement(String uri, String name, String qName) {
-		try {
-			if (PAGE_TAG2.equals(qName)) {
-				if (fSearchResult != null) {
-					searchResultsList.add(fSearchResult);
-				}
-			}
+    @Override
+    public void endElement(String uri, String name, String qName) {
+        try {
+            if (PAGE_TAG2.equals(qName)) {
+                if (fSearchResult != null) {
+                    searchResultsList.add(fSearchResult);
+                }
+            }
 
-			fData = null;
-			fAttributes = null;
+            fData = null;
+            fAttributes = null;
 
-		} catch (RuntimeException re) {
-			re.printStackTrace();
-		}
-	}
+        } catch (RuntimeException re) {
+            re.printStackTrace();
+        }
+    }
 
-	public List<SearchResult> getSearchResultList() {
-		return searchResultsList;
-	}
+    public List<SearchResult> getSearchResultList() {
+        return searchResultsList;
+    }
 
-	/**
-	 * @return the srOffset
-	 */
-	public String getSrOffset() {
-		if (srOffset == null) {
-			return "";
-		}
-		return srOffset;
-	}
+    /**
+     * @return the srOffset
+     */
+    public String getSrOffset() {
+        if (srOffset == null) {
+            return "";
+        }
+        return srOffset;
+    }
 
-	@Override
-	public void startElement(String namespaceURI, String localName, String qName, Attributes atts) {
-		fAttributes = atts;
+    @Override
+    public void startElement(String namespaceURI, String localName, String qName, Attributes atts) {
+        fAttributes = atts;
 
-		if (PAGE_TAG2.equals(qName)) {
-			fSearchResult = new SearchResult();
-			fSearchResult.setNs(fAttributes.getValue(NS_ID));
-			fSearchResult.setTitle(fAttributes.getValue(TITLE_ID));
-			fSearchResult.setSize(fAttributes.getValue(SIZE_ID));
-			fSearchResult.setSnippet(fAttributes.getValue(SNIPPET_ID));
-			fSearchResult.setTimestamp(fAttributes.getValue(TIMESTAMP_ID));
-			fSearchResult.setWordCount(fAttributes.getValue(WORDCOUNT_ID));
-		} else if (SEARCH_TAG.equals(qName)) {
-			String value = fAttributes.getValue(SROFFSET_ID);
-			if (value != null) {
-				srOffset = value;
-			}
-		}
-		fData = null;
-	}
+        if (PAGE_TAG2.equals(qName)) {
+            fSearchResult = new SearchResult();
+            fSearchResult.setNs(fAttributes.getValue(NS_ID));
+            fSearchResult.setTitle(fAttributes.getValue(TITLE_ID));
+            fSearchResult.setSize(fAttributes.getValue(SIZE_ID));
+            fSearchResult.setSnippet(fAttributes.getValue(SNIPPET_ID));
+            fSearchResult.setTimestamp(fAttributes.getValue(TIMESTAMP_ID));
+            fSearchResult.setWordCount(fAttributes.getValue(WORDCOUNT_ID));
+        } else if (SEARCH_TAG.equals(qName)) {
+            String value = fAttributes.getValue(SROFFSET_ID);
+            if (value != null) {
+                srOffset = value;
+            }
+        }
+        fData = null;
+    }
 
 }

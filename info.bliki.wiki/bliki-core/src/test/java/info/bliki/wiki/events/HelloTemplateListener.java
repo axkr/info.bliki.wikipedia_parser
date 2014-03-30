@@ -9,20 +9,20 @@ import info.bliki.wiki.model.DefaultEventListener;
  *
  */
 public class HelloTemplateListener extends DefaultEventListener {
-	StringBuffer collectorBuffer = new StringBuffer();
+    StringBuffer collectorBuffer = new StringBuffer();
 
-	public HelloTemplateListener() {
+    public HelloTemplateListener() {
 
-	}
+    }
 
-	@Override
-	public void onTemplate(char[] src, int rawStart, int rawEnd) {
-		collectorBuffer.append(src, rawStart, rawEnd - rawStart);
-		collectorBuffer.append("\n");
-	}
+    @Override
+    public void onTemplate(char[] src, int rawStart, int rawEnd) {
+        collectorBuffer.append(src, rawStart, rawEnd - rawStart);
+        collectorBuffer.append("\n");
+    }
 
-	public StringBuffer getCollectorBuffer() {
-		return collectorBuffer;
-	}
+    public StringBuffer getCollectorBuffer() {
+        return collectorBuffer;
+    }
 
 }

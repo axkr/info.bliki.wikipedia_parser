@@ -23,47 +23,47 @@ package info.bliki.api.query;
  *
  */
 public class OpenSearch extends RequestBuilder {
-	public OpenSearch() {
-		super();
-		action("opensearch");
-	}
+    public OpenSearch() {
+        super();
+        action("opensearch");
+    }
 
-	public OpenSearch search(String search) {
-		put("search", search);
-		return this;
-	}
+    public OpenSearch search(String search) {
+        put("search", search);
+        return this;
+    }
 
-	public static OpenSearch create() {
-		return new OpenSearch();
-	}
+    public static OpenSearch create() {
+        return new OpenSearch();
+    }
 
-	public OpenSearch limit(int limit) {
-		put("limit", Integer.toString(limit));
-		return this;
-	}
+    public OpenSearch limit(int limit) {
+        put("limit", Integer.toString(limit));
+        return this;
+    }
 
-	/**
-	 * namespace - a Namespace to search<br/>Values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
-	 * 10, 11, 12, 13, 14, 15, 100, 101 Default: 0
-	 *
-	 * @param namespaces
-	 * @return
-	 */
-	public OpenSearch namespace(int namespace) {
-		put("namespace", Integer.toString(namespace));
-		return this;
-	}
+    /**
+     * namespace - a Namespace to search<br/>Values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+     * 10, 11, 12, 13, 14, 15, 100, 101 Default: 0
+     *
+     * @param namespaces
+     * @return
+     */
+    public OpenSearch namespace(int namespace) {
+        put("namespace", Integer.toString(namespace));
+        return this;
+    }
 
-	/**
-	 * namespace - Namespaces to search<br/> Values (internally separated with
-	 * '|'): 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 100, 101
-	 * Default: 0
-	 *
-	 * @param namespaces
-	 * @return
-	 */
-	public OpenSearch namespace(int... namespaces) {
-		putPipedString("namespace", namespaces);
-		return this;
-	}
+    /**
+     * namespace - Namespaces to search<br/> Values (internally separated with
+     * '|'): 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 100, 101
+     * Default: 0
+     *
+     * @param namespaces
+     * @return
+     */
+    public OpenSearch namespace(int... namespaces) {
+        putPipedString("namespace", namespaces);
+        return this;
+    }
 }

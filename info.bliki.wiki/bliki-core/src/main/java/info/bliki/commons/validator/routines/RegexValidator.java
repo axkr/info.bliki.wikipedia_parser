@@ -57,10 +57,10 @@ import java.util.regex.Matcher;
 public class RegexValidator implements Serializable {
 
     /**
-	 * Auto-generated serial version UID.
-	 */
-	private static final long serialVersionUID = 2048852167571851651L;
-	private final Pattern[] patterns;
+     * Auto-generated serial version UID.
+     */
+    private static final long serialVersionUID = 2048852167571851651L;
+    private final Pattern[] patterns;
 
     /**
      * Construct a <i>case sensitive</i> validator for a single
@@ -203,7 +203,7 @@ public class RegexValidator implements Serializable {
      * @return A String representation of this validator
      */
     @Override
-		public String toString() {
+        public String toString() {
         StringBuffer buffer = new StringBuffer();
         buffer.append("RegexValidator{");
         for (int i = 0; i < patterns.length; i++) {

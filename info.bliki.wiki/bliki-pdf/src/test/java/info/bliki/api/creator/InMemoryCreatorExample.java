@@ -20,45 +20,45 @@ import java.util.Map;
  * @see HTMLCreatorExample
  */
 public class InMemoryCreatorExample {
-	public static void main(String[] args) throws Exception {
-		testCreator001();
-	}
+    public static void main(String[] args) throws Exception {
+        testCreator001();
+    }
 
-	private static void testCreator001() throws Exception {
-		testWikipediaENAPI("Tom Hanks");
-	}
+    private static void testCreator001() throws Exception {
+        testWikipediaENAPI("Tom Hanks");
+    }
 
-	private static void testWikipediaENAPI(String title) throws Exception {
-		String articleAddress = "http://en.wikipedia.org/w/api.php?action=query&titles=" + Encoder.encodeTitleToUrl(title, true)
-				+ "&prop=revisions&rvprop=content&format=xml";
-		String articleWikiContent = loadRAWContent(articleAddress);
+    private static void testWikipediaENAPI(String title) throws Exception {
+        String articleAddress = "http://en.wikipedia.org/w/api.php?action=query&titles=" + Encoder.encodeTitleToUrl(title, true)
+                + "&prop=revisions&rvprop=content&format=xml";
+        String articleWikiContent = loadRAWContent(articleAddress);
 
-		User wikiUser = new User("", "", "http://en.wikipedia.org/w/api.php");
-		wikiUser.login();
+        User wikiUser = new User("", "", "http://en.wikipedia.org/w/api.php");
+        wikiUser.login();
 
-		// set up a simple cache for this example. HashMap is not usable for
-		// production! Use something like http://ehcache.org for production!
-		Map<String, String> contentCache = new HashMap<String, String>(2000);
-		APIWikiModelInMemory wikiModel = new APIWikiModelInMemory(wikiUser, Locale.ENGLISH, "${image}", "${title}", contentCache);
-		DocumentCreator documentCreator = new DocumentCreator(wikiModel, wikiUser, new String[0]);
-		wikiModel.setUp();
+        // set up a simple cache for this example. HashMap is not usable for
+        // production! Use something like http://ehcache.org for production!
+        Map<String, String> contentCache = new HashMap<String, String>(2000);
+        APIWikiModelInMemory wikiModel = new APIWikiModelInMemory(wikiUser, Locale.ENGLISH, "${image}", "${title}", contentCache);
+        DocumentCreator documentCreator = new DocumentCreator(wikiModel, wikiUser, new String[0]);
+        wikiModel.setUp();
 
-		StringWriter writer = new StringWriter();
-		documentCreator.render(articleWikiContent, articleAddress, new HTMLConverter(), writer);
+        StringWriter writer = new StringWriter();
+        documentCreator.render(articleWikiContent, articleAddress, new HTMLConverter(), writer);
 
-		String wikiHTMLText = writer.toString();
-		System.out.println(wikiHTMLText);
-	}
+        String wikiHTMLText = writer.toString();
+        System.out.println(wikiHTMLText);
+    }
 
-	private static String loadRAWContent(String articleAddress) throws Exception {
-		URL articleURL = new URL(articleAddress);
+    private static String loadRAWContent(String articleAddress) throws Exception {
+        URL articleURL = new URL(articleAddress);
 
-		BufferedReader reader = new BufferedReader(new InputStreamReader(articleURL.openStream()));
-		StringBuilder contentStringBuilder = new StringBuilder(10000);
-		String line;
-		while ((line = reader.readLine()) != null) {
-			contentStringBuilder.append(line);
-		}
-		return contentStringBuilder.toString();
-	}
+        BufferedReader reader = new BufferedReader(new InputStreamReader(articleURL.openStream()));
+        StringBuilder contentStringBuilder = new StringBuilder(10000);
+        String line;
+        while ((line = reader.readLine()) != null) {
+            contentStringBuilder.append(line);
+        }
+        return contentStringBuilder.toString();
+    }
 }

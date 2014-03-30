@@ -49,27 +49,27 @@ import java.util.List;
  */
 public class SimpleXmlSerializer extends XmlSerializer {
 
-	protected SimpleXmlSerializer(Writer writer, HtmlCleaner htmlCleaner) {
-		super(writer, htmlCleaner);
-	}
+    protected SimpleXmlSerializer(Writer writer, HtmlCleaner htmlCleaner) {
+        super(writer, htmlCleaner);
+    }
 
     private void serialize(List<Object> nodes, TagNode tagNode) throws IOException {
         if ( nodes != null && !nodes.isEmpty() ) {
-        	for (Object item : nodes) {
+            for (Object item : nodes) {
                 if (item != null) {
-                	if (item instanceof List) {
+                    if (item instanceof List) {
                         @SuppressWarnings("unchecked")
-						final List<Object> list = (List<Object>) item;
-						serialize(list, tagNode);
+                        final List<Object> list = (List<Object>) item;
+                        serialize(list, tagNode);
                     } else if ( item instanceof ContentToken ) {
                         ContentToken contentToken = (ContentToken) item;
-                    	String content = contentToken.getContent();
-                    	if ( !dontEscape(tagNode) ) {
-	                    	content = escapeXml(content);
-                    	} else {
-                    		content = content.replaceAll("]]>", "]]&amp;");
-                    	}
-                    	writer.write(content);
+                        String content = contentToken.getContent();
+                        if ( !dontEscape(tagNode) ) {
+                            content = escapeXml(content);
+                        } else {
+                            content = content.replaceAll("]]>", "]]&amp;");
+                        }
+                        writer.write(content);
                     } else {
                         ((BaseToken)item).serialize(this);
                     }
@@ -79,7 +79,7 @@ public class SimpleXmlSerializer extends XmlSerializer {
     }
 
     @Override
-		protected void serialize(TagNode tagNode) throws IOException {
+        protected void serialize(TagNode tagNode) throws IOException {
         serializeOpenTag(tagNode);
 
         List<Object> tagChildren = tagNode.getChildren();

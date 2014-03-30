@@ -14,10 +14,10 @@ public class WrongTagFilterTest extends FilterTestSupport {
 
 //   public void testWrongTag0() {
 //    assertEquals("<p>[[Dülmener Wildpferde im Merfelder Bruch]]\n" +
-//    		"</p>", wikiModel.render("[[Image:Merfelder_Wildpferde.jpg|thumb|right|250px|[[Dülmener Wildpferd]]e im Merfelder Bruch]]", wikiModel));
+//            "</p>", wikiModel.render("[[Image:Merfelder_Wildpferde.jpg|thumb|right|250px|[[Dülmener Wildpferd]]e im Merfelder Bruch]]", wikiModel));
 //  }
   public void testWrongTag1() {
     assertEquals("\n" +
-    		"<p>&#60;blubber&#62;...</p>", wikiModel.render("<blubber>...", false));
+            "<p>&#60;blubber&#62;...</p>", wikiModel.render("<blubber>...", false));
   }
 }

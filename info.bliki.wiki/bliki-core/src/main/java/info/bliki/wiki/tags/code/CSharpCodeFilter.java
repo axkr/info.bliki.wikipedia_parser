@@ -114,7 +114,7 @@ public class CSharpCodeFilter extends AbstractCPPBasedCodeFilter implements Sour
    * @return Returns the KEYWORD_SET.
    */
   @Override
-	public HashMap<String, String> getKeywordSet() {
+    public HashMap<String, String> getKeywordSet() {
     return KEYWORD_SET;
   }
 
@@ -126,7 +126,7 @@ public class CSharpCodeFilter extends AbstractCPPBasedCodeFilter implements Sour
    * @return Returns the OBJECT_SET.
    */
   @Override
-	public HashMap<String, String> getObjectSet() {
+    public HashMap<String, String> getObjectSet() {
     return OBJECT_SET;
   }
 

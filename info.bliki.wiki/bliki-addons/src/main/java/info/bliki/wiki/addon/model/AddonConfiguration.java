@@ -14,23 +14,23 @@ import info.bliki.wiki.model.Configuration;
 
 public class AddonConfiguration extends Configuration {
 
-	static {
+    static {
 
-		TAG_TOKEN_MAP.put("applet", new AppletTag());
-		TAG_TOKEN_MAP.put("calc", new CalcTag());
-		TAG_TOKEN_MAP.put("eval", new EvalTag());
-		TAG_TOKEN_MAP.put("plot", new PlotTag());
-		TAG_TOKEN_MAP.put("sample", new SampleTag());
-		TAG_TOKEN_MAP.put("wcm", new WCMTag());
-		TAG_TOKEN_MAP.put("yacas", new YacasTag());
-		TAG_TOKEN_MAP.put("yacaseval", new YacasEvalTag());
-		TAG_TOKEN_MAP.put("tex", new TeXTag());
-		TAG_TOKEN_MAP.put("ctex", new CTeXTag());
-	}
+        TAG_TOKEN_MAP.put("applet", new AppletTag());
+        TAG_TOKEN_MAP.put("calc", new CalcTag());
+        TAG_TOKEN_MAP.put("eval", new EvalTag());
+        TAG_TOKEN_MAP.put("plot", new PlotTag());
+        TAG_TOKEN_MAP.put("sample", new SampleTag());
+        TAG_TOKEN_MAP.put("wcm", new WCMTag());
+        TAG_TOKEN_MAP.put("yacas", new YacasTag());
+        TAG_TOKEN_MAP.put("yacaseval", new YacasEvalTag());
+        TAG_TOKEN_MAP.put("tex", new TeXTag());
+        TAG_TOKEN_MAP.put("ctex", new CTeXTag());
+    }
 
-	public static AddonConfiguration DEFAULT_CONFIGURATION = new AddonConfiguration();
+    public static AddonConfiguration DEFAULT_CONFIGURATION = new AddonConfiguration();
 
-	public AddonConfiguration() {
-	}
+    public AddonConfiguration() {
+    }
 
 }
