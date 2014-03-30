@@ -1,5 +1,7 @@
 package legunto.template;
 
+import java.io.IOException;
+
 import info.bliki.wiki.model.IWikiModel;
 import legunto.interfaces.MwCommon;
 import org.luaj.vm2.Globals;
@@ -11,15 +13,13 @@ import org.luaj.vm2.lib.TwoArgFunction;
 import org.luaj.vm2.lib.VarArgFunction;
 import org.luaj.vm2.lib.jse.JsePlatform;
 
-import java.io.IOException;
-
 public class ModuleExecutor {
 
 
     public String run(IWikiModel model, String module, String method, Frame frame) throws IOException {
         final Globals globals = getGlobals();
         MwCommon common = new MwCommon(model, globals);
-        return common.execute(model, module, method, frame);
+        return common.execute(module, method, frame);
     }
 
     private Globals getGlobals() {

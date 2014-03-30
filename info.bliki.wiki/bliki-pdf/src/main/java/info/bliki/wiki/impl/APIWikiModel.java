@@ -15,6 +15,7 @@ import info.bliki.wiki.model.ImageFormat;
 import info.bliki.wiki.model.WikiModel;
 import info.bliki.wiki.model.WikiModelContentException;
 import info.bliki.wiki.namespaces.INamespace.NamespaceCode;
+import legunto.template.Frame;
 import legunto.template.ModuleExecutor;
 
 import java.io.File;
@@ -135,9 +136,17 @@ public class APIWikiModel extends WikiModel {
             return result;
         }
 
-        if (parsedPagename.namespace.isType(NamespaceCode.TEMPLATE_NAMESPACE_KEY)) {
+        boolean isTemplate = parsedPagename.namespace.isType(NamespaceCode.TEMPLATE_NAMESPACE_KEY);
+        boolean isModule   = parsedPagename.namespace.isType(NamespaceCode.MODULE_NAMESPACE_KEY);
+
+        if (isTemplate || isModule) {
             String content = null;
             String fullPageName = parsedPagename.namespace.makeFullPagename(parsedPagename.pagename);
+
+            if (isTemplate) {
+                setFrame(new Frame(templateParameters, getFrame()));
+            }
+
             try {
                 TopicData topicData = fWikiDB.selectTopic(fullPageName);
                 if (topicData != null) {

@@ -2,7 +2,6 @@ package info.bliki.wiki.template;
 
 import static info.bliki.wiki.filter.TemplateParser.createSingleParameter;
 import static info.bliki.wiki.filter.TemplateParser.mergeParameters;
-import info.bliki.wiki.model.IWikiModel;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,6 +9,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import info.bliki.wiki.model.IWikiModel;
 import legunto.template.Frame;
 import legunto.template.ModuleExecutor;
 
@@ -38,24 +38,20 @@ public class Invoke extends AbstractTemplateFunction {
         }
         String module = parts.get(0);
         String method = parts.get(1);
-        Frame parentFrame = model.getFrame();
         try {
             Map<String, String> map = getParameters(parts, model);
             System.out.println(module + " - " + method + " - " + map.toString());
-            Frame newFrame = new Frame(map, parentFrame);
-            model.setFrame(newFrame);
-            return executor.run(model, module, method, newFrame);
+            return executor.run(model, module, method, new Frame(map, model.getFrame()));
         } finally {
-            model.setFrame(parentFrame);
+            model.setFrame(null);
         }
     }
 
-    private Map<String, String> getParameters(List<String> parts,
-            IWikiModel model) {
+    private Map<String, String> getParameters(List<String> parts, IWikiModel model) {
         LinkedHashMap<String, String> parameterMap = new LinkedHashMap<String, String>();
-        if (parts.size() > 1) {
+        if (parts.size() > 2) {
             List<String> unnamedParameters = new ArrayList<String>();
-            for (int i = 1; i < parts.size(); i++) {
+            for (int i = 2; i < parts.size(); i++) {
                 createSingleParameter(parts.get(i), model, parameterMap,
                         unnamedParameters);
             }

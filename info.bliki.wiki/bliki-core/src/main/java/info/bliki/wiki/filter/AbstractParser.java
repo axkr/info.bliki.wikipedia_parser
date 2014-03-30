@@ -829,6 +829,14 @@ public abstract class AbstractParser extends WikipediaScanner {
             this.magicWord = magicWord;
             this.magicWordParameter = magicWordParameter;
         }
+
+        @Override
+        public String toString() {
+            return "ParsedPageName{" +
+                    "namespace=" + namespace +
+                    ", pagename='" + pagename + '\'' +
+                    '}';
+        }
     }
 
     /**
