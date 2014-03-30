@@ -134,6 +134,7 @@ public class HelloRenderTest extends TestCase {
         HelloTemplateListener listener = new HelloTemplateListener();
         wikiModel.parseEvents(listener, HELLO_TEXT);
         assertEquals(
+                "pp-semi-protected|small=yes\n" +
                 "wiktionarypar|hello\n" +
                 "otheruses|Hello (disambiguation)\n" +
                 "cite web|url=http://www.etymonline.com/index.php?search=hello&searchmode=none|title=Online Etymology Dictionary\n" +
