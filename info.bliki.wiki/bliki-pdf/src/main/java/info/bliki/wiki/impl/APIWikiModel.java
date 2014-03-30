@@ -5,19 +5,17 @@ import info.bliki.api.User;
 import info.bliki.api.creator.ImageData;
 import info.bliki.api.creator.TopicData;
 import info.bliki.api.creator.WikiDB;
-import info.bliki.htmlcleaner.ContentToken;
 import info.bliki.htmlcleaner.TagNode;
 import info.bliki.wiki.filter.AbstractParser;
+import info.bliki.wiki.filter.AbstractParser.ParsedPageName;
 import info.bliki.wiki.filter.Encoder;
 import info.bliki.wiki.filter.WikipediaParser;
-import info.bliki.wiki.filter.WikipediaPreTagParser;
-import info.bliki.wiki.filter.AbstractParser.ParsedPageName;
 import info.bliki.wiki.model.Configuration;
 import info.bliki.wiki.model.ImageFormat;
 import info.bliki.wiki.model.WikiModel;
 import info.bliki.wiki.model.WikiModelContentException;
 import info.bliki.wiki.namespaces.INamespace.NamespaceCode;
-import info.bliki.wiki.tags.WPATag;
+import legunto.template.ModuleExecutor;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -26,8 +24,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-
-import legunto.template.ModuleExecutor;
 
 /**
  * Wiki model implementation which uses the <code>info.bliki.api</code> package
@@ -97,7 +93,7 @@ public class APIWikiModel extends WikiModel {
     public APIWikiModel(User user, WikiDB wikiDB, Locale locale, String imageBaseURL, String linkBaseURL, String imageDirectoryName) {
         super(Configuration.DEFAULT_CONFIGURATION, locale, imageBaseURL, linkBaseURL);
 
-        fModuleExecutor = new ModuleExecutor(new File("C:\\temp\\modules"));
+        fModuleExecutor = new ModuleExecutor();
         fUser = user;
         fWikiDB = wikiDB;
         if (imageDirectoryName != null) {

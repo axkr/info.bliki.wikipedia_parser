@@ -134,4 +134,12 @@
             <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
     </distributionManagement>
+
+    <repositories>
+        <repository>
+            <!-- for org.luaj.luaj-jse 3.0-beta3 -->
+            <id>zegoggles-thirdparty</id>
+            <url>http://zegoggl.es:8081/nexus/content/repositories/thirdparty/</url>
+        </repository>
+    </repositories>
 </project>

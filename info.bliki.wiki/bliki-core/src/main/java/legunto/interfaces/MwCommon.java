@@ -3,20 +3,8 @@ package legunto.interfaces;
 import info.bliki.wiki.filter.AbstractParser.ParsedPageName;
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.model.WikiModelContentException;
-import info.bliki.wiki.namespaces.INamespace.NamespaceCode;
-import info.bliki.wiki.namespaces.Namespace;
-import info.bliki.wiki.namespaces.Namespace.NamespaceValue;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.StringBufferInputStream;
-
 import legunto.Importer;
 import legunto.template.Frame;
-
 import org.luaj.vm2.Globals;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
@@ -24,10 +12,23 @@ import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.ThreeArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
 
+import java.io.*;
+
 public class MwCommon extends MwInterface {
     private final Globals globals;
-    private final File[] searchPath;
     private Frame currentFrame;
+
+    private static final String[] LIBRARY_PATH = new String[] {
+        ".",
+        "luabit",
+        "ustring",
+    };
+
+    private static final String[] MODULE_PATH = new String[] {
+        ".",
+        "modules"
+    };
+
 
     private static final MwInterface[] INTERFACES = { new MwSite(),
             new MwUstring(), new MwTitle(),
@@ -38,10 +39,9 @@ public class MwCommon extends MwInterface {
     // "mw.html"
     };
 
-    public MwCommon(IWikiModel model, Globals globals, File... searchPath)
+    public MwCommon(IWikiModel model, Globals globals)
             throws IOException {
         this.globals = globals;
-        this.searchPath = searchPath;
         load(model);
     }
 
@@ -56,8 +56,7 @@ public class MwCommon extends MwInterface {
         if (!name.startsWith(Importer.MODULE)) {
             name = Importer.MODULE + name;
         }
-        LuaValue chunk = globals.load(findModule(model, module), name, "t",
-                globals).call();
+        LuaValue chunk = globals.load(findModule(model, module), name, "t", globals).call();
         LuaValue luaFunction = chunk.get(method);
         LuaValue executeFunction = globals.get("mw").get("executeFunction");
 
@@ -79,13 +78,14 @@ public class MwCommon extends MwInterface {
     private void load(IWikiModel model, MwInterface luaInterface)
             throws IOException {
         // logger.debug("loading interface " + luaInterface);
-        InputStream is = findModule(model, luaInterface.name());
-        globals.set("mw_interface", luaInterface.getInterface());
-        LuaValue pkg = globals.load(is, luaInterface.name(), "t", globals)
-                .call();
+
+        LuaValue pkg = globals.loadfile(luaInterface.name()+
+                (luaInterface.name().endsWith(".lua") ? "" : ".lua")).call();
+
         LuaValue setupInterface = pkg.get("setupInterface");
 
         if (!setupInterface.isnil()) {
+            globals.set("mw_interface", luaInterface.getInterface());
             setupInterface.call(luaInterface.getSetupOptions());
         }
     }
@@ -170,18 +170,35 @@ public class MwCommon extends MwInterface {
             @Override
             public LuaValue call(LuaValue arg) {
                 String name = arg.tojstring();
-                // logger.debug("loadPackage: " + name);
-                try {
-                    InputStream is = findModule(null, name);
-                    if (is != null) {
-                        return globals.load(is, name, "t", globals);
+
+                InputStream is = loadLocally(name);
+                if (is == null) {
+                    try {
+                        is = findModule(null, name);
+                    } catch (IOException ignored) {
                     }
-                } catch (IOException ignored) {
-                    // logger.error("error loading file", ignored);
                 }
-                return LuaValue.NIL;
+                if (is != null) {
+                    try {
+                        return globals.load(is, name, "t", globals);
+                    } finally {
+                        try { is.close(); } catch (IOException ignored) { }
+                    }
+                } else {
+                    return LuaValue.error("Could not load " + name);
+                }
             }
         };
+    }
+
+    private InputStream loadLocally(String name) {
+        for (String path : LIBRARY_PATH) {
+            InputStream is = globals.finder.findResource(path+"/"+name+".lua");
+            if (is != null) {
+                return is;
+            }
+        }
+        return null;
     }
 
     private InputStream findModule(IWikiModel model, String moduleName)
@@ -192,38 +209,30 @@ public class MwCommon extends MwInterface {
         // }
         name = name.replaceAll("/", "_");
         name = name.replaceAll(":", "_");
-        File file = null;
-        for (File path : searchPath) {
-            File f = new File(path, name);
-            if (f.isFile()) {
-                file = f;
+
+        InputStream is = null;
+        for (String path : MODULE_PATH) {
+            is = globals.finder.findResource(path+"/"+name);
+            if (is != null) {
                 break;
-            } else {
-                f = new File(f.getAbsolutePath() + ".lua");
-                if (f.isFile()) {
-                    file = f;
-                    break;
-                }
             }
         }
-        if (file != null && file.canRead() && file.length() > 0) {
-            // TestHelper.copyModule(file);
-            return new FileInputStream(file);
-        } else {
-            if (model != null) {
-                try {
-                    String content = model.getRawWikiContent(
-                            new ParsedPageName(
-                                    model.getNamespace().getModule(),
-                                    moduleName, true), null);
-                    if (content != null) {
-                        return new StringBufferInputStream(content);
-                    }
-                } catch (WikiModelContentException e) {
+        if (is != null) {
+            return is;
+        } else if (model != null) {
+            try {
+                String content = model.getRawWikiContent(
+                        new ParsedPageName(
+                                model.getNamespace().getModule(),
+                                moduleName, true), null);
+
+                if (content != null) {
+                    return new StringBufferInputStream(content);
                 }
+            } catch (WikiModelContentException ignored) {
             }
-            throw new FileNotFoundException("could not find module " + name);
         }
+        throw new FileNotFoundException("could not find module " + name);
     }
 
     @Override
