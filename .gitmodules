@@ -1,3 +1,7 @@
 [submodule "info.bliki.wiki/bliki-core/src/main/scribunto"]
 	path = info.bliki.wiki/bliki-core/src/main/scribunto
 	url = https://github.com/jberkel/scribunto.git
+[submodule "bliki-core/src/main/scribunto"]
+	path = bliki-core/src/main/scribunto
+	url = https://github.com/jberkel/scribunto.git
+	branch = legunto
