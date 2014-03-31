@@ -91,6 +91,9 @@
                 <directory>${basedir}/src/main/scribunto/engines/LuaCommon/lualib</directory>
                 <filtering>false</filtering>
             </resource>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+            </resource>
         </resources>
     </build>
     <distributionManagement>
