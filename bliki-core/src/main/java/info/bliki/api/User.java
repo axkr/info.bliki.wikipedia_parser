@@ -12,28 +12,22 @@ import java.util.List;
  */
 public class User {
     public static final String SUCCESS_ID = "Success";
-
     public static final String NEED_TOKEN_ID = "NeedToken";
-
     public static final String ILLEGAL_ID = "Illegal";
 
-    String result;
+    private String result;
+    private String userid;
 
-    String userid;
+    private final String username;
 
-    final private String username;
+    private String normalizedUsername;
+    private String token;
 
-    String normalizedUsername;
+    private final String password;
+    private final String actionUrl;
+    private final String domain;
 
-    String token;
-
-    final private String password;
-
-    final private String actionUrl;
-
-    final private String domain;
-
-    Connector connector;
+    private Connector connector;
 
     /**
      * Create a User for a Mediawiki wiki

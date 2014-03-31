@@ -41,6 +41,7 @@ public class Connector {
     public final static String PARAM_LOGIN_USERNAME = "lgusername";
     public final static String PARAM_LOGIN_USERID = "lguserid";
     public final static String PARAM_LOGIN_TOKEN = "lgtoken";
+
     public final static String PARAM_FORMAT = "format";
     public final static String PARAM_ACTION = "action";
     public final static String PARAM_TITLES = "titles";
@@ -324,6 +325,12 @@ public class Connector {
                 // System.out.println(responseBody);
                 XMLPagesParser parser = new XMLPagesParser(responseBody);
                 parser.parse();
+
+                List<String> warnings = parser.getWarnings();
+                if (!warnings.isEmpty()) {
+                    System.err.println("parser warnings: "+warnings);
+                }
+
                 return parser.getPagesList();
             }
         } catch (IOException e) {

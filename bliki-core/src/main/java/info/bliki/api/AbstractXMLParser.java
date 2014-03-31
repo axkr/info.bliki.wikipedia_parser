@@ -1,9 +1,5 @@
 package info.bliki.api;
 
-import java.io.IOException;
-import java.io.Reader;
-import java.io.StringReader;
-
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -11,27 +7,24 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.helpers.XMLReaderFactory;
 
+import java.io.IOException;
+import java.io.Reader;
+import java.io.StringReader;
+
 /**
  * Base class for reading XML strings.
  */
 public abstract class AbstractXMLParser extends DefaultHandler {
     public static final String TITLE_ID = "title";
-
     public static final String NS_ID = "ns";
-
     public static final String PAGE_ID = "pageid";
+    public static final String PAGE_TAG2 = "p";
+    public static final String PAGE_TAG1 = "page";
 
     protected Attributes fAttributes;
-
     protected StringBuffer fData;
-
     protected XMLReader fXMLReader;
-
     protected Reader fReader;
-
-    public static final String PAGE_TAG2 = "p";
-
-    public static final String PAGE_TAG1 = "page";
 
     public AbstractXMLParser(String xmlText) throws SAXException {
         super();
@@ -79,5 +72,4 @@ public abstract class AbstractXMLParser extends DefaultHandler {
         inputSource.setEncoding("UTF-8");
         fXMLReader.parse(inputSource);
     }
-
 }
