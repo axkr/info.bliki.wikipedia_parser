@@ -51,17 +51,14 @@ public class LaTeXConverter implements ITextConverter {
     /** replacements for whole Strings */
     static final String[] STRINGS_TO_REPLACE = new String[] { "..." };
 
-    public LaTeXConverter() {
-    }
-
-    public void nodesToText(List<? extends Object> nodes, Appendable resultBuffer, IWikiModel model) throws IOException {
+    public void nodesToText(List<?> nodes, Appendable resultBuffer, IWikiModel model) throws IOException {
         if (nodes != null && !nodes.isEmpty()) {
-            Iterator<? extends Object> childrenIt = nodes.iterator();
+            Iterator<?> childrenIt = nodes.iterator();
             while (childrenIt.hasNext()) {
                 Object item = childrenIt.next();
                 if (item != null) {
                     if (item instanceof List) {
-                        nodesToText((List) item, resultBuffer, model);
+                        nodesToText((List<?>) item, resultBuffer, model);
                     } else if (item instanceof ContentToken) {
                         ContentToken contentToken = (ContentToken) item;
                         resultBuffer.append(texEscapeString(contentToken.getContent()));
@@ -99,7 +96,7 @@ public class LaTeXConverter implements ITextConverter {
             }
         }
 
-        List children = node.getChildren();
+        List<?> children = node.getChildren();
         if (children.size() != 0) {
             nodesToText(children, resultBuffer, model);
         }
@@ -120,13 +117,13 @@ public class LaTeXConverter implements ITextConverter {
             resultBuffer.append("\">");
         }
         resultBuffer.append("<a class=\"internal\" href=\"");
-        resultBuffer.append(map.get("href").toString());
+        resultBuffer.append(map.get("href"));
         resultBuffer.append("\" title=\"");
         resultBuffer.append(caption);
         resultBuffer.append("\">");
 
         resultBuffer.append("<img src=\"");
-        resultBuffer.append(map.get("src").toString());
+        resultBuffer.append(map.get("src"));
         resultBuffer.append("\"");
 
         if (caption != null && caption.length() > 0) {
@@ -149,7 +146,7 @@ public class LaTeXConverter implements ITextConverter {
         resultBuffer.append(" />\n");
 
         resultBuffer.append("</a>");
-        List children = imageTagNode.getChildren();
+        List<?> children = imageTagNode.getChildren();
         if (children.size() != 0) {
             nodesToText(children, resultBuffer, model);
         }
@@ -228,20 +225,20 @@ public class LaTeXConverter implements ITextConverter {
                 }
             }
         } else if (node instanceof WPParagraphTag) {
-            List children = node.getChildren();
+            List<?> children = node.getChildren();
             if (children.size() != 0) {
                 converter.nodesToText(children, _out, model);
                 _out.append(PropertyManager.get("Paragraph.End"));
             }
         } else if (node instanceof WPTag) {
             if (name.equals("i")) {
-                _out.append(PropertyManager.get("Font.Italic.On") + "{}");
+                _out.append(PropertyManager.get("Font.Italic.On")).append("{}");
             } else if (name.equals("em")) {
-                _out.append(PropertyManager.get("Font.Italic.On") + "{}");
+                _out.append(PropertyManager.get("Font.Italic.On")).append("{}");
             } else if (name.equals("b")) {
-                _out.append(PropertyManager.get("Font.Bold.On") + "{}");
+                _out.append(PropertyManager.get("Font.Bold.On")).append("{}");
             } else if (name.equals("strong")) {
-                _out.append(PropertyManager.get("Font.Bold.On") + "{}");
+                _out.append(PropertyManager.get("Font.Bold.On")).append("{}");
             } else if (name.equals("h1")) {
                 _out.append(PropertyManager.get("Heading.3"));
             } else if (name.equals("h2")) {
@@ -256,18 +253,18 @@ public class LaTeXConverter implements ITextConverter {
                 _out.append(PropertyManager.get("Heading.0"));
             }
 
-            List children = node.getChildren();
+            List<?> children = node.getChildren();
             if (children.size() != 0) {
                 converter.nodesToText(children, _out, model);
             }
             if (name.equals("i")) {
-                _out.append(PropertyManager.get("Font.Italic.Off") + "{}");
+                _out.append(PropertyManager.get("Font.Italic.Off")).append("{}");
             } else if (name.equals("em")) {
-                _out.append(PropertyManager.get("Font.Italic.Off") + "{}");
+                _out.append(PropertyManager.get("Font.Italic.Off")).append("{}");
             } else if (name.equals("b")) {
-                _out.append(PropertyManager.get("Font.Bold.Off") + "{}");
+                _out.append(PropertyManager.get("Font.Bold.Off")).append("{}");
             } else if (name.equals("strong")) {
-                _out.append(PropertyManager.get("Font.Bold.Off") + "{}");
+                _out.append(PropertyManager.get("Font.Bold.Off")).append("{}");
             } else if ((name.equals("h1")) || (name.equals("h2")) || (name.equals("h3")) || (name.equals("h4"))) {
                 _out.append(PropertyManager.get("Heading.End"));
             } else if (name.equals("h5")) {
@@ -309,14 +306,14 @@ public class LaTeXConverter implements ITextConverter {
             String content = node.getBodyString();
             if (content != null && content.length() > 0) {
                 _out.append("\\begin{math}\n");
-                _out.append(content + "\n");
+                _out.append(content).append("\n");
                 _out.append("\\end{math}");
             }
         } else {
             // Map tagAtttributes = node.getAttributes();
             //
             // appendAttributes(buf, tagAtttributes);
-            List children = node.getChildren();
+            List<?> children = node.getChildren();
             if (children.size() != 0) {
                 converter.nodesToText(children, _out, model);
             }
@@ -405,8 +402,8 @@ public class LaTeXConverter implements ITextConverter {
         if (tagStack != null) {
             boolean hasLBrks = false;
             List<BaseToken> list = tagStack.getNodeList();
-            for (int i = 0; i < list.size(); i++) {
-                if (list.get(i) instanceof BrTag) {
+            for (BaseToken aList : list) {
+                if (aList instanceof BrTag) {
                     hasLBrks = true;
                     break; // for
                 }

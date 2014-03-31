@@ -10,7 +10,7 @@
     <packaging>jar</packaging>
     <name>Bliki (Core)</name>
     <version>3.1.01-SNAPSHOT</version>
-    <description> This is core project. </description>
+    <description> This is the core project.</description>
     <dependencies>
         <dependency>
             <groupId>commons-httpclient</groupId>
@@ -33,22 +33,6 @@
     </dependencies>
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <configuration>
-                    <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                    <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
@@ -79,15 +63,4 @@
             </resource>
         </resources>
     </build>
-    <distributionManagement>
-        <repository>
-            <id>googlecode.svn.gwtwiki</id>
-            <url>dav:https://gwtwiki.googlecode.com/svn/maven-repository/</url>
-        </repository>
-        <snapshotRepository>
-            <id>googlecode.svn.gwtwiki</id>
-            <url>dav:https://gwtwiki.googlecode.com/svn/maven-snapshot-repository/</url>
-            <uniqueVersion>false</uniqueVersion>
-        </snapshotRepository>
-    </distributionManagement>
 </project>
