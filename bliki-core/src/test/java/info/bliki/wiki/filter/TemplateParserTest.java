@@ -7,6 +7,8 @@ import junit.framework.TestSuite;
 import java.util.HashMap;
 import java.util.Locale;
 
+import static org.fest.assertions.api.Assertions.assertThat;
+
 public class TemplateParserTest extends FilterTestSupport {
 
     public TemplateParserTest(String name) {
@@ -17,7 +19,7 @@ public class TemplateParserTest extends FilterTestSupport {
         return new TestSuite(TemplateParserTest.class);
     }
 
-    private final String TEST_STRING_03 = "{{{1|{{PAGENAME}}}}}";
+    private static final String TEST_STRING_03 = "{{{1|{{PAGENAME}}}}}";
 
     public void testWeather07() {
         assertEquals("20\n", wikiModel.parseTemplates("{{WeatherBox03}}\n"));
@@ -495,7 +497,7 @@ public class TemplateParserTest extends FilterTestSupport {
         assertEquals("<span class=\"error\">Template loop detected: <strong class=\"selflink\">Template:recursion</strong></span>", wikiModel.parseTemplates("{{recursion}}", false));
     }
 
-    private final String TEST_STRING_01 = "[[Category:Interwiki templates|wikipedia]]\n" + "[[zh:Template:Wikipedia]]\n"
+    private static final String TEST_STRING_01 = "[[Category:Interwiki templates|wikipedia]]\n" + "[[zh:Template:Wikipedia]]\n"
             + "</noinclude><div class=\"sister-\n" + "wikipedia\"><div class=\"sister-project\"><div\n"
             + "class=\"noprint\" style=\"clear: right; border: solid #aaa\n"
             + "1px; margin: 0 0 1em 1em; font-size: 90%; background: #f9f9f9; width:\n"
@@ -534,7 +536,7 @@ public class TemplateParserTest extends FilterTestSupport {
                 + "</div></div><span class=\"interProject\">[[w:\n" + "PAGENAME|Wikipedia ]]</span>", wikiModel.parseTemplates(temp, false));
     }
 
-    private final String TEST_STRING_02 = " {{#if:{{{cat|\n" + "{{{category|}}}}}}|a category|{{#if:{{{mul|{{{dab|\n"
+    private static final String TEST_STRING_02 = " {{#if:{{{cat|\n" + "{{{category|}}}}}}|a category|{{#if:{{{mul|{{{dab|\n"
             + "{{{disambiguation|}}}}}}}}}|articles|{{#if:{{{mulcat|}}}|categories|an\n" + "article}}}}}} on:\n";
 
     public void testNestedIf02() {
@@ -545,7 +547,7 @@ public class TemplateParserTest extends FilterTestSupport {
         assertEquals("PAGENAME", wikiModel.parseTemplates(TEST_STRING_03, false));
     }
 
-    private final String TEST_STRING_04 = "{{ucfirst:{{{cat|{{{category}}}}}}}}";
+    private static final String TEST_STRING_04 = "{{ucfirst:{{{cat|{{{category}}}}}}}}";
 
     public void testNestedIf04() {
         assertEquals("{{{category}}}", wikiModel.parseTemplates(TEST_STRING_04, false));
@@ -760,7 +762,7 @@ public class TemplateParserTest extends FilterTestSupport {
         assertEquals("0.037037037037037035", wikiModel.parseTemplates("{{#expr:3 ^ (-3)}}", false));
         assertEquals("NAN", wikiModel.parseTemplates("{{#expr:(-4) ^ (-1/2)}}", false));
         assertEquals("1", wikiModel.parseTemplates("{{#expr:ln EXp 1 }}", false));
-        assertEquals("2.7182818284590455", wikiModel.parseTemplates("{{#expr:exp ln e }}", false));
+        assertThat(wikiModel.parseTemplates("{{#expr:exp ln e }}", false)).startsWith("2.718281828459045");
         assertEquals("1", wikiModel.parseTemplates("{{#expr:sin (pi/2) }}", false));
         assertEquals("6.123233995736766E-17", wikiModel.parseTemplates("{{#expr:(sin pi)/2 }}", false));
         assertEquals("6.123233995736766E-17", wikiModel.parseTemplates("{{#expr:sin pi/2 }}", false));
