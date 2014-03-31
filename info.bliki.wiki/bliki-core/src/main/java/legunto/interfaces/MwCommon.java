@@ -40,10 +40,10 @@ public class MwCommon extends MwInterface {
         new MwSite(),
         new MwUstring(),
         new MwTitle(),
+        new MwText(),
+//        new MwLanguage(),
     // "mw.uri",
-    // "mw.language",
     // "mw.message",
-    // "mw.text",
     // "mw.html"
     };
 
@@ -233,6 +233,7 @@ public class MwCommon extends MwInterface {
                 break;
             }
         }
+
         if (is != null) {
             return is;
         } else if (model != null) {

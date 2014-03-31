@@ -38,12 +38,13 @@ public class Invoke extends AbstractTemplateFunction {
         }
         String module = parts.get(0);
         String method = parts.get(1);
+        Frame parent = model.getFrame();
         try {
             Map<String, String> map = getParameters(parts, model);
             System.out.println(module + " - " + method + " - " + map.toString());
-            return executor.run(model, module, method, new Frame(map, model.getFrame()));
+            return executor.run(model, module, method, new Frame(map, parent));
         } finally {
-            model.setFrame(null);
+            model.setFrame(parent);
         }
     }
 
