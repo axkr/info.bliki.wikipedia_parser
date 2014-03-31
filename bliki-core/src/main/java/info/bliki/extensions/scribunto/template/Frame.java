@@ -1,4 +1,4 @@
-package legunto.template;
+package info.bliki.extensions.scribunto.template;
 
 import org.luaj.vm2.LuaValue;
 

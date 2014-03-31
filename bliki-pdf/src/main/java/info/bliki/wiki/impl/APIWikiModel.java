@@ -15,8 +15,8 @@ import info.bliki.wiki.model.ImageFormat;
 import info.bliki.wiki.model.WikiModel;
 import info.bliki.wiki.model.WikiModelContentException;
 import info.bliki.wiki.namespaces.INamespace.NamespaceCode;
-import legunto.template.Frame;
-import legunto.template.ModuleExecutor;
+import info.bliki.extensions.scribunto.template.Frame;
+import info.bliki.extensions.scribunto.template.ModuleExecutor;
 
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -1,5 +1,7 @@
-package legunto.template;
+package info.bliki.extensions.scribunto.template;
 
+import info.bliki.extensions.scribunto.template.Frame;
+import info.bliki.extensions.scribunto.template.ModuleExecutor;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

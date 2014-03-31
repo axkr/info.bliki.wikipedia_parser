@@ -1,4 +1,4 @@
-package legunto;
+package info.bliki.extensions.scribunto;
 
 
 import javax.xml.stream.EventFilter;

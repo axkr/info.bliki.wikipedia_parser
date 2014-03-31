@@ -1,9 +1,9 @@
-package legunto.template;
+package info.bliki.extensions.scribunto.template;
 
 import java.io.IOException;
 
 import info.bliki.wiki.model.IWikiModel;
-import legunto.interfaces.MwCommon;
+import info.bliki.extensions.scribunto.interfaces.MwCommon;
 import org.luaj.vm2.Globals;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;

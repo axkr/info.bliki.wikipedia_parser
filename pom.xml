@@ -7,8 +7,9 @@
     <packaging>pom</packaging>
     <name>Bliki POM</name>
     <version>3.1.01-SNAPSHOT</version>
-    <description>The Bliki API is a Java-based Wiki to HTML renderer
-        with MediaWiki syntax support.</description>
+    <description>
+        The Bliki API is a Java-based Wiki to HTML renderer with MediaWiki syntax support.
+    </description>
 
     <organization>
         <name>Java Wikipedia API (Bliki engine)</name>

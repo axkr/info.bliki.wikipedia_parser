@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.Map;
 
 import info.bliki.wiki.model.IWikiModel;
-import legunto.template.Frame;
-import legunto.template.ModuleExecutor;
+import info.bliki.extensions.scribunto.template.Frame;
+import info.bliki.extensions.scribunto.template.ModuleExecutor;
 
 /**
  * A template parser function for <code>{{ #invoke: ... }}</code> syntax.

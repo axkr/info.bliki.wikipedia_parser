@@ -1,11 +1,11 @@
-package legunto.interfaces;
+package info.bliki.extensions.scribunto.interfaces;
 
 import info.bliki.wiki.filter.AbstractParser;
 import info.bliki.wiki.filter.AbstractParser.ParsedPageName;
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.model.WikiModelContentException;
-import legunto.Importer;
-import legunto.template.Frame;
+import info.bliki.extensions.scribunto.Importer;
+import info.bliki.extensions.scribunto.template.Frame;
 import org.luaj.vm2.Globals;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;

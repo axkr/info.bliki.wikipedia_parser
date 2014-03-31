@@ -20,8 +20,8 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
 
-import legunto.template.Frame;
-import legunto.template.ModuleExecutor;
+import info.bliki.extensions.scribunto.template.Frame;
+import info.bliki.extensions.scribunto.template.ModuleExecutor;
 
 /**
  * Interface for rendering a wiki model

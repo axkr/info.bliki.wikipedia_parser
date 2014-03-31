@@ -46,8 +46,8 @@ import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.TimeZone;
 
-import legunto.template.Frame;
-import legunto.template.ModuleExecutor;
+import info.bliki.extensions.scribunto.template.Frame;
+import info.bliki.extensions.scribunto.template.ModuleExecutor;
 
 /**
  * Standard model implementation for the Wikipedia syntax
