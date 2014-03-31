@@ -1,5 +1,12 @@
 package info.bliki.api;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.HttpClientBuilder;
+
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,10 +15,6 @@ import java.net.ConnectException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.httpclient.HttpClient;
-import org.apache.commons.httpclient.HttpException;
-import org.apache.commons.httpclient.MultiThreadedHttpConnectionManager;
-import org.apache.commons.httpclient.methods.GetMethod;
 
 /**
  * Manages page data from the <a
@@ -144,11 +147,16 @@ public class Page extends PageInfo {
     public void downloadImageUrl(OutputStream outputStream, String url) {
         if (url != null && url.length() > 3) {
             BufferedInputStream bis = null;
-            GetMethod method = null;
+            HttpGet request = null;
             try {
-                HttpClient client = new HttpClient();
-                client = new HttpClient(new MultiThreadedHttpConnectionManager());
-                client.getHttpConnectionManager().getParams().setConnectionTimeout(30000);
+                HttpClient client = HttpClientBuilder
+                        .create()
+                        .setDefaultRequestConfig(
+                            RequestConfig.custom()
+                                    .setConnectTimeout(30000)
+                                    .setRedirectsEnabled(false)
+                                    .build())
+                        .build();
 
                 String extension = "jpg";
                 int index = url.lastIndexOf('.');
@@ -159,16 +167,14 @@ public class Page extends PageInfo {
                         extension = extension2;
                     }
                 }
-                method = new GetMethod(url);
-                method.setFollowRedirects(false);
-                method.setRequestHeader("accept", "image/" + extension);
-                method.setRequestHeader("User-Agent", Connector.USER_AGENT);
-                method.setFollowRedirects(false);
+                request = new HttpGet(url);
+                request.setHeader("accept", "image/" + extension);
+                request.setHeader("User-Agent", Connector.USER_AGENT);
 
-                // Execute the GET method
-                int statusCode = client.executeMethod(method);
-                if (statusCode == 200) {
-                    InputStream is = method.getResponseBodyAsStream();
+                // Execute the GET request
+                HttpResponse response = client.execute(request);
+                if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+                    InputStream is = response.getEntity().getContent();
                     bis = new BufferedInputStream(is);
                     byte[] b = new byte[BLOCK_SIZE];
                     int count = bis.read(b);
@@ -183,8 +189,6 @@ public class Page extends PageInfo {
                 // System.out.println(statusCode);
             } catch (ConnectException e) {
               e.printStackTrace();
-            } catch (HttpException e) {
-                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (Exception e) {
@@ -197,8 +201,8 @@ public class Page extends PageInfo {
                         e.printStackTrace();
                     }
                 }
-                if (method != null) {
-                    method.releaseConnection();
+                if (request != null) {
+                    request.reset();
                 }
             }
         }

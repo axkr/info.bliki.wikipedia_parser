@@ -1,12 +1,14 @@
 package info.bliki.api.query;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+
 import java.util.Collection;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
-import java.util.Map.Entry;
 
-import org.apache.commons.httpclient.NameValuePair;
 
 public class RequestBuilder {
     Map<String, String> fQueryMap = new TreeMap<String, String>();
@@ -254,9 +256,9 @@ public class RequestBuilder {
         int count = 0;
         for (Map.Entry<String, String> entry : set) {
             if (entry.getValue() != null && entry.getValue().length() > 0) {
-                nameValuePairs[count++] = new NameValuePair(entry.getKey(), entry.getValue());
+                nameValuePairs[count++] = new BasicNameValuePair(entry.getKey(), entry.getValue());
             } else {
-                nameValuePairs[count++] = new NameValuePair(entry.getKey(), "");
+                nameValuePairs[count++] = new BasicNameValuePair(entry.getKey(), "");
             }
         }
         return nameValuePairs;

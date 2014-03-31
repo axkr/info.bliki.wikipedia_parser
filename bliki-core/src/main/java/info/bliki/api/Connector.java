@@ -3,25 +3,28 @@ package info.bliki.api;
 import info.bliki.api.query.Edit;
 import info.bliki.api.query.Query;
 import info.bliki.api.query.RequestBuilder;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.zip.GZIPInputStream;
-
-import org.apache.commons.httpclient.Header;
-import org.apache.commons.httpclient.HttpClient;
-import org.apache.commons.httpclient.HttpException;
-import org.apache.commons.httpclient.HttpMethod;
-import org.apache.commons.httpclient.HttpStatus;
-import org.apache.commons.httpclient.MultiThreadedHttpConnectionManager;
-import org.apache.commons.httpclient.NameValuePair;
-import org.apache.commons.httpclient.methods.PostMethod;
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.entity.ContentType;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.conn.SystemDefaultRoutePlanner;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
 import org.xml.sax.SAXException;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.ProxySelector;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Manages the queries for the <a
@@ -33,7 +36,6 @@ import org.xml.sax.SAXException;
  */
 public class Connector {
     final static public String USER_AGENT = "JavaWikipediaAPI/3.0 http://code.google.com/p/gwtwiki/";
-
     final static public String UTF8_CHARSET = "utf-8";
 
     public final static String PARAM_LOGIN_USERNAME = "lgusername";
@@ -44,10 +46,17 @@ public class Connector {
     public final static String PARAM_TITLES = "titles";
     public final static String PARAM_PAGE = "page";
 
-    // create a ConnectionManager
-    private MultiThreadedHttpConnectionManager manager;
-
     private HttpClient client;
+
+    public Connector() {
+        client = HttpClientBuilder
+                .create()
+                .disableRedirectHandling()
+                .setRoutePlanner(new SystemDefaultRoutePlanner(ProxySelector.getDefault()))
+//                .setMaxConnPerRoute(6)
+//                .setMaxConnTotal(18)
+                .build();
+    }
 
     /**
      * Format the response body as XML String. Especially for some obscure <a
@@ -55,17 +64,17 @@ public class Connector {
      * cases. See <a
      * href="http://code.google.com/p/gwtwiki/issues/detail?id=33">Issue #33</a>
      *
-     * @param method
+     * @param response
      * @return XML string
      * @throws IOException
      */
-    public static String getAsXmlString(HttpMethod method) throws IOException {
-        Header contentEncoding = method.getResponseHeader("Content-Encoding");
-        InputStream instream = method.getResponseBodyAsStream();
-        if (contentEncoding != null && contentEncoding.getValue().equalsIgnoreCase("gzip")) {
-            instream = new GZIPInputStream(instream);
+    public static String getAsXmlString(HttpResponse response) throws IOException {
+        ContentType type = ContentType.get(response.getEntity());
+        if (!type.getMimeType().startsWith("text/xml")) {
+            throw new IOException("Invalid content-type: "+type);
         }
-        String responseBody = convertStreamToString(instream);
+
+        String responseBody = EntityUtils.toString(response.getEntity());
         if (responseBody.length() > 0 && responseBody.charAt(0) != '<') {
             // try to find XML.
             int indx = responseBody.indexOf("<?xml");
@@ -76,58 +85,23 @@ public class Connector {
         return responseBody;
     }
 
-    private static String convertStreamToString(InputStream is) throws IOException {
-        /*
-         * To convert the InputStream to String we use the BufferedReader.readLine()
-         * method. We iterate until the BufferedReader return null which means
-         * there's no more data to read. Each line will appended to a StringBuilder
-         * and returned as String.
-         */
-        if (is != null) {
-            StringBuilder sb = new StringBuilder();
-            String line;
-
-            try {
-                BufferedReader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
-                while ((line = reader.readLine()) != null) {
-                    sb.append(line).append("\n");
-                }
-            } finally {
-                is.close();
-            }
-            return sb.toString();
-        }
-        return "";
-    }
-
-    private String executeHttpMethod(HttpMethod method) {
+    private String executeHttpMethod(HttpRequestBase request) {
         try {
-            method.addRequestHeader("Accept-encoding", "gzip");
-            int responseCode = client.executeMethod(method);
-            if (responseCode == HttpStatus.SC_OK) {
-                return getAsXmlString(method);
+            HttpResponse response = client.execute(request);
+
+            if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+                return getAsXmlString(response);
             }
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        } catch (HttpException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            method.releaseConnection();
+            request.reset();
         }
         return null;
     }
 
-    public Connector() {
-        manager = new MultiThreadedHttpConnectionManager();
-        // manager.setMaxConnectionsPerHost(6);
-        // manager.setMaxTotalConnections(18);
-        // manager.setConnectionStaleCheckingEnabled(true);
-        // open the conversation
-        client = new HttpClient(manager);
-        // setHTTPClientParameters(client);
-    }
 
     /**
      * Complete the users login information. The user must contain a username,
@@ -143,7 +117,7 @@ public class Connector {
     public User login(User user) {
         // The first pass gets the secret token and the second logs the user in
         for (int i = 0; i < 2; i++) {
-            PostMethod method = new PostMethod(user.getActionUrl());
+            HttpPost method = new HttpPost(user.getActionUrl());
             String userName = user.getUsername();
 
             if (userName == null || userName.trim().length() == 0) {
@@ -151,26 +125,27 @@ public class Connector {
                 return user;
             }
 
-            method.setFollowRedirects(false);
-            method.addRequestHeader("User-Agent", USER_AGENT);
+            method.setHeader("User-Agent", USER_AGENT);
             String lgDomain = user.getDomain();
             List<NameValuePair> params = new ArrayList<NameValuePair>();
+            params.addAll(Arrays.asList(
+                new BasicNameValuePair("action", "login"),
+                new BasicNameValuePair("format", "xml"),
+                new BasicNameValuePair("lgname", userName),
+                new BasicNameValuePair("lgpassword", user.getPassword())
+            ));
 
-            method.addParameter("action", "login");
-            method.addParameter("format", "xml");
-            method.addParameter("lgname", userName);
-            method.addParameter("lgpassword", user.getPassword());
             if (lgDomain.length() > 0) {
-                method.addParameter("lgdomain", user.getDomain());
+                params.add(new BasicNameValuePair("lgdomain", user.getDomain()));
             }
             if (i > 0) {
-                method.addParameter("lgtoken", user.getToken());
+                params.add(new BasicNameValuePair("lgtoken", user.getToken()));
             }
-
+            method.setEntity(new UrlEncodedFormEntity(params, (Charset)null));
             try {
-                int responseCode = client.executeMethod(method);
-                if (responseCode == HttpStatus.SC_OK) {
-                    String responseBody = getAsXmlString(method);
+                HttpResponse response = client.execute(method);
+                if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+                    String responseBody = getAsXmlString(response);
                     XMLUserParser parser = new XMLUserParser(user, responseBody);
                     parser.parse();
                     if (i == 0 && user.getResult().equals(User.NEED_TOKEN_ID)) {
@@ -181,9 +156,6 @@ public class Connector {
                         break;
                     }
                 }
-            } catch (HttpException e) {
-                e.printStackTrace();
-                return null;
             } catch (IOException e) {
                 e.printStackTrace();
                 return null;
@@ -206,15 +178,6 @@ public class Connector {
      */
     public HttpClient getClient() {
         return client;
-    }
-
-    /**
-     * Get the HttpConnection manager.
-     *
-     * @return http connection manager
-     */
-    public MultiThreadedHttpConnectionManager getManager() {
-        return manager;
     }
 
     /**
@@ -401,27 +364,29 @@ public class Connector {
      *         otherwise
      */
     public String queryXML(User user, List<String> listOfTitleStrings, String[] valuePairs) {
-        PostMethod method = createAuthenticatedPostMethod(user);
-
-        StringBuffer titlesString = new StringBuffer();
+        StringBuilder titlesString = new StringBuilder();
         for (int i = 0; i < listOfTitleStrings.size(); i++) {
             titlesString.append(listOfTitleStrings.get(i));
             if (i < listOfTitleStrings.size() - 1) {
                 titlesString.append("|");
             }
         }
-
-        method.addParameter(new NameValuePair(PARAM_ACTION, "query"));
+        List<NameValuePair> parameters = new ArrayList<NameValuePair>();
+        parameters.add(new BasicNameValuePair(PARAM_ACTION, "query"));
         if (titlesString.length() > 0) {
             // don't encode the title for the NameValuePair !
-            method.addParameter(new NameValuePair(PARAM_TITLES, titlesString.toString()));
+            parameters.add(new BasicNameValuePair(PARAM_TITLES, titlesString.toString()));
         }
         if (valuePairs != null && valuePairs.length > 0) {
             for (int i = 0; i < valuePairs.length; i += 2) {
-                method.addParameter(new NameValuePair(valuePairs[i], valuePairs[i + 1]));
+                parameters.add(new BasicNameValuePair(valuePairs[i], valuePairs[i + 1]));
             }
         }
-        return executeHttpMethod(method);
+        return executeHttpMethod(
+                createAuthenticatedPostRequest(
+                    user,
+                    parameters.toArray(new NameValuePair[parameters.size()])
+                ));
     }
 
     public ParseData parse(User user, RequestBuilder requestBuilder) {
@@ -488,88 +453,23 @@ public class Connector {
      *         otherwise
      */
     public String sendXML(User user, RequestBuilder requestBuilder) {
-        PostMethod method = createAuthenticatedPostMethod(user);
-        method.addParameters(requestBuilder.getParameters());
-        return executeHttpMethod(method);
+        return executeHttpMethod(createAuthenticatedPostRequest(user, requestBuilder.getParameters()));
     }
 
-    private PostMethod createAuthenticatedPostMethod(User user) {
-        PostMethod method = new PostMethod(user.getActionUrl());
+    private HttpPost createAuthenticatedPostRequest(User user, NameValuePair[] parameters) {
+        HttpPost request = new HttpPost(user.getActionUrl());
+        request.setHeader("Content-Type", "application/x-www-form-urlencoded; charset=utf-8");
+        request.setHeader("User-Agent", USER_AGENT);
 
-        method.setFollowRedirects(false);
-
-        method.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=utf-8");
-        method.setRequestHeader("User-Agent", USER_AGENT);
-
-        method.addParameter(new NameValuePair(PARAM_LOGIN_USERNAME, user.getUserid()));
-        method.addParameter(new NameValuePair(PARAM_LOGIN_USERID, user.getNormalizedUsername()));
-        method.addParameter(new NameValuePair(PARAM_LOGIN_TOKEN, user.getToken()));
-        method.addParameter(new NameValuePair(PARAM_FORMAT, "xml"));
-        return method;
+        List<NameValuePair> parameterList = new ArrayList<NameValuePair>();
+        Collections.addAll(parameterList, parameters);
+        parameterList.addAll(Arrays.asList(
+            new BasicNameValuePair(PARAM_LOGIN_USERNAME, user.getUserid()),
+            new BasicNameValuePair(PARAM_LOGIN_USERID, user.getNormalizedUsername()),
+            new BasicNameValuePair(PARAM_LOGIN_TOKEN, user.getToken()),
+            new BasicNameValuePair(PARAM_FORMAT, "xml")
+        ));
+        request.setEntity(new UrlEncodedFormEntity(parameterList, (Charset)null));
+        return request;
     }
-
-    // TODO: this doesn't work at the moment:
-    // public boolean submit(User user, String actionUrl, String title, String
-    // uploadContent, String summary, String timestamp,
-    // boolean minorEdit, boolean watchThis) {
-    //
-    // PostMethod method = new PostMethod(actionUrl);
-    //
-    // method.setFollowRedirects(false);
-    // method.addRequestHeader("User-Agent", USER_AGENT);
-    // method.addRequestHeader("Content-Type",
-    // PostMethod.FORM_URL_ENCODED_CONTENT_TYPE + "; charset=" + UTF8_CHARSET);
-    // try {
-    //
-    // NameValuePair[] params = new NameValuePair[] { new NameValuePair("title",
-    // title),
-    // new NameValuePair("wpTextbox1", uploadContent), new
-    // NameValuePair("wpEdittime", timestamp),
-    // new NameValuePair("wpSummary", summary), new NameValuePair("wpEditToken",
-    // user.getToken()),
-    // new NameValuePair("wpSave", "yes"), new NameValuePair("action", "submit")
-    // };
-    // method.addParameters(params);
-    // if (minorEdit)
-    // method.addParameter("wpMinoredit", "1");
-    // if (watchThis)
-    // method.addParameter("wpWatchthis", "1");
-    //
-    // int responseCode = client.executeMethod(method);
-    // String responseBody = method.getResponseBodyAsString();
-    // // log(method);
-    //
-    // // since 11dec04 there is a single linefeed instead of an empty
-    // // page.. trim() helps.
-    // if (responseCode == 302 && responseBody.trim().length() == 0) {
-    // // log("store successful, reloading");
-    // // Loaded loaded = load(actionUrl, config.getUploadCharSet(),
-    // // title);
-    // // result = new Stored(actionUrl, config.getUploadCharSet(),
-    // // loaded.title, loaded.content, false);
-    // return true;
-    // } else if (responseCode == 200) {
-    // // // log("store not successful, conflict detected");
-    // // Parsed parsed = parseBody(config.getUploadCharSet(),
-    // // responseBody);
-    // // Content cont = new Content(parsed.timestamp, parsed.body);
-    // // result = new Stored(actionUrl, config.getUploadCharSet(),
-    // // parsed.title, cont, true);
-    // // } else {
-    // // throw new UnexpectedAnswerException(
-    // // "store not successful: expected 200 OK, got "
-    // // + method.getStatusLine());
-    // }
-    // } catch (UnsupportedEncodingException e) {
-    // e.printStackTrace();
-    // } catch (HttpException e) {
-    // e.printStackTrace();
-    // } catch (IOException e) {
-    // e.printStackTrace();
-    // } finally {
-    // method.releaseConnection();
-    // }
-    // return false;
-    // }
-
 }
