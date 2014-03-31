@@ -54,7 +54,7 @@ public class MediaWikiTestModel extends WikiModel {
 
         // set up a simple cache mock-up for JUnit tests. HashMap is not usable for
         // production!
-        Configuration.DEFAULT_CONFIGURATION.setTemplateCallsCache(new HashMap());
+        Configuration.DEFAULT_CONFIGURATION.setTemplateCallsCache(new HashMap<String, String>());
 
         fSemanticWebActive = false;
     }

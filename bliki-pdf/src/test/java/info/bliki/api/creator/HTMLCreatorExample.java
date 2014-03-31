@@ -135,7 +135,7 @@ public class HTMLCreatorExample {
             wikiModel.setUp();
             // set up a simple cache for this example. HashMap is not usable for
             // production! Use something like http://ehcache.org for production!
-            Configuration.DEFAULT_CONFIGURATION.setTemplateCallsCache(new HashMap());
+            Configuration.DEFAULT_CONFIGURATION.setTemplateCallsCache(new HashMap<String,String>());
             creator.renderToFile(generatedHTMLFilename);
             System.out.println("Created file: " + generatedHTMLFilename);
             return wikiModel.getRedirectLink();
