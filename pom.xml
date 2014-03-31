@@ -9,20 +9,28 @@
     <version>3.1.01-SNAPSHOT</version>
     <description>The Bliki API is a Java-based Wiki to HTML renderer
         with MediaWiki syntax support.</description>
+
     <organization>
         <name>Java Wikipedia API (Bliki engine)</name>
         <url>http://code.google.com/p/gwtwiki/</url>
     </organization>
+
     <scm>
-        <connection>scm:svn:http://gwtwiki.googlecode.com/svn/trunk/</connection>
-        <developerConnection>scm:svn:https://gwtwiki.googlecode.com/svn/trunk/</developerConnection>
-        <tag>HEAD</tag>
-        <url>http://code.google.com/p/gwtwiki/source/browse/</url>
+        <connection>scm:git:https://bitbucket.org/axelclk/info.bliki.wiki.git</connection>
+        <developerConnection>scm:git:ssh://git@bitbucket.org:axelclk/info.bliki.wiki.git</developerConnection>
+        <tag>master</tag>
+        <url>https://bitbucket.org/axelclk/info.bliki.wiki/src</url>
     </scm>
+
     <issueManagement>
         <system>Google Code</system>
         <url>http://code.google.com/p/gwtwiki/issues/list</url>
     </issueManagement>
+
+    <ciManagement>
+        <url>https://drone.io/bitbucket.org/axelclk/info.bliki.wiki</url>
+    </ciManagement>
+
     <licenses>
         <license>
             <name>Eclipse Public License 1.0</name>
@@ -35,11 +43,13 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+
     <modules>
         <module>bliki-core</module>
         <module>bliki-pdf</module>
         <module>bliki-addons</module>
     </modules>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -86,6 +96,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
     <build>
         <plugins>
             <plugin>
@@ -114,6 +125,7 @@
             </plugin>
         </plugins>
     </build>
+
     <distributionManagement>
         <repository>
             <id>googlecode.svn.gwtwiki</id>
