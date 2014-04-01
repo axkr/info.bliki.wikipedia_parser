@@ -40,6 +40,11 @@ public class MwText extends MwInterface {
 
     @Override
     public LuaValue getSetupOptions() {
-        return null;
+        LuaTable table = new LuaTable();
+        table.set("nowiki_protocols", new LuaTable());
+        table.set("comma", ", ");
+        table.set("and", " and ");
+        table.set("ellipsis", "...");
+        return table;
     }
 }

@@ -14,6 +14,7 @@ import org.luaj.vm2.lib.LibFunction;
 import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.ThreeArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
+import org.luaj.vm2.lib.VarArgFunction;
 
 import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
@@ -21,6 +22,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class MwCommon extends MwInterface {
+    public static final String MODULE_NS = "Module:";
+
     private final Globals globals;
     private final IWikiModel model;
     private Frame currentFrame;
@@ -41,16 +44,17 @@ public class MwCommon extends MwInterface {
         new MwUstring(),
         new MwTitle(),
         new MwText(),
-//        new MwLanguage(),
-    // "mw.uri",
-    // "mw.message",
-    // "mw.html"
+        new MwUri(),
+        new MwMessage(),
+        new MwHtml(),
+        // new MwLanguage()
     };
 
     public MwCommon(IWikiModel model, Globals globals)
             throws IOException {
         this.globals = globals;
         this.model = model;
+        extendGlobals(globals);
         load();
     }
 
@@ -217,6 +221,9 @@ public class MwCommon extends MwInterface {
                 return is;
             }
         }
+        if (name.startsWith(MODULE_NS)) {
+            return loadLocally(name.substring(MODULE_NS.length()));
+        }
         return null;
     }
 
@@ -258,5 +265,39 @@ public class MwCommon extends MwInterface {
     @Override
     public LuaValue getSetupOptions() {
         return new LuaTable();
+    }
+
+    private void extendGlobals(final Globals globals) {
+        globals.set("setfenv", new TwoArgFunction() {
+            @Override
+            public LuaValue call(LuaValue f, LuaValue env) {
+                return f;
+            }
+        });
+        globals.set("gefenv", new OneArgFunction() {
+            public LuaValue call(LuaValue f) {
+                return globals;
+            }
+        });
+        globals.set("unpack", new unpack());
+
+        LuaValue math = globals.get("math");
+        math.set("log10", new OneArgFunction() {
+            @Override
+            public LuaValue call(LuaValue luaValue) {
+                return LuaValue.valueOf(Math.log10(luaValue.checkdouble()));
+            }
+        });
+    }
+
+    private static class unpack extends VarArgFunction {
+        public Varargs invoke(Varargs args) {
+            LuaTable t = args.checktable(1);
+            switch (args.narg()) {
+                case 1: return t.unpack();
+                case 2: return t.unpack(args.checkint(2));
+                default: return t.unpack(args.checkint(2), args.checkint(3));
+            }
+        }
     }
 }

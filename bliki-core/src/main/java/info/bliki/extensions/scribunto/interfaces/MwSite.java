@@ -41,23 +41,25 @@ public class MwSite extends MwInterface {
 
     private LuaTable namespaces() {
         LuaTable table = new LuaTable();
+        table.set("default", ns("Default", true));
+        table.set("Module",  ns("Module", true));
+        table.set("Module_talk",  ns("Module", false));
+        table.set("Special", ns("Special", true));
+        return table;
+    }
+
+    private LuaTable ns(String name, boolean content) {
         LuaTable ns = new LuaTable();
-
-        ns.set("isContent", LuaValue.valueOf(false));
-        ns.set("isTalk", LuaValue.valueOf(false));
+        ns.set("isContent", LuaValue.valueOf(content));
+        ns.set("isTalk",    LuaValue.valueOf(!content));
         ns.set("interwiki", "interwiki");
-
         LuaTable subject = new LuaTable();
         subject.set("name", "subjectName");
-
         ns.set("subject", subject);
-        ns.set("name", "name");
-        ns.set("talk", "talk");
+        ns.set("name", name);
+        ns.set("talk", name+"_talk");
+        ns.set("id", name+"_id");
         ns.set("aliases", new LuaTable());
-        ns.set("id", "id");
-
-        table.set("default", ns);
-        table.set("Special", ns);
-        return table;
+        return ns;
     }
 }
