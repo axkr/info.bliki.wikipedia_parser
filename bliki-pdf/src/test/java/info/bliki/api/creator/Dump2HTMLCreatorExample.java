@@ -8,6 +8,7 @@ import info.bliki.wiki.filter.Encoder;
 import info.bliki.wiki.impl.DumpWikiModel;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import org.xml.sax.SAXException;
 
@@ -54,8 +55,6 @@ public class Dump2HTMLCreatorExample {
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
-                } catch (Exception e1) {
-                    e1.printStackTrace();
                 }
             }
         }
@@ -100,23 +99,13 @@ public class Dump2HTMLCreatorExample {
         }
         String databaseSubdirectory = "WikiDumpDB";
 
-        WikiDB db = null;
+        WikiDB db;
 
         try {
             db = new WikiDB(mainDirectory, databaseSubdirectory);
             return db;
-        } catch (IOException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
-        } catch (Exception e1) {
-            e1.printStackTrace();
-        } finally {
-            // if (db != null) {
-            // try {
-            // db.tearDown();
-            // } catch (Exception e) {
-            // e.printStackTrace();
-            // }
-            // }
         }
         return null;
     }

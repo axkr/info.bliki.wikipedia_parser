@@ -8,6 +8,7 @@ import info.bliki.wiki.model.Configuration;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Locale;
 
@@ -21,7 +22,7 @@ import java.util.Locale;
  */
 public class HTMLCreatorExample {
 
-    private static String TEXT_ISSUE_96 = "{{Shortcut|WP:ADTDO}}{{Wikipedia:Hauptseite/Artikel des Tages/Bearbeitungshinweise}}\n"
+    private static final String TEXT_ISSUE_96 = "{{Shortcut|WP:ADTDO}}{{Wikipedia:Hauptseite/Artikel des Tages/Bearbeitungshinweise}}\n"
             + "<onlyinclude> {{AdT-Vorschlag\n"
             + "| DATUM = 28.07.2011\n"
             + "| LEMMA = Bhaktapur\n"
@@ -73,10 +74,8 @@ public class HTMLCreatorExample {
             wikiModel.setUp();
             creator.renderToFile(rawWikiText, title, new HTMLConverter(), generatedHTMLFilename);
             System.out.println("Created file: " + generatedHTMLFilename);
-        } catch (IOException e) {
+        } catch (IOException | SQLException e) {
             e.printStackTrace();
-        } catch (Exception e1) {
-            e1.printStackTrace();
         } finally {
             if (db != null) {
                 try {
@@ -139,10 +138,8 @@ public class HTMLCreatorExample {
             creator.renderToFile(generatedHTMLFilename);
             System.out.println("Created file: " + generatedHTMLFilename);
             return wikiModel.getRedirectLink();
-        } catch (IOException e) {
+        } catch (IOException | SQLException e) {
             e.printStackTrace();
-        } catch (Exception e1) {
-            e1.printStackTrace();
         } finally {
             if (db != null) {
                 try {

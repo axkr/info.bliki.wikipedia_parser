@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
@@ -56,10 +57,14 @@ public class WikiDB {
      *          the subdirectory name where the database files should be stored.
      *          This directory should not exist if you would like to create a
      *          completely new database.
-     * @throws Exception
+     * @throws java.sql.SQLException
      */
-    public WikiDB(String directory, String databaseSubdirectoryName) throws Exception {
-        Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+    public WikiDB(String directory, String databaseSubdirectoryName) throws SQLException {
+        try {
+            Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+        } catch (ClassNotFoundException e) {
+            throw new SQLException("embedded derby driver not found, check your classpath");
+        }
         Properties properties = new Properties();
         properties.put("user", "user1");
         properties.put("password", "user1");
@@ -106,14 +111,11 @@ public class WikiDB {
     public TopicData selectTopic(String name) throws Exception {
         TopicData topicData = new TopicData(name);
         fSelectContent.setString(1, name);
-        ResultSet resultSet = fSelectContent.executeQuery();
-        try {
+        try (ResultSet resultSet = fSelectContent.executeQuery()) {
             if (resultSet.next()) {
                 topicData.setContent(resultSet.getString(1));
                 return topicData;
             }
-        } finally {
-            resultSet.close();
         }
         return null;
     }
@@ -141,15 +143,12 @@ public class WikiDB {
     public ImageData selectImage(String imageName) throws Exception {
         ImageData imageData = new ImageData(imageName);
         fSelectImage.setString(1, imageName);
-        ResultSet resultSet = fSelectImage.executeQuery();
-        try {
+        try (ResultSet resultSet = fSelectImage.executeQuery()) {
             if (resultSet.next()) {
                 imageData.setUrl(resultSet.getString(1));
                 imageData.setFilename(resultSet.getString(2));
                 return imageData;
             }
-        } finally {
-            resultSet.close();
         }
         return null;
     }
@@ -168,13 +167,13 @@ public class WikiDB {
         fUpdateTopicContent.execute();
     }
 
-    private void createTableIfItDoesntExist() throws Exception {
+    private void createTableIfItDoesntExist() throws SQLException {
 
         ResultSet resultSet = fConnection.getMetaData().getTables("%", "%", "%", new String[] { "TABLE" });
         // int columnCnt = resultSet.getMetaData().getColumnCount();
         boolean shouldCreateTableTopic = true;
         boolean shouldCreateTableImage = true;
-        String tableName = null;
+        String tableName;
         while (resultSet.next() && shouldCreateTableTopic) {
             tableName = resultSet.getString("TABLE_NAME");
             if (tableName.equalsIgnoreCase("topic")) {
