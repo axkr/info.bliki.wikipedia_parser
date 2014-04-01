@@ -59,7 +59,7 @@ public class MwTitle extends MwInterface {
 
     private LuaValue title() {
         return title(
-            LuaValue.valueOf("ns"),
+            LuaValue.valueOf("default"),
             LuaValue.valueOf("title"),
             LuaValue.valueOf("fragment"),
             LuaValue.valueOf("interwiki"));

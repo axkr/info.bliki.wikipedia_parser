@@ -72,6 +72,10 @@
                 <directory>${basedir}/src/main/scribunto/tests/engines/LuaCommon</directory>
                 <filtering>false</filtering>
             </testResource>
+            <testResource>
+                <directory>${basedir}/src/test/resources</directory>
+                <filtering>false</filtering>
+            </testResource>
         </testResources>
     </build>
 </project>
