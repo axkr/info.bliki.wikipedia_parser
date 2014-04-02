@@ -1,22 +1,15 @@
 package info.bliki.wiki.filter;
 
-import junit.framework.Test;
-import junit.framework.TestSuite;
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 public class PreFilterTest extends FilterTestSupport {
-    public PreFilterTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(PreFilterTest.class);
-    }
 
     /**
      * See Issue 106
      *
      */
-    public void testPre4() {
+    @Test public void testPre4() {
       assertEquals("<h2><span class=\"mw-headline\" id=\"Peanut_Butter_.28variant_1.29\">Peanut Butter (variant 1)</span></h2>\n" +
              "<div class=\"thumb tright\">\n" +
              "<div class=\"thumbinner\" style=\"width:222px;\"><a class=\"internal\" href=\"http://www.bliki.info/wiki/Image:PeanutButter.jpg\" title=\"&#34;Smooth&#34; peanut butter in a jar\"><img src=\"http://www.bliki.info/wiki/PeanutButter.jpg\" alt=\"&#34;Smooth&#34; peanut butter in a jar\" title=\"&#34;Smooth&#34; peanut butter in a jar\" class=\"type-thumb\" width=\"220\" />\n" +
@@ -33,7 +26,7 @@ public class PreFilterTest extends FilterTestSupport {
      * See Issue 106
      *
      */
-    public void testPre5() {
+    @Test public void testPre5() {
       assertEquals("<h2><span class=\"mw-headline\" id=\"Peanut_Butter_.28variant_2.29\">Peanut Butter (variant 2)</span></h2>\n" +
               "<pre>" +
               "test0\n" +
@@ -61,7 +54,7 @@ public class PreFilterTest extends FilterTestSupport {
      * See Issue 106
      *
      */
-    public void testPre6() {
+    @Test public void testPre6() {
       assertEquals("<h2><span class=\"mw-headline\" id=\"Peanut_Butter_.28variant_3.29\">Peanut Butter (variant 3)</span></h2>\n" +
               "<pre>" +
               "test0\n" +
@@ -90,7 +83,7 @@ public class PreFilterTest extends FilterTestSupport {
      * See Issue 104
      *
      */
-    public void testPre7() {
+    @Test public void testPre7() {
             assertEquals("<h2><span class=\"mw-headline\" id=\"TestLBPre\">TestLBPre</span></h2>\n" +
                     "<pre>" +
                     "test1\n" +
@@ -107,7 +100,7 @@ public class PreFilterTest extends FilterTestSupport {
      * See Issue 104
      *
      */
-    public void testPre8() {
+    @Test public void testPre8() {
             assertEquals("<h2><span class=\"mw-headline\" id=\"TestLBPre\">TestLBPre</span></h2>\n" +
                     "<pre>" +
                     "test1\n" +
@@ -119,7 +112,7 @@ public class PreFilterTest extends FilterTestSupport {
                     " test2", false));
     }
 
-    public void testPre0() {
+    @Test public void testPre0() {
         assertEquals("\n" + "<p>\n" + "The nowiki tag ignores [[Wiki]] &#39;&#39;markup&#39;&#39;.\n"
                 + "It reformats text by removing\n" + "newlines    and multiple spaces.\n" + "It still interprets special\n"
                 + "characters: &#38; \n" + "</p>", wikiModel.render("<nowiki>\n" + "The nowiki tag ignores [[Wiki]] ''markup''.\n"
@@ -127,19 +120,19 @@ public class PreFilterTest extends FilterTestSupport {
                 + "characters: & \n" + "</nowiki>", false));
     }
 
-    public void testPre1() {
+    @Test public void testPre1() {
         assertEquals("\n" + "<p>First line:</p>\n" + "<pre>" + "pre text 1\n" + "pre text 2\n" + "</pre>\n" + "<p>last line</p>",
                 wikiModel.render("First line:\n" + " pre text 1\n" + " pre text 2\n" + "last line", false));
     }
 
-    public void testPre3() {
+    @Test public void testPre3() {
         assertEquals("\n" + "\n" + "<ul>\n" + "<li>line 1 ...</li>\n" + "<li>line 2 &#60; test wrong tag</li>\n"
                 + "<li>line 3 &#60; test wrong tag</li>\n</ul>\n" + "\n" + "<pre>" + "preformatted text\n" + "</pre>", wikiModel.render(
                 "\n" + "* line 1 ...\n" + "* line 2 < test wrong tag\n" + "* line 3 < test wrong tag\n" + "\n" + "<pre>"
                         + "preformatted text\n" + "</pre>", false));
     }
 
-    // public void testPre1() {
+    // @Test public void testPre1() {
     // assertEquals("", wikiModel.render("<pre><nowiki>\n" +
     // "The nowiki tag ignores [[Wiki]] ''markup''.\n" +
     // "It reformats text by removing\n" +
@@ -148,7 +141,7 @@ public class PreFilterTest extends FilterTestSupport {
     // "characters: & \n" +
     // "</nowiki>\n</pre>"));
     // }
-    public void testPre2() {
+    @Test public void testPre2() {
         assertEquals("\n" +
                 "<pre>" +
                 "pre text\n" +
@@ -160,7 +153,7 @@ public class PreFilterTest extends FilterTestSupport {
                 + "\n" + "\n" + "last line", false));
     }
 
-    public void testPre10() {
+    @Test public void testPre10() {
         assertEquals(
                 "\n"
                         + "<p>Aufzählungstypen dienen zur automatischen Nummerierung der in der Aufzählung enthaltenen Elemente. Die Syntax für die Definition von Aufzählungstypen verwendet das Schlüsselwort <tt>enum</tt> (Kurzform für Enumeration).</p>\n"

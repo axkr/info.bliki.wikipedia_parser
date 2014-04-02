@@ -1,12 +1,16 @@
 package info.bliki.api.query;
 
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 /**
  * Tests Parse query.
  */
 public class ParseTest extends BaseQueryTest {
 
-    public void test001() {
+    @Test public void test001() {
         RequestBuilder request = Parse.create().text("{{Project:Sandbox}}").title("A Sandbox Template test");
         assertEquals("action=parse&amp;format=xml&amp;text={{Project:Sandbox}}&amp;title=A Sandbox Template test", request.toString());
     }
@@ -15,7 +19,7 @@ public class ParseTest extends BaseQueryTest {
      * To make this test work correctly uncomment it and be sure that you have a
      * internet connection running.
      */
-    // public void testParseQuery() {
+    // @Test public void testParseQuery() {
     //
     // User user = getAnonymousUser();
     // Connector connector = new Connector();

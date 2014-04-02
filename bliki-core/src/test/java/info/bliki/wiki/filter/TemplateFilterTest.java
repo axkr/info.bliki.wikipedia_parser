@@ -1,26 +1,21 @@
 package info.bliki.wiki.filter;
 
 import info.bliki.wiki.model.WikiModel;
+import org.junit.Test;
 
 import java.util.HashSet;
 import java.util.Locale;
 
-import junit.framework.Test;
-import junit.framework.TestSuite;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class TemplateFilterTest extends FilterTestSupport {
-    public TemplateFilterTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(TemplateFilterTest.class);
-    }
 
     /**
      * Issue124 - Image URL parsing broken in some cases
      */
-    public void testTemplateIssue124_001() {
+    @Test public void testTemplateIssue124_001() {
         final String rawWikiText = "{{AdT-Vorschlag\n"
                 + "|DATUM            = 01.09.2012\n"
                 + "|LEMMA            = Nashörner\n"
@@ -41,7 +36,7 @@ public class TemplateFilterTest extends FilterTestSupport {
     /**
      * Issue124 - Image URL parsing broken in some cases
      */
-    public void testTemplateIssue124_002() {
+    @Test public void testTemplateIssue124_002() {
         final String rawWikiText = "[[File:Waterberg Nashorn1.jpg|150px]]";
         final String expected = "\n"
                 + "<p><a class=\"image\" href=\"http://www.bliki.info/wiki/File:150px-Waterberg_Nashorn1.jpg\" ><img src=\"http://www.bliki.info/wiki/150px-Waterberg_Nashorn1.jpg\" width=\"150\" />\n</a></p>";
@@ -50,35 +45,35 @@ public class TemplateFilterTest extends FilterTestSupport {
         assertEquals(expected, germanWikiTextModel.render(rawWikiText));
     }
 
-    public void testTemplate06() {
+    @Test public void testTemplate06() {
         assertEquals("\n" + "<p>start- 5.0 equals +5 -end</p>", wikiModel.render("start- {{ifeq|5.0|+5}} -end", false));
     }
 
-    public void testTemplate09() {
+    @Test public void testTemplate09() {
         assertEquals("\n" + "<p>start- test is not equal Test -end</p>", wikiModel.render("start- {{ifeq|test|Test}} -end", false));
     }
 
-    public void testTemplateCall3() {
+    @Test public void testTemplateCall3() {
         // see method WikiTestModel#getRawWikiContent()
         assertEquals("\n" + "<p>b) First: Test1 Second:  c) First: sdfsf Second: klj </p>\n" + "", wikiModel.render("{{templ1\n"
                 + " | a = Test1\n" + " | {{templ2|sdfsf|klj}} \n" + "}}\n" + "", false));
     }
 
-    public void testSwitch001() {
+    @Test public void testSwitch001() {
         assertEquals(
                 "\n"
                         + "<p><a href=\"http://www.bliki.info/wiki/Template:Templ1/ind%26\" title=\"Template:Templ1/ind&amp;\">Template:Templ1/ind&#38;</a></p>",
                 wikiModel.render("{{Templ1/{{ #switch: imperative  | ind | ind&}}}}", false));
     }
 
-    public void testNonExistingTemplate01() {
+    @Test public void testNonExistingTemplate01() {
         assertEquals(
                 "<h2><span class=\"mw-headline\" id=\"Other_areas_of_Wikipedia\">Other areas of Wikipedia</span></h2>\n"
                         + "<p><a href=\"http://www.bliki.info/wiki/Template:WikipediaOther\" title=\"Template:WikipediaOther\">Template:WikipediaOther</a></p>",
                 wikiModel.render("==Other areas of Wikipedia==\n" + "{{WikipediaOther}}<!--Template:WikipediaOther-->", false));
     }
 
-    public void testNonExistingTemplate02() {
+    @Test public void testNonExistingTemplate02() {
         assertEquals(
                 "\n"
                         + "<p>start <a href=\"http://www.bliki.info/wiki/Template:NonExistingTemplate\" title=\"Template:NonExistingTemplate\">Template:NonExistingTemplate</a> end</p>",
@@ -102,7 +97,7 @@ public class TemplateFilterTest extends FilterTestSupport {
         }
     }
 
-    public void testNonExistingTemplate03() {
+    @Test public void testNonExistingTemplate03() {
         nonExistingTemplateTestLink("{{Help:NonExistingPage}}", "Help:NonExistingPage", null);
         nonExistingTemplateTestLink("{{NonExistingTemplate}}", "Template:NonExistingTemplate", "NonExistingTemplate");
         nonExistingTemplateTestLink("{{:NonExistingTemplate}}", "NonExistingTemplate", null);
@@ -117,30 +112,30 @@ public class TemplateFilterTest extends FilterTestSupport {
         assertEquals("\n<p>PAGESIZE</p>", wikiModel.render("{{PAGESIZE:Help:test}}", false));
     }
 
-    public void testTemplateCall1() {
+    @Test public void testTemplateCall1() {
         // see method WikiTestModel#getRawWikiContent()
         assertEquals("\n" + "<p>start-an include page-end</p>", wikiModel.render("start-{{:Include Page}}-end", false));
     }
 
-    public void testTemplateCall2() {
+    @Test public void testTemplateCall2() {
         // see method WikiTestModel#getRawWikiContent()
         assertEquals("\n" + "<p>start-b) First: 3 Second: b-end start-c) First: sdfsf Second: klj-end</p>", wikiModel.render(
                 "start-{{templ1|a=3|b}}-end start-{{templ2|sdfsf|klj}}-end", false));
     }
 
-    public void testTemplateCall4() {
+    @Test public void testTemplateCall4() {
         // see method WikiTestModel#getRawWikiContent() for template tl
         assertEquals("\n"
                 + "<p>[[:Template:<a href=\"http://www.bliki.info/wiki/Template:example\" title=\"Template:example\">example</a>]]</p>",
                 wikiModel.render("{{tl|example}}", false));
     }
 
-    public void testTemplateCall4a() {
+    @Test public void testTemplateCall4a() {
         // see method WikiTestModel#getRawWikiContent() for template tl
         assertEquals("\n" + "<p>[[:Template:[[Template:{{{1}}}|{{{1}}}]]]]</p>", wikiModel.render("{{tl}}", false));
     }
 
-    public void testTemplateCall5() {
+    @Test public void testTemplateCall5() {
         // see method WikiTestModel#getRawWikiContent()
         assertEquals(
                 "\n"
@@ -148,7 +143,7 @@ public class TemplateFilterTest extends FilterTestSupport {
                 wikiModel.render("({{pron-en|dəˌpeʃˈmoʊd}})", false));
     }
 
-    public void testTemplateImage1() {
+    @Test public void testTemplateImage1() {
         // see method WikiTestModel#getRawWikiContent()
         assertEquals(
                 "\n"
@@ -175,17 +170,17 @@ public class TemplateFilterTest extends FilterTestSupport {
                                         + "</div>\n" + "|}", false));
     }
 
-    public void testTemplateNowiki() {
+    @Test public void testTemplateNowiki() {
         // see method WikiTestModel#getTemplateContent()
         assertEquals("\n" + "<p>start-{{templ1|a=3|b}}-end</p>", wikiModel.render("start-<nowiki>{{templ1|a=3|b}}-</noWiKi>end", false));
     }
 
-    public void testTemplateParameter01() {
+    @Test public void testTemplateParameter01() {
         // see method WikiTestModel#getTemplateContent()
         assertEquals("\n" + "<p>start-a) First: arg1 Second: arg2-end</p>", wikiModel.render("start-{{Test|arg1|arg2}}-end", false));
     }
 
-    public void testTemplateParameter02() {
+    @Test public void testTemplateParameter02() {
         // see method WikiTestModel#getTemplateContent()
         assertEquals(
                 "\n"
@@ -196,38 +191,38 @@ public class TemplateFilterTest extends FilterTestSupport {
                                 false));
     }
 
-    public void testTemplateParameter03() {
+    @Test public void testTemplateParameter03() {
         // see method WikiTestModel#getTemplateContent()
         assertEquals("\n" + "<p>start- </p>\n"
                 + "<div class=\"references-small\" style=\"-moz-column-count:2; -webkit-column-count:2; column-count:2;\"></div> -end",
                 wikiModel.render("start- {{reflist|2}} -end", false));
     }
 
-    public void testTemplate04() {
+    @Test public void testTemplate04() {
         assertEquals("\n" + "<p>A is not equal B</p>", wikiModel.render("{{#ifeq: A | B |A equals B |A is not equal B}}", false));
     }
 
-    public void testTemplate05() {
+    @Test public void testTemplate05() {
         assertEquals("\n" + "<p>start- A is not equal B -end</p>", wikiModel.render("start- {{ifeq|A|B}} -end", false));
     }
 
-    public void testTemplate07() {
+    @Test public void testTemplate07() {
         assertEquals("\n" + "<p>start- 5.001 is not equal +5 -end</p>", wikiModel.render("start- {{ifeq|5.001|+5}} -end", false));
     }
 
-    public void testTemplate08() {
+    @Test public void testTemplate08() {
         assertEquals("\n" + "<p>start- test equals test -end</p>", wikiModel.render("start- {{ifeq|test|test}} -end", false));
     }
 
-    public void testTemplate10() {
+    @Test public void testTemplate10() {
         assertEquals("", wikiModel.render("{{{x| }}}", false));
     }
 
-    public void testTemplate11() {
+    @Test public void testTemplate11() {
         assertEquals("\n" + "<p>{{{title}}}</p>", wikiModel.render("{{{title}}}", false));
     }
 
-    public void testTemplate12() {
+    @Test public void testTemplate12() {
         assertEquals(
                 "\n"
                         + "<div style=\"page-break-inside: avoid;\">\n"
@@ -259,7 +254,7 @@ public class TemplateFilterTest extends FilterTestSupport {
                         + "|website = [http://www.jamwiki.org/ JAMWiki wiki]\n" + "}}\n", false));
     }
 
-    public void testTemplateParameter13() {
+    @Test public void testTemplateParameter13() {
         // see method WikiTestModel#getTemplateContent()
         assertEquals(
                 "\n"
@@ -335,7 +330,7 @@ public class TemplateFilterTest extends FilterTestSupport {
     // + "{{{mulcat}}}}}|{{ucfirst:{{{mul}}}}}}}|Wikipedia {{#if:{{{lang|}}}|\n"
     // + "&lt;sup&gt;{{{lang}}}&lt;/sup&gt;}}]]&lt;/span&gt;}}";
     //
-    // public void testNestedIf01() {
+    // @Test public void testNestedIf01() {
     // String temp = StringEscapeUtils.unescapeHtml(TEST_STRING_01);
     // assertEquals(
     // "\n"
@@ -369,15 +364,15 @@ public class TemplateFilterTest extends FilterTestSupport {
     private final String TEST_STRING_02 = " {{#if:{{{cat|\n" + "{{{category|}}}}}}|a category|{{#if:{{{mul|{{{dab|\n"
             + "{{{disambiguation|}}}}}}}}}|articles|{{#if:{{{mulcat|}}}|categories|an\n" + "article}}}}}} on:\n";
 
-    public void testNestedIf02() {
+    @Test public void testNestedIf02() {
         assertEquals("\n" + "<pre>an\n</pre>\n" + "<p>article on:\n" + "</p>" + "", wikiModel.render(TEST_STRING_02, false));
     }
 
-    public void testParserFunctionLC001() {
+    @Test public void testParserFunctionLC001() {
         assertEquals("\n" + "<p>A lower case text</p>", wikiModel.render("A {{lc: Lower Case}} text", false));
     }
 
-    public void testParserFunctionTag001() {
+    @Test public void testParserFunctionTag001() {
         assertEquals("\n"
                 + "<p><sup id=\"_ref-1\" class=\"reference\"><a href=\"#_note-1\" title=\"\">[1]</a></sup></p><ol class=\"references\">\n"
                 + "<li id=\"_note-1\"><b><a href=\"#_ref-1\" title=\"\">&#8593;</a></b> <b>a simple test</b></li>\n</ol>", wikiModel
@@ -405,7 +400,7 @@ public class TemplateFilterTest extends FilterTestSupport {
             + "{{nowrap|[[:Template:AcademyAwardBestActor 2001-2020|(2001-present)]]}}\n" + "</div>\n" + "}}<noinclude>\n" + "\n"
             + "[[Category:Academy Award for Best Actor templates| 1981-2000]]\n" + "</noinclude>";
 
-    public void testNavbox() {
+    @Test public void testNavbox() {
         assertEquals(
                 "\n"
                         + "<table cellspacing=\"0\" class=\"navbox\" style=\"border-spacing:0;;\">\n"
@@ -468,7 +463,7 @@ public class TemplateFilterTest extends FilterTestSupport {
                         false));
     }
 
-    public void test11() {
+    @Test public void test11() {
         assertEquals(
                 "\n"
                         + "<p><a href=\"http://www.bliki.info/wiki/Template:AcademyAwardBestActor_1981-2000\" title=\"Template:AcademyAwardBestActor 1981-2000\"><span style=\";background: #EEDD82;border:none;;\" title=\"View this template\">v</span></a></p>",
@@ -478,15 +473,15 @@ public class TemplateFilterTest extends FilterTestSupport {
                                 false));
     }
 
-    public void testPipe001a() {
+    @Test public void testPipe001a() {
         assertEquals("\n" + "<p>Hello World\n" + "Hello World\n" + "</p>", wikiModel.render("{{2x|Hello World\n" + "}}", false));
     }
 
-    public void testPipe001() {
+    @Test public void testPipe001() {
         assertEquals("\n" + "<p>hello worldhello world </p>", wikiModel.render("{{2x|hello world" + "}} ", false));
     }
 
-    public void testPipe002() {
+    @Test public void testPipe002() {
         assertEquals("\n" + "<div style=\"page-break-inside: avoid;\">\n" + "<table>\n" + "<tr>\n" + "<td>A </td>\n"
                 + "<td>B</td></tr>\n" + "<tr>\n" + "<td>C</td>\n" + "<td>D</td></tr></table></div>\n" + "\n"
                 + "<div style=\"page-break-inside: avoid;\">\n" + "<table>\n" + "<tr>\n" + "<td>A </td>\n" + "<td>B</td></tr>\n" + "<tr>\n"
@@ -494,7 +489,7 @@ public class TemplateFilterTest extends FilterTestSupport {
                 + "{{!}}- \n" + "{{!}} C\n" + "{{!}} D\n" + "{{!}}}\n" + "}}", false));
     }
 
-    public void testPipe003() {
+    @Test public void testPipe003() {
         assertEquals("\n" + "<div style=\"page-break-inside: avoid;\">\n" + "<table>\n" + "<tr>\n" + "<td>A </td>\n"
                 + "<td>B</td></tr>\n" + "<tr>\n" + "<td>C</td>\n" + "<td>D</td></tr></table></div>\n" + "\n"
                 + "<div style=\"page-break-inside: avoid;\">\n" + "<table>\n" + "<tr>\n" + "<td>A </td>\n" + "<td>B</td></tr>\n" + "<tr>\n"
@@ -505,7 +500,7 @@ public class TemplateFilterTest extends FilterTestSupport {
                 + "{{!}} B\n" + "{{!}}- \n" + "{{!}} C\n" + "{{!}} D\n" + "{{!}}}\n" + "}}}}", false));
     }
 
-    public void testFurther() {
+    @Test public void testFurther() {
         assertEquals(
                 "\n"
                         + "<dl>\n"
@@ -513,35 +508,35 @@ public class TemplateFilterTest extends FilterTestSupport {
                 wikiModel.render("{{further|[[History of molecular biology]]}}", false));
     }
 
-    public void testInvalidNoinclude() {
+    @Test public void testInvalidNoinclude() {
         assertEquals("\n" + "<p>test123 start</p>", wikiModel.render("test123 start<noinclude>\n" + "test123 end", false));
     }
 
-    public void testInvalidIncludeonly() {
+    @Test public void testInvalidIncludeonly() {
         assertEquals("\n" + "<p>test123 start\n" + "test123 end</p>", wikiModel.render("test123 start<includeonly>\n" + "test123 end",
                 false));
     }
 
-    public void testInvalidOnlyinclude() {
+    @Test public void testInvalidOnlyinclude() {
         assertEquals("\n" + "<p>test123 end</p>", wikiModel.render("test123 start<onlyinclude>\n" + "test123 end", false));
     }
 
-    public void testIf_image_test() {
+    @Test public void testIf_image_test() {
         assertEquals(
                 "\n"
                         + "<p>test <a class=\"image\" href=\"http://www.bliki.info/wiki/File:220px-test.jpg\" ><img src=\"http://www.bliki.info/wiki/220px-test.jpg\" width=\"220\" />\n"
                         + "</a> test123</p>", wikiModel.render("test {{If_image_test|  image =  test.jpg}} test123", false));
     }
 
-    public void testMONTHNAME() {
+    @Test public void testMONTHNAME() {
         assertEquals("\n" + "<p>test October test123</p>", wikiModel.render("test {{MONTHNAME | 10 }} test123", false));
     }
 
-    public void testMONTHNUMBER() {
+    @Test public void testMONTHNUMBER() {
         assertEquals("\n" + "<p>test 10 test123</p>", wikiModel.render("test {{MONTHNUMBER | OctoBer }} test123", false));
     }
 
-    public void testInfoboxProgrammiersprachen() {
+    @Test public void testInfoboxProgrammiersprachen() {
         assertEquals(
                 "\n"
                         + "<div style=\"page-break-inside: avoid;\">\n"
@@ -592,7 +587,7 @@ public class TemplateFilterTest extends FilterTestSupport {
                                         + "}}", false));
     }
 
-    public void testProgrammiersprachen() {
+    @Test public void testProgrammiersprachen() {
         assertEquals(
                 "<h3><span class=\"mw-headline\" id=\"Versionsgeschichte\">Versionsgeschichte</span></h3>\n"
                         + "\n"
@@ -786,7 +781,7 @@ public class TemplateFilterTest extends FilterTestSupport {
                                 false));
     }
 
-    public void testIssue77_001() {
+    @Test public void testIssue77_001() {
         assertEquals(
                 "\n"
                         + "<div style=\"page-break-inside: avoid;\">\n"
@@ -817,7 +812,7 @@ public class TemplateFilterTest extends FilterTestSupport {
                                         + "|}", false));
     }
 
-    public void testIssue77_002() {
+    @Test public void testIssue77_002() {
         assertEquals(
                 "\n"
                         + "<div style=\"page-break-inside: avoid;\">\n"
@@ -851,19 +846,19 @@ public class TemplateFilterTest extends FilterTestSupport {
                                         + "{{Main Page subpanel|column=both|title=Sister projects|1=\n" + "TEST2\n" + "}}\n" + "|}", false));
     }
 
-//    public void testIssue81() {
+//    @Test public void testIssue81() {
 //        assertEquals("\n" + "<p>104</p>", wikiModel.render("{{#time:z|{{{1|April 14}}}}}", false));
 //    }
 //
-//    public void testIssue82_001() {
+//    @Test public void testIssue82_001() {
 //        assertEquals("105", wikiModel.parseTemplates("{{#expr:{{#time:z|{{{1|April 14}}}}}+1}}"));
 //    }
 
-    public void testIssue82_002() {
+    @Test public void testIssue82_002() {
         assertEquals("105th", wikiModel.parseTemplates("{{ordinal|105}}"));
     }
 // time dependent tests
-//    public void testIssue82_003() {
+//    @Test public void testIssue82_003() {
 //        assertEquals("105th", wikiModel.parseTemplates("{{ordinal|{{#expr:{{#time:z|{{{1|April 14}}}}}+1}}}}"));
 //    }
 
@@ -871,7 +866,7 @@ public class TemplateFilterTest extends FilterTestSupport {
      * This is a date dependent template test, so only activate it for local tests
      * please.
      */
-    // public void testbirth_date_and_age() {
+    // @Test public void testbirth_date_and_age() {
     // assertEquals(
     // "\n"
     // +
@@ -879,31 +874,31 @@ public class TemplateFilterTest extends FilterTestSupport {
     // wikiModel.render("test {{birth date and age|1956|7|9}} test123"));
     // }
 
-    public void testRndfracTemplate001() {
+    @Test public void testRndfracTemplate001() {
         assertEquals("\n" + "<p><span class=\"frac nowrap\"><sup>1</sup>⁄<sub>8</sub></span></p>", wikiModel.render(
                 "{{rndfrac|0.1234|8}}", false));
     }
 
-    public void testRndfracTemplate002() {
+    @Test public void testRndfracTemplate002() {
         assertEquals("\n" + "<p><span class=\"frac nowrap\">12<sup> </sup><sup>4</sup>⁄<sub>6</sub></span></p>", wikiModel.render(
                 "{{rndfrac|12.65|6}}", false));
     }
 
-    public void testTemplateMain() {
+    @Test public void testTemplateMain() {
         assertEquals(
                 "\n"
                         + "<div class=\"rellink relarticle mainarticle\">Main articles: <a href=\"http://www.bliki.info/wiki/Demographics_of_Pakistan\" title=\"Demographics of Pakistan\">Demographics of Pakistan</a> and <a href=\"http://www.bliki.info/wiki/Pakistani_people\" title=\"Pakistani people\">Pakistani people</a></div>",
                 wikiModel.render("{{Main|Demographics of Pakistan|Pakistani people}}", false));
     }
 
-    public void testTemplateSeeAlso() {
+    @Test public void testTemplateSeeAlso() {
         assertEquals(
                 "\n"
                         + "<div class=\"rellink boilerplate seealso\">See also: <a href=\"http://www.bliki.info/wiki/Ethnic_groups_in_Pakistan\" title=\"Ethnic groups in Pakistan\">Ethnic groups in Pakistan</a> and <a href=\"http://www.bliki.info/wiki/Religion_in_Pakistan\" title=\"Religion in Pakistan\">Religion in Pakistan</a></div>",
                 wikiModel.render("{{See also|Ethnic groups in Pakistan|Religion in Pakistan}}", false));
     }
 
-    public void testTemplateMain002() {
+    @Test public void testTemplateMain002() {
         assertEquals(
                 "<h2><span class=\"mw-headline\" id=\"Demographics\">Demographics</span></h2>\n"
                         + "<div class=\"rellink relarticle mainarticle\">Main articles: <a href=\"http://www.bliki.info/wiki/Demographics_of_Pakistan\" title=\"Demographics of Pakistan\">Demographics of Pakistan</a> and <a href=\"http://www.bliki.info/wiki/Pakistani_people\" title=\"Pakistani people\">Pakistani people</a></div>\n"
@@ -912,7 +907,7 @@ public class TemplateFilterTest extends FilterTestSupport {
                         + "{{See also|Ethnic groups in Pakistan|Religion in Pakistan}}", false));
     }
 
-    public void testUnknownTag001() {
+    @Test public void testUnknownTag001() {
         assertEquals("\n" +
                 "<p>start&#60;unknowntag&#62;\n" +
                 "some text</p>\n" +
@@ -922,7 +917,7 @@ public class TemplateFilterTest extends FilterTestSupport {
                 wikiModel.render("start<unknowntag>\nsome text\n new line\ntest</unknowntag>end", false));
     }
 
-    public void testTemplateNavbox() {
+    @Test public void testTemplateNavbox() {
         assertEquals(
                 "\n"
                         + "<table cellspacing=\"0\" class=\"navbox\" style=\"border-spacing:0;;\">\n"
@@ -1136,7 +1131,7 @@ public class TemplateFilterTest extends FilterTestSupport {
                         false));
     }
 
-    public void testTemplateNavbar() {
+    @Test public void testTemplateNavbar() {
         assertEquals(
                 "\n"
                         + "<div class=\"noprint plainlinks hlist navbar \"><span style=\"word-spacing:0;\">This box: </span>\n"
@@ -1149,28 +1144,28 @@ public class TemplateFilterTest extends FilterTestSupport {
                         "{{Navbar|Screen Actors Guild Award for Outstanding Performance by a Cast in a Motion Picture (1995–2000)}}\n", false));
     }
 
-    public void testTemplateWithNewlines001() {
+    @Test public void testTemplateWithNewlines001() {
         assertEquals("\n" + "<p>{{Serie de TV</p>\n" + "<pre>" + " Nombre        = FabulÃ³polis\n" + "</pre>\n" + "<p>}}</p>",
                 wikiModel.render("{{Serie de TV\n  Nombre        = FabulÃ³polis\n}}", false));
 
         assertEquals(new HashSet<String>(), wikiModel.getTemplates());
     }
 
-    public void testTemplateWithNewlines002() {
+    @Test public void testTemplateWithNewlines002() {
         assertEquals("[[:Template:Serie de TV]]", wikiModel.parseTemplates("{{Serie de TV\n\n}}"));
 
         assertTrue("wikiModel.getTemplates() = " + wikiModel.getTemplates().toString(), wikiModel.getTemplates()
                 .contains("Serie de TV"));
     }
 
-    public void testTemplateWithNewlines003() {
+    @Test public void testTemplateWithNewlines003() {
         assertEquals("[[:Template:Serie de TV]]", wikiModel.parseTemplates("{{Serie de TV\n}}"));
 
         assertTrue("wikiModel.getTemplates() = " + wikiModel.getTemplates().toString(), wikiModel.getTemplates()
                 .contains("Serie de TV"));
     }
 
-    public void testTemplateWithHashtag001() {
+    @Test public void testTemplateWithHashtag001() {
         assertEquals("\n" + "<p>{{::Viva_World_Cup#Tournament_results}}\n"
                 + "<a href=\"http://www.bliki.info/wiki/Viva_World_Cup\" title=\"Viva World Cup\">Viva_World_Cup</a>\n"
                 + "<a href=\"http://www.bliki.info/wiki/Viva_World_Cup\" title=\"Viva World Cup\">Viva_World_Cup</a>\n" + "</p>", wikiModel
@@ -1183,21 +1178,21 @@ public class TemplateFilterTest extends FilterTestSupport {
                 .contains("Test"));
     }
 
-    public void testTransclusionInPre001() {
+    @Test public void testTransclusionInPre001() {
         assertEquals("<pre>{{:Viva_World_Cup}}</pre>", wikiModel.parseTemplates("<pre>{{:Viva_World_Cup}}</pre>"));
 
         assertTrue("wikiModel.getIncludes() = " + wikiModel.getIncludes().toString(), wikiModel.getIncludes().size() == 0);
         assertTrue("wikiModel.getTemplates() = " + wikiModel.getTemplates().toString(), wikiModel.getTemplates().size() == 0);
     }
 
-    public void testPreAlmostEqualToNowiki001() {
+    @Test public void testPreAlmostEqualToNowiki001() {
         // https://en.wikipedia.org/wiki/Help:Wiki_markup#Pre
         assertEquals("\n<pre>Text\n[[wiki]] markup</pre>", wikiModel.render("<pre>Text\n[[wiki]] markup</pre>", false));
 
         assertTrue("wikiModel.getLinks() = " + wikiModel.getLinks().toString(), wikiModel.getLinks().size() == 0);
     }
 
-    public void testPreAlmostEqualToNowiki002() {
+    @Test public void testPreAlmostEqualToNowiki002() {
         // https://en.wikipedia.org/wiki/Help:Wiki_markup#Nowiki
         assertEquals("\n<p>Text\n[[wiki]] markup</p>", wikiModel.render("<nowiki>Text\n[[wiki]] markup</nowiki>", false));
 
@@ -1208,7 +1203,7 @@ public class TemplateFilterTest extends FilterTestSupport {
      * Issue 131 - incorrect parsing of links if an additional HTML tag is
      * appended
      */
-    public void testLinkWithExtraHTMLTag001() {
+    @Test public void testLinkWithExtraHTMLTag001() {
         assertEquals(
                 "\n<p><a class=\"external free\" href=\"http://www.example.com/\" rel=\"nofollow\">http://www.example.com/</a>&#60;hello&#62;</p>",
                 wikiModel.render("http://www.example.com/<hello>", false));
@@ -1217,7 +1212,7 @@ public class TemplateFilterTest extends FilterTestSupport {
     /**
      * Issue 133 - self-inclusion is only allowed once in MediaWiki
      */
-    public void testSelfRecusion001() {
+    @Test public void testSelfRecusion001() {
         // https://en.wikipedia.org/wiki/Help:Template#Nesting_templates
         assertEquals(
                 "\n<p>Line1</p>"
@@ -1229,7 +1224,7 @@ public class TemplateFilterTest extends FilterTestSupport {
     /**
      * Issue 133 - self-inclusion is only allowed once in MediaWiki
      */
-    public void testSelfRecusion002() {
+    @Test public void testSelfRecusion002() {
         // check that a template can be included more than once
         assertEquals("\n<p>a, a</p>", wikiModel.render("{{1x|a}}, {{1x|a}}", false));
         assertEquals("\n<p>a, b</p>", wikiModel.render("{{1x|a}}, {{1x|b}}", false));
@@ -1238,7 +1233,7 @@ public class TemplateFilterTest extends FilterTestSupport {
     /**
      * Issue 133 - self-inclusion is only allowed once in MediaWiki
      */
-    public void testSelfRecusion003() {
+    @Test public void testSelfRecusion003() {
         // check that a template can be included as a parameter to itself
         assertEquals("\n<p>a</p>", wikiModel.render("{{1x|{{1x|a}}}}", false));
         assertEquals("\n<p>ab</p>", wikiModel.render("{{1x|a{{1x|b}}}}", false));
@@ -1247,25 +1242,25 @@ public class TemplateFilterTest extends FilterTestSupport {
     /**
      * Issue 133 - self-inclusion is only allowed once in MediaWiki
      */
-    public void testSelfRecusion004() {
+    @Test public void testSelfRecusion004() {
         // check that a template which includes itself via a parameter is recognised as a loop
         assertEquals("\n<p>Line1</p>"
                         + "\n<p><span class=\"error\">Template loop detected: <strong class=\"selflink\">Template:SELF_RECURSION1</strong></span></p>",
                 wikiModel.render("{{SELF_RECURSION1|SELF_RECURSION1}}", false));
     }
 
-    public void testSelfRecusion005() {
+    @Test public void testSelfRecusion005() {
         assertEquals("foo|bar", wikiModel.parseTemplates("{{1x|{{1x|foo{{!}}bar}}}}"));
     }
 
-    public void testSelfRecusion005a() {
+    @Test public void testSelfRecusion005a() {
         assertEquals("\n" +
                 "<p>foo|bar</p>", wikiModel.render("{{1x|{{1x|foo{{!}}bar}}}}"));
     }
     /**
      * Issue 133 - self-inclusion is only allowed once in MediaWiki
      */
-    public void testIndirectSelfRecusion001() {
+    @Test public void testIndirectSelfRecusion001() {
         // https://en.wikipedia.org/wiki/Help:Template#Nesting_templates
         assertEquals(
                 "\n"
@@ -1279,7 +1274,7 @@ public class TemplateFilterTest extends FilterTestSupport {
     /**
      * Issue 133 - self-inclusion is only allowed once in MediaWiki
      */
-    public void testIndirectSelfRecusion002() {
+    @Test public void testIndirectSelfRecusion002() {
         // https://en.wikipedia.org/wiki/Help:Template#Nesting_templates
         assertEquals(
                 "\n"
@@ -1293,7 +1288,7 @@ public class TemplateFilterTest extends FilterTestSupport {
     /**
      * Issue 133 - self-inclusion is only allowed once in MediaWiki
      */
-    public void testIndirectSelfRecusion001a() {
+    @Test public void testIndirectSelfRecusion001a() {
         // https://en.wikipedia.org/wiki/Help:Template#Nesting_templates
         assertEquals(
                 "\n"
@@ -1307,7 +1302,7 @@ public class TemplateFilterTest extends FilterTestSupport {
     /**
      * Issue 133 - self-inclusion is only allowed once in MediaWiki
      */
-    public void testIndirectSelfRecusion002a() {
+    @Test public void testIndirectSelfRecusion002a() {
         // https://en.wikipedia.org/wiki/Help:Template#Nesting_templates
         assertEquals(
                 "\n"
@@ -1322,7 +1317,7 @@ public class TemplateFilterTest extends FilterTestSupport {
      * Test whether the template cache distinguishes pages from different
      * namespaces with the same page title.
      */
-    public void testTemplateCache001() {
+    @Test public void testTemplateCache001() {
         assertEquals("\n<p>FOOBAR</p>", wikiModel.render("{{FOO}}{{:FOO}}", false));
     }
 
@@ -1330,7 +1325,7 @@ public class TemplateFilterTest extends FilterTestSupport {
      * Test whether the template cache distinguishes pages from different
      * namespaces with the same page title.
      */
-    public void testTemplateCache002() {
+    @Test public void testTemplateCache002() {
         assertEquals("\n<p>FOOFOO</p>", wikiModel.render("{{FOO}}{{Template:FOO}}", false));
     }
 
@@ -1338,7 +1333,7 @@ public class TemplateFilterTest extends FilterTestSupport {
      * Test whether the template cache distinguishes pages from different
      * namespaces with the same page title.
      */
-    public void testTemplateCache003() {
+    @Test public void testTemplateCache003() {
         assertEquals("\n<p>FOOFOO</p>", wikiModel.render("{{Template:FOO}}{{FOO}}", false));
     }
 
@@ -1346,7 +1341,7 @@ public class TemplateFilterTest extends FilterTestSupport {
      * Test whether the template cache distinguishes pages from different
      * namespaces with the same page title.
      */
-    public void testTemplateCache004() {
+    @Test public void testTemplateCache004() {
         String foodate = wikiModel.render("{{FOODATE}}", false);
         System.out.println("testTemplateCache004: "+foodate);
         try {
@@ -1360,7 +1355,7 @@ public class TemplateFilterTest extends FilterTestSupport {
      * Test whether the template cache distinguishes pages from different
      * namespaces with the same page title.
      */
-    public void testTemplateCache005() {
+    @Test public void testTemplateCache005() {
         String foodate = wikiModel.render("{{Template:FOODATE}}", false);
         System.out.println("testTemplateCache005: "+foodate);
         try {

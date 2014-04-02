@@ -1,19 +1,12 @@
 package info.bliki.wiki.filter;
 
 import info.bliki.wiki.events.EventListener;
-import junit.framework.Test;
-import junit.framework.TestSuite;
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 public class TOCFilterTest extends FilterTestSupport {
-    public TOCFilterTest(String name) {
-        super(name);
-    }
 
-    public static Test suite() {
-        return new TestSuite(TOCFilterTest.class);
-    }
-
-    public void testTOC01() {
+    @Test public void testTOC01() {
         assertEquals("\n" +
                 "<div style=\"page-break-inside: avoid;\">\n" +
                 "<table align=\"right\">\n" +
@@ -44,7 +37,7 @@ public class TOCFilterTest extends FilterTestSupport {
                         + "===hello world3===\n" + "hello world 3", false));
     }
 
-    public void testTOC02() {
+    @Test public void testTOC02() {
         assertEquals("\n" +
                 "<div style=\"page-break-inside: avoid;\">\n" +
                 "<table align=\"right\">\n" +
@@ -78,7 +71,7 @@ public class TOCFilterTest extends FilterTestSupport {
                         + "==hello world 2==\n" + "hello world 2\n" + "\n" + "==hello world1a==\n" + "hello world 1a\n" + "", false));
     }
 
-    public void testTOC03() {
+    @Test public void testTOC03() {
         assertEquals("<h1><span class=\"mw-headline\" id=\"hello_world_1\">hello world 1</span></h1>\n" +
                 "<p>hello world 1</p>\n" +
                 "<h2><span class=\"mw-headline\" id=\"hello_world_2\">hello world 2</span></h2>\n" +
@@ -87,7 +80,7 @@ public class TOCFilterTest extends FilterTestSupport {
                 .render("=hello world 1=\n" + "hello world 1\n" + "\n" + "==hello world 2==\n" + "hello world 2\n", false));
     }
 
-    public void testTOC04() {
+    @Test public void testTOC04() {
         assertEquals("<table id=\"toc\" class=\"toc\" summary=\"Contents\">\n" +
                 "<tr>\n" +
                 "<td>\n" +
@@ -120,7 +113,7 @@ public class TOCFilterTest extends FilterTestSupport {
                 + "hello world 2\n" + "\n" + "==hello world 3==\n" + "hello world 3\n" + "===hello world 4===\n" + "hello world 4\n", false));
     }
 
-    public void testTOC05() {
+    @Test public void testTOC05() {
         assertEquals(" \n" +
                 "<h1><span class=\"mw-headline\" id=\"hello_world_1\">hello world 1</span></h1>\n" +
                 "<p>hello world 1</p>\n" +
@@ -135,7 +128,7 @@ public class TOCFilterTest extends FilterTestSupport {
                         + "hello world 2\n" + "\n" + "==hello world 3==\n" + "hello world 3\n" + "===hello world 4===\n" + "hello world 4\n", false));
     }
 
-    public void testTOC06() {
+    @Test public void testTOC06() {
         assertEquals("<h1><span class=\"mw-headline\" id=\"hello_world_1\">hello world 1</span></h1>\n" +
                 "<p>hello world 1</p>\n" +
                 "<h2><span class=\"mw-headline\" id=\"hello_world_2\">hello world 2</span></h2>\n" +
@@ -146,7 +139,7 @@ public class TOCFilterTest extends FilterTestSupport {
                 + "==hello world 2==\n" + "hello world 2\n" + "\n" + "==hello world Übersicht==\n" + "hello world Übersicht\n", false));
     }
 
-    public void testTOC07() {
+    @Test public void testTOC07() {
         assertEquals("" +
                 "\n" +
                 "\n" +
@@ -166,7 +159,7 @@ public class TOCFilterTest extends FilterTestSupport {
                 "__FORCETOC__\n" +
                 "== -_/.:!~'() ==", false));
     }
-    public void testTOC_Listener() {
+    @Test public void testTOC_Listener() {
         String rawWikiText = wikiModel.parseTemplates("=hello world 1=\n" + "hello world 1\n" + "\n" + "==hello world 2==\n"
                 + "hello world 2\n");
         EventListener listener = new EventListener();

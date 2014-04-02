@@ -1,21 +1,11 @@
 package info.bliki.wiki.filter;
 
-import junit.framework.Test;
-import junit.framework.TestSuite;
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 public class PreFormattedFilterTest extends FilterTestSupport
 {
-    public PreFormattedFilterTest(String name)
-    {
-        super(name);
-    }
-
-    public static Test suite()
-    {
-        return new TestSuite(PreFormattedFilterTest.class);
-    }
-
-    public void testPreformattedInput1()
+    @Test public void testPreformattedInput1()
     {
         assertEquals("\n" +
                 "<pre>This is some\n" +

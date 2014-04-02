@@ -1,27 +1,20 @@
 package info.bliki.wiki.filter;
 
-import junit.framework.Test;
-import junit.framework.TestSuite;
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 public class WPImageFilterTest extends FilterTestSupport {
-    public WPImageFilterTest(String name) {
-        super(name);
-    }
 
-    public static Test suite() {
-        return new TestSuite(WPImageFilterTest.class);
-    }
-
-    public void testEncoder001() {
+    @Test public void testEncoder001() {
         assertEquals("/hello/'2E'2E/world.html", Encoder.encodeTitleLocalUrl("/hello/../world.html"));
     }
 
-    public void testEncoder002() {
+    @Test public void testEncoder002() {
         assertEquals("/hello/you'2Ethis'2Eis'2E'2Ean'2E'2E/exa..mple.html", Encoder
                 .encodeTitleLocalUrl("/hello/you.this.is..an../exa..mple.html"));
     }
 
-    public void testImage00() {
+    @Test public void testImage00() {
         assertEquals(
                 "\n" +
                 "<div class=\"thumb tright\">\n" +
@@ -32,7 +25,7 @@ public class WPImageFilterTest extends FilterTestSupport {
                 wikiModel.render("[[Image:baby_elephant.jpg|thumb|Link to the [[Sandbox]]]]", false));
     }
 
-    public void testImage01b() {
+    @Test public void testImage01b() {
         assertEquals(
                 "\n" +
                 "<div class=\"thumb tright\">\n" +
@@ -43,7 +36,7 @@ public class WPImageFilterTest extends FilterTestSupport {
                 ""  , wikiModel.render("[[Image:baby_elephant.jpg|thumb|Link to the [[Sandbox]] caption]]", false));
     }
 
-    public void testImage02() {
+    @Test public void testImage02() {
         assertEquals(
                 "\n" +
                 "<p>these are the </p>\n" +
@@ -57,14 +50,14 @@ public class WPImageFilterTest extends FilterTestSupport {
                         .render("these are the [[Image:FIFA WM 2006 Teams.png|thumb|220px|Qualifying countries]]...", false));
     }
 
-    public void testImage03() {
+    @Test public void testImage03() {
         assertEquals(
                 "\n"
                         + "<p><a class=\"external free\" href=\"http://Westernpad.jpg\" rel=\"nofollow\">http://Westernpad.jpg</a></p>",
                 wikiModel.render("http://Westernpad.jpg", false));
     }
 
-    public void testImage04() {
+    @Test public void testImage04() {
         assertEquals(
                 "\n" +
                 "<p>test </p>\n" +
@@ -81,14 +74,14 @@ public class WPImageFilterTest extends FilterTestSupport {
                                 false));
     }
 
-    public void testImage05() {
+    @Test public void testImage05() {
         assertEquals(
                 "\n" +
                 "<p><a class=\"image\" href=\"http://www.bliki.info/wiki/Image:wikipedia_new_project1.png\" ><img src=\"http://www.bliki.info/wiki/wikipedia_new_project1.png\" width=\"220\" />\n" +
                 "</a></p>", wikiModel.render("[[Image:wikipedia_new_project1.png]]", false));
     }
 
-    public void testImage06() {
+    @Test public void testImage06() {
         assertEquals(
                 "\n" +
                 "<div class=\"thumb tright\">\n" +
@@ -104,14 +97,14 @@ public class WPImageFilterTest extends FilterTestSupport {
                                 false));
     }
 
-    public void testImage07() {
+    @Test public void testImage07() {
         assertEquals(
                 "\n" +
                 "<p><a class=\"image\" href=\"http://www.bliki.info/wiki/Image:400px-ImageFileName.jpg\" ><img src=\"http://www.bliki.info/wiki/400px-ImageFileName.jpg\" class=\"location-center\" width=\"400\" />\n" +
                 "</a></p>", wikiModel.render("[[Image:ImageFileName.jpg|400px|Center]]", false));
     }
 
-    public void testImage08() {
+    @Test public void testImage08() {
         assertEquals(
                 "\n"
                         + "<p>[<a class=\"external free\" href=\"http://www.homeportals.net/downloads/ClassDiagram_3.0.198.jpg\" rel=\"nofollow\">http://www.homeportals.net/downloads/ClassDiagram_3.0.198.jpg</a> Class\n"
@@ -119,7 +112,7 @@ public class WPImageFilterTest extends FilterTestSupport {
                         + "Diagram]", false));
     }
 
-    public void testImage09() {
+    @Test public void testImage09() {
         assertEquals(
                 "\n" +
                 "<p><a class=\"image\" href=\"http://www.bliki.info/wiki/Main_Page\" title=\"Alt text\"><img src=\"http://www.bliki.info/wiki/150px-Example.png\" alt=\"Alt text\" width=\"150\" />\n" +
@@ -127,7 +120,7 @@ public class WPImageFilterTest extends FilterTestSupport {
                         "[[Image:Example.png|150px|link=Main Page\n" + "|alt=Alt text|Title text]]", false));
     }
 
-    public void testImage10() {
+    @Test public void testImage10() {
         assertEquals(
                 "\n" +
                 "<div class=\"thumb tright\">\n" +
@@ -139,7 +132,7 @@ public class WPImageFilterTest extends FilterTestSupport {
                         "[[Bild:Example.png|150px|link=Main Page|thumb|alt=Alt text|Caption]]", false));
     }
 
-    public void testImage11() {
+    @Test public void testImage11() {
         assertEquals(
                 "\n" +
                 "<div class=\"thumb tright\">\n" +
@@ -151,7 +144,7 @@ public class WPImageFilterTest extends FilterTestSupport {
                         "[[Bild:Example.png|150px|link=|thumb|alt=Alt text|Caption]]", false));
     }
 
-    public void testImage12() {
+    @Test public void testImage12() {
         assertEquals(
                 "\n" +
                 "<p>these are the </p>\n" +
@@ -165,7 +158,7 @@ public class WPImageFilterTest extends FilterTestSupport {
                         .render("these are the [[Image:FIFA WM 2006 Teams.png|thumb|220x100px|Qualifying countries]]...", false));
     }
 
-    public void testImage13() {
+    @Test public void testImage13() {
         assertEquals(
                 "\n" +
                 "<p>these are the </p>\n" +
@@ -179,7 +172,7 @@ public class WPImageFilterTest extends FilterTestSupport {
                         .render("these are the [[Image:FIFA WM 2006 Teams.png|thumb|x100px|Qualifying countries]]...", false));
     }
 
-    public void testImage14() {
+    @Test public void testImage14() {
         assertEquals(
                 "\n" +
                 "<div class=\"thumb tleft\">\n" +
@@ -194,7 +187,7 @@ public class WPImageFilterTest extends FilterTestSupport {
                                 false));
     }
 
-    public void testImage15() {
+    @Test public void testImage15() {
         String raw = "[[Image:Bamfield (171).jpg|right|thumb" + "|Tsunami hazard sign at [[Bamfield]], [[British Columbia]]"
                 + "|alt=Photo of sign reading " + "\"Tsunami Hazard Zone...In case of earthquake," + " go to higher ground or inland\"]]";
         String expected = "\n" +
@@ -207,14 +200,14 @@ public class WPImageFilterTest extends FilterTestSupport {
         assertEquals(expected, wikiModel.render(raw, false));
     }
 
-    public void testImage16() {
+    @Test public void testImage16() {
         assertEquals(
                 "\n" +
                 "<p><a class=\"image\" href=\"http://www.bliki.info/wiki/Sandbox:createNewPage#Section_Three\" ><img src=\"http://www.bliki.info/wiki/skull.jpg\" width=\"220\" />\n" +
                 "</a></p>", wikiModel.render("[[Image:skull.jpg|link=sandbox:createNewPage#Section Three]]", false));
     }
 
-    public void testImage17() {
+    @Test public void testImage17() {
         assertEquals("Test_'26_ToDo.jpg", Encoder.encodeTitleLocalUrl("Test & ToDo.jpg"));
         assertEquals(
                 "\n" +
@@ -228,13 +221,13 @@ public class WPImageFilterTest extends FilterTestSupport {
                         "[[File:Test 4711.jpg|thumb|left|150px|Test 4711]]", false));
     }
 
-    public void testImage19() {
+    @Test public void testImage19() {
         assertEquals("\n" +
                 "<p>test1<a class=\"image\" href=\"http://www.bliki.info/wiki/Image:PeanutButter.jpg\" ><img src=\"http://www.bliki.info/wiki/PeanutButter.jpg\" width=\"220\" />\n" +
                 "</a>test2</p>", wikiModel.render("test1[[Image:PeanutButter.jpg]]test2", false));
     }
 
-    public void testImage18() {
+    @Test public void testImage18() {
         assertEquals("\n" +
                 "<p><a class=\"image\" href=\"http://www.bliki.info/wiki/Speakerlink.png\" title=\"Listen\"><img src=\"http://www.bliki.info/wiki/11px-Speakerlink.png\" alt=\"Listen\" width=\"11\" />\n" +
                 "</a></p>", wikiModel.render("[[Image:Speakerlink.png|11px|link=Speakerlink.png|Listen]]", false));

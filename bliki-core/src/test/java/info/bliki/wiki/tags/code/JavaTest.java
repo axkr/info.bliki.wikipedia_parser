@@ -1,19 +1,12 @@
 package info.bliki.wiki.tags.code;
 
 import info.bliki.wiki.filter.FilterTestSupport;
-import junit.framework.Test;
-import junit.framework.TestSuite;
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 public class JavaTest extends FilterTestSupport {
-    public JavaTest(String name) {
-        super(name);
-    }
 
-    public static Test suite() {
-        return new TestSuite(JavaTest.class);
-    }
-
-    public void testJava001() {
+    @Test public void testJava001() {
         String result = wikiModel.render("'''Java Example'''\n" + "<source lang=java>\n" + "public class Test {\n" + "< > \" \' &"
                 + "}\n" + "</source>", false);
         assertEquals("\n" +
@@ -24,7 +17,7 @@ public class JavaTest extends FilterTestSupport {
                 "</span></pre>", result);
     }
 
-    public void testJava002() {
+    @Test public void testJava002() {
         String result = wikiModel.render("'''Java Example'''\n" + "<source lang=java>"
                 + "Util util = new Util(\"c:\\\\temp\\\\\");\n" +"util.doIt();"+ "</source>", false);
 

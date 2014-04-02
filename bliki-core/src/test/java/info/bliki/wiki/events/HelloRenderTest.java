@@ -1,11 +1,12 @@
 package info.bliki.wiki.events;
 
 import info.bliki.wiki.model.WikiModel;
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Before;
+import org.junit.Test;
 
-public class HelloRenderTest extends TestCase {
+import static org.junit.Assert.assertEquals;
+
+public class HelloRenderTest  {
 
     public final static String HELLO_TEXT = "<noinclude>{{pp-semi-protected|small=yes}}</noinclude>\r\n"
             + "{{wiktionarypar|hello}}\r\n"
@@ -85,44 +86,37 @@ public class HelloRenderTest extends TestCase {
 
     protected WikiModel wikiModel = null;
 
-    public HelloRenderTest(String s) {
-        super(s);
-    }
-
     /**
      * Set up a test model, which contains predefined templates
      */
-    @Override
-    protected void setUp() throws Exception {
-        super.setUp();
+    @Before
+    public void setUp() throws Exception {
         wikiModel = new HelloWikiModel("http://www.bliki.info/wiki/${image}", "http://www.bliki.info/wiki/${title}");
     }
 
-    public static Test suite() {
-        return new TestSuite(HelloRenderTest.class);
-    }
 
-    public void test996() {
+    @Test public void test996() {
         String result = wikiModel.render(HELLO_TEXT, false);
     }
 
-    public void test997() {
+    @Test public void test997() {
         HelloWikiLinkListener listener = new HelloWikiLinkListener();
         wikiModel.parseEvents(listener, HELLO_TEXT);
         assertEquals("salutation (greeting)|salutation\n" + "Greeting habits|greeting\n"
-                + "English language\n" + "synonym\n" + "wikt:hi|Hi\n" + "wikt:hey|Hey\n" + "1883\n" + "telephone\n" + "Roughing It\n"
-                + "Mark Twain\n" + "1849\n" + "1846\n" + "1860s\n" + "1826\n" + "contraction\n" + "Archaism|archaic\n"
-                + "English language|English\n" + "Thomas Edison\n" + "telephone\n" + "Alexander Graham Bell\n" + "Ahoy-hoy|Ahoy\n"
-                + "1889\n" + "Caller ID\n" + "Charles Dickens\n" + "Oliver Twist\n" + "1838\n" + "the Artful Dodger\n"
-                + "Tom Brown\'s Schooldays\n" + "British English\n" + "exclamation\n" + "fox hunt|hunt\n"
-                + "Coriolanus (play)|Coriolanus\n" + "William Shakespeare\n" + "Webster\'s dictionary\n" + "1913\n"
-                + "American Heritage Dictionary\n" + "Category:Greetings\n" + "de:Hallo\n" + "es:Hola\n" + "fr:Bonjour\n" + "it:Ciao\n"
-                + "nl:Hoi\n" + "nn:Hallo\n" + "pt:Oi\n" + "ru:Алло\n" + "simple:Hello\n" + "tr:Günaydin\n" + "vec:Ciao\n" + "zh:Hello\n"
-                + "",
-                listener.getCollectorBuffer().toString());
+                        + "English language\n" + "synonym\n" + "wikt:hi|Hi\n" + "wikt:hey|Hey\n" + "1883\n" + "telephone\n" + "Roughing It\n"
+                        + "Mark Twain\n" + "1849\n" + "1846\n" + "1860s\n" + "1826\n" + "contraction\n" + "Archaism|archaic\n"
+                        + "English language|English\n" + "Thomas Edison\n" + "telephone\n" + "Alexander Graham Bell\n" + "Ahoy-hoy|Ahoy\n"
+                        + "1889\n" + "Caller ID\n" + "Charles Dickens\n" + "Oliver Twist\n" + "1838\n" + "the Artful Dodger\n"
+                        + "Tom Brown\'s Schooldays\n" + "British English\n" + "exclamation\n" + "fox hunt|hunt\n"
+                        + "Coriolanus (play)|Coriolanus\n" + "William Shakespeare\n" + "Webster\'s dictionary\n" + "1913\n"
+                        + "American Heritage Dictionary\n" + "Category:Greetings\n" + "de:Hallo\n" + "es:Hola\n" + "fr:Bonjour\n" + "it:Ciao\n"
+                        + "nl:Hoi\n" + "nn:Hallo\n" + "pt:Oi\n" + "ru:Алло\n" + "simple:Hello\n" + "tr:Günaydin\n" + "vec:Ciao\n" + "zh:Hello\n"
+                        + "",
+                listener.getCollectorBuffer().toString()
+        );
     }
 
-    public void test998() {
+    @Test public void test998() {
         HelloHeadListener listener = new HelloHeadListener();
         wikiModel.parseEvents(listener, HELLO_TEXT);
         assertEquals("First use\n" + "Etymology\n" + "Telephone\n" + "Hullo\n" + "Hallo\n"
@@ -130,7 +124,7 @@ public class HelloRenderTest extends TestCase {
                 listener.getCollectorBuffer().toString());
     }
 
-    public void test999() {
+    @Test public void test999() {
         HelloTemplateListener listener = new HelloTemplateListener();
         wikiModel.parseEvents(listener, HELLO_TEXT);
         assertEquals(

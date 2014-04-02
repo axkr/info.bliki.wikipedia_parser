@@ -2,23 +2,17 @@ package info.bliki.wiki.filter;
 
 import info.bliki.wiki.model.SemanticAttribute;
 import info.bliki.wiki.model.SemanticRelation;
+import org.junit.Test;
 
 import java.util.List;
 
-import junit.framework.Test;
-import junit.framework.TestSuite;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class WPSemanticLinkTest extends FilterTestSupport {
-    public WPSemanticLinkTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(WPSemanticLinkTest.class);
-    }
 
     @Override
-    protected void setUp() throws Exception {
+    public void setUp() throws Exception {
         super.setUp();
         wikiModel.setSemanticWebActive(true);
     }
@@ -29,7 +23,7 @@ public class WPSemanticLinkTest extends FilterTestSupport {
      * See <a href="http://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic
      * MediaWiki</a> for more information.
      */
-    public void testLink01() {
+    @Test public void testLink01() {
 
         assertEquals(
                 "\n"
@@ -47,7 +41,7 @@ public class WPSemanticLinkTest extends FilterTestSupport {
      * See <a href="http://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic
      * MediaWiki</a> for more information.
      */
-    public void testLink02() {
+    @Test public void testLink02() {
 
         assertEquals("\n<p>The population is 3,993,933.</p>", wikiModel.render("The population is [[Has population:=3,993,933]].", false));
         List<SemanticAttribute> list = wikiModel.getSemanticAttributes();
@@ -56,7 +50,7 @@ public class WPSemanticLinkTest extends FilterTestSupport {
         assertTrue(rel.getValue().equals("3,993,933"));
     }
 
-    public void testLink03() {
+    @Test public void testLink03() {
 
         assertEquals(
                 "\n"
@@ -68,7 +62,7 @@ public class WPSemanticLinkTest extends FilterTestSupport {
         assertTrue(rel.getValue().equals("link"));
     }
 
-    public void testLink04() {
+    @Test public void testLink04() {
 
         assertEquals("\n<p>To hide the property  from appearing at all</p>", wikiModel
                 .render("To hide the property [[    example relation::link   | ]] from appearing at all", false));
@@ -78,7 +72,7 @@ public class WPSemanticLinkTest extends FilterTestSupport {
         assertTrue(rel.getValue().equals("link"));
     }
 
-    public void testLink05() {
+    @Test public void testLink05() {
 
         assertEquals("\n" +
                 "<p>The <a href=\"http://www.bliki.info/wiki/C%2B%2B_::_operator\" title=\"C++ :: operator\">C++ :: operator</a>.</p>", wikiModel

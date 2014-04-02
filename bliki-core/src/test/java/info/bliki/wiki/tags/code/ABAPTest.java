@@ -1,19 +1,12 @@
 package info.bliki.wiki.tags.code;
 
 import info.bliki.wiki.filter.FilterTestSupport;
-import junit.framework.Test;
-import junit.framework.TestSuite;
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 public class ABAPTest extends FilterTestSupport {
-    public ABAPTest(String name) {
-        super(name);
-    }
 
-    public static Test suite() {
-        return new TestSuite(ABAPTest.class);
-    }
-
-    public void testABAP() {
+    @Test public void testABAP() {
         String result = wikiModel.render("'''ABAP Example'''\n" + "<source lang=\"abap\">\n" + "*--- line comment\n"
                 + "*--- line comment\n" + "WRITE: / '''Hello World''' \"test comment\n" + "< > \" \' &" + "}\n" + "</source>", false);
 
@@ -30,7 +23,7 @@ public class ABAPTest extends FilterTestSupport {
                 "</span></pre>", result);
     }
 
-    public void testABAPWithoutLangAttr() {
+    @Test public void testABAPWithoutLangAttr() {
         String result = wikiModel.render("'''ABAP Example'''\n" + "<source> REPORT ZZTEST00\n" + "*--- line comment\n"
                 + "*--- line comment\n" + "WRITE: / '''Hello World''' \"test comment\n" + "< > \" \' &" + "}\n" + "</source>", false);
 

@@ -1,15 +1,13 @@
 package info.bliki.api.query;
 
-import info.bliki.api.Connector;
-import info.bliki.api.UnexpectedAnswerException;
-import info.bliki.api.User;
+import org.junit.Test;
 
 /**
  * Tests edit query.
  */
 public class EditTest extends BaseQueryTest {
 
-    public void testDummy() {
+    @Test public void testDummy() {
         // ..
     }
 
@@ -17,7 +15,7 @@ public class EditTest extends BaseQueryTest {
      * To make this test work correctly uncomment it and be sure that you have a
      * internet connection running.
      */
-    // public void testSmokeTest() {
+    // @Test public void testSmokeTest() {
     // User user = getAnonymousUser();
     // Connector connector = new Connector();
     // connector.login(user);

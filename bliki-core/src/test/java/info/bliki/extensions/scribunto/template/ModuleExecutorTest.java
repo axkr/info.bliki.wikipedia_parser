@@ -20,8 +20,7 @@ public class ModuleExecutorTest {
         subject = new ModuleExecutor();
     }
 
-    @Test
-    public void testRun() throws IOException {
+    @Test public void testRun() throws IOException {
         Map<String, String> templateParams = new LinkedHashMap<String, String>();
         templateParams.put("1", "foo");
 

@@ -1,23 +1,13 @@
 package info.bliki.wiki.tags.code;
 
 import info.bliki.wiki.filter.FilterTestSupport;
-import junit.framework.Test;
-import junit.framework.TestSuite;
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 
 public class CSharpTest extends FilterTestSupport
 {
-    public CSharpTest(String name)
-    {
-        super(name);
-    }
-
-    public static Test suite()
-    {
-        return new TestSuite(CSharpTest.class);
-    }
-
-    public void testCSharp()
+    @Test public void testCSharp()
     {
         String result = wikiModel.render("'''C# Example'''\n" + "<source lang=csharp>\n" + "public class Test {\n" + "< > \" \' &" + "}\n"
                 + "</source>", false);

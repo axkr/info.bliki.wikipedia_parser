@@ -1,19 +1,11 @@
 package info.bliki.wiki.tags.code;
 
 import info.bliki.wiki.filter.FilterTestSupport;
-import junit.framework.Test;
-import junit.framework.TestSuite;
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 public class SQLTest extends FilterTestSupport {
-    public SQLTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(SQLTest.class);
-    }
-
-    public void test001() {
+    @Test public void test001() {
         final String result = wikiModel.render("'''SQL Example'''\n" + "<source lang='sql'>create table Hydroxyl (\n"
                 + " id integer primary key,\n" + " name varchar(42)\n" + ")\n" + "</source>", false);
         String expect = "\n" +
@@ -26,7 +18,7 @@ public class SQLTest extends FilterTestSupport {
         assertEquals("SQL test001", expect, result);
     }
 
-    public void test002() {
+    @Test public void test002() {
         // test for wrong sql text
         final String result = wikiModel.render("'''SQL Example'''\n" + "<source lang='sql'>\n"
                 + "<form><input type=\"button\" onclick=\"alert('Are you sure you want to do this?')\" value=\"Alert\"></form>\n"
@@ -39,7 +31,7 @@ public class SQLTest extends FilterTestSupport {
         assertEquals("SQL test002", expect, result);
     }
 
-    public void test003() {
+    @Test public void test003() {
         final String result = wikiModel.render("<source lang=\"sql\">\n-- a line comment\n" +
                 "select * from testtable WITH UR\n" +
                 "</source>", false);
@@ -50,7 +42,7 @@ public class SQLTest extends FilterTestSupport {
         assertEquals("SQL test003", expect, result);
     }
 
-    public void test004() {
+    @Test public void test004() {
         final String result = wikiModel.render("<source lang=\"sql\">\n" +
                 "coMMEnt on column CALCULATEALL_VEHICLE.ACTIVE is 'Flag indicating if the vehicle is active or not';\n" +
                 "</source>", false);

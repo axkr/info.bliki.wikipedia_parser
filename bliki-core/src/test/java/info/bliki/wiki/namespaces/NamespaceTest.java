@@ -2,38 +2,31 @@ package info.bliki.wiki.namespaces;
 
 import info.bliki.wiki.namespaces.INamespace.NamespaceCode;
 import info.bliki.wiki.namespaces.Namespace.NamespaceValue;
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.Locale;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Tests for {@link Namespace}.
  *
  * @author Nico Kruber, kruber@zib.de
  */
-public class NamespaceTest extends TestCase {
+public class NamespaceTest {
     protected Namespace namespace = null;
 
-    public NamespaceTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(NamespaceTest.class);
-    }
-
-    @Override
-    protected void setUp() throws Exception {
-        super.setUp();
+    @Before
+    public void setUp() throws Exception {
         namespace = new Namespace(Locale.ENGLISH);
     }
 
     /**
      * Checks whether all content spaces are set.
      */
-    public void testNumberCodeConversion01() {
+    @Test public void testNumberCodeConversion01() {
         for (NamespaceCode nsCode : NamespaceCode.values()) {
             assertEquals((int) nsCode.code, Namespace.intToNumberCode(Namespace.numberCodeToInt(nsCode.code)));
         }
@@ -42,7 +35,7 @@ public class NamespaceTest extends TestCase {
     /**
      * Checks whether all content spaces are set.
      */
-    public void testNumberCodeConversion02() {
+    @Test public void testNumberCodeConversion02() {
         for (int i = 0; i <= NamespaceCode.values().length-1; ++i) {
             assertEquals(i, Namespace.numberCodeToInt(Namespace.intToNumberCode(i)));
         }
@@ -51,7 +44,7 @@ public class NamespaceTest extends TestCase {
     /**
      * Checks whether all content spaces are set.
      */
-    public void testEnsureContentSpacesNotNull() {
+    @Test public void testEnsureContentSpacesNotNull() {
         Namespace namespaceObj = new Namespace();
         for (NamespaceCode nsCode : NamespaceCode.values()) {
             NamespaceValue namespace = namespaceObj.getNamespaceByNumber(nsCode.code);
@@ -59,7 +52,7 @@ public class NamespaceTest extends TestCase {
         }
     }
 
-    public void testNamespace001() {
+    @Test public void testNamespace001() {
         assertEquals(namespace.META, namespace.getNamespace("Meta"));
         assertEquals(namespace.META_TALK, namespace.getNamespace("Meta_talk"));
         assertEquals(namespace.META_TALK, namespace.getNamespace("Meta talk"));
@@ -68,7 +61,7 @@ public class NamespaceTest extends TestCase {
         assertEquals(namespace.META_TALK, namespace.getNamespace("Project talk"));
     }
 
-    public void testTalkspace001() {
+    @Test public void testTalkspace001() {
         assertEquals(namespace.META_TALK, namespace.getTalkspace("Meta"));
         assertEquals(namespace.META_TALK, namespace.getTalkspace("Meta_talk"));
         assertEquals(namespace.META_TALK, namespace.getTalkspace("Meta talk"));
@@ -77,7 +70,7 @@ public class NamespaceTest extends TestCase {
         assertEquals(namespace.META_TALK, namespace.getTalkspace("Project talk"));
     }
 
-    public void testContentspace001() {
+    @Test public void testContentspace001() {
         assertEquals(namespace.META, namespace.getContentspace("Meta"));
         assertEquals(namespace.META, namespace.getContentspace("Meta_talk"));
         assertEquals(namespace.META, namespace.getContentspace("Meta talk"));
@@ -86,13 +79,13 @@ public class NamespaceTest extends TestCase {
         assertEquals(namespace.META, namespace.getContentspace("Project talk"));
     }
 
-    public void testOldAliases001() {
+    @Test public void testOldAliases001() {
         namespace.getCategory_talk().setTexts("Kategorie Diskussion");
         assertEquals(null, namespace.getNamespace("Category talk"));
         assertEquals(null, namespace.getNamespace("Category_talk"));
     }
 
-    public void testModuleNamespace() {
+    @Test public void testModuleNamespace() {
         assertEquals(namespace.MODULE, namespace.getNamespace("Module"));
         assertEquals(namespace.MODULE, namespace.getContentspace("Module_talk"));
         assertEquals(namespace.MODULE_TALK, namespace.getNamespace("Module_talk"));

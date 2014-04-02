@@ -1,18 +1,15 @@
 package info.bliki.wiki.filter;
 
-import java.util.Locale;
-
 import info.bliki.wiki.model.BBCodeModel;
 import info.bliki.wiki.model.WikiModel;
-import junit.framework.Test;
-import junit.framework.TestSuite;
+import org.junit.Test;
+
+import java.util.Locale;
+
+import static org.junit.Assert.assertEquals;
 
 public class BBCodeFilterTest extends FilterTestSupport
 {
-    public BBCodeFilterTest(String name)
-    {
-        super(name);
-    }
 
     @Override
     protected WikiModel newWikiTestModel(Locale locale) {
@@ -22,25 +19,20 @@ public class BBCodeFilterTest extends FilterTestSupport
         return wikiModel;
     }
 
-    public static Test suite()
-    {
-        return new TestSuite(BBCodeFilterTest.class);
-    }
-
-    public void testbb1()
+    @Test public void testbb1()
     {
         assertEquals("\n" +
                 "<p>This is a <i>simple</i> paragraph.</p>", wikiModel.render("This is a [i]simple[/i] paragraph.", false));
     }
 
-    public void testbb2()
+    @Test public void testbb2()
     {
         assertEquals("\n" +
                 "<p>This is a <font color=\"red\">simple</font> paragraph.</p>", wikiModel.render(
                 "This is a [color=red]simple[/color] paragraph.", false));
     }
 
-    public void testbb3()
+    @Test public void testbb3()
     {
         assertEquals("\n" +
                 "<p>\n" +
@@ -55,7 +47,7 @@ public class BBCodeFilterTest extends FilterTestSupport
                 "[list]\n[*][b]Red[/b] and [i]Green[/i]\n[*]Blue\n[*]Yellow\n[/list]", false));
     }
 
-    public void testbb4()
+    @Test public void testbb4()
     {
         assertEquals("\n" +
                 "<p>\n" +
@@ -66,7 +58,7 @@ public class BBCodeFilterTest extends FilterTestSupport
                 "</ul></p>", wikiModel.render("[list]\nRed\nBlue\nYellow\n[/list]", false));
     }
 
-    public void testbb5()
+    @Test public void testbb5()
     {
         assertEquals("\n" +
                 "<p>\n" +
@@ -76,7 +68,7 @@ public class BBCodeFilterTest extends FilterTestSupport
                 "[code]\nA code block \n[/code]", false));
     }
 
-    public void testbb6()
+    @Test public void testbb6()
     {
         assertEquals("\n" +
                 "<p><a href=\"http://www.example.com\">http://www.example.com\n" +
@@ -84,14 +76,14 @@ public class BBCodeFilterTest extends FilterTestSupport
                 "[url]http://www.example.com\n[/url]", false));
     }
 
-    public void testbb7()
+    @Test public void testbb7()
     {
         assertEquals("\n" +
                 "<p><a href=\"http://www.example.com\">Example Site</a></p>", wikiModel.render(
                 "[url=http://www.example.com]Example Site[/url]", false));
     }
 
-    public void testbb8() {
+    @Test public void testbb8() {
         assertEquals("\n" +
                 "<p><blockquote>start blockquote here\n" +
                 "\n" +
@@ -108,7 +100,7 @@ public class BBCodeFilterTest extends FilterTestSupport
                 "end of blockquote here[/quote] ", false));
     }
 
-    public void testbb9()
+    @Test public void testbb9()
     {
         assertEquals("\n" +
                 "<p>\n" +

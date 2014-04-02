@@ -1,21 +1,13 @@
 package info.bliki.wiki.filter;
 
-import junit.framework.Test;
-import junit.framework.TestSuite;
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 public class HTTPUrlFilterTest extends FilterTestSupport {
-    public HTTPUrlFilterTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(HTTPUrlFilterTest.class);
-    }
-
     /**
      * Test for issue 89
      */
-    public void testIssue89() {
+    @Test public void testIssue89() {
         assertEquals(
                 "\n"
                         + "<p>start <a class=\"external autonumber\" href=\"//en.wikipedia.org/w/index.php?title=Main_Page\" rel=\"nofollow\">[1]</a> end</p>",
@@ -25,14 +17,14 @@ public class HTTPUrlFilterTest extends FilterTestSupport {
     /**
      * Test for issue 90, Issue 91
      */
-    public void testIssue90() {
+    @Test public void testIssue90() {
         assertEquals(
                 "\n"
                         + "<p>start <a class=\"external autonumber\" href=\"http://www.google.com\" rel=\"nofollow\">[1]</a> middle <a class=\"external autonumber\" href=\"http://www.google.de\" rel=\"nofollow\">[2]</a> end</p>",
                 wikiModel.render("start [http://www.google.com] middle [http://www.google.de] end", false));
     }
 
-    public void testIssue90a() {
+    @Test public void testIssue90a() {
         assertEquals(
                 "\n"
                         + "<p>start [  <a class=\"external free\" href=\"http://www.google.com\" rel=\"nofollow\">http://www.google.com</a> Google] middle [\n"
@@ -40,40 +32,40 @@ public class HTTPUrlFilterTest extends FilterTestSupport {
                 wikiModel.render("start [  http://www.google.com Google] middle [\nhttp://www.google.de Google DE] end", false));
     }
 
-    public void testIssue90b() {
+    @Test public void testIssue90b() {
         assertEquals("\n" +
                 "<p>start [www.google.de Google DE ] end</p>", wikiModel.render("start [www.google.de Google DE ] end", false));
     }
 
-    public void testUrlHTTP() {
+    @Test public void testUrlHTTP() {
         assertEquals(
                 "\n"
                         + "<p>see <a class=\"external free\" href=\"http://www.plog4u.de\" rel=\"nofollow\">http://www.plog4u.de</a></p>",
                 wikiModel.render("see http://www.plog4u.de", false));
     }
 
-    public void testUrlHTTP001() {
+    @Test public void testUrlHTTP001() {
         assertEquals(
                 "\n"
                         + "<p><b><a class=\"external free\" href=\"http://bla.blub.com\" rel=\"nofollow\">http://bla.blub.com</a></b></p>",
                 wikiModel.render("'''http://bla.blub.com'''", false));
     }
 
-    public void testUrlFTP() {
+    @Test public void testUrlFTP() {
         assertEquals(
                 "\n"
                         + "<p>see <a class=\"external free\" href=\"ftp://www.plog4u.de\" rel=\"nofollow\">ftp://www.plog4u.de</a></p>",
                 wikiModel.render("see ftp://www.plog4u.de", false));
     }
 
-    public void testUrl2() {
+    @Test public void testUrl2() {
         assertEquals(
                 "\n"
                         + "<p>see <a class=\"external free\" href=\"http://www.plog4u.de/index.php&#38;test_me\" rel=\"nofollow\">http://www.plog4u.de/index.php&#38;test_me</a></p>",
                 wikiModel.render("see http://www.plog4u.de/index.php&test_me", false));
     }
 
-    public void testUrl3() {
+    @Test public void testUrl3() {
         assertEquals(
                 "\n"
                         + "<ol>\n"
@@ -81,7 +73,7 @@ public class HTTPUrlFilterTest extends FilterTestSupport {
                 wikiModel.render("# Bare URL: http://www.nupedia.com/", false));
     }
 
-    public void testUrl4() {
+    @Test public void testUrl4() {
         assertEquals(
                 "\n"
                         + "<p>Bericht über die Weltkulturerbe-Bewerbung von <a class=\"external text\" href=\"ftp://www.hr-online.de/website/rubriken/kultur/index.jsp?rubrik=5676&#38;key=standard&#38;key=standard_document_7782534\" rel=\"nofollow\">www.hr-online.de?rubrik=5676&#38;key=standard</a> vom 13. Juli 2005</p>",
@@ -91,7 +83,7 @@ public class HTTPUrlFilterTest extends FilterTestSupport {
                                 false));
     }
 
-    public void testUrl5() {
+    @Test public void testUrl5() {
         assertEquals(
                 "\n"
                         + "<p>Bericht über die Weltkulturerbe-Bewerbung von <a class=\"external text\" href=\"http://www.hr-online.de/website/rubriken/kultur/index.jsp?rubrik=5676&#38;key=standard&#38;key=standard_document_7782534\" rel=\"nofollow\">www.hr-online.de?rubrik=5676&#38;key=standard</a> vom 13. Juli 2005</p>",
@@ -101,14 +93,14 @@ public class HTTPUrlFilterTest extends FilterTestSupport {
                                 false));
     }
 
-    public void testImageUrl() {
+    @Test public void testImageUrl() {
         assertEquals(
                 "\n"
                         + "<p>see <a class=\"external free\" href=\"http://www.plog4u.de/image.gif\" rel=\"nofollow\">http://www.plog4u.de/image.gif</a></p>",
                 wikiModel.render("see http://www.plog4u.de/image.gif", false));
     }
 
-    public void testISBN() {
+    @Test public void testISBN() {
         assertEquals(
                 "\n"
                         + "<p>Note that the numbers are not automatically made clickable until they are in this format:</p>\n"
@@ -124,7 +116,7 @@ public class HTTPUrlFilterTest extends FilterTestSupport {
                         false));
     }
 
-    public void testMailto001() {
+    @Test public void testMailto001() {
         assertEquals(
                 "\n"
                         + "<p>Linking to an e-mail address works the same way: \n"
@@ -134,7 +126,7 @@ public class HTTPUrlFilterTest extends FilterTestSupport {
                         + "[mailto:someone@domain.com someone]", false));
     }
 
-    public void testMailto002() {
+    @Test public void testMailto002() {
         assertEquals(
                 "\n"
                         + "<p>Linking to an e-mail address works the same way: \n"
@@ -144,19 +136,19 @@ public class HTTPUrlFilterTest extends FilterTestSupport {
                         + "[mAilTo:someone@domain.com someone]", false));
     }
 
-    public void testWrongMailto() {
+    @Test public void testWrongMailto() {
         assertEquals("\n" + "<p>Linking to an e-mail address works the same way: \n" + "mailto:some one@domain.com or \n"
                 + "[mailto:some one@domain.com someone]</p>", wikiModel.render("Linking to an e-mail address works the same way: \n"
                 + "mailto:some one@domain.com or \n" + "[mailto:some one@domain.com someone]", false));
     }
 
-    public void testWrongMailto2() {
+    @Test public void testWrongMailto2() {
           assertEquals("\n" +
           "<p>mailto someone@domain.com or \n" +
             "[mailto someone@domain.com someone]</p>", wikiModel.render("mailto someone@domain.com or \n" + "[mailto someone@domain.com someone]", false));
     }
 
-    public void testUrlWithSpan() {
+    @Test public void testUrlWithSpan() {
         assertEquals(
                 "\n"
                         + "<p><a class=\"external text\" href=\"http://en.wikipedia.org/w/index.php?title=Template%3AMilwaukee+Brewers+roster+navbox&#38;action=edit\" rel=\"nofollow\"><span style=\"color:#002bb8;;background:#0a2351; color:#c9b074;;border:none;;\" title=\"You can edit this template. Please use the preview button before saving.\">e</span></a></p>",
@@ -166,19 +158,19 @@ public class HTTPUrlFilterTest extends FilterTestSupport {
                                 false));
     }
 
-    public void testUrlTEL01() {
+    @Test public void testUrlTEL01() {
         assertEquals("\n"
                 + "<p>call <a class=\"telephonelink\" href=\"tel:+0815-4711\" title=\"tel:+0815-4711\">tel:+0815-4711</a></p>", wikiModel
                 .render("call tel:+0815-4711", false));
     }
 
-    public void testUrlTEL02() {
+    @Test public void testUrlTEL02() {
         assertEquals("\n"
                 + "<p>call <a class=\"telephonelink\" href=\"tel:+0815-4711\" title=\"tel:+0815-4711\">a phone number</a></p>", wikiModel
                 .render("call [tel:+0815-4711 a phone number]", false));
     }
 
-    public void testUrlTEL03() {
+    @Test public void testUrlTEL03() {
         assertEquals("\n"
                 + "<p>call <a class=\"telephonelink\" href=\"tEl:+0815-4711\" title=\"tEl:+0815-4711\">a phone number</a></p>", wikiModel
                 .render("call [tEl:+0815-4711 a phone number]", false));

@@ -1,24 +1,11 @@
 package info.bliki.wiki.tags.code;
 
 import info.bliki.wiki.filter.FilterTestSupport;
-import junit.framework.Test;
-import junit.framework.TestSuite;
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 public class PythonTest extends FilterTestSupport {
-    public PythonTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(PythonTest.class);
-    }
-
-    @Override
-    protected void setUp() throws Exception {
-        super.setUp();
-    }
-
-    public void testPython() {
+    @Test public void testPython() {
         String result = wikiModel.render("<source lang=python>\n" + "# Python: \"Hello, world!\"\n" + "print \"Hello, world!\"\n"
                 + "# last comment line" + "</source>", false);
 

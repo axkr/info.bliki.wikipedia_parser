@@ -1,22 +1,16 @@
 package info.bliki.wiki.filter;
 
 import info.bliki.wiki.model.Reference;
+import org.junit.Test;
 
 import java.util.List;
 
-import junit.framework.Test;
-import junit.framework.TestSuite;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class RefFilterTest extends FilterTestSupport {
-    public RefFilterTest(String name) {
-        super(name);
-    }
 
-    public static Test suite() {
-        return new TestSuite(RefFilterTest.class);
-    }
-
-    public void testRef01() {
+    @Test public void testRef01() {
         assertEquals(
                 "\n"
                         + "<p>A <sup id=\"_ref-1\" class=\"reference\"><a href=\"#_note-1\" title=\"\">[1]</a></sup> Test</p><ol class=\"references\">\n"
@@ -27,7 +21,7 @@ public class RefFilterTest extends FilterTestSupport {
         assertTrue(ref.getRefString().equals("Reference"));
     }
 
-    public void testRef02() {
+    @Test public void testRef02() {
         assertEquals(
                 "\n"
                         + "<p>A <sup id=\"_ref-1\" class=\"reference\"><a href=\"#_note-1\" title=\"\">[1]</a></sup> and a <sup id=\"_ref-2\" class=\"reference\"><a href=\"#_note-2\" title=\"\">[2]</a></sup> Test</p><ol class=\"references\">\n"
@@ -40,7 +34,7 @@ public class RefFilterTest extends FilterTestSupport {
         assertTrue(ref.getRefString().equals("second reference"));
     }
 
-    public void testRef03() {
+    @Test public void testRef03() {
         assertEquals(
                 "\n" +
                 "<p>aaa <sup id=\"_ref-Freitag\" class=\"reference\"><a href=\"#_note-Freitag\" title=\"\">[1]</a></sup> bbb<sup id=\"_ref-Arndt\" class=\"reference\"><a href=\"#_note-Arndt\" title=\"\">[2]</a></sup> <sup id=\"_ref-3\" class=\"reference\"><a href=\"#_note-3\" title=\"\">[3]</a></sup> </p><ol class=\"references\">\n" +
@@ -55,7 +49,7 @@ public class RefFilterTest extends FilterTestSupport {
         assertTrue(ref.getRefString().equals("ccc"));
     }
 
-    public void testRef04() {
+    @Test public void testRef04() {
         assertEquals(
                 "\n" +
                 "<p>aaa <sup id=\"_ref-Freitag\" class=\"reference\"><a href=\"#_note-Freitag\" title=\"\">[1]</a></sup> bbb<sup id=\"_ref-Arndt\" class=\"reference\"><a href=\"#_note-Arndt\" title=\"\">[2]</a></sup> <sup id=\"_ref-3\" class=\"reference\"><a href=\"#_note-3\" title=\"\">[3]</a></sup> </p><ol class=\"references\">\n" +
@@ -70,7 +64,7 @@ public class RefFilterTest extends FilterTestSupport {
         assertTrue(ref.getRefString().equals("ccc"));
     }
 
-    public void testRef05() {
+    @Test public void testRef05() {
         assertEquals(
                 "\n" +
                 "<p>aaa <sup id=\"_ref-Freitag\" class=\"reference\"><a href=\"#_note-Freitag\" title=\"\">[1]</a></sup> bbb<sup id=\"_ref-Arndt\" class=\"reference\"><a href=\"#_note-Arndt\" title=\"\">[2]</a></sup> <sup id=\"_ref-3\" class=\"reference\"><a href=\"#_note-3\" title=\"\">[3]</a></sup> </p><ol class=\"references\">\n" +
@@ -85,7 +79,7 @@ public class RefFilterTest extends FilterTestSupport {
         assertTrue(ref.getRefString().equals("ccc"));
     }
 
-    public void testRef06() {
+    @Test public void testRef06() {
         assertEquals(
                 "\n" +
                 "<p>aaa <sup id=\"_ref-Freitag\" class=\"reference\"><a href=\"#_note-Freitag\" title=\"\">[1]</a></sup> bbb<sup id=\"_ref-A.26B\" class=\"reference\"><a href=\"#_note-A.26B\" title=\"\">[2]</a></sup> <sup id=\"_ref-3\" class=\"reference\"><a href=\"#_note-3\" title=\"\">[3]</a></sup> </p><ol class=\"references\">\n" +
@@ -100,7 +94,7 @@ public class RefFilterTest extends FilterTestSupport {
         assertTrue(ref.getRefString().equals("ccc"));
     }
 
-    public void testRef07() {
+    @Test public void testRef07() {
         assertEquals(
                 "\n" +
                 "<p><sup id=\"_ref-1\" class=\"reference\"><a href=\"#_note-1\" title=\"\">[1]</a></sup></p>\n" +
@@ -111,7 +105,7 @@ public class RefFilterTest extends FilterTestSupport {
 
     }
 
-    public void testRef08() {
+    @Test public void testRef08() {
         assertEquals("\n" +
                 "<dl>\n" +
                 "<dt>506 Variant Also Negotiates<sup id=\"_ref-RFC_2295\" class=\"reference\"><a href=\"#_note-RFC_2295\" title=\"\">[1]</a></sup></dt>\n</dl>\n" +
@@ -121,7 +115,7 @@ public class RefFilterTest extends FilterTestSupport {
                 "<li id=\"_note-RFC_2295\"><b><a href=\"#_ref-RFC_2295\" title=\"\">&#8593;</a></b> RFC 2295</li>\n</ol>", wikiModel.render("; 506 Variant Also Negotiates<ref name=\"RFC 2295\">RFC 2295</ref>\n" + "\n"
                 + "== Einzelnachweise ==\n" + "\n" + "<references />", false));
     }
-    // public void testRef08() {
+    // @Test public void testRef08() {
     // assertEquals(
     // "",
     // wikiModel

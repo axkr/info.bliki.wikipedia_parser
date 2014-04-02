@@ -3,16 +3,16 @@ package info.bliki.wiki.filter;
 import info.bliki.wiki.model.Configuration;
 import info.bliki.wiki.model.WikiModel;
 import info.bliki.wiki.tags.HTMLBlockTag;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.Locale;
-
-import junit.framework.TestCase;
 
 /**
  * Support class for defining JUnit FilterTests.
  *
  */
-public class FilterTestSupport extends TestCase {
+public class FilterTestSupport {
     public static final String WINDOWS_NEWLINE = "\r\n";
 
     public static final String UNIX_NEWLINE = "\n";
@@ -25,16 +25,12 @@ public class FilterTestSupport extends TestCase {
         Configuration.DEFAULT_CONFIGURATION.addTokenTag("iframe", new HTMLBlockTag("iframe", Configuration.SPECIAL_BLOCK_TAGS));
     }
 
-    public FilterTestSupport(String s) {
-        super(s);
-    }
 
     /**
      * Set up a test model, which contains predefined templates
      */
-    @Override
-    protected void setUp() throws Exception {
-        super.setUp();
+    @Before
+    public void setUp() throws Exception {
         wikiModel = newWikiTestModel();
     }
 
@@ -50,7 +46,7 @@ public class FilterTestSupport extends TestCase {
         return wikiModel;
     }
 
-    public void testStub() {
+    @Test public void testStub() {
     }
 
     /**

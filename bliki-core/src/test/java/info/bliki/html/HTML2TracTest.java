@@ -1,23 +1,20 @@
 package info.bliki.html;
 
-import info.bliki.html.HTML2WikiConverter;
 import info.bliki.html.googlecode.ToTrac;
-import junit.framework.TestCase;
+import org.junit.Test;
 
-public class HTML2TracTest extends TestCase {
+import static org.junit.Assert.assertEquals;
 
-    public HTML2TracTest(String name) {
-        super(name);
-    }
+public class HTML2TracTest {
 
-    public void test0() {
+    @Test public void test0() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<b>hello<em>world</em></b>");
         String result = conv.toWiki(new ToTrac());
         assertEquals(result, "'''hello''world'''''");
     }
 
-    public void test1() {
+    @Test public void test1() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv
                 .setInputHTML("<ul><li>hello world<ol><li>hello subworld1<ul><li>sub sub test1</li>\n<li>sub sub test2</li></ul></li><li>hello subworld2</li></ol></li><li>second line</li></ul>");
@@ -26,7 +23,7 @@ public class HTML2TracTest extends TestCase {
                 + "  * sub sub test2\n" + " 1. hello subworld2\n" + "* second line\n" + "");
     }
 
-    public void test2() {
+    @Test public void test2() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         // invalid nested html test
         conv.setInputHTML("<ul><li>hello world<ol><li>hello subworld</ol><li>second line</ul>");
@@ -34,7 +31,7 @@ public class HTML2TracTest extends TestCase {
         assertEquals(result, "\n" + "* hello world\n" + " 1. hello subworld\n" + "* second line\n" + "");
     }
 
-    public void test3() {
+    @Test public void test3() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         // invalid nested html test
         conv.setInputHTML("<h2>the good</h2><h3>the bad</h3><h2>and the ugly</h2>");
@@ -42,7 +39,7 @@ public class HTML2TracTest extends TestCase {
         assertEquals(result, "\n" + "== the good ==\n" + "\n" + "=== the bad ===\n" + "\n" + "== and the ugly ==\n");
     }
 
-    public void test4() {
+    @Test public void test4() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         // invalid nested html test
         conv.setInputHTML("<table>\n" + "<tr>\n"
@@ -70,63 +67,63 @@ public class HTML2TracTest extends TestCase {
                 "");
     }
 
-    public void test6() {
+    @Test public void test6() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<b>hello</b> <em>world</em>");
         String result = conv.toWiki(new ToTrac());
         assertEquals(result, "'''hello''' ''world''");
     }
 
-    public void test7() {
+    @Test public void test7() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<html><body><table>\n<tr>\n<td>hello world</td>\n</tr></table></body></html>");
         String result = conv.toWiki(new ToTrac());
         assertEquals(result, "   \n" + "||hello world||\n");
     }
 
-    public void test8() {
+    @Test public void test8() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<font size=\"1\">hello</font> <em>world</em>");
         String result = conv.toWiki(new ToTrac(true, true));
         assertEquals(result, "hello ''world''");
     }
 
-    public void test9() {
+    @Test public void test9() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<h2>hello \n world\n</h2>");
         String result = conv.toWiki(new ToTrac(true, true));
         assertEquals(result, "\n" + "== hello   world ==\n");
     }
 
-    public void test10() {
+    @Test public void test10() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<b>hello&nbsp;<em>world</em></b>");
         String result = conv.toWiki(new ToTrac());
         assertEquals(result, "'''hello ''world'''''");
     }
 
-    public void test11() {
+    @Test public void test11() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<h2> \n \n</h2>");
         String result = conv.toWiki(new ToTrac(true, true));
         assertEquals(result, "");
     }
 
-    public void test12() {
+    @Test public void test12() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<b> </b> <em> </em>");
         String result = conv.toWiki(new ToTrac());
         assertEquals(result, "   ");
     }
 
-    public void test13() {
+    @Test public void test13() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<div> </div>");
         String result = conv.toWiki(new ToTrac());
         assertEquals(result, " ");
     }
 
-    public void test14() {
+    @Test public void test14() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         // invalid nested html test
         conv
@@ -135,7 +132,7 @@ public class HTML2TracTest extends TestCase {
         assertEquals(result, "\n" + "== the good ==\n" + "\n" + "=== the bad ===\n" + "\n" + "== and the ugly ==\n");
     }
 
-    public void test15() {
+    @Test public void test15() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         // invalid nested html test
         conv.setInputHTML("The <a href=\"http://good\">good</a> the <div>bad</div> and <b><i>the</i> ugly</b>");

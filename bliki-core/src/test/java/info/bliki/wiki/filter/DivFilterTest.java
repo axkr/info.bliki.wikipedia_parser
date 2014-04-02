@@ -1,18 +1,12 @@
 package info.bliki.wiki.filter;
 
-import junit.framework.Test;
-import junit.framework.TestSuite;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class DivFilterTest extends FilterTestSupport {
-    public DivFilterTest(String name) {
-        super(name);
-    }
 
-    public static Test suite() {
-        return new TestSuite(DivFilterTest.class);
-    }
-
-    public void testDivTag1() {
+    @Test public void testDivTag1() {
         assertEquals(
                 "\n" +
                 "<div class=\"TabelleFeldListe\">\n" +

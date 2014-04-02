@@ -1,23 +1,13 @@
 package info.bliki.wiki.tags.code;
 
 import info.bliki.wiki.filter.FilterTestSupport;
-import junit.framework.Test;
-import junit.framework.TestSuite;
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 
 public class JavaScriptTest extends FilterTestSupport
 {
-    public JavaScriptTest(String name)
-    {
-        super(name);
-    }
-
-    public static Test suite()
-    {
-        return new TestSuite(JavaScriptTest.class);
-    }
-
-    public void testJavaScript()
+    @Test public void testJavaScript()
     {
         String result = wikiModel.render("'''JavaScript Example'''\n" + "<source lang=javascript>\n" + "public class Test {\n" + "< > \" \' &"
                 + "}\n" + "</source>", false);

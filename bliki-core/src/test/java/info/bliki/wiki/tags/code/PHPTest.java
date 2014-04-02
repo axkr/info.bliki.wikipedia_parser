@@ -1,23 +1,13 @@
 package info.bliki.wiki.tags.code;
 
 import info.bliki.wiki.filter.FilterTestSupport;
-import junit.framework.Test;
-import junit.framework.TestSuite;
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 
 public class PHPTest extends FilterTestSupport
 {
-    public PHPTest(String name)
-    {
-        super(name);
-    }
-
-    public static Test suite()
-    {
-        return new TestSuite(PHPTest.class);
-    }
-
-    public void testPHP()
+    @Test public void testPHP()
     {
         String result = wikiModel.render("<source lang=php>\n" + "<?php\n" + "/* A simple php script */\n" + " \n" + "$choice = $_GET[\'foo\'];\n"
                 + "if ( $choice == 1 )\n" + "{\n" + "  echo \"Hello world\";\n" + "}\n" + "# end of script\n" + "?>\n" + "</source>", false);

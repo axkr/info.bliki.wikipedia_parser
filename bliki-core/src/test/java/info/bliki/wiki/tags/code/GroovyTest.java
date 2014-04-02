@@ -1,24 +1,11 @@
 package info.bliki.wiki.tags.code;
 
 import info.bliki.wiki.filter.FilterTestSupport;
-import junit.framework.Test;
-import junit.framework.TestSuite;
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 public class GroovyTest extends FilterTestSupport {
-    public GroovyTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(GroovyTest.class);
-    }
-
-    @Override
-    protected void setUp() throws Exception {
-        super.setUp();
-    }
-
-    public void testGroovy001() {
+    @Test public void testGroovy001() {
         String result = wikiModel.render("'''Groovy Example'''\n" + "<source lang=\"groovy\">\n" + "public class Test {\n"
                 + "< > \" \' &" + "}\n" + "</source>", false);
 
@@ -30,7 +17,7 @@ public class GroovyTest extends FilterTestSupport {
                         + "&#60; &#62; <span style=\"color:#2A00FF; \">&#34; &#39; &#38;}\n" + "</span></pre>", result);
     }
 
-    public void testGroovy002() {
+    @Test public void testGroovy002() {
         String result = wikiModel.render("<source lang=\"groovy\">\n" + "import groovy.xml.StreamingMarkupBuilder\n"
                 + "import groovy.xml.XmlUtil\n" + "\n" + "def input = '''\n" + "<shopping>\n" + "  <category type=\"groceries\">\n"
                 + "      <item>Chocolate</item>\n" + "      <item>Coffee</item>\n" + "  </category>\n" + "  <category type=\"supplies\">\n"
