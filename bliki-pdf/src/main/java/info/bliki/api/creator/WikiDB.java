@@ -1,5 +1,8 @@
 package info.bliki.api.creator;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,53 +14,23 @@ import java.util.Properties;
 
 /**
  * A simple Apache Derby Database to store the retrieved Wiki contents
- *
  */
 public class WikiDB {
-    /**
-     * SQL statement to select the wiki content for a given topic name
-     */
     private final PreparedStatement fSelectContent;
-
-    /**
-     * SQL statement to insert a new wiki entry (topic and content)
-     */
     private final PreparedStatement fInsertTopic;
-
-    /**
-     * SQL statement to update the wiki content for a given topic name
-     */
     private final PreparedStatement fUpdateTopicContent;
-
-    /**
-     * SQL statement to select the image data for a given image name
-     */
     private final PreparedStatement fSelectImage;
-
-    /**
-     * SQL statement to insert a new image data entry
-     */
     private final PreparedStatement fInsertImage;
-
-    /**
-     * SQL statement to update an existing image data entry (url and filename)
-     */
-    private static PreparedStatement fUpdateImage;
+    private final PreparedStatement fUpdateImage;
 
     private Connection fConnection;
+    private Logger logger = LoggerFactory.getLogger(getClass());
 
     /**
      * The Wiki database constructor. Creates a new Derby Wiki database, if it
      * doesn't already exists.
      *
-     *
-     * @param directory
-     *          the main directory name where the database subdirectory should be
-     *          created
-     * @param databaseSubdirectoryName
-     *          the subdirectory name where the database files should be stored.
-     *          This directory should not exist if you would like to create a
-     *          completely new database.
+     * @param directory the main directory where the database should be created
      * @throws java.sql.SQLException
      */
     public WikiDB(File directory) throws SQLException {
@@ -67,14 +40,12 @@ public class WikiDB {
             throw new SQLException("embedded derby driver not found, check your classpath");
         }
 
-        if (!directory.exists()) {
-            directory.mkdirs();
-        }
         Properties properties = new Properties();
         properties.put("user", "user1");
         properties.put("password", "user1");
         final String jdbcUrl = "jdbc:derby:" + directory.getAbsolutePath() + ";create=true;characterEncoding=utf-8";
 
+        logger.debug("using JDBC url "+jdbcUrl+" with properties "+properties);
         fConnection = DriverManager.getConnection(jdbcUrl, properties);
         createTableIfItDoesntExist();
 
@@ -87,11 +58,7 @@ public class WikiDB {
         fUpdateImage = fConnection.prepareStatement("UPDATE image SET image_url = ?,  image_filename = ? WHERE image_name = ?");
     }
 
-    public void setUp() throws Exception {
-    }
-
     public void tearDown() throws Exception {
-        // showContentsOfTableTest();
         fSelectContent.close();
         fInsertTopic.close();
         fUpdateTopicContent.close();
@@ -169,9 +136,7 @@ public class WikiDB {
     }
 
     private void createTableIfItDoesntExist() throws SQLException {
-
         ResultSet resultSet = fConnection.getMetaData().getTables("%", "%", "%", new String[] { "TABLE" });
-        // int columnCnt = resultSet.getMetaData().getColumnCount();
         boolean shouldCreateTableTopic = true;
         boolean shouldCreateTableImage = true;
         String tableName;
@@ -184,8 +149,9 @@ public class WikiDB {
             }
         }
         resultSet.close();
+
         if (shouldCreateTableTopic) {
-            System.out.println("Creating Table topic...");
+            logger.debug("Creating Table topic...");
             Statement statement = fConnection.createStatement();
             statement.execute("CREATE TABLE topic "
                     + "(topic_id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),"
@@ -195,7 +161,7 @@ public class WikiDB {
             statement.close();
         }
         if (shouldCreateTableImage) {
-            System.out.println("Creating Table image...");
+            logger.debug("Creating Table image...");
             Statement statement = fConnection.createStatement();
             statement.execute("CREATE TABLE image "
                     + "(image_id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),"
