@@ -55,7 +55,6 @@ public class Connector {
 
     private final static String FORMAT_XML   = "xml";
 
-
     private HttpClient client;
     private Logger logger = LoggerFactory.getLogger(getClass());
 
@@ -69,7 +68,6 @@ public class Connector {
 //                .setMaxConnTotal(18)
                 .build();
     }
-
 
     /**
      * Complete the users login information. The user must contain a username,
@@ -145,8 +143,8 @@ public class Connector {
      * @return a list of downloaded Mediawiki pages.
      */
     public List<Page> queryContent(User user, List<String> listOfTitleStrings) {
-        String[] valuePairs = { "prop", "revisions", "rvprop", "timestamp|user|comment|content" };
-        return query(user, listOfTitleStrings, valuePairs);
+        return query(user, listOfTitleStrings,
+                "prop", "revisions", "rvprop", "timestamp|user|comment|content");
     }
 
     /**
@@ -159,8 +157,7 @@ public class Connector {
      * @return page list
      */
     public List<Page> queryCategories(User user, List<String> listOfTitleStrings) {
-        String[] valuePairs = { "prop", "categories" };
-        return query(user, listOfTitleStrings, valuePairs);
+        return query(user, listOfTitleStrings, "prop", "categories");
     }
 
     /**
@@ -173,8 +170,7 @@ public class Connector {
      * @return page list
      */
     public List<Page> queryInfo(User user, List<String> listOfTitleStrings) {
-        String[] valuePairs = { "prop", "info" };
-        return query(user, listOfTitleStrings, valuePairs);
+        return query(user, listOfTitleStrings, "prop", "info");
     }
 
     /**
@@ -187,8 +183,7 @@ public class Connector {
      * @return page list
      */
     public List<Page> queryLinks(User user, List<String> listOfTitleStrings) {
-        String[] valuePairs = { "prop", "links" };
-        return query(user, listOfTitleStrings, valuePairs);
+        return query(user, listOfTitleStrings, "prop", "links");
     }
 
     /**
@@ -204,8 +199,7 @@ public class Connector {
      * @return page list
      */
     public List<Page> queryImageinfo(User user, List<String> listOfImageStrings) {
-        String[] valuePairs = { "prop", "imageinfo", "iiprop", "url" };
-        return query(user, listOfImageStrings, valuePairs);
+        return query(user, listOfImageStrings, "prop", "imageinfo", "iiprop", "url");
     }
 
     /**
@@ -221,10 +215,9 @@ public class Connector {
      * @return page list
      */
     public List<Page> queryImageinfo(User user, List<String> listOfImageStrings, int imageWidth) {
-        String[] valuePairs = { "prop", "imageinfo", "iiprop", "url", "iiurlwidth", Integer.toString(imageWidth) };
-        return query(user, listOfImageStrings, valuePairs);
+        return query(user, listOfImageStrings, "prop", "imageinfo", "iiprop", "url", "iiurlwidth",
+                Integer.toString(imageWidth));
     }
-
 
     /**
      * Query the Mediawiki API for some wiki pages.
@@ -260,7 +253,7 @@ public class Connector {
      *          API URL
      * @return page list
      */
-    private List<Page> query(User user, List<String> listOfTitleStrings, String[] valuePairs) {
+    private List<Page> query(User user, List<String> listOfTitleStrings, String... valuePairs) {
         try {
             String responseBody = queryXML(user, listOfTitleStrings, valuePairs);
             if (responseBody != null) {
