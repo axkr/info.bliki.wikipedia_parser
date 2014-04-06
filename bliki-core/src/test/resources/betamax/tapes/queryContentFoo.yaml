@@ -1,0 +1,134 @@
+!tape
+name: queryContentFoo
+interactions:
+- recorded: 2014-04-06T14:08:43.519Z
+  request:
+    method: POST
+    uri: http://en.wiktionary.org/w/api.php
+    headers:
+      Content-Length: '93'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wiktionary.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=foo&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '4215'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 14:08:43 GMT
+      Server: Apache
+      Set-Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4; path=/
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1054 miss (0), amssq50 miss (0), amssq62 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 2033519174, 3126376384, 4282633506
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwiktionaryToken;string-contains=enwiktionaryLoggedOut;string-contains=forceHTTPS;string-contains=enwiktionarySession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: |-
+      <?xml version="1.0"?><api><query><pages><page pageid="39480" ns="0" title="foo"><revisions><rev user="MglovesfunBot" timestamp="2013-11-27T13:53:01Z" comment="/* Pronunciation */removing X-SAMPA template per [[Wiktionary:Votes/pl-2013-10/Removing SAMPA and X-SAMPA|vote]]" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">==English==
+
+      ===Etymology 1===
+      Circa 1935 as nonsense word, circa 1960 in programming sense.
+      {{rel-top|detailed etymology}}
+      [[File:Chinese Good Fortune Cross Stitch Pattern.JPG|thumb|upright|'''foo''' is presumably based on the {{w|fu character}} (fú, 福)]]
+      [[File:Fuxingqi.JPG|thumb|A ''Fú'' figurine of the [[w:Fu Lu Shou|Chinese star god]]]]
+      Originated circa 1935 as nonsense word in ''{{w|Smokey Stover}}'' comic strip (1935–73) by {{w|Bill Holman}} (from which also {{term|foo fighter|lang=en}}).&lt;ref name=&quot;jargon&quot;&gt;“[http://catb.org/jargon/html/F/foo.html foo]”, ''[http://catb.org/jargon/html/index.html The Jargon File]''
+      &lt;/ref&gt; Holman states that his usage was from seeing “foo” on the base of a jade Chinese figurine in [[w:Chinatown, San Francisco|Chinatown, San Francisco]], meaning “good luck”, presumably a transliteration of the {{w|fu character}} {{term|福||fortune, happiness, prosperity|tr=fú|lang=cmn}},
+      &lt;ref name=&quot;jargon&quot; /&gt;&lt;ref&gt;&quot;[http://www.smokey-stover.com/history.html The History of Bill Holman]&quot;, [http://www.smokey-stover.com/ Smokey-Stover.com], Smokey Stover LLC – article by nephew of Bill Holman&lt;/ref&gt;&lt;ref&gt;&quot;[http://members.aol.com/EOCostello/ Warner Brothers Cartoon Companion]&quot;&lt;/ref&gt; and figurines of the trio of eponymous male &quot;star gods&quot; [[w:Fu Lu Shou|''Fú, Lù, Shòu'']] are common in Chinese communities. Meaning influenced by {{term|fooey|lang=en}}, {{term|fool|lang=en}}, and {{term|feh|lang=en}}. Used throughout the comic strip’s run, with later uses in the 1930s include ''{{w|The Daffy Doc}}'' (1938) and ''[[w:Pogo (comic strip)|Pogo]].''
+
+      In computing usage, popularized by the {{w|Tech Model Railroad Club}} (TMRC), whose 1959 ''Dictionary of the TMRC Language'', had an entry similar to the following, parodying the mantra {{w|Om mani padme hum}} (replacing {{term|om|lang=en}} with '''foo'''):&lt;ref name=&quot;jargon&quot; /&gt;
+      : FOO: The first syllable of the sacred chant phrase “FOO MANE PADME HUM.” Our first obligation is to keep the foo counters turning.
+      Related also to {{term|foobar|lang=en}}, which is presumably derived from '''foo''' rather than the reverse.&lt;ref name=&quot;jargon&quot; /&gt;
+      {{rel-bottom}}
+
+      ====Pronunciation====
+      * {{a|UK}} {{IPA|/fuː/}}
+      * {{rhymes|uː}}
+      * {{homophones|lang=en|-fu}}
+
+      ====Noun====
+      {{wikipedia}}
+      {{en-noun|-}}
+
+      # {{context|computing|lang=en}} A [[metasyntactic variable]] used to represent an [[unspecified]] entity. If part of a series of such entities, it is often the first in the series, and followed immediately by [[bar]].
+      #: ''Suppose we have two objects, '''foo''' and bar''.
+
+      =====Related terms=====
+      * [[foobar]]
+      * [[foo fighter]]
+      * [[FUBAR]]
+
+      ====References====
+      &lt;references/&gt;
+      * [http://tools.ietf.org/html/rfc3092 RFC 3092], {{w|Internet Engineering Task Force}} (IETF)
+
+      ===Etymology 2===
+      [[onomatopoeia|Onomatopoeia]].
+
+      ====Interjection====
+      {{en-interj}}
+
+      # {{non-gloss definition|Expression of disappointment or disgust.}}
+      #: ''Oh '''foo''' – the cake burnt!''
+
+      =====Synonyms=====
+      * {{sense|expression of disgust}} [[darn]], [[drat]]
+
+      ===Etymology 3===
+      Abbreviation of {{term|fool||foolish person|lang=en}}.
+
+      ====Alternative forms====
+      * [[foo']]
+
+      ====Noun====
+      {{en-noun}}
+
+      # {{context|slang|lang=en}} [[fool]], foolish person.
+
+      ===Anagrams===
+      * [[oof]]
+
+      [[Category:English placeholder terms]]
+
+      ----
+
+      ==Middle English==
+      &lt;!--this Middle English entry was created using Template:new enm entry--&gt;
+
+      ===Alternative forms===
+      * {{l|enm|fo}}
+
+      ===Etymology===
+      {{rfe|lang=enm}}
+
+      ===Noun===
+      {{enm-noun}}
+
+      # [[foe]]
+
+      ----
+
+      ==Tetum==
+
+      ===Verb===
+      {{head|tet|verb}}
+
+      # to [[stink]]
+
+      [[et:foo]]
+      [[el:foo]]
+      [[fr:foo]]
+      [[ko:foo]]
+      [[it:foo]]
+      [[mg:foo]]
+      [[pl:foo]]
+      [[vi:foo]]
+      [[yi:foo]]
+      [[zh:foo]]</rev></revisions></page></pages></query></api>

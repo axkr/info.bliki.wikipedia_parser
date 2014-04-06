@@ -50,12 +50,19 @@ public class Connector {
     private final static String PARAM_ACTION = "action";
     private final static String PARAM_TITLES = "titles";
 
+    private final static String ACTION_LOGIN = "login";
+    private final static String ACTION_QUERY = "query";
+
+    private final static String FORMAT_XML   = "xml";
+
+
     private HttpClient client;
     private Logger logger = LoggerFactory.getLogger(getClass());
 
     public Connector() {
         client = HttpClientBuilder
                 .create()
+//                .disableContentCompression()
                 .disableRedirectHandling()
                 .setRoutePlanner(new SystemDefaultRoutePlanner(ProxySelector.getDefault()))
 //                .setMaxConnPerRoute(6)
@@ -90,8 +97,8 @@ public class Connector {
             String lgDomain = user.getDomain();
             List<NameValuePair> params = new ArrayList<>();
             params.addAll(Arrays.asList(
-                new BasicNameValuePair(PARAM_ACTION, "login"),
-                new BasicNameValuePair(PARAM_FORMAT, "xml"),
+                new BasicNameValuePair(PARAM_ACTION, ACTION_LOGIN),
+                new BasicNameValuePair(PARAM_FORMAT, FORMAT_XML),
                 new BasicNameValuePair(PARAM_LOGIN_NAME, userName),
                 new BasicNameValuePair(PARAM_LOGIN_PASSWORD, user.getPassword())
             ));
@@ -274,18 +281,12 @@ public class Connector {
     }
 
     private String queryXML(User user, List<String> listOfTitleStrings, String[] valuePairs) {
-        StringBuilder titlesString = new StringBuilder();
-        for (int i = 0; i < listOfTitleStrings.size(); i++) {
-            titlesString.append(listOfTitleStrings.get(i));
-            if (i < listOfTitleStrings.size() - 1) {
-                titlesString.append("|");
-            }
-        }
+        String titlesString = formatTitleString(listOfTitleStrings);
         List<NameValuePair> parameters = new ArrayList<>();
-        parameters.add(new BasicNameValuePair(PARAM_ACTION, "query"));
+        parameters.add(new BasicNameValuePair(PARAM_ACTION, ACTION_QUERY));
         if (titlesString.length() > 0) {
             // don't encode the title for the NameValuePair !
-            parameters.add(new BasicNameValuePair(PARAM_TITLES, titlesString.toString()));
+            parameters.add(new BasicNameValuePair(PARAM_TITLES, titlesString));
         }
         if (valuePairs != null && valuePairs.length > 0) {
             for (int i = 0; i < valuePairs.length; i += 2) {
@@ -299,25 +300,42 @@ public class Connector {
                 ));
     }
 
+    private String formatTitleString(List<String> titles) {
+        StringBuilder titlesString = new StringBuilder();
+        for (int i = 0; i < titles.size(); i++) {
+            titlesString.append(titles.get(i));
+            if (i < titles.size() - 1) {
+                titlesString.append("|");
+            }
+        }
+        return titlesString.toString();
+    }
 
     private String sendXML(User user, RequestBuilder requestBuilder) {
         return executeHttpMethod(createAuthenticatedPostRequest(user, requestBuilder.getParameters()));
     }
 
     private HttpPost createAuthenticatedPostRequest(User user, NameValuePair[] parameters) {
+        if (user.getActionUrl() == null || user.getActionUrl().trim().length() == 0) {
+            throw new IllegalArgumentException("no action url");
+        }
+
         HttpPost request = new HttpPost(user.getActionUrl());
-        request.setHeader("Content-Type", "application/x-www-form-urlencoded; charset=utf-8");
         request.setHeader("User-Agent", USER_AGENT);
 
         List<NameValuePair> parameterList = new ArrayList<>();
         Collections.addAll(parameterList, parameters);
-        parameterList.addAll(Arrays.asList(
-            new BasicNameValuePair(PARAM_LOGIN_USERNAME, user.getUserid()),
-            new BasicNameValuePair(PARAM_LOGIN_USERID, user.getNormalizedUsername()),
-            new BasicNameValuePair(PARAM_LOGIN_TOKEN, user.getToken()),
-            new BasicNameValuePair(PARAM_FORMAT, "xml")
-        ));
-        request.setEntity(new UrlEncodedFormEntity(parameterList, (Charset)null));
+
+        if (user.isAuthenticated()) {
+            // TODO is this really correct?
+            parameterList.addAll(Arrays.asList(
+                new BasicNameValuePair(PARAM_LOGIN_USERNAME, user.getUserid()),
+                new BasicNameValuePair(PARAM_LOGIN_USERID, user.getNormalizedUsername()),
+                new BasicNameValuePair(PARAM_LOGIN_TOKEN, user.getToken())
+            ));
+        }
+        parameterList.add(new BasicNameValuePair(PARAM_FORMAT, FORMAT_XML));
+        request.setEntity(new UrlEncodedFormEntity(parameterList, (Charset) null));
         return request;
     }
 

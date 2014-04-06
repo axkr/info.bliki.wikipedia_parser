@@ -220,6 +220,10 @@ public class User {
         return password;
     }
 
+    public boolean isAuthenticated() {
+        return username != null && userid != null;
+    }
+
     @Override
     public String toString() {
         return "Result: " + result + "; UserID: " + userid + "; UserName: " + username + "; NormalizedUsername: " + normalizedUsername
