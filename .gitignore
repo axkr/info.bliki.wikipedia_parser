@@ -2,3 +2,4 @@
 *.iml
 target/
 derby.log
+bliki-pdf/src/test/resources/WikiDB/

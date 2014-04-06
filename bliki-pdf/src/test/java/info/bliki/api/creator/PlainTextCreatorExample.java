@@ -5,6 +5,7 @@ import info.bliki.wiki.filter.Encoder;
 import info.bliki.wiki.filter.PlainTextConverter;
 import info.bliki.wiki.impl.APIWikiModel;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -33,7 +34,7 @@ public class PlainTextCreatorExample {
         WikiDB db = null;
 
         try {
-            db = new WikiDB(mainDirectory, databaseSubdirectory);
+            db = new WikiDB(new File(mainDirectory, databaseSubdirectory));
             APIWikiModel wikiModel = new APIWikiModel(user, db, "${image}", "${title}", null);
             DocumentCreator creator = new DocumentCreator(wikiModel, user, listOfTitleStrings);
             creator.setHeader("");

@@ -6,11 +6,11 @@ import info.bliki.wiki.dump.WikiArticle;
 import info.bliki.wiki.dump.WikiXMLParser;
 import info.bliki.wiki.filter.Encoder;
 import info.bliki.wiki.impl.DumpWikiModel;
+import org.xml.sax.SAXException;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
-
-import org.xml.sax.SAXException;
 
 /**
  * Create static HTML files from a given Mediawiki dump
@@ -102,7 +102,7 @@ public class Dump2HTMLCreatorExample {
         WikiDB db;
 
         try {
-            db = new WikiDB(mainDirectory, databaseSubdirectory);
+            db = new WikiDB(new File(mainDirectory, databaseSubdirectory));
             return db;
         } catch (SQLException e) {
             e.printStackTrace();

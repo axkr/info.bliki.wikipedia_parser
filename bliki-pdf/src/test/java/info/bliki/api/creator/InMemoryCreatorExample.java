@@ -17,7 +17,7 @@ import java.util.Map;
  * memory without downloading files to the hard-disk and without creating a
  * local database.
  *
- * @see HTMLCreatorExample
+ * @see HTMLCreatorTest
  */
 public class InMemoryCreatorExample {
     public static void main(String[] args) throws Exception {

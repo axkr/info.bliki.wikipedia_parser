@@ -4,6 +4,8 @@ import info.bliki.api.User;
 import info.bliki.wiki.filter.Encoder;
 import info.bliki.wiki.impl.APIWikiModel;
 
+import java.io.File;
+
 /**
  * Test to load a page from en.wikipedia.org and render it to a PDF file
  *
@@ -27,7 +29,7 @@ public class PDFCreatorExample {
         // the following directory must exist for image downloads
         String imageDirectory = "c:/temp/WikiImages";
         try {
-            db = new WikiDB(mainDirectory, databaseSubdirectory);
+            db = new WikiDB(new File(mainDirectory, databaseSubdirectory));
             APIWikiModel myWikiModel = new APIWikiModel(user, db, "${image}", "file:///c:/temp/${title}", imageDirectory);
             DocumentCreator creator = new DocumentCreator(myWikiModel, user, listOfTitleStrings);
 

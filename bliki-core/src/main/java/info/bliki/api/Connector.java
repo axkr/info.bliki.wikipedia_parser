@@ -38,14 +38,14 @@ public class Connector {
     final static public String USER_AGENT = "JavaWikipediaAPI/3.0 http://code.google.com/p/gwtwiki/";
     final static public String UTF8_CHARSET = "utf-8";
 
-    public final static String PARAM_LOGIN_USERNAME = "lgusername";
-    public final static String PARAM_LOGIN_USERID = "lguserid";
-    public final static String PARAM_LOGIN_TOKEN = "lgtoken";
+    private final static String PARAM_LOGIN_USERNAME = "lgusername";
+    private final static String PARAM_LOGIN_USERID = "lguserid";
+    private final static String PARAM_LOGIN_TOKEN = "lgtoken";
 
-    public final static String PARAM_FORMAT = "format";
-    public final static String PARAM_ACTION = "action";
-    public final static String PARAM_TITLES = "titles";
-    public final static String PARAM_PAGE = "page";
+    private final static String PARAM_FORMAT = "format";
+    private final static String PARAM_ACTION = "action";
+    private final static String PARAM_TITLES = "titles";
+    private final static String PARAM_PAGE = "page";
 
     private HttpClient client;
 

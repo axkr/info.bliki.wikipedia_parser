@@ -1,5 +1,6 @@
 package info.bliki.api.creator;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -59,21 +60,21 @@ public class WikiDB {
      *          completely new database.
      * @throws java.sql.SQLException
      */
-    public WikiDB(String directory, String databaseSubdirectoryName) throws SQLException {
+    public WikiDB(File directory) throws SQLException {
         try {
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
         } catch (ClassNotFoundException e) {
             throw new SQLException("embedded derby driver not found, check your classpath");
         }
+
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
         Properties properties = new Properties();
         properties.put("user", "user1");
         properties.put("password", "user1");
-        String jdbcUrl;
-        if (directory.charAt(directory.length() - 1) == '/') {
-            jdbcUrl = "jdbc:derby:" + directory + databaseSubdirectoryName + ";create=true;characterEncoding=utf-8";
-        } else {
-            jdbcUrl = "jdbc:derby:" + directory + "/" + databaseSubdirectoryName + ";create=true;characterEncoding=utf-8";
-        }
+        final String jdbcUrl = "jdbc:derby:" + directory.getAbsolutePath() + ";create=true;characterEncoding=utf-8";
+
         fConnection = DriverManager.getConnection(jdbcUrl, properties);
         createTableIfItDoesntExist();
 
