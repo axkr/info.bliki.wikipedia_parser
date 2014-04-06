@@ -5,6 +5,8 @@ import info.bliki.api.User;
 import info.bliki.api.creator.ImageData;
 import info.bliki.api.creator.TopicData;
 import info.bliki.api.creator.WikiDB;
+import info.bliki.extensions.scribunto.template.Frame;
+import info.bliki.extensions.scribunto.template.ModuleExecutor;
 import info.bliki.htmlcleaner.TagNode;
 import info.bliki.wiki.filter.AbstractParser;
 import info.bliki.wiki.filter.AbstractParser.ParsedPageName;
@@ -15,13 +17,12 @@ import info.bliki.wiki.model.ImageFormat;
 import info.bliki.wiki.model.WikiModel;
 import info.bliki.wiki.model.WikiModelContentException;
 import info.bliki.wiki.namespaces.INamespace.NamespaceCode;
-import info.bliki.extensions.scribunto.template.Frame;
-import info.bliki.extensions.scribunto.template.ModuleExecutor;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -105,7 +106,7 @@ public class APIWikiModel extends WikiModel {
             }
             File file = new File(fImageDirectoryName);
             if (!file.exists()) {
-                file.mkdir();
+                assert(file.mkdir());
             }
         } else {
             fImageDirectoryName = null;
@@ -177,10 +178,9 @@ public class APIWikiModel extends WikiModel {
                     }
                 }
                 return content;
-            } catch (Exception e) {
-                if (Configuration.DEBUG) {
-                    e.printStackTrace();
-                }
+            } catch (SQLException e) {
+                logger.warn(null, e);
+
                 String temp = e.getMessage();
                 if (temp != null) {
                     throw new WikiModelContentException("<span class=\"error\">Exception: " + temp + "</span>", e);
@@ -231,96 +231,42 @@ public class APIWikiModel extends WikiModel {
                 imageData = new ImageData(imageName);
 
                 // download the image to fImageDirectoryName directory
-                FileOutputStream os = null;
-                try {
-                    String imageUrl;
-                    if (imageFormat.getWidth() > 0) {
-                        imageUrl = page.getImageThumbUrl();
-                    } else {
-                        imageUrl = page.getImageUrl();
-                    }
+                String imageUrl;
+                if (imageFormat.getWidth() > 0) {
+                    imageUrl = page.getImageThumbUrl();
+                } else {
+                    imageUrl = page.getImageUrl();
+                }
 
-                    String urlImageName = Encoder.encodeTitleLocalUrl(page.getTitle());
-                    if (imageUrl != null) {
-                        int index = imageUrl.lastIndexOf('/');
-                        if (index > 0) {
-                            urlImageName = Encoder.encodeTitleLocalUrl(imageUrl.substring(index + 1));
-                        }
+                String urlImageName = Encoder.encodeTitleLocalUrl(page.getTitle());
+                if (imageUrl != null) {
+                    int index = imageUrl.lastIndexOf('/');
+                    if (index > 0) {
+                        urlImageName = Encoder.encodeTitleLocalUrl(imageUrl.substring(index + 1));
                     }
-                    if (fImageDirectoryName != null) {
-                        String filename = fImageDirectoryName + urlImageName;
-                        File file = new File(filename);
-                        if (!file.exists()) {
-                            // if the file doesn't exist try to download from Wikipedia
-                            os = new FileOutputStream(filename);
+                }
+                if (fImageDirectoryName != null) {
+                    String filename = fImageDirectoryName + urlImageName;
+                    File file = new File(filename);
+                    if (!file.exists()) {
+                        // if the file doesn't exist try to download from Wikipedia
+
+                        try (OutputStream os = new FileOutputStream(filename)) {
                             page.downloadImageUrl(os, imageUrl);
-                        }
-                        imageData.setUrl(imageUrl);
-                        imageData.setFilename(filename);
-                        fWikiDB.insertImage(imageData);
-                        super.appendInternalImageLink(hrefImageLink, "file:///" + filename, imageFormat);
-                    }
-                    return;
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                } finally {
-                    if (os != null) {
-                        try {
-                            os.close();
                         } catch (IOException e) {
-                            e.printStackTrace();
+                            logger.warn(null, e);
                         }
                     }
-
+                    imageData.setUrl(imageUrl);
+                    imageData.setFilename(filename);
+                    fWikiDB.insertImage(imageData);
+                    super.appendInternalImageLink(hrefImageLink, "file:///" + filename, imageFormat);
                 }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            logger.warn(null, e);
         }
     }
-
-    // public void appendInternalLink(String topic, String hashSection, String
-    // topicDescription, String cssClass, boolean parseRecursive) {
-    // // WPATag aTagNode = new WPATag();
-    // // append(aTagNode);
-    // // aTagNode.addAttribute("id", "w", true);
-    // // String href = topic;
-    // // if (hashSection != null) {
-    // // href = href + '#' + hashSection;
-    // // }
-    // // aTagNode.addAttribute("href", href, true);
-    // // if (cssClass != null) {
-    // // aTagNode.addAttribute("class", cssClass, true);
-    // // }
-    // // aTagNode.addObjectAttribute("wikilink", topic);
-    // //
-    // // // Show only descriptions no internal wiki links
-    // // ContentToken text = new ContentToken(topicDescription);
-    // // // append(text);
-    // // aTagNode.addChild(text);
-    // String description = topicDescription.trim();
-    // WPATag aTagNode = new WPATag();
-    // // append(aTagNode);
-    // aTagNode.addAttribute("id", "w", true);
-    // String href = topic;
-    // if (hashSection != null) {
-    // href = href + '#' + hashSection;
-    // }
-    // aTagNode.addAttribute("href", href, true);
-    // if (cssClass != null) {
-    // aTagNode.addAttribute("class", cssClass, true);
-    // }
-    // aTagNode.addObjectAttribute("wikilink", topic);
-    // pushNode(aTagNode);
-    // if (parseRecursive) {
-    // WikipediaPreTagParser.parseRecursive(description, this, false, true);
-    // } else {
-    // aTagNode.addChild(new ContentToken(description));
-    // }
-    // popNode();
-    // // ContentToken text = new ContentToken(topicDescription);
-    // // aTagNode.addChild(text);
-    // }
 
     public void parseInternalImageLink(String imageNamespace, String rawImageLink) {
         String imageSrc = getImageBaseURL();

@@ -1,6 +1,8 @@
 package info.bliki.wiki.model;
 
 import info.bliki.Messages;
+import info.bliki.extensions.scribunto.template.Frame;
+import info.bliki.extensions.scribunto.template.ModuleExecutor;
 import info.bliki.htmlcleaner.BaseToken;
 import info.bliki.htmlcleaner.ContentToken;
 import info.bliki.htmlcleaner.TagNode;
@@ -31,6 +33,8 @@ import info.bliki.wiki.tags.util.TagStack;
 import info.bliki.wiki.template.ITemplateFunction;
 import info.bliki.wiki.template.extension.AttributeList;
 import info.bliki.wiki.template.extension.AttributeRenderer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -46,49 +50,32 @@ import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.TimeZone;
 
-import info.bliki.extensions.scribunto.template.Frame;
-import info.bliki.extensions.scribunto.template.ModuleExecutor;
-
 /**
  * Standard model implementation for the Wikipedia syntax
  *
  */
 public abstract class AbstractWikiModel implements IWikiModel, IContext {
+    protected Logger logger = LoggerFactory.getLogger(getClass());
+
     private static int fNextNumberCounter = 0;
-
     protected ArrayList<Reference> fReferences;
-
     protected Map<String, Integer> fReferenceNames;
-
     protected int fRecursionLevel;
-
     protected int fTemplateRecursionCount;
-
     protected TagStack fTagStack;
-
     private boolean fInitialized;
-
     protected Locale fLocale;
-
     private IConfiguration fConfiguration;
-
-    private IEventListener fWikiListener = null;
-
+    private IEventListener fWikiListener;
     final protected INamespace fNamespace;
-
-    protected String fRedirectLink = null;
-
+    protected String fRedirectLink;
     protected String fPageTitle = "PAGENAME";
-
     protected String fNamespaceName = "";
 
     protected int fSectionCounter;
-
-    protected boolean fTemplateTopic = false;
-
-    protected boolean fParameterParsingMode = false;
-
-    protected boolean fNoToc = false;
+    protected boolean fTemplateTopic;
+    protected boolean fParameterParsingMode;
+    protected boolean fNoToc;
 
     protected int fExternalLinksCounter;
 
@@ -97,7 +84,6 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
      *
      */
     protected TableOfContentTag fTableOfContentTag = null;
-
     protected SimpleDateFormat fFormatter = null;
 
     /**
@@ -133,9 +119,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
      * though you want to override the group's renderers.
      */
     protected Map<Class<?>, Object> attributeRenderers;
-
     protected ModuleExecutor fModuleExecutor;
-
     protected Frame fFrame;
 
     public AbstractWikiModel() {

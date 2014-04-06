@@ -1,0 +1,516 @@
+!tape
+name: TomHanks
+interactions:
+- recorded: 2014-04-06T21:54:11.470Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '99'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Tom+Hanks&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '48843'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 21:54:10 GMT
+      Server: Apache
+      Set-Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4; path=/
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq62 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1568717367, 3518329289, 39686783
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: |-
+      <?xml version="1.0"?><api><query><pages><page pageid="43568" ns="0" title="Tom Hanks"><revisions><rev user="P. Musgrave" timestamp="2014-03-28T01:24:27Z" comment="/* Personal life */" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{About|the American actor|the seismologist|Thomas C. Hanks}}
+      {{pp-move-indef}}
+      {{pp-semi-blp|small=yes}}
+      {{Use mdy dates|date=October 2013}}
+      {{Infobox person
+
+      | image = TomHanksJan2009.jpg
+      | caption = Hanks at [[We Are One: The Obama Inaugural Celebration at the Lincoln Memorial]] in 2009.
+      | alt = Hanks standing at a podium
+      | birth_name = Thomas Jeffrey Hanks
+      | birth_date = {{Birth date and age|1956|7|9}}&lt;ref&gt;{{cite news|title=Monitor|newspaper=[[Entertainment Weekly]]|publisher=[[Time Inc.]]|date=July 13, 2012|issue=1215|pages=20}}&lt;/ref&gt;
+      | birth_place = [[Concord, California]]
+      | residence = Los Angeles
+      | education = [[California State University, Sacramento]]
+      | years_active = 1978–present
+      | occupation = Actor, producer, director, screenwriter, speaker
+      | spouse = Samantha Lewes (1978–1987)&lt;br /&gt;[[Rita Wilson]] (1988–present)
+      | children = 4; including [[Colin Hanks]]
+      }}
+      '''Thomas Jeffrey &quot;Tom&quot; Hanks''' (born July 9, 1956) is an American actor, producer, writer, and director. Hanks is best known for his roles in ''[[Big (film)|Big]]'', ''[[A League of Their Own]]'', ''[[Sleepless in Seattle]]'', ''[[Forrest Gump]]'', ''[[Apollo 13 (film)|Apollo 13]]'', ''[[Saving Private Ryan]]'', ''[[You've Got Mail]]'', ''[[The Green Mile (film)|The Green Mile]]'', ''[[Cast Away]]'', ''[[The Da Vinci Code (film)|The Da Vinci Code]]'', and ''[[Captain Phillips (film)|Captain Phillips]]'', as well as the animated films ''[[The Polar Express (film)|The Polar Express]]'' and the ''[[Toy Story (franchise)|Toy Story]]'' series.
+
+      Hanks has earned and been nominated for numerous awards during his career, including winning a [[Golden Globe]] for Best Actor and an Academy Award for Best Actor for his role in ''[[Philadelphia (film)|Philadelphia]]'' and a Golden Globe, an [[Academy Award]], a [[Screen Actors Guild Award]], and a People's Choice Award for Best Actor for his role in ''Forrest Gump'', and earning the Stanley Kubrick Britannia Award for Excellence in Film from the [[British Academy of Film and Television Arts|BAFTA]]s in 2004.
+
+      Hanks is also known for his collaboration with film director [[Steven Spielberg]] on ''Saving Private Ryan'', ''[[Catch Me If You Can]]'', and ''[[The Terminal]],'' as well as the 2001 mini-series ''[[Band of Brothers (TV miniseries)|Band of Brothers]]'', which launched Hanks also as a successful director, producer and writer. In 2010, Spielberg and Hanks were executive producers on the HBO mini-series [[The Pacific (TV miniseries)|''The Pacific'']] (a companion piece to ''Band of Brothers'').
+
+      As of 2012, Hanks' films have [[gross (economics)|grossed]] over $4.2 billion at the United States box office alone, and over $8.5 billion worldwide&lt;ref name=&quot;Tom Hanks&quot;&gt;{{cite web|title=Tom Hanks|url=http://www.the-numbers.com/people/THANK.php|work=the numbers|accessdate=July 10, 2012}}&lt;/ref&gt; making him one of the highest-grossing actors in film history.&lt;ref&gt;[http://www.dailyfinance.com/2013/02/21/the-10-most-valuable-actors-of-all-time/#!slide=977847 The 10 most valuable actors of all time]. Dailyfinance.com. Retrieved December 21, 2013.&lt;/ref&gt;
+
+      ==Early life==
+      Hanks was born in [[Concord, California]]. His father, Amos Mefford Hanks (born in [[Glenn County, California]], on March 9, 1924&amp;nbsp;– died in [[Alameda, California]], on January 31, 1992), was an itinerant cook.&lt;ref name=tca&gt;Stated on ''[[Inside the Actors Studio]]'', 1999&lt;/ref&gt; His mother, Janet Marylyn (née Frager; born in [[Alameda County, California]], on January 18, 1932), was a hospital worker. Hanks' mother is of [[Portuguese-American|Portuguese]] ancestry (her family's surname was originally &quot;Fraga&quot;), while two of Hanks' paternal great-grandparents immigrated from Britain.&lt;ref&gt;{{youtube|id=QDXsSnjehrM|title=Friday Night with Jonathan Ross, January 2008}}&lt;/ref&gt;&lt;ref&gt;{{cite web|url=http://www.thisislondon.co.uk/showbiz/article-23373847-the-all-american-icons-with-british-roots.do |title=The all-American icons with British roots – Showbiz – Evening Standard |work=Thisislondon.co.uk |date=November 8, 2006 |accessdate=March 12, 2012}}&lt;/ref&gt;&lt;ref&gt;http://www.portuguesetimes.com/Ed_2070/util/beat.htm&lt;/ref&gt; Hanks' parents divorced in 1960. The family's three oldest children, Sandra (now Sandra Hanks Benoiton, a writer),&lt;ref&gt;{{cite web|title=Female Nomad and Friends Interview: Sandra Hanks Benoiton|url=http://mexicoinsmallbytes.com/mexicoblog/?cat=10|accessdate=July 10, 2012}}&lt;/ref&gt; Larry (Lawrence M. Hanks, PhD, an [[entomology]] professor at the [[University of Illinois at Urbana-Champaign]])&lt;ref&gt;[http://www.life.uiuc.edu/hanks/hanks.html Lawrence M. Hanks, Associate Professor]&amp;nbsp;– [[University of Illinois at Urbana-Champaign]].&lt;/ref&gt; and Tom, went with their father, while the youngest, [[Jim Hanks|Jim]], now an actor and filmmaker, remained with his mother in [[Red Bluff, California]].&lt;ref name=&quot;Tom Hanks biography&quot;&gt;[http://www.biography.com/people/tom-hanks-9327661 Tom Hanks biography]&lt;/ref&gt;
+
+      In addition to having a family history of Catholicism and [[Mormonism]], Hanks was a &quot;Bible-toting [[evangelical]] teenager&quot; for several years.&lt;ref name=mattingly&gt;{{cite web |url=http://www.scrippsnews.com/node/41996 |title=Mattingly: Tom Hanks talks about religion |author=Terry Mattingly |work=Scripps Howard News Service |date=March 25, 2009 |accessdate=December 14, 2012}}&lt;/ref&gt; In school, Hanks was unpopular with students and teachers alike, later telling ''Rolling Stone'' magazine: &quot;I was a geek, a spaz. I was horribly, painfully, terribly shy. At the same time, I was the guy who'd yell out funny captions during filmstrips. But I didn't get into trouble. I was always a real good kid and pretty responsible.&quot; In 1965, Amos Hanks married Frances Wong, a San Francisco native of [[Chinese American|Chinese descent]]. Frances had three children, two of whom lived with Tom during his high school years. Hanks acted in school plays, including ''[[South Pacific (musical)|South Pacific]]'', while attending [[Skyline High School (Oakland, California)|Skyline High School]] in [[Oakland, California]].
+
+      Hanks studied theater at [[Chabot College]] in [[Hayward, California]], and after two years, transferred to [[California State University, Sacramento]].&lt;ref name=THanksCSUS-CalState&gt;{{cite web|url=http://www.calstate.edu/pa/clips2004/february/19feb/id.shtml|title=Show your ID: What do you call that university by the river? The new president steps into the name game|date=February 19, 2004|first=J.|last=Freedom du Lac|publisher=California State University|accessdate=July 20, 2013}}
+      *&lt;sup&gt;a&lt;/sup&gt; &quot;Famous alumni*: Actor Tom Hanks... *Includes former students who attended – but didn't graduate from – the university&quot; — ¶ 67.&lt;/ref&gt; Hanks told ''[[New York (magazine)|New York]]'' magazine in 1986: &quot;Acting classes looked like the best place for a guy who liked to make a lot of noise and be rather flamboyant&amp;nbsp;...I spent a lot of time going to plays. I wouldn't take dates with me. I'd just drive to a theater, buy myself a ticket, sit in the seat and read the program, and then get into the play completely. I spent a lot of time like that, seeing [[Bertolt Brecht|Brecht]], [[Tennessee Williams]], [[Henrik Ibsen|Ibsen]], and all that.&quot;&lt;ref name=Blum1986&gt;{{cite journal |last=Blum |first=David |date=July 28, 1986 |title=Tom Hanks's Real Splash: A Funny Guy Grows Up in 'Nothing in Common' |journal=New York |publisher=New York Media |volume=19 |issue=29 |page=39 |issn=0028-7369 |url=http://books.google.com/books?id=9OYCAAAAMBAJ&amp;pg=PA39}}&lt;/ref&gt;
+
+      During his years studying theater, Hanks met [[Vincent Dowling]], head of the [[Great Lakes Theater Festival]] in [[Cleveland]], Ohio.&lt;ref name=tca/&gt; At Dowling's suggestion, Hanks became an intern at the Festival. His internship stretched into a three-year experience that covered most aspects of theater production, including lighting, set design, and stage management, all of which caused Hanks to drop out of college. During the same time, Hanks won the Cleveland Critics Circle Award for Best Actor for his 1978 performance as [[Proteus (The Two Gentlemen of Verona)|Proteus]] in Shakespeare's ''[[The Two Gentlemen of Verona]]'', one of the few times he played a villain.&lt;ref&gt;{{cite news |url=http://www.clevelandmagazine.com/ME2/dirmod.asp?sid=E73ABD6180B44874871A91F6BA5C249C&amp;nm=&amp;type=Publishing&amp;mod=Publications%3A%3AArticle&amp;mid=1578600D80804596A222593669321019&amp;tier=4&amp;id=516286375F5F4B71A3896EF13FF6915D |title=Life According to Tom Hanks |last=Mytnick |first=Colleen |work=[[Cleveland Magazine]] |date=October 2009 |accessdate=November 6, 2010}}&lt;/ref&gt;
+
+      ==Career==
+
+      ===Early career===
+      In 1979, Hanks moved to New York City, where he made his film debut in the low-budget [[slasher film]] ''[[He Knows You're Alone]]'' (1980)&lt;ref name=tca/&gt; and got a part in the television movie ''[[Mazes and Monsters]]''. Early in 1979, Hanks was cast in the lead role of Callimaco in the [[Riverside Shakespeare Company]]'s production of [[Niccolò Machiavelli]]'s ''[[The Mandrake]]'', directed by Daniel Southern. As a high profile [[Off Off Broadway]] [[Variety show|showcase]], the production helped Tom land an agent, Joe Ohla with the J. Michael Bloom Agency. The next year, Hanks landed a lead role on the [[American Broadcasting Company|ABC]] television pilot of ''[[Bosom Buddies]]'', playing the role of Kip Wilson. Hanks moved to Los Angeles, where he and [[Peter Scolari]] played a pair of young advertising men forced to dress as women so they could live in an inexpensive all-female hotel.&lt;ref name=tca/&gt; Hanks had previously partnered with Scolari in the 1970s game show ''[[Make Me Laugh]]''. ''Bosom Buddies'' ran for two seasons, and, although the ratings were never strong, television critics gave the program high marks. &quot;The first day I saw him on the set,&quot; co-producer Ian Praiser told ''[[Rolling Stone]]'', &quot;I thought, 'Too bad he won't be in television for long.' I knew he'd be a movie star in two years.&quot; But if Praiser knew it, he was not able to convince Hanks. &quot;The television show had come out of nowhere,&quot; best friend Tom Lizzio told ''Rolling Stone''. &quot;Then out of nowhere it got canceled. He figured he'd be back to pulling ropes and hanging lights in a theater.&quot;
+
+      ''Bosom Buddies'' and a guest appearance on a 1982 episode of ''[[Happy Days]]'' (&quot;A Case of Revenge,&quot; where he played a disgruntled former classmate of [[Fonzie|The Fonz]]) prompted director [[Ron Howard]] to contact Hanks. Howard was working on ''[[Splash (film)|Splash]]'' (1984), a romantic comedy fantasy about a [[mermaid]] who falls in love with a human. At first, Howard considered Hanks for the role of the main character's wisecracking brother, a role that eventually went to [[John Candy]]. Instead, Hanks got the lead role and a career boost from ''Splash'', which went on to become a box office hit, grossing more than US$69&amp;nbsp;million. He also had a sizable hit with the sex comedy ''[[Bachelor Party (1984 film)|Bachelor Party]]'', also in 1984.&lt;ref name=&quot;Tom Hanks biography&quot;/&gt;
+
+      In 1983–84, Hanks made three guest appearances on ''[[Family Ties]]'' as Elyse Keaton's alcoholic brother, Ned Donnelly.&lt;ref&gt;{{Cite book |title=Television listings |url=http://books.google.com/?id=Uek4AAAAIAAJ&amp;q=Tom+Hanks+Family+Ties&amp;dq=Tom+Hanks+Family+Ties |work=[[TV Guide (magazine)|TV Guide]] |date=November 27, 2003 |accessdate=January 20, 2009}}&lt;/ref&gt;&lt;ref&gt;{{cite book |last=Riggs |first=Thomas |title=Contemporary Theatre, Film, and Television |publisher=[[Gale Research]] |year=2002 |page=117 |isbn=0-7876-5116-8}}&lt;/ref&gt;
+
+      ===Period of successes and failures===
+      [[File:TomHanks1989.png|thumb|right|upright|Hanks at Governor's Ball party after [[61st Academy Awards]], March 29, 1989]]
+
+      With ''[[Nothing in Common]]'' (1986)&amp;nbsp;– about a young man alienated from his parents who must reestablish a relationship with his father, played by [[Jackie Gleason]]&amp;nbsp;– Hanks began to establish the credentials of not only a comic actor but of someone who could carry a serious role. &quot;It changed my desires about working in movies,&quot; Hanks told ''Rolling Stone''. &quot;Part of it was the nature of the material, what we were trying to say. But besides that, it focused on people's relationships. The story was about a guy and his father, unlike, say, ''[[The Money Pit]]'', where the story is really about a guy and his house.&quot;&lt;ref&gt;{{cite book|title=Encyclopedia of American Cinema|url=http://books.google.com/books?id=zlSRS80XIfQC&amp;pg=PT1033&amp;lpg=PT1033&amp;dq=money+pit+Part+of+it+was+the+nature+of+the+material,+what+we+were+trying+to+say.+But+besides+that,+it+focused+on+people's+relationships.+The+story+was+about+a+guy+and+his+father,+unlike,+say,+The+Money+Pit,+where+the+story+is+really+about+a+guy+and+his+house&amp;source=bl&amp;ots=iIBD7s1Rcf&amp;sig=L_9M7MEagWxsKMDunuyXcGfqehM&amp;hl=en&amp;sa=X&amp;ei=wY_7T-WRMoHr6wGZ6vGBBw&amp;ved=0CE0Q6AEwAA#v=onepage&amp;q=money%20pit%20Part%20of%20it%20was%20the%20nature%20of%20the%20material%2C%20what%20we%20were%20trying%20to%20say.%20But%20besides%20that%2C%20it%20focused%20on%20people's%20relationships.%20The%20story%20was%20about%20a%20guy%20and%20his%20father%2C%20unlike%2C%20say%2C%20The%20Money%20Pit%2C%20where%20the%20story%20is%20really%20about%20a%20guy%20and%20his%20house&amp;f=false}}&lt;/ref&gt;
+
+      After a few more flops and a moderate success with ''[[Dragnet (1987 film)|Dragnet]]'', Hanks succeeded with the fantasy comedy ''[[Big (film)|Big]]'' (1988), both at the box office and within the industry.&lt;ref name=tca/&gt; The film established Hanks as a major Hollywood talent. It was followed later that year by ''[[Punchline (film)|Punchline]]'', in which he and [[Sally Field]] co-starred as struggling comedians. Hanks's character, Steven Gold, a failing medical student trying to break into stand-up, was somewhat edgy and complex. Hanks' portrayal of Gold offered a glimpse of the far more dramatic roles Hanks would master in films to come. Hanks then suffered a pile of box-office failures: ''[[The 'Burbs]]'' (1989), ''[[Joe Versus the Volcano]]'' (1990), and ''[[The Bonfire of the Vanities (film)|The Bonfire of the Vanities]]'' (1990),&lt;ref name=tca/&gt; as a greedy [[Wall Street]] type who gets enmeshed in a hit-and-run accident. Only the 1989 movie ''[[Turner &amp; Hooch]]'' brought success for Hanks during this time. In a 1993 issue of ''[[Disney Adventures]]'', Hanks said, &quot;I saw ''Turner &amp; Hooch'' the other day in the SAC store and couldn't help but be reminiscent. I cried like a baby.&quot; He did admit to making a couple of &quot;bum tickers,&quot; however, and blamed his &quot;...deductive reasoning and decision making skills.&quot;
+
+      ===Progression into dramatic roles===
+      Hanks climbed back to the top again with his portrayal of a washed-up baseball legend turned manager in ''[[A League of Their Own]]'' (1992).&lt;ref name=tca/&gt; Hanks has admitted that his acting in earlier roles was not great and that he has improved. In an interview with ''[[Vanity Fair (magazine)|Vanity Fair]]'', Hanks noted his ''&quot;modern era of moviemaking ... because enough self-discovery has gone on.... My work has become less pretentiously fake and over the top&quot;''. This &quot;modern era&quot; began in 1993 for Hanks, first with ''[[Sleepless in Seattle]]'' and then with ''[[Philadelphia (film)|Philadelphia]]''. The former was a blockbuster success about a widower who finds true love over the airwaves. Richard Schickel of ''TIME'' called his performance &quot;charming,&quot; and most critics agreed that Hanks' portrayal ensured him a place among the premier romantic-comedy stars of his generation.&lt;ref&gt;{{cite news|last=SCHICKEL|first=RICHARD|title=Modern Romance|url=http://www.time.com/time/magazine/article/0,9171,978809,00.html|work=Time magazine|date=July 5, 1993|accessdate=July 9, 2012}}&lt;/ref&gt;
+
+      In ''Philadelphia'', he played a [[homosexuality|gay]] lawyer with AIDS who sues his firm for discrimination.&lt;ref name=tca/&gt; Hanks lost thirty-five pounds and thinned his hair in order to appear sickly for the role. In a review for ''[[People (American magazine)|People]]'', Leah Rozen stated &quot;Above all, credit for ''Philadelphia'''s success belongs to Hanks, who makes sure that he plays a character, not a saint. He is flat-out terrific, giving a deeply felt, carefully nuanced performance that deserves an Oscar.&quot; Hanks won the 1993 [[Academy Award]] for Best Actor for his role in ''Philadelphia''.&lt;ref name=tca/&gt; During his acceptance speech he revealed that his high school drama teacher Rawley Farnsworth and former classmate John Gilkerson, two people with whom he was close, were gay.&lt;ref&gt;[http://film.guardian.co.uk/oscars2000/story/0,,147619,00.html Winner Speeches].&lt;/ref&gt;
+
+      [[File:TomHanksForrestGump94.jpg|thumb|left|upright|alt=A man is at the center of the image smiling into the camera. He is sitting on a blue crate and has his hands resting on his legs.|Hanks on the film set of ''[[Forrest Gump]]'' (1994)]]
+
+      Hanks followed ''Philadelphia'' with the 1994 hit ''[[Forrest Gump]]''. Of the film, Hanks has remarked: &quot;When I read the script for ''Gump'', I saw it as one of those kind of grand, hopeful movies that the audience can go to and feel ... some hope for their lot and their position in life... I got that from the movies a hundred million times when I was a kid. I still do.&quot; Hanks won his second Best Actor [[Academy Award]] for his role in ''Forrest Gump'', becoming only the second actor to have accomplished the feat of winning consecutive Best Actor Oscars.&lt;ref name=&quot;67AcAwardsWins&quot;&gt;{{cite news|last=Grimes|first=William|title='Forrest Gump' Triumphs With 6 Academy Awards|url=http://www.nytimes.com/1995/03/28/movies/forrest-gump-triumphs-with-6-academy-awards.html|work=The New York Times|date=March 28, 1995|accessdate=October 20, 2010|archiveurl=http://www.webcitation.org/5tdd3ad9J|archivedate=July 9, 2012}}&lt;/ref&gt; ([[Spencer Tracy]] was the first, winning in 1937–38. Hanks and Tracy were the same age at the time they received their Academy Awards: 37 for the first and 38 for the second.)&lt;ref&gt;{{cite web|last=Teachout|first=Terry|title=The Eclipse of Spencer Tracy|url=http://www.commentarymagazine.com/article/the-eclipse-of-spencer-tracy/|work=commentarymagazine.com}}&lt;/ref&gt;
+
+      Hanks' next role—astronaut and commander [[Jim Lovell]], in the 1995 film ''[[Apollo 13 (film)|Apollo 13]]''—reunited him with [[Ron Howard]].&lt;ref name=tca/&gt; Critics generally applauded the film and the performances of the entire cast, which included actors [[Kevin Bacon]], [[Bill Paxton]], [[Gary Sinise]], [[Ed Harris]], and [[Kathleen Quinlan]]. The movie also earned nine Academy Award nominations, winning two. Later that year, Hanks starred in the [[Walt Disney Pictures|Disney]]/[[Pixar]] animated blockbuster ''[[Toy Story]]'' as the voice of the toy [[Sheriff Woody]].
+
+      ===1996–present: Directing, producing and acting===
+      Hanks turned to directing with his 1996 film ''[[That Thing You Do!]]'' about a 1960s pop group, also playing the role of a music producer. Hanks and producer [[Gary Goetzman]] went on to create [[Playtone]], a record and film production company named for the record company in the film.&lt;ref&gt;{{cite web|title=That Thing You Do! (1996)|url=http://www.rottentomatoes.com/m/that_thing_you_do/|work=rottentomatoes}}&lt;/ref&gt;
+
+      Hanks executive produced, co-wrote, and co-directed the [[HBO]] docudrama ''[[From the Earth to the Moon (TV miniseries)|From the Earth to the Moon]]''. The twelve-part series chronicles the space program from its inception, through the familiar flights of [[Neil Armstrong]] and [[Jim Lovell]], to the personal feelings surrounding the reality of moon landings. The [[Emmy Award]]-winning project was, at US$68&amp;nbsp;million, one of the most expensive ventures taken for television.&lt;ref&gt;{{cite web|title=From the Earth to the Moon|url=http://www.tv.com/shows/from-the-earth-to-the-moon/|work=tv.com|accessdate= July 9, 2012}}&lt;/ref&gt;
+
+      Hanks' next project was no less expensive. For ''[[Saving Private Ryan]]'' he teamed up with [[Steven Spielberg]] to make a film about a search through war-torn France after [[D-Day]] to bring back a soldier. It earned the praise and respect of the film community, critics, and the general public.&lt;ref&gt;{{cite web|title=Saving Private Ryan (1998)|url=http://www.rottentomatoes.com/m/saving_private_ryan/|work=rottentomatoes|accessdate=July 10, 2012}}&lt;/ref&gt; It was labeled one of the finest war films ever made and earned Spielberg his second [[Academy Award]] for direction, and Hanks another Best Actor nomination.&lt;ref&gt;{{cite web|accessdate=September 5, 2008|url=http://us.imdb.com/Sections/Awards/Academy_Awards_USA/1999|title=Academy Awards, USA: 1999 |publisher=IMDB }}&lt;/ref&gt; Later in 1998, Hanks re-teamed with his ''Sleepless in Seattle'' co-star [[Meg Ryan]] for ''[[You've Got Mail]]'', a remake of 1940's ''[[The Shop Around the Corner]]''.&lt;ref name=&quot;Tom Hanks biography&quot;/&gt;
+
+      In 1999, Hanks starred in an adaptation of the [[Stephen King]] novel ''[[The Green Mile (film)|The Green Mile]]''.&lt;ref&gt;{{rotten-tomatoes | id=green_mile | title=The Green Mile }}&lt;/ref&gt; He also returned as the voice of Woody in ''[[Toy Story 2]].'' The following year he won a [[Golden Globe]] for Best Actor and an Academy Award nomination for his portrayal of a marooned [[FedEx]] systems analyst in [[Robert Zemeckis]]'s ''[[Cast Away]]''.&lt;ref name=&quot;Oscars2001&quot;&gt;{{Cite web|url=http://www.oscars.org/awards/academyawards/legacy/ceremony/73rd-winners.html |title=The 73rd Academy Awards (2001) Nominees and Winners |accessdate=July 10, 2012|work=oscars.org}}&lt;/ref&gt; In 2001, Hanks helped direct and produce the acclaimed HBO miniseries ''[[Band of Brothers (TV miniseries)|Band of Brothers]]''. He also appeared in the September 11 television special ''[[America: A Tribute to Heroes]]'' and the documentary ''Rescued From the Closet''.&lt;ref&gt;{{cite web|title=America: A Tribute to Heroes|url=http://www.cbs.com/specials/heroes/|work=cbs.com|accessdate=July 10, 2012}}&lt;/ref&gt;
+
+      Next he teamed up with ''[[American Beauty (film)|American Beauty]]'' director [[Sam Mendes]] for the adaptation of [[Max Allan Collins]]'s and [[Richard Piers Rayner]]'s graphic novel ''[[Road to Perdition]]'', in which he played an [[anti-hero]] role as a [[hitman]] on the run with his son. That same year, Hanks collaborated with director Spielberg again, starring opposite [[Leonardo DiCaprio]] in the hit crime comedy ''[[Catch Me If You Can]]'', based on the true story of [[Frank Abagnale, Jr.]] The same year, Hanks and his wife [[Rita Wilson]] produced the hit movie ''[[My Big Fat Greek Wedding]]''. In August 2007, he along with co-producers Rita Wilson and [[Gary Goetzman]], and writer and star [[Nia Vardalos]], initiated a legal action against the production company Gold Circle Films for their share of profits from the movie.&lt;ref&gt;[http://www.newsdaily.com/index.php?feed=Entertainment&amp;article=UPI-1-20070808-11481500-bc-us-hanks.xml &quot;Hanks files big fat 'Greek' lawsuit&quot;]{{dead link|date=March 2011}}&amp;nbsp;– [[United Press International]]&amp;nbsp;– (c/o NewsDaily.com)&amp;nbsp;– August 8, 2007.&lt;/ref&gt;&lt;ref&gt;{{cite web|url=http://web.archive.org/web/20080208234100/http://www.newsdaily.com/index.php?feed=Entertainment&amp;article=UPI-1-20070808-11481500-bc-us-hanks.xml|work= Archive of UPS article at Archive.org|title=Tom Hanks|accessdate=October 21, 2011}}&lt;/ref&gt;&lt;ref&gt;[http://www.irishexaminer.com/breaking/entertainment/mhcwcweyqlgb/ &quot;Hanks sues over unpaid 'My big fat Greek wedding' profits&quot;], ''[[Irish Examiner]]'', August 8, 2007.&lt;/ref&gt; At the age of 45, he became the youngest ever recipient of the [[American Film Institute]]'s Life Achievement Award on June 12, 2002.&lt;ref&gt;{{cite web|last=Levy|first=Rochelle L.|title=THE ACHIEVEMENT OF TOM HANKS|url=http://www.afi.com/laa/laa02.aspx|work=afi.com|accessdate=July 10, 2012}}&lt;/ref&gt;
+
+      [[File:Tom Hanks - footprint.JPG|thumb|right|Hanks' footprints &amp; handprints in front of [[Grauman's Chinese Theatre]] in Hollywood.]]
+
+      In 2004, he appeared in three films: The [[Coen brothers]]' ''[[The Ladykillers (2004 film)|The Ladykillers]]'', another Spielberg film, ''[[The Terminal]]'', and ''[[The Polar Express (film)|The Polar Express]]'', a family film from [[Robert Zemeckis]]. In a ''[[USA Weekend]]'' interview, Hanks talked about how he chooses projects: &quot;[Since] ''A League of Their Own'', it can't be just another movie for me. It has to get me going somehow.... There has to be some all-encompassing desire or feeling about wanting to do that particular movie. I'd like to assume that I'm willing to go down any avenue in order to do it right&quot;. In August 2005, Hanks was voted in as vice president of the [[Academy of Motion Picture Arts and Sciences]].&lt;ref name=&quot;BBC-2005-08-25&quot;&gt;[http://news.bbc.co.uk/1/hi/entertainment/film/4184066.stm &quot;Actor Hanks voted in by Academy&quot;], [[BBC]], August 25, 2005.&lt;/ref&gt;
+
+      Hanks next starred in the highly anticipated film ''[[The Da Vinci Code (film)|The Da Vinci Code]]'', based on the best-selling novel by [[Dan Brown]]. The film was released May 19, 2006 in the US and grossed over US$750&amp;nbsp;million worldwide. He followed the film with [[Ken Burns]]'s 2007 documentary ''[[The War (documentary)|The War]]''. For the documentary, Hanks did voice work, reading excerpts from [[World War II]]-era columns by [[Al McIntosh]]. In 2006, Hanks topped a 1,500-strong list of 'most trusted celebrities' compiled by ''[[Forbes]]'' magazine.&lt;ref name=&quot;BBC-2006-09-27&quot;&gt;[http://news.bbc.co.uk/1/hi/entertainment/5384320.stm &quot;Hanks tops 'most trusted' index&quot;], BBC, September 27, 2006.&lt;/ref&gt; Hanks next appeared in a cameo role as himself in ''[[The Simpsons Movie]]'', in which he appeared in an advertisement claiming that the U.S. government has lost its credibility and is hence buying some of his. He also made an appearance in the credits, expressing a desire to be left alone when he is out in public. Later in 2006, Hanks produced the British film ''[[Starter for 10 (film)|Starter for Ten]]'', a comedy based on working class students attempting to win ''University Challenge''.&lt;ref name=&quot;BBC-2006-11-09&quot;&gt;[http://www.bbc.co.uk/dna/filmnetwork/A17127155 &quot;A real Movie challenge&quot;.] BBC. November 9, 2006.&lt;/ref&gt;
+
+      In 2007, Hanks starred in [[Mike Nichols]]'s film ''[[Charlie Wilson's War]]'' (written by screenwriter [[Aaron Sorkin]]) in which he plays [[Democratic Party (United States)|Democratic]] Texas Congressman [[Charles Wilson (Texas politician)|Charles Wilson]].&lt;ref&gt;{{cite web|last=Roddy|first=Melissa|title=Tom Hanks Tells Hollywood Whopper in 'Charlie Wilson's War'|url=http://www.alternet.org/story/71286/|work=Alternet|date=December 21, 2007|accessdate=July 10, 2012}}&lt;/ref&gt; The film opened on December 21, 2007, and Hanks received a [[Golden Globe]] nomination.&lt;ref name=65gg&gt;{{cite web|url=http://www.goldenglobes.org/news/id/81 |title=Hollywood Foreign Press Association 2008 Golden Globe Awards for the Year Ended December 31, 2007 |accessdate= July 10, 2012 |date= December 13, 2007 |publisher=goldenglobes.org |archiveurl = http://web.archive.org/web/20071215072618/http://www.goldenglobes.org/news/id/81 &lt;!-- Bot retrieved archive --&gt; |archivedate = July 10, 2012}}&lt;/ref&gt;
+
+      In 2008's ''[[The Great Buck Howard]]'', Hanks played the on-screen father of a young man (Hanks' real-life son, [[Colin Hanks]]) who chooses to follow in the footsteps of a fading magician ([[John Malkovich]]). Tom Hanks' character was less than thrilled about his son's career decision.&lt;ref&gt;{{cite web|title=The Great Buck Howard|url=http://www.magpictures.com/profile.aspx?id=2b7aa78c-5fb3-4c62-b7f6-1a733c3f632d|work=magpictures.com}}&lt;/ref&gt;
+
+      [[File:Tom Hanks 2008a.jpg|thumb|left|upright|Hanks at Post-Emmys Party, Sept. 2008]]
+
+      Hanks' next endeavor, released on May 15, 2009, was a film adaptation of ''[[Angels &amp; Demons (film)|Angels &amp; Demons]]'', based on the [[Angels &amp; Demons|novel of the same name]] by [[Dan Brown]]. Its April 11, 2007, announcement revealed that Hanks would reprise his role as Robert Langdon, and that he would reportedly receive the highest salary ever for an actor.&lt;ref&gt;Tyler, Joshua. [http://www.cinemablend.com/new/Exclusive-Tom-Hanks-Confirmed-For-Da-Vinci-Code-Sequel-4885.html &quot;Tom Hanks Confirmed For Da Vinci Code Sequel&quot;], Cinema Blend, April 10, 2007.&lt;/ref&gt;&lt;ref&gt;Fleming, Michael. [http://www.variety.com/VR1117974685.html &quot;Howard moves fast with 'Code' sequel&quot;], ''[[Variety (magazine)|Variety]], October 24, 2007.&lt;/ref&gt; The following day he made his 10th appearance on [[NBC]]'s ''[[Saturday Night Live]]'', impersonating himself for the ''[[Celebrity Jeopardy! (Saturday Night Live)|Celebrity Jeopardy]]'' sketch.
+
+      Hanks is producer of the [[Spike Jonze]] film ''[[Where The Wild Things Are (film)|Where The Wild Things Are]]'', based on the children's book by [[Maurice Sendak]].&lt;ref&gt;[http://www.boxofficemojo.com/movies/?id=wherethewildthingsare.htm &quot;Where the Wild Things Are&quot;.] Box Office Mojo. Accessed October 19, 2009.&lt;/ref&gt;
+
+      In 2010, Hanks again reprised his voice role of Woody in ''[[Toy Story 3]]'', after he, [[Tim Allen]], and [[John Ratzenberger]] were invited to a movie theater to see a complete story reel of the movie.&lt;ref&gt;[http://www.firstshowing.net/2009/04/23/tom-hanks-on-toy-story-3-and-what-they-showed-him-first/ Tom Hanks on Toy Story 3] from [http://www.firstshowing.net/ firstshowing.net].&lt;/ref&gt;
+
+      In 2011, he directed and starred opposite [[Julia Roberts]] in the title role in the romantic comedy ''[[Larry Crowne]]''.&lt;ref&gt;{{cite news|url=http://movies.nytimes.com/2011/07/01/movies/tom-hanks-and-julia-roberts-in-larry-crowne-review.html|title=Stymied in Middle Age, Reaching for a New Life|accessdate=July 23, 2011|date=June 30, 2011|work=[[The New York Times]]|author=Holden, Stephen}}&lt;/ref&gt; The movie has received generally bad reviews with only 35% of the 175 [[Rotten Tomatoes]] reviews giving it high ratings.&lt;ref&gt;{{cite web|url=http://www.rottentomatoes.com/m/larry_crowne/|title=Larry Crowne (2011)|accessdate=July 23, 2011|publisher=[[Rotten Tomatoes]]}}&lt;/ref&gt; Also in 2011, he starred in the drama film ''[[Extremely Loud and Incredibly Close (film)|Extremely Loud and Incredibly Close]]''.&lt;ref&gt;{{cite news|last=Dargis|first=Manhola|title=Extremely Loud &amp; Incredibly Close (2011)|url=http://movies.nytimes.com/2011/12/23/movies/extremely-loud-incredibly-close-with-tom-hanks-review.html|work=new york times|date=December 22, 2011|accessdate=July 10, 2012}}&lt;/ref&gt; In 2012, he voiced the character Cleveland Carr for a [[web series]] he created entitled ''[[Electric City (web series)|Electric City]]''.&lt;ref&gt;{{cite web |url=http://entertainment.time.com/2012/07/17/for-web-only-viewing-tom-hanks-created-series-debuts-today/ |title=Online Blockbuster?: Tom Hanks' Electric City Debuts on Yahoo Today |accessdate=July 17, 2012}}&lt;/ref&gt;
+
+      In 2013, Hanks starred with [[Barkhad Abdi]] in the film ''[[Captain Phillips (film)|Captain Phillips]]'', based on the [[Maersk Alabama hijacking]] as [[Captain Richard Phillips]],&lt;ref&gt;{{cite news|url=http://www.hollywoodreporter.com/news/tom-hanks-play-capt-richard-167846|title=Tom Hanks to Play Capt. Richard Phillips in Somali Pirate Hostage Story|publisher=Hollywood Reporter|date= March 15, 2011 |accessdate=April 13, 2012|first=Borys|last=Kit}}&lt;/ref&gt; and played [[Walt Disney]] in the film ''[[Saving Mr. Banks]]'', costarring [[Emma Thompson]] and [[Colin Farrell]], and directed by [[John Lee Hancock]]. Hanks is the first actor to portray Disney in film.&lt;ref&gt;{{cite news|url=http://www.guardian.co.uk/film/2012/apr/11/tom-hanks-walt-disney-mary-poppins|title=Tom Hanks to play Walt Disney in Saving Mr Banks|accessdate=April 13, 2012|publisher=[[The Guardian]]|first=Ben|last=Child|date=April 11, 2012}}&lt;/ref&gt;
+
+      He is ranked as the highest all time box office star with over $3.639&amp;nbsp;billion total box office gross, an average of $107&amp;nbsp;million per film.&lt;ref&gt;[http://www.boxofficemojo.com/people/?view=Actor&amp;sort=sumgross&amp;p=.htm &quot;People Index.&quot;] Box Office Mojo.&lt;/ref&gt; He has been involved with seventeen films that grossed over $100&amp;nbsp;million at the worldwide box office, the highest grossing of which was 2010's ''[[Toy Story 3]]''.&lt;ref name=&quot;box&quot;&gt;{{cite web|url=http://www.boxofficemojo.com/people/chart/?id=tomhanks.htm |title=Tom Hanks profile at Box Office Mojo |publisher=Boxofficemojo.com |accessdate=March 15, 2011}}&lt;/ref&gt;
+
+      As of 2012, Hanks' films have [[gross (economics)|grossed]] over $4.2 billion at the United States box office alone, and over $8.5 billion worldwide&lt;ref name=&quot;Tom Hanks&quot;/&gt; making him the highest all time box office star.
+
+      ==Personal life==
+      [[File:Tom Hanks and wife Rita Wilson 836.jpg|thumb|right|Hanks and his wife, [[Rita Wilson]], at the 1989 Oscars]]
+      Hanks was married to American actress Samantha Lewes&lt;ref&gt;{{cite news |url=http://www.guardian.co.uk/film/2001/jan/12/culture.awardsandprizes |title=Desert island risks |work=The Guardian |location=UK |first= Danny |last= Leigh |date=January 12, 2001 |accessdate=October 9, 2010}}&lt;/ref&gt; from 1978 until 1987, when they divorced. The couple had two children, son [[Colin Hanks]] (born 1977), also an actor, and daughter Elizabeth Ann (born 1982).&lt;ref&gt;{{cite web|url=http://www.usmagazine.com/fe_dev.php/celebrities/tom-hanks|title=tom hanks|work=US magazine}}&lt;/ref&gt;&lt;ref&gt;[http://www.eonline.com/celebrities/profile/index.jsp?uuid=4ddc31be-a18f-4c2e-b0bf-54a91910c86d Tom Hanks], [[E!|E! Entertainment Television]].{{Dead link|date=April 2013}}&lt;/ref&gt;
+
+      In 1988, Hanks married actress [[Rita Wilson]]. The two first met on the set of Hanks's television show ''[[Bosom Buddies]]'' but later developed a romantic interest while working on the film ''[[Volunteers (film)|Volunteers]]''. They have two sons: Chester, or &quot;Chet&quot; Marlon (born 1990) who has a small part as a student in ''[[Indiana Jones and the Kingdom of the Crystal Skull]]'' and released a rap single in 2011,&lt;ref&gt;{{cite news |url=http://dailynorthwestern.com/2011/01/12/archive-manual/frat-star-to-rap-star-chet-hanks/ |title=Frat star to rap star: Chet Hanks |newspaper= The Northwestern Daily |first= Jennifer |last= Suh |date=January 13, 2011 |accessdate=June 25, 2011}}&lt;/ref&gt; and Truman Theodore (born 1995).
+
+      Hanks became a grandfather when his son Colin's wife gave birth to a daughter, Olivia, in 2011.&lt;ref&gt;{{cite news|last=Jordan |first=Julie |url=http://www.people.com/people/article/0,,20463405,00.html |title=Tom Hanks's Son Colin Hanks Welcomes Daughter Olivia Jane |work=[[People (American magazine)|People]] |date=February 3, 2011 |accessdate=February 22, 2011}}&lt;/ref&gt; His second granddaughter, Charlotte, was born in 2013.&lt;ref name=&quot;celebritybabies.people.com&quot;&gt;http://celebritybabies.people.com/2013/07/02/colin-hanks-welcomes-daughter-charlotte/&lt;/ref&gt;
+
+      On October 7, 2013, on ''[[The Late Show with David Letterman]]'', Hanks announced that he has Type 2 diabetes.&lt;ref&gt;{{cite web| title= Tom Hanks reveals diabetes diagnosis: Did fluctuating weight play a role? |date= October 8, 2013 |publisher= CBS News| url= http://www.cbsnews.com/8301-505270_162-57606462/tom-hanks-reveals-diabetes-diagnosis-did-fluctuating-weight-play-a-role/|accessdate=October 9, 2013| quote= Academy Award winning actor, Tom Hanks announced on Monday that he is living with Type 2 diabetes on CBS' ''The Late Show with David Letterman''.}}&lt;/ref&gt;
+
+      Hanks is a convert to the [[Greek Orthodox Church]]&lt;ref&gt;{{cite news|last=Fairchild |first=Mary|url=http://christianity.about.com/od/easternorthodoxy/p/orthodoxprofile.htm|title=Eastern Orthodox Church Denomination |work=About.com |accessdate=February 26, 2014}}&lt;/ref&gt; Regarding his religious views, Hanks has said, &quot;I must say that when I go to church—and I do go to church—I ponder the mystery. I meditate on the 'why?' of 'Why people are as they are' and 'Why bad things happen to good people,' and 'Why good things happen to bad people'... The mystery is what I think it is, almost, the grand unifying theory of mankind.&quot;&lt;ref name=mattingly /&gt;
+
+      Hanks is an avid collector of manual typewriters, writing an article about them in ''[[The New York Times]]'' in August of 2013.&lt;ref&gt;{{cite news|last=Hanks|first=Tom|url=http://www.nytimes.com/2013/08/04/opinion/sunday/i-am-tom-i-like-to-type-hear-that.html?_r=0|title=I Am TOM. I Like to TYPE. Hear That?|accessdate=March 27, 2014}}&lt;/ref&gt;
+
+      ==Politics==
+      Hanks has made donations to many [[Democratic Party (United States)|Democratic]] politicians and has been open about his support for [[same-sex marriage]], environmental causes, and alternative fuels. Hanks made public his presidential candidate choice in the 2008 election when he uploaded a video to his MySpace account in which he announced his endorsement of [[Barack Obama]].&lt;ref&gt;[http://vids.myspace.com/index.cfm?fuseaction=vids.individual&amp;videoid=33546997 Beware: Celebrity Endorsement par Tom Hanks] from Vidéos MySpaceTV&lt;/ref&gt;
+
+      A proponent of environmentalism, Hanks is an investor in [[electric vehicles]] and owns both a [[Toyota RAV4 EV]] and the first production [[AC Propulsion eBox]]. Hanks was a lessee of an [[EV1]] before it was recalled, as chronicled in the documentary ''[[Who Killed the Electric Car?]]''&lt;ref&gt;[http://www.allabouthybridcars.com/hollywood-hybrids.htm &quot;Hollywood Loves Hybrid Cars&quot;], ''[[Washington Post]]''&lt;/ref&gt;&lt;ref&gt;{{youtube|id=aNZT61Dgbvs}}{{dead link|date=March 2011}}&lt;/ref&gt; He was on the waiting list for an [[Aptera 2 Series]].&lt;ref&gt;[http://www.paloaltoonline.com/news/show_story.php?id=12043 &quot;Bird-like electric car to make Palo Alto debut&quot;]. Retrieved February 1, 2010&lt;/ref&gt;
+
+      Hanks was extremely outspoken about his opposition to the 2008 [[California Proposition 8 (2008)|Proposition 8]], an amendment to the California constitution that defined marriage as a union only between a man and a woman. Hanks and others who were in opposition to the proposition raised over US$44&amp;nbsp;million in contrast to the supporters' $39&amp;nbsp;million,&lt;ref&gt;[http://www.latimes.com/news/local/la-moneymap,0,2198220.htmlstory &quot;Tracking the Money: The Final Numbers&quot;], ''[[Los Angeles Times]]''&lt;/ref&gt; but Proposition 8 passed with 52% of the vote.&lt;ref&gt;[http://www.latimes.com/news/local/politics/cal/la-2008election-california-results,0,1293859.htmlstory?view=8&amp;tab=0&amp;fnum=0 California propositions: Proposition 8, county-by-county map, margin of victory], ''[[Los Angeles Times]]''&lt;/ref&gt;
+
+      While premiering a TV series in January 2009, Hanks called supporters of Proposition 8 &quot;un-American&quot; and criticized the [[Latter Day Saints|LDS]] (Mormon) church members, who were major proponents of the bill, for their views on marriage and their role in supporting the bill.&lt;ref&gt;[http://www.lonsberry.com/writings.cfm?story=2585&amp;go=4 &quot;Tom Hanks Get Payback for Prop 8&quot;] from Lonsberry.com.&lt;/ref&gt;&lt;ref&gt;[http://www.foxnews.com/story/0,2933,480167,00.html &quot;Tom Hanks Says Mormon Supporters of Proposition 8 'Un-American'&quot;], [[Fox News]].&lt;/ref&gt; About a week later, Hanks apologized for the remark, saying that nothing is more American than voting one's conscience.&lt;ref&gt;[http://www.foxnews.com/story/0,2933,482266,00.html &quot;Tom Hanks Apologizes for Calling Mormon Supporters of Proposition 8 'Un-American'&quot;], Fox News&lt;/ref&gt;
+
+      Hanks narrated a video created by [[Obama for America]], entitled ''[[The Road We've Traveled]]''.&lt;ref name=&quot;Road&quot;&gt;{{cite news | url=http://www.latimes.com/news/politics/la-pn-grassroots-reactions-to-obamas-the-road-weve-traveled-video-20120316,0,6154612.story?track=rss&amp;utm_source=dlvr.it&amp;utm_medium=twitter&amp;dlvrit=56325 | title=Grassroots reactions to Obama's &quot;The Road We've Traveled&quot; Video | date=March 16, 2012 | agency=Los Angeles Times | accessdate=March 17, 2012 | author=Memoli, Michael | work=Los Angeles Times}}&lt;/ref&gt;
+
+      ==Other activities==
+      A supporter of [[NASA]]'s manned space program, Hanks has said that he originally wanted to be an astronaut but &quot;didn't have the math.&quot; Hanks is a member of the [[National Space Society]], serving on the [[Board of Governors]] of the nonprofit educational [[space advocacy]] organization founded by Dr. [[Wernher Von Braun]].&lt;ref&gt;{{cite web|title=National Space Society Board of Governors|url=http://www.nss.org/about/bog.html|accessdate=July 10, 2012}}&lt;/ref&gt; He also produced the [[Home Box Office|HBO]] miniseries ''[[From the Earth to the Moon (TV miniseries)|From the Earth to the Moon]]'' about the [[Apollo program]] to send astronauts to the moon. [[File:Steven Spielberg &amp; Tom Hanks at National World War II Memorial for premiere of The Pacific 2010-03-11.jpg|thumb|left|Hanks with [[Steven Spielberg]] at the [[National World War II Memorial]] in March 2010]]
+      In addition, Hanks co-wrote and co-produced ''[[Magnificent Desolation: Walking on the Moon 3D]]'', an [[IMAX]] film about the moon landings.&lt;ref&gt;{{cite web|title=The Narrator:Tom Hanks|url=http://www.imax.com/magnificentdesolation/|work=imax.com}}&lt;/ref&gt; Hanks also provided the [[voice over]] for the premiere of the show ''Passport to the Universe'' at the [[Rose Center for Earth and Space]] in the [[Hayden Planetarium]] at the [[American Museum of Natural History]] in New York.&lt;ref&gt;{{cite web|title=Rose Center for Earth and Space at the American Museum of Natural History|url=http://www.ny.com/museums/rosecenter2.html|work=ny.com|publisher=museums}}&lt;/ref&gt;
+
+      In 2006, the [[Space Foundation]] awarded Hanks the Douglas S. Morrow Public Outreach Award.&lt;ref&gt;[http://www.nationalspacesymposium.org/about-the-show/symposium-awards/douglas-s-morrow-public-outreach-award Douglas S. Morrow Public Outreach Award]. Retrieved February 1, 2010. {{Dead link|date=October 2010|bot=H3llBot}}&lt;/ref&gt; The award is given annually to an individual or organization that has made significant contributions to public awareness of space programs.
+
+      In June 2006, Hanks was inducted as an honorary member of the [[United States Army Rangers]] Hall of Fame for his accurate portrayal of a [[Captain (U.S. Army)|Captain]] in the movie ''[[Saving Private Ryan]]''; Hanks, who was unable to attend the induction [[ceremony]], was the first actor to receive such an honor.&lt;ref&gt;[http://www.news24.com/News24/Entertainment/Abroad/0,,2-1225-1243_1960416,00.html &quot;Army honors Tom Hanks&quot;],{{dead link|date=March 2011}} [[Associated Press]]&lt;/ref&gt; In addition to his role in ''Saving Private Ryan'', Hanks was cited for serving as the national spokesperson for the World War II Memorial Campaign, for being the honorary chairperson of the D-Day Museum Capital Campaign, and for his role in writing and helping to produce the [[Emmy Award]]-winning miniseries, ''[[Band of Brothers (TV miniseries)|Band of Brothers]]''.&lt;ref&gt;{{cite news|last=Alexander|first=Bryan|title=Steven Spielberg, Tom Hanks Pay Tribute to 'Band of Brothers' Inspiration|url=http://www.hollywoodreporter.com/news/steven-spielberg-dick-winters-vanguard-69934|work=hollywoodreporter|date=1/10/2011|accessdate= July 10, 2012}}&lt;/ref&gt;
+
+      On March 10, 2008, Hanks was on hand at the [[Rock &amp; Roll Hall of Fame]] to induct [[The Dave Clark Five]].&lt;ref&gt;{{cite web|url=http://www.captainerniesshowboat.com/marshalj |title=The Dave Clark Five |publisher=Captainerniesshowboat.com |accessdate=March 15, 2011}}&lt;/ref&gt;
+
+      Asteroid [[12818 Tomhanks]] is named after him.&lt;ref&gt;{{cite web|url=http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=12818+Tomhanks|title=12818 Tomhanks (1996 GU8)|accessdate=August 3, 2011|publisher=[[NASA]].gov}}&lt;/ref&gt;
+
+      ==Filmography==
+      {{Main|Tom Hanks filmography}}
+
+      ==Awards==
+      {{Main|List of awards and nominations received by Tom Hanks}}
+
+      == See also ==
+      {{Portal bar|Biography|Film}}
+
+      ==References==
+      {{Reflist|30em}}
+
+      ==Further reading==
+      * Gardner, David, (1999), ''Tom Hanks: The Unauthorized Biography'', London: England, ISBN 978-1857823271
+      * Gardner, David, (2007), ''Tom Hanks: Enigma,'' ISBN 978-1844544288
+      * Pfeiffer, Lee, (1996), ''The Films of Tom Hanks'', Secaucus: New Jersey, ISBN 978-0806517179
+      * Salamon, Julie, (1991), ''The Devil's Candy: The Bonfire of the Vanities Goes to Hollywood,'' Boston, ISBN 978-0385308243
+      * Trakin, Roy, (1995), ''Tom Hanks: Journey to Stardom'', ISBN 978-0312955960
+      * Wallner, Rosemary, (1994), ''Tom Hanks: Academy Award-Winning Actor'', Edina: Minnesota
+
+      ==External links==
+      {{Commons category|Tom Hanks}}
+      * {{IMDb name|158}}
+      * {{Twitter|tomhanks}}
+      * [https://www.facebook.com/TomHanks Tom Hanks' Facebook Page]
+      * {{youtube user|tomhankschannel|Tom Hanks}}
+      * [http://support.nature.org/site/PageServer?pagename=tomhanks_ed6 Tom Hanks's thoughts on Earth Day 2006]
+      * [http://www.filmlinc.com/fcm/ma09/tomhanks.htm Interview] from 1989 issue of ''[[Film Comment]]''
+
+      {{Tom Hanks}}
+      {{Navboxes
+      | title = Awards for Tom Hanks
+      | list =
+      {{AcademyAwardBestActor 1981-2000}}
+      {{BAFTA Los Angeles Britannia Awards}}
+      {{EmmyAward MiniseriesDirector 2001-2025}}
+      {{Empire Award for Best Actor}}
+      {{GoldenGlobeBestActorMotionPictureMusicalComedy 1981–2000}}
+      {{GoldenGlobeBestActorMotionPictureDrama 1981-2000}}
+      {{MTV Movie Award for Best Performance}}
+      {{National Board of Review Award for Best Actor}}
+      {{Saturn Award for Best Actor 1974–1990}}
+      {{ScreenActorsGuildAward MaleLeadMotionPicture 1994-2000}}
+      {{ScreenActorsGuildAward CastMotionPicture 1995–2000}}
+      {{AFI Life Achievement Award}}
+      {{Lincoln Center Gala Tribute}}
+      }}
+
+      {{Authority control|VIAF=19874894}}
+
+      {{Persondata
+      | NAME = Hanks, Tom
+      | ALTERNATIVE NAMES = Hanks, Thomas Jeffrey
+      | SHORT DESCRIPTION = Actor
+      | DATE OF BIRTH = July 9, 1956
+      | PLACE OF BIRTH = [[Concord, California]], U.S.
+      | DATE OF DEATH =
+      | PLACE OF DEATH =
+      }}
+      {{DEFAULTSORT:Hanks, Tom}}
+      [[Category:1956 births]]
+      [[Category:20th-century American male actors]]
+      [[Category:21st-century American male actors]]
+      [[Category:American film producers]]
+      [[Category:American male film actors]]
+      [[Category:American male television actors]]
+      [[Category:American male voice actors]]
+      [[Category:American people of English descent]]
+      [[Category:American people of Portuguese descent]]
+      [[Category:American screenwriters]]
+      [[Category:Best Actor Academy Award winners]]
+      [[Category:Best Actor Empire Award winners]]
+      [[Category:Best Drama Actor Golden Globe (film) winners]]
+      [[Category:Best Musical or Comedy Actor Golden Globe (film) winners]]
+      [[Category:California Democrats]]
+      [[Category:California State University, Sacramento alumni]]
+      [[Category:Chabot College alumni]]
+      [[Category:Eastern Orthodox Christians from the United States]]
+      [[Category:Film directors from California]]
+      [[Category:Living people]]
+      [[Category:Outstanding Performance by a Cast in a Motion Picture Screen Actors Guild Award winners]]
+      [[Category:Outstanding Performance by a Male Actor in a Leading Role Screen Actors Guild Award winners]]
+      [[Category:People from Concord, California]]
+      [[Category:Primetime Emmy Award winners]]
+      [[Category:Space advocates]]
+      [[Category:Silver Bear for Best Actor winners]]
+      [[Category:Writers from Los Angeles, California]]
+      [[Category:American people of German descent]]</rev></revisions></page></pages></query></api>
+- recorded: 2014-04-06T21:54:24.468Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '89'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3APadlock.svg&prop=imageinfo&iiprop=url&iiurlwidth=20&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '434'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 21:54:24 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq58 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1568732198, 3518337031, 339583652
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page pageid="24943200" ns="6" title="File:Padlock.svg" imagerepository="local"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/en/thumb/5/59/Padlock.svg/20px-Padlock.svg.png" thumbwidth="20" thumbheight="20" url="http://upload.wikimedia.org/wikipedia/en/5/59/Padlock.svg" descriptionurl="http://en.wikipedia.org/wiki/File:Padlock.svg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T21:54:25.437Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '95'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ATomHanks1989.png&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '467'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 21:54:25 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq58 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1568733281, 3518337565, 339584846
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:TomHanks1989.png" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/TomHanks1989.png/220px-TomHanks1989.png" thumbwidth="220" thumbheight="332" url="http://upload.wikimedia.org/wikipedia/commons/f/f5/TomHanks1989.png" descriptionurl="http://commons.wikimedia.org/wiki/File:TomHanks1989.png" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T21:54:27.116Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '104'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ATomHanksForrestGump94.jpg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '512'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 21:54:26 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq58 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1568735003, 3518338458, 339586734
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:TomHanksForrestGump94.jpg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/9/95/TomHanksForrestGump94.jpg/220px-TomHanksForrestGump94.jpg" thumbwidth="220" thumbheight="463" url="http://upload.wikimedia.org/wikipedia/commons/9/95/TomHanksForrestGump94.jpg" descriptionurl="http://commons.wikimedia.org/wiki/File:TomHanksForrestGump94.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T21:54:28.128Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '104'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ATom+Hanks+-+footprint.JPG&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '512'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 21:54:28 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq58 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1568736151, 3518339012, 339587974
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:Tom Hanks - footprint.JPG" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Tom_Hanks_-_footprint.JPG/220px-Tom_Hanks_-_footprint.JPG" thumbwidth="220" thumbheight="165" url="http://upload.wikimedia.org/wikipedia/commons/6/65/Tom_Hanks_-_footprint.JPG" descriptionurl="http://commons.wikimedia.org/wiki/File:Tom_Hanks_-_footprint.JPG" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T21:54:28.850Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '98'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ATom+Hanks+2008a.jpg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '559'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 21:54:28 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq58 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1568737125, 3518339547, 339589000
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2008-10-02T15:05:17Z" /></query-continue><query><pages><page ns="6" title="File:Tom Hanks 2008a.jpg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Tom_Hanks_2008a.jpg/220px-Tom_Hanks_2008a.jpg" thumbwidth="220" thumbheight="337" url="http://upload.wikimedia.org/wikipedia/commons/c/c6/Tom_Hanks_2008a.jpg" descriptionurl="http://commons.wikimedia.org/wiki/File:Tom_Hanks_2008a.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T21:54:29.801Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '117'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ATom+Hanks+and+wife+Rita+Wilson+836.jpg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '654'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 21:54:29 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq58 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1568738344, 3518340227, 339590255
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2007-10-06T22:38:19Z" /></query-continue><query><pages><page ns="6" title="File:Tom Hanks and wife Rita Wilson 836.jpg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Tom_Hanks_and_wife_Rita_Wilson_836.jpg/220px-Tom_Hanks_and_wife_Rita_Wilson_836.jpg" thumbwidth="220" thumbheight="274" url="http://upload.wikimedia.org/wikipedia/commons/4/4d/Tom_Hanks_and_wife_Rita_Wilson_836.jpg" descriptionurl="http://commons.wikimedia.org/wiki/File:Tom_Hanks_and_wife_Rita_Wilson_836.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T21:54:30.674Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '186'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ASteven+Spielberg+%26+Tom+Hanks+at+National+World+War+II+Memorial+for+premiere+of+The+Pacific+2010-03-11.jpg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '924'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 21:54:30 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq58 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1568739412, 3518340843, 339591428
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:Steven Spielberg &amp; Tom Hanks at National World War II Memorial for premiere of The Pacific 2010-03-11.jpg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Steven_Spielberg_%26_Tom_Hanks_at_National_World_War_II_Memorial_for_premiere_of_The_Pacific_2010-03-11.jpg/220px-Steven_Spielberg_%26_Tom_Hanks_at_National_World_War_II_Memorial_for_premiere_of_The_Pacific_2010-03-11.jpg" thumbwidth="220" thumbheight="163" url="http://upload.wikimedia.org/wikipedia/commons/b/bb/Steven_Spielberg_%26_Tom_Hanks_at_National_World_War_II_Memorial_for_premiere_of_The_Pacific_2010-03-11.jpg" descriptionurl="http://commons.wikimedia.org/wiki/File:Steven_Spielberg_%26_Tom_Hanks_at_National_World_War_II_Memorial_for_premiere_of_The_Pacific_2010-03-11.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T21:54:31.481Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '94'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ACommons-logo.svg&prop=imageinfo&iiprop=url&iiurlwidth=40&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '459'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 21:54:31 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq58 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1568740197, 3518341219, 339592296
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page pageid="33285577" ns="6" title="File:Commons-logo.svg" imagerepository="local"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/40px-Commons-logo.svg.png" thumbwidth="40" thumbheight="54" url="http://upload.wikimedia.org/wikipedia/en/4/4a/Commons-logo.svg" descriptionurl="http://en.wikipedia.org/wiki/File:Commons-logo.svg" /></imageinfo></page></pages></query></api>

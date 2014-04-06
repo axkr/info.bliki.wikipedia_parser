@@ -1,0 +1,582 @@
+!tape
+name: Depeche_Mode
+interactions:
+- recorded: 2014-04-06T22:22:25.107Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '102'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Depeche+Mode&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '85088'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:24 GMT
+      Server: Apache
+      Set-Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4; path=/
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq52 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570605075, 3519342965, 3733243352
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: "<?xml version=\"1.0\"?><api><query><pages><page pageid=\"8533\" ns=\"0\" title=\"Depeche Mode\"><revisions><rev user=\"178.235.183.165\" anon=\"\" timestamp=\"2014-04-05T13:05:13Z\" comment=\"/* Band members */\" contentformat=\"text/x-wiki\" contentmodel=\"\
+      wikitext\" xml:space=\"preserve\">{{Use British English|date=April 2012}}\n{{Use dmy dates|date=October 2012}}\n{{Infobox musical artist\n| name            = Depeche Mode\n| image           = Tierecke dm.jpg\n| image_size      = 250\n| landscape      \
+      \ = yes\n| caption         = Depeche Mode in concert, 2006.&lt;br&gt;Additional musicians [[Peter Gordeno (musician)|Peter Gordeno]] (far left), [[Christian Eigner]] (centre-left), [[Dave Gahan]] (centre), [[Martin Gore]] (centre-right), [[Andy Fletcher\
+      \ (musician)|Andy Fletcher]] (far right). \n| background      = group_or_band\n| origin          = [[Basildon]], [[Essex]], England\n| genre           = [[Synthpop]], [[New wave music|new wave]], [[alternative dance]], [[industrial rock]], [[electronica]]\n\
+      | years_active    = 1980–present\n| label           = [[Mute Records|Mute]], [[Sire Records|Sire]], [[Reprise Records|Reprise]], [[Capitol Records|Capitol]], [[Virgin Records|Virgin]], [[Columbia Records|Columbia]]\n| website         = {{url|depechemode.com}}\n\
+      | current_members = [[Andy Fletcher (musician)|Andy Fletcher]]&lt;br&gt;[[Dave Gahan]]&lt;br&gt;[[Martin Gore]]\n| past_members    = [[Vince Clarke]]&lt;br&gt;[[Alan Wilder]]\n}}\n\n'''Depeche Mode''' {{IPAc-en|d|ɨ|ˌ|p|ɛ|ʃ| |ˈ|m|oʊ|d}} are an English [[electronic\
+      \ music|electronic]] band formed in 1980 in [[Basildon]], Essex. The group's original line-up consisted of [[Dave Gahan]] (lead vocals, occasional songwriter since 2005), [[Martin Gore]] (keyboards, guitar, vocals, chief songwriter after 1981), [[Andy\
+      \ Fletcher (musician)|Andy Fletcher]] (keyboards), and [[Vince Clarke]] (keyboards, chief songwriter 1980-81). Depeche Mode released their debut record in 1981, ''[[Speak &amp; Spell (album)|Speak &amp; Spell]]'', bringing the band onto the English new\
+      \ wave scene. Clarke left the band after the release of the album, leaving the band as a trio to record ''[[A Broken Frame]]'', released the following year. [[Alan Wilder]] (keyboards, drums, occasional songwriter) officially joined the band afterward,\
+      \ replacing Clarke, while Gore took over lead songwriting duties, establishing a line up that would continue for the next thirteen years.\n\nThe band's last albums of the 1980s; ''[[Black Celebration]]'' and ''[[Music for the Masses]]'' established them\
+      \ as a dominant force on the mainstream electronic music scene. A highlight of this era was the band's concert at the Pasadena Rose Bowl where they drew a crowd in excess of 60,000 people. In the new decade, Depeche Mode released ''[[Violator (album)|Violator]]'',\
+      \ catapulting them to massive mainstream success. The subsequent album, ''[[Songs of Faith and Devotion]]'' and the supporting [[Devotional Tour]] exacerbated tensions within the band to the point where Alan Wilder quit in 1995, leading to intense media\
+      \ and fan speculation that the band would split. Now a trio once again, the band released ''[[Ultra (Depeche Mode album)|Ultra]]'' in 1997, recorded at the height of Gahan's near-fatal drug abuse, Gore's alcoholism and Fletcher's depression. The release\
+      \ of ''[[Exciter (album)|Exciter]]'' confirmed Depeche Mode's willingness to remain together, the subsequent, and very successful, [[Exciter Tour]] being their first tour in support of an original album in eight years since the [[Devotional Tour]] although\
+      \ the band had [[The Singles Tour|toured in 1998]] to support ''[[The Singles 86–98|The Singles 86&gt;98]]'' compilation album.\n\nDepeche Mode have had 50 songs in the [[UK Singles Chart]] and thirteen top 10 albums in the UK charts, two of which debuted\
+      \ at No. 1. According to [[EMI]], Depeche Mode have sold over 100 million albums and singles worldwide,&lt;ref name=&quot;emimusic1&quot;&gt;&quot;[http://www.emimusic.com/news/2009/new-depeche-mode-album-number-one-in-20-countries/ New Depeche Mode album\
+      \ number one in 20 countries]&quot;, ''EMI Music.com.'' 1 May 2009.&lt;/ref&gt; making them the most commercially successful electronic band in music history.&lt;ref name=&quot;billboard1&quot;&gt;Mason, Kerri: &quot;[http://www.billboard.com/articles/news/269153/depeche-mode-prepares-for-tour-of-the-universe\
+      \ Depeche Mode Prepares for Tour of the Universe]&quot; ''Billboard.com.'' 23 March 2009.&lt;/ref&gt; ''[[Q (magazine)|Q]]'' magazine calls Depeche Mode &quot;The most popular electronic band the world has ever known&quot;&lt;ref name=&quot;Q (magazine)&quot;&gt;{{cite\
+      \ web|url=http://bestof.depechemode.com/ |title=Depeche Mode – The Best Of Depeche Mode Volume One |publisher=DepecheMode.com |accessdate=25 May 2011}}&lt;/ref&gt; and included the band in the list of the &quot;50 Bands That Changed the World!&quot;.&lt;ref&gt;{{cite\
+      \ web|url=http://www.rocklistmusic.co.uk/qlistspage3.htm#50 |title=Rocklist.net...Q Magazine Lists |publisher=Rocklistmusic.co.uk |accessdate=31 March 2012}}&lt;/ref&gt;\n\n==History==\n\n===Formation and debut album (1977–1981)===\nDepeche Mode's origins\
+      \ date to 1977, when schoolmates Vince Clarke and Andy Fletcher formed a [[The Cure]]-influenced&lt;ref&gt;Miller, p. 14&lt;/ref&gt; band called No Romance In China, with Clarke on vocals and guitar and Fletcher on bass. Fletcher would later recall, &quot;Why\
+      \ am I in the band? It was accidental right from the beginning. I was actually forced to be in the band. I played the guitar and I had a bass; it was a question of them roping me in.&quot;&lt;ref name=P93 /&gt; In 1979, Clarke played guitar in an &quot;[[Ultravox]]\
+      \ rip-off band&quot;, The Plan, with friends [[Robert Marlow]] and Paul Langwith.&lt;ref&gt;The Erasure Information Service, &quot;[http://www.erasureinfo.com/features/interviews_03.html Interview with Robert Marlow]&quot;, Retrieved on 10 December 2007.&lt;/ref&gt;\
+      \ In 1978–79, [[Martin Gore]] played guitar in an acoustic duo, Norman and The Worms, with school friend Phil Burdett on vocals.&lt;ref&gt;philburdett.com, [http://philburdett.com/fr_biography.cfm Phil Burdett Biography]&lt;/ref&gt; In 1979, Marlow, Gore,\
+      \ and friend Paul Redmond formed a band called The French Look, with Marlow on vocals/keyboards, Gore on guitar and Redmond on keyboards. In March 1980, Clarke, Gore and Fletcher formed a band called Composition of Sound, with Clarke on vocals/guitar,\
+      \ Gore on keyboards, and Fletcher on bass.\n\nSoon after the formation of Composition of Sound, Clarke heard &quot;[[Electricity (OMD song)|Electricity]]&quot;, the debut single by [[Metropolitan Borough of Wirral|Wirral]] electronic duo [[Orchestral Manoeuvres\
+      \ in the Dark]] (OMD). He said of the song: &quot;It sounded so different from anything I'd heard; that really made me want to make electronic music, 'cause it was so unique.&quot;&lt;ref&gt;{{Cite episode |title= Erasure|series= [[The O-Zone]]|network=\
+      \ [[BBC 2]]|station= [[BBC|British Broadcasting Corporation]]|airdate= 29 November 1995|minutes= 8}}&lt;/ref&gt; Along with OMD, other early influences included [[The Human League]], [[Daniel Miller (music producer)|Daniel Miller]] and [[Fad Gadget]].&lt;ref&gt;{{Cite\
+      \ episode |title= Synth Britannia (Part Two: Construction Time Again)|series= [[List of Britannia documentaries|Britannia]]|network= [[BBC Four]]|station= [[BBC|British Broadcasting Corporation]]|airdate= 16 October 2009|minutes= 4|quote= When I first\
+      \ started playing synthesizers it [my inspiration] would have been people like The Human League; Orchestral Manoeuvres in the Dark, their very first album; I was a big fan of Daniel Miller's work, as the Silicon Teens and as The Normal; and also of Fad\
+      \ Gadget, who was on Mute Records.}}&lt;/ref&gt; Clarke and Fletcher switched to synthesisers, working odd jobs in order to buy or borrow the instruments from friends. [[Dave Gahan]] joined the band in 1980 after Clarke heard him perform at a local scout\
+      \ hut [[jam session]], singing a rendition of [[David Bowie]]'s &quot;[[Heroes (David Bowie song)|Heroes]]&quot;,&lt;ref name=D93&gt;{{Cite journal | last=Shaw | first=William | title=In The Mode | journal=[[Details (magazine)|Details magazine]] |date=April\
+      \ 1993 | pages=90–95, 168 | postscript=&lt;!-- Bot inserted parameter. Either remove it; or change its value to &quot;.&quot; for the cite to end in a &quot;.&quot;, as necessary. --&gt;{{inconsistent citations}}}}&lt;/ref&gt; and Depeche Mode were born.\
+      \ When explaining the choice for the new name taken from a French fashion magazine, ''Dépêche mode'' (from French ''dépêche'' that means here &quot;dispatch&quot; (from [[Old French]] ''despesche/despeche'') or &quot;news report&quot;, and ''mode'' that\
+      \ means &quot;fashion&quot;), Gore said, &quot;It means hurried fashion or fashion dispatch. I like the sound of that.&quot;&lt;ref&gt;Max Bell, &quot;[http://www.tuug.org/~jaakko/dm/dmtekstit/privatemg.html Martin Gore – The Decadent Boy]&quot;, ''No1\
+      \ Magazine'', 11 May 1985. Retrieved on 29 October 2007.&lt;/ref&gt; But, in French, the real and only meaning of the magazine's name (and hence the band's) is &quot;Fashion News&quot; or &quot;Fashion Update&quot;.&lt;ref&gt;{{cite web |url=http://www.eightyeightynine.com/music/depeche-mode.html\
+      \ |title=Depeche Mode – the real origin of the band's name |accessdate=2013-02-17}}&lt;/ref&gt; Gore recollects that the first time the band played as Depeche Mode was a school gig in May 1980.&lt;ref&gt;Doran, J, [http://thequietus.com/articles/01503-depeche-mode-interviewed-sounds-of-the-universe-martin-gore-dave-gahan-mute\
+      \ &quot;Depeche Mode Interviewed: Universal Truths And Sounds&quot;], ''The Quietus'', 20 April 2009&lt;/ref&gt; There is a plaque commemorating the gig at the James Hornsby School in Basildon where Gore and Fletcher were pupils. The band made their recording\
+      \ debut in 1980 on the ''[[Some Bizzare Album]]'' with the song &quot;Photographic&quot;, which was later re-recorded for their debut album ''[[Speak &amp; Spell (album)|Speak &amp; Spell]]''.\n\nThe band made a [[demo tape]] but, instead of mailing the\
+      \ tape to record companies, they would go in and personally deliver it. They would demand the companies play it; according to Dave Gahan, &quot;most of them would tell us to fuck off. They'd say 'leave the tape with us' and we'd say 'it's our only one'.\
+      \ Then we'd say goodbye and go somewhere else.&quot;&lt;ref name=record/ref&gt;[[Rolling Stone magazine]], &quot;This band wants your respect – Depeche Mode may sell millions of albums and play to capacity crowds in huge football stadiums but these techno-pop\
+      \ idols still aren't happy&quot; by Jeff Giles, with photography by John Stoddart, pages 84–87, 11 July 1990. Retrieved 4 May 2012.&lt;/ref&gt;\n\nAccording to Gahan, prior to securing their record contract, they were receiving offers from all the major\
+      \ labels. [[Phonogram Records|Phonogram]] offered them &quot;money you could never have imagined and all sorts of crazy things like clothes allowances&quot;.&lt;ref name=record/ref /&gt;\n\nWhile playing a live gig at the Bridge House in [[Canning Town]],&lt;ref&gt;{{cite\
+      \ journal |journal=[[The Face (magazine)|The Face]] |first=Paul|last=Tickell |title=A Year In The Life of Depeche Mode |url=http://www.sacreddm.net/1980s/fac010182/fac010182main.htm |archiveurl=http://web.archive.org/web/20110724052422/http://www.sacreddm.net/1980s/fac010182/fac010182main.htm|archivedate=24\
+      \ July 2011|issue=January 1982 |accessdate=13 October 2011}}&lt;/ref&gt; the band were approached by [[Daniel Miller (music producer)|Daniel Miller]], an [[electronic musician]] and founder of [[Mute Records]], who was interested in their recording a single\
+      \ for his burgeoning label.&lt;ref&gt;{{cite journal|first=Betty|last=Paige |url=http://www.sacreddm.net/1980s/sou310181/sou310181maina.htm |archiveurl=http://web.archive.org/web/20110724052454/http://www.sacreddm.net/1980s/sou310181/sou310181maina.htm\
+      \ |archivedate=24 July 2011 |title=This Year's Mode(L) |journal=[[Sounds (magazine)|Sounds Magazine]] |date=31 January 1981 |accessdate=13 October 2011}}&lt;/ref&gt; The result of this verbal contract was their first single, &quot;[[Dreaming of Me]]&quot;,\
+      \ recorded in December 1980 and released in February 1981. It reached number 57 in the UK charts. Encouraged by this, the band recorded their second single, &quot;[[New Life (song)|New Life]]&quot;, which climbed to number 11 in the UK charts and got them\
+      \ to appear on ''[[Top of the Pops]]''. The band actually went to London by train, dragging their synthesisers all the way to the [[BBC]]'s studios.\n\nThe band's next single was &quot;[[Just Can't Get Enough (Depeche Mode song)|Just Can't Get Enough]]&quot;.\
+      \ This relentlessly upbeat piece of synthpop became the band's first UK top ten hit and it remains one of their best known songs. It was also the first Depeche Mode song to get a music video and is the only one of the band's videos to feature Vince Clarke.\
+      \ Depeche Mode's debut album, ''Speak &amp; Spell'', was released in November 1981 and peaked at number ten on the UK album charts. Critical reviews were mixed – ''[[Melody Maker]]'' described it as a &quot;great album... one they had to make to conquer\
+      \ fresh audiences and please the fans who just can't get enough&quot;,&lt;ref&gt;{{cite journal |last=Colbert |first=Paul |url=http://www.sacreddm.net/1980s/mel311081/mel311081main.htm |title=Talking Hook Lines |archiveurl=http://web.archive.org/web/20110724052535/http://www.sacreddm.net/1980s/mel311081/mel311081main.htm\
+      \ |archivedate=24 July 2011 |journal=[[Melody Maker]] |date=31 October 1981 |accessdate=13 October 2011}}&lt;/ref&gt; while ''[[Rolling Stone]]'' was more critical, calling the album &quot;[[Rated PG|PG-rated]] fluff&quot;.&lt;ref&gt;Fricke, D., &quot;[http://www.rollingstone.com/music/albumreviews/speak-spell-19820513\
+      \ Speak &amp; Spell]&quot;, ''Rolling Stone'', May 1982. Retrieved 4 May 2011.&lt;/ref&gt;\n\n===Clarke departs, Wilder joins (1981–1982)===\nDuring the touring and promotion for ''Speak &amp; Spell'', Clarke privately began to voice his discomfort at\
+      \ the direction the band were taking. He later expressed his dissatisfaction, saying &quot;there was never enough time to do anything. Not with all the interviews and photo sessions.&quot;.&lt;ref&gt;{{cite journal |journal=[[Smash Hits]] |first=Mark |last=Ellen\
+      \ |title=A Clean Break |url=http://www.tuug.utu.fi/~jaakko/dm/smash4.txt |date=21 January 1982 |issue=February 1982 |accessdate=12 October 2012}}&lt;/ref&gt; In November 1981 Clarke publicly announced that he was leaving Depeche Mode.&lt;ref&gt;Miller,\
+      \ p. 103&lt;/ref&gt; It also was claimed Clarke was sick of touring, which Gahan said years later was &quot;bullshit to be quite honest&quot;.&lt;ref name=record/ref /&gt; Gahan went on to say he &quot;suddenly lost interest in it and he started getting\
+      \ letters from fans asking what kind of socks he wore&quot;.&lt;ref name=record/ref /&gt;\n\nSoon afterwards, Clarke joined up with blues singer [[Alison Moyet]] to form [[Yazoo (band)|Yazoo]] (Yaz in the US) and later, the duo [[Erasure]] with [[Andy\
+      \ Bell (singer)|Andy Bell]]. Initial talk of Clarke's continuing to write material for the group ultimately amounted to nothing. According to third-party sources, Clarke offered the remaining members of Depeche Mode the track &quot;[[Only You (Yazoo song)|Only\
+      \ You]]&quot;, but they declined.&lt;ref&gt;Miller, p. 107&lt;/ref&gt; Clarke, however, denied in an interview that such an offer ever took place saying, &quot;I don't know where that came from. That's not true.&quot; &lt;ref&gt;{{cite web|url=http://www.derwesten.de/kultur/musik/erasure-im-soundcheck-id6079325.html?doply=true\
+      \ |title=Erasure im Soundcheck &amp;#124; WAZ.de |language={{de icon}} |publisher=Derwesten.de |date= |accessdate=2013-10-19}}&lt;/ref&gt; The song went on to become a UK Top 3 hit for Yazoo. Gore, who had written &quot;Tora! Tora! Tora!&quot; and the\
+      \ instrumental &quot;Big Muff&quot; for ''Speak &amp; Spell'', was forced to become the band's new songwriter.&lt;ref&gt;Miller, p. 125&lt;/ref&gt;\n\nIn late 1981, the band placed an anonymous ad in ''Melody Maker'' looking for another musician; it said\
+      \ &quot;Name band, synthesise, must be under twenty-one.&quot;&lt;ref name=D93 /&gt; Alan Wilder, a keyboardist from West London, responded and, after two auditions and despite being 22 years old, he was hired in early 1982, initially on a trial basis\
+      \ as a touring member.&lt;ref&gt;Miller, p. 121&lt;/ref&gt; Wilder would later be called the &quot;Musical Director&quot; of the band, responsible for the band's sound until his departure in 1995.&lt;ref name=P93&gt;{{Cite journal | last=Weidenbaum | first=Marc\
+      \ | title=Fashion Victims | journal=Pulse! magazine | issue=114 |date=May 1993 | pages=48–53 | postscript=&lt;!-- Bot inserted parameter. Either remove it; or change its value to &quot;.&quot; for the cite to end in a &quot;.&quot;, as necessary. --&gt;{{inconsistent\
+      \ citations}}}}&lt;/ref&gt; As producer Flood would later say, &quot;[Alan] is sort of the craftsman, Martin's the idea man and [Dave] is the attitude.&quot;&lt;ref name=P93 /&gt;\n\nIn January 1982, the band released &quot;[[See You (song)|See You]]&quot;,\
+      \ their first single without Clarke, which managed to beat all three Clarke-penned singles in the UK charts, reaching number six.&lt;ref&gt;Miller, p. 113&lt;/ref&gt; The tour that followed the release of the single saw the band playing their first shows\
+      \ in North America. Two more singles, &quot;[[The Meaning of Love]]&quot;, and &quot;[[Leave in Silence]]&quot;, were released ahead of the band's second studio album. Depeche Mode began work on their second album in July 1982. Daniel Miller informed Wilder\
+      \ that he was not needed for the recording of the album, as the band wanted to prove that they could succeed without Vince Clarke.&lt;ref&gt;Miller, p. 134&lt;/ref&gt; ''[[A Broken Frame]]'' was released that September and the following month the band\
+      \ set off on their second [[A Broken Frame Tour|tour]] of 1982. A non-album single &quot;[[Get the Balance Right!]]&quot; was released in January 1983, and was the first Depeche Mode track to be recorded with Wilder.&lt;ref&gt;Malins, p. 58&lt;/ref&gt;\n\
+      \n===''Construction Time Again'' (1983)===\nFor their third LP ''[[Construction Time Again]]'', Depeche Mode worked with producer [[Gareth Jones (music producer)|Gareth Jones]], at [[John Foxx]]'s Garden Studios and at [[Hansa Tonstudio|Hansa Studios]]\
+      \ in West Berlin (where much of [[David Bowie]]'s [[Berlin Trilogy|trilogy]] of seminal electronic albums featuring [[Brian Eno]] had been produced). The album saw a dramatic shift in the group's sound, due in part to Wilder's introduction of the [[Synclavier]]\
+      \ and [[E-mu Emulator]] [[Sampler (musical instrument)|samplers]].&lt;ref&gt;[http://www.recoil.co.uk/editorials/8185/single_04.html &quot;Editorials: The Singles 81–85&quot;], ''[http://www.recoil.co.uk Shunt].'' Retrieved 16 October 2010.&lt;/ref&gt;\
+      \ By sampling the noises of everyday objects, the band created an eclectic, [[industrial music|industrial]]-influenced sound, with similarities to groups such as the [[Art of Noise]] and [[Einstürzende Neubauten]], the latter later having work released\
+      \ on the Mute label.&lt;ref&gt;{{cite web |url=http://www.muna.de/Single.853.0.html?&amp;tx_ttnews%5btt_news%5d=84&amp;tx_ttnews%5bbackPid%5d=854&amp;cHash=c5c23fb615 |author=Benne |title=Inga Humpe – Mit Depeche Mode in einer 2raumwohnung |language=German\
+      \ |date=3 May 2005 |publisher=Muna.de |archiveurl=http://classic-web.archive.org/web/20071110093509/http://www.muna.de/Single.853.0.html?&amp;tx_ttnews%5btt_news%5d=84&amp;tx_ttnews%5bbackPid%5d=854&amp;cHash=c5c23fb615 |archivedate=10 November 2007 |accessdate=15\
+      \ May 2011 }}&lt;/ref&gt;\n\nAlong with the music, Gore's songwriting was also rapidly evolving, focusing increasingly on political and social issues. A good example of the new sound was on the first single from the album &quot;[[Everything Counts]]&quot;,\
+      \ a commentary on the perceived greed of multinational corporations.&lt;ref&gt;{{cite journal |author=Moore, X.|url=http://sacreddm.net/1980s/nme170983/nme170983main.htm |archiveurl=http://web.archive.org/web/20090113003537/http://www.sacreddm.net/1980s/nme170983/nme170983main.htm|archivedate=13\
+      \ January 2009 |title=Red Rockers Over the Emerald Isle |journal=[[NME]] |date=17 September 1983 |accessdate=13 October 2011}}&lt;/ref&gt; In a retrospective review of the single, Allmusic journalist [[Ned Raggett]] wrote that the song marked a change\
+      \ in the band &quot;with Martin Gore's songwriting abilities matched with an increasing ambition of the band as a whole.&quot;&lt;ref&gt;{{cite web|last=Raggett |first=Ned |url=http://www.allmusic.com/song/everything-counts-mt0034535528 |title=Everything\
+      \ Counts – Depeche Mode : Listen, Appearances, Song Review |publisher=AllMusic |date= |accessdate=2013-02-06}}&lt;/ref&gt;\n\n&quot;Everything Counts&quot; got to number six in the UK, also reaching the Top 30 in Ireland, South Africa, Switzerland, Sweden\
+      \ and West Germany. Wilder also contributed two songs to the album, &quot;The Landscape Is Changing&quot; and &quot;Two Minute Warning&quot;.\n\nIn September 1983, to promote ''Construction Time Again'' the band launched [[Construction Time Again Tour]],\
+      \ a concert tour all over Europe.\n\n===''Some Great Reward'' (1984) and international success===\nIn their early years, Depeche Mode had only really attained success in Europe and Australia, however this changed in March 1984 when they released the single\
+      \ &quot;[[People Are People]]&quot;. The song reached No. 2 in Ireland, No. 4 in UK and Switzerland and No. 1 in West Germany - the first time a DM single topped a country's singles chart - where it was used as the theme to West German TV's coverage of\
+      \ the [[1984 Summer Olympics|1984 Olympics]].&lt;ref&gt;Malins, p. 82&lt;/ref&gt; It belatedly reached No. 13 on the US charts in mid-1985. The song has since become an anthem for the LGBT community and was regularly played at gay establishments and [[gay\
+      \ pride]] festivals in the late 1980s.&lt;ref&gt;{{cite journal |journal=David Atlanta Magazine |title=Masters of 'The Universe' |url=http://www.davidatlanta.com/2009/5-6/cover/coverstory/2686.cfm |archiveurl=http://web.archive.org/web/20090508112338/http://www.davidatlanta.com/2009/5-6/cover/coverstory/2686.cfm\
+      \ |archivedate=8 May 2009 |date=6 May 2009 |author=B.Voss |accessdate=10 January 2012}}&lt;/ref&gt; [[Sire Records|Sire]], the band's North American record label, released a compilation of [[People Are People (album)|the same name]] which included tracks\
+      \ from ''A Broken Frame'' and ''[[Construction Time Again]]'' as well as several b-sides.\n\nIt was the tour in America that year where the band noticed things were changing. They were, according to Gore, &quot;shocked by the way the fans were turning\
+      \ up in droves at the concerts&quot;.&lt;ref name=record/ref /&gt; He said that although the concerts were selling well, they were still struggling to sell records.&lt;ref name=record/ref /&gt;\n\nIn September 1984, ''[[Some Great Reward]]'' was released.\
+      \ ''Melody Maker'' claimed that the album made one &quot;sit up and take notice of what is happening here, right under your nose.&quot;&lt;ref&gt;{{cite journal |author=McIlheney, B. |url=http://sacreddm.net/1980s/mel290984/mel290984main.htm |archiveurl=http://web.archive.org/web/20090104140145/http://www.sacreddm.net/1980s/mel290984/mel290984main.htm\
+      \ |archivedate=4 January 2009|title=Greatness and Perfection |journal=Melody Maker |date=29 September 1984 |accessdate=13 October 2011}}&lt;/ref&gt; In contrast to the political and environmental subjects addressed on the previous album, the songs on ''Some\
+      \ Great Reward'' were mostly concerned with more personal themes such as sexual politics (&quot;[[Master and Servant]]&quot;), adulterous relationships (&quot;Lie to Me&quot;), and arbitrary divine justice (&quot;[[Blasphemous Rumours]]&quot;). Also included\
+      \ was the first Martin Gore ballad (&quot;[[Somebody (Depeche Mode song)|Somebody]]&quot;) – such songs would become a feature of all following albums. &quot;Somebody&quot; was released as a double a-side with &quot;Blasphemous Rumours&quot; and was the\
+      \ first single with Gore on lead vocals. ''Some Great Reward'' was the first Depeche Mode album to enter the US album charts, and it made the Top 10 in several European countries.\n\n''[[The World We Live In and Live in Hamburg]]'' was the band's first\
+      \ video release. It is an almost complete film of a concert from their 1984 [[Some Great Reward Tour]], in [[Hamburg]], Germany. In July 1985, the band played their first-ever concerts behind the [[Iron Curtain]], in [[Budapest]] and [[Warsaw]].&lt;ref&gt;Malins,\
+      \ p. 95&lt;/ref&gt; In October 1985, [[Mute Records]] released a compilation, ''[[The Singles 81–85|The Singles 81&gt;85]]'' (''[[Catching Up with Depeche Mode]]'' in the US), which included the two non-album hit-singles &quot;[[Shake the Disease]]&quot;\
+      \ and &quot;[[It's Called a Heart]]&quot;.\n\nDuring this period, in some circles, the band became associated with the [[gothic subculture]], which had begun in Britain in the early-1980s, and was now slowly gaining popularity in the United States. There,\
+      \ the band's music had first gained prominence on college radio and [[modern rock]] stations such as [[KROQ-FM|KROQ]] in Los Angeles, [[KQAK]] (&quot;The Quake&quot;) in San Francisco, [[WFNX]] in Boston and [[WLIR]] on [[Long Island, New York]], and hence\
+      \ they appealed primarily to an [[alternative rock|alternative]] audience who were disenfranchised with the predominance of &quot;soft rock and 'disco hell'&quot;&lt;ref&gt;&lt;!--loc. cit., ''Alan Wilder's history''--&gt;&quot;[http://web.archive.org/web/20030620091538/recoil.co.uk/afiles/hist/athree.htm\
+      \ Alan Wilder's history – Historical evidence Part 1]&quot; ''[http://www.recoil.co.uk Shunt].'' Retrieved 19 October 2010.&lt;/ref&gt; on the radio. This view of the band was in sharp contrast to how the band was perceived in Europe, despite the increasingly\
+      \ dark and serious tone in their songs.&lt;ref&gt;{{cite journal |first=Francesco |last=Adinolfi |url=http://sacreddm.net/1980s/rmi220887/rmi220887main.htm |archiveurl=http://web.archive.org/web/20090225102112/http://sacreddm.net/1980s/rmi220887/rmi220887main.htm\
+      \ |archivedate=25 February 2009 |title=Dep Jam |journal=[[Record Mirror]] |date=22 August 1987 |accessdate=13 October 2011}}&lt;/ref&gt; In Germany, France and other European countries, Depeche Mode were considered teen idols and were regularly featured\
+      \ in European teen magazines.\n\n===''Black Celebration'' (1986)===\nDepeche Mode's musical style shifted slightly again in 1986 with the release of their fifteenth single &quot;[[Stripped (song)|Stripped]]&quot;, and its accompanying album ''[[Black Celebration]]''.\
+      \ Retaining their often imaginative sampling and beginning to move away from the &quot;industrial-pop&quot; sound that had characterised their previous two LPs, the band introduced an ominous, highly atmospheric and textured sound. Gore's lyrics also took\
+      \ on a darker tone and became even more pessimistic.\n\nThe music video for &quot;[[A Question of Time]]&quot; was the first to be directed by [[Anton Corbijn]],&lt;ref&gt;Miller, p. 236&lt;/ref&gt; beginning a working relationship that continues to the\
+      \ present day. Corbijn has directed a further 19 of the band's videos (the latest being 2006's &quot;[[Suffer Well]]&quot;). He has also filmed some of their live performances and designed stage sets and album and single covers.\n\n===''Music for the Masses''\
+      \ and ''101'' (1987–1988)===\n1987's ''[[Music for the Masses]]'' saw further alterations in the band's sound and working methods. For the first time a producer not related to Mute, Dave Bascombe, was called to assist with the recording sessions (although,\
+      \ according to Alan Wilder, his role ended up being more that of an engineer).&lt;ref name=&quot;shunteditorials1&quot;&gt;&quot;[http://www.recoil.co.uk/editorials/8698/mftm/area.htm Editorials Singles 86–98: MUSIC FOR THE MASSES]&quot; ''[http://www.recoil.co.uk\
+      \ Shunt].'' Retrieved 16 October 2010.&lt;/ref&gt; In making the album the band largely eschewed sampling in favour of more synth experimentation.&lt;ref name=&quot;shunteditorials1&quot;/&gt; While the chart performance of the singles &quot;[[Strangelove\
+      \ (song)|Strangelove]]&quot;, &quot;[[Never Let Me Down Again]]&quot; and &quot;[[Behind the Wheel]]&quot; proved to be disappointing in the UK, they performed well in countries such as Canada, Brazil, West Germany, South Africa, Sweden and Switzerland,\
+      \ often reaching the top 10. ''[[Record Mirror]]'' described ''Music for the Masses'' as &quot;the most accomplished and sexy Mode album to date&quot;&lt;ref&gt;{{cite journal |first=Eleanor |last=Levy |url=http://sacreddm.net/1980s/rmi031087/rmi031087main.htm\
+      \ |archiveurl=http://web.archive.org/web/20081202014424/http://www.sacreddm.net/1980s/rmi031087/rmi031087main.htm |archivedate=2 December 2008|title=Music for the Masses review |journal=[[Record Mirror]] |date=3 October 1987 |accessdate=4 May 2011}}&lt;/ref&gt;\
+      \ and it made a breakthrough in the American market, something which the band had failed to achieve with their previous albums.\n\nThe [[Music for the Masses Tour]] followed the release of the album. On 7 March 1988 they played an unofficial gig (as it\
+      \ was not officially announced that Depeche Mode were the band performing that night) in the [[Werner-Seelenbinder-Halle]], East Berlin.&lt;ref&gt;Erb, Nadja and Geyer, Steven: &quot;[http://www.fr-online.de/panorama/-wir-waeren-besser-nicht-aufgetreten-/-/1472782/3213288/-/index.html\
+      \ Andy Fletcher im Interview: Wir wären besser nicht aufgetreten]&quot; ''[[Frankfurter Rundschau]].'' 27 October 2009. Retrieved 21 October 2010.&lt;/ref&gt; At that time the communist regime were still in power and Depeche Mode were among the very few\
+      \ western bands that ever played in the former [[East Germany|GDR]]. Around the same period, they also gave concerts in Budapest and Prague (1988)&lt;ref name=&quot;czechfanzine&quot;&gt;{{cite web|url=http://depeche.cz/web/novinky/cerna-revoluce-praha-1988-dil-4\
+      \ |title=Depeche Mode Web: Černá revoluce : Praha 1988 (díl 4.) |publisher=Depeche.cz |date= |accessdate=2013-02-06}}&lt;/ref&gt; in the then still communist Hungary and Czechoslovakia respectively.\n\nThe world tour ended on 18 June 1988 with a concert\
+      \ at the [[Pasadena, California|Pasadena]] [[Rose Bowl (stadium)|Rose Bowl]] with paid attendance of 60,453&lt;ref&gt;Miller, p. 265. Jonathan Kessler quoted in the [[101 (album)|101 film]]. His exact words are: &quot;$1,360,192.50. Paid attendance was\
+      \ 60,453 people, tonight at the Rose Bowl, Pasadena, 18 June 1988. We're getting a load of money. A lot of money; a load of money – ''tons'' of money!&quot;&lt;/ref&gt; (the highest in eight years for the venue). The tour was a breakthrough for the band\
+      \ and a massive success in the United States. It was documented in ''[[101 (album)|101]]'' – a concert film by [[D. A. Pennebaker]] and its accompanying soundtrack album. The film is notable for its portrayal of fan interaction.&lt;ref&gt;{{cite web|author=Ví\
+      ctor Rodríguez 1 de abril de 2009 |url=http://www.hipersonica.com/criticas/especial-depeche-mode-101 |title=Especial Depeche Mode: 101 |publisher=Hipersonica.com |date=22 February 1999 |accessdate=22 July 2010}}&lt;/ref&gt;&lt;ref&gt;{{cite web|author=Pimpf\
+      \ |url=http://www.pimpfdm.com/History.html |title=Pimpf / Depeche Mode in France |publisher=Pimpfdm.com |date=23 July 1961 |accessdate=22 July 2010}}&lt;/ref&gt; Alan Wilder is credited with coming up with the name; the performance was the 101st and final\
+      \ performance of the tour.&lt;ref&gt;[http://www.imdb.com/title/tt0094590/ 101 (1989)], IMDB.com&lt;/ref&gt; On 7 September 1988, Depeche Mode performed &quot;Strangelove&quot; at the [[1988 MTV Video Music Awards]] at the [[Universal Amphitheatre]] in\
+      \ Los Angeles.&lt;ref&gt;[http://www.mtv.com/ontv/vma/performers.jhtml 1988 MTV Video Music Awards] MTV.com. Retrieved 4 December 2011&lt;/ref&gt;\n\n===''Violator'' and worldwide fame (1989–1991)===\nIn mid-1989, the band began recording in [[Milan]]\
+      \ with producer [[Flood (producer)|Flood]] and engineer [[François Kevorkian]]. The initial result of this session was the single &quot;[[Personal Jesus]]&quot;. Prior to its release, a marketing campaign was launched with advertisements placed in the\
+      \ personal columns of UK regional newspapers with the words &quot;Your own personal Jesus.&quot; Later, the ads included a phone number one could dial to hear the song. The resulting furore helped propel the single to number 13 on the UK charts, becoming\
+      \ one of their biggest sellers to date; in the US, it was their first gold single and their first Top 40 hit since &quot;People Are People&quot;, eventually becoming the biggest-selling 12-inch single in [[Warner Bros. Records]]' history up to that point.&lt;ref&gt;Miller,\
+      \ p. 291&lt;/ref&gt;\n\n{{Quote box\n |quote = &quot;I think in a way we've been at the forefront of new music; sort of chipping away at the standard rock format stations.&quot;\n |source= Martin Gore, stated to ''[[NME]]'' – July 1990.&lt;ref&gt;Tobler,\
+      \ p. 472&lt;/ref&gt;\n |width = 25%\n |align = left\n |style = padding:10px;\n}}\nReleased in January 1990, &quot;[[Enjoy the Silence]]&quot; became one of Depeche Mode's most successful singles to date, reaching number six in the UK (the first Top 10\
+      \ hit in that country since &quot;Master And Servant&quot;). A few months later it became Depeche Mode's biggest hit in the US, reaching number eight and earning the band a second gold single. It won 'Best British single' at the 1991 [[Brit Awards]].&lt;ref&gt;&quot;[http://www.brits.co.uk/history/shows/1991\
+      \ The BRITs 1991 – The Brit Awards history]&quot; ''Brits.co.uk.'' Retrieved 14 October 2010.&lt;/ref&gt; To promote their new album ''[[Violator (album)|Violator]]'', the band held an in-store autograph signing at Wherehouse Entertainment in Los Angeles.\
+      \ The event attracted approximately 20,000 fans and turned into a near riot. Some of those who attended were injured by being pressed against the store's glass by the crowd.&lt;ref&gt;Sanner, S.: &quot;[http://www.variety.com/article/VR105172.html?categoryid=16&amp;cs=1\
+      \ Depeche has faith in new 'Songs']&quot; ''[[Variety (magazine)|Variety]].'' 22 March 1993.&lt;/ref&gt; As an apology to the fans who were injured, the band released a limited edition cassette tape to fans living in Los Angeles, which was distributed\
+      \ through radio station [[KROQ-FM|KROQ]] (the sponsor of the Wherehouse event). ''Violator'' went on to reach Top 10 in the UK and US. ''Violator'' was the first of the band's albums to enter the Top 10 of the [[Billboard 200]]— reaching No. 7 and staying\
+      \ 74 weeks in the chart. It has also been [[RIAA certification|certified]] triple platinum in America, selling over 4.5 million units there. It remains the band's best selling album worldwide.&lt;ref&gt;[http://www.riaa.com/goldandplatinumdata.php?resultpage=1&amp;table=SEARCH_RESULTS&amp;action=&amp;title=violator&amp;artist=&amp;format=&amp;debutLP=&amp;category=&amp;sex=&amp;releaseDate=&amp;requestNo=&amp;type=&amp;level=&amp;label=sire&amp;company=&amp;certificationDate=&amp;awardDescription=&amp;catalogNo=&amp;aSex=&amp;rec_id=&amp;charField=&amp;gold=&amp;platinum=&amp;multiPlat=&amp;level2=&amp;certDate=&amp;album=&amp;id=&amp;after=&amp;before=&amp;startMonth=1&amp;endMonth=1&amp;startYear=1958&amp;endYear=2010&amp;sort=Artist&amp;perPage=25\
+      \ RIAA Gold and platinum album search for Violator] ''[[Recording Industry Association of America|RIAA]].'' Retrieved 12 October 2010.&lt;/ref&gt; Two more singles from the album &quot;[[Policy of Truth]]&quot; and &quot;[[World in My Eyes]]&quot; were\
+      \ hits in the UK with the former also charting in the US.\n{{Quote box\n |quote = &quot;I remember going to see them in Giants Stadium, and they broke the merchandising record; of [[Bon Jovi]], [[U2]] — all these bands — Depeche Mode were the biggest!.&quot;\n\
+      \ |source= Flood, on ''[[Giants Stadium]]'' concert.&lt;ref name=&quot;flood&quot;&gt;Miller, p. 299&lt;/ref&gt;\n |width = 25%\n |align = right\n |style = padding:10px;\n}}\n\nThe [[World Violation Tour]] marked another high point in Depeche Mode's popularity\
+      \ and saw the band play several stadium shows in the US. 42,000 tickets were sold within four hours for a show at Giants Stadium and 48,000 tickets were sold within half-an-hour of going on sale for a show at [[Dodger Stadium]].&lt;ref&gt;Miller, pp. 299–\
+      300&lt;/ref&gt; It was estimated that 1.2 million fans saw this tour worldwide.&lt;ref name=P93 /&gt;\n\nIn 1991, Depeche Mode contribution, &quot;Death's Door&quot; was released on the accompanying Warner Brothers album, ''[[Until the End of the World\
+      \ (soundtrack)|Until the End of the World: original motion picture soundtrack]]'' for the film ''[[Until the End of the World]]''. Musical artists were challenged by film director Wim Wenders to write music the way they imagined they would in the year\
+      \ 2000, the setting of the movie.\n\n===''Songs of Faith and Devotion'' and Wilder's departure (1992–1996)===\nThe members of Depeche Mode regrouped in [[Madrid]] in January 1992, Dave Gahan had become interested in the new [[grunge]] scene sweeping the\
+      \ U.S. and was influenced by the likes of [[Jane's Addiction]], [[Soundgarden]] and [[Nirvana (band)|Nirvana]].&lt;ref&gt;[http://www.sputnikmusic.com/review/10306/Depeche-Mode-Songs-of-Faith-and-Devotion/ Depeche Mode – Songs of Faith and Devotion (album\
+      \ review)]. Sputnikmusic (14 December 2006). Retrieved on 4 June 2011.&lt;/ref&gt;&lt;ref name=&quot;contactm1&quot;&gt;{{cite web|url=http://www.contactmusic.com/news-article/dave-gahan.s-rock-awakening |title=Dave Gahan's Rock Awakening |publisher=Contactmusic.com\
+      \ |date=20 June 2003 |accessdate=26 March 2013}}&lt;/ref&gt;\n{{Quote box\n |quote = &quot;There's so many sounds that are created from the voice that you wouldn't know were taken from the voice, like rhythm sounds. The number of times I've been sitting\
+      \ in the studio and said, 'I wish I could get a bass that would just go [mimics wet, thick hip-hop bass-drum sound].' Then I think, 'Why can't I just go [repeats noise] into a mic and sample it?' It's ''obvious''; you spend all day trying to get a synthesizer\
+      \ to try and create this sound but you can just go [repeats noise] and you've got it. Then you can send it through some other device after that, and you've got something that sounds absolutely nothing like a voice, but the source was a voice. ... It is\
+      \ a very interesting process.&quot;\n |source= Alan Wilder on the genesis of some of the sounds on ''Songs of Faith and Devotion'', stated to ''Pulse! magazine'' – May 1993.&lt;ref name=P93 /&gt;\n |width = 30%\n |align = left\n |style = padding:10px;\n\
+      }}\nIn 1993 ''[[Songs of Faith and Devotion]]'' again with producer [[Flood (producer)|Flood]], saw them experimenting with more organic arrangements, based as much on heavily distorted electric guitars and live drums (played by Alan Wilder, whose debut\
+      \ as a studio drummer had come on the ''Violator'' track &quot;Clean&quot;) as synthesisers.&lt;ref&gt;[http://www.recoil.co.uk/editorials/8698/sofad/area.html Editorials: The Singles 86–98 – Songs of Faith and Devotion] ''[http://www.recoil.co.uk Shunt].''\
+      \ Retrieved 19 October 2010.&lt;/ref&gt; Live [[String instrument|strings]], [[uilleann pipes]] and female [[Gospel music|gospel]] vocals were other new additions to the band's sound. The album debuted at number one in both the UK and the US, only the\
+      \ sixth British act to achieve such a distinction to date.&lt;ref name=&quot;flood&quot;/&gt; The first single from the album was the grunge-influenced &quot;[[I Feel You]]&quot;. The gospel influences are most noticeable on the album's third single, &quot;[[Condemnation\
+      \ (song)|Condemnation]]&quot;. A symptom of the slow fracturing of the band, interviews given by the band during this period tended to be conducted separately, unlike earlier albums, where the band was interviewed as a group.&lt;ref name=P93 /&gt;\n\n\
+      The [[Devotional Tour|Devotional]] world tour followed. It was documented by a concert film of the [[Devotional (video)|same name]]. The film was directed by [[Anton Corbijn]] and in 1995 earned the band their first [[Grammy Awards|Grammy]] nomination.&lt;ref&gt;{{cite\
+      \ web|url=http://www.rockonthenet.com/archive/1995/grammys.htm|title=37th Grammy Awards – 1995|publisher=RockOnTheNet.com|accessdate=24 February 2009}}&lt;/ref&gt;\nThe band's second live album, ''[[Songs of Faith and Devotion Live]]'', was released in\
+      \ December 1993.\n\nThe tour continued into 1994 with the [[Exotic Tour]], which began in February 1994 in South Africa and ended in April in Mexico. The final leg of the tour, consisting of more North American dates, followed shortly thereafter and ran\
+      \ until July. As a whole, the Devotional Tour is to date the longest and most geographically diverse Depeche Mode tour, spanning fourteen months and 159 individual performances. ''Q'' magazine listed 1993 Devotional Tour as &quot;The Most Debauched Rock'n'Roll\
+      \ Tour Ever&quot;.&lt;ref&gt;{{cite journal |first=Omer |last=Ali |url=http://sacreddm.net/2000s/tmo040401/tmo040401main.htm |archiveurl=http://web.archive.org/web/20110724051944/http://sacreddm.net/2000s/tmo040401/tmo040401main.htm |archivedate=24 July\
+      \ 2011 |title=In the Mode for Love |journal=Time Out magazine |publisher=[[Time Out (company)|Time Out]] |date=4 April 2001 |accessdate=13 October 2011}}&lt;/ref&gt;\n\nDave Gahan's [[heroin addiction]] was starting to affect his behaviour, causing him\
+      \ to become more erratic and introverted. Martin Gore experienced seizures and Andy Fletcher declined to participate in the second half of the Exotic Tour due to &quot;mental instability&quot;. During that period, he was replaced on-stage by [[Daryl Bamonte]],\
+      \ who had worked with the band as a personal assistant for many years.&lt;ref&gt;[http://www.recoil.co.uk/editorials/8698/sofad/sofad_25.html Editorials: The Singles 86–98 – Songs of Faith and Devotion (p. 25)] ''[http://www.recoil.co.uk Shunt].'' Retrieved\
+      \ 18 October 2010.&lt;/ref&gt;\n\nIn June 1995, Alan Wilder announced that he was leaving Depeche Mode, explaining,\n{{quote|Since joining in 1982, I have continually striven to give total energy, enthusiasm and commitment to the furthering of the group's\
+      \ success and in spite of a consistent imbalance in the distribution of the workload, willingly offered this. Unfortunately, within the group, this level of input never received the respect and acknowledgement that it warrants.&lt;ref&gt;[http://www.tuug.utu.fi/~jaakko/dm/alan.html\
+      \ Alan's Leaving], ''Jaakko's Depeche Mode page. Retrieved 10 February 2007.&lt;/ref&gt;}}\n\nHe continued to work on his personal project [[Recoil (band)|Recoil]], releasing a fourth album (''[[Unsound Methods]]'') in 1997. Following Wilder's departure,\
+      \ many were sceptical of whether Depeche Mode would ever record again. Gahan's mental state and drug habit became a major source of concern, with a near-fatal [[Drug overdose|overdose]] at a hotel in Los Angeles.\n\n===''Ultra'' (1997–2000)===\n{{Listen\n\
+      |filename=Depeche mode barrel of a gun.ogg\n|title=Depeche Mode &quot;''Barrel of a Gun''&quot; (1997)\n|description=30 second sample from Depeche Mode's &quot;''Barrel of a Gun''&quot;.\n|format=[[Ogg]]}}\nDespite Gahan's increasingly severe personal\
+      \ problems, Gore tried repeatedly during 1995 and 1996 to get the band recording again. However, Gahan would rarely turn up to scheduled sessions, and when he did, it would take weeks to get any vocals recorded. One six-week session at [[Electric Lady\
+      \ Studios|Electric Lady]] in New York produced just one usable vocal (for &quot;Sister Of Night&quot;), and even that was pieced together from multiple takes.&lt;ref&gt;Miller, p. 413&lt;/ref&gt; Gore was forced to contemplate breaking the band up, and\
+      \ releasing the songs he had written as a solo album.&lt;ref&gt;Brown, Mark: &quot;[http://www.tuug.org/~jaakko/dm/dmtekstit/drugs.txt Depeche vs. Drugs]&quot; ''Winnipeg Free Press.'' 1 May 1997.&lt;/ref&gt; In mid-1996, Gahan entered a court ordered\
+      \ [[drug rehabilitation]] program to battle his cocaine-heroin addiction after his near fatal overdose.&lt;ref&gt;{{cite journal |first=Keith |last=Cameron |url=http://www.sacreddm.net/1990s/nme180197/nme180197main.htm |archiveurl=http://web.archive.org/web/20110724052835/http://www.sacreddm.net/1990s/nme180197/nme180197main.htm\
+      \ |archivedate=24 July 2011 |title=Dead Man Talking |journal=[[NME]] |date=18 January 1997 |accessdate=13 October 2011}}&lt;/ref&gt; With Gahan out of rehab in 1996, Depeche Mode held recording sessions with producer [[Tim Simenon]]. The album ''[[Ultra\
+      \ (Depeche Mode album)|Ultra]]'' was released in April 1997, its release was preceded by two singles, &quot;[[Barrel of a Gun (Depeche Mode song)|Barrel of a Gun]]&quot; and &quot;[[It's No Good]]&quot;. The album debuted at No. 1 in the UK (as well as\
+      \ Germany), and No. 5 in the US. The band did not tour in support of the album but as part of the promotion for its release they did perform two short concerts in London and Los Angeles called Ultra Parties.&lt;ref&gt;Miller, p. 429&lt;/ref&gt; ''Ultra''\
+      \ spawned two further singles, &quot;[[Home (Depeche Mode song)|Home]]&quot; and &quot;[[Useless (song)|Useless]]&quot;.\n\nA second singles compilation ''[[The Singles 86–98]]'' was released in 1998, preceded by the new single &quot;[[Only When I Lose\
+      \ Myself]]&quot;, which had been recorded during the ''Ultra'' sessions. In April 1998 Depeche Mode held a press conference at the Hyatt Hotel in [[Cologne]] to announce [[The Singles Tour]].&lt;ref&gt;{{cite web|url=http://www.depechemode.com/video/other/pressconf_ger98.html\
+      \ |title=Press Conference, Hyatt Hotel, Cologne Germany | date=20 April 1998 |publisher=Depechemode.com |accessdate=18 October 2010}}&lt;/ref&gt; The tour was the first one to feature two backing musicians in place of Alan Wilder – Austrian drummer [[Christian\
+      \ Eigner]] and British keyboardist [[Peter Gordeno (musician)|Peter Gordeno]].\n\n===''Exciter'' (2001–2004)===\nIn 2001, Depeche Mode released ''[[Exciter (album)|Exciter]]'', which was produced by [[Mark Bell (British musician)|Mark Bell]] (of the pioneering\
+      \ [[techno]] group [[LFO (British band)|LFO]]). Bell introduced a minimalist, digital sound to much of the album, influenced by [[intelligent dance music|IDM]] and [[glitch (music)|glitch]]. &quot;[[Dream On (Depeche Mode song)|Dream On]]&quot;, &quot;[[I\
+      \ Feel Loved]]&quot;, &quot;[[Freelove]]&quot; and &quot;[[Goodnight Lovers]]&quot; were released as singles in 2001 and 2002. The critical response to the album was mixed. Whilst it received reasonably positive reviews from some magazines (''[[NME]]'',\
+      \ ''[[Rolling Stone]]'' and ''[[LA Weekly]]''), others (including ''Q'' magazine, [[PopMatters]], and [[Pitchfork Media]]) derided it as sounding underproduced, dull and lacklustre.&lt;ref&gt;[http://www.metacritic.com/music/artists/depechemode/exciter\
+      \ &quot;Depeche Mode: Exciter (2001): Reviews&quot;], ''Metacritic''. Retrieved on 10 February 2007&lt;/ref&gt;\n\nIn March 2001 Depeche Mode held a press conference at the Valentino Hotel in [[Hamburg]] to announce the [[Exciter Tour]].&lt;ref&gt;{{cite\
+      \ web|url=http://www.depechemode.com/video/other/germanpress2001.html |title=Press Conference, Valentino Hotel, Hamburg Germany | date=13 March 2001 |publisher=Depechemode.com |accessdate=18 October 2010}}&lt;/ref&gt; In total the tour featured 84 performances\
+      \ for over 1.5 million fans in 24 countries.&lt;ref&gt;[http://onipdvd.depechemode.com/press_release01.html depeche mode dot com]. Onipdvd.depechemode.com. Retrieved on 4 June 2011.&lt;/ref&gt; The concerts held in Paris at the [[Palais Omnisports de Paris-Bercy]]\
+      \ were filmed and later released in May 2002 as a [[live CD|live DVD]] entitled ''[[One Night in Paris]]''.\n\nIn October 2002 the band won the first-ever ''Q'' magazine &quot;Innovation Award&quot;.&lt;ref&gt;{{cite web|url=http://www.depechemode.com/video/television/theqawards2002.html\
+      \ |title=depeche mode dot com |publisher=Depechemode.com |accessdate=22 July 2010}}&lt;/ref&gt;\n\nIn 2003 Dave Gahan released his first solo album, ''[[Paper Monsters]]'', and toured to promote the record. Also released in 2003 was Martin Gore's second\
+      \ solo album ''[[Counterfeit²]]''.&lt;ref&gt;{{cite web|author=Daniel Barassi |url=http://www.martingore.com/discography/index.html |title=Martin L. Gore – Counterfeit² |publisher=Martingore.com |accessdate=22 July 2010}}&lt;/ref&gt; Andrew Fletcher also\
+      \ founded his own record label, [[Toast Hawaii (record label)|Toast Hawaii]], specialising in promoting electronic music.\n\nA new remix compilation album ''[[Remixes 81–04]]'' was released in 2004, featuring new and unreleased promo mixes of the band's\
+      \ singles from 1981 to 2004. A new version of &quot;Enjoy the Silence&quot;, remixed by [[Mike Shinoda]], entitled &quot;[[Enjoy the Silence 04]]&quot; was released as a single and reached No. 7 on the UK charts.\n\n===''Playing the Angel'' (2005–2007)===\n\
+      [[File:Bremen 2006 Depeche Mode by-RaBoe.jpg|thumb|[[Touring the Angel]] concert in [[Bremen]], June 2006]]\nIn October 2005, the band released their 11th studio album ''[[Playing the Angel]]''. Produced by [[Ben Hillier]] the album peaked at No. 1 in\
+      \ 18 countries and featured the hit single &quot;[[Precious (Depeche Mode song)|Precious]]&quot;. This is the first Depeche Mode album to feature lyrics written by Gahan and, consequently, the first album since 1984's ''[[Some Great Reward]]'' featuring\
+      \ songs not written by Gore. &quot;[[Suffer Well]]&quot;, was the first ever post-Clarke Depeche Mode single not to be written by Gore (lyrics by Gahan, music by Philpott/Eigner). The final single from the album was &quot;[[John the Revelator / Lilian|John\
+      \ the Revelator]]&quot;, an uptempo electronic track with a running religious theme, accompanied by &quot;Lilian&quot;, a lush track that was a hit in many clubs all over the world.\n\nTo promote ''Playing the Angel'' the band launched [[Touring the Angel]],\
+      \ a concert tour of Europe and North America that began in November 2005 and ran for nine months. During the last two legs of the tour Depeche Mode headlined a number of festivals including the [[Coachella Valley Music and Arts Festival]] and the [[Wireless\
+      \ Festival|O&lt;sub&gt;2&lt;/sub&gt; Wireless Festival]]. In total the band played to more than 2.8 million people across 31 countries and the tour was one of the highest grossing and critically acclaimed tours of 2005/06.&lt;ref name=&quot;billboard1&quot;/&gt;\
+      \ Speaking about the tour, Gahan praised it as ''&quot;probably the most enjoyable, rewarding live shows we've ever done. The new material was just waiting to be played live. It took on a life of its own. With the energy of the crowds, it just came to\
+      \ life&quot;''.&lt;ref&gt;{{cite web|url=http://www.businesswire.com/portal/site/home/permalink/?ndmViewId=news_view&amp;newsId=20060911005891&amp;newsLang=en |title=&quot;DEPECHE MODE: TOURING THE ANGEL, LIVE IN MILAN&quot;, to Premiere Nationwide in\
+      \ a One-Night Big Screen Concerts(SM) Event |publisher=Businesswire.com |date=11 September 2006 |accessdate=22 July 2010}}&lt;/ref&gt; Two shows at [[Milan|Milan's]] [[Mediolanum Forum|Fila Forum]]\nwere filmed and edited into a concert film which was\
+      \ released on DVD as ''[[Touring the Angel: Live in Milan]]''.&lt;ref&gt;{{cite web|author=Daniel Barassi |url=http://liveinmilan.depechemode.com/ |title=Touring The Angel: Live In Milan |publisher=Liveinmilan.depechemode.com |accessdate=22 July 2010}}&lt;/ref&gt;\n\
+      {{Listen\n|filename=Depeche Mode - Precious (Album Version).ogg\n|title=Depeche Mode &quot;''Precious''&quot; (2005)\n|description=23 second sample from Depeche Mode's &quot;''Precious''&quot;.\n|format=[[Ogg]]}}\nA &quot;best-of&quot; compilation was\
+      \ released in November 2006, entitled ''[[The Best Of, Volume 1]]'' featuring a new single &quot;[[Martyr (song)|Martyr]]&quot;, an outtake from the ''Playing the Angel'' sessions. Later that month Depeche Mode received the [[MTV Europe Music Awards 2006|MTV\
+      \ Europe Music Award]] in the Best Group category.&lt;ref&gt;{{cite web|url=http://www.depechemode.com/video/television/110206_mtv_ema.html |title=depeche mode dot com |publisher=Depechemode.com |accessdate=22 July 2010}}&lt;/ref&gt;\n\nIn December 2006,\
+      \ [[iTunes]] released ''[[The Complete Depeche Mode]]'' as its fourth ever digital box-set (following ''[[The Complete U2]]'' in 2004, ''[[The Complete Stevie Wonder]]'' in 2005, and ''[[Bob Dylan: The Collection]]'' earlier in 2006).&lt;ref&gt;[http://thecomplete.depechemode.com/\
+      \ The Complete Depeche Mode]. The Complete Depeche Mode (19 December 2006). Retrieved on 4 June 2011.&lt;/ref&gt;\n\nIn August 2007, during promotion for Dave Gahan's second solo album, ''[[Hourglass (Dave Gahan album)|Hourglass]]'', it was announced that\
+      \ Depeche Mode were heading back in studio in early 2008 to work on a new album.&lt;ref&gt;{{cite web|url=http://www.side-line.com/news_comments.php?id=24791_0_2_0_C |title=New Depeche Mode album in the pipeline for 2008 |publisher=Side-line.com |date=27\
+      \ July 2007 |accessdate=22 July 2010}}&lt;/ref&gt;\n\n===''Sounds of the Universe'' (2008–2011)===\nIn May 2008, the band returned to the studio with producer [[Ben Hillier]] to work on some songs that Martin Gore had demoed at his home studio in [[Santa\
+      \ Barbara, California]]. Later that year it was announced that Depeche Mode were splitting from their long-term US label, Warner Music, and signing with [[EMI Music]] worldwide.&lt;ref&gt;[http://www.emimusic.com/news/2008/depeche-mode-sign-worldwide-exclusive-deal-with-emi-music-to-include-the-us-for-the-first-time/\
+      \ &quot;Depeche Mode signs worldwide exclusive deal with EMI Music – to include the US for the first time&quot;], ''EMI Music.com.'', 7 October 2008.&lt;/ref&gt;\n\n[[File:Depeche Mode O2 15 12 09.JPG|right|250px|thumb|[[Tour of the Universe (Depeche Mode\
+      \ tour)|Tour of the Universe]] concert at London's O&lt;sub&gt;2&lt;/sub&gt; Arena, December 2009]]On 15 January 2009, the official Depeche Mode website announced that the band's 12th studio album would be called ''[[Sounds of the Universe]]''.&lt;ref&gt;{{cite\
+      \ web|url=http://www.depechemode.com/news.html |title=DEPECHE MODE ANNOUNCES THE RELEASE OF SOUNDS OF THE UNIVERSE 21 APRIL 2009 |publisher=Depechemode.com |accessdate=22 July 2010}}&lt;/ref&gt; The album was released in April 2009, it was also made available\
+      \ through an iTunes Pass, where the buyer received individual tracks in the weeks leading up to official release date. Andy Fletcher says the idea for their iTunes Pass was a combination of the band's and iTunes': &quot;I think the digital and record companies\
+      \ are starting to get their act together. They were very lazy in the first 10 years when downloads came in. Now they're collaborating more and coming up with interesting ideas for fans to buy products.&quot;&lt;ref&gt;[http://whosnews.usaweekend.com/2009/04/depeche-mode-on-new-cd-out-today-and-tour/\
+      \ &quot;Depeche Mode on new CD out today and tour&quot;] ''USA Weekend The Who's News Blog.'' 21 April 2009. Retrieved 10 May 2011.&lt;/ref&gt; The album went to number one in 21 countries. Critical response was generally positive and it was nominated\
+      \ for a [[Grammy Awards|Grammy]] in the &quot;Best Alternative Album&quot; category.&lt;ref&gt;{{cite web|url=http://www.depechemode.com/news.html |title=depeche mode dot com |publisher=Depechemode.com |accessdate=22 July 2010}}&lt;/ref&gt;\n&quot;[[Wrong\
+      \ (Depeche Mode song)|Wrong]]&quot; was the first single from the album, released digitally in February 2009. Subsequent singles were &quot;[[Peace (Depeche Mode song)|Peace]]&quot; and the double a-side &quot;[[Fragile Tension / Hole to Feed]]&quot;.\
+      \ In addition, &quot;Perfect&quot; was released as a promotional-only (non-commercial) single in the US.\n\nDepeche Mode performed on &quot;[[Jimmy Kimmel Live!]]&quot; in the [[Hollywood Boulevard]] in Los Angeles on 23 April 2009, drawing more than 12,000\
+      \ fans, which was the largest audience the show had ever seen since premiering in 2003.&lt;ref&gt;&quot;[http://www.rollingstone.com/music/news/depeche-mode-shut-down-hollywood-blvd-for-kimmel-20090424 Depeche Mode Shut Down Hollywood Blvd for &quot;Kimmel&quot;]&quot;\
+      \ ''RollingStone.com.'' 24 April 2009. Retrieved 10 May 2011.&lt;/ref&gt;\n\nIn May 2009 the band embarked on a concert tour in support of the album – called [[Tour of the Universe (tour)|Tour of the Universe]], it had been announced at a press conference\
+      \ in October 2008 at the [[Olympiastadion]] in Berlin.&lt;ref&gt;{{cite web|url=http://www.bbc.co.uk/6music/news/20081007_depeche_mode.shtml |title=BBC – Depeche Mode tour |publisher=BBC |date=7 October 2008 |accessdate=19 October 2010}}&lt;/ref&gt; There\
+      \ was a warm up show in [[Luxembourg]] and it officially started on 10 May 2009 in [[Tel Aviv]]. The first leg of the tour was disrupted when Dave Gahan was struck down with [[gastroenteritis]]. During treatment doctors found and removed a low grade tumour\
+      \ from the singer's bladder. Gahan's illness caused 16 concerts to be cancelled, but several of the shows were rescheduled for 2010.&lt;ref&gt;Paine, Andre: &quot;[http://www.billboard.com/articles/news/268523/depeche-mode-cancels-more-dates-as-singer-recovers-from-surgery\
+      \ Depeche Mode Cancels More Dates as Singer Recovers from Surgery]&quot; ''Billboard.com.'' 28 May 2009.&lt;/ref&gt; The band headlined the [[Lollapalooza]] festival during the North American leg of the tour. The tour also took the band back to South America\
+      \ for the first time since 1994's [[Exotic Tour]]. During the final European leg the band played a show at London's [[Royal Albert Hall]] in aid of the [[Teenage Cancer Trust]], where former member Alan Wilder joined Martin Gore on stage for a performance\
+      \ of &quot;[[Somebody (Depeche Mode song)|Somebody]]&quot;.&lt;ref&gt;&quot;[http://www.nme.com/news/depeche-mode/49827 Depeche Mode joined by former band member at Teenage Cancer Trust show]&quot; ''Nme.com.'' 18 February 2010.&lt;/ref&gt;&lt;ref&gt;Harper,\
+      \ Kate: &quot;[http://www.chartattack.com/news/79499/alan-wilder-rejoins-depeche-mode-for-one-song-in-london Alan Wilder Rejoins Depeche Mode For One Song In London]&quot; ''Chartattack.com.'' 18 February 2010.&lt;/ref&gt; In total the band played to more\
+      \ than 2.7 million people across 32 countries and the tour was one of the most profitable in America in 2009.&lt;ref&gt;{{cite web|url=http://www.depechemode.com/news.html |title='Tour of the Universe – Live In Barcelona' – New Live Video |publisher=depeche\
+      \ mode dot com |date=23 September 2010 |accessdate=26 September 2010}}&lt;/ref&gt;&lt;ref&gt;{{cite web |url=http://www.billboard.com/articles/news/266418/top-25-tours-of-2009 |publisher=[[Billboard (magazine)|Billboard]] |title=Best of 2009: Top 25 Tours\
+      \ of 2009|quote=20. Depeche Mode Total Gross: $45,658,648 Number of Shows: 31 Total Attendance: 690,936 Number of Sell-Outs: 9 |accessdate=4 July 2011}}&lt;/ref&gt; The concerts held at [[Palau Sant Jordi]], [[Barcelona, Spain]] were filmed and later released\
+      \ on DVD and [[Blu-ray Disc]] release entitled ''[[Tour of the Universe : Barcelona 20/21.11.09]]''.&lt;ref&gt;[http://www.amazon.com/dp/B00445JSWS Tour Of The Universe Barcelona 20/21:11:09 (2CD/DVD): Depeche Mode: Music]. Amazon.com. Retrieved on 4 June\
+      \ 2011.&lt;/ref&gt;\n\nIn March 2010, Depeche Mode won the award for &quot;Best International Group – Rock / Pop&quot; at the [[Echo (music award)|ECHO Awards]] in Germany.&lt;ref&gt;{{cite web|url=http://www.echopop.de/presse/robbie_williams_und_depeche_mode_gewinnen_echo_2010_doppelerfolge_fuer_jan_delay_und_silbermond\
+      \ |title=Robbie Williams Und Depeche Mode Gewinnen Echo 2010 |publisher=Echopop.de |accessdate=22 July 2010}}&lt;/ref&gt;\n\nAs a conclusion of the 3-year working relationship with [[EMI]],&lt;ref name=vanityfair2011qa&gt;{{cite web|last=Spitz|first=Marc|title=Q&amp;A:\
+      \ Martin Gore of Depeche Mode|url=http://www.vanityfair.com/online/daily/2011/06/depeche-mode-qa.html|work=Vanity Fair |accessdate=11 June 2011}}&lt;/ref&gt; on 6 June 2011, the band released a [[Remix album|remix compilation]] [[compilation album|album]],\
+      \ entitled ''[[Remixes 2: 81–11]]'' that features remixes by former members Vince Clarke and Alan Wilder.&lt;ref&gt;{{cite web|url=http://consequenceofsound.net/2010/11/18/depeche-mode-members-to-reunite-for-new-remix-album/ |title=Depeche Mode members\
+      \ to reunite for new remix album |publisher=Consequence of Sound |date=18 November 2010 |accessdate=7 December 2010}}&lt;/ref&gt;&lt;ref&gt;{{cite web|url=http://www.slicingupeyeballs.com/2010/11/16/depeche-mode-remix-album-vince-clarke-alan-wilder/ |title=Vince\
+      \ Clarke, Alan Wilder remixing Depeche Mode tracks for CD expected next year |publisher=slicingupeyeballs.com |date=16 November 2010 |accessdate=7 December 2010}}&lt;/ref&gt; Other remixers involved with the project were [[Nick Rhodes]] of [[Duran Duran]],&lt;ref&gt;[http://www.side-line.com/news_comments.php?id=45484_0_2_0_C\
+      \ Duran Duran remix 'Personal Jesus' for upcoming Depeche Mode remix album] ''Side-line.com.'' 28 November 2010.&lt;/ref&gt; [[Röyksopp]], Karlsson &amp; Winnberg of [[Miike Snow]], [[Eric Prydz]], [[Chris Clark (musician)|Clark]] and more.&lt;ref&gt;[http://www.depechemode.com/news.html#news_133\
+      \ Depeche Mode &quot;Remixes 2: 81–11&quot; Coming 6 June] depeche mode dot com&lt;/ref&gt; A new remix of &quot;Personal Jesus&quot; by [[Stargate (production team)|Stargate]], entitled &quot;[[Personal Jesus#Personal Jesus 2011|Personal Jesus 2011]]&quot;,\
+      \ was released as a single on 30 May 2011, in support of the compilation.\n\nDepeche Mode contributed their cover of the U2 song &quot;[[So Cruel]]&quot; to the tribute album ''[[AHK-toong BAY-bi Covered]]'' honouring the 20th anniversary of ''[[Achtung\
+      \ Baby]]'', a 1991 album by [[U2]]. The compilation CD was released with the December 2011 issue of Q Magazine.&lt;ref&gt;{{cite web |publisher=SlicingUpEyeballs.com|title=Depeche Mode, Jack White, Patti Smith, Glasvegas help cover U2's 'Achtung Baby'|url=http://www.slicingupeyeballs.com/2011/09/04/depeche-mode-glasvegas-u2-covers-achtung-baby/|date=4\
+      \ September 2011|accessdate=15 September 2011}}&lt;/ref&gt;&lt;ref&gt;{{cite journal |journal=[[Rolling Stone]]|title=Bono Announces 'Achtung Baby' Covers Album – Jack White, Depeche Mode, Patti Smith contributed to forthcoming disc |url=http://www.rollingstone.com/music/news/bono-announces-achtung-baby-covers-album-20110909|date=9\
+      \ September 2011|first=Karen|last=Bliss|accessdate=15 September 2011}}&lt;/ref&gt;\n\n===''Delta Machine'' (2012–present)===\nIn October 2012 during a press conference in [[Paris]], Dave Gahan, Martin Gore and Andy Fletcher announced plans to release a\
+      \ new album and a worldwide [[The Delta Machine Tour|tour]] starting from [[Tel Aviv]] and continuing in Europe and North America in the year 2013.&lt;ref&gt;{{cite news|url=http://www.cbc.ca/news/arts/story/2012/10/24/depeche-mode.html|title=Depeche Mode\
+      \ plans 2013 album and tour|date=24 October 2012|work= CBC News }}&lt;/ref&gt; Martin Gore revealed that Flood mixed the album, marking the producer's first studio collaboration with the band since 1993's ''Songs of Faith and Devotion''.\n\nIn December\
+      \ 2012, the band officially announced signing a worldwide deal with [[Columbia Records]] and releasing a new album in March 2013.&lt;ref&gt;{{cite web |publisher=[[Consequence of Sound]] |title=Depeche Mode to release new album in March |url=http://consequenceofsound.net/2012/12/depeche-mode-to-release-new-album-in-march/\
+      \ |date=11 December 2012 |first=Alex |last=Young |accessdate=12 December 2012}}&lt;/ref&gt; On 24 January 2013, it was confirmed that the album was called ''[[Delta Machine]]''.&lt;ref&gt;{{cite web |publisher= [[Pitchfork Media|Pitchfork]] |title=Depeche\
+      \ Mode Detail New Album Delta Machine |url=http://pitchfork.com/news/49193-depeche-mode-detail-new-album-delta-machine/|date=24 January 2013 |first=Carrie |last=Battan |accessdate=24 January 2013}}&lt;/ref&gt; &quot;[[Heaven (Depeche Mode song)|Heaven]]&quot;,\
+      \ the debut single from ''Delta Machine'' was released commercially on Friday 1 February 2013 (although not in the UK). The release date in the UK was pushed back to 18 March 2013 (17 March 2013 on iTunes), currently with no explanation. Bafflingly, the\
+      \ physical release still bore the Mute Records logo, even though the band have now severed ties with their long standing label. Andy Fletcher mentioned in an interview this was due to their &quot;devotion&quot; to the label and with the band's insistence.\n\
+      \nIn March, the band announced North American dates to its [[The Delta Machine Tour|'Delta Machine' summer tour]], starting 22 August from [[Detroit, Michigan|Detroit]] and ending 8 October in [[Phoenix, Arizona|Phoenix]].&lt;ref&gt;{{cite web |publisher=SlicingUpEyeballs.com\
+      \ |title=Depeche Mode announces North American dates for 'Delta Machine' summer tour |url=http://www.slicingupeyeballs.com/2013/03/11/depeche-mode-us-tour-dates/ |date=11 March 2013 |accessdate=11 March 2013}}&lt;/ref&gt; In June, other European dates&lt;ref&gt;[http://www.vorverkaufstarts.de/depeche-mode-hallentour-2013-2014/\
+      \ Depeche Mode Tour Dates]. Vorverkaufstarts.de Retrieved October, 5. 2013.&lt;/ref&gt; were confirmed for early 2014. The final gig of ''Delta Machine Tour'' took place in Moscow (Russia) on 7 March 2014, at Olimpiski venue.\n\nIn March 2014, Depeche\
+      \ Mode won the award for &quot;Best International Group – Rock / Pop&quot; at the [[Echo (music award)|ECHO Awards]] in Germany. Also they were nominated at the category &quot;Album des Jahres (national oder international)&quot; for ''Delta Machine'',\
+      \ but lost against [[Helene Fischer]] ''Farbenspiel''.&lt;ref&gt;{{cite web|url=http://www.echopop.de/pop-gewinner/ |title=Echo Gewinner des Jahres 2014 |publisher=Echopop.de |accessdate=28 March 2014}}&lt;/ref&gt;&lt;ref&gt;{{cite web|url=&gt;http://www.laut.de/News/Echo-2014-Helene-Fischer-raeumt-ab-27-03-2014-10286/Seite-1\
+      \ |title=Echo 2014: Helene Fischer räumt ab |publisher=laut.de |accessdate=28 March 2014}}&lt;/ref&gt;\n\n==Artistry==\n\n===Musical style===\nDepeche Mode drew its artistic influences from a wide range of artists, such as [[Kraftwerk]],&lt;ref&gt;{{cite\
+      \ web|author=Artist Biography by Michael Sutton |url=http://www.allmusic.com/artist/david-gahan-mn0001199400/biography |title=David Gahan &amp;#124; Biography |publisher=AllMusic |date=1962-05-09 |accessdate=2013-12-27}}&lt;/ref&gt; [[David Bowie]], [[The\
+      \ Clash]],&lt;ref&gt;{{cite web|url=http://edition.cnn.com/2012/06/07/showbiz/music/dave-gahan-depeche-mode |title=Depeche Mode frontman Dave Gahan gets spiritual - CNN.com |publisher=[[CNN]] |date=2012-06-08 |accessdate=2013-12-27}}&lt;/ref&gt; [[Blues|blues\
+      \ music]],&lt;ref&gt;{{cite web|url=http://www.nme.com/news/depeche-mode/68491 |title=Depeche Mode talk blues influence and unveil 'Heaven' video - watch &amp;#124; News |publisher=[[NME]] |date=2013-02-01 |accessdate=2013-12-27}}&lt;/ref&gt; the [[Grunge|American\
+      \ grunge scene]]&lt;ref name=&quot;contactm1&quot;/&gt; and [[Velvet Underground]].&lt;ref&gt;{{cite web|url=http://www.releasemagazine.net/Spotlight/spotlightgore.htm |title=Martin L Gore - Release Music Magazine Spotlight |publisher=Releasemagazine.net\
+      \ |date=2003-04-28 |accessdate=2013-12-27}}&lt;/ref&gt; The genres Depeche Mode are typically associated with include [[synthpop]], [[alternative dance]], [[New wave music|new wave]], and [[alternative rock]].\n\nDepeche Mode were recognised in their early\
+      \ years as a synthpop band and were considered teen idols. Following the departure of [[Vince Clarke]], their music began to take on a darker tone as Martin Gore assumed lead songwriting duties. Gore's lyrical artistry has been recognised as encapsulating\
+      \ themes such as sex, religion, and politics,&lt;ref&gt;{{cite web|url=http://edition.cnn.com/2013/04/23/showbiz/music/martin-gore-depeche-mode/ |title=Catching up with Depeche Mode - CNN.com |publisher=CNN |date= |accessdate=2013-12-27}}&lt;/ref&gt; so\
+      \ much so that many labeled the band's lyrical and musical themes as dark and bleak. In response, Gore stated he feels lyrical themes which tackle issues related to solitude and loneliness present more of a realistic character and are a better representation\
+      \ of reality, whereas he finds 'happy songs' fake and unrealistic.&lt;ref&gt;{{cite web|url=http://www.youtube.com/watch?v=I27PyhhqGV4 |title=Martin Gore (Depeche Mode) interview |publisher=YouTube |date=2013-02-22 |accessdate=2013-12-27}}&lt;/ref&gt;\
+      \ Gore also added; &quot;I've never seen our music as being over-dark. I think that there is always an element of hope in our music.&quot; &lt;ref&gt;{{cite web|url=http://www.southphillyreview.com/arts-and-entertainment/music/on_that_note-73703507.html\
+      \ |title=On That Note &amp;#124; Music Review |publisher=South Philly Review |date=2006-05-25 |accessdate=2013-12-27}}&lt;/ref&gt;\n\n===Influence===\nDepeche Mode have been recognised as making a significant impact on the development of various popular\
+      \ music genres, leading to many artists citing them as an inspiration including (but not limited to); [[Pet Shop Boys]],&lt;ref&gt;&quot;[http://www.10yearsofbeingboring.com/music/information 10 years of Being boring]&quot;. Retrieved on 9 September 2007.&lt;/ref&gt;&lt;ref&gt;&quot;[http://www.petshopboys.net/html/interviews/behaviuor009.shtml\
+      \ Interviews – Behaviour – The end of the world]&quot;, ''Absolutely Pet Shop Boys''. Retrieved on 9 September 2007.&lt;/ref&gt; [[Derrick May (musician)|Derrick May]], [[Kevin Saunderson]], [[Juan Atkins]],&lt;ref&gt;McCready, J., &quot;[http://sacreddm.net/1980s/fac010289/fac010289main.htm\
+      \ Modus operandum]&quot;, ''The Face'', February 1989. Retrieved 4 May 2011.&lt;/ref&gt; [[Brandon Flowers]],&lt;ref&gt;Ken Scrudato, &quot;[http://www.workingclassmag.com/007/daveGahan.html Dave Gahan and Brandon Flowers]&quot;, ''Working Class Magazine''.\
+      \ Retrieved on 16 March 2011.&lt;/ref&gt; [[Chester Bennington]] and [[Mike Shinoda]] of [[Linkin Park]],&lt;ref&gt;[http://www.mtv.com/music/artist/bennington_chester/artist.jhtml#bio &quot;Chester Bennington&quot;], ''mtv.com''. Retrieved on 9 September\
+      \ 2007.&lt;/ref&gt;&lt;ref&gt;[http://www.mutelibtech.com/depechemode/remixes8104.html &quot;Depeche Mode 'Remixes 81–04'&quot;], ''[mute]''. Retrieved on 9 September 2007.&lt;/ref&gt; [[Chino Moreno]] and [[Stephen Carpenter]] of [[Deftones]], [[The Crystal\
+      \ Method]],&lt;ref&gt;{{cite web|url=http://www.answers.com/topic/the-crystal-method |title=The Crystal Method: Information from |publisher=Answers.com |accessdate=22 July 2010}}&lt;/ref&gt; [[Mad at the World]],&lt;ref name=&quot;lyricsfreak.com&quot;&gt;{{cite\
+      \ web|url=http://www.lyricsfreak.com/d/depeche+mode/biography.html |title=Depeche Mode, Biography |publisher=Lyricsfreak.com |accessdate=22 July 2010}}&lt;/ref&gt; [[Raymond Herrera]] of [[Fear Factory]],&lt;ref&gt;Anthony Roldan, &quot;[http://www.prog4you.com/Band_Interviews/Raymond_Herrera.htm\
+      \ An exclusive interview with Fear Factory's Raymond Herrera]&quot;, ''PROG4YOU''. Retrieved on 12 September 2007.&lt;/ref&gt; [[Funeral for a Friend]],&lt;ref&gt;Tony Pascarella, &quot;[http://www.the-trades.com/article.php?id=3156 Darren Smith of Funeral\
+      \ For A Friend]&quot;, ''The Trades''. Retrieved on 12 September 2007.&lt;/ref&gt; [[Shakira]],&lt;ref&gt;{{cite book | url=http://books.google.com/?id=ETO3VaCXT4IC&amp;pg=PA25&amp;lpg=PA25 | title=ShakiraBiography (A &amp; E) Biography Series | first=Katherine\
+      \ | last=Krohn | isbn=978-0-8225-7159-9 | year=2007 | publisher=Twenty-First Century Books}}&lt;/ref&gt; [[Coldplay]], [[Muse (band)|Muse]], [[Rammstein]],&lt;ref&gt;{{cite web |first=David |last=Huff |title=Rammstein Pounding the European Metal Hammer\
+      \ |publisher=JamMagazineOnline.com |date=20 May 2011 |url=http://jammagazineonline.com/mf201105-rammstein.aspx |accessdate=30 June 2011}}&lt;/ref&gt; [[Magne Furuholmen]] of [[a-ha]],&lt;ref&gt;&quot;[http://www.side-line.com/news_comments.php?id=43321_0_2_0_c\
+      \ A-ha cover Depeche Mode's 'A question of lust']&quot; ''Side-line.com.'' 28 July 2009. Retrieved 10 December 2010.&lt;/ref&gt; [[Arcade Fire]] &lt;ref&gt;{{cite web|author= |url=http://www.youtube.com/watch?v=TOQv4Fo4Kkw&amp;list=FLeko-voa8MGm-kqbSm6fTNg&amp;index=137&amp;feature=plpp_video\
+      \ |title=Win &amp; Régine from Arcade Fire interviewed (July 2010) |publisher=YouTube |date=2010-07-13 |accessdate=2013-02-06}}&lt;/ref&gt; [[Nine Inch Nails]],&lt;ref name=&quot;tvtropes&quot;&gt;{{cite web|url=http://tvtropes.org/pmwiki/pmwiki.php/Music/DepecheMode?from=Main.DepecheMode\
+      \ |title=Music/Depeche Mode - Television Tropes &amp; Idioms |publisher=Tvtropes.org |date= |accessdate=2013-12-27}}&lt;/ref&gt; [[Lady Gaga]] and [[Gary Numan]].&lt;ref&gt;{{cite journal |journal=[[Mojo (magazine)|Mojo magazine]] |title=Last night a record\
+      \ saved my life: Gary Numan |date=March 2012 |issue=220 |page=29 |first=David |last=Buckley}}&lt;/ref&gt;\n\nDepeche Mode have been cited as a major influence on the [[Detroit techno]] scene, [[indie rock]]&lt;ref&gt;&quot;[http://www.my-personal-mode.com/ptareads/dm-ptanews-wp.htm\
+      \ Depeche Mode]&quot;, ''Washington Post'' (11 September 2005). Retrieved on 9 September 2007.&lt;/ref&gt; and [[industrial metal]] music.&lt;ref name=&quot;tvtropes&quot;/&gt;\n\n==Legacy==\n{{see also|List of Depeche Mode covers}}\nOne of the most influential\
+      \ musical groups over the past three decades, Depeche Mode have released a total of 13 studio albums, ten compilation albums, six live albums, eight box sets, 13 video albums, 70 music videos and 53 singles. The band have sold over 100 million records\
+      \ and have played to in excess of 30 million people, making them one of the world's [[List of best-selling music artists|best selling music artists]].&lt;ref name=&quot;billboard1&quot;/&gt;&lt;ref name=&quot;Q (magazine)&quot;/&gt; The band have had forty-eight\
+      \ songs in the UK Singles Chart, one US and two UK number one albums.&lt;ref&gt;{{cite web|author=1:27 PM |url=http://www.emimusic.com/news/2009/new-depeche-mode-album-number-one-in-20-countries/ |title=New Depeche Mode album number one in 20 countries\
+      \ |publisher=EMI Music |date=2009-05-01 |accessdate=2013-12-27}}&lt;/ref&gt; The band's album [[Songs of Faith and Devotion]] hit #1 in the UK and USA simultaneously, making them one of only eleven UK acts to do so, the others being [[The Beatles]], [[Led\
+      \ Zeppelin]], [[Rod Stewart]], [[Pink Floyd]], [[John Lennon]], [[Phil Collins]], [[Radiohead]], [[Coldplay]], [[Susan Boyle]] and [[Adele]]. In addition, all of their studio albums have reached the UK Top 10 and their albums have spent over 210 weeks\
+      \ on the UK Charts.&lt;ref&gt;{{cite web|url=http://www.officialcharts.com/artist/_/Depeche%20Mode/ |title=Depeche Mode &amp;#124; Artist |publisher=Official Charts |date= |accessdate=2013-12-27}}&lt;/ref&gt;\n\nMusic critic [[Sasha Frere-Jones]] claimed\
+      \ that &quot;the last serious English influence was Depeche Mode, who seem more and more significant as time passes.&quot; &lt;ref&gt;&quot;[http://www.newyorker.com/archive/2006/06/05/060605on_onlineonly01?currentPage=2 Atlantic Crossing]&quot;, ''[[The\
+      \ New Yorker]].'' (5 June 2006). Retrieved on 10 December 2008.&lt;/ref&gt; Depeche Mode have been nominated for five [[Grammy Award]]s; [[Devotional (video)|Devotional]] for [[Grammy Award for Best Long Form Music Video]], [[I Feel Loved]] and [[Suffer\
+      \ Well]], both for [[Best Dance Recording]], [[Sounds of the Universe]] for Best Alternative Album and [[Wrong (Depeche Mode song)|Wrong]] for Best Short Form Music Video. In addition, Depeche Mode have been honoured with a [[Brit Award]] for [[Enjoy The\
+      \ Silence]] in the Best British Single category, the first ever Q Magazine Innovation Award and an Ivor Novello Award for [[Martin Gore]] in the category of International Achievement.\n\nDepeche Mode are frequently praised by the music press; they became\
+      \ &quot;The most popular electronic band the world has ever known&quot; according to ''Q'' magazine, &quot;One of the greatest British pop groups of all time&quot; according to the ''[[Sunday Telegraph]]'',&lt;ref&gt;{{cite web|url=http://www.whatrecords.co.uk/items/39061.htm\
+      \ |title=Music for the Masses Collectors Edition Gatefold LP – Depeche Mode |publisher=Whatrecords.co.uk |date=5 March 2007 |accessdate=22 July 2010}}&lt;/ref&gt;&lt;ref&gt;{{cite web|url=http://www.depechemode.co.il/article.asp?ID=21 |title=Depeche Mode\
+      \ Fanclub Israel (îåòãåï ãôù îåã éùøàì) |publisher=Depechemode.co.il |accessdate=22 July 2010}}&lt;/ref&gt; and &quot;The quintessential eighties techno-pop band&quot; according to ''[[Rolling Stone]]'' magazine&lt;ref&gt;{{cite web|url=http://www.rollingstone.com/music/artists/depeche-mode/biography\
+      \ |title=Depeche Mode &amp;#124; Bio, Pictures, Videos |work=Rolling Stone |accessdate=31 March 2012}}&lt;/ref&gt; and ''MTV''.&lt;ref&gt;{{cite web|url=http://www.mtv.com/music/artist/depeche_mode/artist.jhtml#biographyEnd |title=Depeche Mode &amp;#124;\
+      \ Music Videos, News, Photos, Tour Dates, Ringtones, and Lyrics |publisher=MTV |accessdate=31 March 2012}}&lt;/ref&gt; Depeche Mode were ranked #2 on Electronic Music Realm's list of The 100 Greatest Artists of Electronic Music,&lt;ref&gt;{{cite web|author=Zach\
+      \ Dufrene |url=http://electronicmusicrealm.blogspot.co.uk/2011/11/100-greatest-electronic-artists.html |title=Electronic Music Realm: The 100 Greatest Artists of Electronic Music (1-20) |publisher=Electronicmusicrealm.blogspot.co.uk |date= |accessdate=2013-12-27}}&lt;/ref&gt;\
+      \ #3 in a list of The Most Influential Electronic Music Pioneers by Ranker,&lt;ref&gt;{{cite web|url=http://www.ranker.com/list/the-most-influential-electronic-music-pioneers/beau-iverson |title=Electronica Artists List &amp;#124; The Most Influential\
+      \ Electronic Musicians |publisher=Ranker.com |date= |accessdate=2013-12-27}}&lt;/ref&gt; the band were also ranked #144 on Acclaimed Music's list of Top 1000 Artists of All Time &lt;ref&gt;{{cite web|url=http://www.acclaimedmusic.net/Current/1948-09art.htm\
+      \ |title=The Top 1000 Artists of All Time |publisher=Acclaimed Music |date= |accessdate=2013-12-27}}&lt;/ref&gt; and Q Magazine included them on their list of 50 artists who changed the world.&lt;ref&gt;{{cite web|url=http://www.rocklistmusic.co.uk/qlistspage3.htm#50\
+      \ |title=Rocklist.net...Q Magazine Lists |publisher=Rocklistmusic.co.uk |date= |accessdate=2013-12-27}}&lt;/ref&gt;\n\n==Band members==\n;Members\n* [[Andy Fletcher (musician)|Andy Fletcher]] – keyboards, backing vocals &lt;small&gt;(1980–present)&lt;/small&gt;;\
+      \ bass guitar &lt;small&gt;(1980)&lt;/small&gt;\n* [[Dave Gahan]] – lead vocals &lt;small&gt;(1980–present)&lt;/small&gt;\n* [[Martin Gore]] – keyboards, backing and lead vocals &lt;small&gt;(1980–present)&lt;/small&gt;; guitars &lt;small&gt;(1983–1984,\
+      \ 1987–present)&lt;/small&gt;\n\n;Touring Members\n* [[Christian Eigner]] - drums, keyboards &lt;small&gt;(1997-Present)&lt;/small&gt;\n* [[Peter Gordeno]] - keyboards &lt;small&gt; (1998-Present)&lt;/Small&gt;\n;Former members\n* [[Vince Clarke]] – keyboards,\
+      \ backing vocals &lt;small&gt;(1980–1981)&lt;/small&gt;; lead vocals, guitars &lt;small&gt;(1980)&lt;/small&gt;\n* [[Alan Wilder]] – keyboards, piano, backing vocals &lt;small&gt;(1982–1995)&lt;/small&gt;; drums &lt;small&gt;(1990–1995)&lt;/small&gt;\n\
+      \n;Timeline\n&lt;div style=&quot;text-align:center;&quot;&gt;\n&lt;timeline&gt;\nImageSize = width:800 height:150\nPlotArea = left:100 bottom:60 top:0 right:50\nAlignbars = justify\nDateFormat  = mm/dd/yyyy\nPeriod = from:01/01/1980 till:02/04/2014\nTimeAxis\
+      \ = orientation:horizontal format:yyyy\n\nColors =\n id:Vocals value:red legend:Lead&amp;nbsp;vocals\n id:Keyboards value:purple legend:Keyboards\n id:Guitars value:green legend:Guitars\n id:Drums value:orange legend:Drums\n id:Bass value:blue legend:Bass\n\
+      \ id:Lines value:black legend:Studio&amp;nbsp;albums\n\nLegend = orientation:horizontal position:bottom\n\nScaleMajor = increment:2 start:1980\n\nLineData =\n at:10/29/1981 color:black layer:back\n at:09/27/1982 color:black layer:back\n at:08/22/1983 color:black\
+      \ layer:back\n at:09/24/1984 color:black layer:back\n at:03/17/1986 color:black layer:back\n at:09/28/1987 color:black layer:back\n at:03/19/1990 color:black layer:back\n at:03/22/1993 color:black layer:back\n at:04/14/1997 color:black layer:back\n at:05/14/2001\
+      \ color:black layer:back\n at:10/17/2005 color:black layer:back\n at:04/20/2009 color:black layer:back\n at:03/22/2013 color:black layer:back\n\nBarData =\n bar:Clarke text:&quot;Vince Clarke&quot;\n bar:Fletch text:&quot;Andy Fletcher&quot;\n bar:Gore\
+      \ text:&quot;Martin Gore&quot;\n bar:Gahan text:&quot;Dave Gahan&quot;\n bar:Wilder text:&quot;Alan Wilder&quot;\n\nPlotData=\n width:10 textcolor:black align:left anchor:from shift:(10,-4)\n bar:Clarke from:01/01/1980 till: 03/01/1980 color:Guitars\n\
+      \ bar:Clarke from:01/01/1980 till: 10/29/1980 color:Vocals width:3\n bar:Clarke from:03/01/1980 till: 12/03/1981 color:Keyboards\n bar:Fletch from:01/01/1980 till:10/29/1980 color:Bass\n bar:Fletch from:10/29/1980 till:end color:Keyboards\n bar:Gore from:03/01/1980\
+      \ till:end color:Keyboards\n bar:Gore from:09/07/1983 till:06/02/1984 color:Guitars  width:3\n bar:Gore from:09/28/1987 till:end color:Guitars  width:3\n bar:Gahan from:10/29/1980 till:end color:Vocals\n bar:Wilder from:10/04/1982 till:06/01/1995 color:Keyboards\n\
+      \ bar:Wilder from:03/19/1990 till:06/01/1995 color:Drums  width:3\n&lt;/timeline&gt;\n&lt;/div&gt;\n\n==Discography==\n{{Main|Depeche Mode discography|Depeche Mode videography}}\n*''[[Speak &amp; Spell (album)|Speak &amp; Spell]]'' (1981)\n*''[[A Broken\
+      \ Frame]]'' (1982)\n*''[[Construction Time Again]]'' (1983)\n*''[[Some Great Reward]]'' (1984)\n*''[[Black Celebration]]'' (1986)\n*''[[Music for the Masses]]'' (1987)\n*''[[Violator (album)|Violator]]'' (1990)\n*''[[Songs of Faith and Devotion]]'' (1993)\n\
+      *''[[Ultra (Depeche Mode album)|Ultra]]'' (1997)\n*''[[Exciter (album)|Exciter]]'' (2001)\n*''[[Playing the Angel]]'' (2005)\n*''[[Sounds of the Universe]]'' (2009)\n*''[[Delta Machine]]'' (2013)\n\n==See also==\n* [[List of awards and nominations received\
+      \ by Depeche Mode]]\n* [[List of Depeche Mode tours]]\n* [[List of best-selling music artists]]\n* [[List of artists who reached number one on the U.S. dance chart]]\n* [[List of artists who reached number one on the U.S. alternative rock chart]]\n\n==References==\n\
+      {{Reflist|colwidth=30em}}\n\n===Bibliography===\n* Malins, Steve. ''Depeche Mode : A Biography''. Andre Deutsch, 2001. ISBN 978-0-233-99430-7\n* Miller, Jonathan. ''Stripped: The True Story of Depeche Mode''. [[Omnibus Press]], 2004. ISBN 1-84449-415-2\n\
+      * Tobler, John. ''NME Rock 'N' Roll Years (1st ed.)''. London: Reed International Books Ltd, 1992. CN 5585. ISBN 0-600-57602-7\n* Spence, Simon. &quot;Just Can't Get Enough : The Making of Depeche Mode&quot;. Jawbone, 2011. ISBN 978-1-906002-56-5\n\n===Further\
+      \ reading===\n* Corbijn, Anton. ''Depeche Mode: Strangers''. Prentice Hall, 1990. ISBN 0-7119-2493-7\n* Thompson, Dave. ''Depeche Mode : Some Great Reward''. Pan Macmillan, 1995. ISBN 0-283-06243-6\n* Zill, Didi. ''Depeche Mode. Photographs 1982–87''.\
+      \ Schwarzkopf &amp; Schwarzkopf, 2004. ISBN 3-89602-491-4\n\n==External links==\n{{Commons category}}\n&lt;!-- WARNING: Fan sites and foreign language sites are not permitted in this section. If you add such a link, it will be removed. Please see the appropriate\
+      \ discussion on the talk page. Any link which does not contain relevant information that could be considered encyclopaedic will be removed as spam. See [[Wikipedia:External links]] for more information. --&gt;\n* {{Official website|http://www.depechemode.com/}}\n\
+      * [http://oldsite.depechemode.com/ Old official website] – including official news archives 1999–2008, press section, and other historical material\n* [http://www.recoil.co.uk Shunt – The official Recoil website] – including Alan Wilder's Depeche Mode\
+      \ related [http://www.recoil.co.uk/qa_vault/dm.html Q+A] and editorials for [http://www.recoil.co.uk/editorials/8185/area.html Singles 81–85] and [http://www.recoil.co.uk/editorials/8698/area.html Singles 86–98] compilations.\n\n{{Depeche Mode}}\n\n[[Category:Depeche\
+      \ Mode| ]]\n[[Category:Alternative dance musical groups]]\n[[Category:English alternative rock groups]]\n[[Category:Brit Award winners]]\n[[Category:Columbia Records artists]]\n[[Category:English electronic music groups]]\n[[Category:English New Wave musical\
+      \ groups]]\n[[Category:English post-punk music groups]]\n[[Category:Music in Essex]]\n[[Category:Musical groups established in 1980]]\n[[Category:Musical trios]]\n[[Category:Mute Records artists]]\n[[Category:Sire Records artists]]\n[[Category:Synthpop\
+      \ New Wave musical groups]]\n\n{{Link GA|uk}}</rev></revisions></page></pages></query></api>"
+- recorded: 2014-04-06T22:22:30.979Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '110'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AGnome-mime-sound-openclipart.svg&prop=imageinfo&iiprop=url&iiurlwidth=65&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '548'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:30 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq53 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570613022, 3519347100, 3881937069
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:Gnome-mime-sound-openclipart.svg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Gnome-mime-sound-openclipart.svg/65px-Gnome-mime-sound-openclipart.svg.png" thumbwidth="65" thumbheight="65" url="http://upload.wikimedia.org/wikipedia/commons/8/87/Gnome-mime-sound-openclipart.svg" descriptionurl="http://commons.wikimedia.org/wiki/File:Gnome-mime-sound-openclipart.svg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:22:31.885Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '111'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ADepeche+mode+barrel+of+a+gun.ogg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '498'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:31 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq53 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570614051, 3519347696, 3881938097
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page pageid="5774037" ns="6" title="File:Depeche mode barrel of a gun.ogg" imagerepository="local"><imageinfo><ii thumburl="http://bits.wikimedia.org/static-1.23wmf20/skins/common/images/icons/fileicon-ogg.png" thumbwidth="220" thumbheight="23" url="http://upload.wikimedia.org/wikipedia/en/d/d8/Depeche_mode_barrel_of_a_gun.ogg" descriptionurl="http://en.wikipedia.org/wiki/File:Depeche_mode_barrel_of_a_gun.ogg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:22:33.264Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '116'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ABremen+2006+Depeche+Mode+by-RaBoe.jpg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '572'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:33 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq53 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570615997, 3519348917, 3881940105
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:Bremen 2006 Depeche Mode by-RaBoe.jpg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Bremen_2006_Depeche_Mode_by-RaBoe.jpg/220px-Bremen_2006_Depeche_Mode_by-RaBoe.jpg" thumbwidth="220" thumbheight="165" url="http://upload.wikimedia.org/wikipedia/commons/d/da/Bremen_2006_Depeche_Mode_by-RaBoe.jpg" descriptionurl="http://commons.wikimedia.org/wiki/File:Bremen_2006_Depeche_Mode_by-RaBoe.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:22:34.166Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '110'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AGnome-mime-sound-openclipart.svg&prop=imageinfo&iiprop=url&iiurlwidth=65&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '548'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:34 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq53 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570616799, 3519349314, 3881940954
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:Gnome-mime-sound-openclipart.svg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Gnome-mime-sound-openclipart.svg/65px-Gnome-mime-sound-openclipart.svg.png" thumbwidth="65" thumbheight="65" url="http://upload.wikimedia.org/wikipedia/commons/8/87/Gnome-mime-sound-openclipart.svg" descriptionurl="http://commons.wikimedia.org/wiki/File:Gnome-mime-sound-openclipart.svg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:22:34.569Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '126'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ADepeche+Mode+-+Precious+%28Album+Version%29.ogg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '536'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:34 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq53 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570617131, 3519349467, 3881941298
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page pageid="27773008" ns="6" title="File:Depeche Mode - Precious (Album Version).ogg" imagerepository="local"><imageinfo><ii thumburl="http://bits.wikimedia.org/static-1.23wmf20/skins/common/images/icons/fileicon-ogg.png" thumbwidth="220" thumbheight="23" url="http://upload.wikimedia.org/wikipedia/en/6/62/Depeche_Mode_-_Precious_%28Album_Version%29.ogg" descriptionurl="http://en.wikipedia.org/wiki/File:Depeche_Mode_-_Precious_(Album_Version).ogg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:22:34.963Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '107'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ADepeche+Mode+O2+15+12+09.JPG&prop=imageinfo&iiprop=url&iiurlwidth=250&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '604'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:34 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq53 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570617586, 3519349709, 3881941733
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2009-12-17T19:31:52Z" /></query-continue><query><pages><page ns="6" title="File:Depeche Mode O2 15 12 09.JPG" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Depeche_Mode_O2_15_12_09.JPG/250px-Depeche_Mode_O2_15_12_09.JPG" thumbwidth="250" thumbheight="188" url="http://upload.wikimedia.org/wikipedia/commons/c/c9/Depeche_Mode_O2_15_12_09.JPG" descriptionurl="http://commons.wikimedia.org/wiki/File:Depeche_Mode_O2_15_12_09.JPG" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:22:35.900Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '94'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ACommons-logo.svg&prop=imageinfo&iiprop=url&iiurlwidth=40&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '459'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:35 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq53 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570618490, 3519350204, 3881942660
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page pageid="33285577" ns="6" title="File:Commons-logo.svg" imagerepository="local"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/40px-Commons-logo.svg.png" thumbwidth="40" thumbheight="54" url="http://upload.wikimedia.org/wikipedia/en/4/4a/Commons-logo.svg" descriptionurl="http://en.wikipedia.org/wiki/File:Commons-logo.svg" /></imageinfo></page></pages></query></api>

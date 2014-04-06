@@ -4,3 +4,4 @@ target/
 derby.log
 log.txt
 bliki-pdf/src/test/resources/WikiDB/
+lib/

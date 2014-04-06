@@ -1,0 +1,117 @@
+!tape
+name: backplane
+interactions:
+- recorded: 2014-04-06T22:26:51.460Z
+  request:
+    method: POST
+    uri: http://en.wiktionary.org/w/api.php
+    headers:
+      Content-Length: '99'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wiktionary.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=backplane&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '804'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:51 GMT
+      Server: Apache
+      Set-Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4; path=/
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1054 miss (0), amssq50 miss (0), amssq57 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 2073819207, 3148602626, 81563220
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwiktionaryToken;string-contains=enwiktionaryLoggedOut;string-contains=forceHTTPS;string-contains=enwiktionarySession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: |-
+      <?xml version="1.0"?><api><query><pages><page pageid="1314311" ns="0" title="backplane"><revisions><rev user="MewBot" timestamp="2014-03-27T00:39:34Z" comment="Added lang= to audio" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">==English==
+      {{wikipedia}}
+
+      ===Etymology===
+      {{compound|back|plane}}
+
+      ===Pronunciation===
+      * {{audio|en-us-backplane.ogg|Audio (US)|lang=en}}
+
+      ===Noun===
+      {{en-noun}}
+
+      # {{context|electronics|lang=en}} A [[circuit board]] that connects several [[connector]]s in [[parallel]] to each other, so that each [[pin]] of each connector is linked to the same relative pin of all the other connectors, forming a computer [[bus]].
+
+      [[fr:backplane]]
+      [[ko:backplane]]
+      [[ta:backplane]]
+      [[vi:backplane]]
+      [[zh:backplane]]</rev></revisions></page></pages></query></api>
+- recorded: 2014-04-06T22:26:56.100Z
+  request:
+    method: POST
+    uri: http://en.wiktionary.org/w/api.php
+    headers:
+      Content-Length: '96'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AWikipedia-logo.png&prop=imageinfo&iiprop=url&iiurlwidth=44&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '551'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:55 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1054 miss (0), amssq50 miss (0), amssq57 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 2073824585, 3148605370, 81568641
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwiktionaryToken;string-contains=enwiktionaryLoggedOut;string-contains=forceHTTPS;string-contains=enwiktionarySession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2010-05-20T22:13:54Z" /></query-continue><query><pages><page ns="6" title="File:Wikipedia-logo.png" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Wikipedia-logo.png/44px-Wikipedia-logo.png" thumbwidth="44" thumbheight="44" url="http://upload.wikimedia.org/wikipedia/commons/6/63/Wikipedia-logo.png" descriptionurl="http://commons.wikimedia.org/wiki/File:Wikipedia-logo.png" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:26:56.835Z
+  request:
+    method: POST
+    uri: http://en.wiktionary.org/w/api.php
+    headers:
+      Content-Length: '98'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3Aen-us-backplane.ogg&prop=imageinfo&iiprop=url&iiurlwidth=175&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '464'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:56 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1054 miss (0), amssq50 miss (0), amssq57 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 2073825443, 3148605793, 81569452
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwiktionaryToken;string-contains=enwiktionaryLoggedOut;string-contains=forceHTTPS;string-contains=enwiktionarySession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:en-us-backplane.ogg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://bits.wikimedia.org/static-1.23wmf20/skins/common/images/icons/fileicon-ogg.png" thumbwidth="175" thumbheight="18" url="http://upload.wikimedia.org/wikipedia/commons/a/a5/En-us-backplane.ogg" descriptionurl="http://commons.wikimedia.org/wiki/File:En-us-backplane.ogg" /></imageinfo></page></pages></query></api>

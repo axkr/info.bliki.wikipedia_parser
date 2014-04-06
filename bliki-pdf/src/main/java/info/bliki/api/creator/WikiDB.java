@@ -58,7 +58,7 @@ public class WikiDB {
         fUpdateImage = fConnection.prepareStatement("UPDATE image SET image_url = ?,  image_filename = ? WHERE image_name = ?");
     }
 
-    public void tearDown() throws Exception {
+    public void tearDown() throws SQLException {
         fSelectContent.close();
         fInsertTopic.close();
         fUpdateTopicContent.close();
@@ -74,9 +74,9 @@ public class WikiDB {
      * @param name
      *          the name of the topic
      * @return <code>null</code> if no data was found
-     * @throws Exception
+     * @throws SQLException
      */
-    public TopicData selectTopic(String name) throws Exception {
+    public TopicData selectTopic(String name) throws SQLException {
         TopicData topicData = new TopicData(name);
         fSelectContent.setString(1, name);
         try (ResultSet resultSet = fSelectContent.executeQuery()) {
@@ -88,13 +88,13 @@ public class WikiDB {
         return null;
     }
 
-    public void insertTopic(TopicData topic) throws Exception {
+    public void insertTopic(TopicData topic) throws SQLException {
         fInsertTopic.setString(1, topic.getName());
         fInsertTopic.setString(2, topic.getContent());
         fInsertTopic.execute();
     }
 
-    public void updateTopic(TopicData topic) throws Exception {
+    public void updateTopic(TopicData topic) throws SQLException {
         fUpdateTopicContent.setString(1, topic.getContent());
         fUpdateTopicContent.setString(2, topic.getName());
         fUpdateTopicContent.execute();
@@ -106,9 +106,9 @@ public class WikiDB {
      * @param imageName
      *          the name of the image
      * @return <code>null</code> if no data was found
-     * @throws Exception
+     * @throws SQLException
      */
-    public ImageData selectImage(String imageName) throws Exception {
+    public ImageData selectImage(String imageName) throws SQLException {
         ImageData imageData = new ImageData(imageName);
         fSelectImage.setString(1, imageName);
         try (ResultSet resultSet = fSelectImage.executeQuery()) {
@@ -121,14 +121,14 @@ public class WikiDB {
         return null;
     }
 
-    public void insertImage(ImageData imageData) throws Exception {
+    public void insertImage(ImageData imageData) throws SQLException {
         fInsertImage.setString(1, imageData.getName());
         fInsertImage.setString(2, imageData.getUrl());
         fInsertImage.setString(3, imageData.getFilename());
         fInsertImage.execute();
     }
 
-    public void updateImage(ImageData imageData) throws Exception {
+    public void updateImage(ImageData imageData) throws SQLException {
         fUpdateTopicContent.setString(1, imageData.getUrl());
         fUpdateTopicContent.setString(2, imageData.getFilename());
         fUpdateTopicContent.setString(3, imageData.getName());

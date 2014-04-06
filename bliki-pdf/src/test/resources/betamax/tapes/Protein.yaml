@@ -1,0 +1,911 @@
+!tape
+name: Protein
+interactions:
+- recorded: 2014-04-06T22:21:53.252Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '97'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Protein&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '68208'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:21:52 GMT
+      Server: Apache
+      Set-Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4; path=/
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq55 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570568749, 3519322403, 990461572
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: |-
+      <?xml version="1.0"?><api><query><pages><page pageid="23634" ns="0" title="Protein"><revisions><rev user="Omnipaedista" timestamp="2014-03-13T21:19:21Z" comment="correcting polytonic Greek" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{About|a class of molecules|protein as a nutrient|Protein (nutrient)|other uses}}
+      {{pp-semi-indef}}
+      [[File:Myoglobin.png|thumb|right|A representation of the 3D structure of the protein [[myoglobin]] showing turquoise [[alpha helix|alpha helices]]. This protein was the first to have its structure solved by [[X-ray crystallography]]. Towards the right-center among the coils, a [[prosthetic group]] called a [[heme group]] (shown in gray) with a bound oxygen molecule (red).]]
+      '''Proteins''' ({{IPAc-en|ˈ|p|r|oʊ|ˌ|t|iː|n|z}} or {{IPAc-en|ˈ|p|r|oʊ|t|i|.|ɨ|n|z}}) are large [[Biomolecule|biological molecule]]s, or [[macromolecule]]s, consisting of one or more chains of [[amino acid]] residues. Proteins perform a vast array of functions within living organisms, including [[Enzyme catalysis|catalyzing metabolic reactions]], [[DNA replication|replicating DNA]], [[Cell signaling|responding to stimuli]], and transporting molecules from one location to another. Proteins differ from one another primarily in their sequence of amino acids, which is dictated by the [[nucleotide sequence]] of their [[genes]], and which usually results in [[Protein folding|folding]] of the protein into a specific [[Protein structure|three-dimensional structure]] that determines its activity.
+
+      A polypeptide is a single linear [[polymer]] chain derived from the condensation of [[amino acid]]s.  The individual amino acid residues are bonded together by [[peptide bond]]s and adjacent amino acid [[Residue (chemistry)|residues]]. The [[peptide sequence|sequence]] of amino acid residues in a protein is defined by the [[DNA sequence|sequence]] of a [[gene]], which is encoded in the [[genetic code]]. In general, the genetic code specifies 20 standard amino acids; however, in certain organisms the genetic code can include [[selenocysteine]] and—in certain [[archaea]]—[[pyrrolysine]]. Shortly after or even during synthesis, the residues in a protein are often chemically modified by [[posttranslational modification]], which alters the physical and chemical properties, folding, stability, activity, and ultimately, the function of the proteins. Sometimes proteins have non-peptide groups attached, which can be called [[prosthetic group]]s or [[Cofactor (biochemistry)|cofactor]]s. Proteins can also work together to achieve a particular function, and they often associate to form stable [[protein complex]]es.
+
+      Like other biological [[macromolecules]] such as [[polysaccharide]]s and [[nucleic acid]]s, proteins are essential parts of organisms and participate in virtually every process within [[cell (biology)|cell]]s. Many proteins are [[enzyme]]s that [[catalysis|catalyze]] biochemical reactions and are vital to [[metabolism]]. Proteins also have structural or mechanical functions, such as [[actin]] and [[myosin]] in muscle and the proteins in the [[cytoskeleton]], which form a system of [[scaffolding]] that maintains cell shape. Other proteins are important in [[cell signaling]], [[antibody|immune response]]s, [[cell adhesion]], and the [[cell cycle]]. Proteins are also necessary in animals' diets, since animals cannot [[Amino acid synthesis|synthesize]] all the amino acids they need and must obtain [[essential amino acid]]s from food. Through the process of [[digestion]], animals break down ingested protein into free amino acids that are then used in metabolism.
+
+      Proteins may be [[protein purification|purified]] from other cellular components using a variety of techniques such as [[ultracentrifugation]], [[Precipitation (chemistry)|precipitation]], [[electrophoresis]], and [[chromatography]]; the advent of [[genetic engineering]] has made possible a number of methods to facilitate purification. Methods commonly used to study protein structure and function include [[immunohistochemistry]], [[site-directed mutagenesis]], [[X-ray crystallography]], [[nuclear magnetic resonance]] and [[mass spectrometry]].
+
+      ==Biochemistry==
+      {{Main|Biochemistry|Amino acid|peptide bond}}
+      [[File:Peptide-Figure-Revised.png|thumb|300px|Chemical structure of the peptide bond (bottom) and the three-dimensional structure of a peptide bond between an [[alanine]] and an adjacent amino acid (top/inset)]]
+      [[File:Peptide group resonance.png|thumb|300px|[[Resonance (chemistry)|Resonance]] structures of the [[peptide bond]] that links individual amino acids to form a protein [[polymer]]]]
+      Most proteins consist of linear [[polymer]]s built from series of up to 20 different &lt;small&gt;L&lt;/small&gt;-α-[[amino acid]]s. All [[proteinogenic amino acid]]s possess common structural features, including an [[alpha carbon|α-carbon]] to which an [[amino]] group, a [[carboxyl]] group, and a variable [[side chain]] are [[chemical bond|bonded]]. Only [[proline]] differs from this basic structure as it contains an unusual ring to the N-end amine group, which forces the CO–NH amide moiety into a fixed conformation.&lt;ref name=Nelson2005/&gt; The side chains of the standard amino acids, detailed in the [[list of standard amino acids]], have a great variety of chemical structures and properties; it is the combined effect of all of the amino acid side chains in a protein that ultimately determines its three-dimensional structure and its chemical reactivity.&lt;ref name=Gutteridge2005/&gt;
+      The [[amino acids]] in a polypeptide chain are linked by [[peptide bond]]s. Once linked in the protein chain, an individual amino acid is called a ''residue,'' and the linked series of carbon, nitrogen, and oxygen atoms are known as the ''main chain'' or ''protein backbone.''&lt;ref&gt;Murray ''et al''., p. 19.&lt;/ref&gt;
+
+      The peptide bond has two [[resonance (chemistry)|resonance]] forms that contribute some [[double-bond]] character and inhibit rotation around its axis, so that the alpha carbons are roughly [[coplanar]]. The other two [[dihedral angle]]s in the peptide bond determine the local shape assumed by the protein backbone.&lt;ref&gt;Murray ''et al''., p. 31.&lt;/ref&gt; The end of the protein with a free carboxyl group is known as the [[C-terminus]] or carboxy terminus, whereas the end with a free amino group is known as the [[N-terminus]] or amino terminus.
+      The words ''protein'', ''polypeptide,'' and ''[[peptide]]'' are a little ambiguous and can overlap in meaning. ''Protein'' is generally used to refer to the complete biological molecule in a stable [[tertiary structure|conformation]], whereas ''peptide'' is generally reserved for a short amino acid oligomers often lacking a stable three-dimensional structure. However, the boundary between the two is not well defined and usually lies near 20–30 residues.&lt;ref name=Lodish2004/&gt; ''Polypeptide'' can refer to any single linear chain of amino acids, usually regardless of length, but often implies an absence of a defined [[tertiary structure|conformation]].
+
+      ==Synthesis==
+      ===Biosynthesis===
+      {{Main|Protein biosynthesis}}
+      [[Image:Ribosome mRNA translation en.svg|thumb|A ribosome produces a protein using mRNA as template.]]
+      [[File:Genetic code.svg|thumb|The [[DNA]] sequence of a gene [[genetic code|encodes]] the [[amino acid]] sequence of a protein.]]
+      Proteins are assembled from amino acids using information encoded in [[gene]]s. Each protein has its own unique amino acid sequence that is specified by the [[nucleotide]] sequence of the gene encoding this protein. The [[genetic code]] is a set of three-nucleotide sets called [[codon]]s and each three-nucleotide combination designates an amino acid, for example AUG ([[adenine]]-[[uracil]]-[[guanine]]) is the code for [[methionine]]. Because [[DNA]] contains four nucleotides, the total number of possible codons is 64; hence, there is some redundancy in the genetic code, with some amino acids specified by more than one codon.&lt;ref name=vanHolde1996/&gt; Genes encoded in DNA are first [[transcription (genetics)|transcribed]] into pre-[[messenger RNA]] (mRNA) by proteins such as [[RNA polymerase]]. Most organisms then process the pre-mRNA (also known as a ''primary transcript'') using various forms of [[Post-transcriptional modification]] to form the mature mRNA, which is then used as a template for protein synthesis by the [[ribosome]]. In [[prokaryote]]s the mRNA may either be used as soon as it is produced, or be bound by a ribosome after having moved away from the [[nucleoid]]. In contrast, [[eukaryote]]s make mRNA in the [[cell nucleus]] and then [[Protein translocation|translocate]] it across the [[nuclear membrane]] into the [[cytoplasm]], where [[protein biosynthesis|protein synthesis]] then takes place. The rate of protein synthesis is higher in prokaryotes than eukaryotes and can reach up to 20 amino acids per second.&lt;ref name=Pain2000/&gt;
+
+      The process of synthesizing a protein from an mRNA template is known as [[translation (genetics)|translation]]. The mRNA is loaded onto the ribosome and is read three nucleotides at a time by matching each codon to its [[base pair]]ing [[anticodon]] located on a [[transfer RNA]] molecule, which carries the amino acid corresponding to the codon it recognizes. The enzyme [[aminoacyl tRNA synthetase]] &quot;charges&quot; the tRNA molecules with the correct amino acids. The growing polypeptide is often termed the ''nascent chain''. Proteins are always biosynthesized from [[N-terminus]] to [[C-terminus]].&lt;ref name=vanHolde1996&gt;van Holde and Mathews, pp. 1002–42.&lt;/ref&gt;
+
+      The size of a synthesized protein can be measured by the number of amino acids it contains and by its total [[molecular mass]], which is normally reported in units of ''daltons'' (synonymous with [[atomic mass unit]]s), or the derivative unit kilodalton (kDa). [[Yeast]] proteins are on average 466 amino acids long and 53 kDa in mass.&lt;ref name=Lodish2004/&gt; The largest known proteins are the [[titin]]s, a component of the [[muscle]] [[sarcomere]], with a molecular mass of almost 3,000 kDa and a total length of almost 27,000 amino acids.&lt;ref name=Fulton1991/&gt;
+
+      ===Chemical synthesis===
+      Short proteins can also be synthesized chemically by a family of methods known as [[peptide synthesis]], which rely on [[organic synthesis]] techniques such as [[chemical ligation]] to produce peptides in high yield.&lt;ref name=Bruckdorfer2004/&gt; Chemical synthesis allows for the introduction of non-natural amino acids into polypeptide chains, such as attachment of [[fluorescent]] probes to amino acid side chains.&lt;ref name=Schwarzer2005/&gt; These methods are useful in laboratory [[biochemistry]] and [[cell biology]], though generally not for commercial applications. Chemical synthesis is inefficient for polypeptides longer than about 300 amino acids, and the synthesized proteins may not readily assume their native [[tertiary structure]]. Most chemical synthesis methods proceed from C-terminus to N-terminus, opposite the biological reaction.&lt;ref name=Kent2009/&gt;
+
+      ==Structure==
+      {{Main|Protein structure}}
+      {{Further2|[[Protein structure prediction]]}}
+
+      [[File:Chaperonin_1AON.png|thumb|300px|right|The crystal structure of the chaperonin. Chaperonins assist protein folding.]]
+      [[File:Proteinviews-1tim.png|thumb|300px|Three possible representations of the three-dimensional structure of the protein [[triose phosphate isomerase]]. Left: all-atom representation colored by atom type. Middle: Simplified representation illustrating the backbone conformation, colored by secondary structure. Right: Solvent-accessible surface representation colored by residue type (acidic residues red, basic residues blue, polar residues green, nonpolar residues white)]]
+      Most&amp;nbsp;proteins [[protein folding|fold]] into unique 3-dimensional structures. The shape into which a protein naturally folds is known as its [[native conformation]].&lt;ref&gt;Murray ''et al''., p. 36.&lt;/ref&gt; Although many proteins can fold unassisted, simply through the chemical properties of their amino acids, others require the aid of molecular [[Chaperone (protein)|chaperone]]s to fold into their native states.&lt;ref&gt;Murray ''et al''., p. 37.&lt;/ref&gt; Biochemists often refer to four distinct aspects of a protein's structure:&lt;ref&gt;Murray ''et al''., pp. 30–34.&lt;/ref&gt;
+      *''[[Primary structure]]'': the [[peptide sequence|amino acid sequence]]. A protein is a [[polyamide]].
+      *''[[Secondary structure]]'': regularly repeating local structures stabilized by [[hydrogen bond]]s. The most common examples are the [[alpha helix]], [[beta sheet]] and [[turn (biochemistry)|turns]]. Because secondary structures are local, many regions of different secondary structure can be present in the same protein molecule.
+      *''[[Tertiary structure]]'': the overall shape of a single protein molecule; the spatial relationship of the secondary structures to one another. Tertiary structure is generally stabilized by nonlocal interactions, most commonly the formation of a [[hydrophobic core]], but also through [[Salt bridge (protein)|salt bridge]]s, hydrogen bonds, [[disulfide bond]]s, and even [[posttranslational modification]]s. The term &quot;tertiary structure&quot; is often used as synonymous with the term ''fold''. The tertiary structure is what controls the basic function of the protein.
+      *''[[Quaternary structure]]'': the structure formed by several protein molecules (polypeptide chains), usually called ''[[protein subunit]]s'' in this context, which function as a single [[protein complex]].
+
+      Proteins are not entirely rigid molecules. In addition to these levels of structure, proteins may shift between several related structures while they perform their functions. In the context of these functional rearrangements, these tertiary or quaternary structures are usually referred to as &quot;[[Chemical conformation|conformation]]s&quot;, and transitions between them are called ''conformational changes.'' Such changes are often induced by the binding of a [[Substrate (biochemistry)|substrate]] molecule to an enzyme's [[active site]], or the physical region of the protein that participates in chemical catalysis. In solution proteins also undergo variation in structure through thermal vibration and the collision with other molecules.&lt;ref&gt;van Holde and Mathews, pp. 368–75.&lt;/ref&gt;
+
+      [[File:Protein composite.png|300px|thumb|Molecular surface of several proteins showing their comparative sizes. From left to right are: [[immunoglobulin G]] (IgG, an [[antibody]]), [[hemoglobin]], [[insulin]] (a hormone), [[adenylate kinase]] (an enzyme), and [[glutamine synthetase]] (an enzyme).]]
+      Proteins can be informally divided into three main classes, which correlate with typical tertiary structures: [[globular protein]]s, [[fibrous protein]]s, and [[membrane protein]]s. Almost all globular proteins are [[soluble]] and many are enzymes. Fibrous proteins are often structural, such as [[collagen]], the major component of connective tissue, or [[keratin]], the protein component of hair and nails. Membrane proteins often serve as [[receptor (biochemistry)|receptors]] or provide channels for polar or charged molecules to pass through the [[cell membrane]].&lt;ref&gt;van Holde and Mathews, pp. 165–85.&lt;/ref&gt;
+
+      A special case of intramolecular hydrogen bonds within proteins, poorly shielded from water attack and hence promoting their own [[dehydration]], are called [[dehydron]]s.&lt;ref name=Fernandez2003/&gt;
+
+      ===Structure determination===
+      Discovering the tertiary structure of a protein, or the quaternary structure of its complexes, can provide important clues about how the protein performs its function. Common experimental methods of structure determination include [[X-ray crystallography]] and [[protein NMR|NMR spectroscopy]], both of which can produce information at [[atom]]ic resolution. However, NMR experiments are able to provide information from which a subset of distances between pairs of atoms can be estimated, and the final possible conformations for a protein are determined by solving a [[distance geometry]] problem. [[Dual polarisation interferometry]] is a quantitative analytical method for measuring the overall protein [[Protein conformation|conformation]] and [[conformational change]]s due to interactions or other stimulus. [[Circular dichroism]] is another laboratory technique for determining internal beta sheet/ helical composition of proteins. [[Cryoelectron microscopy]] is used to produce lower-resolution structural information about very large protein complexes, including assembled [[virus]]es;&lt;ref&gt;Branden and Tooze, pp. 340–41.&lt;/ref&gt; a variant known as [[electron crystallography]] can also produce high-resolution information in some cases, especially for two-dimensional crystals of membrane proteins.&lt;ref name=Gonen2005/&gt; Solved structures are usually deposited in the [[Protein Data Bank]] (PDB), a freely available resource from which structural data about thousands of proteins can be obtained in the form of [[Cartesian coordinates]] for each atom in the protein.&lt;ref name=Standley2008/&gt;
+
+      Many more gene sequences are known than protein structures. Further, the set of solved structures is biased toward proteins that can be easily subjected to the conditions required in [[X-ray crystallography]], one of the major structure determination methods. In particular, globular proteins are comparatively easy to [[crystallize]] in preparation for X-ray crystallography. Membrane proteins, by contrast, are difficult to crystallize and are underrepresented in the PDB.&lt;ref name=Walian2004/&gt; [[Structural genomics]] initiatives have attempted to remedy these deficiencies by systematically solving representative structures of major fold classes. [[Protein structure prediction]] methods attempt to provide a means of generating a plausible structure for proteins whose structures have not been experimentally determined.&lt;ref name=Sleator2012/&gt;
+
+      ==Cellular functions==
+      Proteins are the chief actors within the cell, said to be carrying out the duties specified by the information encoded in genes.&lt;ref name=Lodish2004/&gt; With the exception of certain types of [[RNA]], most other biological molecules are relatively inert elements upon which proteins act. Proteins make up half the dry weight of an ''[[Escherichia coli]]'' cell, whereas other macromolecules such as DNA and RNA make up only 3% and 20%, respectively.&lt;ref name=&quot;Voet&quot;&gt;Voet D, Voet JG. (2004). ''Biochemistry'' Vol 1 3rd ed. Wiley: Hoboken, NJ.&lt;/ref&gt; The set of proteins expressed in a particular cell or cell type is known as its [[proteome]].
+
+      [[File:Hexokinase ball and stick model, with substrates to scale copy.png|thumb|right|The enzyme [[hexokinase]] is shown as a conventional ball-and-stick molecular model. To scale in the top right-hand corner are two of its substrates, [[adenosine triphosphate|ATP]] and [[glucose]].]]
+
+      The chief characteristic of proteins that also allows their diverse set of functions is their ability to bind other molecules specifically and tightly. The region of the protein responsible for binding another molecule is known as the [[binding site]] and is often a depression or &quot;pocket&quot; on the molecular surface. This binding ability is mediated by the tertiary structure of the protein, which defines the binding site pocket, and by the chemical properties of the surrounding amino acids' side chains. Protein binding can be extraordinarily tight and specific; for example, the [[ribonuclease inhibitor]] protein binds to human [[angiogenin]] with a sub-femtomolar [[dissociation constant]] (&lt;10&lt;sup&gt;−15&lt;/sup&gt; M) but does not bind at all to its amphibian homolog [[onconase]] (&gt;1 M). Extremely minor chemical changes such as the addition of a single methyl group to a binding partner can sometimes suffice to nearly eliminate binding; for example, the [[aminoacyl tRNA synthetase]] specific to the amino acid [[valine]] discriminates against the very similar side chain of the amino acid [[isoleucine]].&lt;ref name=Sankaranarayanan2001/&gt;
+
+      Proteins can bind to other proteins as well as to [[Small molecule|small-molecule]] substrates. When proteins bind specifically to other copies of the same molecule, they can [[oligomer]]ize to form fibrils; this process occurs often in structural proteins that consist of globular monomers that self-associate to form rigid fibers. [[Protein–protein interaction]]s also regulate enzymatic activity, control progression through the [[cell cycle]], and allow the assembly of large [[protein complex]]es that carry out many closely related reactions with a common biological function. Proteins can also bind to, or even be integrated into, cell membranes. The ability of binding partners to induce conformational changes in proteins allows the construction of enormously complex [[cell signaling|signaling]] networks.&lt;ref&gt;van Holde and Mathews, pp. 830–49.&lt;/ref&gt;
+      Importantly, as interactions between proteins are reversible, and depend heavily on the availability of different groups of partner proteins to form aggregates that are capable to carry out discrete sets of function, study of the interactions between specific proteins is a key to understand important aspects of cellular function, and ultimately the properties that distinguish particular cell types.&lt;ref name=Copland2009/&gt;&lt;ref name=Samarin2009/&gt;
+
+      === Enzymes ===
+      {{Main|Enzyme}}
+      The best-known role of proteins in the cell is as [[enzyme]]s, which [[catalysis|catalyze]] chemical reactions. Enzymes are usually highly specific and accelerate only one or a few chemical reactions. Enzymes carry out most of the reactions involved in [[metabolism]], as well as manipulating DNA in processes such as [[DNA replication]], [[DNA repair]], and [[transcription (genetics)|transcription]]. Some enzymes act on other proteins to add or remove chemical groups in a process known as posttranslational modification. About 4,000 reactions are known to be catalyzed by enzymes.&lt;ref name=EXPASY2000/&gt; The rate acceleration conferred by enzymatic catalysis is often enormous—as much as 10&lt;sup&gt;17&lt;/sup&gt;-fold increase in rate over the uncatalyzed reaction in the case of [[orotate decarboxylase]] (78 million years without the enzyme, 18 milliseconds with the enzyme).&lt;ref name=Radzicka1995/&gt;
+
+      The molecules bound and acted upon by enzymes are called [[Substrate (biochemistry)|substrate]]s. Although enzymes can consist of hundreds of amino acids, it is usually only a small fraction of the residues that come in contact with the substrate, and an even smaller fraction—three to four residues on average—that are directly involved in catalysis.&lt;ref name=&quot;urlEBI&quot;/&gt; The region of the enzyme that binds the substrate and contains the catalytic residues is known as the [[active site]].
+
+      [[Dirigent protein]]s are members of a class of proteins which dictate the stereochemistry of a compound synthesized by other enzymes.
+
+      ===Cell signaling and ligand binding===
+      [[File:Mouse cholera antibody.png|thumb|upright|[[Ribbon diagram]] of a mouse antibody against [[cholera]] that binds a [[carbohydrate]] antigen]]
+      Many proteins are involved in the process of [[cell signaling]] and [[signal transduction]]. Some proteins, such as [[insulin]], are extracellular proteins that transmit a signal from the cell in which they were synthesized to other cells in distant [[biological tissue|tissues]]. Others are [[membrane protein]]s that act as [[receptor (biochemistry)|receptors]] whose main function is to bind a signaling molecule and induce a biochemical response in the cell. Many receptors have a binding site exposed on the cell surface and an effector domain within the cell, which may have enzymatic activity or may undergo a [[conformational change]] detected by other proteins within the cell.&lt;ref&gt;Branden and Tooze, pp. 251–81.&lt;/ref&gt;
+
+      [[Antibodies]] are protein components of an [[adaptive immune system]] whose main function is to bind [[antigen]]s, or foreign substances in the body, and target them for destruction. Antibodies can be [[secrete]]d into the extracellular environment or anchored in the membranes of specialized [[B cell]]s known as [[plasma cell]]s. Whereas enzymes are limited in their binding affinity for their substrates by the necessity of conducting their reaction, antibodies have no such constraints. An antibody's binding affinity to its target is extraordinarily high.&lt;ref&gt;van Holde and Mathews, pp. 247–50.&lt;/ref&gt;
+
+      Many ligand transport proteins bind particular [[Small molecule|small biomolecules]] and transport them to other locations in the body of a multicellular organism. These proteins must have a high binding affinity when their [[ligand]] is present in high concentrations, but must also release the ligand when it is present at low concentrations in the target tissues. The canonical example of a ligand-binding protein is [[haemoglobin]], which transports [[oxygen]] from the [[lung]]s to other organs and tissues in all [[vertebrate]]s and has close [[Homology (biology)|homolog]]s in every biological [[kingdom (biology)|kingdom]].&lt;ref&gt;van Holde and Mathews, pp. 220–29.&lt;/ref&gt; [[Lectins]] are sugar-binding proteins which are highly specific for their sugar moieties. [[Lectins]] typically play a role in biological [[Molecular recognition|recognition]] phenomena involving cells and proteins.&lt;ref name=Rudiger2000/&gt; [[Receptor (biochemistry)|Receptor]]s and [[hormone]]s are highly specific binding proteins.
+
+      [[Transmembrane protein]]s can also serve as ligand transport proteins that alter the [[Semipermeable membrane|permeability]] of the cell membrane to [[small molecule]]s and ions. The membrane alone has a [[hydrophobic]] core through which [[Chemical polarity|polar]] or charged molecules cannot [[diffusion|diffuse]]. Membrane proteins contain internal channels that allow such molecules to enter and exit the cell. Many [[ion channel]] proteins are specialized to select for only a particular ion; for example, [[potassium]] and [[sodium]] channels often discriminate for only one of the two ions.&lt;ref&gt;Branden and Tooze, pp. 232–34.&lt;/ref&gt;
+
+      ===Structural proteins===
+      Structural proteins confer stiffness and rigidity to otherwise-fluid biological components. Most structural proteins are [[fibrous protein]]s; for example, [[collagen]] and [[elastin]] are critical components of [[connective tissue]] such as [[cartilage]], and [[keratin]] is found in hard or filamentous structures such as [[hair]], [[nail (anatomy)|nails]], [[feather]]s, [[hoof|hooves]], and some [[animal shell]]s.&lt;ref&gt;van Holde and Mathews, pp. 178–81.&lt;/ref&gt; Some [[globular proteins]] can also play structural functions, for example, [[actin]] and [[tubulin]] are globular and soluble as monomers, but [[polymer]]ize to form long, stiff fibers that make up the [[cytoskeleton]], which allows the cell to maintain its shape and size.
+
+      Other proteins that serve structural functions are [[motor protein]]s such as [[myosin]], [[kinesin]], and [[dynein]], which are capable of generating mechanical forces. These proteins are crucial for cellular [[motility]] of single celled organisms and the [[spermatozoon|sperm]] of many multicellular organisms which reproduce [[Sexual reproduction|sexually]]. They also generate the forces exerted by contracting [[muscle]]s&lt;ref&gt;van Holde and Mathews, pp. 258–64; 272.&lt;/ref&gt; and play essential roles in intracellular transport.
+
+      ==Methods of study==
+      {{Main|Protein methods}}
+
+      The activities and structures of proteins may be examined ''[[in vitro]],'' ''[[in vivo]], and [[in silico]]''. '''''In vitro''''' studies of purified proteins in controlled environments are useful for learning how a protein carries out its function: for example, [[enzyme kinetics]] studies explore the [[reaction mechanism|chemical mechanism]] of an enzyme's catalytic activity and its relative affinity for various possible substrate molecules. By contrast, '''''in vivo''''' experiments can provide information about the physiological role of a protein in the context of a [[Cell biology|cell]] or even a whole [[organism]]. '''''In silico''''' studies use computational methods to study proteins.
+
+      ===Protein purification===
+      {{Main|Protein purification}}
+      To perform ''[[in vitro]]'' analysis, a protein must be purified away from other cellular components. This process usually begins with [[cytolysis|cell lysis]], in which a cell's membrane is disrupted and its internal contents released into a solution known as a [[crude lysate]]. The resulting mixture can be purified using [[ultracentrifugation]], which fractionates the various cellular components into fractions containing soluble proteins; membrane [[lipid]]s and proteins; cellular [[organelle]]s, and [[nucleic acid]]s. [[Precipitation (chemistry)|Precipitation]] by a method known as [[salting out]] can concentrate the proteins from this lysate. Various types of [[chromatography]] are then used to isolate the protein or proteins of interest based on properties such as molecular weight, net charge and binding affinity.&lt;ref&gt;Murray ''et al''., pp. 21–24.&lt;/ref&gt; The level of purification can be monitored using various types of [[gel electrophoresis]] if the desired protein's molecular weight and [[isoelectric point]] are known, by [[spectroscopy]] if the protein has distinguishable spectroscopic features, or by [[enzyme assay]]s if the protein has enzymatic activity. Additionally, proteins can be isolated according their charge using [[electrofocusing]].&lt;ref name=Hey2008/&gt;
+
+      For natural proteins, a series of purification steps may be necessary to obtain protein sufficiently pure for laboratory applications. To simplify this process, [[genetic engineering]] is often used to add chemical features to proteins that make them easier to purify without affecting their structure or activity. Here, a &quot;tag&quot; consisting of a specific amino acid sequence, often a series of [[histidine]] residues (a &quot;[[His-tag]]&quot;), is attached to one terminus of the protein. As a result, when the lysate is passed over a chromatography column containing [[nickel]], the histidine residues ligate the nickel and attach to the column while the untagged components of the lysate pass unimpeded. A number of different tags have been developed to help researchers purify specific proteins from complex mixtures.&lt;ref name=Terpe2003/&gt;
+
+      ===Cellular localization===
+      [[File:Localisations02eng.jpg|thumb|300px|right|Proteins in different [[cellular compartment]]s and structures tagged with [[green fluorescent protein]] (here, white)]]
+      The study of proteins ''in vivo'' is often concerned with the synthesis and localization of the protein within the cell. Although many intracellular proteins are synthesized in the [[cytoplasm]] and membrane-bound or secreted proteins in the [[endoplasmic reticulum]], the specifics of how proteins are [[protein targeting|targeted]] to specific organelles or cellular structures is often unclear. A useful technique for assessing cellular localization uses genetic engineering to express in a cell a [[fusion protein]] or [[chimera (protein)|chimera]] consisting of the natural protein of interest linked to a &quot;[[reporter gene|reporter]]&quot; such as [[green fluorescent protein]] (GFP).&lt;ref name=Stepanenko2008/&gt; The fused protein's position within the cell can be cleanly and efficiently visualized using [[microscopy]],&lt;ref name=Yuste2005/&gt; as shown in the figure opposite.
+
+      Other methods for elucidating the cellular location of proteins requires the use of known compartmental markers for regions such as the ER, the Golgi, lysosomes or vacuoles, mitochondria, chloroplasts, plasma membrane, etc. With the use of fluorescently tagged versions of these markers or of antibodies to known markers, it becomes much simpler to identify the localization of a protein of interest. For example, [[indirect immunofluorescence]] will allow for fluorescence colocalization and demonstration of location. Fluorescent dyes are used to label cellular compartments for a similar purpose.&lt;ref name=Margolin2000/&gt;
+
+      Other possibilities exist, as well. For example, [[immunohistochemistry]] usually utilizes an antibody to one or more proteins of interest that are conjugated to enzymes yielding either luminescent or chromogenic signals that can be compared between samples, allowing for localization information. Another applicable technique is cofractionation in sucrose (or other material) gradients using [[isopycnic centrifugation]].&lt;ref name=Walker2000/&gt; While this technique does not prove colocalization of a compartment of known density and the protein of interest, it does increase the likelihood, and is more amenable to large-scale studies.
+
+      Finally, the gold-standard method of cellular localization is [[immunoelectron microscopy]]. This technique also uses an antibody to the protein of interest, along with classical electron microscopy techniques. The sample is prepared for normal electron microscopic examination, and then treated with an antibody to the protein of interest that is conjugated to an extremely electro-dense material, usually gold. This allows for the localization of both ultrastructural details as well as the protein of interest.&lt;ref name=Mayhew2008/&gt;
+
+      Through another genetic engineering application known as [[site-directed mutagenesis]], researchers can alter the protein sequence and hence its structure, cellular localization, and susceptibility to regulation. This technique even allows the incorporation of unnatural amino acids into proteins, using modified tRNAs,&lt;ref name=Hohsaka2002/&gt; and may allow the rational design of new proteins with novel properties.&lt;ref name=Cedrone2000/&gt;
+
+      ===Proteomics===
+      {{Main|Proteomics}}
+      The total complement of proteins present at a time in a cell or cell type is known as its [[proteome]], and the study of such large-scale data sets defines the field of [[proteomics]], named by analogy to the related field of [[genomics]]. Key experimental techniques in proteomics include [[Two-dimensional gel electrophoresis|2D electrophoresis]],&lt;ref name=Gorg2008/&gt; which allows the separation of a large number of proteins, [[mass spectrometry]],&lt;ref name=Conrotto2008/&gt; which allows rapid high-throughput identification of proteins and sequencing of peptides (most often after [[in-gel digestion]]), [[protein microarray]]s,&lt;ref name=Joos2009/&gt; which allow the detection of the relative levels of a large number of proteins present in a cell, and [[two-hybrid screening]], which allows the systematic exploration of [[protein–protein interaction]]s.&lt;ref name=Koegl2007/&gt; The total complement of biologically possible such interactions is known as the [[interactome]].&lt;ref name=Plewczynski2009/&gt; A systematic attempt to determine the structures of proteins representing every possible fold is known as [[structural genomics]].&lt;ref name=Zhang2003/&gt;
+
+      === Bioinformatics ===
+      {{Main|Bioinformatics}}
+      A vast array of computational methods have been developed to analyze the structure, function, and evolution of proteins.
+
+      The development of such tools has been driven by the large amount of genomic and proteomic data available for a variety of organisms, including the [[human genome|human genome.]] It is simply impossible to study all proteins experimentally, hence only a few are subjected to laboratory experiments while computational tools are used to extrapolate to similar proteins. Such [[homology (biology)|homologous]] proteins can be efficiently identified in distantly related organisms by [[sequence alignment]]. Genome and gene sequences can be searched by a variety of tools for certain properties. [[Sequence profiling tool]]s can find [[restriction enzyme]] sites, [[open reading frame|open reading frames]] in [[nucleotide]] sequences, and predict [[secondary structure|secondary structures]]. P[[phylogenetic tree|hylogenetic tree]]s can be constructed and [[evolution]]ary hypotheses developed using special software like [[ClustalW]] regarding the ancestry of modern organisms and the genes they express. The field of [[bioinformatics]] is now indispensable for the analysis of genes and proteins.
+
+      ==== Structure prediction and simulation ====
+      [[Image:225 Peptide Bond-01.jpg|right|thumb|400px|Constituent amino-acids can be analyzed to predict secondary, tertiary and quaternary protein structure, in this case hemoglobin containing [[heme]] units.]]
+      {{Main|Protein structure prediction|List of protein structure prediction software}}
+      Complementary to the field of structural genomics, protein structure prediction seeks to develop efficient ways to provide plausible models for proteins whose structures have not yet been determined experimentally.&lt;ref name=Zhang2008/&gt; The most successful type of structure prediction, known as [[homology modeling]], relies on the existence of a &quot;template&quot; structure with sequence similarity to the protein being modeled; structural genomics' goal is to provide sufficient representation in solved structures to model most of those that remain.&lt;ref name=Xiang2006/&gt; Although producing accurate models remains a challenge when only distantly related template structures are available, it has been suggested that [[sequence alignment]] is the bottleneck in this process, as quite accurate models can be produced if a &quot;perfect&quot; sequence alignment is known.&lt;ref name=Zhang2005/&gt; Many structure prediction methods have served to inform the emerging field of [[protein engineering]], in which novel protein folds have already been designed.&lt;ref name=Kuhlman2003/&gt; A more complex computational problem is the prediction of intermolecular interactions, such as in [[docking (molecular)|molecular docking]] and [[protein–protein interaction prediction]].&lt;ref name=Ritchie2008/&gt;
+
+      The processes of [[protein folding]] and binding can be simulated using such technique as [[molecular mechanics]], in particular, [[molecular dynamics]] and [[Monte Carlo method|Monte Carlo]], which increasingly take advantage of parallel and [[distributed computing]] ([[Folding@home]] project;&lt;ref name=Scheraga2007/&gt; [[molecular modeling on GPU]]). The folding of small alpha-helical protein domains such as the [[villin]] headpiece&lt;ref name=Zagrovic2002/&gt; and the [[HIV]] accessory protein&lt;ref name=Herges2005/&gt; have been successfully simulated ''in silico'', and hybrid methods that combine standard molecular dynamics with [[quantum mechanics]] calculations have allowed exploration of the electronic states of [[rhodopsin]]s.&lt;ref name=Hoffman2006/&gt;
+
+      ==Nutrition==
+      {{further2|[[Protein (nutrient)]]}}
+      Most [[microorganism]]s and plants can biosynthesize all 20 standard [[amino acids]], while animals (including humans) must obtain some of the amino acids from the [[diet (nutrition)|diet]].&lt;ref name=&quot;Voet&quot; /&gt; The amino acids that an organism cannot synthesize on its own are referred to as [[essential amino acids]]. Key enzymes that synthesize certain amino acids are not present in animals&amp;nbsp;— such as [[aspartokinase]], which catalyzes the first step in the synthesis of [[lysine]], [[methionine]], and [[threonine]] from [[aspartate]]. If amino acids are present in the environment, microorganisms can conserve energy by taking up the amino acids from their surroundings and [[Downregulation and upregulation|downregulating]] their biosynthetic pathways.
+
+      In animals, amino acids are obtained through the consumption of foods containing protein. Ingested proteins are then broken down into amino acids through [[digestion]], which typically involves [[Denaturation (biochemistry)|denaturation]] of the protein through exposure to [[acid]] and [[hydrolysis]] by enzymes called [[protease]]s. Some ingested amino acids are used for protein biosynthesis, while others are converted to [[glucose]] through [[gluconeogenesis]], or fed into the [[citric acid cycle]]. This use of protein as a fuel is particularly important under [[starvation]] conditions as it allows the body's own proteins to be used to support life, particularly those found in [[muscle]].&lt;ref name=BrosnanJ/&gt; Amino acids are also an important dietary source of [[nitrogen]].{{Citation needed|date=August 2009}}
+
+      ==History and etymology==
+      {{further2|[[History of molecular biology]]}}
+      Proteins were recognized as a distinct class of biological molecules in the eighteenth century by [[Antoine François, comte de Fourcroy|Antoine Fourcroy]] and others, distinguished by the molecules' ability to [[coagulate]] or [[flocculation|flocculate]] under treatments with heat or acid.&lt;ref&gt;[[Thomas Burr Osborne]] (1909): [https://archive.org/details/vegetableprotein00osbouoft The Vegetable Proteins], History pp 1 to 6, from [[archive.org]]
+      &lt;/ref&gt; Noted examples at the time included albumin from [[egg white]]s, blood [[serum albumin]], [[fibrin]], and wheat [[gluten]].
+
+      Proteins were first described by the [[Dutch people|Dutch]] chemist [[Gerardus Johannes Mulder]] and named by the Swedish chemist [[Jöns Jacob Berzelius]] in 1838. Mulder carried out [[elemental analysis]] of common proteins and found that nearly all proteins had the same [[empirical formula]], C&lt;sub&gt;400&lt;/sub&gt;H&lt;sub&gt;620&lt;/sub&gt;N&lt;sub&gt;100&lt;/sub&gt;O&lt;sub&gt;120&lt;/sub&gt;P&lt;sub&gt;1&lt;/sub&gt;S&lt;sub&gt;1&lt;/sub&gt;.&lt;ref name=Perrett2007/&gt; He came to the erroneous conclusion that they might be composed of a single type of (very large) molecule. The term &quot;protein&quot; to describe these molecules was proposed by Mulder's associate Berzelius; protein is derived from the [[Greek language|Greek]] word πρώτειος (''proteios''), meaning &quot;primary&quot;,&lt;ref&gt;''New Oxford Dictionary of English''&lt;/ref&gt; &quot;in the lead&quot;, or &quot;standing in front&quot;.&lt;ref name=Reynolds2003/&gt; Mulder went on to identify the products of protein degradation such as the [[amino acid]] [[leucine]] for which he found a (nearly correct) molecular weight of 131 [[atomic mass unit|Da]].&lt;ref name=Perrett2007/&gt;
+
+      Early nutritional scientists such as the German [[Carl von Voit]] believed that protein was the most important nutrient for maintaining the structure of the body, because it was generally believed that &quot;flesh makes flesh.&quot;&lt;ref name=Bischoff1860/&gt; [[Karl Heinrich Ritthausen]] extended known protein forms with the identification of [[glutamic acid]]. At the [[Connecticut Agricultural Experiment Station]] a detailed review of the vegetable proteins was compiled by [[Thomas Burr Osborne (chemist)|Thomas Burr Osborne]]. Working with [[Lafayette Mendel]] and applying [[Liebig's law of the minimum]] in feeding [[laboratory rat]]s, the nutritionally [[essential amino acid]]s were established. The work was continued and communicated by [[William Cumming Rose]]. The understanding of proteins as [[polypeptide]]s came through the work of [[Franz Hofmeister]] and [[Hermann Emil Fischer]]. The central role of proteins as [[enzyme]]s in living organisms was not fully appreciated until 1926, when [[James B. Sumner]] showed that the enzyme [[urease]] was in fact a protein.&lt;ref name=Sumner1926/&gt;
+
+      The difficulty in purifying proteins in large quantities made them very difficult for early protein biochemists to study. Hence, early studies focused on proteins that could be purified in large quantities, e.g., those of [[blood]], [[egg white]], various [[toxin]]s, and digestive/metabolic enzymes obtained from [[slaughterhouse]]s. In the 1950s, the [[Armour and Company|Armour Hot Dog Co.]] purified 1&amp;nbsp;kg of pure bovine pancreatic [[ribonuclease A]] and made it freely available to scientists; this gesture helped ribonuclease A become a major target for biochemical study for the following decades.&lt;ref name=Perrett2007/&gt;
+      [[File:KendrewMyoglobin.jpg|thumb|John Kendrew with model of myoglobin in progress.]]
+      [[Linus Pauling]] is credited with the successful prediction of regular protein [[secondary structure]]s based on [[hydrogen bonding]], an idea first put forth by [[William Astbury]] in 1933.&lt;ref name=Pauling1951/&gt; Later work by [[Walter Kauzmann]] on [[Denaturation (biochemistry)|denaturation]],&lt;ref name=Kauzmann1956/&gt;&lt;ref name=Kauzmann1959/&gt; based partly on previous studies by [[Kaj Ulrik Linderstrøm-Lang|Kaj Linderstrøm-Lang]],&lt;ref name=Kalman1955/&gt; contributed an understanding of [[protein folding]] and structure mediated by [[hydrophobic core|hydrophobic interactions]].
+
+      The first protein to be [[protein sequencing|sequenced]] was [[insulin]], by [[Frederick Sanger]], in 1949. Sanger correctly determined the amino acid sequence of [[insulin]], thus conclusively demonstrating that proteins consisted of linear polymers of amino acids rather than branched chains, [[colloid]]s, or [[cyclol]]s.&lt;ref name=Sanger1949/&gt; He won the Nobel Prize for this achievement in 1958.
+
+      The first [[protein structure]]s to be solved were [[hemoglobin]] and [[myoglobin]], by [[Max Perutz]] and [[John Kendrew|Sir John Cowdery Kendrew]], respectively, in 1958.&lt;ref name=Muirhead1963/&gt;&lt;ref name=Kendrew1958/&gt; {{As of|2014}}, the [[Protein Data Bank]] has over 90,000 atomic-resolution structures of proteins.&lt;ref name=&quot;urlRCSB Protein Data Bank&quot;/&gt; In more recent times, [[cryo-electron microscopy]] of large [[Macromolecular Assembly|macromolecular assemblies]]&lt;ref name=Zhou2008/&gt; and computational [[protein structure prediction]] of small protein [[structural domain|domains]]&lt;ref name=Keskin2008/&gt; are two methods approaching atomic resolution.
+
+      ==See also==
+      *[[DNA-binding protein]]
+      *[[DNA, RNA and proteins: The three essential macromolecules of life]]
+      *[[Intein]]
+      *[[List of proteins]]
+      *[[Protein design]]
+      *[[Proteopathy]]
+      *[[Proteopedia]]
+      *[[Proteolysis]]
+
+      ==Footnotes==
+      {{Reflist|colwidth=30em|refs=
+      &lt;ref name=Bischoff1860&gt;{{cite book |author=Bischoff TLW, Voit, C |title=Die Gesetze der Ernaehrung des Pflanzenfressers durch neue Untersuchungen festgestellt |location=Leipzig, Heidelberg |year=1860 |language=German}}&lt;/ref&gt;
+
+      &lt;ref name=BrosnanJ&gt;{{cite journal |author=Brosnan J |title=Interorgan amino acid transport and its regulation |url=http://jn.nutrition.org/cgi/content/full/133/6/2068S |journal=Journal of Nutrition |volume=133 |issue=6 Suppl 1 |pages=2068S–72S |pmid=12771367 |date=June 2003}}&lt;/ref&gt;
+
+      &lt;ref name=Bruckdorfer2004&gt;{{cite journal |author=Bruckdorfer T, Marder O, Albericio F |title=From production of peptides in milligram amounts for research to multi-tons quantities for drugs of the future |journal=Current Pharmaceutical Biotechnology |volume=5 |issue=1 |pages=29–43 |year=2004 |pmid=14965208 |doi=10.2174/1389201043489620}}&lt;/ref&gt;
+
+      &lt;ref name=Cedrone2000&gt;{{cite journal |author=Cedrone F, Ménez A, Quéméneur E |title=Tailoring new enzyme functions by rational redesign |journal=Current Opinion in Structural Biology |volume=10 |issue=4 |pages=405–10 |year=2000 |pmid=10981626 |doi=10.1016/S0959-440X(00)00106-8}}&lt;/ref&gt;
+
+      &lt;ref name=Conrotto2008&gt;{{cite journal |author=Conrotto P, Souchelnytskyi S |title=Proteomic approaches in biological and medical sciences: principles and applications |journal=Experimental Oncology |volume=30 |issue=3 |pages=171–80 |year=2008 |pmid=18806738}}&lt;/ref&gt;
+
+      &lt;ref name=Copland2009&gt;{{cite journal |author=Copland JA, Sheffield-Moore M, Koldzic-Zivanovic N, Gentry S, Lamprou G, Tzortzatou-Stathopoulou F, Zoumpourlis V, Urban RJ, Vlahopoulos SA |title=Sex steroid receptors in skeletal differentiation and epithelial neoplasia: is tissue-specific intervention possible? |journal=BioEssays: news and reviews in molecular, cellular and developmental biology |volume=31 |issue=6 |year=2009 |pages=629–41 |doi=10.1002/bies.200800138 |pmid=19382224}}&lt;/ref&gt;
+
+      &lt;ref name=EXPASY2000&gt;{{cite journal|url=http://www.expasy.org/NAR/enz00.pdf |author=Bairoch A |year=2000 |title=The ENZYME database in 2000 |journal=Nucleic Acids Research |volume=28 |pages=304–305 |pmid=10592255 |doi=10.1093/nar/28.1.304 |issue=1 |pmc=102465}}{{dead link|date=May 2012}}&lt;/ref&gt;
+
+      &lt;ref name=Fernandez2003&gt;{{cite journal |author=Fernández A, Scott R |title=Dehydron: a structurally encoded signal for protein interaction |journal=Biophysical Journal |volume=85 |issue=3 |pages=1914–28 |year=2003 |pmid=12944304 |pmc=1303363 |doi=10.1016/S0006-3495(03)74619-0 |url=http://linkinghub.elsevier.com/retrieve/pii/S0006-3495(03)74619-0 |bibcode=2003BpJ....85.1914F}}&lt;/ref&gt;
+
+      &lt;ref name=Fulton1991&gt;{{cite journal |author=Fulton A, Isaacs W |title=Titin, a huge, elastic sarcomeric protein with a probable role in morphogenesis |journal=BioEssays |volume=13 |issue=4 |pages=157–61 |year=1991 |pmid=1859393 |doi=10.1002/bies.950130403}}&lt;/ref&gt;
+
+      &lt;ref name=Gonen2005&gt;{{cite journal |author=Gonen T, Cheng Y, Sliz P, Hiroaki Y, Fujiyoshi Y, Harrison SC, Walz T |title=Lipid-protein interactions in double-layered two-dimensional AQP0 crystals |journal=Nature |volume=438 |issue=7068 |pages=633–38 |year=2005 |pmid=16319884 |pmc=1350984 |doi=10.1038/nature04321|bibcode = 2005Natur.438..633G }}&lt;/ref&gt;
+
+      &lt;ref name=Gorg2008&gt;{{cite journal |author=Görg A, Weiss W, Dunn MJ |title=Current two-dimensional electrophoresis technology for proteomics |journal=Proteomics |volume=4 |issue=12 |pages=3665–85 |year=2004 |pmid=15543535 |doi=10.1002/pmic.200401031}}&lt;/ref&gt;
+
+      &lt;ref name=Gutteridge2005&gt;{{cite journal |author=Gutteridge A, Thornton JM |title=Understanding nature's catalytic toolkit |journal=Trends in Biochemical Sciences |volume=30 |issue=11 |pages=622–29 |year=2005 |pmid=16214343 |doi=10.1016/j.tibs.2005.09.006}}&lt;/ref&gt;
+
+      &lt;ref name=Herges2005&gt;{{cite journal |author=Herges T, Wenzel W |title=''In silico'' folding of a three helix protein and characterization of its free-energy landscape in an all-atom force field |journal=Physical Review Letters |volume=94 |issue=1 |page=018101 |year=2005 |pmid=15698135 |doi=10.1103/PhysRevLett.94.018101 |bibcode=2005PhRvL..94a8101H}}&lt;/ref&gt;
+
+      &lt;ref name=Hey2008&gt;{{cite journal |author=Hey J, Posch A, Cohen A, Liu N, Harbers A |title=Fractionation of complex protein mixtures by liquid-phase isoelectric focusing |journal=Methods in Molecular Biology |volume=424 |pages=225–39 |year=2008 |pmid=18369866 |doi=10.1007/978-1-60327-064-9_19 |series=Methods in Molecular Biology™ |isbn=978-1-58829-722-8}}&lt;/ref&gt;
+
+      &lt;ref name=Hoffman2006&gt;{{cite journal |author=Hoffmann M, Wanko M, Strodel P, König PH, Frauenheim T, Schulten K, Thiel W, Tajkhorshid E, Elstner M |title=Color tuning in rhodopsins: the mechanism for the spectral shift between bacteriorhodopsin and sensory rhodopsin II |journal=Journal of the American Chemical Society |volume=128 |issue=33 |pages=10808–18 |year=2006 |pmid=16910676 |doi=10.1021/ja062082i}}&lt;/ref&gt;
+
+      &lt;ref name=Hohsaka2002&gt;{{cite journal |author=Hohsaka T, Sisido M |title=Incorporation of non-natural amino acids into proteins |journal=Current Opinion in Chemical Biology |volume=6 |issue=6 |pages=809–15 |year=2002 |pmid=12470735 |doi=10.1016/S1367-5931(02)00376-9}}&lt;/ref&gt;
+
+      &lt;ref name=Joos2009&gt;{{cite journal |author=Joos T, Bachmann J |title=Protein microarrays: potentials and limitations |journal=Frontiers in Bioscience |volume=14 |pages=4376–85 |year=2009 |pmid=19273356 |doi=10.2741/3534 |url=http://www.bioscience.org/2009/v14/af/3534/fulltext.htm |issue=14}}&lt;/ref&gt;
+
+      &lt;ref name=Kalman1955&gt;{{cite journal |author=Kalman SM, Linderstrom-Lang K, Ottesen M, Richards FM|title=Degradation of ribonuclease by subtilisin |journal=Biochimica et Biophysica Acta |volume=16 |issue=2 |pages=297–99 |year=1955 |pmid=14363272 |doi=10.1016/0006-3002(55)90224-9}}&lt;/ref&gt;
+
+      &lt;ref name=Kauzmann1956&gt;{{cite journal |author=Kauzmann W |title=Structural factors in protein denaturation |journal=Journal of Cellular Physiology. Supplement |volume=47 |issue=Suppl 1 |pages=113–31 |year=1956 |pmid=13332017 |doi=10.1002/jcp.1030470410}}&lt;/ref&gt;
+
+      &lt;ref name=Kauzmann1959&gt;{{cite journal |author=Kauzmann W |title=Some factors in the interpretation of protein denaturation |journal=Advances in Protein Chemistry |volume=14 |pages=1–63 |year=1959 |pmid=14404936 |doi= 10.1016/S0065-3233(08)60608-7 |series=Advances in Protein Chemistry |isbn=978-0-12-034214-3}}&lt;/ref&gt;
+
+      &lt;ref name=Kendrew1958&gt;{{cite journal |author=Kendrew J, Bodo G, Dintzis H, Parrish R, Wyckoff H, Phillips D |title=A three-dimensional model of the myoglobin molecule obtained by X-ray analysis |journal=Nature |volume=181 |issue=4610 |pages=662–66 |year=1958 |pmid=13517261 |doi=10.1038/181662a0 |bibcode=1958Natur.181..662K}}&lt;/ref&gt;
+
+      &lt;ref name=Kent2009&gt;{{cite journal |author=Kent SB |title=Total chemical synthesis of proteins |journal=Chemical Society Reviews |volume=38 |issue=2 |pages=338–51 |year=2009 |pmid=19169452 |doi=10.1039/b700141j}}&lt;/ref&gt;
+
+      &lt;ref name=Keskin2008&gt;{{cite journal |author=Keskin O, Tuncbag N, Gursoy A |title=Characterization and prediction of protein interfaces to infer protein-protein interaction networks |journal=Current Pharmaceutical Biotechnology |volume=9 |issue=2 |pages=67–76 |year=2008 |pmid=18393863 |doi=10.2174/138920108783955191}}&lt;/ref&gt;
+
+      &lt;ref name=Koegl2007&gt;{{cite journal |author=Koegl M, Uetz P |title=Improving yeast two-hybrid screening systems |journal=Briefings in Functional Genomics &amp; Proteomics |volume=6 |issue=4 |pages=302–12 |year=2007 |pmid=18218650 |doi=10.1093/bfgp/elm035 |url=http://bfgp.oxfordjournals.org/cgi/pmidlookup?view=long&amp;pmid=18218650}}&lt;/ref&gt;
+
+      &lt;ref name=Kuhlman2003&gt;{{cite journal |author=Kuhlman B, Dantas G, Ireton GC, Varani G, Stoddard BL, Baker D |title=Design of a novel globular protein fold with atomic-level accuracy |journal=Science |volume=302 |issue=5649 |pages=1364–68 |year=2003 |pmid=14631033 |doi=10.1126/science.1089427 |url=http://www.sciencemag.org/cgi/pmidlookup?view=long&amp;pmid=14631033 |bibcode=2003Sci...302.1364K}}&lt;/ref&gt;
+
+      &lt;ref name=Lodish2004&gt;{{cite book |author=Lodish H, Berk A, Matsudaira P, Kaiser CA, Krieger M, Scott MP, Zipurksy SL, Darnell J |year=2004 |title=Molecular Cell Biology |edition=5th |publisher=WH Freeman and Company |location=New York, New York}}&lt;/ref&gt;
+
+      &lt;ref name=Margolin2000&gt;{{cite journal |author=Margolin W|title=Green fluorescent protein as a reporter for macromolecular localization in bacterial cells |journal=Methods (San Diego, Calif.) |volume=20 |issue=1 |pages=62–72 |year=2000 |pmid=10610805 |doi=10.1006/meth.1999.0906 |url=http://linkinghub.elsevier.com/retrieve/pii/S1046-2023(99)90906-4}}&lt;/ref&gt;
+
+      &lt;ref name=Mayhew2008&gt;{{cite journal |author=Mayhew TM, Lucocq JM |title=Developments in cell biology for quantitative immunoelectron microscopy based on thin sections: a review |journal=Histochemistry and Cell Biology |volume=130 |issue=2 |pages=299–313 |year=2008 |pmid=18553098 |pmc=2491712 |doi=10.1007/s00418-008-0451-6}}&lt;/ref&gt;
+
+      &lt;ref name=Muirhead1963&gt;{{cite journal |author=Muirhead H, Perutz M |title=Structure of hemoglobin. A three-dimensional fourier synthesis of reduced human hemoglobin at 5.5 Å resolution |journal=Nature |volume=199 |issue=4894 |pages=633–38 |year=1963 |pmid=14074546 |doi=10.1038/199633a0|bibcode = 1963Natur.199..633M }}&lt;/ref&gt;
+
+      &lt;ref name=Nelson2005&gt;{{cite book |author=Nelson DL, Cox MM |year=2005 |title=Lehninger's Principles of Biochemistry |edition=4th |publisher=W. H. Freeman and Company |location=New York, New York}}&lt;/ref&gt;
+
+      &lt;ref name=Pain2000&gt;{{cite book |editor=Pain RH (ed.) |author=Dobson CM |title=Mechanisms of Protein Folding |chapter=The nature and significance of protein folding |publisher=Oxford University Press |location=Oxford, Oxfordshire |year=2000 |pages=1–28 |isbn=0-19-963789-X}}&lt;/ref&gt;
+
+      &lt;ref name=Pauling1951&gt;{{cite journal |author=Pauling L, Corey RB, Branson HR |year=1951 |title=The structure of proteins: two hydrogen-bonded helical configurations of the polypeptide chain |journal=Proceedings of the National Academy of Sciences U.S.A. |volume=37 |issue=5 |pages=235–40 |url=http://www.pnas.org/site/misc/Protein8.pdf |format=PDF |doi=10.1073/pnas.37.5.235 |pmc=1063348 |pmid=14834145 |bibcode=1951PNAS...37..235P}}&lt;/ref&gt;
+
+      &lt;ref name=Perrett2007&gt;{{cite journal |author=Perrett D |year=2007 |title=From 'protein' to the beginnings of clinical proteomics |journal=Proteomics&amp;nbsp;– Clinical Applications |pmid=21136729 |volume=1 |issue=8 |pages=720–38 |doi=10.1002/prca.200700525}}&lt;/ref&gt;
+
+      &lt;ref name=Plewczynski2009&gt;{{cite journal |author=Plewczyński D, Ginalski K |title=The interactome: predicting the protein–protein interactions in cells |journal=Cellular &amp; Molecular Biology Letters |volume=14 |issue=1 |pages=1–22 |year=2009 |pmid=18839074 |doi=10.2478/s11658-008-0024-7}}&lt;/ref&gt;
+
+      &lt;ref name=Radzicka1995&gt;{{cite journal |author=Radzicka A, Wolfenden R |year=1995 |title=A proficient enzyme |journal=Science |volume=267 |issue=5194 |pages=90–93| pmid=7809611 |doi=10.1126/science.7809611|bibcode = 1995Sci...267...90R }}&lt;/ref&gt;
+
+      &lt;ref name=Reynolds2003&gt;{{cite book |author=Reynolds JA, Tanford C |title=Nature's Robots: A History of Proteins (Oxford Paperbacks) |publisher=Oxford University Press |location=New York, New York |year=2003 |page=15 |isbn=0-19-860694-X}}&lt;/ref&gt;
+
+      &lt;ref name=Ritchie2008&gt;{{cite journal |author=Ritchie DW |title=Recent progress and future directions in protein–protein docking |journal=Current Protein and Peptide Science |volume=9 |issue=1 |pages=1–15 |year=2008 |pmid=18336319 |doi=10.2174/138920308783565741}}&lt;/ref&gt;
+
+      &lt;ref name=Rudiger2000&gt;{{cite journal |author=Rüdiger H, Siebert HC, Solís D, Jiménez-Barbero J, Romero A, von der Lieth CW, Diaz-Mariño T, Gabius HJ |title=Medicinal chemistry based on the sugar code: fundamentals of lectinology and experimental strategies with lectins as targets |journal=Current Medicinal Chemistry |volume=7 |issue=4 |pages=389–416 |year=2000 |pmid=10702616 |doi=10.2174/0929867003375164}}&lt;/ref&gt;
+
+      &lt;ref name=Samarin2009&gt;{{cite journal |pmid=19273120 |author=Samarin S, Nusrat A |title=Regulation of epithelial apical junctional complex by Rho family GTPases |journal=Frontiers in bioscience: a journal and virtual library |volume=14 |year=2009 |pages=1129–42 |doi=10.2741/3298 |issue=14}}&lt;/ref&gt;
+
+      &lt;ref name=Sanger1949&gt;{{cite journal |author=Sanger F |title=The terminal peptides of insulin |journal=Biochemical Journal |volume=45 |issue=5 |pages=563–74 |year=1949 |pmid=15396627 |pmc=1275055}}&lt;/ref&gt;
+
+      &lt;ref name=Sankaranarayanan2001&gt;{{cite journal |author=Sankaranarayanan R, Moras D |title=The fidelity of the translation of the genetic code |journal=Acta Biochimica Polonica |volume=48 |issue=2 |pages=323–35 |year=2001 |pmid=11732604}}&lt;/ref&gt;
+
+      &lt;ref name=Scheraga2007&gt;{{cite journal |author=Scheraga HA, Khalili M, Liwo A |title=Protein-folding dynamics: overview of molecular simulation techniques |journal=Annual Review of Physical Chemistry |volume=58 |pages=57–83 |year=2007 |pmid=17034338 |doi=10.1146/annurev.physchem.58.032806.104614|bibcode = 2007ARPC...58...57S }}&lt;/ref&gt;
+
+      &lt;ref name=Schwarzer2005&gt;{{cite journal |author=Schwarzer D, Cole P |title=Protein semisynthesis and expressed protein ligation: chasing a protein's tail |journal=Current Opinion in Chemical Biology |volume=9 |issue=6 |pages=561–69 |year=2005 |pmid=16226484 |doi=10.1016/j.cbpa.2005.09.018}}&lt;/ref&gt;
+
+      &lt;ref name=Sleator2012&gt;{{cite journal |author=Sleator RD. |title=Prediction of protein functions |journal=Methods in Molecular Biology |year=2012 |volume=815 |pages=15–24 |doi=10.1007/978-1-61779-424-7_2 |series=Methods in Molecular Biology |isbn=978-1-61779-423-0 |pmid=22130980}}&lt;/ref&gt;
+
+      &lt;ref name=Standley2008&gt;{{cite journal |author=Standley DM, Kinjo AR, Kinoshita K, Nakamura H |title=Protein structure databases with new web services for structural biology and biomedical research |journal=Briefings in Bioinformatics |volume=9 |issue=4 |pages=276–85 |year=2008 |pmid=18430752 |doi=10.1093/bib/bbn015 |url=http://bib.oxfordjournals.org/cgi/pmidlookup?view=long&amp;pmid=18430752}}&lt;/ref&gt;
+
+      &lt;ref name=Stepanenko2008&gt;{{cite journal |author=Stepanenko OV, Verkhusha VV, Kuznetsova IM, Uversky VN, Turoverov KK |title=Fluorescent proteins as biomarkers and biosensors: throwing color lights on molecular and cellular processes |journal=Current Protein &amp; Peptide Science |volume=9 |issue=4 |pages=338–69 |year=2008 |pmid=18691124 |pmc=2904242 |doi=10.2174/138920308785132668}}&lt;/ref&gt;
+
+      &lt;ref name=Sumner1926&gt;{{cite journal |author=Sumner JB |title=The isolation and crystallization of the enzyme urease. Preliminary paper |url=http://www.jbc.org/content/69/2/435.full.pdf+html |journal=Journal of Biological Chemistry |volume=69 |pages=435–41 |year=1926 |format=PDF |issue=2}}&lt;/ref&gt;
+
+      &lt;ref name=Terpe2003&gt;{{cite journal |author=Terpe K |title=Overview of tag protein fusions: from molecular and biochemical fundamentals to commercial systems |journal=Applied Microbiology and Biotechnology |volume=60 |issue=5 |pages=523–33 |year=2003 |pmid=12536251 |doi=10.1007/s00253-002-1158-6}}&lt;/ref&gt;
+
+      &lt;ref name=&quot;urlEBI&quot;&gt;{{cite web |author=EBI External Services |url=http://www.ebi.ac.uk/thornton-srv/databases/CSA/ |title=The Catalytic Site Atlas at The European Bioinformatics Institute |publisher=Ebi.ac.uk |date=2010-01-20 |accessdate=2011-01-16}}&lt;/ref&gt;
+
+      &lt;ref name=&quot;urlRCSB Protein Data Bank&quot;&gt;{{cite web |url=http://www.rcsb.org/pdb/home/home.do |title=RCSB Protein Data Bank|accessdate=2014-04-05}}&lt;/ref&gt;
+
+      &lt;ref name=Walian2004&gt;{{cite journal |author=Walian P, Cross TA, Jap BK |title=Structural genomics of membrane proteins |journal=Genome Biology |volume=5 |issue=4 |page=215 |year=2004 |pmid=15059248 |pmc=395774 |doi=10.1186/gb-2004-5-4-215 |url=http://genomebiology.com/2004/5/4/215}}&lt;/ref&gt;
+
+      &lt;ref name=Walker2000&gt;{{cite book |author=Walker JH, Wilson K |title=Principles and Techniques of Practical Biochemistry |publisher=Cambridge University Press |location=Cambridge, UK |year=2000 |pages=287–89 |isbn=0-521-65873-X}}&lt;/ref&gt;
+
+      &lt;ref name=Xiang2006&gt;{{cite journal |author=Xiang Z|title=Advances in homology protein structure modeling |journal=Current Protein and Peptide Science |volume=7 |issue=3 |pages=217–27 |year=2006 |pmid=16787261 |pmc=1839925 |doi=10.2174/138920306777452312}}&lt;/ref&gt;
+
+      &lt;ref name=Yuste2005&gt;{{cite journal |author=Yuste R |title=Fluorescence microscopy today |journal=Nature Methods |volume=2 |issue=12 |pages=902–904 |year=2005 |pmid=16299474 |doi=10.1038/nmeth1205-902}}&lt;/ref&gt;
+
+      &lt;ref name=Zagrovic2002&gt;{{cite journal |author=Zagrovic B, Snow CD, Shirts MR, Pande VS |title=Simulation of folding of a small alpha-helical protein in atomistic detail using worldwide-distributed computing |journal=Journal of Molecular Biology |volume=323 |issue=5 |pages=927–37 |year=2002 |pmid=12417204 |doi=10.1016/S0022-2836(02)00997-X}}&lt;/ref&gt;
+
+      &lt;ref name=Zhang2003&gt;{{cite journal |author=Zhang C, Kim SH |title=Overview of structural genomics: from structure to function |journal=Current Opinion in Chemical Biology |volume=7 |issue=1 |pages=28–32 |year=2003 |pmid=12547423 |doi=10.1016/S1367-5931(02)00015-7}}&lt;/ref&gt;
+
+      &lt;ref name=Zhang2005&gt;{{cite journal |author=Zhang Y, Skolnick J |title=The protein structure prediction problem could be solved using the current PDB library |journal=Proceedings of the National Academy of Sciences U.S.A. |volume=102 |issue=4 |pages=1029–34 |year=2005 |pmid=15653774 |pmc=545829 |doi=10.1073/pnas.0407152101 |url=http://www.pnas.org/cgi/pmidlookup?view=long&amp;pmid=15653774|bibcode = 2005PNAS..102.1029Z }}&lt;/ref&gt;
+
+      &lt;ref name=Zhang2008&gt;{{cite journal |author=Zhang Y |title=Progress and challenges in protein structure prediction |journal=Current Opinion in Structural Biology |volume=18 |issue=3 |pages=342–48 |year=2008 |doi=10.1016/j.sbi.2008.02.004 |pmid=18436442 |pmc=2680823}}&lt;/ref&gt;
+
+      &lt;ref name=Zhou2008&gt;{{cite journal |author=Zhou ZH |title=Towards atomic resolution structural determination by single-particle cryo-electron microscopy |journal=Current Opinion in Structural Biology |volume=18 |issue=2 |pages=218–28 |year=2008 |pmid=18403197 |doi=10.1016/j.sbi.2008.03.004 |pmc=2714865}}&lt;/ref&gt;
+
+      }}
+
+      ==References==
+      {{refbegin|30em}}
+      *{{cite book |author= Branden C, Tooze J |title=Introduction to Protein Structure |publisher=Garland Pub |location=New York |year=1999 |isbn=0-8153-2305-0}}
+      *{{cite book |author=Murray RF, Harper HW, Granner DK, Mayes PA, Rodwell VW |title=Harper's Illustrated Biochemistry |publisher=Lange Medical Books/McGraw-Hill |location=New York |year=2006 |isbn=0-07-146197-3}}
+      *{{cite book |author=Van Holde KE, Mathews CK |title=Biochemistry |publisher=Benjamin/Cummings Pub. Co., Inc|location=Menlo Park, California |year=1996 |isbn=0-8053-3931-0}}
+      {{refend}}
+
+      ==External links==
+      {{Commons category|Proteins}}
+      {{Wiktionary|protein}}
+
+      ===Databases and projects===
+      *[http://www.jcvi.org/pn-utility The Protein Naming Utility]
+      *[http://www.proteinatlas.org/ Human Protein Atlas]
+      *[http://www.ncbi.nlm.nih.gov/sites/entrez?db=protein NCBI Entrez Protein database]
+      *[http://www.ncbi.nlm.nih.gov/sites/entrez?db=structure NCBI Protein Structure database]
+      *[http://www.hprd.org/ Human Protein Reference Database]
+      *[http://www.humanproteinpedia.org/ Human Proteinpedia]
+      *[http://folding.stanford.edu/ Folding@Home (Stanford University)]
+      *[http://ctd.mdibl.org/ Comparative Toxicogenomics Database] curates protein–chemical interactions, as well as gene/protein–disease relationships and chemical-disease relationships.
+      *[http://harvester.fzk.de/ Bioinformatic Harvester] A Meta search engine (29 databases) for gene and protein information.
+      *[http://www.pdbe.org/ Protein Databank in Europe] (see also [http://www.pdbe.org/quips PDBeQuips], short articles and tutorials on interesting PDB structures)
+      *[http://www.rcsb.org/ Research Collaboratory for Structural Bioinformatics] (see also [http://www.rcsb.org/pdb/static.do?p=education_discussion/molecule_of_the_month/index.html Molecule of the Month], presenting short accounts on selected proteins from the PDB)
+      *[http://www.proteopedia.org/ Proteopedia&amp;nbsp;– Life in 3D]: rotatable, zoomable 3D model with wiki annotations for every known protein molecular structure.
+      *[http://www.expasy.uniprot.org/ UniProt the Universal Protein Resource]
+      *[http://www.nextprot.org/ neXtProt&amp;nbsp;– Exploring the universe of human proteins]: human-centric protein knowledge resource
+
+      ===Tutorials and educational websites===
+      *[http://hopes.stanford.edu/basics/proteins/p0.html &quot;An Introduction to Proteins&quot;] from [[HOPES]] (Huntington's Disease Outreach Project for Education at Stanford)
+      *[http://www.biochemweb.org/proteins.shtml Proteins: Biogenesis to Degradation&amp;nbsp;– The Virtual Library of Biochemistry and Cell Biology]
+      {{MolBioGeneExp}}
+      {{Protein topics}}
+      {{Protein methods}}
+      {{Food chemistry}}
+      {{Protein metabolism}}
+      {{good article}}
+
+      [[Category:Molecular biology]]
+      [[Category:Nutrition]]
+      [[Category:Proteins]]
+      [[Category:Proteomics]]
+
+      {{Link GA|zh}}
+      {{Link FA|ru}}
+      {{Link FA|uk}}
+      {{Link GA|uk}}</rev></revisions></page></pages></query></api>
+- recorded: 2014-04-06T22:22:02.925Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '96'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3APadlock-silver.svg&prop=imageinfo&iiprop=url&iiurlwidth=20&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '478'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:02 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq57 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570580745, 3519329167, 81238121
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:Padlock-silver.svg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Padlock-silver.svg/20px-Padlock-silver.svg.png" thumbwidth="20" thumbheight="20" url="http://upload.wikimedia.org/wikipedia/commons/f/fc/Padlock-silver.svg" descriptionurl="http://commons.wikimedia.org/wiki/File:Padlock-silver.svg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:22:03.624Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '92'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AMyoglobin.png&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '529'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:03 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq57 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570581621, 3519329578, 81238842
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2009-07-23T12:29:34Z" /></query-continue><query><pages><page ns="6" title="File:Myoglobin.png" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Myoglobin.png/220px-Myoglobin.png" thumbwidth="220" thumbheight="223" url="http://upload.wikimedia.org/wikipedia/commons/6/60/Myoglobin.png" descriptionurl="http://commons.wikimedia.org/wiki/File:Myoglobin.png" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:22:04.846Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '105'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3APeptide-Figure-Revised.png&prop=imageinfo&iiprop=url&iiurlwidth=300&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '594'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:04 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq57 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570582839, 3519330297, 81240105
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2011-09-05T14:44:06Z" /></query-continue><query><pages><page ns="6" title="File:Peptide-Figure-Revised.png" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Peptide-Figure-Revised.png/300px-Peptide-Figure-Revised.png" thumbwidth="300" thumbheight="231" url="http://upload.wikimedia.org/wikipedia/commons/c/c9/Peptide-Figure-Revised.png" descriptionurl="http://commons.wikimedia.org/wiki/File:Peptide-Figure-Revised.png" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:22:06.644Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '106'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3APeptide+group+resonance.png&prop=imageinfo&iiprop=url&iiurlwidth=300&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '521'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:06 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq57 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570584780, 3519331331, 81241989
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:Peptide group resonance.png" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Peptide_group_resonance.png/300px-Peptide_group_resonance.png" thumbwidth="300" thumbheight="65" url="http://upload.wikimedia.org/wikipedia/commons/1/17/Peptide_group_resonance.png" descriptionurl="http://commons.wikimedia.org/wiki/File:Peptide_group_resonance.png" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:22:07.461Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '111'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ARibosome+mRNA+translation+en.svg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '628'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:07 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq57 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570585704, 3519331914, 81242915
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2009-06-29T08:47:13Z" /></query-continue><query><pages><page ns="6" title="File:Ribosome mRNA translation en.svg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Ribosome_mRNA_translation_en.svg/220px-Ribosome_mRNA_translation_en.svg.png" thumbwidth="220" thumbheight="155" url="http://upload.wikimedia.org/wikipedia/commons/b/b1/Ribosome_mRNA_translation_en.svg" descriptionurl="http://commons.wikimedia.org/wiki/File:Ribosome_mRNA_translation_en.svg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:22:08.652Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '95'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AGenetic+code.svg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '547'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:08 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq57 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570586811, 3519332440, 81244019
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2007-05-07T00:19:35Z" /></query-continue><query><pages><page ns="6" title="File:Genetic code.svg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Genetic_code.svg/220px-Genetic_code.svg.png" thumbwidth="220" thumbheight="83" url="http://upload.wikimedia.org/wikipedia/commons/3/37/Genetic_code.svg" descriptionurl="http://commons.wikimedia.org/wiki/File:Genetic_code.svg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:22:09.375Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '98'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AChaperonin_1AON.png&prop=imageinfo&iiprop=url&iiurlwidth=300&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '574'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:09 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq57 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570587549, 3519332702, 81244696
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><normalized><n from="File:Chaperonin_1AON.png" to="File:Chaperonin 1AON.png" /></normalized><pages><page ns="6" title="File:Chaperonin 1AON.png" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Chaperonin_1AON.png/300px-Chaperonin_1AON.png" thumbwidth="300" thumbheight="130" url="http://upload.wikimedia.org/wikipedia/commons/6/6c/Chaperonin_1AON.png" descriptionurl="http://commons.wikimedia.org/wiki/File:Chaperonin_1AON.png" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:22:10.613Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '100'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AProteinviews-1tim.png&prop=imageinfo&iiprop=url&iiurlwidth=300&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '492'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:10 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq57 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570589179, 3519333766, 81246332
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:Proteinviews-1tim.png" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Proteinviews-1tim.png/300px-Proteinviews-1tim.png" thumbwidth="300" thumbheight="120" url="http://upload.wikimedia.org/wikipedia/commons/6/6e/Proteinviews-1tim.png" descriptionurl="http://commons.wikimedia.org/wiki/File:Proteinviews-1tim.png" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:22:11.826Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '100'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AProtein+composite.png&prop=imageinfo&iiprop=url&iiurlwidth=300&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '491'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:11 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq57 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570590629, 3519334689, 81247851
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:Protein composite.png" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Protein_composite.png/300px-Protein_composite.png" thumbwidth="300" thumbheight="78" url="http://upload.wikimedia.org/wikipedia/commons/5/54/Protein_composite.png" descriptionurl="http://commons.wikimedia.org/wiki/File:Protein_composite.png" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:22:12.888Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '147'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AHexokinase+ball+and+stick+model%2C+with+substrates+to+scale+copy.png&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '800'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:12 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq57 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570592057, 3519335424, 81249069
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2009-05-05T08:12:40Z" /></query-continue><query><pages><page ns="6" title="File:Hexokinase ball and stick model, with substrates to scale copy.png" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Hexokinase_ball_and_stick_model%2C_with_substrates_to_scale_copy.png/220px-Hexokinase_ball_and_stick_model%2C_with_substrates_to_scale_copy.png" thumbwidth="220" thumbheight="145" url="http://upload.wikimedia.org/wikipedia/commons/e/e7/Hexokinase_ball_and_stick_model%2C_with_substrates_to_scale_copy.png" descriptionurl="http://commons.wikimedia.org/wiki/File:Hexokinase_ball_and_stick_model,_with_substrates_to_scale_copy.png" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:22:14.093Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '105'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AMouse+cholera+antibody.png&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '594'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:13 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq57 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570593284, 3519336283, 81250510
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2012-07-31T07:08:36Z" /></query-continue><query><pages><page ns="6" title="File:Mouse cholera antibody.png" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Mouse_cholera_antibody.png/220px-Mouse_cholera_antibody.png" thumbwidth="220" thumbheight="293" url="http://upload.wikimedia.org/wikipedia/commons/a/a2/Mouse_cholera_antibody.png" descriptionurl="http://commons.wikimedia.org/wiki/File:Mouse_cholera_antibody.png" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:22:16.130Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '101'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ALocalisations02eng.jpg&prop=imageinfo&iiprop=url&iiurlwidth=300&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '497'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:16 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq57 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570595580, 3519337530, 81252810
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:Localisations02eng.jpg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Localisations02eng.jpg/300px-Localisations02eng.jpg" thumbwidth="300" thumbheight="395" url="http://upload.wikimedia.org/wikipedia/commons/6/6e/Localisations02eng.jpg" descriptionurl="http://commons.wikimedia.org/wiki/File:Localisations02eng.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:22:17.229Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '102'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3A225+Peptide+Bond-01.jpg&prop=imageinfo&iiprop=url&iiurlwidth=400&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '502'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:17 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq57 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570596560, 3519338011, 81253770
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:225 Peptide Bond-01.jpg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/2/26/225_Peptide_Bond-01.jpg/400px-225_Peptide_Bond-01.jpg" thumbwidth="400" thumbheight="340" url="http://upload.wikimedia.org/wikipedia/commons/2/26/225_Peptide_Bond-01.jpg" descriptionurl="http://commons.wikimedia.org/wiki/File:225_Peptide_Bond-01.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:22:18.336Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '99'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AKendrewMyoglobin.jpg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '487'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:18 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq57 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570598166, 3519339063, 81255470
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:KendrewMyoglobin.jpg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/KendrewMyoglobin.jpg/220px-KendrewMyoglobin.jpg" thumbwidth="220" thumbheight="147" url="http://upload.wikimedia.org/wikipedia/commons/e/ec/KendrewMyoglobin.jpg" descriptionurl="http://commons.wikimedia.org/wiki/File:KendrewMyoglobin.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:22:19.117Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '94'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ACommons-logo.svg&prop=imageinfo&iiprop=url&iiurlwidth=40&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '459'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:18 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq57 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570598950, 3519339454, 81256171
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page pageid="33285577" ns="6" title="File:Commons-logo.svg" imagerepository="local"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/40px-Commons-logo.svg.png" thumbwidth="40" thumbheight="54" url="http://upload.wikimedia.org/wikipedia/en/4/4a/Commons-logo.svg" descriptionurl="http://en.wikipedia.org/wiki/File:Commons-logo.svg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:22:19.850Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '100'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AWiktionary-logo-en.svg&prop=imageinfo&iiprop=url&iiurlwidth=40&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '575'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:19 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq57 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570600097, 3519340167, 81257296
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2008-02-26T13:12:15Z" /></query-continue><query><pages><page ns="6" title="File:Wiktionary-logo-en.svg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Wiktionary-logo-en.svg/40px-Wiktionary-logo-en.svg.png" thumbwidth="40" thumbheight="44" url="http://upload.wikimedia.org/wikipedia/commons/f/f8/Wiktionary-logo-en.svg" descriptionurl="http://commons.wikimedia.org/wiki/File:Wiktionary-logo-en.svg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:22:20.577Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '101'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3Asymbol+support+vote.svg&prop=imageinfo&iiprop=url&iiurlwidth=15&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '594'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:22:20 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq57 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570600845, 3519340563, 81257991
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><normalized><n from="File:symbol support vote.svg" to="File:Symbol support vote.svg" /></normalized><pages><page pageid="33285458" ns="6" title="File:Symbol support vote.svg" imagerepository="local"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/en/thumb/9/94/Symbol_support_vote.svg/15px-Symbol_support_vote.svg.png" thumbwidth="15" thumbheight="15" url="http://upload.wikimedia.org/wikipedia/en/9/94/Symbol_support_vote.svg" descriptionurl="http://en.wikipedia.org/wiki/File:Symbol_support_vote.svg" /></imageinfo></page></pages></query></api>

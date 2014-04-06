@@ -1,0 +1,1100 @@
+!tape
+name: Metallica
+interactions:
+- recorded: 2014-04-06T22:23:26.812Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '99'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Metallica&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '122262'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:23:25 GMT
+      Server: Apache
+      Set-Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4; path=/
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq57 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570674065, 3519378853, 81328026
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: |-
+      <?xml version="1.0"?><api><query><pages><page pageid="18787" ns="0" title="Metallica"><revisions><rev user="Вик Ретлхед" timestamp="2014-04-06T09:06:06Z" comment="wording" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{pp-protected|expiry=2014-06-29 16:44:50|small=yes}}{{Other uses}}
+      {{pp-move|small=yes}}
+      {{Use mdy dates|date=April 2013}}
+      {{Infobox musical artist
+      | name = Metallica
+      | image = Metallica at The O2 Arena London 2008.jpg
+      | caption = Metallica in [[London]] in 2008. From left to right: [[Kirk Hammett]], [[Lars Ulrich]], [[James Hetfield]] and [[Robert Trujillo]].
+      | image_size = 250px
+      | background = group_or_band
+      | origin = [[Los Angeles]], [[California]], United States
+      | genre = [[Heavy metal music|Heavy metal]], [[thrash metal]]
+      | years_active = 1981–present
+      | label = [[Megaforce Records|Megaforce]], [[Elektra Records|Elektra]], [[Vertigo Records|Vertigo]], [[Warner Bros. Records|Warner Bros.]], [[Universal Music]], [[Blackened Recordings|Blackened]]
+      | website = {{URL|metallica.com}}
+      | current_members = [[James Hetfield]]&lt;br/&gt;[[Lars Ulrich]]&lt;br/&gt;[[Kirk Hammett]]&lt;br/&gt;[[Robert Trujillo]]
+      | past_members = [[Ron McGovney]]&lt;br/&gt;[[Dave Mustaine]]&lt;br/&gt;[[Cliff Burton]]&lt;!--Do not add &quot;deceased&quot; next to Cliff Burton's name, as this is contrary to Wikipedia's infobox guidelines.--&gt;&lt;br/&gt;[[Jason Newsted]]
+      }}
+
+      '''Metallica''' is an American [[heavy metal music|heavy metal]] band from [[Los Angeles]], [[California]]. The band's fast tempos, instrumentals, and aggressive musicianship placed them as one of the founding &quot;big four&quot; of [[thrash metal]] alongside [[Slayer]], [[Megadeth]], and [[Anthrax (American band)|Anthrax]]. Metallica was formed in 1981 when [[James Hetfield]] responded to an advertisement that drummer [[Lars Ulrich]] had posted in a local newspaper. The current line-up features founders Hetfield (vocals, rhythm guitar) and Ulrich (drums), longtime lead guitarist [[Kirk Hammett]] and bassist [[Robert Trujillo]], who joined the band in 2003. Previous members of the band are lead guitarist [[Dave Mustaine]], who went on to found Megadeth, bassists [[Ron McGovney]] (demos only), [[Cliff Burton]] (the first three records, died in 1986), and [[Jason Newsted]]. The band also had a long collaboration with producer [[Bob Rock]], who produced all of its albums from 1990 to 2003 and served as a temporary bassist between the departure of Newsted and the hiring of Trujillo.
+
+      The band earned a growing fan-base in the [[underground music]] community and critical acclaim with its first four albums, with their third, ''[[Master of Puppets]]'' (1986), described as one of the most influential and &quot;heavy&quot; thrash metal albums. Metallica achieved substantial commercial success with their [[Metallica (album)|eponymous fifth album]] (also known as ''The Black Album''), which debuted at number one on the [[Billboard 200|''Billboard'' 200]]. With this release the band expanded its musical direction resulting in an album that appealed to a more [[mainstream]] audience.
+
+      In 2000, Metallica was among a number of artists who filed a [[Metallica v. Napster, Inc.|lawsuit]] against [[Napster]] for sharing the band's copyright-protected material for free without any band member's consent. A settlement was reached, and Napster became a pay-to-use service. Despite reaching number one on the ''Billboard'' 200, the release of ''[[St. Anger]]'' (2003) alienated many fans with the exclusion of guitar solos and the &quot;steel-sounding&quot; [[snare drum]]. A film titled ''[[Some Kind of Monster (film)|Some Kind of Monster]]'' documented the recording process of ''St. Anger'' and the tensions within the band during that time. In 2009, Metallica was inducted into the [[Rock and Roll Hall of Fame]].
+
+      Metallica has released nine studio albums, four live albums, five extended plays, 25 music videos, and 37 singles. The band has won nine [[Grammy Awards]], and has had five consecutive albums debut at number one on the ''Billboard'' 200, making Metallica the first band to do so. The band's eponymous 1991 album has sold over 16 million copies in the United States, making it the best-selling album of the [[Nielsen SoundScan|SoundScan]] Era. Metallica ranks as one of [[List of best-selling music artists|the most commercially successful bands of all time]], having sold over 110 million records worldwide. Metallica has been listed as one of the greatest artists of all time by many magazines, including ''[[Rolling Stone]]'', which ranked them 61st on its list of The 100 Greatest Artists of All Time. As of December 2012, Metallica is the fourth best-selling music artist since Nielsen SoundScan began tracking sales in 1991, selling a total of 53,642,000 albums in the United States alone.
+
+      In 2012, Metallica formed the [[independent music|independent]] [[record label]] Blackened Recordings, and took ownership of all of their albums and videos.&lt;ref&gt;{{cite web|title=Metallica Launch New Record Label|url=http://www.rollingstone.com/music/news/metallica-launch-new-record-label-20121130|work=[[Rolling Stone]]|date=November 30, 2012|accessdate=April 6, 2014}}&lt;/ref&gt;
+
+      ==History==
+
+      ===Early years (1981–1983)===
+      [[File:Metallica wordmark.svg|thumb|The classic Metallica logo, used on their early releases. It was also used on their ninth studio album ''[[Death Magnetic]]'' (2008) and on ''[[Guitar Hero: Metallica]]'', albeit in a slightly more slanting form.]]
+      Metallica was formed in [[Los Angeles]], [[California]], in late 1981 when the [[Denmark|Danish]]-born drummer [[Lars Ulrich]] placed an advertisement in a Los Angeles newspaper—''[[The Recycler]]''—which read &quot;Drummer looking for other metal musicians to [[Jam (music)|jam]] with [[Tygers of Pan Tang]], [[Diamond Head (band)|Diamond Head]] and [[Iron Maiden]].&quot;&lt;ref name=&quot;Metallica timeline Early 1981 - Early 1982&quot;/&gt; Guitarists [[James Hetfield]] and Hugh Tanner of [[Leather Charm]] answered the advertisement. Although he had not formed a band, Ulrich asked [[Metal Blade Records]] founder [[Brian Slagel]] if he could record a song for the label's upcoming compilation album ''[[Metal Massacre]]''. Slagel accepted, and Ulrich recruited Hetfield to sing and play rhythm guitar.&lt;ref name=&quot;Metallica timeline Early 1981 - Early 1982&quot;&gt;{{cite web |title=Metallica Timeline Early 1981 – Early 1982 |url=http://www.mtv.com/onair/icon/metallica/timeline/?id=1 |archiveurl=http://www.webcitation.org/5h73iF8Ol |work=MTV |archivedate=May 28, 2009 |accessdate=May 28, 2009}}&lt;/ref&gt; The band was officially formed in October 1981, five months after Ulrich and Hetfield first met.&lt;ref&gt;{{cite web |url=http://www.metallica.com/timeline.asp?page=events&amp;n_categoryid=1988&amp;year=1981?sPosx=41 |title=1981: Events |work=Timeline |publisher=Metallica |accessdate=December 26, 2009 |archiveurl=http://web.archive.org/web/20090623031847/http://www.metallica.com/timeline.asp?page=events&amp;n_categoryid=1988&amp;year=1981?sPosx=41 |archivedate=June 23, 2009}}&lt;/ref&gt;
+
+      Ulrich talked to his friend Ron Quintana, who was brainstorming names for a fanzine. Quintana had proposed the names MetalMania and Metallica. Ulrich used Metallica for the name of his band. A second advertisement was placed in ''The Recycler'' for a position as lead guitarist. [[Dave Mustaine]] answered, and after seeing his expensive guitar equipment, Ulrich and Hetfield recruited him. In early 1982, Metallica recorded its first original song &quot;Hit the Lights&quot; for the ''Metal Massacre I'' compilation. Hetfield played bass on the song and Lloyd Grant was credited with a guitar solo.&lt;ref name=&quot;Metallica timeline Early 1981 - Early 1982&quot;/&gt; Released on June 14, 1982, early pressings of ''Metal Massacre I'' listed the band incorrectly as &quot;Mettallica&quot;.&lt;ref name=&quot;Music Legends&quot;&gt;{{cite web |publisher=Music Legends| url=http://musiclegends.ca/interviews/lloyd-grant-interview-metallica/| title=Lloyd Grant Interview| accessdate=6 May 2013|date=4 January 2012|last=Saulnier|first=Jason}}&lt;/ref&gt; Although angered by the error, Metallica managed to create enough &quot;[[Word of mouth|buzz]]&quot; with the song and the band played its first live performance on March 14, 1982 at Radio City in [[Anaheim, California]], with newly recruited bassist [[Ron McGovney]].&lt;ref name=&quot;Metallica timeline March 14, 1982 – July 6, 1982&quot;&gt;{{cite web |title=Metallica Timeline March&amp;nbsp;14, 1982 – July 6, 1982 |url=http://www.mtv.com/onair/icon/metallica/timeline/?id=2 |archiveurl=http://www.webcitation.org/5h747w4yB |work=MTV |archivedate=May 28, 2009 |accessdate=May 28, 2009}}&lt;/ref&gt; Metallica recorded its first demo, ''[[Power Metal (Metallica album)|Power Metal]]'', a name inspired by Quintana's early business cards in early 1982. The term &quot;[[thrash metal]]&quot; was first referred to by ''[[Kerrang!]]''{{'s}} journalist [[Malcolm Dome]] while making a reference to the [[Anthrax (American band)|Anthrax]]'s song &quot;[[Metal Thrashing Mad]]&quot; in ''Kerrang!''{{'s}} issue 62, page 8, published on February 23, 1984.&lt;ref&gt;{{cite book | last = Dome | first = Malcolm | title = [[Kerrang!]] | chapter = Anthrax 'Fistful of Metal' | volume = 62 | publisher = Spotlight Publications Ltd. | date = February 23, 1984 | location = London, UK | page = 8}}&lt;/ref&gt;
+
+      Prior to this, [[James Hetfield]] referred to their sound as &quot;[[power metal]]&quot;. In the fall of 1982, Ulrich and Hetfield attended a show at the West Hollywood nightclub [[Whisky a Go Go]] which featured bassist [[Cliff Burton]] in a band called [[Trauma (band)|Trauma]]. The two were &quot;blown away&quot; by Burton's use of a [[wah-wah pedal]] and asked him to join Metallica. Hetfield and Mustaine wanted McGovney out as they thought that he &quot;didn't contribute anything, he just followed.&quot;&lt;ref name=&quot;Metallica timeline Fall 1982 - April 16, 1983&quot;/&gt; Although Burton initially declined the offer, by the end of the year he accepted on the condition the band move to [[El Cerrito, California|El Cerrito]] in the [[San Francisco Bay Area]]. Metallica's first live performance with Burton was at the nightclub The Stone in March 1983, and the first recording to feature Burton was the ''Megaforce'' demo (1983).&lt;ref name=&quot;Metallica timeline Fall 1982 - April 16, 1983&quot;&gt;{{cite web |title=Metallica Timeline Fall 1982 – April&amp;nbsp;16, 1983 |url=http://www.mtv.com/onair/icon/metallica/timeline/?id=3 |archiveurl=http://www.webcitation.org/5hBuBZnaR |work=MTV |archivedate=May 31, 2009 |accessdate=May 31, 2009}}&lt;/ref&gt;
+
+      Metallica was ready to record its debut album, but when Metal Blade was unable to cover the cost, the band began looking for other options. Concert promoter [[Johny Zazula|Johny &quot;Z&quot; Zazula]], who had heard the demo ''No Life 'til Leather'' (1982), offered to broker a record deal with Metallica and New York City-based record labels. After receiving no interest from various record labels, Zazula borrowed the money to cover the record's recording budget and signed Metallica to his own label, [[Megaforce Records]].&lt;ref name=&quot;Pillsbury 2006 2&quot;&gt;{{Harvnb|Pillsbury|2006|p=2}}&lt;/ref&gt;
+
+      ===''Kill 'Em All'' and ''Ride the Lightning'' (1983–1984)===
+      In May 1983, Metallica traveled to [[Rochester, New York]], to record its debut album, ''Metal Up Your Ass'', with production duties handled by Paul Curcio.&lt;ref&gt;{{Harvnb|Christe|2003|p=86}}&lt;/ref&gt; Band members decided to kick Mustaine out of the band for drug and [[alcohol abuse]] and violent behavior just prior to the sessions on April 11, 1983.&lt;ref&gt;{{cite journal |last=Cecolini |first=Vinny |date=November 1998 |title=Foreclosure of a Team |journal=Metal Hammer |ref=harv}}&lt;/ref&gt; [[Exodus (band)|Exodus]] guitarist [[Kirk Hammett]] flew in to replace Mustaine the same afternoon.&lt;ref name=&quot;Pillsbury 2006 2&quot;/&gt;
+
+      Mustaine, who went on to found [[Megadeth]], has expressed his dislike for Hammett in interviews. He said Hammett &quot;stole my job.&quot;&lt;ref name=&quot;Dave Mustaine: James Hetfield Is Jealous of Me&quot;&gt;{{cite web |title=Dave Mustaine: James Hetfield Is Jealous of Me |url=http://www.roadrunnerrecords.com/blabbermouth.net/news.aspx?mode=Article&amp;newsitemID=27141 |archiveurl=http://www.webcitation.org/5hBun2sKu |work=Blabbermouth.net |date=September 21, 2004 |archivedate=May 31, 2009 |accessdate=May 31, 2009}}&lt;/ref&gt; Mustaine was &quot;pissed off&quot; because he believes Hammett became popular by playing the guitar leads that Mustaine wrote.&lt;ref name=&quot;Dave Mustaine Back in Buisness&quot;&gt;{{cite web |author=AskMen.com Editors |title=Interview: Dave Mustaine news |url=http://www.askmen.com/celebs/interview_100/149b_dave_mustaine_interview.html |archiveurl=http://www.webcitation.org/5hBvB86jd |work=AskMen.com |publisher=IGN Entertainment |archivedate=May 31, 2009 |accessdate=May 31, 2009}}&lt;/ref&gt; In a 1985 interview with ''[[Metal Forces]]'', Mustaine slammed Hammett saying, &quot;it's real funny how Kirk Hammett ripped off every lead break I'd played on that ''No Life 'til Leather'' tape and got voted No.&amp;nbsp;1 guitarist in your magazine.&quot;&lt;ref name=&quot;Metal Forces&quot;&gt;{{cite web |title=Love it to Death – Bernard Doe speaks to Dave Mustaine about life after Metallica |last=Doe |first=Bernard |publisher=[[Metal Forces]] |url=http://www.metalforcesmagazine.com/site/feature-megadeth-mf12/ |accessdate=June 16, 2012}}&lt;/ref&gt; On Megadeth's debut album ''[[Killing Is My Business... and Business Is Good!]]'' (1985), Mustaine included the song &quot;Mechanix&quot;, which Metallica reworked and retitled &quot;The Four Horsemen&quot; on ''Kill 'Em All''. Mustaine said he did this to &quot;straighten Metallica up&quot;, as Metallica referred to Mustaine as a drunk and said he could not play guitar.&lt;ref name=&quot;Metal Forces&quot;/&gt; Metallica's first live performance with Hammett was on April 16, 1983 at the nightclub The Showplace in [[Dover, New Jersey]]&lt;ref name=&quot;Metallica timeline Fall 1982 - April 16, 1983&quot;/&gt; with Anthrax's original line-up, including [[Dan Lilker]] and [[Neil Turbin]], as direct support.&lt;ref&gt;{{cite web |url= http://www.metallipromo.com/an.html |title=Anthrax; |publisher=Metallipromo.com |date=December 24, 2010 |accessdate=March 18, 2013}}&lt;/ref&gt; This was the first time the two bands performed live together.&lt;ref name=&quot;Metallica timeline Fall 1982 - April 16, 1983&quot;/&gt;
+
+      The band's debut studio album was initially going to be titled ''Metal Up Your Ass''. Because of conflicts with its record label and the distributors' refusal to release an album with that name, it was renamed ''[[Kill 'Em All]]''. Released on Megaforce Records in the United States and [[Music for Nations]] in Europe, the album peaked at number 120 on the ''Billboard'' 200 in 1986,&lt;ref name=&quot;Metallica Chart Positions&quot;/&gt; and although the album was not initially a financial success, some songs like &quot;Whiplash&quot;, &quot;Seek &amp; Destroy&quot;, &quot;Hit The Lights&quot; and &quot;The Four Horseman&quot; earned Metallica a growing fan base in the [[Underground music|underground]] metal scene.&lt;ref&gt;{{cite news|last=Lepage|first=Mark|date=October 31, 2009|url=http://www2.canada.com/ottawacitizen/story.html?id=9a47a506-f3a6-44e2-9fd3-443a42042b63|title=Metal metamorphosis|newspaper=[[Ottawa Citizen]]|publisher=James Orban|accessdate=June 12, 2013}}&lt;/ref&gt; The band embarked on the [[Kill 'Em All for One]] tour with [[Raven (band)|Raven]] to support the release.&lt;ref name=&quot;Metallica timeline May 10–27, 1983 - July 27 – Sep 3, 1983&quot;&gt;{{cite web |title=Metallica Timeline May&amp;nbsp;10–27, 1983 – July 27 – Sept 3, 1983 |url=http://www.mtv.com/onair/icon/metallica/timeline/?id=4 |archiveurl=http://www.webcitation.org/5hA8pmpfV |work=MTV |archivedate=May 30, 2009 |accessdate=May 30, 2009}}&lt;/ref&gt; In February 1984, Metallica supported [[Venom (band)|Venom]] on the Seven Dates of Hell tour, where the band performed in front of 7,000 people at the Aardschok Festival in [[Zwolle]], Netherlands.&lt;ref name=&quot;Metallica timeline October–December 1983 - August 1984&quot;&gt;{{cite web |title=Metallica Timeline October–December 1983 – August 1984 |url=http://www.mtv.com/onair/icon/metallica/timeline/?id=5 |archiveurl=http://www.webcitation.org/5hA91rPYW |work=MTV |archivedate=May 30, 2009 |accessdate=May 30, 2009}}&lt;/ref&gt;
+
+      Metallica recorded its second studio album, ''[[Ride the Lightning]]'', at Sweet Silence Studios in [[Copenhagen]], Denmark. Released in August 1984, the album reached number 100 on the ''Billboard'' 200.&lt;ref name=&quot;Metallica Chart Positions&quot;/&gt; A French printing press mistakenly printed green covers for the album, which are now considered collectors' items. Other songs on the album include &quot;[[For Whom the Bell Tolls (Metallica song)|For Whom the Bell Tolls]]&quot;, &quot;[[Fade to Black (song)|Fade to Black]]&quot;, &quot;[[Creeping Death]]&quot;, and the [[instrumental]] &quot;The Call of Ktulu&quot;. Mustaine received writing credit for &quot;Ride the Lightning&quot; and &quot;The Call of Ktulu&quot;.&lt;ref name=&quot;Metallica timeline October–December 1983 - August 1984&quot;/&gt;
+
+      ===''Master of Puppets'' (1984–1986)===
+      [[Elektra Records]] [[A&amp;R]] director Michael Alago, and co-founder of Q-Prime Management Cliff Burnstein, attended a September 1984 Metallica concert. Impressed with what they saw, they signed Metallica to Elektra Records and made the band a client of Q-Prime Management.&lt;ref name=&quot;Metallica timeline Fall, 1984 - March 27, 1986&quot;&gt;{{cite web |title=Metallica Timeline Fall, 1984 – March&amp;nbsp;27, 1986 |url=http://www.mtv.com/onair/icon/metallica/timeline/?id=6 |archiveurl=http://www.webcitation.org/5hEnas3Pr |work=MTV |archivedate=June 2, 2009 |accessdate=June 2, 2009}}&lt;/ref&gt; Metallica's burgeoning success was such that the band's British label Music for Nations released a limited edition &quot;Creeping Death&quot; single, which sold 40,000 copies as an import in the United States. Two of the three songs on the record ([[cover version]]s of [[Diamond Head (band)|Diamond Head]]'s &quot;[[Am I Evil?]]&quot;, and [[Blitzkrieg (band)|Blitzkrieg]]'s &quot;Blitzkrieg&quot;) appeared on the 1989 Elektra reissue of ''Kill 'Em All''.&lt;ref&gt;{{Harvnb|Christe|2003|p=130}}&lt;/ref&gt; Metallica embarked on its first major European tour with [[Tank (band)|Tank]] to an average crowd of 1,300. Returning to the U.S. marked a tour co-headlining with [[W.A.S.P.]] and [[Armored Saint]] supporting. Metallica played its largest show at the [[Monsters of Rock]] festival on August 17, 1985, with [[Bon Jovi]] and [[Ratt]] at [[Donington Park#Music festivals|Donington Park]] in England, playing in front of 70,000 people. A show in [[Oakland, California]], at the [[Day on the Green]] festival saw the band play in front of a crowd of 60,000.&lt;ref name=&quot;Metallica timeline Fall, 1984 - March 27, 1986&quot;/&gt;
+
+      Metallica's third studio album, ''[[Master of Puppets]]'', was recorded at Sweet Silence Studios and was released in March 1986. The album reached number 29 on the [[Billboard 200|''Billboard'' 200]], and spent 72 weeks on the chart.&lt;ref&gt;{{cite web |title=Discography – Metallica |url={{BillboardURLbyName|artist=metallica|chart=all}} |archiveurl=http://www.webcitation.org/5hEnwRGkd |work=Billboard |archivedate=June 2, 2009 |accessdate=June 2, 2009}}&lt;/ref&gt; The album was the band's first to be certified [[Music recording sales certification#RIAA certification|gold]] on November 4, 1986, and was certified six times platinum in 2003.&lt;ref&gt;{{cite web |url=http://riaa.com/goldandplatinumdata.php?resultpage=1&amp;table=SEARCH_RESULTS&amp;action=&amp;title=Master%20of%20Puppets&amp;artist=Metallica&amp;format=&amp;debutLP=&amp;category=&amp;sex=&amp;releaseDate=&amp;requestNo=&amp;type=&amp;level=&amp;label=&amp;company=&amp;certificationDate=&amp;awardDescription=&amp;catalogNo=&amp;aSex=&amp;rec_id=&amp;charField=&amp;gold=&amp;platinum=&amp;multiPlat=&amp;level2=&amp;certDate=&amp;album=&amp;id=&amp;after=&amp;before=&amp;startMonth=1&amp;endMonth=1&amp;startYear=1958&amp;endYear=2010&amp;sort=Artist&amp;perPage=25 |title=Gold &amp; Platinum |publisher=[[RIAA]] |accessdate=May 26, 2010}}&lt;/ref&gt; Steve Huey of [[Allmusic]] considered the album &quot;the band's greatest achievement&quot;.&lt;ref&gt;{{cite web |first=Steve |last=Huey |title=Master of Puppets Overview |url={{Allmusic|class=album|id=master-of-puppets-mw0000667490|pure_url=yes}} |archiveurl=http://www.webcitation.org/5hEoIdeum |publisher=Allmusic |archivedate=June 2, 2009 |accessdate=June 2, 2009}}&lt;/ref&gt; Following the release of the album, Metallica supported [[Ozzy Osbourne]] for a United States tour.&lt;ref name=&quot;Metallica timeline Fall, 1984 - March 27, 1986&quot;/&gt; Hetfield broke his wrist skateboarding down a hill and continued the tour performing vocals, with guitar technician [[John Marshall (guitarist)|John Marshall]] playing rhythm guitar.&lt;ref name=&quot;Metallica timeline June 26, 1986 – September 27, 1986&quot;/&gt;
+
+      ===Burton's death and ''Garage Days Re-Revisited'' (1986–1987)===
+      On September 27, 1986, during the European leg of Metallica's [[Damage, Inc. Tour]], members drew cards to determine the bunks of the tour bus in which they would sleep. Burton won and chose to sleep in Hammett's bunk. Around dawn near [[Dörarp]], [[Sweden]], the bus driver lost control and skidded, which caused the bus to flip several times. Ulrich, Hammett, and Hetfield sustained no serious injuries; however, bassist Burton was pinned under the bus and did not survive. Hetfield recalls, &quot;I saw the bus lying right on him. I saw his legs sticking out. I freaked. The bus driver, I recall, was trying to yank the blanket out from under him to use for other people. I just went, 'Don't fucking do that!' I already wanted to kill the [bus driver]. I don't know if he was drunk or if he hit some ice. All I knew was, he was driving and Cliff wasn't alive anymore.&quot;&lt;ref name=&quot;Metallica timeline June 26, 1986 – September 27, 1986&quot;&gt;{{cite web
+      |title=Metallica timeline June&amp;nbsp;26, 1986 – September 27, 1986
+      |work=MTV
+      |url=http://www.mtv.com/onair/icon/metallica/timeline/?id=7
+      |accessdate=November 16, 2007}}&lt;/ref&gt; Burton's death left Metallica's future in doubt. The three remaining members decided that Burton would want them to carry on, and with the Burton family's blessings, the band sought a replacement.&lt;ref name=&quot;Metallica timeline October 1986 - March 1987&quot;&gt;{{cite web
+      |title=Metallica timeline October 1986 – March 1987
+      |work=MTV
+      |url=http://www.mtv.com/onair/icon/metallica/timeline/?id=8
+      |accessdate=November 30, 2007}}&lt;/ref&gt;&lt;ref&gt;{{cite web|title=Jason Newsted Interview|url= http://musiclegends.ca/interviews/jason-newsted-interview/|publisher=Music Legends |accessdate=May 6, 2013}}&lt;/ref&gt;
+
+      Roughly 40 people tried out for auditions including Hammett's childhood friend, [[Les Claypool]] of [[Primus (band)|Primus]], [[Troy Gregory]] of [[Prong (band)|Prong]], and [[Jason Newsted]], formerly of [[Flotsam and Jetsam (band)|Flotsam and Jetsam]]. Newsted learned Metallica's entire setlist, and after the audition Metallica invited him to Tommy's Joynt in San Francisco. Hetfield, Ulrich, and Hammett decided that Newsted was the one to replace Burton, and Newsted's first live performance with Metallica was at the Country Club in [[Reseda, California]]. The members took it on themselves to &quot;initiate&quot; Newsted by tricking him into eating a ball of [[wasabi]].&lt;ref name=&quot;Metallica timeline October 1986 - March 1987&quot;/&gt;
+
+      After Newsted joined Metallica, the band left its El Cerrito practice space (dubbed ''&quot;the Metalli-mansion&quot;'', a suburban house formerly rented by sound engineer [[Mark Whitaker (music producer)|Mark Whitaker]]) and relocated to the adjacent cities of [[Berkeley, California|Berkeley]]&lt;ref&gt;{{cite book
+       | last = Doughton
+       | first = K.J.
+       | title = Metallica Unbound
+       | publisher = [[Grand Central Publishing]]
+       | date = August 1, 1993
+       | isbn = 0-446-39486-6
+       | quote = ...the drummer had cozily established himself in a new house up in the hills of Berkeley.
+      }}&lt;/ref&gt; and [[Albany, California|Albany]]&lt;ref&gt;{{cite book
+       | last = McIver
+       | first = Joel
+       | title = Justice for All: The Truth About Metallica
+       | publisher = [[Omnibus Press]]
+       | year = 2004
+       | isbn = 1-84772-797-2
+       | page = 85
+      }}&lt;/ref&gt; before eventually settling in the Marin County city of [[San Rafael, California|San Rafael]], North of San Francisco.&lt;ref&gt;{{cite web|url=http://blogs.mercurynews.com/aei/2008/08/29/listening-to-death-magnetic-at-metallica-hq/ |title=MercuryNews.com – Listening to Death Magnetic at Metallica HQ |publisher=Blogs.mercurynews.com |date=August 29, 2008 |accessdate=November 7, 2010}}&lt;/ref&gt;
+
+      Metallica finished its tour in the early months of 1987. In March 1987, Hetfield broke his wrist a second time skateboarding, forcing the band to cancel a ''[[Saturday Night Live]]'' appearance. In August 1987, an all-covers [[extended play]] titled ''[[The $5.98 E.P.: Garage Days Re-Revisited]]'' was released. The extended play was recorded in an effort to utilize the band's newly constructed recording studio, test out the talents of Newsted, and to relieve grief and stress following the death of Burton. A video titled ''[[Cliff 'Em All]]'' was released in 1987 commemorating Burton's three years in Metallica. Footage included [[bass solo]]s, home videos, and pictures.&lt;ref name=&quot;Metallica timeline August 21, 1987 – December 4, 1987&quot;&gt;{{cite web
+      |title=Metallica timeline August&amp;nbsp;21, 1987 – December 4, 1987
+      |work=MTV
+      |url=http://www.mtv.com/onair/icon/metallica/timeline/?id=9
+      |accessdate=December 1, 2007}}&lt;/ref&gt;
+
+      ===''...And Justice for All'' (1988–1990)===
+      [[File:Metallica Damaged Justice Tour.jpg|thumb|Metallica during the [[Damaged Justice]] tour]]
+      ''[[...And Justice for All (album)|...And Justice for All]]'', the band's first studio album since Burton's death, was released in 1988. The album was a commercial success, reaching number six on the ''Billboard'' 200, the band's first album to enter the top 10.&lt;ref name=&quot;Metallica Chart Positions&quot;&gt;{{cite web
+      |title=Metallica Chart Positions
+      |publisher=Allmusic
+      |url={{Allmusic|class=artist|id=metallica-mn0000446509|tab=awards|pure_url=yes}}
+      |accessdate=December 3, 2007}}&lt;/ref&gt; The album was certified platinum nine weeks after its release.&lt;ref&gt;{{Harvnb|Christe|2003|p=196}}&lt;/ref&gt; Newsted's bass was purposely turned down on the album as a part of the continuous &quot;[[hazing]]&quot; he received, and his musical ideas were ignored (however, he did receive writing credit on the track &quot;Blackened&quot;).&lt;ref name=&quot;The Playboy Interview - Metallica&quot;/&gt; There were complaints with the production; namely, Steve Huey of [[Allmusic]] noted Ulrich's drums were clicking more than thudding, and the guitars &quot;buzz thinly&quot;.&lt;ref&gt;{{cite web |url={{Allmusic|class=album|id=and-justice-for-all-mw0000196917|pure_url=yes}}|title=...And Justice for All – Review|author=Huey, Steve|accessdate=December 23, 2006|publisher=Allmusic}}&lt;/ref&gt; The [[Damaged Justice]] tour followed to promote the album.&lt;ref name=&quot;Damaged Justice World Tour&quot;&gt;{{cite web
+      |title=Damaged Justice World Tour
+      |publisher=metworld.co.uk
+      |url=http://www.metallicaworld.co.uk/metallica_tour_dates_justice_world.htm
+      |accessdate=December 9, 2007}}&lt;/ref&gt;
+
+      In 1989, Metallica received its first [[Grammy Award]] nomination for ''...And Justice for All'', in the new [[Grammy Award for Best Hard Rock/Metal Performance Vocal or Instrumental|Best Hard Rock/Metal Performance Vocal or Instrument]] category. Metallica was the favorite to win; however, the award was given to [[Jethro Tull (band)|Jethro Tull]] for the album ''[[Crest of a Knave]]''.&lt;ref name=&quot;Rockin' on an Island&quot;/&gt; The result generated controversy among fans and the press, as Metallica was standing off-stage waiting to receive the award after performing the song &quot;[[One (Metallica song)|One]]&quot;. Jethro Tull had been advised by its manager not to attend the ceremony as he was expecting Metallica to win.&lt;ref name=&quot;Rockin' on an Island&quot;&gt;&quot;Rockin' on an Island&quot;. ''Kerrang!'' '''258'''. September 30, 1989.&lt;/ref&gt; The award was named in ''[[Entertainment Weekly]]''{{'s}} &quot;Grammy's 10 Biggest Upsets&quot;.&lt;ref name=&quot;Grammy's 10 Biggest Upsets&quot;&gt;{{cite web
+      |title=Grammy's 10 Biggest Upsets
+      |author=Endelman, Michael
+      |work=Entertainment Weekly
+      |url=http://www.ew.com/ew/gallery/0,,1567466_20010834_20010795,00.html
+      |accessdate=December 3, 2007}}&lt;/ref&gt;
+
+      Following the release of ''...And Justice for All'', Metallica released its debut music video for the song &quot;[[One (Metallica song)|One]]&quot;. The band performed the song in an abandoned warehouse, and footage was [[remix]]ed with the film ''[[Johnny Got His Gun (film)|Johnny Got His Gun]]''. Rather than organize an ongoing licensing deal, Metallica purchased the rights to the film. The remixed video was submitted to MTV, with the alternate performance-only version held back in the event that MTV banned the remix version. MTV accepted the remix version, and the video was viewers' first exposure to Metallica. It was voted number 38 in 1999 when MTV aired its &quot;Top 100 Videos of All Time&quot; countdown,&lt;ref name=&quot;MTV: 100 Greatest Music Videos Ever Made&quot;&gt;{{cite web
+      |title=MTV: 100 Greatest Music Videos Ever Made
+      |publisher=Rockonthenet.com
+      |url=http://www.rockonthenet.com/archive/1999/mtv100.htm
+      |accessdate=December 8, 2007}}&lt;/ref&gt; and was featured in the network's 25th Anniversary edition of ''ADD Video'', which showcased the most popular videos on MTV in the last 25 years.&lt;ref&gt;{{cite web|url=http://www.mtv.com/ontv/dyn/add_video/series.jhtml#/ontv/dyn/add_video/series.jhtml|title=A.D.D. Videos: 25 Years of MTV|work=MTV|accessdate=March 12, 2006}}&lt;/ref&gt;
+
+      ===''Metallica'' (1990–1993)===
+      In October 1990, Metallica entered One on One studio in North Hollywood to record its next album. [[Bob Rock]], who had worked with the bands such as [[Aerosmith]], [[The Cult]], [[Bon Jovi]], and [[Mötley Crüe]], was hired as the producer. ''[[Metallica (album)|Metallica]]'' (also known as ''The Black Album'') was remixed three times, cost US$1&amp;nbsp;million, and ended three marriages.&lt;ref name=&quot;Metallica timeline February 1990 - August 13, 1991&quot;&gt;{{cite web
+      |title=Metallica timeline February 1990 – August&amp;nbsp;13, 1991
+      |work=MTV
+      |url=http://www.mtv.com/onair/icon/metallica/timeline/?id=11
+      |accessdate=December 2, 2007}}&lt;/ref&gt; Although the release was stalled until 1991, ''Metallica'' debuted at number one in ten countries, selling 650,000 units in the United States during its first week.&lt;ref name=&quot;Heavy Metal Goes Platinum&quot;&gt;{{cite news
+      |title=Heavy Metal Goes Platinum
+      |author=Garcia, Guy
+      |work=TIME
+      |date=October 14, 1991
+      |url=http://www.time.com/time/magazine/article/0,9171,974031,00.html
+      |accessdate=December 12, 2007}}&lt;/ref&gt; The album was responsible for bringing Metallica to the attention of the mainstream and has been certified 16 times platinum in the United States, which makes it the 25th best-selling album in the country.&lt;ref name=&quot;Top 100 Albums&quot;&gt;{{cite web
+      |title=Top 100 Albums
+      |publisher=RIAA.com
+      |url=http://www.riaa.com/goldandplatinumdata.php?table=tblTop100
+      |accessdate=December 2, 2007}}&lt;/ref&gt; The making of ''Metallica'' and the following tour was documented in ''[[A Year and a Half in the Life of Metallica]]''. Dubbed the [[Wherever We May Roam Tour]], it lasted 14 months and included dates in the United States, Japan, and the UK.&lt;ref name=&quot;Metallica timeline February 1990 - August 13, 1991&quot;/&gt; In April 1992, Metallica appeared at [[The Freddie Mercury Tribute Concert]], performing a three-song set. Hetfield later performed &quot;[[Stone Cold Crazy]]&quot; with the remaining members of [[Queen (band)|Queen]] and [[Tony Iommi]].&lt;ref&gt;McIver, Joel (2004). [http://books.google.com/books?id=6LwTMoqykcYC&amp;pg=PA217&amp;dq=freddie+mercury+tribute+concert+metallica#v=onepage&amp;q=freddie%20mercury%20tribute%20concert%20metallica&amp;f=false ''Justice for All: The Truth About Metallica''].&lt;/ref&gt;
+
+      On August 8, 1992, during the co-headlining [[Guns N' Roses/Metallica Stadium Tour]], Hetfield suffered second and [[third degree burns]] to his arms, face, hands, and legs. There was confusion with the new [[pyrotechnics]] setup, which resulted in Hetfield walking into a {{convert|12|ft|m|sing=on}} flame during &quot;Fade to Black&quot;. Newsted recalls that Hetfield's skin was &quot;bubbling like on ''[[The Toxic Avenger (film)|The Toxic Avenger]]''&quot;.&lt;ref name=&quot;Metallica timeline August 9, 1992 – November 23, 1993&quot;/&gt; Guitar technician [[John Marshall (guitarist)|John Marshall]], who had previously filled in on rhythm guitar and was now playing in [[Metal Church]], replaced Hetfield for the remainder of the tour as Hetfield was unable to play guitar, although he was able to sing. Later in 1993, Metallica went on the [[Nowhere Else to Roam|Nowhere Else to Roam Tour]], playing five shows in [[Mexico City]]. The band's first box set was released in November 1993 called ''[[Live Shit: Binge &amp; Purge]]''. The collection contained three live CDs, three home videos, and a book filled with riders and letters.&lt;ref name=&quot;Metallica timeline August 9, 1992 – November 23, 1993&quot;&gt;{{cite web
+      |title=Metallica timeline August&amp;nbsp;9, 1992 – November 23, 1993
+      |work=MTV
+      |url=http://www.mtv.com/onair/icon/metallica/timeline/?id=12
+      |accessdate=December 1, 2007}}&lt;/ref&gt;
+
+      ===''Load'', ''Reload'', ''Garage Inc.'', and ''S&amp;M'' (1994–1999)===
+      &lt;!---[[File:Metallica - Load.jpg|thumb|The cover of [[Load (album)|''Load'']] was created using a mixture of [[semen]] and bovine blood mixed between sheets of plexiglass. It marked a change in image and music for the band.]]---&gt;
+      After almost three years of touring to support ''Metallica'', including a headlining performance at [[Woodstock '94]], Metallica returned to the studio to write and record its sixth studio album. The band went on a brief hiatus in the summer of 1995 and played three outdoor shows which included headlining [[Donington Park]] in the United Kingdom, supported by [[Slayer]], [[Skid Row (American band)|Skid Row]], [[Slash's Snakepit]], [[Therapy?]], and [[Corrosion of Conformity]]. The short tour was titled Escape from the Studio '95. The band spent roughly one year writing and recording new songs, resulting in the release of ''[[Load (album)|Load]]'' in 1996, which debuted at number one on the ''Billboard'' 200 and [[ARIA Charts]], marking the band's second number one.&lt;ref name=&quot;Metallica Chart Positions&quot;/&gt; The cover of ''Load'' was created by [[Andres Serrano]], and was called ''Blood and Semen III''. Serrano pressed a mixture of his own [[semen]] and bovine blood between sheets of plexiglass.&lt;ref name=&quot;Metallica timeline December 1995 - June 27, 1996&quot;&gt;{{cite web
+      |title=Metallica timeline December 1995 – June&amp;nbsp;27, 1996
+      |work=MTV
+      |url=http://www.mtv.com/onair/icon/metallica/timeline/?id=14
+      |accessdate=December 5, 2007}}&lt;/ref&gt; The release marked a change in musical direction for the band and a new image with band members receiving haircuts. Metallica headlined the alternative rock festival [[Lollapalooza]] in the summer of 1996.&lt;ref name=&quot;The Playboy Interview - Metallica&quot;/&gt;&lt;ref name=&quot;Load review&quot;/&gt;
+
+      During early production of the album, the band had produced enough material for a double album. It was decided that half of the songs were to be released, and the band would continue to work on the remaining songs and release them the following year. This resulted in the follow-up album, ''[[Reload (Metallica album)|Reload]]''. The cover was created by Serrano, this time using a mixture of blood and urine.&lt;ref name=&quot;Metallica timeline December 1995 - June 27, 1996&quot;/&gt; ''Reload'' debuted number one on the ''Billboard'' 200, and reached number two on the Top Canadian Album chart.&lt;ref name=&quot;Metallica Chart Positions&quot;/&gt; Hetfield noted in the 2004 documentary film ''[[Some Kind of Monster (film)|Some Kind of Monster]]'' that some of the songs on these albums were initially thought by the band to be of average quality, and were &quot;polished and reworked&quot; until judged to be releasable.&lt;ref name=&quot;Some Kind of Monster film&quot;/&gt; To promote ''Reload'', Metallica performed on [[NBC]]'s ''[[Saturday Night Live]]'' in December 1997, performing &quot;[[Fuel (song)|Fuel]]&quot; and &quot;[[The Memory Remains]]&quot; with [[Marianne Faithfull]].&lt;ref name=&quot;Metallica timeline November 18, 1997 – December 8, 1998&quot;&gt;{{cite web
+      |title=Metallica timeline November&amp;nbsp;18, 1997 – December 8, 1998
+      |work=MTV
+      |url=http://www.mtv.com/onair/icon/metallica/timeline/?id=16
+      |accessdate=December 5, 2007}}&lt;/ref&gt;
+
+      In 1998, Metallica compiled a double album of cover songs titled ''[[Garage Inc.]]'' The first disc contained newly recorded covers of songs by bands such as [[Diamond Head (band)|Diamond Head]], [[Killing Joke]], the [[Misfits (band)|Misfits]], [[Thin Lizzy]], [[Mercyful Fate]], and [[Black Sabbath]]. The second disc featured the original ''[[The $5.98 E.P.: Garage Days Re-Revisited]]'', which had become a scarce collectors' item. The album entered the ''Billboard'' 200 at number two.&lt;ref name=&quot;Metallica timeline November 18, 1997 – December 8, 1998&quot;/&gt;&lt;ref name=&quot;Metallica timeline February 24, 1999 – February 23, 2000&quot;&gt;{{cite web
+      |title=Metallica timeline February&amp;nbsp;24, 1999 – February 23, 2000
+      |work=MTV
+      |url=http://www.mtv.com/onair/icon/metallica/timeline/?id=17
+      |accessdate=December 5, 2007}}&lt;/ref&gt;
+
+      On April 21 and 22, 1999, Metallica recorded two performances with the [[San Francisco Symphony]] orchestra conducted by [[Michael Kamen]]. Kamen, who had previously worked with producer Rock on &quot;[[Nothing Else Matters]]&quot;, approached the band in 1991 with the idea of pairing Metallica's music with a symphony orchestra. Kamen and his staff of over 100 composed additional orchestral material for Metallica songs. Metallica wrote two new Kamen-scored songs for the event, &quot;[[No Leaf Clover]]&quot; and &quot;[[S&amp;M (Metallica album)|-Human]]&quot;. The audio recording and concert footage were released in 1999 as the album and concert film ''[[S&amp;M (Metallica album)|S&amp;M]]''. It entered the ''Billboard'' 200 at number two, and the Australian ARIA charts and Top Internet Albums chart at number one.&lt;ref name=&quot;Metallica Chart Positions&quot;/&gt;
+
+      ===Napster controversy (2000)===
+      In 2000, Metallica discovered that a demo of its song &quot;[[I Disappear]]&quot;, which was supposed to be released in combination with the [[Mission: Impossible II (soundtrack)|''Mission: Impossible II'' soundtrack]], was receiving radio airplay. Tracing the source of the leak, the band found the file on the [[Napster]] [[peer-to-peer]] file-sharing network, and also found that the band's entire catalogue was freely available.&lt;ref name=&quot;Testimony of Mr. Lars Ulrich&quot;&gt;{{cite web
+      |title=Testimony of Mr. Lars Ulrich
+      |publisher=judiciary.senate.gov
+      |date=July 11, 2000
+      |url=http://judiciary.senate.gov/testimony.cfm?id=195&amp;wit_id=252
+      |accessdate=December 5, 2007
+      |archiveurl=http://web.archive.org/web/20071129061341/http://judiciary.senate.gov/testimony.cfm?id=195&amp;wit_id=252
+      |archivedate=November 29, 2007
+      |deadurl=yes}}&lt;/ref&gt; [[Metallica v. Napster, Inc.|Legal action]] was initiated against Napster with Metallica filing a lawsuit at the [[U.S. District Court]], [[Central District of California]], alleging that Napster violated three areas of the law: [[copyright infringement]], unlawful use of digital audio interface device, and the [[Racketeer Influenced and Corrupt Organizations Act]] (RICO).&lt;ref name=&quot;The Playboy Interview - Metallica&quot;/&gt;&lt;ref name=&quot;Metallica Rips Napster&quot;&gt;{{cite web
+      |title=Metallica Rips Napster
+      |author=Jones, Christopher
+      |work=Wired
+      |date=April 13, 2000
+      |url=http://www.wired.com/politics/law/news/2000/04/35670
+      |accessdate=December 5, 2007}}&lt;/ref&gt;
+      [[File:Lars London 2008 crop.jpg|thumb|left|Ulrich led the case against Napster]]
+      Though the lawsuit named three universities for copyright infringement, the [[University of Southern California]], [[Yale University]], and [[Indiana University]], no individuals were named. Yale and Indiana complied and blocked the service from its campuses, and Metallica withdrew the universities' inclusion in the lawsuit.&lt;ref name=&quot; 2 Universities Block Internet Music Service&quot;&gt;{{cite news
+      |title= 2 Universities Block Internet Music Service
+      |work=The New York Times
+      |date=April 21, 2000
+      |url=http://query.nytimes.com/gst/fullpage.html?res=9A07E5D81E31F932A15757C0A9669C8B63&amp;n=Top/Reference/Times%20Topics/Organizations/U/University%20of%20Southern%20California
+      |accessdate=December 5, 2007}}&lt;/ref&gt; USC, however, had a meeting with students to decide what was going to happen with Napster. School administrators wanted it banned as its usage accounted for 40% of the bandwidth not being used for educational purposes.&lt;ref name=&quot;Time for a Napster Rest?&quot;&gt;{{cite web
+      |title=Time for a Napster Rest?
+      |author=Oakes, Chris
+      |work=Wired
+      |date=February 10, 2000
+      |url=http://www.wired.com/science/discoveries/news/2000/02/34201
+      |accessdate=December 5, 2007}}&lt;/ref&gt;
+
+      Metallica hired online consulting firm NetPD to monitor the Napster service for a weekend. A list of 335,435 Napster users who were believed to be sharing Metallica's music was compiled, and the 60,000-page document was delivered to Napster's office as Metallica requested the users be banned from the service.&lt;ref name=&quot;Metallica fingers 335,435 Napster users&quot;&gt;{{cite web
+      |title=Metallica fingers 335,435 Napster users
+      |author=Borland, John
+      |publisher=CNET.com
+      |date=May 1, 2000
+      |url=http://news.cnet.com/Metallica-fingers-335,435-Napster-users/2100-1023_3-239956.html
+      |accessdate=December 5, 2007}}&lt;/ref&gt; The users were banned, and rap artist [[Dr. Dre]] joined the lawsuit against Napster, which resulted in an additional 230,142 Napster users banned.&lt;ref name=&quot;Napster boots Dr. Dre fans from service&quot;&gt;{{cite web
+      |title=Napster boots Dr. Dre fans from service
+      |author=Borland, John
+      |publisher=CNET.COM
+      |date=May 26, 2000
+      |url=http://news.cnet.com/2100-1023-241159.html
+      |accessdate=December 5, 2007}}&lt;/ref&gt;
+
+      Ulrich provided a statement to the [[Senate Judiciary Committee]] regarding copyright infringement on July 11, 2000.&lt;ref name=&quot;Testimony of Mr. Lars Ulrich&quot;/&gt; [[Federal Judge]] [[Marilyn Hall Patel]] ordered the site place a [[Content-control software|filter]] on the program in 72 hours or be shut down.&lt;ref name=&quot;The End of the Line for Royalties?&quot;&gt;{{cite news
+      |title=The End of the Line for Royalties?
+      |author=Pellegrini, Frank
+      |work=TIME
+      |date=March 6, 2001
+      |url=http://www.time.com/time/nation/article/0,8599,101597,00.html
+      |accessdate=December 12, 2007}}&lt;/ref&gt; A settlement was reached between Metallica and Napster when German media conglomerate [[Bertelsmann]] BMG showed interest to purchase the rights to Napster for $94&amp;nbsp;million. Under the terms of settlement, Napster agreed to block users who shared music by artists who do not want their music shared.&lt;ref name=&quot;Napster settles suits&quot;&gt;{{cite news
+      |title=Napster settles suits
+      |publisher=CNN
+      |date=July 21, 2001
+      |url=http://money.cnn.com/2001/07/12/news/napster/
+      |accessdate=December 5, 2007}}&lt;/ref&gt; However, on June 3, 2002, Napster filed for [[Chapter 11]] protection under U.S. bankruptcy laws. On September 3, 2002, an American bankruptcy judge blocked the sale to Bertelsmann and forced Napster to liquidate its assets according to [[Chapter 7, Title 11, United States Code|Chapter 7]] of the U.S. bankruptcy laws.&lt;ref&gt;{{cite news | last=Evangelista | first=Benny | title=Napster runs out of lives – judge rules against sale | date=September 4, 2002 |work=San Francisco Chronicle | url=http://www.sfgate.com/business/article/Napster-runs-out-of-lives-judge-rules-against-2774278.php |accessdate=January 2, 2008}}&lt;/ref&gt;
+
+      At the 2000 [[MTV Video Music Awards]], Ulrich appeared in a skit with host [[Marlon Wayans]] that blasted the idea of using Napster to share music. Marlon played a college student sitting in his dorm room listening to Metallica's &quot;I Disappear&quot;. Ulrich walked in and asked for an explanation. On receiving Wayans' excuse that using Napster was just &quot;sharing&quot;, Ulrich retorted that Marlon's idea of sharing was &quot;borrowing things that were not yours without asking.&quot; He called in the Metallica road crew, who proceeded to confiscate all of Wayans' belongings, leaving him almost nude in an empty room. Napster creator [[Shawn Fanning]] responded later in the ceremony by presenting an award wearing a Metallica shirt, saying, &quot;I borrowed this shirt from a friend. Maybe, if I like it, I'll buy one of my own.&quot;&lt;ref name=&quot;MTV&quot;&gt;MTV Video Music Awards 2000.&lt;/ref&gt; Ulrich was booed on stage later at the award show when he introduced the final musical act, [[Blink-182]].&lt;ref&gt;{{cite web |url=http://www.wired.com/culture/lifestyle/news/2000/12/40795?currentPage=all |title=Funny as a Lars Attack |work=Wired.om}}&lt;/ref&gt;&lt;ref&gt;{{citation |url=http://www.nyrock.com/features/2000/vma00.asp |title=MTV's Video Music Awards 2000: If only I have a brain |publisher=NY Rock |date=September 7, 2011}}&lt;/ref&gt;&lt;ref&gt;{{cite news |url=http://abcnews.go.com/Entertainment/story?id=115952&amp;page=1 |title=Eminem and 'N Sync Big VMA Winners |publisher=ABC News}}&lt;/ref&gt;
+
+      ===Newsted's departure and ''St. Anger'' (2001–2005)===
+      [[File:Metallica 46.jpg|thumb|left|Metallica playing live at Illinois in 2004.]]
+      As plans were being made to enter the recording studio, Newsted left the band on January 17, 2001. His statement revealed his departure was based on &quot;private and personal reasons, and the physical damage I have done to myself over the years while playing the music that I love.&quot;&lt;ref name=&quot;Bassist Jason Newsted Leaves Metallica&quot;&gt;{{cite web
+      |title=Bassist Jason Newsted Leaves Metallica
+      |author=Basham, David
+      |work=MTV
+      |date=January 17, 2001
+      |url=http://www.mtv.com/news/articles/1438016/20010117/metallica.jhtml
+      |accessdate=December 3, 2007}}&lt;/ref&gt; During a ''[[Playboy]]'' interview with Metallica, Newsted revealed intentions he wanted to release an album with his [[side project]], [[Echobrain]]. Hetfield was against the idea and said, &quot;When someone does a side project, it takes away from the strength of Metallica&quot; and a side project is &quot;like cheating on your wife in a way&quot;.&lt;ref name=&quot;The Playboy Interview - Metallica&quot;/&gt; Newsted countered his statement by saying Hetfield recorded vocals for a song in the film ''[[South Park: Bigger, Longer &amp; Uncut]]'', and appears on two [[Corrosion of Conformity]] albums. Hetfield replied, &quot;My name isn't on those records. And I'm not out trying to sell them&quot;, and pondered questions such as, &quot;Where would it end? Does he start touring with it? Does he sell shirts? Is it his band?&quot;&lt;ref name=&quot;The Playboy Interview - Metallica&quot;&gt;{{cite web
+      |title=The Playboy Interview – Metallica
+      |publisher=Playboy
+      |url=http://www.playboy.com/articles/metallica-interview/index.html
+      |accessdate=December 3, 2007}} {{Dead link|date=April 2012|bot=H3llBot}}&lt;/ref&gt;
+
+      [[File:Robert Trujillo live in London 2008-09-15.jpg|thumb|upright|Robert Trujillo was announced as Metallica's new bassist on February 24, 2003]]
+      In April 2001, filmmakers [[Joe Berlinger]] and [[Bruce Sinofsky]] began following Metallica to document the recording process of the next studio album. Over two years, more than 1,000 hours of footage was recorded. On July 19, 2001, before preparations to enter the recording studio, Hetfield entered [[Drug rehabilitation|rehab]] owing to &quot;alcoholism and other addictions&quot;. All recording plans were put on hiatus and the band's future was in doubt.&lt;ref name=&quot;Metallica timeline April 2001 - December 4, 2001&quot;&gt;{{cite web
+      |title=Metallica timeline April 2001 – December&amp;nbsp;4, 2001
+      |work=MTV
+      |url=http://www.mtv.com/onair/icon/metallica/timeline/?id=21
+      |accessdate=December 5, 2007}}&lt;/ref&gt; Hetfield left rehab on December 4, 2001,&lt;ref name=&quot;Metallica timeline April 2001 - December 4, 2001&quot;/&gt; and the band returned to the recording studio on April 12, 2002, though Hetfield was required to limit his work to four hours a day, noon to 4&amp;nbsp;pm, and spend the rest of his time with his family.&lt;ref name=&quot;Some Kind of Monster film&quot;/&gt; The footage recorded by Berlinger and Sinofsky was compiled into the documentary ''[[Some Kind of Monster (film)|Some Kind of Monster]]'', which premiered at the [[Sundance Film Festival]] in January 2004. In the documentary, Newsted described his former bandmates' decision to hire a therapist to help solve their problems which he felt they could have solved on their own as &quot;really fucking lame and weak&quot;.&lt;ref name=&quot;Some Kind of Monster film&quot;&gt;''Some Kind of Monster'' feature film, Metallica, January 2004, Paramount Pictures.&lt;/ref&gt;
+
+      For the duration of the recording period, producer Bob Rock played bass, both on the album and for the few live shows at which Metallica performed during that time frame.&lt;ref name=&quot;Some Kind of Monster film&quot;/&gt; Once the record was completed, in early 2003, the band started to hold auditions for Newsted's permanent replacement. Bassists that auditioned included [[Pepper Keenan]], [[Jeordie White]], [[Scott Reeder (bassist)|Scott Reeder]], [[Eric Avery]], [[Danny Lohner]], and [[Chris Wyse]]. Following three months of auditions, [[Robert Trujillo]], formerly of [[Suicidal Tendencies]] and [[Ozzy Osbourne]]'s band, was chosen as the new bassist.&lt;ref name=&quot;Some Kind of Monster film&quot;/&gt; As Metallica moved on, Newsted joined Canadian thrash metal band [[Voivod (band)|Voivod]] in 2002, and was Trujillo's replacement in Osbourne's band during the 2003 [[Ozzfest]] tour, which included Voivod as part of the touring bill.&lt;ref name=&quot;Metallica timeline January 3, 2002 – March 19, 2003&quot;&gt;{{cite web
+      |title=Metallica timeline January&amp;nbsp;3, 2002 – March 19, 2003
+      |work=MTV
+      |url=http://www.mtv.com/onair/icon/metallica/timeline/?id=22
+      |accessdate=December 5, 2007}}&lt;/ref&gt;
+
+      In June 2003, Metallica's eighth studio album, ''[[St. Anger]]'', debuted at number one on the ''Billboard'' 200, and drew mixed reactions from critics.&lt;ref name=&quot;St Anger by Metallica&quot;/&gt; Ulrich's &quot;steely&quot; sounding [[snare drum]], and the absence of guitar solos received particular criticism.&lt;ref name=&quot;St Anger by Metallica&quot;&gt;{{cite web
+      |title=''St. Anger'' by Metallica
+      |publisher=Metacritic.com
+      |url=http://www.metacritic.com/music/st-anger
+      |accessdate=December 5, 2007}}&lt;/ref&gt; Kevin Forest Moreau of ''Shakingthrough.net'' commented that &quot;the guitars stumble in a monotone of mid-level, processed rattle; the drums don't propel as much as struggle to disguise an all-too-turgid pace; and the rage is both unfocused and leavened with too much [[narcissistic]] navel-gazing&quot;,&lt;ref name=&quot;Rattle and Ho-Hum&quot;&gt;{{cite web
+      |title=Rattle and Ho-Hum
+      |author=Moreau, Kevin
+      |publisher=Shakingthrough.net
+      |date=June 23, 2003
+      |url=http://www.shakingthrough.net/music/reviews/2003/metallica_st_anger_2003.html
+      |accessdate=December 5, 2007}}&lt;/ref&gt; and Brent DiCrescenzo of ''[[Pitchfork Media]]'' described it as &quot;an utter mess&quot;.&lt;ref name=&quot;Metallica St. Anger Pitch&quot;&gt;{{cite web
+      |title=Metallica St. Anger
+      |author=DiCrescenzo, Brent
+      |publisher=Pitchfork Media
+      |date=June 16, 2003
+      |url=http://pitchfork.com/reviews/albums/5250-st-anger/
+      |accessdate=December 5, 2007}}&lt;/ref&gt; However, ''[[Blender (magazine)|Blender]]'' magazine called it the &quot;grimiest and grimmest of the band's Bob Rock productions&quot;, and ''[[New York Magazine]]'' called it &quot;utterly raw and rocking&quot;.&lt;ref name=&quot;St Anger by Metallica&quot;/&gt; The title track, &quot;[[St. Anger (song)|St. Anger]]&quot;, won the [[Grammy Award for Best Metal Performance]] in 2004, and was used as the official theme song for [[WWE]]'s ''[[SummerSlam (2003)|SummerSlam 2003]]''.&lt;ref name=&quot;Grammy Award winners – Metallica&quot;&gt;{{cite web
+      |title=Grammy Award winners – Metallica
+      |publisher=Grammy.com
+      |url=http://www.grammy.com/GRAMMY_Awards/Winners/Results.aspx?title=&amp;winner=Metallica&amp;year=0&amp;genreID=0&amp;hp=1
+      |accessdate=December 5, 2007
+      |archiveurl=http://web.archive.org/web/20071209101613/http://www.grammy.com/GRAMMY_Awards/Winners/Results.aspx?title=&amp;amp;winner=Metallica&amp;amp;year=0&amp;amp;genreID=0&amp;amp;hp=1 &lt;!--Added by H3llBot--&gt;
+      |archivedate=December 9, 2007}}&lt;/ref&gt;
+
+      Before the band's set at the 2004 [[Download Festival]] in England, Ulrich was rushed to the hospital after having an anxiety seizure,&lt;ref&gt;{{cite web |url=http://www.fri.dk/personlig-udvikling/lars-ulrich-fra-total-ass-til-familiefar |title=Lars Ulrich – fra 'total ass' til familiefar |publisher=FRI.DK |work=Berlingske Media |date=June 27, 2009 |author=Tonie Yde Mørch |accessdate=June 7, 2011}}&lt;/ref&gt; and was unable to perform.&lt;ref name=&quot;Metallica's Lars Ulrich Hospitalized in Switzerland, Misses Show&quot;/&gt; Hetfield searched for volunteers at the last minute to replace Ulrich. [[Slayer]] drummer [[Dave Lombardo]], and [[Slipknot (band)|Slipknot]] drummer [[Joey Jordison]] volunteered. Lombardo performed the songs &quot;[[Battery (song)|Battery]]&quot; and &quot;The Four Horsemen&quot;, Ulrich's drum technician Flemming Larsen performed &quot;Fade to Black&quot;, with Jordison performing the remainder of the set.&lt;ref name=&quot;Metallica's Lars Ulrich Hospitalized in Switzerland, Misses Show&quot;&gt;{{cite web|title=Metallica's Lars Ulrich Hospitalized in Switzerland, Misses Show|publisher=[[Yahoo Music]]|date=June 7, 2004|url=http://new.music.yahoo.com/metallica/news/metallicas-lars-ulrich-hospitalized-in-switzerland-misses-show--12054238|accessdate=December 9, 2006}}&lt;/ref&gt; Having toured for two years in support of ''St. Anger'' on the Summer Sanitarium Tour 2003 and the [[Madly in Anger with the World Tour]], with multi-platinum rockers [[Godsmack]] in support, Metallica took a break from performing and spent most of 2005 with friends and family. However, for two shows on November 13, 2005, and November 15, 2005, Metallica opened for [[The Rolling Stones]] at [[AT&amp;T Park]] in San Francisco.&lt;ref name=&quot;Metallica Opening for Rolling Stones in San Francisco&quot;&gt;{{cite web
+      |title=Metallica Opening for Rolling Stones in San Francisco
+      |author=Kaufman, Gil
+      |work=MTV
+      |date=April 3, 2005
+      |url=http://www.mtv.com/news/articles/1506869/20050803/metallica.jhtml
+      |accessdate=December 5, 2007}}&lt;/ref&gt;
+
+      ===''Death Magnetic'' (2006–2011)===
+      [[File:Kirkhemmettwien07.JPG|left|thumb|Hammett performing live in 2007]]
+      In December 2006, Metallica released a DVD titled ''[[The Videos 1989–2004]]'', which sold 28,000 copies in its first week and entered the ''Billboard'' Top Videos chart at number three.&lt;ref name=&quot;METALLICA's Videos Beats SLIPKNOT's 'Voliminal' on Music Video Chart&quot;&gt;{{cite web |title=Metallica's 'Videos' beats Slipknot's Voliminal' on Music Video Chart |publisher=Blabbermouth.net|date=December 15, 2006 |url=http://www.roadrunnerrecords.com/blabbermouth.net/news.aspx?mode=Article&amp;newsitemID=63882 |accessdate=December 5, 2007}}&lt;/ref&gt; Metallica recorded a cover of [[Ennio Morricone]]'s &quot;[[The Ecstasy of Gold]]&quot; for a tribute album titled ''[[We All Love Ennio Morricone]]'', released in February 2007. The cover received a Grammy nomination at the [[50th Grammy Awards]] for the category &quot;[[Best Rock Instrumental Performance]]&quot;.&lt;ref name=&quot;Best Metal Performance&quot;&gt;{{cite web |title=Best Metal Performance |publisher=Grammy.com |url=http://www.grammy.com/GRAMMY_Awards/50th_Show/list.aspx#04 |archiveurl=http://web.archive.org/web/20071208065050/http://www.grammy.com/GRAMMY_Awards/50th_Show/list.aspx#04 |archivedate=December 8, 2007
+      |accessdate=December 7, 2007}}&lt;/ref&gt; A recording of &quot;The Ecstasy of Gold&quot; has been played as the introduction for Metallica performances since the 1980s. However, this new version features the band itself performing the piece, giving a new guitar-based interpretation to the music.&lt;ref&gt;{{cite news |title=We All Love Ennio Morricone|url =http://www.metallica.com/index.asp?item=600114|publisher=Metallica.com|date=February 20, 2007|accessdate =February 20, 2007}}{{dead link|date=April 2011}}&lt;/ref&gt;
+
+      In 2006, Metallica announced on its official website that after 15 years, long-time producer [[Bob Rock]] would not be producing Metallica's next studio album. The band chose to work with producer [[Rick Rubin]].&lt;ref&gt;{{cite news | title=Metallica Studio Update | publisher=Metallica | date=February 16, 2006 | url=http://www.metallica.com/index.asp?item=14828 | accessdate=December 23, 2006}}{{dead link|date=April 2011}}&lt;/ref&gt; Metallica scheduled the release date for ''[[Death Magnetic]]'' as September 12, 2008, and the band filmed a music video for the album's first single &quot;[[The Day That Never Comes]]&quot;.
+
+      On September 2, 2008, a French record store began selling copies of ''Death Magnetic'' nearly two weeks ahead of its scheduled worldwide release date,&lt;ref&gt;{{cite web|url=http://www.roadrunnerrecords.com/blabbermouth.net/news.aspx?mode=Article&amp;newsitemID=103902 |title=METALLICA's 'Death Magnetic' Sold Two Weeks Early at French Record Store? |publisher=Roadrunner Records |work=Blabbermouth.net |accessdate=November 7, 2010}}&lt;/ref&gt; which resulted in the album being made available on [[peer-to-peer]] clients. This prompted the band's United Kingdom distributor, [[Vertigo Records]], to officially release the album two days ahead of schedule, on September 10, 2008. Rumors of Metallica or Warner Bros. taking any legal action against the retailer were unconfirmed, though drummer Lars Ulrich made such responses to the [[Internet leak|leak]] as, &quot;...We're ten days from release. I mean, from here, we're golden. If this thing leaks all over the world today or tomorrow, happy days. Happy days. Trust me&quot;,&lt;ref name=leak&gt;{{cite web|url=http://www2.kerrang.com/2008/09/metallica_album_leak.html|title=Kerrang! Metallica album leak...|publisher=kerrang.com|accessdate=September 17, 2008}}&lt;/ref&gt; and, &quot;By 2008 standards, that's a victory. If you'd told me six months ago that our record wouldn't leak until 10 days out, I would have signed up for that.&quot;&lt;ref&gt;{{cite news|url=http://www.usatoday.com/life/music/news/2008-09-10-metallica-main_N.htm|title=Metallica remains calm over 'Magnetic' leaks|last=Gundersen|first=Edna|date=September 11, 2008|publisher=USA TODAY.com|accessdate=September 17, 2008}}&lt;/ref&gt;
+
+      ''Death Magnetic'' debuted at number one in the United States selling 490,000 units with Metallica becoming the first band to have five consecutive studio albums debut at number one in the history of the ''Billboard'' 200.&lt;ref name=&quot;Metallica's 'Death Magnetic' Reigns on European Album Chart&quot;&gt;{{cite web
+      |title=Metallica's Death Magnetic Reigns on European Album Chart
+      |publisher=Blabbermouth.net
+      |date=September 25, 2008
+      |url=http://www.roadrunnerrecords.com/blabbermouth.net/news.aspx?mode=Article&amp;newsitemID=105557
+      |accessdate=September 29, 2008}}&lt;/ref&gt; After a week of its release, ''Death Magnetic'' remained at number one on the ''Billboard'' 200, the European album chart, and became the fastest selling album in Australia for 2008.&lt;ref name=&quot;Metallica's 'Death Magnetic' Is Fastest-Selling Album of the Year in Australia&quot;&gt;{{cite web
+      |title=Metallica's Death Magnetic Is Fastest-Selling Album of the Year in Australia
+      |publisher=Blabbermouth.net
+      |date=September 21, 2008
+      |url=http://www.roadrunnerrecords.com/blabbermouth.net/news.aspx?mode=Article&amp;newsitemID=105261
+      |accessdate=September 29, 2008}}&lt;/ref&gt; [[File:Metallica London 2008-09-15 Kirk and James.jpg|thumb|right|Kirk Hammett and James Hetfield performing in London in 2008]]
+      ''Death Magnetic'' remained at number one on the ''Billboard'' 200 album chart for three consecutive weeks. Metallica was one of two artists, along with [[Jack Johnson (musician)|Jack Johnson]] with the release of the album ''[[Sleep Through the Static]]'', to remain on the ''Billboard'' 200 for three consecutive weeks at number one in 2008. ''Death Magnetic'' had also remained at number one on ''Billboard'''s Hard Rock, Modern Rock/Alternative and Rock album charts for five consecutive weeks. Internationally, the album reached number one in 32 countries including the United Kingdom, Canada, and Australia.&lt;ref&gt;{{cite web |title=Metallica's Death Magnetic Tops Album Chart for Third Week in a Row |publisher=EuroInvester |date=October 1, 2008 |url=http://www.euroinvestor.co.uk/news/story.aspx?id=9983169}}&lt;/ref&gt;&lt;ref&gt;{{cite web |title=Death Magnetic : Metallica : Review : Rolling Stone |url=http://www.rollingstone.com/music/artists/metallica/albumguide}}&lt;/ref&gt;&lt;ref&gt;{{cite web |title=Indie Review – Metallica, Death Magnetic |publisher=[[BBC Music]] |url=http://www.bbc.co.uk/music/reviews/qzvr}}&lt;/ref&gt;&lt;ref&gt;{{cite news | title=Metallica nominated in the EMA's and playing live at the VMA's in Latin America | publisher=Alternativeware | date=October 8, 2008 | url=http://www.geocities.com/alerivmx/metallica0.htm | accessdate=October 8, 2008| archiveurl=http://web.archive.org/web/20090805212851/http://geocities.com/alerivmx/metallica0.htm| archivedate=August 5, 2009}}&lt;/ref&gt; In November 2008, Metallica's record deal with Warner Bros. ended, and the band considered releasing its next album through the internet.&lt;ref&gt;{{cite web |url=http://www.ultimate-guitar.com/news/general_music_news/metallica_consider_releasing_next_album_online.html |title=Metallica Consider Releasing Next Album Online &amp;#124; News @ |publisher=Ultimate-guitar.com |accessdate=October 1, 2009}}&lt;/ref&gt;&lt;ref&gt;{{cite web|url=http://www.roadrunnerrecords.com/blabbermouth.Net/news.aspx?mode=Article&amp;newsitemID=111000 |title=Jimmy Page, Jimi Hendrix, Eddie Van Halen, Steve Vai Among 'Chop Shop''S Top Guitarists |publisher=Roadrunner Records |work=Blabbermouth.net |accessdate=October 1, 2009}}&lt;/ref&gt;
+
+      On January 14, 2009, it was announced that Metallica would be inducted into the [[Rock and Roll Hall of Fame]] on April 4, 2009,&lt;ref name=&quot;Metallica, Run D.M.C. Lead Rock Hall Inductees&quot;&gt;{{cite web
+      |author=Cohen, Jonathan
+      |title=Metallica, Run D.M.C. Lead Rock Hall Inductees
+      |work=Billboard
+      |url=http://www.billboard.com/articles/news/269611/metallica-run-dmc-lead-rock-hall-inductees
+      |accessdate=January 14, 2009}}&lt;/ref&gt; and that former bassist Jason Newsted (who left the band in 2001), would perform with the band at the ceremony.&lt;ref&gt;{{cite web|url=http://www.idiomag.com/peek/72984/metallica|title=Jason Newsted to rejoin Metallica|accessdate=March 30, 2009|date=March 30, 2009|publisher=[[idiomag]]}}&lt;/ref&gt; Initially, it was announced that the matter had been discussed, and that bassist Trujillo had agreed not to play, as he &quot;wanted to see the Black Album band&quot;.&lt;ref&gt;{{cite web|url=http://www.idiomag.com/peek/73495/metallica|title=Jason Newsted: Trujillo won't play with Metallica during Rock Hall induction|accessdate=April 1, 2009|date=April 1, 2009|publisher=[[idiomag]]}}&lt;/ref&gt; However, during the band's set of &quot;Master of Puppets&quot; and &quot;Enter Sandman&quot;, both Trujillo and Newsted were on stage.&lt;ref&gt;{{cite news |url=http://www.reuters.com/article/2009/04/05/music-rock-idUSN0436280220090405 |title=Metallica rocks Hall of Fame with other new members |agency=Reuters |date=April 5, 2009 |accessdate=April 5, 2009}}&lt;/ref&gt; Ray Burton, father of the late Cliff Burton, accepted the honor on his behalf. Although he was not to be inducted with them, Metallica also invited Dave Mustaine to take part in the induction ceremony. Mustaine declined, however, citing his touring commitments in Europe.&lt;ref&gt;{{cite web|url=http://www.blabbermouth.net/news/dave-mustaine-to-metallica-i-am-so-very-proud-of-all-you-have-accomplished/ |title=DAVE MUSTAINE to METALLICA: 'I Am So Very Proud of All You Have Accomplished' |publisher=Roadrunner Records |work=Blabbermouth.net |date=February 27, 2009 |accessdate=October 1, 2009}}&lt;/ref&gt;&lt;ref&gt;{{cite web|url=http://metallica.com/index.asp?item=602313 |title=Metallica.com |publisher=Metallica.com |date=May 27, 2009 |accessdate=October 1, 2009}}{{dead link|date=April 2011}}&lt;/ref&gt;&lt;ref&gt;{{cite web|url=http://metallica.com/index.asp?item=602389 |title=Metallica.com |publisher=Metallica.com |accessdate=October 1, 2009}}{{dead link|date=April 2011}}&lt;/ref&gt;
+      Metallica, Slayer, Megadeth, and Anthrax performed on the same bill for the first time on June 16, 2010 at Bemowo Airport (Warsaw, Poland) as a part of the [[Sonisphere Festival]] series. The show in Sofia, Bulgaria on June 22, 2010 was broadcast via satellite in HD to cinemas,&lt;ref&gt;{{cite web|author=Metallica |url=http://www.billboard.com/articles/news/957831/metallica-heading-to-cinemas |title=Metallica Heading to Cinemas |work=Billboard |date=September 14, 2009 |accessdate=November 7, 2010}}&lt;/ref&gt; and the bands also played dates in [[Bucharest]], Romania (June 26, 2010) and [[Istanbul]], Turkey (June 27, 2010). On June 28, 2010, ''[[Death Magnetic]]'' was certified 2X platinum by the [[RIAA]].&lt;ref&gt;{{cite web |url=http://www.riaa.com/goldandplatinumdata.php?resultpage=1&amp;table=SEARCH_RESULTS&amp;action=&amp;title=Death%20Magnetic&amp;artist=Metallica&amp;format=&amp;debutLP=&amp;category=&amp;sex=&amp;releaseDate=&amp;requestNo=&amp;type=&amp;level=&amp;label=&amp;company=&amp;certificationDate=&amp;awardDescription=&amp;catalogNo=&amp;aSex=&amp;rec_id=&amp;charField=&amp;gold=&amp;platinum=&amp;multiPlat=&amp;level2=&amp;certDate=&amp;album=&amp;id=&amp;after=&amp;before=&amp;startMonth=1&amp;endMonth=1&amp;startYear=1958&amp;endYear=2010&amp;sort=Artist&amp;perPage=25 |title=Gold and Platinum |accessdate=July 24, 2010}}&lt;/ref&gt;
+
+      The band's [[World Magnetic Tour]] ended on November 21, 2010 in Melbourne, Australia. The band had been touring for over two years in support of ''Death Magnetic''. To go with its final tour dates in Australia and New Zealand, a live limited edition EP of past performances in Australia was released called ''[[Six Feet Down Under]]''.&lt;ref&gt;{{cite web |url=http://www.metallica.com/index.asp?item=603343 |title=Heading Down Under |publisher=Metallica |date=September 16, 2010 |accessdate=October 12, 2010}}{{dead link|date=April 2011}}&lt;/ref&gt; The EP was also followed by ''[[Six Feet Down Under (Part II)]]'', which was released on November 12, 2010.&lt;ref&gt;{{cite web |url=http://www.metallica.com/index.asp?item=603439 |title=Final Release for 2010 |publisher=Metallica |date=October 25, 2010 |accessdate=November 15, 2010}}{{dead link|date=April 2011}}&lt;/ref&gt; Part 2 contains a further eight songs recorded during the first two Oceanic Legs of the [[World Magnetic Tour]].
+
+      On November 26, 2010, Metallica released another live EP, titled ''[[Live at Grimey's]]'', which was recorded in June 2008 at Grimey's Record Store, just prior to its appearance at [[Bonnaroo Music Festival|Bonnaroo]] that year.&lt;ref&gt;{{cite web |url=http://www.roadrunnerrecords.com/blabbermouth.net/news.aspx?mode=Article&amp;newsitemID=147257 |title=Metallica: 'Live at Grimey's' EP Due in November |publisher=Roadrunner Records |work=Blabbermouth.net |date=October 6, 2010 |accessdate=October 12, 2010}}&lt;/ref&gt;&lt;ref&gt;{{cite web |url=http://metallica.com/index.asp?item=603402 |title=One More for 2010! |publisher=Metallica.com |date=October 6, 2010 |accessdate=October 12, 2010}}{{dead link|date=April 2011}}&lt;/ref&gt;
+
+      In a June 2009 interview with Italy's Rock TV, Ulrich stated that Metallica was planning to continue touring through August 2010, stating there were no plans for a tenth album, but was sure that they would collaborate with producer [[Rick Rubin]] again.&lt;ref&gt;{{cite web|url=http://www.roadrunnerrecords.com/blabbermouth.Net/news.aspx?mode=Article&amp;newsitemID=123454|title=Metallica's Lars Ulrich: I Would Like to Make Another Album with Rick Rubin|publisher=[[Blabbermouth.net]]|date=July 11, 2009|accessdate=July 11, 2009}}&lt;/ref&gt; According to [[Blabbermouth.net]], the band may start thinking about recording their next album in the second half of 2011.&lt;ref&gt;{{cite web|url=http://www.roadrunnerrecords.com/BLABBERMOUTH.net/news.aspx?mode=Article&amp;newsitemID=128779|title=Metallica Is Open to Performing Full Albums in Concert Again|publisher=[[Blabbermouth.net]]|date=October 15, 2009|accessdate=November 5, 2009|archiveurl=http://web.archive.org/web/20091018042345/http://www.roadrunnerrecords.com/blabbermouth.net/news.aspx?mode=Article&amp;amp;newsitemID=128779 &lt;!--Added by H3llBot--&gt;|archivedate=October 18, 2009}}&lt;/ref&gt; In a November 2010 interview with The Pulse of Radio, Ulrich stated that Metallica would get back to writing again for 2011. Ulrich stated: &quot;There's a bunch of balls in the air for 2011, but I think the main one is we really want to get back to writing again. We haven't really written since, what, '06, '07, and we want to get back to kind of just being creative again. Right now we are going to just chill out and then probably start up again in, I'd say, March or April, and start probably putting the creative cap back on and start writing some songs.&quot;&lt;ref&gt;{{cite web |url=http://www.ultimate-guitar.com/news/upcoming_releases/metallica_to_begin_work_on_new_album.html |title=Metallica to Begin Work on New Album |publisher=Ultimate-Guitar |date=November 11, 2010|accessdate=November 11, 2010}}&lt;/ref&gt;
+
+      In an interview at the April 2011 Big Four concert, bassist [[Robert Trujillo]] said that Metallica will work with Rick Rubin again as the producer for the new album and were &quot;really excited to write some new music. There's no shortage of riffage in Metallica world right now.&quot; He also added, &quot;The first album with Rick was also the first album for me, so in a lot of ways, you're kind of testing the water. Now that we're comfortable with Rick and his incredible engineer, Greg Fidelman, who worked with Slayer, actually, on this last record—it's my hero—it's a great team. And it's only gonna better; I really believe that. So I'm super-excited.&quot;&lt;ref&gt;{{cite web |url=http://www.roadrunnerrecords.com/blabbermouth.net/news.aspx?mode=Article&amp;newsitemID=157197 |title=Metallica to Re-Team with Producer Rick Rubin for Next Album, Says Bassist |publisher=[[Blabbermouth.net]] |date=April 24, 2011 |accessdate=April 24, 2011}}&lt;/ref&gt; In June 2011, it was announced by Rubin that Metallica had begun writing their new album.&lt;ref&gt;{{cite web|url=http://www.roadrunnerrecords.com/blabbermouth.net/news.aspx?mode=Article&amp;newsitemID=159673 |title=METALLICA 'About to Start Writing' New Album, Says Producer RICK RUBIN |publisher=Blabbermouth.net |date=June 20, 2011 |accessdate=June 21, 2011}}&lt;/ref&gt;
+      On November 9, 2010, Metallica announced that it would be headlining the [[Rock in Rio]], in [[Rio de Janeiro]], on September 25, 2011.&lt;ref&gt;{{cite web |url=http://www.roadrunnerrecords.com/blabbermouth.net/news.aspx?mode=Article&amp;newsitemID=149089 |title=METALLICA Confirmed for Brazil's ROCK IN RIO Festival |publisher=Roadrunner Records |work=Blabbermouth.net |date=November 9, 2010 |accessdate=November 9, 2010}}&lt;/ref&gt;&lt;ref&gt;{{cite web |url=http://www.metallica.com/news/nov-09-2010-shows-in-2011.asp |title=Shows in 2011?!?!?! |publisher=Metallica |date=November 9, 2010 |accessdate=June 8, 2011}}&lt;/ref&gt; On December 13, 2010, the band announced that it would once again play as part of the &quot;big four&quot; during the Sonisphere Festival U.K., on July 8, 2011. It was the first time all of the &quot;big four&quot; members played on the same stage in the United Kingdom. The performance took place at [[Concerts at Knebworth House|Knebworth House]], Hertfordshire.&lt;ref&gt;{{cite web |url=http://www.metallica.com/index.asp?item=603513 |title='Tallica at Sonisphere U.K. |publisher=Metallica.com |date=December 13, 2010 |accessdate=December 13, 2010}}{{dead link|date=April 2011}}&lt;/ref&gt; On December 17, 2010, Another &quot;big four&quot; Sonisphere performance was announced that would take place in France on July 9.&lt;ref&gt;{{cite web |url=http://www.metallica.com/news/dec-17-2010-more-big-4.asp |title=MORE Big 4! |publisher=Metallica.com |date=December 17, 2010 |accessdate=June 8, 2011}}&lt;/ref&gt; On January 25, 2011, another &quot;big four&quot; performance was announced in the United States. It took place on April 23, 2011 in [[Indio, California]], at the Empire Polo Club. It was the only scheduled concert in the United States, it was also the first time all of the &quot;big four&quot; members played on the same stage in the United States.&lt;ref&gt;{{cite web |url=http://www.metallica.com/news/the-big-four-coming-to-the-states.asp |title=The Big Four Coming to the States |publisher=Metallica.com |date=January 25, 2011 |accessdate=June 8, 2011}}&lt;/ref&gt; On February 17, 2011, another show was announced in Europe. The performance took place in Gelsenkirchen, Germany on July 2, 2011.&lt;ref&gt;{{cite web |url=http://www.metallica.com/news/the-big-4-european-edition-continued.asp |title=The Big 4...European Edition Continued |publisher=Metallica.com |date=February 17, 2011 |accessdate=June 8, 2011}}&lt;/ref&gt; On February 22, another &quot;big four&quot; show was announced, also in Europe. It took place in Milan, Italy, on July 6, 2011.&lt;ref&gt;{{cite web |url=http://www.metallica.com/news/20110222_news.asp |title=Big 4 Again! |publisher=Metallica.com |date=February 22, 2011 |accessdate=June 8, 2011}}&lt;/ref&gt; On March 2, 2011, again another &quot;big four&quot; concert was announced, which took place in [[Gothenburg, Sweden]], on July 3, 2011 at the [[Ullevi|Ullevi Stadion]].&lt;ref&gt;{{cite web |url=http://www.metallica.com/news/20110302_news.asp |title=Big 4 to Sweden! |publisher=Metallica.com |date=March 2, 2011 |accessdate=June 8, 2011}}&lt;/ref&gt;
+
+      ===''Lulu'', ''Metallica: Through The Never'' and tenth studio album (2011–present)===
+
+      On June 15, 2011, Metallica announced that recording sessions with singer-songwriter [[Lou Reed]] had concluded. The album, titled ''[[Lulu (Lou Reed and Metallica album)|Lulu]]'', was recorded over several months, and resulted in ten songs&lt;ref&gt;{{cite web | url=http://www.metallica.com/page.asp?ps_key=4F31377A8B5746E1B0437710353B2797&amp;utm_source=twitterfeed&amp;utm_medium=twitter | title=Secret Recording Project? | accessdate=June 16, 2011 | date=June 15, 2011 | work=Metallica.com}}&lt;/ref&gt; based on [[Frank Wedekind]]'s &quot;Lulu&quot; plays, ''[[Earth Spirit (play)|Earth Spirit]]'' and ''[[Pandora's Box (play)|Pandora's Box]]''.&lt;ref name=exclaim&gt;{{cite web| last = Thiessen| first = Brock| title = Metallica and Lou Reed Set Release Date for Collaborative Album| work = [[Exclaim!]]| date = August 19, 2011| url = http://exclaim.ca/News/metallica_lou_reed_set_release_date_for_collaborative_album| accessdate = August 21, 2011}}&lt;/ref&gt; The album was released on October 31, 2011. The recording of the album was problematic at times, with Lars Ulrich later stating Lou Reed challenged him to a &quot;street fight&quot;.&lt;ref&gt;{{cite news |url=http://www.3news.co.nz/Lou-Reed-challenged-Lars-Ulrich-to-street-fight/tabid/418/articleID/253301/Default.aspx |work=3 News NZ |title=Lou Reed challenged Lars Ulrich to street fight |date=May 7, 2012}}&lt;/ref&gt; On October 16, 2011, [[Robert Trujillo]] confirmed that the band was back in the studio and writing new material, stating, &quot;The writing process for the new Metallica album has begun. We've been in the studio with Rick Rubin, working on a couple of things, and we're going to be recording during the most of next year.&quot;&lt;ref&gt;{{cite web|last=Warner |first=Brett |url=http://ology.com/music/metallica-begin-work-their-next-studio-album |title=Metallica Begin Work on Their Next Studio Album |publisher=Ology |date=October 26, 2011 |accessdate=October 30, 2011}}{{dead link|date=October 2013}}&lt;/ref&gt;
+
+      Metallica were due to make their first appearance in India at the &quot;India Rocks&quot; concert, supporting the [[2011 Indian Grand Prix]].&lt;ref&gt;{{cite web|url=http://www.withjim.com/2011/08/metallica-in-india.html |title=Metallica in India |publisher=Withjim.Com |accessdate=February 15, 2012}}&lt;/ref&gt; However, the concert was cancelled when the venue was proven unsafe.&lt;ref&gt;{{cite web|url=http://www.metallica.com/page.asp?ps_key=EF025899934A4A01B6F0F5973A7D17DB&amp;utm_source=twitterfeed&amp;utm_medium=twitter |title=Delhi Show Update |publisher=Metallica.com |accessdate=October 30, 2011}}&lt;/ref&gt; Fans raided the stage during the event and the organizers were later arrested for fraud.&lt;ref&gt;{{cite web|url=http://www.bbc.co.uk/news/entertainment-arts-15511431 |title=Metallica: India gig organisers arrested |publisher=BBC |date=October 30, 2011 |accessdate=November 4, 2011}}&lt;/ref&gt; Metallica later made their Indian debut in Bangalore on October 30, 2011.&lt;ref&gt;{{cite news|url=http://ibnlive.in.com/news/bangalore-rocks-to-metallica-despite-rains/197678-60-119.html |title=Delhi Show Update |publisher=IBN}}&lt;/ref&gt;&lt;ref&gt;{{cite news|url=http://www.dnaindia.com/bangalore/report_heavy-metal-heaven-as-heads-bang-in-bangalore_1605359 |title=Heavy metal heaven as heads bang in Bangalore |work=DNA |date=October 31, 2011}}&lt;/ref&gt; On November 10, it was announced that Metallica would play at the [[Download Festival]] at Donington Park, England, headlining the main stage on Saturday June 9, 2012, and that they would be playing the ''The Black Album'' in its entirety.&lt;ref&gt;[http://www.bbc.co.uk/newsbeat/15684593 &quot;Metallica to headline Download Festival at Donington&quot;]. BBC. Retrieved November 15, 2011.&lt;/ref&gt; In December 2011, Metallica began releasing songs online that were written for ''Death Magnetic'', but were not present on the final album.&lt;ref&gt;{{cite web|title=Metallica post two previously unreleased tracks online – listen|url=http://www.nme.com/news/metallica/60858|work=NME|accessdate=December 10, 2011|date=December 8, 2011}}&lt;/ref&gt; On December 13, 2011, they released ''[[Beyond Magnetic]]'', a digital EP release only on [[iTunes]].&lt;ref&gt;{{cite web |url=http://itunes.apple.com/album/beyond-magnetic-ep/id485472347 |title='&amp;#39;Beyond Magnetic'&amp;#39; on iTunes |publisher=Itunes.apple.com |date= |accessdate=July 15, 2013}}&lt;/ref&gt; It was later released on CD in January 2012.&lt;ref&gt;{{cite web|title=Beyond Magnetic EP|url=http://www.amazon.com/Beyond-Magnetic-EP-Metallica/dp/B006T5FDLG/ref=sr_1_1?ie=UTF8&amp;qid=1351512063&amp;sr=8-1&amp;keywords=metallica+beyond+magnetic|work=Amazon.com|accessdate=October 29, 2012}}&lt;/ref&gt;
+
+      Also in December, Metallica celebrated its 30th anniversary by playing four shows at the Fillmore in San Francisco. The shows were exclusive to Met Club members and tickets were only being charged at $6 (or 19.81 for all four nights). The shows consisted of songs spanning their entire career and featured guest appearances by multiple artists that either helped or influenced Metallica. These shows were notable for having [[Dave Mustaine]], [[Jason Newsted]], [[Glenn Danzig]], [[Ozzy Osbourne]], [[Jerry Cantrell]], [[Apocalyptica]], members of [[Diamond Head (band)|Diamond Head]], and [[King Diamond]] join Metallica on stage for all appropriate songs.&lt;ref&gt;{{cite web |author=Metallica|url=http://theaudioperv.com/2011/12/12/metallica-celebrate-30-year-anniversary-at-the-fillmore-in-san-francisco-with-special-guests-new-beyond-magnetic-ep/ |title=Metallica Celebrate 30-Year Anniversary at the Fillmore in San Francisco with Special Guests, New Beyond Magnetic EP |publisher=The Audio Perv |date=March 22, 2012 |accessdate=March 26, 2012}}&lt;/ref&gt;&lt;ref&gt;{{cite web|url=http://www.metallica.com/news/jul-27-2011-thirty-years.asp |title=News &amp;#124; Thirty Years... A Week Long Celebration in San Francisco |publisher=Metallica.com |accessdate=March 26, 2012}}&lt;/ref&gt;
+
+      On February 7, 2012, Metallica announced that they were going to start a new music festival called [[Orion Music + More]], which took place on June 23 and 24, 2012, in Atlantic City. Metallica also confirmed that they would also headline the festival on both days and would perform two of their most critically acclaimed albums in their entirety: their 1991 eponymous fifth release (''The Black Album'') on one night and 1984's ''Ride the Lightning'' the other.&lt;ref&gt;{{cite web|author=By&amp;nbsp;Stacey Anderson |url=http://www.rollingstone.com/music/news/metallica-announce-orion-music-festival-20120207 |title=Metallica Announce Orion Music Festival &amp;#124; Music News |work=Rolling Stone |date=February 7, 2012 |accessdate=March 26, 2012}}&lt;/ref&gt; In a July 2012 interview with Canadian radio station [[CFOX-FM|99.3 The Fox]], [[Lars Ulrich]] revealed that Metallica would not release their new album until at least early 2014.&lt;ref name=newalbum&gt;{{cite web|url=http://www.blabbermouth.net/news.aspx?mode=Article&amp;newsitemID=177356|title=No New METALLICA Album Before 2014 at the Earliest, Says LARS ULRICH |publisher=Blabbermouth.net |date=July 27, 2012 |accessdate=July 27, 2012}}&lt;/ref&gt;
+
+      In November 2012, Metallica left Warner Bros. Records and launched their [[independent music|independent]] [[record label]], [[Blackened Recordings]], which will produce all future releases from the band.&lt;ref&gt;{{cite news| url=http://www.3news.co.nz/Metallica-leaves-Warner-forms-Blackened-Recordings/tabid/418/articleID/278958/Default.aspx|work=3 News NZ |title=Metallica forms Blackened Recordings| date=December 3, 2012}}&lt;/ref&gt; They have acquired the rights to all of their studio albums, which will be reissued through this new label. Blackened releases will be distributed through Warner subsidiary [[Rhino Entertainment]] in the United States, and [[Universal Music]] internationally.&lt;ref name=LATimes&gt;{{cite web|last=Roberts |first=Randall |url=http://www.latimes.com/entertainment/music/posts/la-et-ms-metallica-leaves-label-forms-blackened-records-20121130,0,5225406.story |title=Metallica leaves Warner Music with its masters, forms Blackened Records |publisher=latimes.com |date=November 30, 2012 |accessdate=December 17, 2012}}&lt;/ref&gt;&lt;ref&gt;{{cite web|last=Hogan |first=Marc |url=http://www.spin.com/articles/metallica-new-label-blackened-recordings |title=Metallica Name Their New Label: Blackened Recordings &amp;#124; SPIN &amp;#124; Newswire |publisher=SPIN |date=November 30, 2012 |accessdate=December 17, 2012}}&lt;/ref&gt; On September 20, Metallica announced via their official website that a new DVD containing footage of shows in Québec 2009 would be released in December 2012 and fans would get the chance to vote for two setlists that would make it on to the final DVD.&lt;ref&gt;{{cite web|title=News &amp;#124; More Magnetic... on DVD!|url=http://www.metallica.com/news/20120917-more-magnetic-on-dvd.asp|work=Metallica.com|accessdate=November 18, 2012}}&lt;/ref&gt; The film, titled ''[[Quebec Magnetic]]'', was released in the US on December 10, 2012.&lt;ref&gt;{{cite web | url=http://www.blabbermouth.net/news.aspx?mode=Article&amp;newsitemID=181211 | title=METALLICA: 'Quebec Magnetic' DVD, Blu-Ray Artwork Unveiled | publisher=Blabbermouth.net | date=October 22, 2012 | accessdate=November 22, 2012 | archiveurl=http://www.webcitation.org/6CMzf1oUn | archivedate=November 22, 2012}}&lt;/ref&gt;
+      In an interview with ''[[Classic Rock (magazine)|Classic Rock]]'' dated January 8, 2013, Ulrich said regarding their upcoming album, &quot;What we're doing now certainly sounds like a continuation (of ''[[Death Magnetic]]'').&quot; Regarding producer [[Rick Rubin]], who worked with them on ''Death Magnetic'', he stated, &quot;I love Rick. We all love Rick. We're in touch with Rick constantly. We'll see where it goes. It would stun me if the record came out in 2013.&quot;&lt;ref&gt;{{cite web|last=Barton|first=Geoff|title=Ulrich: Metallica 3D movie project influenced by Zeppelin|url=http://www.classicrockmagazine.com/news/ulrich-metallica-3d-movie-project-influenced-by-led-zeppelin/|publisher=Classic Rock Magazine|accessdate=January 19, 2013}}&lt;/ref&gt;
+      As was announced in 2013, the band starred in their own 3D concert film titled ''[[Metallica: Through the Never]]'', directed by [[Antal Nimród]], which was released in [[IMAX]] theaters September 27.&lt;ref&gt;{{cite web|author=By&amp;nbsp;RJ Cubarrubia |url=http://www.rollingstone.com/music/news/metallicas-3d-movie-headed-to-imax-20130424 |title=Metallica's 3D Movie Headed to IMAX |publisher=Rollingstone.com |date=2013-04-24 |accessdate=July 15, 2013}}&lt;/ref&gt;
+
+      [[Lars Ulrich]], in an interview with Ultimate Guitar dated July 22, 2013, stated that &quot;2014 will be all about making a new Metallica record&quot;, and that the album will most likely be released during 2015.&lt;ref&gt;{{cite web|title=Metallica to Hit the Studio in 2014: 'We'll Run Out of Excuses for Not Doing It by Then'|url=http://www.ultimate-guitar.com/news/upcoming_releases/metallica_to_hit_the_studio_in_2014_well_run_out_of_excuses_for_not_doing_it_by_then.html|publisher=Ultimate-Guitar}}&lt;/ref&gt; [[Kirk Hammett]] and [[Robert Trujillo]] later confirmed the band's intention to head to the studio.&lt;ref&gt;{{cite web|last=Dekel|first=Jon|title=Metallica to record new album in 2014|url=http://o.canada.com/entertainment/tiff13/metallica-to-record-new-album-in-2014/|publisher=[[Postmedia News]]|date=September 9, 2013|accessdate=December 26, 2013}}&lt;/ref&gt;
+
+      At the second [[Orion Music + More]] festival held in Detroit, the band played under the fake-name &quot;Dehaan&quot;. &quot;Dehaan&quot; is a reference to actor [[Dane DeHaan]], who starred in ''[[Metallica: Through the Never]]'' (2013).&lt;ref&gt;{{cite web|author=Noisecreep Staff|title=Metallica Surprise by Playing ‘Kill ‘Em All’ Set Under Fake Name Dehaan|url=http://noisecreep.com/metallica-surprise-kill-em-all-set-fake-name-dehaan/|publisher=[[Noisecreep]]|date=June 9, 2013|accessdate=December 21, 2013}}&lt;/ref&gt; They performed their debut album ''[[Kill 'Em All]]'' in its entirety, celebrating the 30th anniversary of the album's release.&lt;ref&gt;{{cite web|last=Graff|first=Gary|title=Who Is Dehaan? It's Metallica, Playing 'Kill 'Em All' at Orion Music Festival|url=http://www.billboard.com/articles/news/1566353/who-is-dehaan-its-metallica-playing-kill-em-all-at-orion-music-festival|work=[[Billboard (magazine)|Billboard]]|date=June 8, 2013|accessdate=December 21, 2013}}&lt;/ref&gt; On December 8, 2013, the band played a show in [[Antarctica]] called &quot;Freeze 'Em All&quot;; thus becoming the first band ever to play on all seven continents.&lt;ref&gt;{{cite web|last=Coleman|first=Miriam|title=Metallica Play a Dome in Antarctica|url=http://www.rollingstone.com/music/news/metallica-play-a-dome-in-antarctica-20131209|work=[[Rolling Stone]]|date=December 9, 2013|accessdate=December 11, 2013}}&lt;/ref&gt; The performance was filmed and released as a live album the same month.&lt;ref&gt;{{cite web|last=Adams|first=Gregory|title=Metallica Release 'Freeze 'Em All' Live Album|url=http://exclaim.ca/News/metallica_release_freeze_em_all_live_album|work=[[Exclaim!]]|date=December 19, 2013|accessdate=December 21, 2013}}&lt;/ref&gt; On January 2014 Metallica performed &quot;One&quot; at the [[56th Annual Grammy Awards]] with Chinese pianist [[Lang Lang (pianist)|Lang Lang]].&lt;ref&gt;{{cite news|last=Ng|first=David|title=Grammys 2014: Lang Lang performs 'One' with Metallica|url=http://articles.latimes.com/2014/jan/27/entertainment/la-et-cm-grammys-2014-lang-lang-metallica-20140127|accessdate=March 18, 2014|newspaper=[[Los Angeles Times]]|date=January 27, 2014}}&lt;/ref&gt;
+
+      ==Style and lyrical themes==
+      {{Listen
+      |filename = Metallica - Damage Inc.ogg
+      |title = &quot;Damage Inc.&quot; (1986)
+      |description = &quot;Damage Inc.&quot; (''Master of Puppets''), demonstrating Metallica's fast tempo, and aggressive musicianship featured in early releases
+      |filename2 = Metallica - Sad But True.ogg
+      |title2 = &quot;Sad but True&quot; (1991)
+      |description2 = &quot;Sad but True&quot; (''Metallica'') Robert Palmer of ''Rolling Stone'' believed the band abandoned fast [[tempo]]s to expand its music and expressive [[range (music)|range]] in 1991
+      |filename3 = Metallica - Purify.ogg
+      |title3 = &quot;Purify&quot; (2003)
+      |description3 = &quot;Purify&quot; (''St. Anger''), demonstrating Metallica's new musical approach with no guitar solos, a &quot;raw unpolished&quot; sound, and Ulrich's [[snare drum]]
+      }}
+      Metallica was influenced by early heavy metal and hard rock bands and artists such as [[Black Sabbath]], [[Deep Purple]], [[Kiss (band)|Kiss]], [[Led Zeppelin]], [[Queen (band)|Queen]], [[Ted Nugent]], [[AC/DC]], [[Rush (band)|Rush]], [[Aerosmith]], and [[Scorpions (band)|Scorpions]],&lt;ref&gt;{{cite web|url=http://www.guitarworld.com/article/30_on_30_the_greatest_guitarists_picked_by_the_greatest_guitarists?page=0%2C7 |title=30 on 30: The Greatest Guitarists Picked by the Greatest Guitarists |publisher=guitarworld.com |accessdate=April 28, 2010 |archiveurl=http://web.archive.org/web/20100505131334/http://www.guitarworld.com/article/30_on_30_the_greatest_guitarists_picked_by_the_greatest_guitarists?page=0,7 &lt;!--Added by H3llBot--&gt; |archivedate=May 5, 2010}}&lt;/ref&gt; [[New Wave of British Heavy Metal]] bands such as [[Venom (band)|Venom]], [[Motörhead]], [[Diamond Head (band)|Diamond Head]], [[Judas Priest]], and [[Iron Maiden]], as well as early [[punk rock]] bands such as the [[Ramones]], the [[Sex Pistols]], and the [[Misfits (band)|Misfits]]. Early Metallica releases contained fast [[tempo]]s, [[harmony|harmonized]] leads, and nine-minute [[instrumental]]s. Steve Huey of [[Allmusic]] said that ''Ride the Lightning'' featured &quot;extended, progressive epics; tight, concise groove-rockers&quot;.&lt;ref name=&quot; Ride the Lightning - Metallica&quot;/&gt; Huey felt Metallica expanded its compositional technique and range of expression to take on a more aggressive approach in following releases, and lyrics dealt with more personal and socially conscious issues.&lt;ref name=&quot;Ride the Lightning - Metallica&quot;&gt;{{cite web
+      |title=''Ride the Lightning'' – Metallica
+      |author=Huey, Steve
+      |publisher=Allmusic
+      |url={{Allmusic|class=album|id=ride-the-lightning-mw0000190995|pure_url=yes}}
+      |accessdate=December 8, 2007}}&lt;/ref&gt; Lyrical themes explored on ''Master of Puppets'' included religious and military leaders, rage, insanity, monsters, and drugs.&lt;ref name=&quot;Master of Puppets - Metallica&quot;&gt;{{cite web
+      |title= ''Master of Puppets'' – Metallica
+      |author=Huey, Steve
+      |publisher=Allmusic
+      |url={{Allmusic|class=album|id=master-of-puppets-mw0000667490|pure_url=yes}}
+      |accessdate=December 8, 2007}}&lt;/ref&gt;
+
+      In 1991, with new producer [[Bob Rock]], Huey felt Metallica simplified and streamlined its music for a more commercial approach to appeal to the mainstream audience.&lt;ref name=&quot;Metallica AMG&quot;&gt;{{cite web
+      |title=''Metallica'' Allmusic review
+      |author=Huey, Steve
+      |publisher=Allmusic
+      |url={{Allmusic|class=album|id=metallica-mw0000311315|pure_url=yes}}
+      |accessdate=December 5, 2007}}&lt;/ref&gt; The band abandoned its aggressive, fast [[tempo]]s to expand its music and expressive [[range (music)|range]], said [[Robert Palmer (writer)|Robert Palmer]] of ''Rolling Stone''.&lt;ref name=&quot;Metallica RS review&quot;&gt;{{cite web
+      |title=''Metallica'' ''Rolling Stone'' review
+      |author=Palmer, Robert
+      |work=Rolling Stone
+      |date=January 21, 1997
+      |url=http://www.rollingstone.com/artists/metallica/albums/album/150659/review/5941896/metallica
+      |archiveurl=http://web.archive.org/web/20071209085540/http://www.rollingstone.com/artists/metallica/albums/album/150659/review/5941896/metallica
+      |archivedate=December 9, 2007
+      |accessdate=December 5, 2007}}&lt;/ref&gt; The change in direction proved commercially successful as ''Metallica'' was the band's first album to peak at number one on the [[Billboard 200|''Billboard'' 200]]. Metallica noticed changes to the rock scene created by the [[grunge]] movement of the early 1990s. In ''Load'', an album that has been described as &quot;an almost [[alternative rock]]&quot; approach, the band focused on non-metal influences and changed musical direction.&lt;ref name=&quot;Metallica - ReLoad&quot;/&gt; Moving away from lyrical themes dealing with drugs and monsters, Metallica's new lyrical approach focused on anger, loss, and retribution. Some fans and critics were not pleased with this change, which included haircuts, the cover of ''Load'', and headlining the alternative rock concert [[Lollapalooza]].&lt;ref name=&quot;Load review&quot;/&gt; David Fricke of ''[[Rolling Stone]]'' described the move as &quot;goodbye to the moldy stricture and dead-end Puritanism of no-frills thrash&quot; and called ''Load'' the heaviest record of 1996.&lt;ref name=&quot;Load review&quot;&gt;{{cite web
+      |title=''Load'' ''Rolling Stone'' review
+      |author=Fricke, David
+      |work=Rolling Stone
+      |date=December 4, 1996
+      |url=http://www.rollingstone.com/artists/metallica/albums/album/194250/review/5941470/load
+      |archiveurl=http://web.archive.org/web/20071127130901/http://www.rollingstone.com/artists/metallica/albums/album/194250/review/5941470/load
+      |archivedate=November 27, 2007
+      |accessdate=December 7, 2007}}&lt;/ref&gt; With the release of ''ReLoad'' in 1997, the band displayed more [[blues]] and early [[hard rock]] influences, incorporating more rhythm and [[harmony]] in song structures.&lt;ref name=&quot;Metallica - ReLoad&quot;&gt;{{cite web
+      |title=''ReLoad'' ''Rolling Stone'' review
+      |author=Ali, Lorraine
+      |work=Rolling Stone
+      |date=November 20, 1997
+      |url=http://www.rollingstone.com/artists/metallica/albums/album/124749/review/5942088/reload
+      |archiveurl=http://web.archive.org/web/20080105195604/http://www.rollingstone.com/artists/metallica/albums/album/124749/review/5942088/reload
+      |archivedate=January 5, 2008
+      |accessdate=December 8, 2007}}&lt;/ref&gt;
+
+      ''St. Anger'' marked another large change in the band's sound. [[Guitar solo]]s were excluded from the album, leaving a &quot;raw and unpolished sound&quot;.&lt;ref name=&quot;St Anger by Metallica&quot;/&gt; The band used [[drop C tuning]], and Ulrich's [[snare drum]] received particular criticism. ''New York Magazine'''s Ethan Brown noted it &quot;reverberates with a thwong&quot;. Lyrics on the album dealt with Hetfield's stint in rehab, including references to the devil, anti-drug themes, [[claustrophobia]], impending doom, and religious [[hypocrisy]].&lt;ref name=&quot;Music Review St. Anger&quot;&gt;{{cite web
+      |title=Music Review ''St. Anger''
+      |author=Sinclair, Tom
+      |work=Entertainment Weekly
+      |date=June 9, 2003
+      |url=http://www.ew.com/ew/article/0,,457122~4~0~stanger,00.html
+      |accessdate=December 8, 2007}}&lt;/ref&gt;&lt;ref name=&quot;AMG - St. Anger&quot;&gt;{{cite web
+      |title=Allmusic – ''St. Anger''
+      |author=Loftus, Johnny
+      |publisher=Allmusic
+      |url={{Allmusic|class=album|id=st-anger-mw0000022895|pure_url=yes}}
+      |accessdate=December 8, 2007}}&lt;/ref&gt; At the advice of producer [[Rick Rubin]], for its ninth studio album, ''[[Death Magnetic]]'', the band returned to E tuning and guitar solos.&lt;ref name=&quot;Metallica Drummer on Producer Rick Rubin: 'He's Forced Us to Rethink Big-Picture Stuff'&quot;&gt;{{cite web
+      |title=Metallica Drummer on Producer Rick Rubin: 'He's Forced Us to Rethink Big-Picture Stuff'
+      |publisher=Blabbermouth.net
+      |date=February 13, 2007
+      |url=http://www.roadrunnerrecords.com/blabbermouth.net/news.aspx?mode=Article&amp;newsitemID=66980
+      |accessdate=December 9, 2007}}&lt;/ref&gt; A return to their thrash roots, ''Death Magnetic'' was a [[ostinato#riff|riff]]-oriented album featuring intense guitar solos and lyrics dealing with subtle suicide and redemption.&lt;ref&gt;{{cite book|last=Edmondson|first=Jacqueline|title=Music in American Life: An Encyclopedia of the Songs, Styles, Stars, and Stories That Shaped Our Culture|year=2013|publisher=[[ABC-CLIO]]|isbn=0-313-39348-6|page=708|url=http://books.google.mk/books?id=TQPXAQAAQBAJ&amp;pg=PA708&amp;dq=Jacqueline+Edmondson+metallica&amp;hl=en&amp;sa=X&amp;ei=osWQUuiOFfGY0AXMvYA4&amp;ved=0CCgQ6AEwAA#v=onepage&amp;q=Jacqueline%20Edmondson%20metallica&amp;f=false}}&lt;/ref&gt;
+
+      ==Legacy and influence==
+      Metallica has become one of the most influential heavy metal bands of all time, and is credited as one of the &quot;big four&quot; of [[thrash metal]], along with [[Slayer]], [[Anthrax (American band)|Anthrax]], and [[Megadeth]].&lt;ref&gt;{{cite web|last=Lee|first=Cosmo|title=Get Thrashed: The Story of Thrash Metal|url=http://www.stylusmagazine.com/articles/movie_review/get-thrashed-the-story-of-thrash-metal.htm|work=[[Stylus Magazine]]|date=May 7, 2007|accessdate=January 3, 2008}}&lt;/ref&gt; The band has sold more than 110 million records worldwide,&lt;ref&gt;{{cite news|last=Russo|first=Tom|title=‘Metallica Through the Never’ is all sound, fury|url=http://www.bostonglobe.com/arts/movies/2013/09/26/movie-review-metallica-through-never/KEtLYayMrrncgigt2cPPJK/story.html|accessdate=February 9, 2014|newspaper=[[The Boston Globe]]|date=September 26, 2013}}&lt;/ref&gt; including a RIAA-certified 66&amp;nbsp;million and [[Nielsen SoundScan]]-reported 53,642,000 in the United States, making them one of [[List of best-selling music artists|the most commercially successful bands of all time]].&lt;ref&gt;{{cite web|url=http://www.riaa.com/goldandplatinum.php?content_selector=top-selling-artists|title=Top Selling Artists |publisher=[[Recording Industry Association of America|RIAA]]|accessdate=May 26, 2010}}&lt;/ref&gt;&lt;ref&gt;{{cite web|url=http://www.businesswire.com/news/home/20130104005149/en/Nielsen-Company-Billboard%E2%80%99s-2012-Music-Industry-Report|title=The Nielsen Company &amp; Billboard’s 2012 Music Industry Report|publisher=[[Business Wire]]|date=January 4, 2013 |accessdate=July 1, 2013}}&lt;/ref&gt; The writers of ''The Rolling Stone Encyclopedia of Rock &amp; Roll'' felt Metallica gave heavy metal &quot;a much-needed charge&quot;.&lt;ref name=&quot;Metallica Biography&quot;&gt;{{cite web|title=Metallica Rolling Stone Biography|work=[[Rolling Stone]]|url=http://www.rollingstone.com/artists/metallica/biography |archiveurl=http://web.archive.org/web/20071230030414/http://www.rollingstone.com/artists/metallica/biography|archivedate=December 30, 2007|accessdate=January 19, 2008}}&lt;/ref&gt; Stephen Thomas Erlewine and Greg Prato of Allmusic said Metallica &quot;expanded the limits of thrash, using speed and volume not for their own sake, but to enhance their intricately structured compositions&quot;, calling the band &quot;easily the best, most influential heavy metal band of the '80s, responsible for bringing the music back to Earth.&quot;&lt;ref name=&quot;Metallica AMG Biography&quot;&gt;{{cite web|title=Metallica Allmusic Biography|author=Thomas Erlewine, Stephen and Prato, Greg|publisher=[[Allmusic]]|url={{Allmusic|class=artist|id=metallica-mn0000446509|pure_url=yes}}
+      |accessdate=January 19, 2008}}&lt;/ref&gt;
+
+      [[Jonathan Davis]] of [[Korn]] respects Metallica as his favorite band and comments, &quot;I love that they've done things their own way and they've persevered over the years and they're still relevant to this day. I think they're one of the greatest bands ever.&quot;&lt;ref name=&quot;Why they Rule? Metallica&quot;/&gt; [[Godsmack]] drummer [[Shannon Larkin]] said Metallica has been the biggest influence on the band stating, &quot;they really changed my life when I was 16 years old—I'd never heard anything that heavy&quot;.&lt;ref name=Godsmack&gt;{{cite web |title=Godsmack |author=Wright, James |publisher=[[Blistering]] |url=http://www.blistering.com/fastpage/fpengine.php/link/1/templateid/7221/tempidx/5/menuid/3 |accessdate=January 19, 2008}}&lt;/ref&gt; Vocalist and guitarist [[Robb Flynn]] of [[Machine Head (band)|Machine Head]] said that when creating the band's 2007 album, ''[[The Blackening]]'', &quot;What we mean is an album that has the power, influence and epic grandeur of that album ''Master of Puppets''—and the staying power—a timeless record like that&quot;.&lt;ref name=&quot;Machine Head Exclusive Interview with lead singer/guitarist Robb Flynn&quot;&gt;{{cite web |title=Machine Head Exclusive Interview with lead singer/guitarist Robb Flynn |author=Porter, Chad |publisher=Connect |url=http://musicstore.connect.com/custom/promos/machineHead/mh_interview.html
+      |archiveurl=http://web.archive.org/web/20080120135834/http://musicstore.connect.com/custom/promos/machineHead/mh_interview.html
+      |archivedate=January 20, 2008 |accessdate=January 19, 2008}}&lt;/ref&gt; [[Trivium (band)|Trivium]] guitarists [[Corey Beaulieu]] and [[Matt Heafy]] said that when they heard Metallica they wanted to start playing guitar.&lt;ref name=&quot;Trivium interview&quot;&gt;{{cite web |title=Trivium interview |publisher=Metal Theater |date=November 2, 2007 |url=http://www.metaltheater.com/interviews/Trivium.asp |accessdate=January 19, 2008}}&lt;/ref&gt;&lt;ref name=&quot;Interview with Matt from Trivium at RoadRage '04&quot;&gt;{{cite web |title=Interview with Matt from Trivium at RoadRage '04 |publisher=Metal Underground |date=August 9, 2004 |url=http://www.metalunderground.com/interviews/details.cfm?newsid=8958 |accessdate=January 19, 2008}}&lt;/ref&gt; [[M. Shadows]] of [[Avenged Sevenfold]] stated touring with Metallica was the band's career highlight, and said, &quot;Selling tons of records and playing huge shows will never compare to meeting your idols ''Metallica''.&quot;&lt;ref name=&quot;Avenged Sevenfold Interview&quot;&gt;{{cite web |title=Avenged Sevenfold Interview |author=Bowar, Chad |publisher=About.com |url=http://heavymetal.about.com/od/interviews/a/avengedsevenfol.htm |accessdate=December 5, 2007}}&lt;/ref&gt; [[God Forbid]] guitarists Doc and Dallas Coyle grew up with Metallica as an inspiration, and the band's bassist John Outcalt admires Burton as a &quot;rocker&quot;.&lt;ref name=&quot;God Forbid – The new wave of American metal has arrived&quot;&gt;{{cite web |title=God Forbid – The new wave of American metal has arrived |publisher=f-p-e-.com |url=http://www.f-p-e.com/interviews/interview.php?id=15 |accessdate=December 5, 2007}}&lt;/ref&gt; [[Ill Niño]] drummer [[Dave Chavarri]] finds early Metallica releases as &quot;heavy, raw, rebellious. It said, 'fuck you'&quot;,&lt;ref name=&quot;Interview with Dave Chavarri of Ill Niño&quot;&gt;{{cite web
+      |title=Interview with Dave Chavarri of Ill Niño |author=Soghomonian, Talia |publisher=nyrock.com |url=http://www.nyrock.com/interviews/2002/illnino_int.asp |accessdate=December 6, 2007}}&lt;/ref&gt; and [[Adema]] drummer Kris Kohls says the band is influenced by Metallica.&lt;ref name=&quot;Adema Drummer: We Are Influenced by Metallica and Pantera&quot;&gt;{{cite web |title=Adema Drummer: We Are Influenced by Metallica and Pantera |publisher=Blabbermouth.net |date=August 11, 2003 |url=http://www.roadrunnerrecords.com/blabbermouth.net/news.aspx?mode=Article&amp;newsitemID=14346
+      |accessdate=December 9, 2007}}&lt;/ref&gt;
+
+      ''[[Kerrang!]]'' released a [[tribute album]] with the April 8, 2006, edition of the magazine, titled ''Master of Puppets: Remastered'', which celebrated the 20th anniversary of ''[[Master of Puppets]]''. The album featured [[cover version]]s of Metallica songs by the bands Machine Head, [[Bullet for My Valentine]], [[Chimaira]], [[Mastodon (band)|Mastodon]], [[Mendeed]], and Trivium, all who are influenced by Metallica. Over 15 Metallica tribute albums have been released. On September 10, 2006, Metallica guest starred on ''[[The Simpsons]]''{{'}} eighteenth season premiere &quot;[[The Mook, the Chef, the Wife and Her Homer]]&quot;,&lt;ref name=&quot;Metallica Rocks 'The Simpsons'&quot;&gt;{{cite web |title=Metallica Rocks 'The Simpsons' |publisher=Spin.com
+      |date=July 7, 2007 |url=http://www.spin.com/articles/metallica-rocks-simpsons |accessdate=December 6, 2007}}&lt;/ref&gt; and Hammett's and Hetfield's voices were used in three episodes of the animated television series ''[[Metalocalypse]]''.&lt;ref name=&quot;James Hetfield's and Kirk Hammett's voices will appear as cameos in the new Adult Swim series, Metalocalypse!&quot;&gt;{{cite web |title=Metalocalypse |publisher=Metallica.com |date=September 5, 2006 |url=http://www.metallica.com/news/sep-05-2006-metalocalypse.asp |accessdate=June 9, 2011}}&lt;/ref&gt;
+
+      The Finnish [[cello metal]] band [[Apocalyptica]] released a tribute album, ''[[Plays Metallica by Four Cellos]]'', which features eight Metallica songs played on cellos. A parody band named [[Beatallica]] plays music using a combination of [[The Beatles]] and Metallica songs. Beatallica faced legal troubles when [[Sony]], who own The Beatles' catalogue, ordered a [[cease and desist]] claiming &quot;substantial and irreparable injury&quot;—ordering the group to pay damages. A fan of Beatallica, Ulrich asked Metallica lawyer Peter Paterno to help settle the legal case.&lt;ref name=&quot;Metallica Mash-Up Band Gets By with a Little Help from Its Friend ... Lars&quot;&gt;{{cite web |title=Metallica Mash-Up Band Gets By with a Little Help from Its Friend ... Lars |author=Kaufman, Gil |work=MTV |date=May 16, 2005 |url=http://www.mtv.com/news/articles/1498194/20050316/metallica.jhtml |accessdate=December 5, 2007}}&lt;/ref&gt;
+
+      Metallica was ranked by MTV as the third &quot;Greatest Heavy Metal Band in History&quot;,&lt;ref name=&quot;Why they Rule? Metallica&quot;&gt;{{cite web |title=Why they Rule? Metallica |work=MTV |url=http://www.mtv.com/bands/m/metal/greatest_metal_bands/071406/index4.jhtml |accessdate=December 5, 2007}}&lt;/ref&gt; was listed fifth on [[VH1]]'s ''100 Greatest Artists of Hard Rock'',&lt;ref&gt;{{cite web |url=http://www.vh1.com/shows/dyn/the_greatest/62188/episode_wildcard.jhtml?wildcard=/shows/dynamic/includes/wildcards/the_greatest/hardrock_list_full.jhtml&amp;event_id=862769&amp;start=81 |title=100 Greatest Artists of Hard Rock |accessdate=December 23, 2006 |publisher=[[VH1]]}}&lt;/ref&gt; and was number one on VH1's ''20 Greatest Metal Bands'' list.&lt;ref name=&quot;VH1 Classic Top 20 Metal Bands&quot;&gt;{{cite web |title=VH1 Classic Top 20 Metal Bands |work=VH1 |url=http://www.vh1.com/shows/events/rock_honors/_2007/vspot.jhtml |accessdate=December 5, 2007}}&lt;/ref&gt; ''[[Rolling Stone]]'' placed the band 61st among the &quot;The 100 Greatest Artists of All Time&quot;;&lt;ref&gt;{{cite web|url=http://www.rollingstone.com/music/lists/100-greatest-artists-of-all-time-19691231/metallica-20110426|title=100 Greatest Artists: Metallica|work=[[Rolling Stone]]|accessdate=September 5, 2013}}&lt;/ref&gt; its albums ''Master of Puppets'' and ''Metallica'' were ranked at number 167 and 252, respectively, on the magazine's list of ''[[The 500 Greatest Albums of All Time]]''.&lt;ref name=&quot;The RS 500 Greatest Albums of All Time&quot;&gt;{{cite web|title=The RS 500 greatest albums of all time |work=Rolling Stone |url=http://www.rollingstone.com/music/lists/500-greatest-albums-of-all-time-19691231 |accessdate=December 5, 2007 |accessdate=June 5, 2011 |accessdate=June 5, 2011}}&lt;/ref&gt; ''Master of Puppets'' was named in ''Q Magazine''{{'s}} &quot;50 Heaviest Albums of All Time&quot;,&lt;ref name=&quot;Q 50 Heaviest Albums Of All Time&quot;&gt;{{cite web |title=Q 50 Heaviest Albums of All Time |publisher=Rocklistmusic.co.uk |url=http://www.rocklistmusic.co.uk/qlistspage2.html#50%20Heaviest |accessdate=December 5, 2007}}&lt;/ref&gt; ranked number one on IGN's &quot;Top 25 Metal Albums&quot;,&lt;ref name=&quot;Top 25 Metal Albums&quot;&gt;{{cite web |title=Top 25 Metal Albums |publisher=IGN.com |url=http://au.music.ign.com/articles/755/755929p7.html |accessdate=December 5, 2007}}&lt;/ref&gt; and number one on the Metal-rules.com's &quot;Top 100 Heavy Metal Albums&quot; list.&lt;ref name=&quot;The Top 100 Heavy Metal Albums&quot;&gt;{{cite web |title=The Top 100 Heavy Metal Albums
+      |publisher=Metal-rules.com |url=http://www.metal-rules.com/polls/index.php?id=6 |accessdate=December 5, 2007}}&lt;/ref&gt; The song &quot;Enter Sandman&quot; was ranked number 399 on ''Rolling Stone''{{'s}} &quot;500 Greatest Songs of All Time&quot;.&lt;ref name=&quot;The RS 500 Greatest Songs of All Time&quot;&gt;{{cite web
+      |title=The RS 500 Greatest Songs of All Time |work=Rolling Stone |url=http://www.rollingstone.com/news/coverstory/500songs/page/4 |archiveurl=http://web.archive.org/web/20071203105106/http://www.rollingstone.com/news/coverstory/500songs/page/4 |archivedate=December 3, 2007
+      |accessdate=December 5, 2007}}&lt;/ref&gt;
+
+      On March 7, 1999, Metallica was inducted into the San Francisco Walk of Fame. The mayor of San Francisco, [[Willie Lewis Brown, Jr.|Willie Brown]], proclaimed the day &quot;Official Metallica Day&quot;.&lt;ref name=&quot;Metallica Timeline&quot;&gt;{{cite web |title=Metallica Timeline |publisher=metallica.com |url=http://www.metallica.com/page.asp?ps_key=379B87C5947F42E8AE5B80A9270CA6F4 |accessdate=June 9, 2011}}&lt;/ref&gt; Metallica was awarded the [[MTV Icon]] award in 2003, and a concert was held paying tribute to the band with artists performing Metallica songs. Performances included [[Sum 41]] with a [[Medley (music)|medley]] of &quot;For Whom the Bell Tolls&quot;, &quot;Enter Sandman&quot;, and &quot;Master of Puppets&quot;. [[Staind]] covered &quot;Nothing Else Matters&quot;, [[Avril Lavigne]] played &quot;Fuel&quot;, hip-hop artist [[Snoop Dogg]] performed &quot;Sad but True&quot;, [[Korn]] played &quot;One&quot;, and [[Limp Bizkit]] performed a rendition of &quot;Welcome Home (Sanitarium)&quot;.&lt;ref name=&quot;Icon Performance Highlights&quot;&gt;{{cite web |title=Icon Performance Highlights |work=MTV |url=http://www.mtv.com/onair/icon/metallica/live_performances.jhtml |accessdate=December 5, 2007}}&lt;/ref&gt;
+
+      The popular ''[[Guitar Hero]]'' series added a number of Metallica's songs into their games. The first instance was ''[[Guitar Hero III]]'' when &quot;[[One (Metallica song)|One]]&quot; was a track in the game. The entire ''[[Death Magnetic]]'' album was later released as purchasable downloadable content for the game. In the sequel, ''[[Guitar Hero World Tour]]'', the song &quot;Trapped Under Ice&quot; was featured. Eventually in 2009, Metallica collaborated to make ''[[Guitar Hero: Metallica]]'', in which a number of Metallica's songs were included. [[Harmonix]]' Rock Band series included &quot;[[Enter Sandman]]&quot;, with &quot;Ride the Lightning&quot;, &quot;[[Blackened (song)|Blackened]]&quot;, and &quot;[[...And Justice for All (song)|...And Justice for All]]&quot; released as downloadable tracks. The song &quot;[[Battery (song)|Battery]]&quot; was featured in the game's sequel ''[[Rock Band 2]]''.
+
+      On April 12, 2013 [[Stern Pinball]] announced that a Metallica themed pinball machine was being made.&lt;ref&gt;{{cite web |last=Dankberg |first=Jody |title=Metallica Pinball! |url=http://www.sternpinball.com/Community/Blogs/news/metallica-p.aspx |publisher=Stern |accessdate=June 26, 2013}}&lt;/ref&gt; Four different models were produced including a limited edition Master of Puppets version that was limited to 500 production units. The artwork for Metallica Pinball was created by freelance artist &quot;Dirty&quot; [[Donny Gillies]] who has worked with Metallica on various projects in the past.
+
+      ==Awards==
+      {{Main|List of awards and nominations received by Metallica}}
+
+      [[Grammy Award]]s:&lt;ref name=&quot;Grammy Award winners&amp;nbsp;– Metallica&quot;&gt;{{cite web
+      |title=Grammy Award winners&amp;nbsp;– Metallica
+      |publisher=Grammy.com
+      |url=http://www.grammy.com/GRAMMY_Awards/Winners/Results.aspx?title=&amp;winner=Metallica&amp;year=0&amp;genreID=0&amp;hp=1
+      |accessdate=December 5, 2007
+      |archiveurl=http://web.archive.org/web/20071209101613/http://www.grammy.com/GRAMMY_Awards/Winners/Results.aspx?title=&amp;amp;winner=Metallica&amp;amp;year=0&amp;amp;genreID=0&amp;amp;hp=1 &lt;!--Added by H3llBot--&gt;
+      |archivedate=December 9, 2007}}&lt;/ref&gt;
+      * 1990: [[Grammy Award for Best Metal Performance|Best Metal Performance]]&amp;nbsp;– &quot;[[One (Metallica song)|One]]&quot;
+      * 1991: [[Grammy Award for Best Metal Performance|Best Metal Performance]]&amp;nbsp;– &quot;[[Stone Cold Crazy]]&quot;
+      * 1992: [[Grammy Award for Best Metal Performance|Best Metal Performance]]&amp;nbsp;– ''[[Metallica (album)|Metallica]]''
+      * 1999: [[Grammy Award for Best Metal Performance|Best Metal Performance]]&amp;nbsp;– &quot;[[Better than You (Metallica song)|Better than You]]&quot;
+      * 2000: [[Grammy Award for Best Hard Rock Performance|Best Hard Rock Performance]]&amp;nbsp;– &quot;[[Whiskey in the Jar]]&quot;
+      * 2001: [[Grammy Award for Best Rock Instrumental Performance|Best Rock Instrumental Performance]]&amp;nbsp;– &quot;[[The Call of Ktulu]]&quot; with [[Michael Kamen]] and the [[San Francisco Symphony]]
+      * 2004: [[Grammy Award for Best Metal Performance|Best Metal Performance]]&amp;nbsp;– &quot;[[St. Anger (song)|St. Anger]]&quot;
+      * 2009: [[Grammy Award for Best Metal Performance|Best Metal Performance]]&amp;nbsp;– &quot;[[My Apocalypse]]&quot;
+      * 2009: [[Grammy Award for Best Recording Package|Best Recording Package]]&amp;nbsp;– &quot;[[Death Magnetic]]&quot;
+
+      [[MTV Video Music Awards]]:
+      * 1992: [[MTV Video Music Award for Best Rock Video|Best Metal Video]]&amp;nbsp;– &quot;[[Enter Sandman]]&quot;
+      * 1996: [[MTV Video Music Award for Best Rock Video|Best Metal Video]]&amp;nbsp;– &quot;[[Until It Sleeps]]&quot;
+
+      [[American Music Award]]s:
+      * 1996: Favorite Artist: Heavy Metal/Hard Rock: Metallica&amp;nbsp;– ''[[Load (album)|Load]]''
+      * 1996: Favorite Metal/Hard Rock Song&amp;nbsp;– &quot;Until It Sleeps&quot;
+
+      [[Billboard Music Award|''Billboard'' Music Awards]]:
+      * 1997: ''Billboard'' Rock and Roll Artist of the Year&amp;nbsp;– Metallica (RIAA Diamond Award)
+      * 1999: Catalogue Artist of the Year&amp;nbsp;– Metallica
+      * 1999: Catalogue Album of the Year&amp;nbsp;– ''Metallica''
+
+      [[Kerrang!|''Kerrang!'' Awards]]:
+      * 2003: Hall of Fame&amp;nbsp;– Metallica
+      * 2003: Best International Band&amp;nbsp;– Metallica
+      * 2004: Best Band on the Planet&amp;nbsp;– Metallica
+      * 2008: Inspiration Award Winner&amp;nbsp;– Metallica
+      * 2009: Best Album&amp;nbsp;– ''[[Death Magnetic]]''
+
+      ==Band members==
+      {{col-begin}}
+      {{col-2}}
+
+      '''Current members'''
+      * [[James Hetfield]]&amp;nbsp;– lead vocals, rhythm guitar &lt;small&gt;(1981–present)&lt;/small&gt;
+      * [[Lars Ulrich]]&amp;nbsp;– drums &lt;small&gt;(1981–present)&lt;/small&gt;
+      * [[Kirk Hammett]]&amp;nbsp;– lead guitar, backing vocals &lt;small&gt;(1983–present)&lt;/small&gt;
+      * [[Robert Trujillo]]&amp;nbsp;– bass guitar, backing vocals &lt;small&gt;(2003–present)&lt;/small&gt;
+      {{col-2}}
+
+      '''Former members'''
+      * [[Ron McGovney]]&amp;nbsp;– bass guitar &lt;small&gt;(1982)&lt;/small&gt;
+      * [[Dave Mustaine]]&amp;nbsp;– lead guitar, backing vocals &lt;small&gt;(1982–1983)&lt;/small&gt;
+      * [[Cliff Burton]]&amp;nbsp;– bass guitar, backing vocals &lt;small&gt;(1982–1986; died 1986)&lt;/small&gt;
+      * [[Jason Newsted]]&amp;nbsp;– bass guitar, backing vocals &lt;small&gt;(1986–2001)&lt;/small&gt;
+
+      {{col-end}}
+
+      ===Timeline===
+      &lt;div class=&quot;left&quot; &gt;
+      &lt;timeline&gt;
+      ImageSize = width:900 height:auto barincrement:30
+      PlotArea = left:100 bottom:60 top:0 right:10
+      Alignbars = justify
+      DateFormat = mm/dd/yyyy
+      Period = from:01/01/1981 till:04/03/2014
+      TimeAxis = orientation:horizontal format:yyyy
+      Legend = orientation:vertical position:bottom columns:1
+      ScaleMajor = increment:2 start:1981
+      ScaleMinor = increment:1 start:1982
+
+      Colors =
+       id:vocals value:purple    legend:Lead_vocals,_rhythm_guitar
+       id:drums   value:green legend:Drums
+       id:guitar  value:yellow  legend:Lead_guitar,_backing_vocals
+       id:bass    value:red   legend:Bass,_backing_vocals
+       id:lines   value:black  legend:Studio&amp;nbsp;albums
+
+      LineData =
+       at:07/25/1983 color:black layer:back
+       at:07/27/1984 color:black layer:back
+       at:03/03/1986 color:black layer:back
+       at:08/25/1988 color:black layer:back
+       at:08/13/1991 color:black layer:back
+       at:06/04/1996 color:black layer:back
+       at:11/18/1997 color:black layer:back
+       at:06/05/2003 color:black layer:back
+       at:09/12/2008 color:black layer:back
+
+      BarData =
+       bar:Hetfield text:&quot;James Hetfield&quot;
+       bar:Lars     text:&quot;Lars Ulrich&quot;
+       bar:Mustaine text:&quot;Dave Mustaine&quot;
+       bar:Kirk     text:&quot;Kirk Hammett&quot;
+       bar:Ron      text:&quot;Ron McGovney&quot;
+       bar:Cliff    text:&quot;Cliff Burton&quot;
+       bar:Newsted  text:&quot;Jason Newsted&quot;
+       bar:Trujillo text:&quot;Robert Trujillo&quot;
+
+      PlotData=
+       width:10 textcolor:black align:left anchor:from shift:(10,-4)
+       bar:Hetfield from:01/01/1981 till:end color:vocals
+       bar:Lars     from:01/01/1981 till:end color:drums
+       bar:Ron      from:01/01/1982 till:12/10/1982 color:bass
+       bar:Mustaine from:01/01/1982 till:04/01/1983 color:guitar
+       bar:Cliff    from:12/10/1982 till:09/27/1986 color:bass
+       bar:Kirk     from:04/02/1983 till:end color:guitar
+       bar:Newsted  from:10/28/1986 till:01/17/2001 color:bass
+       bar:Trujillo from:02/24/2003 till:end color:bass
+
+      &lt;/timeline&gt;
+      &lt;/div&gt;
+
+      ==Discography==
+      {{Main|Metallica discography}}
+
+      ;Studio albums
+      * ''[[Kill 'Em All]]'' (1983)
+      * ''[[Ride the Lightning]]'' (1984)
+      * ''[[Master of Puppets]]'' (1986)
+      * ''[[...And Justice for All (album)|...And Justice for All]]'' (1988)
+      * ''[[Metallica (album)|Metallica]]'' (1991)
+      * ''[[Load (album)|Load]]'' (1996)
+      * ''[[Reload (Metallica album)|Reload]]'' (1997)
+      * ''[[St. Anger]]'' (2003)
+      * ''[[Death Magnetic]]'' (2008)
+
+      ==See also==
+      {{Portal|Biography|Heavy metal}}
+      * [[List of artists who reached number one on the U.S. Mainstream Rock chart]]
+      * [[List of bands from the San Francisco Bay Area]]
+      * [[List of best-selling music artists]]
+      * [[List of Metallica concert tours]]
+
+      ==References==
+      {{Reflist|30em}}
+
+      ==Sources==
+      {{refbegin}}
+      *{{cite book|first1=Steffan|last1=Chirazi|author2=Metallica|title=[[So What!]]: The Good, The Mad, and The Ugly|publisher=[[Broadway Books]]|year=2004|isbn=0-7679-1881-9|ref=harv|postscript=&lt;!--None--&gt;}}
+      *{{cite book|last=Christe|first=Ian|title=[[Sound of the Beast: The Complete Headbanging History of Heavy Metal]]|publisher=[[HarperCollins]]|year=2003 |isbn=0-380-81127-8|ref=harv|postscript=&lt;!--None--&gt;}}
+      *{{cite book|first=Glenn|last=Pillsbury|title=Damage Incorporated: Metallica and the Production of Musical Identity|publisher=[[Routledge]]|year=2006|isbn=978-0-415-97374-8|ref=harv|postscript=&lt;!--None--&gt;}}
+      {{refend}}
+
+      ==External links==
+      {{Commons|Metallica}}
+      * {{Official website|http://www.metallica.com/}}
+      *{{Dmoz|Arts/Music/Bands_and_Artists/M/Metallica/}}
+      * {{Discogs artist}}
+
+      {{Metallica}}
+
+      {{Featured article}}
+
+      {{DEFAULTSORT:Metallica}}
+      [[Category:Metallica| ]]
+      [[Category:American hard rock musical groups]]
+      [[Category:Heavy metal musical groups from California]]
+      [[Category:Thrash metal musical groups from California]]
+      [[Category:Elektra Records artists]]
+      [[Category:Megaforce Records artists]]
+      [[Category:Universal Music Group artists]]
+      [[Category:Vertigo Records artists]]
+      [[Category:Warner Bros. Records artists]]
+      [[Category:Grammy Award-winning artists]]
+      [[Category:Kerrang! Awards winners]]
+      [[Category:Rock and Roll Hall of Fame inductees]]
+      [[Category:Musical groups from the San Francisco Bay Area]]
+      [[Category:Musical groups established in 1981]]
+      [[Category:Musical groups from Los Angeles, California]]
+      [[Category:Musical quartets]]
+      [[Category:Articles which contain graphical timelines]]
+
+      {{Link GA|no}}
+      {{Link GA|ru}}
+      {{Link FA|es}}
+      {{Link FA|he}}
+      {{Link FA|hu}}
+      {{Link FA|it}}
+      {{Link FA|ka}}
+      {{Link FA|sk}}
+      {{Link GA|de}}</rev></revisions></page></pages></query></api>
+- recorded: 2014-04-06T22:23:38.658Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '89'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3APadlock.svg&prop=imageinfo&iiprop=url&iiurlwidth=20&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '434'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:23:38 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq53 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570688703, 3519385599, 3882009451
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page pageid="24943200" ns="6" title="File:Padlock.svg" imagerepository="local"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/en/thumb/5/59/Padlock.svg/20px-Padlock.svg.png" thumbwidth="20" thumbheight="20" url="http://upload.wikimedia.org/wikipedia/en/5/59/Padlock.svg" descriptionurl="http://en.wikipedia.org/wiki/File:Padlock.svg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:23:39.531Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '101'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AMetallica+wordmark.svg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '577'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:23:39 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq53 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570689633, 3519385959, 3882010355
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2009-08-09T21:43:25Z" /></query-continue><query><pages><page ns="6" title="File:Metallica wordmark.svg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Metallica_wordmark.svg/220px-Metallica_wordmark.svg.png" thumbwidth="220" thumbheight="92" url="http://upload.wikimedia.org/wikipedia/commons/e/ea/Metallica_wordmark.svg" descriptionurl="http://commons.wikimedia.org/wiki/File:Metallica_wordmark.svg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:23:40.274Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '113'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AMetallica+Damaged+Justice+Tour.jpg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '557'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:23:40 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq53 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570690389, 3519386246, 3882011087
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:Metallica Damaged Justice Tour.jpg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Metallica_Damaged_Justice_Tour.jpg/220px-Metallica_Damaged_Justice_Tour.jpg" thumbwidth="220" thumbheight="145" url="http://upload.wikimedia.org/wikipedia/commons/d/d6/Metallica_Damaged_Justice_Tour.jpg" descriptionurl="http://commons.wikimedia.org/wiki/File:Metallica_Damaged_Justice_Tour.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:23:41.095Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '104'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ALars+London+2008+crop.jpg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '512'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:23:40 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq53 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570691383, 3519386623, 3882011911
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:Lars London 2008 crop.jpg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Lars_London_2008_crop.jpg/220px-Lars_London_2008_crop.jpg" thumbwidth="220" thumbheight="202" url="http://upload.wikimedia.org/wikipedia/commons/3/3a/Lars_London_2008_crop.jpg" descriptionurl="http://commons.wikimedia.org/wiki/File:Lars_London_2008_crop.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:23:42.041Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '95'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AMetallica+46.jpg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '467'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:23:41 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq53 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570692613, 3519387379, 3882013160
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:Metallica 46.jpg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Metallica_46.jpg/220px-Metallica_46.jpg" thumbwidth="220" thumbheight="165" url="http://upload.wikimedia.org/wikipedia/commons/9/97/Metallica_46.jpg" descriptionurl="http://commons.wikimedia.org/wiki/File:Metallica_46.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:23:42.856Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '124'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ARobert+Trujillo+live+in+London+2008-09-15.jpg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '612'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:23:42 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq53 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570693561, 3519387826, 3882014041
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:Robert Trujillo live in London 2008-09-15.jpg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Robert_Trujillo_live_in_London_2008-09-15.jpg/220px-Robert_Trujillo_live_in_London_2008-09-15.jpg" thumbwidth="220" thumbheight="274" url="http://upload.wikimedia.org/wikipedia/commons/e/eb/Robert_Trujillo_live_in_London_2008-09-15.jpg" descriptionurl="http://commons.wikimedia.org/wiki/File:Robert_Trujillo_live_in_London_2008-09-15.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:23:43.798Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '100'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AKirkhemmettwien07.JPG&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '569'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:23:43 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq53 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570694572, 3519388228, 3882014949
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2008-02-13T11:12:38Z" /></query-continue><query><pages><page ns="6" title="File:Kirkhemmettwien07.JPG" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Kirkhemmettwien07.JPG/220px-Kirkhemmettwien07.JPG" thumbwidth="220" thumbheight="146" url="http://upload.wikimedia.org/wikipedia/commons/0/09/Kirkhemmettwien07.JPG" descriptionurl="http://commons.wikimedia.org/wiki/File:Kirkhemmettwien07.JPG" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:23:44.521Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '125'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AMetallica+London+2008-09-15+Kirk+and+James.jpg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '617'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:23:44 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq53 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570695397, 3519388579, 3882015722
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:Metallica London 2008-09-15 Kirk and James.jpg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Metallica_London_2008-09-15_Kirk_and_James.jpg/220px-Metallica_London_2008-09-15_Kirk_and_James.jpg" thumbwidth="220" thumbheight="163" url="http://upload.wikimedia.org/wikipedia/commons/5/55/Metallica_London_2008-09-15_Kirk_and_James.jpg" descriptionurl="http://commons.wikimedia.org/wiki/File:Metallica_London_2008-09-15_Kirk_and_James.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:23:45.276Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '110'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AGnome-mime-sound-openclipart.svg&prop=imageinfo&iiprop=url&iiurlwidth=65&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '548'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:23:45 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq53 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570696145, 3519388841, 3882016397
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:Gnome-mime-sound-openclipart.svg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Gnome-mime-sound-openclipart.svg/65px-Gnome-mime-sound-openclipart.svg.png" thumbwidth="65" thumbheight="65" url="http://upload.wikimedia.org/wikipedia/commons/8/87/Gnome-mime-sound-openclipart.svg" descriptionurl="http://commons.wikimedia.org/wiki/File:Gnome-mime-sound-openclipart.svg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:23:46.024Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '105'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AMetallica+-+Damage+Inc.ogg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '481'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:23:45 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq53 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570696951, 3519389204, 3882017117
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page pageid="14610714" ns="6" title="File:Metallica - Damage Inc.ogg" imagerepository="local"><imageinfo><ii thumburl="http://bits.wikimedia.org/static-1.23wmf20/skins/common/images/icons/fileicon-ogg.png" thumbwidth="220" thumbheight="23" url="http://upload.wikimedia.org/wikipedia/en/d/dd/Metallica_-_Damage_Inc.ogg" descriptionurl="http://en.wikipedia.org/wiki/File:Metallica_-_Damage_Inc.ogg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:23:46.740Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '107'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AMetallica+-+Sad+But+True.ogg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '487'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:23:46 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq53 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570697737, 3519389563, 3882017830
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page pageid="15112433" ns="6" title="File:Metallica - Sad But True.ogg" imagerepository="local"><imageinfo><ii thumburl="http://bits.wikimedia.org/static-1.23wmf20/skins/common/images/icons/fileicon-ogg.png" thumbwidth="220" thumbheight="23" url="http://upload.wikimedia.org/wikipedia/en/0/0a/Metallica_-_Sad_But_True.ogg" descriptionurl="http://en.wikipedia.org/wiki/File:Metallica_-_Sad_But_True.ogg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:23:47.114Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '101'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AMetallica+-+Purify.ogg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '469'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:23:46 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq53 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570698364, 3519389967, 3882018458
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page pageid="14610824" ns="6" title="File:Metallica - Purify.ogg" imagerepository="local"><imageinfo><ii thumburl="http://bits.wikimedia.org/static-1.23wmf20/skins/common/images/icons/fileicon-ogg.png" thumbwidth="220" thumbheight="23" url="http://upload.wikimedia.org/wikipedia/en/8/85/Metallica_-_Purify.ogg" descriptionurl="http://en.wikipedia.org/wiki/File:Metallica_-_Purify.ogg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:23:47.569Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '94'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ACommons-logo.svg&prop=imageinfo&iiprop=url&iiurlwidth=40&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '459'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:23:47 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq53 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570698723, 3519390096, 3882018786
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page pageid="33285577" ns="6" title="File:Commons-logo.svg" imagerepository="local"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/40px-Commons-logo.svg.png" thumbwidth="40" thumbheight="54" url="http://upload.wikimedia.org/wikipedia/en/4/4a/Commons-logo.svg" descriptionurl="http://en.wikipedia.org/wiki/File:Commons-logo.svg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:23:48.277Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '95'
+      Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3Acscr-featured.svg&prop=imageinfo&iiprop=url&iiurlwidth=15&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '552'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:23:48 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq53 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570699529, 3519390444, 3882019485
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><normalized><n from="File:cscr-featured.svg" to="File:Cscr-featured.svg" /></normalized><pages><page pageid="33285464" ns="6" title="File:Cscr-featured.svg" imagerepository="local"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/en/thumb/e/e7/Cscr-featured.svg/15px-Cscr-featured.svg.png" thumbwidth="15" thumbheight="14" url="http://upload.wikimedia.org/wikipedia/en/e/e7/Cscr-featured.svg" descriptionurl="http://en.wikipedia.org/wiki/File:Cscr-featured.svg" /></imageinfo></page></pages></query></api>

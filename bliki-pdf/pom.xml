@@ -38,5 +38,21 @@
             <groupId>org.easytesting</groupId>
             <artifactId>fest-assert-core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>co.freeside.betamax</groupId>
+            <artifactId>betamax-junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>co.freeside.betamax</groupId>
+            <artifactId>betamax-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>co.freeside.betamax</groupId>
+            <artifactId>betamax-proxy</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy</artifactId>
+        </dependency>
     </dependencies>
 </project>

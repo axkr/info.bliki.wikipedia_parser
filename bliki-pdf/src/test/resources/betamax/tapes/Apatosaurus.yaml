@@ -1,0 +1,1178 @@
+!tape
+name: Apatosaurus
+interactions:
+- recorded: 2014-04-06T22:26:13.105Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '101'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Apatosaurus&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '41329'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:12 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570862746, 3519482015, 815606416
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: |-
+      <?xml version="1.0"?><api><query><pages><page pageid="1346" ns="0" title="Apatosaurus"><revisions><rev user="Smalljim" timestamp="2014-03-25T23:35:16Z" comment="Reverted edits by [[Special:Contribs/SmartGuy5198|SmartGuy5198]] ([[User talk:SmartGuy5198|talk]]) to last version by ClueBot NG" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{redirects here|Brontosaurus}}
+      {{Automatic taxobox
+      | fossil_range = [[Late Jurassic]], {{Geological range|154|150}}
+      | image = Louisae.jpg
+      | image_caption = Mounted skeleton of ''A. louisae'', [[Carnegie Museum of Natural History]]
+      | image_width = 250px
+      | authority = [[Othniel Charles Marsh|Marsh]], 1877
+      | type_species = {{extinct}}'''''Apatosaurus ajax'''''
+      | type_species_authority = Marsh, 1877
+      | subdivision_ranks = Referred Species
+      | subdivision = {{bold species list
+      |{{extinct}}Apatosaurus excelsus|(Marsh, 1879)
+      |{{extinct}}Apatosaurus louisae|Holland, 1915
+      |{{extinct}}Apatosaurus parvus|(Peterson &amp; [[Charles W. Gilmore|Gilmore]], 1902)}}
+      | synonyms = {{species list
+      |[[Atlantosaurus]]?|Marsh, 1877
+      |Brontosaurus|Marsh, 1879
+      |Elosaurus|Peterson &amp; Gilmore, 1902}}
+      }}
+
+      '''''Apatosaurus''''' {{IPAc-en|ə|ˌ|p|æ|t|ɵ|ˈ|s|ɔr|ə|s}}, including the popular [[synonym (taxonomy)|synonym]] '''''Brontosaurus''''', is a [[genus]] of [[sauropod]] [[dinosaur]] that lived from about 154 to 150 million years ago, during the [[Jurassic]] [[Period (geology)|Period]] ([[Kimmeridgian]] and early [[Tithonian]] ages).&lt;ref name=turner1999/&gt; It was one of the [[Megafauna|largest land animals]] known to have ever existed, with an average length of {{convert|23|m|ft|abbr=on}} and a mass of at least {{convert|16|MT|ST}}.&lt;ref name=henderson/&gt; [[Fossil]]s of these animals have been found in [[Nine Mile Quarry]] and [[Bone Cabin Quarry]] in [[Wyoming]] and at sites in [[Colorado]], [[Oklahoma]] and [[Utah]], present in stratigraphic zones 2–6.&lt;ref name=&quot;foster-appendix&quot;&gt;Foster, J. (2007). &quot;Appendix.&quot; ''Jurassic West: The Dinosaurs of the Morrison Formation and Their World''. Indiana University Press. pp. 327–329.&lt;/ref&gt;
+
+      The cervical vertebrae were less elongated and more heavily constructed than those of ''[[Diplodocus]]'' and the bones of the leg were much stockier (despite being longer), implying a more robust animal. The tail was held above the ground during normal locomotion. Like most sauropods, ''Apatosaurus'' had only a single large claw on each forelimb, with the first three toes on the hind limb possessing claws.
+
+      ==Etymology==
+      The composite term ''Apatosaurus'' comes from the [[Ancient Greek|Greek]] words ''apate'' ({{lang|grc|ἀπάτη}})/''apatelos'' ({{lang|grc|ἀπατηλός}}) meaning &quot;deception&quot;/&quot;deceptive&quot; and ''sauros'' ({{lang|grc|[[wikt:σαῦρος|σαῦρος]]}}) meaning &quot;lizard&quot;; thus, &quot;deceptive lizard&quot;. Paleontologist [[Othniel Charles Marsh]] (1831–1899) gave it this name, because he regarded the [[Chevron (anatomy)|chevron bones]] as similar to those of some [[mosasaur]]s, members of a group of prehistoric marine lizards. The synonym genus of ''A. excelsus'', ''Brontosaurus'', comes from the [[Ancient Greek|Greek]] words ''bronto'' ({{lang|grc|[[wikt:βροντή|βροντή]]}}), meaning &quot;thunder&quot;, and ''sauros'' ({{lang|grc|[[wikt:σαῦρος|σαῦρος]]}}) meaning &quot;lizard&quot;.
+
+      ==Description==
+      [[File:Apatosaurus scale mmartyniuk wiki.png|thumb|left|Comparison of three species and a human: ''A. louisae'' (red), ''A. excelsus'' (violet), and ''A. ajax'' (green)]]
+      ''Apatosaurus'' was a large, long-necked [[quadruped]]al animal with a long, whip-like tail. Its forelimbs were slightly shorter than its hindlimbs. It was roughly the weight of four elephants.&lt;ref name=&quot;Holtz2008&quot;&gt;Holtz, Thomas R. Jr. (2008) ''Dinosaurs: The Most Complete, Up-to-Date Encyclopedia for Dinosaur Lovers of All Ages'' [http://www.geol.umd.edu/~tholtz/dinoappendix/DinoappendixSummer2008.pdf Supplementary Information]&lt;/ref&gt; Most size estimates for ''Apatosaurus'' are based on the type specimen of ''A. louisae'', CM3018, which is mostly estimated at {{convert|23|m|ft|abbr=on}} in length,&lt;ref name=&quot;mazzettaetal2004&quot;&gt;{{cite journal | last1 = Mazzetta | first1 = G.V. | last2 = Christiansen | first2 = P. | last3 = Farina | first3 = R.A. | year = 2004 | title = Giants and bizarres: body size of some southern South American Cretaceous dinosaurs | url = http://www.miketaylor.org.uk/tmp/papers/Mazzetta-et-al_04_SA-dino-body-size.pdf | format = PDF | journal = Historical Biology | volume = 2004 | issue = | pages = 1–13 }}&lt;/ref&gt; mass estimates on the other hand, have been as high as {{convert|35|t|ST|abbr=on}} for ''A. louisae''&lt;ref name=Seebacher01/&gt; and {{convert|26|t|ST|abbr=on}} for ''A. excelsus''.&lt;ref&gt;{{Cite journal| last1=Erickson | first1=Gregory M.| last2=Curry Rogers | first2=Kristina |last3 =Yerby|first3=Scott A.| title=Dinosaurian growth patterns and rapid avian growth rates. | journal=Nature | year= 2001 | volume= 412| pmid=11473315 | issue= 6845 | pages= 429–33 | doi=10.1038/35086558 }}&lt;/ref&gt; However, more recent estimates using 3D models and more complex regression equations give a range of {{convert|16.4|-|22.4|t|ST|abbr=on|0}} in weight for the larger ''A. louisae''.&lt;ref name=henderson&gt;{{cite journal|last=Henderson|first=Donald M.|title=Burly Gaits: Centers of mass, stability, and the trackways of sauropod dinosaurs|journal=Journal of Vertebrae Paleontology|year=2006|volume=26|issue=4|pages=907–921|doi=10.1671/0272-4634(2006)26[907:BGCOMS]2.0.CO;2}}&lt;/ref&gt;&lt;ref name=Seebacher01&gt;{{Cite journal| last1 = Seebacher | first1 = Frank | title = A new method to calculate allometric length-mass relationships of dinosaurs | journal = Journal of Vertebrate Paleontology | volume = 21 | pages = 51–52 | year = 2001 | doi = 10.1671/0272-4634(2001)021[0051:ANMTCA]2.0.CO;2| issn = 0272-4634}}&lt;/ref&gt;
+      [[File:Apatosaurus33.jpg|thumb|[[Paleoart|Artistic interpretation]] of an individual arching its neck down to drink]]
+      The skull was small in comparison with the size of the animal. The jaws were lined with spatulate (chisel-like) teeth, suited to an herbivorous diet. Like those of other sauropods, the vertebrae of the neck were deeply bifurcated; that is, they carried paired spines, resulting in a wide and deep neck.&lt;ref name=dinonathist&gt;Fasovsky, D.E. and Weishampel, D.B. (2009). ''Dinosaurs: A Concise Natural History''. Cambridge: Cambridge University Press. ISBN 978-0-521-88996-4&lt;/ref&gt; The apparently massive neck was, however, filled with an extensive system of weight-saving air sacs. ''Apatosaurus'', like its close relative ''[[Supersaurus]]'', is notable for the incredibly tall spines on its vertebrae, which make up more than half the height of the individual bones. The shape of the tail is unusual for a diplodocid, being comparatively slender, due to the vertebral spines rapidly decreasing in height the farther they are from the hips. ''Apatosaurus'' also had very long ribs compared to most other diplodocids, giving it an unusually deep chest. The limb bones were also very robust.&lt;ref name=LHW07&gt;{{Cite journal|last=Lovelace |first=David M. |author2=Hartman, Scott A.|author3= Wahl, William R. |year=2007 |title=Morphology of a specimen of ''Supersaurus'' (Dinosauria, Sauropoda) from the Morrison Formation of Wyoming, and a re-evaluation of diplodocid phylogeny |journal=Arquivos do Museu Nacional |volume=65 |issue=4 |pages=527–544 | url = http://server1.bhbfonline.org/Specimens/CLPV_II_Supersaurus.pdf}}&lt;/ref&gt; ''Apatosaurus'' had a single large claw on each forelimb, and the first three toes possessed claws on each hindlimb. The phalangeal formula is 2-1-1-1-1, meaning that the innermost finger (phalange) on the forelimb has two bones, the next has one, etc.&lt;ref&gt;Martin, A.J. (2006). Introduction to the Study of Dinosaurs. Second Edition. Oxford, Blackwell Publishing. 560 pp. ISBN 1–4051–3413–5.&lt;/ref&gt;
+
+      ==Classification and species==
+      [[File:Skeleton of Apatosaurus ajax.jpg|upright|thumb|left|Skeleton of ''A. ajax'' in Japan]]
+      ''Apatosaurus'' is a member of the [[Family (biology)|family]] [[Diplodocidae]], a [[cladistics|clade]] of gigantic [[sauropod]] [[dinosaur]]s. The family includes some of the longest creatures ever to walk the earth, including ''[[Diplodocus]]'', ''[[Supersaurus]]'', and ''[[Barosaurus]]''. Within the subfamily Apatosaurinae, ''Apatosaurus'' may be most closely related to ''Suuwassea'', ''Supersaurus'' and ''[[Eobrontosaurus]]''.&lt;ref name=autogenerated1&gt;{{Cite journal|last=Lovelace |first=David M. |year=2007 |title=Morphology of a specimen of ''Supersaurus'' (Dinosauria, Sauropoda) from the Morrison Formation of Wyoming, and a re-evaluation of diplodocid phylogeny |journal=Arquivos do Museu Nacional |volume=65 |issue=4 |pages=527–544 }}&lt;/ref&gt;&lt;ref name=&quot;taylornaish05&quot;&gt;{{Cite journal | author = Taylor, M.P. and Naish, D. | year = 2005 | title = The phylogenetic taxonomy of Diplodocoidea (Dinosauria: Sauropoda) | url = http://www.miketaylor.org.uk/dino/pubs/ | journal = PaleoBios | volume = 25 | issue = 2 | pages = 1–7 | archiveurl = http://www.webcitation.org/5msewSMAx | archivedate = 2010-01-18| deadurl=no}}&lt;/ref&gt;&lt;ref name=&quot;harris06&quot;&gt;{{Cite journal | doi = 10.1017/S1477201906001805 | author = Harris, J.D. | year = 2006 | title = The significance of ''Suuwassea emiliae'' (Dinosauria: Sauropoda) for flagellicaudatan intrarelationships and evolution | url = | journal = Journal of Systematic Palaeontology | volume = 4 | issue = 2 | pages = 185–198 }}&lt;/ref&gt;
+
+      In 1877, Othniel Charles Marsh published the name of the [[type species]] ''Apatosaurus ajax''. He followed this in 1879 with a description of another, more complete specimen, which he thought represented a new [[genus]] and [[species]], which he named ''Brontosaurus excelsus''. In 1903, [[Elmer Riggs]] re-examined the fossils. While he agreed with Marsh that ''Brontosaurus excelsus'' was likely a distinct species, he also noted many similarities between ''B. excelsus'' and ''A. ajax'', and decided that both should be placed in the same genus. Riggs re-classified the species as ''Apatosaurus excelsus'' in 1903.&lt;ref name=&quot;riggs-1903&quot;&gt;{{cite journal
+      |last=Riggs|first=Elmer|authorlink=Elmer S. Riggs
+      |year=1903
+      |title=Structure and Relationships of Opisthocoelian Dinosaurs. Part I, ''Apatosaurus'' Marsh
+      |journal=Publications of the Field Columbian Museum|volume=Geological Series|issue=2|pages=165–196
+      |url=http://books.google.com/books?id=ssgPAAAAIAAJ&amp;printsec=frontcover
+      }}&lt;/ref&gt; Since Riggs published his opinions, almost all paleontologists have agreed that the two species should be classified together in a single genus. According to the rules of the [[International Code of Zoological Nomenclature|ICZN]] (which governs the scientific names of animals), the name ''Apatosaurus'', having been published first, had priority as the official name; ''Brontosaurus'' is considered a [[Synonym (taxonomy)|junior synonym]] and has therefore been discarded from formal use.&lt;ref&gt;{{Cite doi|10.1144/SP343.22}}&lt;/ref&gt;&lt;ref&gt;{{Cite doi|10.1016/j.endeavour.2006.10.004}}&lt;/ref&gt;
+
+      {{cladogram|1=
+      {{clade| style=font-size:90%; line-height:80%
+      |label1=&amp;nbsp;&amp;nbsp;&amp;nbsp;Diplodocidae&amp;nbsp;&amp;nbsp;&amp;nbsp;
+      |1={{clade
+      |1={{clade
+      |label1=&amp;nbsp;Apatosaurinae&amp;nbsp;
+      |1={{clade
+      |1=''[[Suuwassea]]''
+      |label2=&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+      |2={{clade
+      |label1=&amp;nbsp;&amp;nbsp;&amp;nbsp;
+      |1=''[[Supersaurus]]''&amp;nbsp;&amp;nbsp;&amp;nbsp;
+      |2='''''Apatosaurus'''''&amp;nbsp;&amp;nbsp;&amp;nbsp;
+      }}
+      }}
+      |label2=Diplodocinae
+      |2={{clade
+      |1=''[[Barosaurus]]''
+      |2=''[[Diplodocus]]''
+      }}
+      }}
+      }}
+      }}
+      &lt;center&gt;&lt;small&gt;[[Cladogram]] of the Diplodocidae after Lovelace, Hartman, and Wahl, 2008.&lt;ref name=&quot;LHW07&quot;/&gt;&lt;/small&gt;&lt;/center&gt;
+      }}
+
+      ''Apatosaurus ajax'' is the [[type species]] of the genus, and was named by the [[paleontologist]] Othniel Charles Marsh in 1877 after [[Ajax (mythology)|Ajax]], the [[hero]] from [[Greek mythology]]. Two partial skeletons have been found, including part of a [[skull]]. ''Apatosaurus laticollis'', named by Marsh in 1879, is now considered a synonym of it.&lt;ref&gt;{{Cite doi|10.1002/gj.3350270109}}&lt;/ref&gt; ''Apatosaurus excelsus'' (originally ''Brontosaurus'') was named by Marsh in 1879. It is known from six partial skeletons, including part of a skull, which have been found in the [[United States]], in [[Colorado]], [[Oklahoma]], [[Utah]], and [[Wyoming]]. ''Apatosaurus louisae'' was named by William Holland in 1915 in honor of Mrs. Louise Carnegie, wife of [[Andrew Carnegie]] who funded field research to find complete dinosaur skeletons in the American West. ''Apatosaurus louisae'' is known from one partial skeleton which was found in [[Utah]] in the United States. ''Apatosaurus parvus'' was originally known as ''Elosaurus parvus'', but was reclassified as a species of ''Apatosaurus'' in 1994.&lt;ref name=&quot;CM94&quot;&gt;Carpenter, K. and McIntosh, J. (1994). &quot;Upper Jurassic sauropod babies from the Morrison Formation&quot;, In: K. Carpenter, K. F. Hirsch, and J. R. Horner (eds.), ''Dinosaur Eggs and Babies''. Cambridge University Press, Cambridge 265–278&lt;/ref&gt; This synonymy was upheld in 2004.&lt;ref name=&quot;Upchurch04&quot;&gt;Upchurch, Paul; Tomida, Yukimitsu; and Barrett, Paul M. (2004). &quot;[http://ci.nii.ac.jp/naid/110004665753/ A new specimen of ''Apatosaurus ajax'' (Sauropoda: Diplodocidae) from the Morrison Formation (Upper Jurassic) of Wyoming, USA.]&quot; ''National Science Museum monographs'' 26: i-118 ISSN:13429574&lt;/ref&gt;
+
+      ''Apatosaurus yahnahpin'' was named by Filla and Redman in 1994. [[Robert T. Bakker]] made ''A. yahnahpin'' the [[holotype|type]] species of a new genus, ''[[Eobrontosaurus]]'' in 1998,&lt;ref&gt;Bakker, R.T. (1998). &quot;Dinosaur mid-life crisis: the Jurassic-Cretaceous transition in Wyoming and Colorado&quot;. In: S.G. Lucas, J.I. Kirkland, &amp; J.W. Estep (eds.) Lower and Middle Cretaceous Terrestrial Ecosystems; New Mexico Museum of Natural History and Science Bulletin, 14: 67–77.&lt;/ref&gt; so it is now properly ''Eobrontosaurus yahnahpin''. One partial skeleton has been found in Wyoming. It has been argued that ''Eobrontosaurus'' belongs within ''[[Camarasaurus]]'',&lt;ref name=&quot;Dinosauria04&quot;/&gt; although this has been questioned.&lt;ref name=&quot;Holtz2008&quot;/&gt;&lt;ref name=&quot;SH05&quot;&gt;{{cite web|url=http://dml.cmnh.org/2005Feb/msg00289.html|title=&quot;Eobrontosaurus&quot; is not Camarasaurus|last=Hartman|first=Scott|date=2005-02-13|work=The Dinosaur Mailing List Archives|accessdate=27 January 2010}}&lt;/ref&gt;
+
+      ==History==
+      [[File:Brontosaurus skeleton 1880s.jpg|thumb|An 1896 diagram of the ''A. excelsus'' (then ''Brontosaurus'') skeleton by [[Othniel Charles Marsh|O.C. Marsh]]. The head is based on material now assigned to ''[[Brachiosaurus]] sp.''&lt;ref&gt;{{Cite book
+      | url = http://books.google.com/?id=CLEPeg_SjTcC&amp;pg=PA69
+      | title = The Upper Jurassic Morrison Formation: an interdisciplinary study
+      | first1 = Kenneth | last1 = Carpenter | first2 = Virginia | last2 = Tidwell
+      | chapter = Preliminary Description of a Brachiosaurus Skull from Felch Quarry 1, Garden Park, Colorado
+      | editor1-first = Kenneth | editor1-last = Carpenter
+      | editor2-first = Dan | editor2-last = Chure
+      | editor3-first = James Ian | editor3-last = Kirkland
+      | publisher = Taylor &amp; Francis | year = 1998
+      | isbn = 978-90-5699-183-8
+      }}&lt;/ref&gt;]]
+      [[Othniel Charles Marsh]], a Professor of [[Paleontology]] at [[Yale University]], described and named an incomplete (and juvenile) skeleton of ''Apatosaurus ajax'' in 1877. Two years later, Marsh announced the discovery of a larger and more complete specimen at [[Como Bluff]] [[Wyoming]]—which, because of discrepancies including the size difference, Marsh incorrectly identified as belonging to an entirely new [[genus]] and [[species]]. He named the new species ''Brontosaurus excelsus'', meaning &quot;thunder lizard&quot;, from the [[Ancient Greek|Greek]] '''brontē/βροντη''' meaning &quot;thunder&quot; and '''sauros/σαυρος''' meaning &quot;lizard&quot;, and from the [[Latin]] ''excelsus'', &quot;highest, sublime&quot;, referring to the greater number of sacral vertebrae than in any other genus of sauropod known at the time.
+      [[File:Sharp lull brontosaurus.jpg|thumb|left|Original (outdated) ''A. excelsus'' skeletal mount at the [[American Museum of Natural History|AMNH]]]]
+      The finds—the largest dinosaur ever discovered at the time and nearly complete, lacking only a head, feet, and portions of the tail—were then prepared for what was to be the first mounted display of a sauropod skeleton, at Yale's [[Peabody Museum of Natural History]] in 1905. The missing bones were created using known pieces from close relatives of ''Brontosaurus''. Sauropod feet that were discovered at the same quarry were added, as well as a tail fashioned to appear as Marsh believed it should, as well as a composite model of what he felt the skull of this massive creature might look like. This was not a delicate ''[[Diplodocus]]''-style skull (which would later turn out to be more accurate&lt;ref&gt;{{Cite journal | author = McIntosh, J.S. and Berman, D.S. | year = 1975 | title = Description of the palate and lower jaw of the sauropod dinosaur ''Diplodocus'' (Reptilia: Saurischia) with remarks on the nature of the skull of ''Apatosaurus'' | journal = Journal of Paleontology | volume = 49 | issue = 1 | pages = 187–199 | jstor =1303324 }}&lt;/ref&gt;), but was composed of &quot;the biggest, thickest, strongest skull bones, lower jaws and tooth crowns from three different quarries&quot;,&lt;ref name=&quot;Bakker&quot;&gt;{{cite journal | last1 = Bakker | first1 = Robert | year = 1994 | title = The Bite of the Bronto | url = | journal = Earth | volume = 3 | issue = 6| pages = 26–33 }}&lt;/ref&gt; primarily those of ''[[Camarasaurus]]'', the only other sauropod for which good skull material was known at the time. This method of reconstructing incomplete skeletons based on the more complete remains of related dinosaurs continues in museum mounts and life restorations to this day. In 1979, two Carnegie researchers replaced the skull on the museum's skeleton with the correct head found in a quarry in Utah in 1910.&lt;ref&gt;{{cite web|last=NPR Staff|title=Forget Extinct: The Brontosaurus Never Even Existed|url=http://www.npr.org/2012/12/09/166665795/forget-extinct-the-brontosaurus-never-even-existed|accessdate=17 June 2013}}&lt;/ref&gt;
+      [[File:Apatosaurus Yale Peabody.JPG|thumb|upright|''A. excelsus'' holotype at Yale]]
+      Despite the much-publicized debut of the mounted skeleton, which cemented the name ''Brontosaurus'' in the public consciousness, [[Elmer Riggs]] had published a paper in the 1903 edition of ''Geological Series of the Field Columbian Museum'' that argued that ''Brontosaurus'' was not different enough from ''Apatosaurus'' to warrant its own genus, and created the combination ''Apatosaurus excelsus'': &quot;In view of these facts the two genera may be regarded as synonymous. As the term 'Apatosaurus' has priority, 'Brontosaurus' will be regarded as a synonym.&quot;&lt;ref name=&quot;riggs-1903&quot; /&gt;
+
+      Despite this, at least one paleontologist—[[Robert Bakker]]—argued in the 1990s that ''A. ajax'' and ''A. excelsus'' are in fact sufficiently distinct that the latter continues to merit a separate genus.&lt;ref name=&quot;Bakker98&quot;&gt;Bakker, R.T. (1998). &quot;Dinosaur mid-life crisis: the Jurassic-Cretaceous transition in Wyoming and Colorado&quot;. In: S.G. Lucas, J.I. Kirkland, &amp; J.W. Estep (eds.) ''Lower and Middle Cretaceous Terrestrial Ecosystems; New Mexico Museum of Natural History and Science Bulletin'', 14: 67–77.&lt;/ref&gt; This idea has not been accepted by most palaeontologists.&lt;ref name=&quot;Dinosauria04&quot;&gt;Upchurch, P., Barrett, P.M. and Dodson, P. (2004). &quot;Sauropoda&quot;. In Weishampel, D.B., Osmólska, H., and Dodson, P. (eds.), ''The Dinosauria'' (2nd edition). University of California Press, Berkeley 259–322.&lt;/ref&gt;&lt;ref name=&quot;Macintosh&quot;&gt;McIntosh, J.S. (1995). &quot;Remarks on the North American sauropod ''Apatosaurus'' Marsh&quot;. ''Sixth Symposium on Mesozoic Terrestrial Ecosystems and Biota'', Short Papers, A. Sun and Y. Wang (eds.), China Ocean Press, Beijing 119–123&lt;/ref&gt;
+
+      ==Palaeobiology==
+      [[File:Apatosaurus skull.jpg|thumb|left|Skull of a specimen nicknamed &quot;Max&quot;]]
+      Until the 1970s, it was believed that sauropods like ''Apatosaurus'' were too massive to support their own weight on dry land, so it was theorized that they must have lived partly submerged in water, perhaps in swamps. Recent findings do not support this, and sauropods are thought to have been fully terrestrial animals.
+
+      In 2008, footprints of a juvenile ''Apatosaurus'' were reported from Quarry Five in Morrison, Colorado. Discovered in 2006 by Matthew Mossbrucker, these footprints show that juveniles could run on their hind legs in a manner similar to that of the modern [[Basiliscus (genus)|basilisk]] lizard.&lt;ref name=&quot;smithsonian08&quot;&gt;{{Cite journal|last=Rajewski|first=Genevieve|date=May 2008|title=Where Dinosaurs Roamed |journal=Smithsonian |pages=20–24 |url=http://www.smithsonianmag.com/history-archaeology/phenom-dino-200805.html |accessdate=2008-04-30| archiveurl= http://web.archive.org/web/20080427162722/http://www.smithsonianmag.com/history-archaeology/phenom-dino-200805.html| archivedate= 27 April 2008 &lt;!--DASHBot--&gt;| deadurl= no}}&lt;/ref&gt;
+
+      A study of diplodocid snouts showed that the square snout, large proportion of pits, and fine subparallel scratches in ''Apatosaurus'' suggests it was a ground-height nonselective browser.&lt;ref&gt;{{Cite doi|10.1371/journal.pone.0018304}}&lt;/ref&gt;
+
+      ''Apatosaurus'' was the second most common sauropod in the [[Morrison Formation]] ecosystem, after ''[[Camarasaurus]]''.&lt;ref name=&quot;foster-2007&quot;&gt;{{cite book
+      |last=Foster|first=John
+      |year=2007
+      |title=Jurassic West: The Dinosaurs of the Morrison Formation and Their World
+      |publisher=Indiana University Press|isbn=978-0-253-34870-8
+      |page=273}}&lt;/ref&gt; It may have been a more solitary animal than other Morrison Formation dinosaurs.&lt;ref name=DBBM80&gt;{{cite journal |last=Dodson |first=Peter |author2=Behrensmeyer, A.K.|author3= Bakker, Robert T.|author4= McIntosh, John S. |year=1980 |title=Taphonomy and paleoecology of the dinosaur beds of the Jurassic Morrison Formation |journal=Paleobiology |volume=6 |issue=2 |pages=208–232}}&lt;/ref&gt; As a genus, ''Apatosaurus'' existed for a long span of time, and have been found in most levels of the Morrison. Fossils of ''Apatosaurus ajax'' are known exclusively from the upper portion of the formation (upper Brushy Basin Member), about 152–151 million years ago. ''A. excelsus'' fossils have been reported from the upper Salt Wash Member to the upper Brushy Basin Member, ranging from the middle to late [[Kimmeridgian]] age, about 154–151 million years ago. ''A. louisae'' fossils are rare, known only from one site in the upper Brushy Basin Member, dated to the late Kimmeridgian stage (about 151 million years ago). Additional ''Apatosaurus'' remains are known from even younger rocks, but they have not been identified as any particular species.&lt;ref name=turner1999&gt;Turner, C.E. and Peterson, F., (1999). &quot;Biostratigraphy of dinosaurs in the Upper Jurassic Morrison Formation of the Western Interior, U.S.A.&quot; Pp. 77–114 in Gillette, D.D. (ed.), ''Vertebrate Paleontology in Utah''. Utah Geological Survey Miscellaneous Publication 99-1.&lt;/ref&gt;
+
+      ===Growth===
+      A microscopic study of ''Apatosaurus'' bones concluded that the animals grew rapidly when young and reached near-adult sizes in about 10 years.&lt;ref name=Curry99&gt;{{Cite journal|doi= 10.1080/02724634.1999.10011179 |last= Curry |first= Kristina A. |authorlink = Kristina Curry Rogers |year= 1999|title= Ontogenetic histology of Apatosaurus (Dinosauria: Sauropoda): new insights on growth rates and longevity |journal= Journal of Vertebrate Paleontology |volume=19 |issue=4 |pages=654–665 | jstor= 4524036 }}&lt;/ref&gt; Long-bone histology enables researchers to estimate the age that a specific individual reached. A study by Griebeler et al. (2013) examined long bone histological data and concluded that the Apatosaurus sp. '''SMA 0014''' weighed {{Convert|20206|kg|ST|1|abbr=on|abbr=off}}, reached sexual maturity at 21 years and died at age 28. The same growth model indicated that Apatosaurus sp. '''BYU 601–17328''' weighed {{Convert|18178|kg|ST|1|abbr=on|abbr=off}}, reached sexual maturity at 19 years and died at age 31.&lt;ref&gt;Griebeler EM, Klein N, Sander PM (2013) Aging, Maturation and Growth of Sauropodomorph Dinosaurs as Deduced from Growth Curves Using Long Bone Histological Data: An Assessment of Methodological Constraints and Solutions. PLoS ONE 8(6): e67012. doi:10.1371/journal.pone.0067012&lt;/ref&gt;
+
+      ===Posture===
+      [[File:AMNH Apatosaurus.jpg|thumb|Current ''A. excelsus'' skeletal mount at the [[American Museum of Natural History|AMNH]]]]
+      [[diplodocidae|Diplodocids]], like ''Apatosaurus'', are often portrayed with their necks held high up in the air, allowing them to browse on tall trees. Some scientists have argued that the heart would have had trouble sustaining sufficient blood pressure to oxygenate the brain.&lt;ref&gt;{{Cite doi|10.4187/002013209793800286}}&lt;/ref&gt; Furthermore, more recent studies have shown that diplodocid necks were less flexible than previously believed, because the structure of the neck vertebrae would not have permitted the neck to bend far upwards, and that sauropods like ''Apatosaurus'' were adapted to low browsing or ground feeding.&lt;ref name=&quot;StevensParrish99&quot;&gt;{{Cite journal| last = Stevens| first = Kent A.| authorlink = | title = Neck Posture and Feeding Habits of Two Jurassic Sauropod Dinosaurs| journal = Science| volume = 284| issue = 5415| pages = 798–800| publisher = | location = | year = 1999| url = http://www.sciencemag.org/cgi/content/abstract/284/5415/798| doi = 10.1126/science.284.5415.798| id = | accessdate = 2008-08-03| pmid = 10221910| last2 = Parrish| first2 = JM}}&lt;/ref&gt;&lt;ref name=&quot;stevens05&quot;&gt;{{Cite book|author=Stevens KA, Parrish JM|year=2005|chapter=Neck Posture, Dentition and Feeding Strategies in Jurassic Sauropod Dinosaurs|editor=Carpenter, Kenneth and Tidswell, Virginia (ed.)|title=Thunder Lizards: The Sauropodomorph Dinosaurs|pages=212–232|publisher= Indiana University Press|isbn=978-0-253-34542-4|oclc=218768170 57202057 61128849}}&lt;/ref&gt;&lt;ref name=&quot;Upchurch2000&quot;&gt;{{cite journal|last=Upchurch |first=P, ''et al.''|title=Neck Posture of Sauropod Dinosaurs|journal=Science|volume= 287 |page=547b |doi=10.1126/science.287.5453.547b |year=2000|url=http://www.sciencemag.org/cgi/reprint/287/5453/547b.pdf|format = PDF | accessdate =2008-08-05 }}&lt;/ref&gt; However, subsequent studies demonstrated that all [[tetrapod]]s appear to hold their necks at the maximum possible vertical extension when in a normal, alert posture, and argued that the same would hold true for sauropods barring any unknown, unique characteristics that set the soft tissue anatomy of their necks apart from that of other animals. ''Apatosaurus'', like ''Diplodocus'', would have held its neck angled upward with the head pointed downwards in a resting posture.&lt;ref&gt;{{cite journal
+      | last1 = Taylor | first1 = M.P.
+      | last2 = Wedel | first2 = M.J.
+      | last3 = Naish | first3 = D.
+      | title = Head and neck posture in sauropod dinosaurs inferred from extant animals
+      | journal = Acta Palaeontologica Polonica | volume = 54 | issue = 2 | year = 2009 | pages = 213–220
+      | url = http://www.app.pan.pl/archive/published/app54/app54-213.pdf
+      | doi = 10.4202/app.2009.0007
+      }} ([http://www.app.pan.pl/article/item/app54-213.html Abstract])&lt;/ref&gt;
+
+      ===Physiology===
+      Given the large body mass of ''Apatosaurus'', combined with its long neck, [[physiologist]]s have encountered problems determining how these animals managed to breathe.
+
+      Beginning with the assumption that ''Apatosaurus'', like [[crocodilia]]ns, did not have a diaphragm, the [[dead space (physiology)|dead-space volume]] (the amount of unused air remaining in the mouth, trachea and air tubes after each breath) has been estimated at about 184&amp;nbsp;liters for a 30 ton specimen.
+
+      Its [[Lung volumes|tidal volume]] (the amount of air moved in or out during a single breath) has been calculated based on the following [[respiratory system]]s:
+      * 904&amp;nbsp;liters if avian
+      * 225&amp;nbsp;liters if mammalian
+      * 19&amp;nbsp;liters if reptilian.
+
+      On this basis, its respiratory system could not have been reptilian, as its tidal volume would not have been able to replace its dead-space volume. Likewise, the mammalian system would only provide a fraction of new air on each breath. Therefore, it must have had either a system unknown in the modern world or [[Parabronchi|one like birds]], i.e., multiple air sacs and a flow-through lung. Furthermore, an avian system would only need a lung volume of about 600&amp;nbsp;liters compared to a mammalian requirement of 2,950&amp;nbsp;liters, which would exceed the available space. The overall thoracic volume of ''Apatosaurus'' has been estimated at 1,700&amp;nbsp;liters allowing for a 500-liter, four-chambered [[heart]] (like [[bird]]s, not three-chambered like [[reptile]]s) and a 900-liter lung capacity. That would allow about 300&amp;nbsp;liters for the necessary [[Biological tissue|tissue]]. Assuming ''Apatosaurus'' had an avian respiratory system and a reptilian resting-metabolism, it would need to consume only about 262&amp;nbsp;liters (69 gallons) of water per day.&lt;ref name=&quot;paladinoetal1997&quot;&gt;Paladino, F.V., Spotila, J.R., and Dodson, P. (1997). &quot;A Blueprint for Giants: Modeling the Physiology of Large Dinosaurs.&quot; In Farlow, J.O. and Brett-Surman, M.K. (eds.), ''The Complete Dinosaur'', Indiana University Press, 491–504. doi0253333490.&lt;/ref&gt;
+
+      ===Tail===
+      An article that appeared in the November 1997 issue of ''[[Discover Magazine]]'' reported research into the mechanics of ''Apatosaurus'' tails by [[Nathan Myhrvold]], a [[computer scientist]] from [[Microsoft]]. Myhrvold carried out a [[computer simulation]] of the tail, which in diplodocids like ''Apatosaurus'' was a very long, tapering structure resembling a [[bullwhip]]. This computer modeling suggested that sauropods were capable of producing a whip-like cracking sound of over 200 [[decibel]]s, comparable to the volume of a [[cannon]].&lt;ref name=&quot;zimmer1997&quot;&gt;Zimmer, C. (1997). &quot;Dinosaurs in Motion.&quot; ''Discover'', 1 November 1997. [http://discovermagazine.com/1997/nov/dinosaursinmotio1261 DISCOVER Magazine]. Retrieved 27 July 2008.&lt;/ref&gt;
+
+      ==Paleoecology==
+
+      ===Habitat===
+      [[file:Saurophaganax.JPG|thumb|''Saurophaganax'' and ''Apatosaurus'', Sam Noble Oklahoma Museum of Natural History]]
+      The Morrison Formation is a sequence of shallow marine and alluvial sediments which, according to [[radiometric dating]], ranges between 156.3 million years old ([[Mega-annum|Ma]]) at its base,&lt;ref name=TCR06&gt;{{cite journal |last=Trujillo |first=K.C. |author2=Chamberlain, K.R.|author3= Strickland, A. |year=2006 |title=Oxfordian U/Pb ages from SHRIMP analysis for the Upper Jurassic Morrison Formation of southeastern Wyoming with implications for biostratigraphic correlations |journal=Geological Society of America Abstracts with Programs |volume=38 |issue=6 |pages=7}}&lt;/ref&gt; to 146.8 million years old at the top,&lt;ref name=SAB98&gt;{{cite book |last=Bilbey |first=S.A. |year=1998 |chapter=Cleveland-Lloyd Dinosaur Quarry - age, stratigraphy and depositional environments |pages= 87–120 |title=The Morrison Formation: An Interdisciplinary Study |editors=Carpenter, K.; Chure, D.; and Kirkland, J.I. (eds.) |series=Modern Geology '''22''' |publisher=Taylor and Francis Group |issn=0026-7775}}&lt;/ref&gt; which places it in the late [[Oxfordian stage|Oxfordian]], [[Kimmeridgian]], and early [[Tithonian]] [[faunal stages|stages]] of the Late Jurassic period. This formation is interpreted as a [[semiarid]] environment with distinct [[wet season|wet]] and [[dry season]]s. The Morrison Basin where dinosaurs lived, stretched from New Mexico to Alberta and Saskatchewan, and was formed when the precursors to the [[Front Range]] of the Rocky Mountains started pushing up to the west. The deposits from their east-facing [[drainage basin]]s were carried by streams and [[river]]s and deposited in [[swamp]]y lowlands, lakes, river channels and [[floodplain]]s.&lt;ref name=DAR89&gt;{{cite book |last=Russell |first=Dale A. |authorlink=Dale Russell |title=An Odyssey in Time: Dinosaurs of North America |year=1989 |publisher=NorthWord Press |location=Minocqua, Wisconsin |isbn=978-1-55971-038-1 |pages=64–70 }}&lt;/ref&gt; This formation is similar in age to the [[Solnhofen limestone|Solnhofen Limestone]] Formation in [[Germany]] and the [[Tendaguru|Tendaguru Formation]] in [[Tanzania]]. In 1877 this formation became the center of the [[Bone Wars]], a fossil-collecting rivalry between early paleontologists [[Othniel Charles Marsh]] and [[Edward Drinker Cope]].
+
+      ===Paleofauna===
+      The Morrison Formation records an environment and time dominated by gigantic sauropod dinosaurs such as ''[[Camarasaurus]]'', ''[[Barosaurus]]'', ''[[Diplodocus]]'', and ''[[Brachiosaurus]]''. Dinosaurs that lived alongside ''Apatosaurus'' included the herbivorous [[ornithischians]] ''[[Camptosaurus]]'', ''[[Stegosaurus]]''and ''[[Othnielosaurus]]''. Predators in this paleoenvironment included the [[theropods]] ''[[Saurophaganax]]'', ''[[Torvosaurus]]'', ''[[Ceratosaurus]]'', ''[[Marshosaurus]]'', ''[[Stokesosaurus]]'', ''[[Ornitholestes]]'' and&lt;ref&gt;Foster, J. (2007). &quot;Appendix.&quot; Jurassic West: The Dinosaurs of the Morrison Formation and Their World. Indiana University Press. pp. 327–329.&lt;/ref&gt; ''[[Allosaurus]]'', which accounting for 70 to 75% of theropod specimens and was at the top [[trophic level]] of the Morrison [[food chain|food web]].&lt;ref name=JRF03a&gt;{{cite book |last=Foster |first=John R. |title=Paleoecological Analysis of the Vertebrate Fauna of the Morrison Formation (Upper Jurassic), Rocky Mountain Region, U.S.A. |year=2003 |series=New Mexico Museum of Natural History and Science Bulletin, '''23''' |publisher=New Mexico Museum of Natural History and Science |location=Albuquerque, New Mexico |page=29}}&lt;/ref&gt; ''Apatosaurus'' is commonly found at the same sites as ''Allosaurus'', ''Stegosaurus'', ''Camarasaurus'', and ''Diplodocus''.&lt;ref&gt;Dodson, Peter; Behrensmeyer, A.K.; Bakker, Robert T.; and McIntosh, John S. (1980). &quot;Taphonomy and paleoecology of the dinosaur beds of the Jurassic Morrison Formation&quot;. Paleobiology 6 (2): 208–232.&lt;/ref&gt; Other vertebrates that shared this paleoenvironment included [[actinopterygii|ray-finned fishes]], [[frog]]s, [[salamander]]s, [[turtle]]s, [[sphenodontia|sphenodonts]], [[lizard]]s, terrestrial and aquatic [[crocodylomorpha]]ns, and several species of [[pterosaur]]. Shells of [[bivalve]]s and aquatic [[snail]]s are also common. The flora of the period has been revealed by fossils of [[chlorophyta|green algae]], [[fungi]], [[moss]]es, [[equisetum|horsetails]], [[cycad]]s, [[ginkgo]]es, and several families of [[conifer]]s. Vegetation varied from [[river]]-lining forests of [[tree fern]]s, and [[fern]]s ([[gallery forest]]s), to fern [[savanna]]s with occasional trees such as the ''[[Araucaria]]''-like conifer ''[[Brachyphyllum]]''.&lt;ref name=KC06&gt;{{cite book |last=Carpenter |first=Kenneth |authorlink=Kenneth Carpenter |year=2006 |chapter=Biggest of the big: a critical re-evaluation of the mega-sauropod ''Amphicoelias fragillimus'' |editors=Foster, John R.; and Lucas, Spencer G. (eds.) |title=Paleontology and Geology of the Upper Jurassic Morrison Formation |series=New Mexico Museum of Natural History and Science Bulletin, '''36''' |publisher=New Mexico Museum of Natural History and Science |location=Albuquerque, New Mexico |pages=131–138 }}&lt;/ref&gt;
+
+      ==In popular culture==
+      [[File:Pasta-Brontosaurus.jpg|thumb|right|1897 restoration of ''A. excelsus'' by [[Charles R. Knight]]]]
+      The length of time taken for Marsh's misclassification to be brought to public notice meant that the name ''Brontosaurus'', associated as it was with one of the largest dinosaurs, became so famous that it persisted long after the name had officially been abandoned in scientific use.&lt;ref name=&quot;gould1991&quot;/&gt;
+
+      ''Apatosaurus'' have often been depicted in cinema, beginning with [[Winsor McCay]]'s 1914 classic ''[[Gertie the Dinosaur]]'', one of the first animated films.&lt;ref&gt;{{cite book|title=Before Mickey: The Animated Film 1898-1928|author=Donald Crafton|year=1982|publisher=MIT Press|isbn=0-262-03083-7}}&lt;/ref&gt; McCay based his unidentified dinosaur on the ''Brontosaurus'' skeleton in the American Museum of Natural History.&lt;ref&gt;[http://www.sdnhm.org/exhibits/dinosrr/index.html ]{{dead link|date=April 2013}}&lt;/ref&gt; The 1925 silent film ''[[The Lost World (1925 film)|The Lost World]]'' featured a battle between a ''Brontosaurus'' and an ''[[Allosaurus]]'', using [[special effect]]s by [[Willis O'Brien]].&lt;ref&gt;Glut, Donald F.; Brett-Surman, Michael K. (1997). &quot;Dinosaurs and the media&quot;, in Farlow, James; and Brett-Surman, Michael K. (eds.): The Complete Dinosaur. Bloomington and Indianapolis: Indiana University Press, 675–706. ISBN 978-0-253-33349-0.&lt;/ref&gt; These, and other early uses of the animal as major representative of the group, helped cement ''Brontosaurus'' as a quintessential dinosaur in the public consciousness.&lt;ref name=&quot;gould1991&quot;/&gt;
+
+      [[Sinclair Oil Corporation]] has long been a fixture of American roads (and briefly in other countries) with its green dinosaur logo and mascot, an ''Apatosaurus'' (''Brontosaurus''). While Sinclair's early advertising included a number of different dinosaurs, eventually only ''Apatosaurus'' was used as the official logo, due to its popular appeal.&lt;ref&gt;Sinclair Oil Corporation, (2008). [http://www.sinclairoil.com/history/historys_p1.htm Evolution of the Company Symbol]. Published online by SinclairOil.com, http://www.sinclairoil.com/history/historys_p1.htm Accessed 27-August-2010.&lt;/ref&gt;
+
+      As late as 1989, the [[United States Postal Service|U.S. Post Office]] caused controversy when it issued four &quot;dinosaur&quot; stamps: ''[[Tyrannosaurus]]'', ''[[Stegosaurus]]'', ''[[Pteranodon]]'' and ''Brontosaurus''. The use of the term ''Brontosaurus'' in place of ''Apatosaurus'', as well as the fact that ''Pteranodon''s were technically [[pterosaur]]s and not dinosaurs, led to complaints of &quot;fostering scientific illiteracy.&quot;&lt;ref name=&quot;NYT&quot;&gt;[http://query.nytimes.com/gst/fullpage.html?res=950DE5DC173CF932A25753C1A96F948260 &quot; Topics of The Times; Leapin' Lizards!&quot;] ''The New York Times'', 1989-10-11. Retrieved 2008-06-08.&lt;/ref&gt; The Post Office defended itself (in Postal Bulletin 21744) by saying, &quot;Although now recognized by the scientific community as ''Apatosaurus'', the name 'Brontosaurus' was used for the stamp because it is more familiar to the general population.&quot; [[Stephen Jay Gould]] also supported this position in his essay &quot;[[Bully for Brontosaurus]],&quot; though he echoed Riggs's original argument that ''Brontosaurus'' is a synonym for ''Apatosaurus''. Nevertheless, he noted that the former has developed and continues to maintain an independent existence in the popular imagination.&lt;ref name=&quot;gould1991&quot;&gt;Gould, S.J. (1991). ''Bully for Brontosaurus: Reflections in Natural History'', W. W. Norton &amp; Co., 540pp.&lt;/ref&gt;
+
+      ==See also==
+      {{Portal bar|Dinosaurs}}
+
+      ==References==
+      {{Reflist|2}}
+
+      ==External links==
+      {{Wikibooks|Wikijunior: Dinosaurs/Brontosaurus}}
+      {{Commons}}
+      * Hartman, Scott. [http://skeletaldrawing.com/sauropods/sauropods.htm &quot;Sauropods.&quot;] SkeletalDrawing.com, 2006. Includes ''A. ajax'', ''A. excelsus'', and ''A. louisae''.
+      * Krystek, Lee. [http://www.unmuseum.org/dinobront.htm &quot;Whatever Happened to the Brontosaurus?&quot;] UnMuseum (Museum of Unnatural Mystery), 2002.
+      * Taylor, Mike. [http://www.miketaylor.org.uk/dino/faq/s-class/bronto/ &quot;Why is 'Brontosaurus' now called ''Apatosaurus''?&quot;] MikeTaylor.org.uk, June 28, 2004.
+
+      [[Category:Dinosaurs of North America]]
+      [[Category:Dinosaurs of the Morrison Formation]]
+      [[Category:Diplodocoids]]
+      [[Category:Fossil taxa described in 1877]]
+      [[Category:Jurassic dinosaurs]]</rev></revisions></page></pages></query></api>
+- recorded: 2014-04-06T22:26:13.970Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '484'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%7BPlaceholder+%3Cstrong+class%3D%22error%22%3Eerror+message%3C%2Fstrong%3E.%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '372'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:13 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570864379, 3519482944, 815608189
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page title="Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/{Placeholder &lt;strong class=&quot;error&quot;&gt;error message&lt;/strong&gt;.]]]]]]]]]]]]]]]]" invalid="" /></pages></query></api>
+- recorded: 2014-04-06T22:26:14.386Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '484'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%7BPlaceholder+%3Cstrong+class%3D%22error%22%3Eerror+message%3C%2Fstrong%3E.%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '372'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:14 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570865026, 3519483192, 815608650
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page title="Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/{Placeholder &lt;strong class=&quot;error&quot;&gt;error message&lt;/strong&gt;.]]]]]]]]]]]]]]]]" invalid="" /></pages></query></api>
+- recorded: 2014-04-06T22:26:14.776Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '484'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%7BPlaceholder+%3Cstrong+class%3D%22error%22%3Eerror+message%3C%2Fstrong%3E.%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '372'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:14 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570865866, 3519484032, 815609722
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page title="Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/{Placeholder &lt;strong class=&quot;error&quot;&gt;error message&lt;/strong&gt;.]]]]]]]]]]]]]]]]" invalid="" /></pages></query></api>
+- recorded: 2014-04-06T22:26:15.200Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '484'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%7BPlaceholder+%3Cstrong+class%3D%22error%22%3Eerror+message%3C%2Fstrong%3E.%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '372'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:15 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570866362, 3519484391, 815610262
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page title="Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/{Placeholder &lt;strong class=&quot;error&quot;&gt;error message&lt;/strong&gt;.]]]]]]]]]]]]]]]]" invalid="" /></pages></query></api>
+- recorded: 2014-04-06T22:26:15.607Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '484'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%7BPlaceholder+%3Cstrong+class%3D%22error%22%3Eerror+message%3C%2Fstrong%3E.%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '372'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:15 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570866706, 3519484554, 815610648
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page title="Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/{Placeholder &lt;strong class=&quot;error&quot;&gt;error message&lt;/strong&gt;.]]]]]]]]]]]]]]]]" invalid="" /></pages></query></api>
+- recorded: 2014-04-06T22:26:16.010Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '447'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%3Cspan+class%3D%22error%22%3EException%3A+A+truncation+error+was+encountered+trying+to+shrink+VARCHAR+%27Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%26%27+to+length+256.%3C%2Fspan%3E%5D%5D%5D%5D%5D%5D&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '389'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:15 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570867133, 3519484724, 815611018
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: '<?xml version="1.0"?><api><query><pages><page title="Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/&lt;span class=&quot;error&quot;&gt;Exception: A truncation error was encountered trying to shrink VARCHAR &#039;Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/&amp;&#039;
+      to length 256.&lt;/span&gt;]]]]]]" invalid="" /></pages></query></api>'
+- recorded: 2014-04-06T22:26:16.465Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '484'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%7BPlaceholder+%3Cstrong+class%3D%22error%22%3Eerror+message%3C%2Fstrong%3E.%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '372'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:16 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570867463, 3519484979, 815611472
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page title="Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/{Placeholder &lt;strong class=&quot;error&quot;&gt;error message&lt;/strong&gt;.]]]]]]]]]]]]]]]]" invalid="" /></pages></query></api>
+- recorded: 2014-04-06T22:26:16.864Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '447'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%3Cspan+class%3D%22error%22%3EException%3A+A+truncation+error+was+encountered+trying+to+shrink+VARCHAR+%27Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%26%27+to+length+256.%3C%2Fspan%3E%5D%5D%5D%5D%5D%5D&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '389'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:16 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570867858, 3519485211, 815611925
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: '<?xml version="1.0"?><api><query><pages><page title="Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/&lt;span class=&quot;error&quot;&gt;Exception: A truncation error was encountered trying to shrink VARCHAR &#039;Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/&amp;&#039;
+      to length 256.&lt;/span&gt;]]]]]]" invalid="" /></pages></query></api>'
+- recorded: 2014-04-06T22:26:17.269Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '484'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%7BPlaceholder+%3Cstrong+class%3D%22error%22%3Eerror+message%3C%2Fstrong%3E.%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '372'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:17 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570868214, 3519485378, 815612282
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page title="Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/{Placeholder &lt;strong class=&quot;error&quot;&gt;error message&lt;/strong&gt;.]]]]]]]]]]]]]]]]" invalid="" /></pages></query></api>
+- recorded: 2014-04-06T22:26:17.712Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '447'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%3Cspan+class%3D%22error%22%3EException%3A+A+truncation+error+was+encountered+trying+to+shrink+VARCHAR+%27Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%26%27+to+length+256.%3C%2Fspan%3E%5D%5D%5D%5D%5D%5D&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '389'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:17 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570868648, 3519485627, 815612758
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: '<?xml version="1.0"?><api><query><pages><page title="Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/&lt;span class=&quot;error&quot;&gt;Exception: A truncation error was encountered trying to shrink VARCHAR &#039;Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/&amp;&#039;
+      to length 256.&lt;/span&gt;]]]]]]" invalid="" /></pages></query></api>'
+- recorded: 2014-04-06T22:26:18.148Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '484'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%7BPlaceholder+%3Cstrong+class%3D%22error%22%3Eerror+message%3C%2Fstrong%3E.%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '372'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:18 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570869112, 3519485902, 815613259
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page title="Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/{Placeholder &lt;strong class=&quot;error&quot;&gt;error message&lt;/strong&gt;.]]]]]]]]]]]]]]]]" invalid="" /></pages></query></api>
+- recorded: 2014-04-06T22:26:18.526Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '447'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%3Cspan+class%3D%22error%22%3EException%3A+A+truncation+error+was+encountered+trying+to+shrink+VARCHAR+%27Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%26%27+to+length+256.%3C%2Fspan%3E%5D%5D%5D%5D%5D%5D&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '389'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:18 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570869593, 3519486172, 815613729
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: '<?xml version="1.0"?><api><query><pages><page title="Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/&lt;span class=&quot;error&quot;&gt;Exception: A truncation error was encountered trying to shrink VARCHAR &#039;Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/&amp;&#039;
+      to length 256.&lt;/span&gt;]]]]]]" invalid="" /></pages></query></api>'
+- recorded: 2014-04-06T22:26:18.944Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '484'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%7BPlaceholder+%3Cstrong+class%3D%22error%22%3Eerror+message%3C%2Fstrong%3E.%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D%5D&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '372'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:18 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570869948, 3519486347, 815614098
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page title="Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/{Placeholder &lt;strong class=&quot;error&quot;&gt;error message&lt;/strong&gt;.]]]]]]]]]]]]]]]]" invalid="" /></pages></query></api>
+- recorded: 2014-04-06T22:26:19.469Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '447'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%3Cspan+class%3D%22error%22%3EException%3A+A+truncation+error+was+encountered+trying+to+shrink+VARCHAR+%27Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%26%27+to+length+256.%3C%2Fspan%3E%5D%5D%5D%5D%5D%5D&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '389'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:19 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570870392, 3519486512, 815614485
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: '<?xml version="1.0"?><api><query><pages><page title="Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/&lt;span class=&quot;error&quot;&gt;Exception: A truncation error was encountered trying to shrink VARCHAR &#039;Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/&amp;&#039;
+      to length 256.&lt;/span&gt;]]]]]]" invalid="" /></pages></query></api>'
+- recorded: 2014-04-06T22:26:19.932Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '447'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%3Cspan+class%3D%22error%22%3EException%3A+A+truncation+error+was+encountered+trying+to+shrink+VARCHAR+%27Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%26%27+to+length+256.%3C%2Fspan%3E%5D%5D%5D%5D%5D%5D&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '389'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:19 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570870845, 3519486702, 815614924
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: '<?xml version="1.0"?><api><query><pages><page title="Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/&lt;span class=&quot;error&quot;&gt;Exception: A truncation error was encountered trying to shrink VARCHAR &#039;Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/&amp;&#039;
+      to length 256.&lt;/span&gt;]]]]]]" invalid="" /></pages></query></api>'
+- recorded: 2014-04-06T22:26:20.320Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '467'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%7BPlaceholder+%3Cstrong+class%3D%22error%22%3Eerror+message%3C%2Fstrong%3E.%5D%5D%5D%5D%5D%5D%5D%5D%22.+Taxon+level+above+60%2C+cannot+display.%3C%2Ffont%3E%5D%5D%5D%5D&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '384'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:20 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570871471, 3519487179, 815615609
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page title="Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/{Placeholder &lt;strong class=&quot;error&quot;&gt;error message&lt;/strong&gt;.]]]]]]]]&quot;. Taxon level above 60, cannot display.&lt;/font&gt;]]]]" invalid="" /></pages></query></api>
+- recorded: 2014-04-06T22:26:20.772Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '447'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%3Cspan+class%3D%22error%22%3EException%3A+A+truncation+error+was+encountered+trying+to+shrink+VARCHAR+%27Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%26%27+to+length+256.%3C%2Fspan%3E%5D%5D%5D%5D%5D%5D&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '389'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:20 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570871819, 3519487346, 815615952
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: '<?xml version="1.0"?><api><query><pages><page title="Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/&lt;span class=&quot;error&quot;&gt;Exception: A truncation error was encountered trying to shrink VARCHAR &#039;Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/&amp;&#039;
+      to length 256.&lt;/span&gt;]]]]]]" invalid="" /></pages></query></api>'
+- recorded: 2014-04-06T22:26:21.215Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '447'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%3Cspan+class%3D%22error%22%3EException%3A+A+truncation+error+was+encountered+trying+to+shrink+VARCHAR+%27Template%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%5B%5B%3ATemplate%3Ataxonomy%2F%26%27+to+length+256.%3C%2Fspan%3E%5D%5D%5D%5D%5D%5D&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '389'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:21 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570872470, 3519487756, 815616603
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: '<?xml version="1.0"?><api><query><pages><page title="Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/&lt;span class=&quot;error&quot;&gt;Exception: A truncation error was encountered trying to shrink VARCHAR &#039;Template:taxonomy/[[:Template:taxonomy/[[:Template:taxonomy/&amp;&#039;
+      to length 256.&lt;/span&gt;]]]]]]" invalid="" /></pages></query></api>'
+- recorded: 2014-04-06T22:26:26.257Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '90'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ALouisae.jpg&prop=imageinfo&iiprop=url&iiurlwidth=250&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '442'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:26 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570877621, 3519490668, 815621955
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:Louisae.jpg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Louisae.jpg/250px-Louisae.jpg" thumbwidth="250" thumbheight="166" url="http://upload.wikimedia.org/wikipedia/commons/3/3a/Louisae.jpg" descriptionurl="http://commons.wikimedia.org/wiki/File:Louisae.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:26:27.221Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '98'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ARed+Pencil+Icon.png&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '525'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:27 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570878693, 3519491324, 815623078
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2011-06-02T07:52:26Z" /></query-continue><query><pages><page ns="6" title="File:Red Pencil Icon.png" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/7/74/Red_Pencil_Icon.png" thumbwidth="16" thumbheight="16" url="http://upload.wikimedia.org/wikipedia/commons/7/74/Red_Pencil_Icon.png" descriptionurl="http://commons.wikimedia.org/wiki/File:Red_Pencil_Icon.png" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:26:27.930Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '116'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AApatosaurus+scale+mmartyniuk+wiki.png&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '648'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:27 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570879567, 3519491893, 815623971
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2010-07-22T00:09:32Z" /></query-continue><query><pages><page ns="6" title="File:Apatosaurus scale mmartyniuk wiki.png" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Apatosaurus_scale_mmartyniuk_wiki.png/220px-Apatosaurus_scale_mmartyniuk_wiki.png" thumbwidth="220" thumbheight="71" url="http://upload.wikimedia.org/wikipedia/commons/2/2b/Apatosaurus_scale_mmartyniuk_wiki.png" descriptionurl="http://commons.wikimedia.org/wiki/File:Apatosaurus_scale_mmartyniuk_wiki.png" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:26:28.880Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '96'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AApatosaurus33.jpg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '549'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:28 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570880235, 3519492239, 815624715
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2009-03-18T16:16:30Z" /></query-continue><query><pages><page ns="6" title="File:Apatosaurus33.jpg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Apatosaurus33.jpg/220px-Apatosaurus33.jpg" thumbwidth="220" thumbheight="135" url="http://upload.wikimedia.org/wikipedia/commons/8/82/Apatosaurus33.jpg" descriptionurl="http://commons.wikimedia.org/wiki/File:Apatosaurus33.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:26:29.811Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '111'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ASkeleton+of+Apatosaurus+ajax.jpg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '547'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:29 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570881233, 3519492822, 815625801
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:Skeleton of Apatosaurus ajax.jpg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Skeleton_of_Apatosaurus_ajax.jpg/220px-Skeleton_of_Apatosaurus_ajax.jpg" thumbwidth="220" thumbheight="220" url="http://upload.wikimedia.org/wikipedia/commons/a/a9/Skeleton_of_Apatosaurus_ajax.jpg" descriptionurl="http://commons.wikimedia.org/wiki/File:Skeleton_of_Apatosaurus_ajax.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:26:30.874Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '110'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ABrontosaurus+skeleton+1880s.jpg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '618'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:30 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570882434, 3519493622, 815627121
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2008-05-06T15:58:57Z" /></query-continue><query><pages><page ns="6" title="File:Brontosaurus skeleton 1880s.jpg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Brontosaurus_skeleton_1880s.jpg/220px-Brontosaurus_skeleton_1880s.jpg" thumbwidth="220" thumbheight="87" url="http://upload.wikimedia.org/wikipedia/commons/d/d6/Brontosaurus_skeleton_1880s.jpg" descriptionurl="http://commons.wikimedia.org/wiki/File:Brontosaurus_skeleton_1880s.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:26:31.631Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '106'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ASharp+lull+brontosaurus.jpg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '599'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:31 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570883394, 3519494305, 815628198
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2009-10-17T11:51:03Z" /></query-continue><query><pages><page ns="6" title="File:Sharp lull brontosaurus.jpg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Sharp_lull_brontosaurus.jpg/220px-Sharp_lull_brontosaurus.jpg" thumbwidth="220" thumbheight="146" url="http://upload.wikimedia.org/wikipedia/commons/0/06/Sharp_lull_brontosaurus.jpg" descriptionurl="http://commons.wikimedia.org/wiki/File:Sharp_lull_brontosaurus.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:26:32.348Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '107'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AApatosaurus+Yale+Peabody.JPG&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '604'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:32 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570884212, 3519494865, 815629115
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2012-07-21T09:00:23Z" /></query-continue><query><pages><page ns="6" title="File:Apatosaurus Yale Peabody.JPG" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Apatosaurus_Yale_Peabody.JPG/220px-Apatosaurus_Yale_Peabody.JPG" thumbwidth="220" thumbheight="237" url="http://upload.wikimedia.org/wikipedia/commons/5/55/Apatosaurus_Yale_Peabody.JPG" descriptionurl="http://commons.wikimedia.org/wiki/File:Apatosaurus_Yale_Peabody.JPG" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:26:33.764Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '100'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AApatosaurus+skull.jpg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '492'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:33 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570885477, 3519495540, 815630386
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:Apatosaurus skull.jpg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Apatosaurus_skull.jpg/220px-Apatosaurus_skull.jpg" thumbwidth="220" thumbheight="129" url="http://upload.wikimedia.org/wikipedia/commons/3/34/Apatosaurus_skull.jpg" descriptionurl="http://commons.wikimedia.org/wiki/File:Apatosaurus_skull.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:26:34.478Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '99'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AAMNH+Apatosaurus.jpg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '487'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:34 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570886602, 3519496284, 815631561
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:AMNH Apatosaurus.jpg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/AMNH_Apatosaurus.jpg/220px-AMNH_Apatosaurus.jpg" thumbwidth="220" thumbheight="146" url="http://upload.wikimedia.org/wikipedia/commons/2/2f/AMNH_Apatosaurus.jpg" descriptionurl="http://commons.wikimedia.org/wiki/File:AMNH_Apatosaurus.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:26:35.424Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '96'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ASaurophaganax.JPG&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '472'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:35 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570887455, 3519496864, 815632572
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="File:Saurophaganax.JPG" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Saurophaganax.JPG/220px-Saurophaganax.JPG" thumbwidth="220" thumbheight="165" url="http://upload.wikimedia.org/wikipedia/commons/9/9f/Saurophaganax.JPG" descriptionurl="http://commons.wikimedia.org/wiki/File:Saurophaganax.JPG" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:26:36.178Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '101'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3APasta-Brontosaurus.jpg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '574'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:36 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570888326, 3519497469, 815633550
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2008-03-28T02:59:55Z" /></query-continue><query><pages><page ns="6" title="File:Pasta-Brontosaurus.jpg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Pasta-Brontosaurus.jpg/220px-Pasta-Brontosaurus.jpg" thumbwidth="220" thumbheight="144" url="http://upload.wikimedia.org/wikipedia/commons/3/3e/Pasta-Brontosaurus.jpg" descriptionurl="http://commons.wikimedia.org/wiki/File:Pasta-Brontosaurus.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:26:37.233Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '108'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AWikibooks-logo-en-noslogan.svg&prop=imageinfo&iiprop=url&iiurlwidth=40&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '615'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:37 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570889383, 3519498033, 815634601
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2009-01-15T22:00:56Z" /></query-continue><query><pages><page ns="6" title="File:Wikibooks-logo-en-noslogan.svg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wikibooks-logo-en-noslogan.svg/40px-Wikibooks-logo-en-noslogan.svg.png" thumbwidth="40" thumbheight="40" url="http://upload.wikimedia.org/wikipedia/commons/d/df/Wikibooks-logo-en-noslogan.svg" descriptionurl="http://commons.wikimedia.org/wiki/File:Wikibooks-logo-en-noslogan.svg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:26:37.965Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '94'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ACommons-logo.svg&prop=imageinfo&iiprop=url&iiurlwidth=40&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '459'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:37 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq50 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570890015, 3519498459, 815635409
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page pageid="33285577" ns="6" title="File:Commons-logo.svg" imagerepository="local"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/40px-Commons-logo.svg.png" thumbwidth="40" thumbheight="54" url="http://upload.wikimedia.org/wikipedia/en/4/4a/Commons-logo.svg" descriptionurl="http://en.wikipedia.org/wiki/File:Commons-logo.svg" /></imageinfo></page></pages></query></api>

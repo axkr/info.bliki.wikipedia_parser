@@ -1,0 +1,356 @@
+!tape
+name: Batman returns
+interactions:
+- recorded: 2014-04-06T22:26:41.987Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '104'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Batman+Returns&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '44870'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:41 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq56 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570893967, 3519500873, 734520244
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: "<?xml version=\"1.0\"?><api><query><pages><page pageid=\"4728\" ns=\"0\" title=\"Batman Returns\"><revisions><rev user=\"JustAGal\" timestamp=\"2014-04-01T15:30:45Z\" comment=\"Disambiguated: [[Michael Murphy]] → [[Michael Murphy (actor)]]; Help needed:\
+      \ [[John Strong]]\" contentformat=\"text/x-wiki\" contentmodel=\"wikitext\" xml:space=\"preserve\">{{For|the video game based on the film|Batman Returns (video game)}}\n{{Use mdy dates|date=May 2013}}\n{{Infobox film\n| name           = Batman Returns\n\
+      | image          = Batman returns poster2.jpg\n| caption        = Theatrical release poster\n| director       = [[Tim Burton]]\n| producer       = Tim Burton&lt;br /&gt;[[Denise Di Novi]]\n| screenplay     = [[Daniel Waters (screenwriter)|Daniel Waters]]\n\
+      | story          = [[Sam Hamm]]&lt;br /&gt;Daniel Waters\n| based on       = {{based on|''[[Batman]]''|[[Bob Kane]]}}\n| starring       = [[Michael Keaton]]&lt;br /&gt;[[Danny DeVito]]&lt;br /&gt;[[Michelle Pfeiffer]]&lt;br /&gt;[[Christopher Walken]]\n\
+      | music          = [[Danny Elfman]]\n| cinematography = Stefan Czapsky\n| editing        = [[Chris Lebenzon]]&lt;br /&gt;Bob Badami\n| studio         = [[PolyGram Filmed Entertainment]]\n| distributor    = [[Warner Bros.]]\n| released       = {{Film date|1992|6|19|United\
+      \ States}}\n| runtime        = 126 minutes\n| country        = United States\n| language       = English\n| budget         = $80 million&lt;ref name=Mac/&gt;\n| gross          = $266,822,354&lt;ref name=BMM&gt;{{cite web|title=Batman Returns (1992)|url=http://www.boxofficemojo.com/movies/?id=batmanreturns.htm|publisher=[[Box\
+      \ Office Mojo]]|accessdate=July 23, 2012}}&lt;/ref&gt;\n}}\n\n'''''Batman Returns''''' is a 1992 American [[superhero film|superhero]] [[fantasy film]] produced and directed by [[Tim Burton]], based upon the [[Batman]] character appearing in magazines\
+      \ published by [[DC Comics]]. It is the second installment of [[Warner Bros.]]' [[Batman in film#Tim Burton/Joel Schumacher series (1989-1997)|initial ''Batman'' film series]], with [[Michael Keaton]] reprising the title role of Bruce Wayne/Batman. The\
+      \ film introduces the characters of [[Max Schreck#Cultural references|Max Shreck]] ([[Christopher Walken]]), a business tycoon who teams up with the [[Penguin (comics)|Penguin]] ([[Danny DeVito]]) to take over [[Gotham City]], as well as the character\
+      \ of [[Catwoman]] ([[Michelle Pfeiffer]]).\n\nBurton originally did not want to direct another Batman film because of his mixed emotions toward the [[Batman (1989 film)|previous film]] in 1989. [[Daniel Waters (screenwriter)|Daniel Waters]] delivered a\
+      \ script that satisfied Burton; [[Wesley Strick]] did an uncredited rewrite, removing the characters of [[Harvey Dent]] and [[Robin (comics)|Robin]] and rewriting the [[climax (narrative)|climax]]. Before Pfeiffer's casting, [[Demi Moore]] and [[Nicole\
+      \ Kidman]] were each offered the role of Catwoman, but both of them turned it down. Filming of ''Batman Returns'' started in [[Burbank, California]] in June 1991.\n\n''Batman Returns'' was released on June 19, 1992 to financial and critical success, though\
+      \ it caused some controversy for being darker than its predecessor. The film's budget was an estimated $80 million, while it made $45,687,710 in the United States during its opening weekend (June 19–21, 1992), grossing $282,800,000 worldwide.&lt;ref name=&quot;imdb.com&quot;&gt;http://www.imdb.com/title/tt0103776/&lt;/ref&gt;\
+      \ The film was nominated for the [[Academy Award]]s for [[Academy Award for Best Visual Effects|Best Visual Effects]] and [[Academy Award for Best Makeup|Best Makeup]], as well as winning the [[Saturn Award for Best Makeup]]. It was also nominated for\
+      \ a Saturn Award in the categories of [[Saturn Award for Best Fantasy Film|Best Fantasy Film]], [[Saturn Award for Best Director|Best Director]] for Burton, [[Saturn Award for Best Supporting Actor|Best Supporting Actor]] for DeVito and [[Saturn Award\
+      \ for Best Costume|Best Costume]].&lt;ref name=&quot;imdb.com&quot;/&gt;\n\n==Plot==\nIn [[Gotham City]], a wealthy couple, Tucker and Esther Cobblepot ([[Paul Reubens]] and [[Diane Salinger]]) throw their deformed infant son into the sewer; the boy survives,\
+      \ however, and is found by a flock of [[penguin]]s. Thirty-three years later, the child, Oswald Cobblepot ([[Danny DeVito]]), resurfaces as a criminal, the [[Penguin (comics)|Penguin]], who kidnaps millionaire industrialist Max Shreck ([[Christopher Walken]]).\
+      \ With evidence of his corporate crimes, Cobblepot blackmails Shreck into helping him leave the sewers to become part of Gotham's elite. The Penguin arranges for the Mayor's child to be kidnapped, whom he then &quot;rescues&quot; in order to set himself\
+      \ up as a public hero. Despite the Penguin's popularity, however, socialite Bruce Wayne ([[Michael Keaton]]) remains skeptical of the Penguin's image, and while investigating the Penguin's past, he comes across evidence that appears to suggest that the\
+      \ Penguin was once a freak show performer with the disgraced Red Triangle Circus Gang, who have recently been wreaking havoc on Gotham and whose previous performances resulted in the disappearance of several children. As [[Batman]], Bruce does his best\
+      \ to defend Gotham from the gang.\n\nMeanwhile, Shreck surprises his secretary Selina Kyle ([[Michelle Pfeiffer]]), in the course of her preparation for his meeting with Bruce regarding Shreck's proposed [[power plant]]. While innocently pulling relevant\
+      \ documents, Selina accesses Shreck's protected files, uncovering compromising information, revealing that the plant will drain Gotham's power supply. Realizing Selina knows too much, Shreck pushes her out of a window, leaving her for dead on the ground\
+      \ many stories below. Selina survives the fall after being revived by alley cats. She returns to her apartment, then suffers a [[psychotic break]] and reinvents herself as [[Catwoman]], a catsuit-clad burglar dedicated to getting revenge on her boss. Shreck\
+      \ then hatches a plan to [[recall election|recall]] Gotham City's current mayor ([[Michael Murphy (actor)|Michael Murphy]]) and elect the Penguin in his place, in order to cement his control over the city and complete his power plant project. The Red Triangle\
+      \ Gang cause chaos around Gotham to create bad press for the Mayor.\n\nMeanwhile, Bruce and Selina meet in person and begin a romantic relationship, a situation complicated by Catwoman's teaming with the Penguin in an effort to rid Gotham of Batman. They\
+      \ kidnap the Ice Princess ([[Cristi Conaway]]), a woman chosen to turn on the Gotham Christmas Tree lights, and frame Batman for the crime. Finding the Princess balancing precariously on the ledge of a high building, Batman tries to save her, but to no\
+      \ avail; the Penguin unleashes an umbrella full of bats which frighten the Princess into plunging to her death, and frames Batman for killing her. When Catwoman rejects his advances, the Penguin tries, unsuccessfully, to kill her. When Batman returns to\
+      \ the [[Batmobile]], he finds that the Penguin has sabotaged it; as the Penguin takes the [[Batmobile]] on a remote-controlled rampage through Gotham, he gloats about fooling the entire city. Batman ultimately escapes the Penguin's trap, however.\n\nWhen\
+      \ Bruce exposes the Penguin's plans to dupe Gotham, thereby ruining his election chances, the Penguin initiates a plan to murder all of Gotham's first-born sons by kidnapping and taking them into his lair to drown them in a pool of water that has been\
+      \ contaminated with Shreck's toxic waste. He personally attempts to take Max's son, Charles &quot;Chip&quot; Shreck ([[Andrew Bryniarski]]), but agrees to take Max instead after Max begs him. Batman foils the Penguin's scheme, whereupon the Penguin then\
+      \ decides to launch missiles around Gotham using mind-controlled penguins. However, Batman is able to jam the frequency used to control the penguins and has missiles launched at the Penguin's base. Batman confronts the Penguin, which culminates in the\
+      \ Penguin falling into the toxic waters in his lair. Batman tries to persuade Catwoman to turn Shreck over to the police, even unmasking himself in the process, but Shreck draws a gun. Catwoman claims that she still has six of her [[Cat#History and mythology|nine\
+      \ lives]] left, and remains standing after Shreck shoots her four times. Catwoman uses a [[taser]] to cause an explosion, electrocuting Shreck and apparently sacrificing herself (using up her &quot;eighth life&quot;). The Penguin then emerges from the\
+      \ toxic water and tries to kill Batman, but fails and he succumbs to his wounds. His penguins then take his body into the sewer waters as a final resting place.\n\nLater, Bruce is being driven around the city at night with butler [[Alfred Pennyworth]]\
+      \ ([[Michael Gough]]) and sees what looks like Catwoman's shadow on a wall. Alfred stops the car, and Bruce finds Selina's cat Miss Kitty, which he takes with him and leaves. As the [[Bat-Signal]] lights up the night sky, Catwoman rises up into the foreground,\
+      \ gazing up at the signal.\n\n==Cast==\n* [[Michael Keaton]] as [[Batman|Bruce Wayne / Batman]]\n* [[Danny DeVito]] as [[Penguin (comics)|Oswald Cobblepot / Penguin]]\n* [[Michelle Pfeiffer]] as [[Catwoman|Catwoman / Selina Kyle]]\n* [[Christopher Walken]]\
+      \ as [[Max Shreck]]\n* [[Michael Murphy (actor)|Michael Murphy]] as [[List of mayors of Gotham City|Mayor of Gotham City]]\n* [[Vincent Schiavelli]] as The Organ Grinder\n* [[Anna Katarina]] as The Poodle Lady\n* [[Andrew Bryniarski]] as Chip Shreck\n\
+      * [[Cristi Conaway]] as The Ice Princess\n* [[Pat Hingle]] as [[James Gordon (comics)|Commisioner James Gordon]]\n* [[Michael Gough]] as [[Alfred Pennyworth]]\n* [[John Strong]]{{dn|date=April 2014}} as The Sword Swallower\n* [[Rick Zumwalt]] as The Tattooed\
+      \ Strongman\n* [[Gregory Scott Cummins]] as The Acrobatic Thug\n\n==Production==\n\n===Development===\nAfter the success of ''[[Batman (1989 film)|Batman]]'', [[Warner Bros.]] was hoping for a sequel to start filming in May 1990 at [[Pinewood Studios]].\
+      \ They spent $250,000 storing the sets from the first film. [[Tim Burton]] had mixed emotions about directing another film in the franchise after his experiences with the previous film. &quot;I will return if the sequel offers something new and exciting&quot;,\
+      \ he said in 1989. &quot;Otherwise it's a most-dumbfounded idea.&quot;&lt;ref&gt;Alan Jones (November 1989). &quot;Batman in Production&quot;, ''[[Cinefantastique]]'', pp. 75—88. Retrieved August 14, 2008.&lt;/ref&gt; Burton decided to direct ''[[Edward\
+      \ Scissorhands]]'' for [[20th Century Fox]]. Meanwhile, [[Sam Hamm]] from the previous film delivered the first two drafts of the script, while [[Bob Kane]] was brought back as a creative consultant.&lt;ref name=cinema&gt;[[Tim Burton]], [[Sam Hamm]],\
+      \ [[Denise Di Novi]], [[Daniel Waters (screenwriter)|Daniel Waters]], ''Shadows of the Bat: The Cinematic Saga of the Dark Knight—The Dark Side of the Knight'', 2005, [[Warner Home Video]]&lt;/ref&gt; Hamm's script had [[Penguin (comics)|Penguin]] and\
+      \ [[Catwoman]] going after hidden treasure.&lt;ref name=Mad/&gt;\n\nBurton was impressed with [[Daniel Waters (screenwriter)|Daniel Waters]]' work on ''[[Heathers]]''; Burton originally brought Waters aboard on a sequel to ''[[Beetlejuice]]''. Warner Bros.\
+      \ then granted Burton a large amount of creative control, demoting producers [[Jon Peters]] and [[Peter Guber]] to executive producers. Dissatisfied with the Hamm script, Burton commissioned a rewrite from Waters.&lt;ref name=cinema/&gt;&lt;ref name=beetle&gt;Judy\
+      \ Sloane (August 1995). &quot;Daniel Waters on Writing&quot;, ''Film Review'', pp. 67—69. Retrieved August 14, 2008.&lt;/ref&gt;&lt;ref name=forever/&gt; Waters &quot;came up with a social satire that had an evil mogul backing a bid for the Mayor's office\
+      \ by the Penguin&quot;, Waters reported. &quot;I wanted to show that the true villains of our world don't necessarily wear costumes.&quot;&lt;ref name=Mad/&gt; The [[plot device]] of Penguin running for Mayor came from [[Batman (TV series)|the 1960s TV\
+      \ series]] episodes &quot;Hizzoner the Penguin&quot; and &quot;Dizzoner the Penguin&quot;.&lt;ref name=Mad&gt;Jeffrey Resner (August 1992). &quot;Three Go Mad in Gotham&quot;, ''[[Empire (film magazine)|Empire]]'', pp. 39—46. Retrieved August 14, 2008.&lt;/ref&gt;\
+      \ Waters wrote a total of five drafts.&lt;ref name=forever&gt;{{cite book | author= Ken Hanke | title = Tim Burton: An Unauthorized Biography of the Filmmaker | publisher =[[Renaissance Books]] | year =1999 | pages =117–122 | isbn = 1-58063-162-2 | chapter\
+      \ = Batman on Burton's Terms}}&lt;/ref&gt;\n\nOn the characterization of Catwoman, Waters explained &quot;Sam Hamm went back to the way comic books in general treat women, like fetishy sexual fantasy. I wanted to start off just at the lowest point in society,\
+      \ a very beaten down secretary.&quot;&lt;ref name=beetle/&gt; [[Two-Face|Harvey Dent]] appeared in early drafts of the script, but was deleted. Waters quoted, &quot;Sam Hamm definitely planned that. I flirted with it, having Harvey start to come back and\
+      \ have one scene of him where he flips a coin and it's the good side of the coin, deciding not to do anything, so you had to wait for the next movie.&quot;&lt;ref name=beetle/&gt; In early scripts Max Shreck was the &quot;golden boy&quot; of the Cobblepot\
+      \ family, whereas Penguin was the deformed outsider. It turned out that Shreck would be the Penguin's long-lost brother.&lt;ref name=villain&gt;[[Daniel Waters (screenwriter)|Daniel Waters]], [[Alex Ross]], ''Batman Returns: Villains'', 2005, [[Warner\
+      \ Home Video]]&lt;/ref&gt; Max Shreck was also a reference to actor [[Max Schreck]], known for his role as [[Count Orlok]] in ''[[Nosferatu]]''.&lt;ref name=forever/&gt; According to casting director Marion Dougherty, Burton was reportedly uncomfortable\
+      \ with casting [[Christopher Walken]] as Shreck, on the basis that the actor scared him.&lt;ref&gt;{{cite web|url=http://www.youtube.com/watch?v=yP9JVmHBOno#t=44s |title=Christopher Walken as Max Shreck |publisher=YouTube |date=September 2, 2011 |accessdate=September\
+      \ 16, 2011}}&lt;/ref&gt;\n\nBurton hired [[Wesley Strick]] to do an uncredited rewrite. Strick recalled, &quot;When I was hired to write ''Batman Returns'' (''Batman II'' at the time), the big problem of the script was Penguin's lack of a 'master plan'.&quot;&lt;ref\
+      \ name=stick&gt;{{cite book | author=David Hughes | title =Comic Book Movies | publisher =[[Virgin Books]] | year =2003 | pages =33–46 | isbn = 0-7535-0767-6| chapter = Batman}}&lt;/ref&gt; Warner Bros. presented Strick with warming or freezing [[Gotham\
+      \ City]] (a plot point later to be used in ''[[Batman &amp; Robin (film)|Batman &amp; Robin]]''). Strick gained inspiration from a [[Moses]] parallel that had Penguin killing the firstborn sons of Gotham. A similar notion was used when the Penguin's parents\
+      \ threw him into a river as a baby.&lt;ref name=stick/&gt; [[Robin (comics)|Robin]] appeared in the script, but was deleted because Waters felt the film had too many characters. Waters called Robin &quot;the most worthless character in the world, especially\
+      \ with [Batman as] the loner of loners.&quot; Robin started out as a juvenile gang leader, who becomes an ally to Batman. Robin was later changed to a black teenaged garage mechanic.&lt;ref name=beetle/&gt; Waters explained, &quot;He's wearing this old-fashioned\
+      \ garage mechanic uniform and it has an 'R' on it. He drives the [[Batmobile]], which I notice they used in the [[Batman Forever|third film]]!&quot;&lt;ref name=beetle/&gt; [[Marlon Wayans]] was cast, and signed for a sequel. The actor had attended a wardrobe\
+      \ fitting, but it was decided to save the character for a third installment.&lt;ref&gt;{{cite news | author = Nathan Rabin | url = http://www.avclub.com/content/node/23240 | title = Wayans world | work = [[The A.V. Club]] | date = February 25, 1998 | accessdate\
+      \ =August 14, 2008}}&lt;/ref&gt;\n\n[[Michael Keaton]] returned after a significant increase in his salary at $10 million. [[Annette Bening]] was cast as [[Catwoman]] after Burton saw her performance in ''[[The Grifters (film)|The Grifters]]'', but she\
+      \ dropped out due to pregnancy.&lt;ref name=Mad/&gt;&lt;ref&gt;{{cite news | url = http://www.ew.com/ew/article/0,,308195,00.html | title = 'Batman 3' |work=Entertainment Weekly | date = October 1, 1993 | accessdate =August 16, 2008| archiveurl= https://web.archive.org/web/20080921055255/http://www.ew.com/ew/article/0,,308195,00.html|\
+      \ archivedate= September 21, 2008 &lt;!--DASHBot--&gt;| deadurl= no}}&lt;/ref&gt; [[Raquel Welch]], [[Jennifer Jason Leigh]], [[Madonna (entertainer)|Madonna]], [[Ellen Barkin]], [[Cher]], [[Bridget Fonda]] and [[Susan Sarandon]] were then in competition\
+      \ for the role.&lt;ref name=cinema/&gt;&lt;ref&gt;{{cite news | url = http://www.ew.com/ew/article/0,,315097,00.html | title = Big-Game Hunting |work=Entertainment Weekly | date = August 9, 1991 | accessdate =August 14, 2008 | first1=Pat H. | last1=Broeske\
+      \ | first2=Anne | last2=Thompson}}&lt;/ref&gt; [[Sean Young]], who was originally cast as [[Vicki Vale]] in the first film, believed the role should have gone to her. Young visited production offices dressed in a homemade Catwoman costume, demanding an\
+      \ audition.&lt;ref&gt;{{cite news|last=Gerosa|first=Melina|title=Odd Woman Out|url=http://www.ew.com/ew/article/0,,309429_2,00.html|accessdate=April 17, 2012|newspaper=Entertainment Weekly|date=January 30, 2007}}&lt;/ref&gt; Burton was unfamiliar with\
+      \ [[Michelle Pfeiffer]]'s work, but was convinced to cast her after one meeting.&lt;ref name=Sally&gt;{{cite book | author=Mark Salisbury | coauthors = [[Tim Burton]] | title =Burton on Burton | publisher =[[Faber and Faber]] | year =2006 | pages =102–\
+      114 | isbn = 0-571-22926-3|chapter = Batman Returns}}&lt;/ref&gt; Pfeiffer received a $3 million salary ($2 million more than Bening) and a percentage of the box office.&lt;ref name=Mad/&gt; Pfeiffer took [[kickboxing]] lessons for the role.&lt;ref&gt;{{cite\
+      \ news | url = http://www.ew.com/ew/article/0,,310774,00.html | title = Flashes: Kicking, The Habit |work=Entertainment Weekly | date = June 12, 1992 | accessdate =August 14, 2008 | first=Pat H. | last=Broeske}}&lt;/ref&gt; [[Kathy Long]] served as Pfeiffer's\
+      \ [[body double]]. On [[Danny DeVito]]'s casting, Waters explained, &quot;I kind of knew that DeVito was going to play The Penguin. We didn't really officially cast it, but for a short nasty little guy, it's a short list. I ended up writing the character\
+      \ for Danny DeVito.&quot;&lt;ref name=beetle/&gt;\n\n===Filming===\n[[File:Batman Returns set.jpg|thumb|300px|[[Gotham City]] Square set built inside Studio 16 on Warner Bros. Studios.]]\nIn early 1991, two of Hollywood's largest [[sound stage]]s (Stage\
+      \ 16 at Warner Bros. and Stage 12 at [[Universal Studios]]) were being prepared for the filming of ''Batman Returns''.&lt;ref name=Mad/&gt; Filming started in June 1991.&lt;ref name=Sally/&gt; Stage 16 held Gotham Plaza, based on [[Rockefeller Center]].\
+      \ Universal's Stage 12 housed Penguin's underground lair. A half-a-million gallon tank filled with water was used.&lt;ref name=Mad/&gt; Burton wanted to make sure that the penguins felt comfortable.&lt;ref name=Sally/&gt; Eight other locations on the Warner\
+      \ Bros. lot were used, over 50% of their property was occupied by [[Gotham City]] sets.&lt;ref name=Mad/&gt;\n\n[[Animal rights]] groups started protesting the film after finding out that penguins would have rockets strapped on their backs. Richard Hill,\
+      \ the [[curator]] of the penguins, explained that Warner Bros. was very helpful in making sure the penguins were comfortable.&lt;ref name=Ow/&gt; &quot;On the flight over the plane was refrigerated down to 45 degrees&quot;, recalls Hill. &quot;In Hollywood,\
+      \ they were given a refrigerated trailer, their own swimming pool, half-a-ton of ice each day, and they had fresh fish delivered daily straight from the docks. Even though it was 100 degrees outside, the entire set was refrigerated down to 35 degrees.&quot;&lt;ref\
+      \ name=Ow&gt;Owain Yolland (August 1992). &quot;Two minutes, Mr Penguin&quot;, ''[[Empire (film magazine)|Empire]]'', pp. 89—90. Retrieved August 14, 2008.&lt;/ref&gt;\n\nWarner Bros. devoted a large amount of secrecy for ''Batman Returns''. The [[art\
+      \ department]] was required to keep their office blinds pulled down. Cast and crew had to have photo ID badges with the movie's [[Working title#Title ruse|fake working title]] ''Dictel'' to go anywhere near the sets.&lt;ref&gt;{{cite news | author = Steve\
+      \ Daly | url = http://www.ew.com/ew/article/0,,310819,00.html | title = Sets Appeal: Designing ''Batman Returns'' |work=Entertainment Weekly | date = June 19, 1992 | accessdate =August 14, 2008}}&lt;/ref&gt; [[Kevin Costner]] was refused a chance to visit\
+      \ the set. An entertainment magazine leaked the first photos of Danny DeVito as the Penguin; in response Warner Bros. employed a [[private investigator]] to track down the accomplice.&lt;ref name=Mad/&gt; $65 million was spent during the production of\
+      \ ''Batman Returns'', while $15 million was used for marketing, coming to a total cost of $80 million.&lt;ref name=Mac/&gt; The final shot of Catwoman looking at the [[Bat-Signal]] was completed during [[post-production]] and was not part of the [[shooting\
+      \ script]]. After ''Batman Returns'' was completed Warner Bros. felt it was best for Catwoman to survive, saving more characterizations in a future installment. Pfeiffer was unavailable and a [[body double]] was chosen.&lt;ref name=cinema/&gt;\n\n===Design\
+      \ and effects===\n[[Bo Welch]], Burton's collaborator on ''[[Beetlejuice]]'' and ''[[Edward Scissorhands]]'', replaced [[Anton Furst]] as [[production designer]], since Furst was unable to return for the sequel due to contractual obligations.&lt;ref&gt;[http://www.independent.co.uk/life-style/when-hell-burst-through-the-pavement-and-grew-anton-furst-conjured-up-batmans-gotham-city-in-england-he-was-a-creator-of-dreams-but-in-hollywood-his-dreams-ended-simon-garfield-reports-1531040.html\
+      \ When hell burst through the pavement and grew: Anton Furst conjured up Batman's Gotham City. In England he was a creator of dreams. But in Hollywood his dreams ended. Simon Garfield reports]&lt;/ref&gt; Welch blended &quot;[[Fascist architecture]] with\
+      \ [[World's fair]] architecture&quot; for Gotham City.&lt;ref&gt;Judy Sloane (August 1995). &quot;Bo Welch Interview&quot;, ''Film Review'', pp. 66. Retrieved August 14, 2008.&lt;/ref&gt; He also studied [[Russian architecture]] and [[German Expressionism]].\
+      \ An [[Iron maiden (torture)|iron maiden]] was used for Bruce Wayne's entry into the [[Batcave]].&lt;ref&gt;[[Bo Welch]], [[Tim Burton]], ''Gotham City Revisited: The Production Design of Batman Returns'', 2005, [[Warner Home Video]]&lt;/ref&gt; [[Stan\
+      \ Winston]], who worked with Burton on ''Edward Scissorhands'', designed [[Danny DeVito]]'s [[prosthetic makeup]], which took two hours to apply.&lt;ref name=Mac&gt;Brian D. Johnson (June 22, 1992). &quot;Batman's Return&quot;, ''[[Maclean's]]''. Retrieved\
+      \ August 14, 2008.&lt;/ref&gt; DeVito had to put a combination of [[mouthwash]] and red/green [[food coloring]] in his mouth &quot;to create a grotesque texture of some weird ooze.&quot;&lt;ref&gt;[[Danny DeVito]], [[Stan Winston]], ''Making-Up the Penguin'',\
+      \ 2005, [[Warner Home Video]]&lt;/ref&gt;\n\n[[File:PfeifferCatwoman.jpg|thumb|250px|left|Michelle Pfeiffer as Catwoman]]\nMore than 60 [[Catsuit]]s were designed in the six-month shoot at $1,000 each.&lt;ref&gt;Tim Fennell (August 1992). &quot;The Catsuit&quot;,\
+      \ ''[[Empire (film magazine)|Empire]]'', pp. 47—49. Retrieved August 14, 2008.&lt;/ref&gt; The [[Batsuit]] was updated, which was made out of a thinner, slightly more flexible foam rubber material than the suit from ''[[Batman (1989 film)|Batman]]''. DeVito\
+      \ was uncomfortable with his costume, but this made it easy for him to get into character. [[J. P. Morgan]]'s wardrobe was used for inspiration on Max Shreck's [[costume design]].&lt;ref&gt;Bob Ringwood, [[Michelle Pfeiffer]], ''Sleek, Sexy and Sinister:\
+      \ The Costumes of Batman Returns'', 2005, [[Warner Home Video]]&lt;/ref&gt;\n\nThe bats were entirely composed of [[computer-generated imagery]] since it was decided directing real bats on set would be problematic.&lt;ref name=Mad/&gt; The Penguin's &quot;bird\
+      \ army&quot; was a combination of CGI, robotic creatures, men in suits and even real penguins.&lt;ref name=Sally/&gt; Robotic penguin puppets were commissioned by Stan Winston. In total 30 [[African Penguin]]s and 12 [[King Penguin]]s were used.&lt;ref&gt;[[Stan\
+      \ Winston]], ''Assembling the Arctic Army'', 2005, [[Warner Home Video]]&lt;/ref&gt; A [[miniature effect]] was used for the exteriors of the Cobblepot Mansion in the opening scene and for [[Wayne Manor]]. The same method was used for [[Batboat|the Bat\
+      \ Ski-boat]] and the exterior shots of the Gotham Zoo.&lt;ref&gt;[[Stan Winston]], Mike Fink, ''Bats, Mattes and Dark Knights: The Visual Effects of Batman Returns'', 2005, [[Warner Home Video]]&lt;/ref&gt;\n\n===Music===\n{{main|Batman Returns (soundtrack)}}\n\
+      \n[[Danny Elfman]] had great enthusiasm for returning because &quot;I didn't have to prove myself from the first film. I remember [[Jon Peters]] was very skeptical at first to hire me.&quot;&lt;ref name=inside&gt;[[Danny Elfman]], ''Inside the Elfman Studios:\
+      \ The Music of Batman Returns'', 2005, [[Warner Home Video]]&lt;/ref&gt; Elfman's work schedule was 12 hours a day, 7 days a week. &quot;When completing this movie I realized it was something of a [[film score]] and an opera. It was 95 minutes long, twice\
+      \ the amount of the average of film score.&quot;&lt;ref name=inside/&gt; Burton allowed Elfman to be more artistic with the sequel score, such as the &quot;scraping&quot; on violins for the cat themes. The musician co-orchestrated &quot;[[Face to Face\
+      \ (Siouxsie and the Banshees song)|Face to Face]]&quot;, which was written and performed by [[Siouxsie and the Banshees]]. The song can be heard in one scene during the film and during the end credits.&lt;ref name=inside/&gt;\n\n==Release==\n''Batman Returns''\
+      \ was released in America on June 19, 1992, earning $45.69 million in 2,644 theaters on its opening weekend.&lt;ref name=box&gt;{{cite web | url = http://www.boxofficemojo.com/movies/?id=batmanreturns.htm | title = Batman Returns (1992) | work = [[Box\
+      \ Office Mojo]] | accessdate =August 14, 2008}}&lt;/ref&gt; This was the highest opening weekend in 1992 and the highest opening weekend of any film up to that point.&lt;ref name=dom&gt;{{cite web | url = \nhttp://www.boxofficemojo.com/yearly/chart/?view2=releasedate&amp;view=opening&amp;yr=1992&amp;p=.htm\
+      \ | title = 1992 Yearly Box Office Results | work = [[Box Office Mojo]] | accessdate =August 14, 2008}}&lt;/ref&gt; The film went on to gross $162.83 million in North America, and $104 million in foreign countries, coming to a worldwide total of $266.83\
+      \ million.&lt;ref name=box/&gt; ''Batman Returns'' was the third highest grossing film in America of 1992,&lt;ref name=dom/&gt; and sixth highest in worldwide totals.&lt;ref&gt;{{cite web | url = http://www.boxofficemojo.com/yearly/chart/?view2=worldwide&amp;yr=1992&amp;p=.htm\
+      \ | title = 1992 Worldwide Grosses | work = [[Box Office Mojo]] | accessdate =August 14, 2008}}&lt;/ref&gt; The film was declared a financial success, but Warner Bros. felt the film should have been more successful. A &quot;parental backlash&quot; criticized\
+      \ ''Batman Returns'' with violence and sexual references that were unsuitable for children. [[McDonald's]] shut down their [[Happy Meal]] [[tie-in]] for the film.&lt;ref&gt;Olly Richards (September 1992). &quot;Trouble in Gotham&quot;, ''[[Empire (film\
+      \ magazine)|Empire]]'', pp. 21—23. Retrieved August 14, 2008.&lt;/ref&gt; Burton responded, &quot;I like ''Batman Returns'' better than the first one. There was this big backlash that it was too dark, but I found this movie much less dark.&quot;&lt;ref\
+      \ name=Sally/&gt;\n\n===Critical reception===\n''Batman Returns'' was generally well received by both reviewers and audiences. Based on 66 reviews collected by [[Rotten Tomatoes]], 80% of reviewers enjoyed the film, and the consensus: &quot;Director Tim\
+      \ Burton's dark, brooding atmosphere, Michael Keaton's work as the tormented hero, and the flawless casting of Danny DeVito as The Penguin and Christopher Walken as, well, Christopher Walken, make the sequel better than the first.&quot;&lt;ref&gt;{{cite\
+      \ web | url = http://www.rottentomatoes.com/m/batman_returns/ | title = Batman Returns | publisher = [[Rotten Tomatoes]] | accessdate = December 7, 2013}}&lt;/ref&gt;\n\n[[Janet Maslin]] in ''[[The New York Times]]'' thought that &quot;Mr. Burton creates\
+      \ a wicked world of misfits, all of them rendered with the mixture of horror, sympathy and playfulness that has become this director's hallmark.&quot; She described [[Michael Keaton]] as showing &quot;appropriate earnestness&quot;, [[Danny DeVito]] as\
+      \ &quot;conveying verve&quot;, [[Christopher Walken]] as &quot;wonderfully debonair&quot;, [[Michelle Pfeiffer]] as &quot;captivating... fierce, seductive&quot;, [[Bo Welch]]'s production design as &quot;dazzling&quot;, Stefan Czapsky's cinematography\
+      \ as &quot;crisp&quot;, and [[Daniel Waters (screenwriter)|Daniel Waters]]'s screenplay as &quot;sharp.&quot;&lt;ref&gt;{{cite news | url = http://movies.nytimes.com/movie/review?res=9E0CEFDF1539F93AA25755C0A964958260 | title = Movie Review—Batman Returns\
+      \ |work=The New York Times | author = [[Janet Maslin]] | date = June 19, 1992 | accessdate =November 17, 2009|archiveurl = https://web.archive.org/web/20080511225309/http://movies.nytimes.com/movie/review?res=9E0CEFDF1539F93AA25755C0A964958260 |archivedate\
+      \ = May 11, 2008|deadurl=yes}}&lt;/ref&gt;\n\n[[Peter Travers]] in ''[[Rolling Stone]]'' wrote: &quot;Burton uses the summer's most explosively entertaining movie to lead us back into the liberating darkness of dreams.&quot; He praised the performances:\
+      \ &quot;Pfeiffer gives this feminist avenger a tough core of intelligence and wit; she's a classic dazzler... Michael Keaton's manic-depressive hero remains a remarkably rich creation. And Danny DeVito's mutant Penguin—a balloon-bellied ''[[Richard III\
+      \ (play)|Richard III]]'' with a kingdom of sewer freaks—is as hilariously warped as [[Jack Nicholson]]'s [[Joker (comics)|Joker]] and even quicker with the quips.&quot;&lt;ref&gt;{{cite news | url = http://www.rollingstone.com/reviews/movie/5949279/review/5949280/batman_returns\
+      \ | title = Batman Returns | work = [[Rolling Stone (magazine)|Rolling Stone]] | author = [[Peter Travers]] | date = February 7, 2001 | accessdate =August 14, 2008|archiveurl = https://web.archive.org/web/20071104160020/http://www.rollingstone.com/reviews/movie/5949279/review/5949280/batman_returns\
+      \ |archivedate = November 4, 2007|deadurl=yes}}&lt;/ref&gt;\n\n[[Desson Thomson|Desson Howe]] in ''[[The Washington Post]]'' wrote: &quot;Director Burton not only re-creates his one-of-a-kind atmosphere, he one-ups it, even two-ups it. He's best at evoking\
+      \ the psycho-murky worlds in which his characters reside. The Penguin holds court in a penguin-crowded, ''[[The Phantom of the Opera|Phantom of the Opera]]''-like sewer home. Keaton hides in a castlelike mansion, which perfectly mirrors its owner's inner\
+      \ remoteness. Comic strip purists will probably never be happy with a ''Batman'' movie. But ''Returns'' comes closer than ever to [[Bob Kane]]'s dark, original strip, which began in 1939.&quot; He described Walken as &quot;engaging&quot;, DeVito as &quot;exquisite&quot;\
+      \ and Pfeiffer as &quot;deliciously purry.&quot;&lt;ref&gt;{{cite news | url = http://www.washingtonpost.com/wp-srv/style/longterm/movies/videos/batmanreturnspg13howe_a07fbb.htm | title = Batman Returns |work=The Washington Post | author = Desson Howe\
+      \ | date = June 19, 1992 | accessdate =August 14, 2008}}&lt;/ref&gt;\n\nTodd McCarthy in ''[[Variety (magazine)|Variety]]'' wrote that &quot;the real accomplishment of the film lies in the amazing physical realization of an imaginative universe. Where\
+      \ Burton's ideas end and those of his collaborators begin is impossible to know, but the result is a seamless, utterly consistent universe full of nasty notions about societal deterioration, greed and other base impulses.&quot; He praised the contributions\
+      \ of [[Stan Winston]], [[Danny Elfman]], [[Bo Welch]] and cinematographer Stefan Czapsky, and in terms of performances, opined that &quot;the deck is stacked entirely in favor of the villains&quot;, calling DeVito &quot;fascinating&quot; and Pfeiffer &quot;very\
+      \ tasty.&quot;&lt;ref&gt;{{cite news | url = http://www.variety.com/review/VE1117901465.html?categoryid=31&amp;cs=1&amp;p=0 | title = Batman Returns |work = Variety | author = Todd McCarthy | date = June 15, 1992 | accessdate =August 14, 2008}}&lt;/ref&gt;\n\
+      \nConversely, [[Roger Ebert]] of the ''[[Chicago Sun-Times]]'' gave the film two stars, writing: &quot;I give the movie a negative review, and yet I don't think it's a bad movie; it's more misguided, made with great creativity, but denying us what we more\
+      \ or less deserve from a ''Batman'' story. No matter how hard you try, superheroes and [[film noir]] don't go together; the very essence of noir is that there are no more heroes.&quot; He compared the Penguin negatively with the Joker of the first film,\
+      \ writing that &quot;the Penguin is a curiously meager and depressing creature; I pitied him, but did not fear him or find him funny. The genius of Danny DeVito is all but swallowed up in the paraphernalia of the role.&quot;&lt;ref&gt;{{cite news | work\
+      \ = [[Roger Ebert]] | url = http://rogerebert.suntimes.com/apps/pbcs.dll/article?AID=/19920619/REVIEWS/206190301/1023 | title = Batman | accessdate =August 14, 2008| archiveurl= https://web.archive.org/web/20080807203730/http://rogerebert.suntimes.com/apps/pbcs.dll/article?AID=/19920619/REVIEWS/206190301/1023|\
+      \ archivedate= August 7, 2008 &lt;!--DASHBot--&gt;| deadurl= no}}&lt;/ref&gt;\n\n[[Jonathan Rosenbaum]] called DeVito &quot;a pale substitute for [[Jack Nicholson]] from the first film&quot; and felt that &quot;there's no suspense in ''Batman Returns''\
+      \ whatsoever&quot;.&lt;ref&gt;{{cite news | author = [[Jonathan Rosenbaum]] | title = Batman | work = [[Chicago Reader]] | url = http://onfilm.chicagoreader.com/movies/capsules/771_BATMAN_RETURNS | date = June 19, 1992 | accessdate =August 14, 2008}}&lt;/ref&gt;\
+      \ Batman comic book writer/artist [[Matt Wagner]] was quoted as saying: &quot;I hated how ''Batman Returns'' made Batman little more than just another costumed creep, little better than the villains he's pursuing. Additionally, Burton is so blatantly not\
+      \ an action director. That aspect of both his films just sucked.&quot;&lt;ref&gt;{{cite news | author = Bill &quot;Jett&quot; Ramey | url = http://www.batman-on-film.com/interview_mattwagner_jett_2006.html | title = Interview: Matt Wagner | work = Batman-on-Film\
+      \ | date = September 30, 2006 | accessdate =August 14, 2008}}&lt;/ref&gt;\n\nTy Burr in ''[[Entertainment Weekly]]'' gave the film a B-; he wrote that &quot;Burton still hasn't figured out how to tell a coherent story: He's more interested in fashioning\
+      \ pretty beads than in putting them on a string.... Yet for all the wintry weirdness, there's more going on under the surface of this movie than in the original. No wonder some people felt burned by ''Batman Returns'': Tim Burton just may have created\
+      \ the first blockbuster art film.&quot;&lt;ref&gt;{{cite news|last=Burr|first=Ty|title=Video Review: Batman Returns|url=http://www.ew.com/ew/article/0,,312091,00.html|accessdate=April 17, 2012|newspaper=Entertainment Weekly|date=October 23, 1992}}&lt;/ref&gt;\n\
+      \n''Batman Returns'' was also criticized for propagating [[anti-Semitic]] overtones, more particularly the Penguin's character as a [[Jewish stereotypes|stereotypical Jew]] who is out for revenge and murdering every first-born.&lt;ref&gt;{{cite web |last1=Roiphe\
+      \ |first1=Rebecca |last2=Cooper |first2=Daniel |url=http://news.google.com/newspapers?nid=1320&amp;dat=19920707&amp;id=tUtWAAAAIBAJ&amp;sjid=WeoDAAAAIBAJ&amp;pg=1284,2131409 |title='Batman' allegory disturbing |work=The Gainesville Sun |date=July 7, 1992\
+      \ |accessdate=April 24, 2013}}&lt;/ref&gt;\n\n===Awards and nominations===\n{| class=&quot;wikitable&quot; style=&quot;font-size:90%&quot;\n|- style=&quot;text-align:center;&quot;\n! style=&quot;background:#B0C4DE;&quot; | Awarding Body\n! style=&quot;background:#B0C4DE;&quot;\
+      \ | Award\n! style=&quot;background:#B0C4DE;&quot; | Nominee\n! style=&quot;background:#B0C4DE;&quot; | Result\n|-\n| rowspan=&quot;2&quot; | [[65th Academy Awards|Academy Awards]]\n| [[Academy Award for Visual Effects|Best Visual Effects]]\n| Michael\
+      \ L. Fink, [[Craig Barron]], John Bruno, Dennis Skotak\n| nomination\n|-\n| [[Academy Award for Best Makeup|Best Makeup]]\n| [[Ve Neill]], Ronnie Specter, [[Stan Winston]]\n| nomination\n|-\n| rowspan=&quot;2&quot; | [[British Academy Film Awards]] (BAFTAs)\n\
+      | [[BAFTA Award for Best Makeup and Hair|Best Makeup Artist]]\n| [[Ve Neill]], [[Stan Winston]]\n| nomination\n|-\n| [[BAFTA Award for Best Special Visual Effects|Best Special Effects]]\n| Michael L. Fink, [[Craig Barron]], John Bruno, Dennis Skotak\n\
+      | nomination\n|-\n| [[Broadcast Music Incorporated|BMI Film &amp; TV Awards]]\n| [[BMI Film Music Award]]\n| [[Danny Elfman]]\n| {{Won}}\n|-\n| [[Golden Raspberry Awards]] (Razzies)\n| [[Razzie Award for Worst Supporting Actor|Worst Supporting Actor]]\n\
+      | [[Danny DeVito]]\n| nomination\n|-\n| [[Hugo Award]]s\n| [[Hugo Award for Best Dramatic Presentation|Best Dramatic Presentation]]\n| \n| nomination\n|-\n| rowspan=&quot;3&quot; | [[MTV Movie Awards]]\n| [[MTV Movie Award for Best Kiss|Best Kiss]]\n|\
+      \ [[Michael Keaton]], [[Michelle Pfeiffer]]\n| nomination\n|-\n| [[MTV Movie Award for Best Villain|Best Villain]]\n| [[Danny DeVito]]\n| nomination\n|-\n| [[MTV Movie Award for Most Desirable Female|Most Desirable Female]]\n| [[Michelle Pfeiffer]]\n|\
+      \ nomination\n|-\n| rowspan=&quot;5&quot; | [[Saturn Awards]]\n| [[Saturn Award for Best Fantasy Film|Best Fantasy Film]]\n|\n| nomination\n|-\n| [[Saturn Award for Best Direction|Best Director]]\n| [[Tim Burton]]\n| nomination\n|-\n| [[Saturn Award for\
+      \ Best Supporting Actor|Best Supporting Actor]]\n| [[Danny DeVito]]\n| nomination\n|-\n| [[Saturn Award for Best Make-up|Best Make-Up]]\n| [[Stan Winston]], [[Ve Neill]]\n| {{Won}}\n|-\n| [[Saturn Award for Best Costume|Best Costumes]]\n| Bob Ringwood,\
+      \ Mary E. Vogt, Vin Burnham\n| nomination\n|}\n\n'''[[American Film Institute]] recognition:'''\n*[[AFI's 100 Years...100 Heroes and Villains]]:\n** Catwoman (Selina Kyle)—Nominated Villain&lt;ref name=&quot;connect.afi.com&quot;&gt;{{cite web|title=Nomination\
+      \ list for AFI's 100 Years...100 Heroes and Villains|url=http://connect.afi.com/site/DocServer/handv400.pdf?docID=245|publisher=AFI.com|accessdate=January 7, 2012}}&lt;/ref&gt;\n** The Penguin (Oswald Cobblepot)—Nominated Villain&lt;ref name=&quot;connect.afi.com&quot;/&gt;\n\
+      \n===Legacy===\n{{Quote box|width=40%|align=right|quote=&quot;After the traumas of the ''Batman Returns'' she has amnesia, and she doesn't really remember why she has all these bullet holes in her body, so she goes to relax in Oasisburg. What Gotham City\
+      \ is to New York, Oasisburg is to Las Vegas–Los Angeles–Palm Springs. [It's a] resort area in the middle of the desert. It's run by superheroes, and the movie has great fun at making fun at the whole male superhero mythos. Then they end up being not very\
+      \ good at all deep down, and she's got to go back to that whole Catwoman thing.&quot;|source=—Daniel Waters on his script for ''Catwoman''&lt;ref name=beetle/&gt;}}\n\n''Batman Returns'' was the last film in the [[Batman in film|''Batman'' film series]]\
+      \ that featured [[Tim Burton]] and [[Michael Keaton]] as director and leading actor, respectively. With the following film, ''[[Batman Forever]]'', Warner Bros. decided to go in a &quot;lighter&quot; direction to be more [[mainstream]] in the process of\
+      \ a [[family film]]. Burton was asked to restrict himself to the role of producer and approved of [[Joel Schumacher]] as director.&lt;ref name=Russo&gt;{{cite news | url = http://www.ew.com/ew/article/0,,308195,00.html | title = 'Batman 3' |work=Entertainment\
+      \ Weekly | date = October 1, 1993 | accessdate = August 16, 2008| archiveurl= https://web.archive.org/web/20080921055255/http://www.ew.com/ew/article/0,,308195,00.html| archivedate= September 21, 2008 &lt;!--DASHBot--&gt;| deadurl= no}}&lt;/ref&gt; With\
+      \ [[Warner Bros.]] moving on development for ''Batman Forever'' in June 1993, a ''Catwoman'' [[Spin-off (media)|spin-off]] was announced. [[Michelle Pfeiffer]] was to reprise her role, with the character not to appear in ''Forever'' because of &quot;her\
+      \ own little movie&quot;.&lt;ref&gt;{{cite news | author = Michael Fleming | url = http://www.variety.com/article/VR107881 | title = Dish | work = [[Variety (magazine)|Variety]] | date = June 17, 1993 | accessdate = August 14, 2008}}&lt;/ref&gt;\n\nBurton\
+      \ became attached as director, while producer [[Denise Di Novi]] and writer [[Daniel Waters (screenwriter)|Daniel Waters]] also returned to the ''Catwoman'' spin-off with Burton.&lt;ref&gt;{{cite news | author = Michael Fleming | url = http://www.variety.com/article/VR109036\
+      \ | title = Another life at WB for ''Catwoman'' and Burton? | work = [[Variety (magazine)|Variety]] | date = July 22, 1993 | accessdate = August 14, 2008}}&lt;/ref&gt; In January 1994, Burton was unsure of his plans to direct ''Catwoman'' or an adaptation\
+      \ of ''[[The Fall of the House of Usher]]''.&lt;ref&gt;{{cite news | author = Michael Fleming | url = http://www.variety.com/article/VR117395 | title = Seagal on the pulpit may be too much for WB | work = [[Variety (magazine)|Variety]] | date = January\
+      \ 13, 1994 | accessdate = August 14, 2008}}&lt;/ref&gt; On June 6, 1995, Waters turned in his ''Catwoman'' script to Warner Bros., the same day ''Batman Forever'' was released. Burton was still being courted to direct. Waters joked, &quot;turning it in\
+      \ the day ''Batman Forever'' opened may not have been my best logistical move, in that it's the celebration of the fun-for-the-whole-family Batman. ''Catwoman'' is definitely not a fun-for-the-whole-family script.&quot;&lt;ref name=beetle/&gt; The film\
+      \ labored in [[development hell]] for years, with Pfeiffer getting replaced by [[Ashley Judd]]. The film ended up becoming the critically panned ''[[Catwoman (film)|Catwoman]]'' (2004) starring [[Halle Berry]].&lt;ref&gt;{{cite news | author = Michael\
+      \ Fleming | url = http://www.variety.com/article/VR1117796285 | title = WB: Judd purr-fect as ''Cat'' | work = [[Variety (magazine)|Variety]] | date = April 2, 2001 | accessdate = August 14, 2008}}&lt;/ref&gt;&lt;ref&gt;{{cite web | url = http://www.rottentomatoes.com/m/catwoman/\
+      \ | title = Catwoman | work = [[Rotten Tomatoes]] | accessdate = August 15, 2008| archiveurl= https://web.archive.org/web/20080814183849/http://www.rottentomatoes.com/m/catwoman/| archivedate= August 14, 2008 &lt;!--DASHBot--&gt;| deadurl= no}}&lt;/ref&gt;\n\
+      \n==References==\n{{Reflist|30em}}\n\n==External links==\n{{Portal|Film in the United States|Superhero fiction|1990s}}\n{{commons category}}\n{{Wikiquote}}\n* {{Official website|http://www.warnervideo.com/batmanmoviesondvd/|Batman Returns}}\n* {{IMDb title|0103776|Batman\
+      \ Returns}}\n* {{tcmdb title|68181|Batman Returns}}\n* {{Allmovie title|4281|Batman Returns}}\n* {{Mojo title|id=batmanreturns|title=Batman Returns}}\n* {{Rotten-tomatoes|id=batman_returns|title=Batman Returns}}\n\n===Film analysis===\n* [http://www.batman-online.com/features/2012/5/29/comic-analysis-michelle-pfeiffer-catwoman\
+      \ ''From Comic To Pfeiffer's Cat''] Batman-Online.com's in-depth analysis on Tim Burton's Catwoman's comic origins\n* [http://www.batman-online.com/features/2009/1/2/possible-influences-of-comics-on-tim-burtons-batman-returns ''Possible Comic Influences\
+      \ On Batman Returns''] Batman-Online.com's in-depth analysis on possible comic book influences of ''Batman Returns''' plotline\n\n{{Batman in popular media}}\n{{1989–1997 Batman film series}}\n{{DC Comics films}}\n{{Tim Burton}}\n{{Catwoman}}\n\n{{Good\
+      \ article}}\n&lt;!--[[WP:FILMCAT]]--&gt;\n&lt;!--Year categories--&gt;\n\n[[Category:1992 films]]\n&lt;!--Primary grouping categories--&gt;\n[[Category:Batman films]]\n&lt;!--Nationality/language categories--&gt;\n[[Category:American action films]]\n&lt;!--Genre\
+      \ categories--&gt;\n[[Category:American Christmas films]]\n[[Category:Sequel films]]\n[[Category:Neo-noir]]\n&lt;!--Company categories--&gt;\n[[Category:PolyGram Filmed Entertainment films]]\n[[Category:Warner Bros. films]]\n&lt;!--Additional categories--&gt;\n\
+      [[Category:Films directed by Tim Burton]]\n[[Category:Films shot in Los Angeles, California]]\n[[Category:Pinewood Studios films]]\n[[Category:Films about revenge]]\n[[Category:Film scores by Danny Elfman]]\n\n{{Link FA|hr}}</rev></revisions></page></pages></query></api>"
+- recorded: 2014-04-06T22:26:44.987Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '101'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ABatman+Returns+set.jpg&prop=imageinfo&iiprop=url&iiurlwidth=300&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '488'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:44 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq56 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570897854, 3519503158, 734524343
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page pageid="38040607" ns="6" title="File:Batman Returns set.jpg" imagerepository="local"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/en/thumb/5/53/Batman_Returns_set.jpg/300px-Batman_Returns_set.jpg" thumbwidth="300" thumbheight="199" url="http://upload.wikimedia.org/wikipedia/en/5/53/Batman_Returns_set.jpg" descriptionurl="http://en.wikipedia.org/wiki/File:Batman_Returns_set.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:26:45.865Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '99'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3APfeifferCatwoman.jpg&prop=imageinfo&iiprop=url&iiurlwidth=250&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '478'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:45 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq56 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570899292, 3519504085, 734525705
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page pageid="36745609" ns="6" title="File:PfeifferCatwoman.jpg" imagerepository="local"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/en/thumb/e/ed/PfeifferCatwoman.jpg/250px-PfeifferCatwoman.jpg" thumbwidth="250" thumbheight="165" url="http://upload.wikimedia.org/wikipedia/en/e/ed/PfeifferCatwoman.jpg" descriptionurl="http://en.wikipedia.org/wiki/File:PfeifferCatwoman.jpg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:26:46.617Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '94'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3ACommons-logo.svg&prop=imageinfo&iiprop=url&iiurlwidth=40&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '459'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:46 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq56 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570900147, 3519504383, 734526393
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page pageid="33285577" ns="6" title="File:Commons-logo.svg" imagerepository="local"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/40px-Commons-logo.svg.png" thumbwidth="40" thumbheight="54" url="http://upload.wikimedia.org/wikipedia/en/4/4a/Commons-logo.svg" descriptionurl="http://en.wikipedia.org/wiki/File:Commons-logo.svg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:26:47.339Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '96'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3AWikiquote-logo.svg&prop=imageinfo&iiprop=url&iiurlwidth=40&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '555'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:47 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq56 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570900897, 3519504981, 734527310
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2006-03-31T13:33:37Z" /></query-continue><query><pages><page ns="6" title="File:Wikiquote-logo.svg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wikiquote-logo.svg/40px-Wikiquote-logo.svg.png" thumbwidth="40" thumbheight="47" url="http://upload.wikimedia.org/wikipedia/commons/f/fa/Wikiquote-logo.svg" descriptionurl="http://commons.wikimedia.org/wiki/File:Wikiquote-logo.svg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:26:48.005Z
+  request:
+    method: POST
+    uri: http://en.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '101'
+      Content-Type: application/x-www-form-urlencoded
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=File%3Asymbol+support+vote.svg&prop=imageinfo&iiprop=url&iiurlwidth=15&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '594'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:26:47 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1068 miss (0), amssq53 miss (0), amssq56 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 1570901478, 3519505253, 734527926
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=enwikiToken;string-contains=enwikiLoggedOut;string-contains=forceHTTPS;string-contains=enwikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><normalized><n from="File:symbol support vote.svg" to="File:Symbol support vote.svg" /></normalized><pages><page pageid="33285458" ns="6" title="File:Symbol support vote.svg" imagerepository="local"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/en/thumb/9/94/Symbol_support_vote.svg/15px-Symbol_support_vote.svg.png" thumbwidth="15" thumbheight="15" url="http://upload.wikimedia.org/wikipedia/en/9/94/Symbol_support_vote.svg" descriptionurl="http://en.wikipedia.org/wiki/File:Symbol_support_vote.svg" /></imageinfo></page></pages></query></api>

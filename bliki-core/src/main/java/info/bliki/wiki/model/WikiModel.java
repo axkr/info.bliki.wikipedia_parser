@@ -30,20 +30,14 @@ public class WikiModel extends AbstractWikiModel {
     /**
      * A map for categories and their associated sort keys
      */
-    protected Map<String, String> categories = null;
-
-    protected Set<String> links = null;
-
-    protected Set<String> templates = null;
-
-    protected Set<String> includes = null;
-
-    protected List<SemanticRelation> semanticRelations = null;
-
-    protected List<SemanticAttribute> semanticAttributes = null;
+    protected Map<String, String> categories;
+    protected Set<String> links;
+    protected Set<String> templates;
+    protected Set<String> includes;
+    protected List<SemanticRelation> semanticRelations;
+    protected List<SemanticAttribute> semanticAttributes;
 
     private String fExternalImageBaseURL;
-
     private String fExternalWikiBaseURL;
 
     /**
@@ -105,7 +99,7 @@ public class WikiModel extends AbstractWikiModel {
     @Override
     public boolean addSemanticAttribute(String attribute, String attributeValue) {
         if (semanticAttributes == null) {
-            semanticAttributes = new ArrayList<SemanticAttribute>();
+            semanticAttributes = new ArrayList<>();
         }
         semanticAttributes
                 .add(new SemanticAttribute(attribute, attributeValue));
@@ -118,7 +112,7 @@ public class WikiModel extends AbstractWikiModel {
     @Override
     public boolean addSemanticRelation(String relation, String relationValue) {
         if (semanticRelations == null) {
-            semanticRelations = new ArrayList<SemanticRelation>();
+            semanticRelations = new ArrayList<>();
         }
         semanticRelations.add(new SemanticRelation(relation, relationValue));
         return true;
@@ -382,10 +376,10 @@ public class WikiModel extends AbstractWikiModel {
     @Override
     public void setUp() {
         super.setUp();
-        categories = new HashMap<String, String>();
-        links = new HashSet<String>();
-        templates = new HashSet<String>();
-        includes = new HashSet<String>();
+        categories = new HashMap<>();
+        links = new HashSet<>();
+        templates = new HashSet<>();
+        includes = new HashSet<>();
         semanticRelations = null;
         semanticAttributes = null;
     }
@@ -482,7 +476,7 @@ public class WikiModel extends AbstractWikiModel {
                     new HTMLConverter(), rawWikiText, resultBuffer, false,
                     false);
             return resultBuffer.toString();
-        } catch (IOException e) {
+        } catch (IOException ignored) {
         }
         return null;
     }

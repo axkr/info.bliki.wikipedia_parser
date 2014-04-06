@@ -1,0 +1,300 @@
+!tape
+name: Javascript
+interactions:
+- recorded: 2014-04-06T22:23:13.203Z
+  request:
+    method: POST
+    uri: http://de.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '100'
+      Content-Type: application/x-www-form-urlencoded
+      Host: de.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=JavaScript&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '45820'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:23:12 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1052 miss (0), amssq48 miss (0), amssq59 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 3772120232, 3148003013, 270094993
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=dewikiToken;string-contains=dewikiLoggedOut;string-contains=forceHTTPS;string-contains=dewikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: "<?xml version=\"1.0\"?><api><query><pages><page pageid=\"2512\" ns=\"0\" title=\"JavaScript\"><revisions><rev user=\"Diba\" timestamp=\"2014-04-03T11:36:49Z\" comment=\"Änderungen von [[Special:Beiträge/91.32.94.134|91.32.94.134]] ([[Benutzer Diskussion:91.32.94.134|Diskussion]])\
+      \ auf die letzte Version von [[Benutzer:84.180.119.13|84.180.119.13]] zurückgesetzt ([[WP:Huggle|HG]])\" contentformat=\"text/x-wiki\" contentmodel=\"wikitext\" xml:space=\"preserve\">{{Infobox Programmiersprache\n|Name = JavaScript\n|Beschreibung = Skriptsprache\n\
+      |Paradigma = multiparadigmatisch\n|Erscheinungsjahr = 1995\n|Entwickler = [[Brendan Eich]]\n|AktuelleVersion = 1.8.5\n|AktuelleVersionFreigabeDatum = 2010\n|Typisierung = [[Schwache Typisierung|schwach]], [[Dynamische Typisierung|dynamisch]], [[Duck-Typing|duck]]\n\
+      |Implementierung = [[SpiderMonkey]], [[Rhino (Programmierung)|Rhino]], [[SquirrelFish]], [[V8 (JavaScript-Implementierung)|V8]]\n|Beeinflusst_von = [[Self (Programmiersprache)|Self]], [[C (Programmiersprache)|C]], [[Scheme]], [[Perl (Programmiersprache)|Perl]],\
+      \ [[Python (Programmiersprache)|Python]], [[Java (Programmiersprache)|Java]]\n|Beeinflusste = [[ActionScript]], [[Haxe (Programmiersprache)|Haxe]], [[CoffeeScript]], [[Dart (Programmiersprache)|Dart]], [[TypeScript]]\n}}\n\n'''JavaScript''' (kurz '''JS''')\
+      \ ist eine [[Skriptsprache]], die ursprünglich für [[dynamisches HTML]] in [[Webbrowser|Web-Browsern]] entwickelt wurde, um Benutzerinteraktionen auszuwerten, Inhalte zu verändern, nachzuladen oder zu generieren und so die Möglichkeiten von [[Hypertext\
+      \ Markup Language|HTML]] und [[Cascading Style Sheets|CSS]] zu erweitern. Heute findet JavaScript auch außerhalb von Browsern Anwendung, so etwa auf Servern und in Microcontrollern&lt;ref name=&quot;espruino&quot;&gt;[http://www.heise.de/newsticker/meldung/JavaScript-fuer-Mikrocontroller-1934018.html\
+      \ JavaScript für Mikrocontroller | heise online]&lt;/ref&gt;&lt;ref name=&quot;tessel&quot;&gt;[http://www.heise.de/newsticker/meldung/Tessel-JavaScript-Entwicklerboard-fuers-Internet-der-Dinge-1936379.html Tessel: JavaScript-Entwicklerboard fürs &quot;Internet\
+      \ der Dinge&quot; | heise online]&lt;/ref&gt;.\n\nDer als '''ECMAScript''' ([[Ecma International|ECMA]] 262) standardisierte Sprachkern von JavaScript beschreibt eine [[Dynamische Typisierung|dynamisch typisierte]], [[Objektorientierte Programmierung|objektorientierte]],\
+      \ aber klassenlose Skriptsprache. Sie wird allen objektorientierten [[Programmierparadigma|Programmierparadigmen]] unter anderem auf der Basis von [[Prototypenbasierte Programmierung|Prototypen]] gerecht. In JavaScript lässt sich objektorientiert und sowohl\
+      \ [[Prozedurale Programmierung|prozedural]] als auch [[Funktionale Programmierung|funktional]] programmieren.\n\n== Entwicklung ==\nDie [[Syntax]] von JavaScript ähnelt jener der [[C (Programmiersprache)|C]]-Abkömmlinge, wozu auch [[Java (Programmiersprache)|Java]]\
+      \ gehört. Trotz der Namens- und syntaktischen Ähnlichkeit hat JavaScript nur geringe Gemeinsamkeiten mit Java, beispielsweise wird Vererbung in JavaScript anders als in Java nicht durch [[Klasse (Programmierung)|Klassen]], sondern durch [[Prototypenbasierte\
+      \ Programmierung|Prototypen]] unterstützt.\n\nJavaScript wurde früher hauptsächlich [[client]]seitig eingesetzt. JavaScript bzw. die ECMAScript-Implementierungen finden jedoch beispielsweise auf [[node.js|Node]]-Servern und als [[JScript]] bzw. [[JScript.NET]]\
+      \ in einer [[Active Server Pages|ASP]]- bzw. [[ASP.NET]]-Umgebung auf [[Microsoft Internet Information Services]] auch serverseitig Anwendung. Weitere Beispiele für serverseitige Javascript-Programmierung sind POW und Jaxer, die auf der Mozilla-Javascript-Engine\
+      \ Spidermonkey aufsetzen, sowie V8CGI, welches auf der JavaScript-Implementierung [[V8 (JavaScript-Implementierung)|V8]] aufbaut und in den [[Apache HTTP Server]] integriert wird. \n\nDie Sprache wird auch als Skriptsprache für Spiele und [[Anwendungsprogramm]]e\
+      \ eingesetzt, da der Sprachkern nur wenige Objekte enthält und dadurch der zur Ausführung von in JavaScript formulierten Skripten erforderliche [[Interpreter]] relativ klein gehalten werden kann.\n\nAußerdem wird JavaScript als Verkehrssprache in der Datenbank\
+      \ [[mongoDB]] sowie in Microcontrollern&lt;ref name=&quot;espruino&quot;/&gt;&lt;ref name=&quot;tessel&quot;/&gt; eingesetzt.\n\n== Verwendung ==\n=== Typische Anwendungsgebiete ===\nTypische Anwendungsgebiete von JavaScript sind:\n* dynamische Manipulation\
+      \ von Webseiten über das [[Document Object Model]]\n* Plausibilitätsprüfung ([[Datenvalidierung]]) von Formulareingaben noch vor der Übertragung zum Server\n* Anzeige von Dialogfenstern\n* Senden und Empfangen von Daten, ohne dass der Browser die Seite\
+      \ neu laden muss ([[Ajax (Programmierung)|Ajax]])\n* Vorschlagen von Suchbegriffen während der Eingabe\n* [[Werbebanner]] oder Laufschriften\n* [[Verschleierung]] von [[E-Mail-Adresse]]n zur Bekämpfung von [[Spam#Verschleierung der E-Mail-Adresse|Spam]]\n\
+      * mehrere [[Frame (HTML)|Frames]] auf einmal wechseln oder die Seite aus dem Frameset lösen\n\n=== Missbrauch ===\nEinige Anwendungen, die mit JavaScript möglich sind, agieren teilweise gegen den Wunsch des Benutzers oder widersprechen dem [[Principle\
+      \ of Least Surprise|Prinzip der geringsten Verwunderung]]. Einige Browser bieten daher Funktionen an, die derartige JavaScript-Funktionen unterdrücken.\n\nBeispiele:\n[[Datei:Js-alert-warnung.png|mini|Hinweis im Firefox-Browser bei vielen Dialogfenstern]]\n\
+      \n* Verschleiern von Internetadressen, auf die ein [[Hyperlink|Link]] verweist\n* Deaktivieren des [[Kontextmenü]]s, um zu erschweren, dass Bilder oder die gesamte Seite abgespeichert werden können\n* Deaktivieren der [[Zwischenablage|Kopierfunktion]],\
+      \ um zu erschweren, dass Texte oder Bilder kopiert werden können\n* Unaufgeforderte (Werbe-)[[Pop-up]]s oder [[Pop-under]]s oder aufeinanderfolgende [[Dialogfenster]], die den Benutzer behindern\n* Ungewolltes Schließen des Browserfensters\n* Ungewollte\
+      \ Größenänderung des Browserfensters\n* Barrierearme Webseiten zeichnen sich dadurch aus, dass sie auch bei abgeschaltetem JavaScript möglichst uneingeschränkt nutzbar bleiben. Teilweise schränkt das deaktivierte JavaScript die Benutzbarkeit einer Webseite\
+      \ ein.\n* Bei anfälligen Webanwendungen kann JavaScript auch von Dritten missbraucht werden, etwa per [[Cross-Site-Scripting|XSS]] (Codeeinschleusung).\n\n== Geschichte ==\nAm 18. September 1995 veröffentlichte [[Netscape Communications|Netscape]] mit\
+      \ der Vorversion des [[Netscape Navigator|Navigator]] 2.0 einen Browser mit einer eingebetteten Skriptsprache, die zu diesem Zeitpunkt ''LiveScript'' hieß und von [[Brendan Eich]] entwickelt worden war. Die Sprache konnte u.&amp;nbsp;a. Formulareingaben\
+      \ des Benutzers vor dem Absenden überprüfen. Am 4.&amp;nbsp;Dezember 1995 verkündeten Netscape und [[Sun Microsystems]] eine Kooperation, die die Interaktion von LiveScript direkt mit Java-Applets zum Ziel hatte. Sun entwickelte die nötigen Java-Klassen,\
+      \ Netscape die Schnittstelle [[LiveConnect]] und benannte die Sprache in ''JavaScript'' um (JavaScript 1.0).&lt;ref&gt;Brendan Eich: [http://web.archive.org/web/20070528020012/http://www.mozilla.org/js/language/ICFP-Keynote.ppt ''JavaScript at Ten Years'']\
+      \ ([[Microsoft PowerPoint|MS PowerPoint]]; 576&amp;nbsp;kB), 2005, im [[Internet Archive]].&lt;/ref&gt; ''JavaScript'' ist seit der Übernahme von [[Sun Microsystems]] eine [[Marke (Recht)|Marke]] des Unternehmens [[Oracle]].&lt;ref&gt;{{Internetquelle|titel=Markeneintrag\
+      \ #75026640 beim USPTO für JavaScript|url=http://tarr.uspto.gov/servlet/tarr?regser=serial&amp;entry=75026640|hrsg=[[United States Patent and Trademark Office]]|sprache=en|zugriff=2012-10-24}}&lt;/ref&gt;\n\nMit der ersten [[Beta-Version]] des Navigator\
+      \ 3.0 führte Netscape am 29.&amp;nbsp;April 1996 JavaScript 1.1 ein. In selbiger Version gab es die Neuerungen, auf Bilder zugreifen und so genannte ''Rollover-Grafiken'' erstellen zu können. [[LiveConnect]] war jetzt fester Bestandteil des Browsers. Mit\
+      \ der Beta-Version des [[Internet Explorer]] 3 stellte Microsoft im Mai 1996 seinen ersten JScript-fähigen Browser vor. Dies war der Beginn des [[Browserkrieg]]s.\n\nMit der Ankündigung des [[Netscape Communicator]]s wurde JavaScript 1.2 am 15. Oktober\
+      \ 1996 veröffentlicht, der Netscape Communicator 4.0 mit JavaScript 1.2 erschien jedoch erst am 4. Juni 1997. Ebenfalls im Juni 1997 veröffentlichte die European Computer Manufacturers Association ihren Standard ECMA-262 (''ECMAScript''), der zusammen\
+      \ mit Netscape entwickelt worden war und die Grundelemente einer Skriptsprache standardisieren sollte. Diese wurde im April 1998 zur ISO-Norm ''ISO/IEC 16262:1998 Information technology&amp;nbsp;– ECMAScript language specification''. Am 1.&amp;nbsp;Oktober\
+      \ 1997 kam der Internet Explorer 4 heraus, der den Sprachumfang von JavaScript 1.1 abdeckte. Darüber hinaus wurden eigene Erweiterungen veröffentlicht, die zu Kompatibilitätsunterschieden zwischen Navigator und Internet Explorer führten und eine DOM-ä\
+      hnliche Syntax zur Verfügung stellten, die es ermöglichte, auf alle Elemente der Webseite zugreifen und diese beliebig verändern zu können.\n\nDer in Java implementierte JavaScript-Interpreter [[Rhino (Programmierung)|Rhino]] wurde ab Version 6.0 als Teil\
+      \ der [[Java-Laufzeitumgebung]] standardmäßig mitgeliefert.&lt;ref&gt;{{Internetquelle|url=http://docs.oracle.com/javase/6/docs/technotes/guides/scripting/index.html|titel=Scripting for the Java Platform|sprache=en|hrsg=[[Oracle]]|werk=Java SE Documentation|zugriff=2012-10-24}}&lt;/ref&gt;\
+      \ Im Juli 1998 wurde mit der Beta-Version des Netscape Communicators 4.5 JavaScript 1.3, welche schon in der Version 4.06 des Netscape Communicators vorhanden war, veröffentlicht. Im Oktober 1998 stellte Netscape JavaScript 1.4 vor. Diese Version war vollstä\
+      ndig kompatibel mit ECMA-262. Ein Browser mit der Unterstützung dieser Version erschien jedoch nicht. Im April 2000 kam mit der Preview Release 1 des Navigator 6 JavaScript 1.5 und DOM Level 1. Am 5. Juni 2002 erschien Mozilla 1.0 mit JavaScript 1.5 (JavaScript\
+      \ in der Version 1.5 entspricht ECMA-262 Version 3), am 29. November 2005 [[Mozilla Firefox]] 1.5 mit JavaScript 1.6, am 12. Juli 2006 Mozilla Firefox 2.0b1 mit JavaScript 1.7 und am 18. Dezember 2007 Mozilla Firefox 3.0b2 mit JavaScript 1.8.\n\n=== Versionsgeschichte\
+      \ von JavaScript ===\n{| class=&quot;wikitable&quot;\n|+Versionsgeschichte nach John Resig&lt;ref&gt;{{cite web|author=John Resig |url=http://ejohn.org/blog/versions-of-javascript |title=Versions of JavaScript |publisher=Ejohn.org |date= |accessdate=2009-05-19}}&lt;/ref&gt;\n\
+      |-\n! Version !! Veröffentlichung !! Entsprechung !! Netscape Navigator !! Mozilla Firefox !! Internet Explorer !! Opera !! Safari !! Google Chrome\n|-\n| {{Version |o |1.0.0}} || März 1996 ||  || 2.0 ||  || 3.0 ||  || ||\n|-\n| {{Version |o |1.1.0}} ||\
+      \ August 1996 ||  || 3.0 ||  ||  ||  || ||\n|-\n| {{Version |o |1.2.0}} || Juni 1997 ||  || 4.0-4.05 ||  ||  ||  || ||\n|-\n| {{Version |o |1.3.0}} || Oktober 1998 || ECMA-262 1st edition / ECMA-262 2nd edition || 4.06-4.7x ||  || 4.0 ||  || ||\n|-\n|\
+      \ {{Version |o |1.4.0}} ||  ||  || Netscape Server ||  ||  ||  || ||\n|-\n| {{Version |o |1.5.0}} || November 2000 || ECMA-262 3rd edition || 6.0 || 1.0\n|\n* 5.5 (JScript 5.5)\n* 6 (JScript 5.6)\n* 7 (JScript 5.7)\n* 8 (JScript 6)\n|\n* 6.0\n* 7.0\n*\
+      \ 8.0\n* 9.0\n| ||\n|-\n| {{Version |o |1.6.0}} || November 2005 || 1.5 + Array extras + Array &amp; String generics + E4X ||  || 1.5 ||  ||\n|\n* 3.0\n* 3.1\n|\n|-\n| {{Version |o |1.7.0}} || Oktober 2006 || 1.6 + Pythonic generators + Iterators + let\
+      \ + destructuring assignments ||  || 2.0 ||  ||\n|\n* 3.2\n* 4.0\n| 1.0\n|-\n| {{Version |o |1.8.0}} || Juni 2008 || 1.7 + Generator expressions + Expression closures ||  || 3.0 ||  ||  || ||\n|-\n| {{Version |o |1.8.1}} ||  || 1.8 + geringfügige Updates\
+      \ ||  || 3.5 ||  ||  || ||\n|-\n| {{Version |c |1.8.5}} ||  || 1.8.1 + ECMAScript 5 Compliance ||  || 4 || 9.0 (JScript 9.0) ||  || ||\n|}\n\n=== Versionsgeschichte von ECMAScript (ECMA-262) ===\nDie aktuelle Version ist die Version 5. Derzeit wird an\
+      \ der Version 6 mit dem Codename &quot;Harmony&quot; gearbeitet.&lt;ref Name=&quot;Zakas&quot;&gt;\n{{cite book \n|title= Professional JavaScript for Web Developers\n|last= Zakas\n|first= Nicholas C. \n|authorlink= Nicholas C. Zakas\n|year= 2011\n|publisher=\
+      \ John Wiley &amp; Sons\n|isbn= 9781118233092\n|url= http://books.google.com/books?id=C3kabcBG0ZsC&amp;pg=PT770&amp;dq=ecma-262+harmony&amp;hl=en&amp;sa=X&amp;ei=5pLlUJbFJsfQqAHC3IHQBw&amp;ved=0CDEQ6AEwAA}}&lt;/ref&gt;\n&lt;ref&gt;[http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts\
+      \ ''Draft Specification for ES.next (Ecma-262 Edition 6)'']&lt;/ref&gt;\n\n{| class=&quot;wikitable&quot;\n|- style=&quot;background:#ccf;&quot;\n! Version\n! publiziert am\n! Unterschiede zur Vorgängerversion\n! Editor\n|-\n| 1\n| Juni 1997\n| erste Version\n\
+      | [[Guy L. Steele, Jr.]]\n|-\n| 2\n| Juni 1998\n| Änderungen zwecks Kompatibilität zum internationalen Standard ISO/IEC 16262\n| [[Mike Cowlishaw]]\n|-\n| 3\n| Dezember 1999\n| Neu sind [[reguläre Ausdrücke]], bessere Verarbeitung von Zeichenketten, Kontrollfluss,\
+      \ Fehlerbehandlung mit try/catch, bessere Fehlerbehandlung, bessere Formatierung bei der Ausgabe von Zahlen usw.\n| Mike Cowlishaw\n|-\n| 4\n| abgebrochen\n| Wegen Uneinigkeit in Bezug auf die Zukunft der Sprache wurde die weitere Entwicklung des komplexen\
+      \ Entwurfes zu ECMAScript 4 eingestellt. Einige Ideen werden in ES6 wieder aufleben.\n| \n|-\n| 5\n| Dezember 2009\n| Im &quot;strict mode&quot; wird eine erweiterte Fehlerprüfung eingeschaltet. Unklare Sprachkonstrukte von ECMAScript 3 werden entschä\
+      rft und neue Features wie getter- und setter-Methoden, Unterstützung von [[JSON]] usw. hinzugefügt.&lt;ref&gt;[http://www.youtube.com/watch?v=Kq4FpMe6cRs Changes to JavaScript, Part 1: EcmaScript 5]&lt;/ref&gt;\n| [[Pratap Lakshman]], [[Allen Wirfs-Brock]]\n\
+      |-\n| 5.1\n| Juni 2011\n| Entspricht dem internationalen Standard ISO/IEC 16262:2011, Version 3\n| Pratap Lakshman, Allen Wirfs-Brock\n|-\n| 6\n| in Arbeit\n| Neue Syntax für komplexe Applikationen wie Klassen und Module, die aber mit ähnlicher Terminologie\
+      \ wie in ECMAScript 5 (strict mode) definiert werden können. Neue Sprachbestandteile wie &lt;code&gt;for&lt;/code&gt;/&lt;code&gt;of&lt;/code&gt;-Schleifen, teilweise an [[Python (Programmiersprache)|Python]] angelehnte Syntax usw. Der Codename lautet\
+      \ “ECMAScript Harmony” oder “ES6 Harmony”.\n| Allen Wirfs-Brock\n|-\n| 7\n| in Arbeit\n| Weiterführung der mit ES6 begonnenen Änderungen.&lt;ref&gt;[http://wiki.ecmascript.org/doku.php?id=strawman:strawman ES Wiki strawman:strawman]&lt;/ref&gt;\n| \n|}\n\
+      \n== Sicherheit ==\n=== Das Sandbox-Prinzip ===\nJavaScript wird im Browser in einer so genannten [[Sandbox]] ausgeführt. Dies bewirkt, dass man in JavaScript im Allgemeinen nur Zugriff auf die Objekte des Browsers hat und somit nicht auf das [[Dateisystem]]\
+      \ zugreifen und dadurch keine [[Datei]]en lesen oder schreiben kann. Es ist jedoch zumindest in [[JScript]] möglich, bei entsprechenden Sicherheitseinstellungen durch die Nutzung von [[ActiveX]] diese Beschränkungen zu umgehen.\n\nUm Sicherheitsprobleme,\
+      \ wie das so genannte [[Cross-Site-Scripting]] zu verhindern, wird jede [[Website]] oder [[Webanwendung]] innerhalb des Browsers isoliert ausgeführt und ein Datenaustausch unterbunden. Ohne diesen Schutz wäre es möglich, über eine Seite [[Schadcode]] auszufü\
+      hren, der beispielsweise Bank- oder Logindaten in anderen parallel geöffneten Browserfenstern ausliest oder manipuliert.\n\nAuch bestimmte sicherheitsrelevante Browserfunktionen, wie das Schließen des Browserfensters, das Aus- und Einblenden von [[Symbolleiste]]n,\
+      \ das Ändern der Browserstartseite, der Zugriff auf die [[Zwischenablage]] oder das Auslesen der zuletzt besuchten Webseiten des Anwenders, werden durch obligatorische Nutzereingaben geschützt.\n\n=== Deaktivieren von JavaScript ===\n\nIn fast allen JavaScript-fä\
+      higen Browsern lässt sich JavaScript abschalten oder lassen sich einzelne Aktionen, wie die Änderung des Textes in der [[Statusleiste]] oder die Manipulation von Browserfenstern, deaktivieren.\n\n== Sprachelemente ==\n=== Datentypen ===\nDer [[Datentyp]]\
+      \ eines Wertes lässt sich mit dem Operator &lt;code&gt;typeof&lt;/code&gt; ermitteln.\n\nZeichenketten haben den Typ &lt;code&gt;String&lt;/code&gt;, numerische Werte den Typ &lt;code&gt;Number&lt;/code&gt;, boolesche Werte den Typ &lt;code&gt;Boolean&lt;/code&gt;\
+      \ und Funktionen den Typ &lt;code&gt;Function&lt;/code&gt;. Ein Sonderfall ist der Typ &lt;code&gt;Undefined&lt;/code&gt; mit &lt;code&gt;undefined&lt;/code&gt; als einzigem Wert. Für alle anderen Werte – reguläre Ausdrücke, Arrays und der Wert &lt;code&gt;null&lt;/code&gt;\
+      \ inbegriffen liefert &lt;code&gt;typeof&lt;/code&gt; &lt;code&gt;&quot;object&quot;&lt;/code&gt; zurück. Im Gegensatz zu anderen Programmiersprachen gibt es in JavaScript keine echten [[Assoziatives Array|assoziativen Arrays]].&lt;ref&gt;[http://de.selfhtml.org/javascript/objekte/array.htm#assoziative_arrays\
+      \ Assoziative Arrays], abgerufen am 19. April 2013&lt;/ref&gt;\n\nMit den vordefinierten Konstruktorfunktionen &lt;code&gt;String()&lt;/code&gt;, &lt;code&gt;Number()&lt;/code&gt; und &lt;code&gt;Boolean()&lt;/code&gt; erzeugte Objekte verhalten sich wie\
+      \ Werte der entsprechenden Datentypen – der &lt;code&gt;typeof&lt;/code&gt;-Operator gibt jedoch &lt;code&gt;&quot;object&quot;&lt;/code&gt; zurück:\n\n&lt;syntaxhighlight lang=&quot;javascript&quot;&gt;\nvar variable = &quot;Beispieltext&quot;;\nalert(typeof\
+      \ variable); // ergibt &quot;string&quot; (die Funktion &quot;alert&quot; gibt den ihr übergebenen Parameter in einem Fenster aus)\n\nvariable = new String(&quot;Beispieltext&quot;);\nalert(typeof variable); // ergibt &quot;object&quot;\n\n&lt;/syntaxhighlight&gt;\n\
+      \nUmgekehrt werden Werte der primitiven Typen &lt;code&gt;Number&lt;/code&gt;, &lt;code&gt;Boolean&lt;/code&gt; und &lt;code&gt;String&lt;/code&gt; bei Bedarf automatisch in Objekte der entsprechenden Konstruktorfunktion umgewandelt:\n\n&lt;syntaxhighlight\
+      \ lang=&quot;javascript&quot;&gt;\nvar variable = &quot;Beispieltext&quot;;\nalert(variable.length); // ergibt 12\n&lt;/syntaxhighlight&gt;\n\nJavaScript ist [[Dynamische Typisierung|dynamisch typisiert]], das heißt die Zuweisung von Werten an Variablen\
+      \ unterliegt keinen typbasierten Einschränkungen. Es gibt diverse Erweiterungen von JavaScript, welche eine statische Typisierung auf Wunsch ermöglichen beziehungsweise zwingend erfordern, zum Beispiel [[TypeScript]] von [[Microsoft]].&lt;ref&gt;{{Internetquelle\
+      \ | url = http://t3n.de/news/typescript-microsofts-neue-418900/ | titel = TypeScript: Microsoft’s neue JavaScript Erweiterung | werk = [[T3N Magazin|t3n Magazin]] | autor = Ilja Zaglov | datum = 2012-10-10 | zugriff = 2012-10-10}}&lt;/ref&gt;\n\n=== Kontrollstrukturen\
+      \ ===\n==== if-else (Bedingte Anweisung) ====\n&lt;syntaxhighlight lang=&quot;javascript&quot;&gt;\nif (bedingung) {\n    anweisungen;\n} else {\n    anweisungen;\n}\n&lt;/syntaxhighlight&gt;\n\n==== Switch-Kontrollstruktur ====\n&lt;syntaxhighlight lang=&quot;javascript&quot;&gt;\n\
+      switch (variable) {\n    case wert1 :\n        anweisungen;\n        break;\n    case wert2 :\n        anweisungen;\n        break;\n    default :\n        anweisungen;\n}\n&lt;/syntaxhighlight&gt;\n\n==== [[While-Schleife]] ====\n&lt;syntaxhighlight lang=&quot;javascript&quot;&gt;\n\
+      while (bedingung) {\n    anweisungen;\n}\n&lt;/syntaxhighlight&gt;\n\n==== [[Do-while-Schleife]] ====\n&lt;syntaxhighlight lang=&quot;javascript&quot;&gt;\ndo {\n    anweisungen;\n} while (bedingung);\n&lt;/syntaxhighlight&gt;\n\n==== [[For-Schleife]]\
+      \ ====\n&lt;syntaxhighlight lang=&quot;javascript&quot;&gt;\nfor (startausdruck; bedingung; iterationsausdruck) {\n    anweisungen;\n}\n&lt;/syntaxhighlight&gt;\n\n==== For … in-Schleife ====\nMit dieser Anweisung werden alle eigenen und ererbten Eigenschaften\
+      \ eines Objektes durchlaufen, die nicht die interne Eigenschaft DontEnum aufweisen. DontEnum gilt für bestimmte eingebaute Eigenschaften und kann nicht vom Benutzer gesetzt werden.&lt;ref&gt;[https://developer.mozilla.org/En/ECMAScript_DontEnum_attribute\
+      \ MDC: ECMAScript DontEnum attribute]&lt;/ref&gt; Bei jedem Schleifendurchgang wird einer angegebenen Variable der Eigenschaftsname zugewiesen.\n\n&lt;syntaxhighlight lang=&quot;javascript&quot;&gt;\nfor (var eigenschaftsname in objekt) {\n    anweisungen;\n\
+      }\n&lt;/syntaxhighlight&gt;\n\n=== Geltungsbereich von Variablen ===\nVariablen sind in JavaScript innerhalb der Funktion sichtbar, in der sie mit &lt;code&gt;var&lt;/code&gt; deklariert wurden. Außerhalb von Funktionen deklarierte Variablen sind Eigenschaften\
+      \ des globalen Objekts (window).\n\n=== Funktionen ===\n[[Funktion (Programmierung)|Funktionen]] sind in JavaScript vollwertige Objekte. Sie haben Methoden und Eigenschaften, können erstellt und überschrieben, als Argumente an Funktionen übergeben und\
+      \ von ihnen erzeugt und zurückgegeben werden.\n\nIm letzteren Fall entsteht eine [[Closure]] (auch Funktionsabschluss genannt), mit der beispielsweise [[Datenkapselung (Programmierung)|Datenkapselung]] umgesetzt werden kann:\n\n&lt;syntaxhighlight lang=&quot;javascript&quot;&gt;\n\
+      var temp = function () {\n    var geheimnis = 42;\n    return function () {\n        return geheimnis;\n    };\n}\nvar geheimnisträger = temp(); //geheimnisträger ist die von temp() zurückgegebene Funktion\nalert(typeof geheimnis ); // undefined\nalert(geheimnisträ\
+      ger()); // 42\n&lt;/syntaxhighlight&gt;\n\nNicht jedes Argument einer Funktion muss beim Aufruf angegeben werden; für fehlende Argumente wird der Wert ''undefined'' gesetzt. Außerdem kann innerhalb der Funktion auch über das &lt;!-- Array-ähnliche, arguments\
+      \ ist kein Array! --&gt; &lt;code&gt;arguments&lt;/code&gt;-Objekt auf die Argumente zugegriffen werden.\n\n==== Erzeugung ====\nEs gibt mehrere Möglichkeiten, in JavaScript Funktionen zu erzeugen:&lt;ref&gt;siehe auch: [http://kangax.github.com/nfe/ Named\
+      \ function expressions demystified]&lt;/ref&gt;\n&lt;syntaxhighlight lang=&quot;javascript&quot;&gt;\n// 1: Funktionsdeklaration, a ist eine Funktion mit dem Namen a.\nfunction a (Parameter1, Parameter2, Parameter3) {\n    anweisungen;\n    return ausdruck;\n\
+      }\n\n// 2: Funktionsausdruck ('function expression')\n// 2.1: Normalfall, b ist eine anonyme Funktion\nvar b = function (...) {...}\n\n// 2.2: benannter Funktionsausdruck ('named function expression')\n// c ist hier eine Funktion mit dem Namen d. Außerhalb\
+      \ der\n// Funktion ist sie mit c ansprechbar, innerhalb mit c und d.\nvar c = function d (...) {...}\n\n// 3: Function-Konstruktor\nvar e = new Function('arg1', 'arg2', 'return arg1 + arg2');\n\n// 4: 'expression closure' aus JavaScript 1.8, ähnlich dem\
+      \ Lambda-Kalkül\n// kommt ohne geschweifte Klammern und return aus, gibt das Ergebnis von Ausdruck zurück\nfunction f (...) ausdruck;\n&lt;/syntaxhighlight&gt;\n\nEine [[Funktionale Programmierung|funktionale]] Implementierung des [[Euklidischer Algorithmus#Rekursive\
+      \ Variante|Euklidischen Algorithmus]] in der rekursiven Variante sähe so aus:\n\n&lt;syntaxhighlight lang=&quot;javascript&quot;&gt;\n// einfache Version\nfunction euklid (a, b) {\n    return b ? euklid(b, a%b) : a\n}\n\n// Version, die beliebig viele\
+      \ Argumente annimmt,\n// rekursiv, funktional\n// Ablauf:\n// (1) Erzeuge ein Array aus den Argumenten von ggT\n// (2) Wenn ggT nur (noch) ein Argument hat, gib dieses zurück, wenn es keines hat, 0\n// (3) sonst rufe euklid mit dem ersten Argument\n//\
+      \ (4) und dem Ergebnis des Ergebnisses von ggT mit den Argumenten 2 bis n auf\nfunction ggT () {\n    return (function (args) {\n        return !args[1]\n        ? function () { return args[0] || 0 } // (2)\n        : function () { return euklid( // (3)\n\
+      \            args[0],\n            ggT.apply(null, args.slice(1))() // (4)\n        )}\n    })(Array.prototype.slice.apply(arguments)) // (1)\n}\n\nggT(4,6);        // ergibt eine Funktion, die 2 zurückgibt\n// die zurückgegebene Funktion kann auch direkt\
+      \ ausgeführt werden:\nggT()();        // 0\nggT(4)();        // 4\nggT(4,6,8,102,244)();    // 2\n&lt;/syntaxhighlight&gt;\n\n=== Objekte ===\nObjekte in JavaScript bestehen aus Eigenschaften, die als Name/Wert-Paar realisiert werden. Dabei wird nicht\
+      \ zwischen Attributen und Methoden des Objektes unterschieden. Jedes Objekt – auch durch Literale erzeugte Objekte – erbt vom Prototyp des globalen Object-Konstruktors.\n\n==== Vordefinierte Objekte ====\nJavaScript kennt mehrere eingebaute Objekte, die\
+      \ von ECMAScript definiert werden.\n\n* Das namenlose globale Objekt, das alle Variablen und Objekte enthält.\n* &lt;code&gt;Object&lt;/code&gt; als allgemeiner Prototyp, von dem alle Objekte abgeleitet sind.\n* &lt;code&gt;Function&lt;/code&gt; als Prototyp\
+      \ für [[Funktion (Programmierung)|Funktionen]].\n* &lt;code&gt;Array&lt;/code&gt; als Prototyp für [[Feld (Datentyp)|Arrays]].\n* &lt;code&gt;String&lt;/code&gt; als Prototyp für [[Zeichenkette]]n.\n* &lt;code&gt;Boolean&lt;/code&gt; als Prototyp für [[boolesche\
+      \ Variable]]n.\n* &lt;code&gt;Number&lt;/code&gt; als Prototyp für [[Zahl]]en (64-Bit-[[Gleitkommazahl]]en gemäß [[IEEE 754]]).\n* &lt;code&gt;Math&lt;/code&gt; stellt Konstanten und Methoden für [[Mathematik|mathematische]] Operationen bereit.\n* &lt;code&gt;Date&lt;/code&gt;\
+      \ für Operationen mit [[Kalender|Daten]] bzw. Zeitpunkten und [[Datumsformat]]en.\n* &lt;code&gt;RegExp&lt;/code&gt; für [[Regulärer Ausdruck|reguläre Ausdrücke]].\n* &lt;code&gt;JSON&lt;/code&gt; stellt zwei Methoden für die [[Serialisierung]] von Objekten\
+      \ ins [[JSON]]-Format und umgekehrt bereit.\n\nAbgesehen vom globalen Objekt sowie den beiden Objekten &lt;code&gt;Math&lt;/code&gt; und &lt;code&gt;JSON&lt;/code&gt; besitzen die vorstehend angeführten Objekte den mit dem &lt;code&gt;typeof&lt;/code&gt;-Operator\
+      \ feststellbaren Typ &lt;code&gt;&quot;function&quot;&lt;/code&gt;. Sie können daher zur Erzeugung weiterer Objekte des entsprechenden Typs verwendet werden.\n\nDie restlichen Objekte, die beim clientseitigen JavaScript verwendet werden, entstanden historisch\
+      \ vor allem durch die [[Netscape Communications|Netscape]]-Spezifikationen (&lt;code&gt;window&lt;/code&gt;, &lt;code&gt;document&lt;/code&gt; usw.). Das &lt;code&gt;window&lt;/code&gt;-Objekt selbst ist dabei de facto das globale Objekt, indem einfach\
+      \ einer Variablen &lt;code&gt;window&lt;/code&gt; das globale Objekt zugewiesen wurde. Zahlreiche Unterobjekte von &lt;code&gt;document&lt;/code&gt; wurden mittlerweile durch [[Document Object Model|DOM]] HTML standardisiert (&lt;code&gt;title&lt;/code&gt;,\
+      \ &lt;code&gt;images&lt;/code&gt;, &lt;code&gt;links&lt;/code&gt;, &lt;code&gt;forms&lt;/code&gt; usw.). Aktuelle Browser unterstützen zudem DOM Core und andere [[World Wide Web Consortium|W3C]]-DOM-Standards sowie Erweiterungen von Microsoft [[JScript]].\n\
+      \n==== Zugriff auf Objekteigenschaften und -methoden ====\n[[Eigenschaft]]en von Objekten (auch [[Methode (Programmierung)|Methoden]] sind Eigenschaften) können wie folgt angesprochen werden:\n\n;Punkt-Notation (mit statischen [[Bezeichner]]n):\n\n&lt;syntaxhighlight\
+      \ lang=&quot;javascript&quot;&gt;\nobjekt.eigenschaft;\n\nobjekt.methode(parameter1, parameter2);\n&lt;/syntaxhighlight&gt;\n\n;Klammer-Notation (mit dynamischen [[Bezeichner]]n):\n\n&lt;syntaxhighlight lang=&quot;javascript&quot;&gt;\nobjekt[&quot;eigenschaft&quot;];\n\
+      \nobjekt[&quot;methode&quot;](parameter1, parameter2);\n\n// Eigenschaftsname, der in Punkt-Notation illegal wäre:\nobjekt[&quot;methode 1&quot;]();\n\n// Auf diese Weise können auch alle Eigenschaften des Objekts durchlaufen werden:\nfor (var eigenschaftsName\
+      \ in objekt) {\n\tconsole.log(eigenschaftsName,' = ',objekt[eigenschaftsName]);\n}\n&lt;/syntaxhighlight&gt;\n\nZu allen Objekten können zur [[Laufzeit (Informatik)|Laufzeit]] neue Eigenschaften hinzugefügt oder mit dem &lt;code&gt;delete&lt;/code&gt;\
+      \ bestehende entfernt werden:\n\n&lt;syntaxhighlight lang=&quot;javascript&quot;&gt;\n// Statisch bzw. dynamisch benannte Eigenschaften hinzufügen:\nobjekt.eigenschaftA = &quot;ein Wert&quot;;\nobjekt[&quot;eigenschaftB&quot;] = &quot;ein anderer Wert&quot;;\n\
+      \n// Statisch bzw. dynamisch benannte Eigenschaften entfernen:\ndelete objekt.eigenschaftA;\ndelete objekt[&quot;eigenschaftB&quot;];\n&lt;/syntaxhighlight&gt;\n\n==== Objektliterale ====\nObjekte können in JavaScript direkt anhand ihrer Eigenschaften\
+      \ definiert werden:\n\n&lt;syntaxhighlight lang=&quot;javascript&quot;&gt;\n\nvar meinObjekt = {\n    zahl: 42,\n    gibZahl: function () {\n        return this.zahl;\n    }\n};\nalert(meinObjekt.gibZahl()); // 42\n&lt;/syntaxhighlight&gt;\n\nEine spezielle\
+      \ Notation gibt es für reguläre Ausdrücke:\n\n&lt;syntaxhighlight lang=&quot;javascript&quot;&gt;\n\n// mit Konstruktorfunktion\n(new RegExp(&quot;a&quot;)).test(&quot;ab&quot;); // true\n\n// als Literal\n/a/.test(&quot;ab&quot;); // true\n&lt;/syntaxhighlight&gt;\n\
+      \n==== Konstruktor-Funktionen ====\nEine Funktion kann dazu genutzt werden, um ein mit &lt;code&gt;new&lt;/code&gt; erstelltes Objekt zu initialisieren. In diesem Fall spricht man von einem [[Konstruktor]] oder einer Konstruktor-Funktion. Innerhalb dieser\
+      \ Funktion kann das neue Objekt über die Variable &lt;code&gt;this&lt;/code&gt; angesprochen werden.\n\n&lt;syntaxhighlight lang=&quot;javascript&quot;&gt;\nfunction MeinObjekt(x) { // Konstruktor\n    this.zahl = x;\n}\nvar objekt = new MeinObjekt(3);\
+      \ // Instanz erzeugen\nalert(objekt.zahl); // per Meldefenster ausgeben (3)\n&lt;/syntaxhighlight&gt;\n\n==== „Private“ Eigenschaften ====\nPrivate Eigenschaften und Methoden sind nicht explizit Teil der Sprache.\n\nMit Hilfe von Closures (siehe [[#Funktionen|Funktionen]])\
+      \ lassen sich dennoch private Eigenschaften von Objekten realisieren:\n\n&lt;syntaxhighlight lang=&quot;javascript&quot;&gt;\nvar neue_katze = function () {\n    var lebensZahl = 7;\n    var maunz = function () {\n        return (lebensZahl &gt; 0) ? &quot;miau&quot;\
+      \ : &quot;örks&quot;;\n    };\n\n    // gibt neues objekt zurück\n    return {\n        toeten: function () {\n            lebensZahl -= 1;\n            alert(maunz());\n        }\n    };\n};\nvar otto = neue_katze();\notto.toeten(); // miau\n&lt;/syntaxhighlight&gt;\n\
+      \nLediglich die &lt;code&gt;toeten&lt;/code&gt;-Methode von &lt;code&gt;otto&lt;/code&gt; kennt die Variable &lt;code&gt;lebensZahl&lt;/code&gt;.\nDer Effekt gleicht dem einer privaten Eigenschaft, wenn alle Methoden der Katze in der erzeugenden Funktion\
+      \ &lt;code&gt;neue_katze&lt;/code&gt; definiert werden. &lt;code&gt;lebensZahl&lt;/code&gt; ist dann für alle Methoden (privilegierte Methoden, im Beispiel &lt;code&gt;toeten&lt;/code&gt;) und inneren Funktionen der erzeugenden Funktion (private Methoden,\
+      \ im Beispiel &lt;code&gt;maunz&lt;/code&gt;) sichtbar, nicht jedoch von außen oder von nachträglich an das Objekt gehängten Methoden.\n\n==== Vererbung über Prototypen ====\n[[Vererbung (Programmierung)|Vererbung]] kann in JavaScript durch Prototypen\
+      \ realisiert werden.\nDies erfordert, dass der prototype-Eigenschaft einer Konstruktor-Funktion ein als Prototyp dienendes Objekt zugewiesen wird.\nWenn mit der Konstruktor-Funktion nun ein Objekt erzeugt wird, wird beim Zugriff auf eine nicht-existierende\
+      \ Eigenschaft des neuen Objekts die entsprechende Eigenschaft des Prototyps (wenn vorhanden) zurückgegeben.\nBeispiel:\n\n&lt;syntaxhighlight lang=&quot;javascript&quot;&gt;\nvar fisch = {\n    augen: 2\n};\n\nvar Mutantenfisch = function () {\n    this.augen\
+      \ = 3;\n};\nMutantenfisch.prototype = fisch;\n\nvar blinky = new Mutantenfisch();\n\nalert(blinky.augen); // 3 - eigene Eigenschaft von blinky\ndelete blinky.augen; // blinkys eigene Eigenschaft wird gelöscht\nalert(blinky.augen); // 2 - blinky hat die\
+      \ Eigenschaft selbst nicht mehr, es schimmert die Eigenschaft des Prototyps durch\n&lt;/syntaxhighlight&gt;\n\nUm festzustellen, ob ein Objekt eine Eigenschaft selbst besitzt oder vom Prototyp geerbt hat, hat jedes Objekt (automatisch durch Vererbung von\
+      \ Object) die hasOwnProperty-Methode:\n\n&lt;syntaxhighlight lang=&quot;javascript&quot;&gt;\nblinky.hasOwnProperty('augen'); // false\n&lt;/syntaxhighlight&gt;\n\n=== Delegationsprinzipien ===\nJavaScript ist eine [[Delegation (Softwareentwicklung)|Delegationssprache]]\
+      \ mit sowohl selbstausführendem als auch direktem Delegationsmechanismus.\n\n; Funktionsobjekte als Rollen (Traits and Mixins): JavaScript unterstützt schon auf der Ebene des Sprachkerns verschiedene auf Funktionsobjekten aufbauende Implementierungen des\
+      \ [https://en.wikipedia.org/wiki/Role-oriented_programming Rollen]-Musters wie z.B. [[Trait_(Programmierung)|Traits]]&lt;ref&gt;[https://github.com/petsel/javascript-code-reuse-patterns/tree/master/source/components/composition/ JavaScript Code Reuse Patterns]\
+      \ vom 19. April 2013.&lt;/ref&gt; und [[Mixin]]s&lt;ref&gt;Angus Croll, [http://javascriptweblog.wordpress.com/2011/05/31/a-fresh-look-at-javascript-mixins/ A fresh look at JavaScript Mixins] vom 31.Mai 2011.&lt;/ref&gt;. Zusätzliches Verhalten wird bereitgestellt,\
+      \ indem mindestens eine Methode über das Schlüsselwort &lt;code&gt;this&lt;/code&gt; im Rumpf eines &lt;code&gt;function&lt;/code&gt;-Objekts gebunden wird. Benötigt ein Objekt zusätzliches Verhalten, welches ihm nicht über die Prototypenkette zur Verfü\
+      gung gestellt werden kann, lässt sich eine Rolle direkt über &lt;code&gt;call&lt;/code&gt; bzw. &lt;code&gt;apply&lt;/code&gt; an dieses Objekt delegieren.\n; Objektkomposition und Vererbung durch Delegation: Während [[Komposition_(Informatik)|Komposition]]\
+      \ in JavaScript über diese direkte Delegation abgedeckt werden kann, kommt automatische Delegation immer dann zur Anwendung, wenn der Interpreter die Prototypenkette eines Objekts nach oben hin abwandern muss, um z.B. eine mit diesem Objekt assoziierte\
+      \ Methode zu finden, die diesem nicht unmittelbar gehört. Sobald die Methode gefunden ist, wird sie im Kontext dieses Objekts aufgerufen. Demzufolge wird [[Vererbung_(Programmierung)|Vererbung]] in JavaScript über einen selbstausführenden Delegationsmechanismus\
+      \ abgebildet, der an die &lt;code&gt;prototype&lt;/code&gt;-Eigenschaft von Konstruktorfunktionen gebunden ist.\n\n=== Fehlerbehandlung ===\nSeit Version 3 verfügt ECMAScript über eine von Java übernommene [[Ausnahmebehandlung|Fehlerbehandlung]]. Die Anweisung\
+      \ &lt;code&gt;try … catch … finally&lt;/code&gt; fängt [[Ausnahmebehandlung|Ausnahmen]] (''exceptions'') ab, die aufgrund eines [[Fehler]]s oder einer &lt;code&gt;throw&lt;/code&gt;-Anweisung auftreten. Die Syntax lautet:\n\n&lt;syntaxhighlight lang=&quot;javascript&quot;&gt;\n\
+      try {\n    // Anweisungen, in denen Ausnahmen auftreten oder ausgelöst werden können\n} catch (exception) {\n    // Anweisungsfolge, die im Ausnahmefall ausgeführt wird.\n    // In diesem Teil kann die Fehlerbehandlung erfolgen.\n} finally {\n    // Anweisungsfolge,\
+      \ die anschließend in jedem Fall ausgeführt wird.\n}\n…\nthrow &quot;sample exception&quot;;    // wenn verfügbar, besser: Error-Objekt (siehe unten)\n&lt;/syntaxhighlight&gt;\n\nZu Beginn werden die Anweisungen im &lt;code&gt;try&lt;/code&gt;-Block ausgefü\
+      hrt. Falls eine Ausnahme auftritt, wird der [[Kontrollfluss]] sofort zum &lt;code&gt;catch&lt;/code&gt;-Block mit dem Ausnahmeobjekt als Parameter umgeleitet.\n\nIm Normalfall wird der Ausnahmeblock übersprungen. Nach der Ausführung des &lt;code&gt;try&lt;/code&gt;-Blocks\
+      \ (auch teilweise) und gegebenenfalls des &lt;code&gt;catch&lt;/code&gt;-Blocks werden in jedem Fall die Anweisungen im &lt;code&gt;finally&lt;/code&gt;-Block ausgeführt. Der &lt;code&gt;finally&lt;/code&gt;-Teil kann weggelassen werden, alternativ der\
+      \ &lt;code&gt;catch&lt;/code&gt;-Teil.\n\nEinige Laufzeitumgebungen wie [[V8 (JavaScript-Implementierung)|V8]] (und somit [[Node.js]]) und auch viele Webbrowser stellen gesonderte '''Error-Objekte''' zur Verfügung, die neben der Fehlermeldung auch einen\
+      \ [[Stacktrace]] und weitere Zusatzinformationen transportieren können.&lt;ref&gt;[http://code.google.com/p/v8/wiki/JavaScriptStackTraceApi JavaScript Stack Trace API] in ''Google V8 Wiki'', Stand 28. Juni 2010, abgerufen: 23. Februar 2013, 09:30 UTC&lt;/ref&gt;&lt;ref&gt;[http://www.aptana.com/reference/html/api/Error.html\
+      \ JavaScript Core Reference: Error] in ''Aptana HTML Reference'', Stand 2. Juli 2012, abgerufen: 23. Februar 2013, 09:30 UTC&lt;/ref&gt;&lt;ref&gt;{{Internetquelle|url=http://www.tomdupont.net/2013/04/report-unhandled-errors-from-javascript.html|titel=Report\
+      \ Unhandled Errors from JavaScript|author=Tom DuPont|datum=2013-04-13|zugriff=2013-04-16|sprache=en|kommentar=Fehlerprotokollierung mit Stacktrace in JavaScript}}&lt;/ref&gt;\nUm diese Vorteile zu nutzen, ändert man im einfachsten Anwendungsfall den &lt;code&gt;throw&lt;/code&gt;-Befehl\
+      \ von &lt;syntaxhighlight lang=&quot;javascript&quot; enclose=&quot;none&quot;&gt;throw &quot;Meldungstext&quot;;&lt;/syntaxhighlight&gt; zu &lt;syntaxhighlight lang=&quot;javascript&quot; enclose=&quot;none&quot;&gt;throw new Error(&quot;Meldungstext&quot;);&lt;/syntaxhighlight&gt;.\n\
+      &lt;ref&gt;[http://docs.nodejitsu.com/articles/errors/what-is-the-error-object What is the error object?] von Nico Reed in ''Nodejitsu Documentation'', Stand 26. August 2011, abgerufen: 23. Februar 2013, 09:30 UTC&lt;/ref&gt;\n\nKlammern um den Parameter\
+      \ des &lt;code&gt;throw&lt;/code&gt;-Befehls sind im Allgemeinen nicht notwendig.\n&lt;ref&gt;[http://www.ecma-international.org/ecma-262/5.1/#sec-12.13 Abschnitt 12.13 &quot;The throw Statement&quot;] in ''Standard ECMA-262, 5.1 Edition: ECMAScript Language\
+      \ Specification'', Stand Juni 2011, abgerufen: 23. Februar 2013, 09:30 UTC&lt;/ref&gt;\nSollten sie in Ausnahmefällen benötigt werden, um beispielsweise einen auf mehrere Zeilen verteilten Parameter zusammenzufassen, kann die mögliche Verwechselung mit\
+      \ einem Funktionsaufruf dennoch vermieden werden, indem man ein Leerzeichen zwischen &lt;code&gt;throw&lt;/code&gt; und die öffnende Klammer einfügt.\n\n== JavaScript-Bibliotheken ==\nFür die Erstellung von browserübergreifenden [[Webanwendung]]en mit\
+      \ Hilfe von JavaScript stehen JavaScript-Bibliotheken, sogenannte [[Toolkit]]s bereit. Es handelt sich dabei um eine Sammlung von JavaScript-Funktionen, die den JavaScript-Programmierer in seiner Arbeit unterstützen sollen. Toolkits, die nicht nur häufig\
+      \ benutzte Standardfunktionen zur Verfügung stellen, sondern durch ein besonderes Maß an [[Abstraktion]] eine grundlegend andere Programmierung nach sich ziehen, werden auch [[Framework]]s genannt.\n\nAusgelöst von neuen Konzepten wie [[Ajax (Programmierung)|Ajax]]\
+      \ entstand seit 2004 ein neues Interesse für JavaScript. JavaScript wird zunehmend für [[Rich-Client]]-Anwendungen benutzt, die das Aussehen und die Bedienung von herkömmlichen [[Desktop (Computer)|Desktop]]-Programmen auf Web-gestützte Anwendungen übertragen.\
+      \ JavaScript spielt dabei eine Schlüsselrolle. Im Zuge dieser neuen Anforderungen entstanden verschiedene Bibliotheken, die die Entwicklung solcher Anwendungen vereinfachen wollen. Neben Ajax-Funktionalitäten bieten die meisten dieser Bibliotheken eine\
+      \ eigene Basis für objektorientierte Programmierung, eine Abstraktionsschicht für das komfortable Arbeiten mit dem [[Document Object Model|DOM]] sowie grafische Effekte wie [[Animation]]en. Aber auch schon vor dem breiten Einsatz von Ajax existierten Funktionssammlungen\
+      \ zur Unterstützung der browserübergreifenden Programmierung.\n\nZu den bekannten JavaScript-Bibliotheken und Frameworks zählen &lt;!-- alphabetische Reihenfolge --&gt;[[AngularJS]], [[Dojo Toolkit]], [[Ext JS]], [[jQuery]], [[MooTools]], [[Prototype (Klassenbibliothek)|Prototype]],\
+      \ [[Qooxdoo]] und die [[Yahoo User Interface Library]]. Speziell mit grafischen Effekten beschäftigen sich Moo.fx und [[Script.aculo.us]]. \n\nEinige JavaScript-Projekte implementieren eigene\n&lt;!-- [http://www.flapjax-lang.org/ flapjax], [http://www.summerofgoto.com/\
+      \ Javascript Goto], … --&gt;\noder bereits existente andere\n&lt;!-- [http://www.is-research.de/info/jslanguages/ eine Liste], [http://processingjs.org/ Processing.js], [http://sizzlejs.com/ sizzle] (CSS), … --&gt;\nSprachen, um die Ausdrucksmöglichkeiten\
+      \ von Javascript zu erweitern, in anderen Sprachen geschriebene Skripte im Browser ausführen zu können, oder einfach zur Unterhaltung oder als Demonstration. Auch für JavaScript selbst existiert ein in JS geschriebener Interpreter, [[Narcissus (JavaScript)|Narcissus]].\n\
+      \n=== Beispiel-Bibliothek: Dialogmethoden / Benutzereingaben ===\nMeistens erfolgt die [[Interaktion]] mit dem Benutzer über Änderungen an Inhalten des HTML-Dokuments, insbesondere über Formulare im Dokument, dabei greift JavaScript über das [[Document\
+      \ Object Model|DOM]] (Document Object Model) auf die [[HTML-Element|Elemente]] des HTML-Dokuments zu. Außerdem stehen drei Methoden des Window-Objektes bereit: &lt;code&gt;alert()&lt;/code&gt;, &lt;code&gt;confirm()&lt;/code&gt; und &lt;code&gt;prompt()&lt;/code&gt;;\
+      \ mit jeder einzelnen dieser Methoden kann man den Benutzer auffällig ansprechen bzw. zu einer Eingabe auffordern. Dafür zeigt eine solche Methode ein modales Fenster an; modal bedeutet, der Benutzer muss dieses Fenster zunächst schließen, bevor er zum\
+      \ aufrufenden Dokument zurückkehren kann.\n\n'''Alarmfenster''':&lt;br /&gt;\nZeigt einen Text in einem eigenen Meldungsfenster an. Beispiel:\n&lt;syntaxhighlight lang=&quot;javascript&quot;&gt;\nwindow.alert(&quot;Hello World&quot;);\n&lt;/syntaxhighlight&gt;\n\
+      \n'''Bestätigungsfrage''':&lt;br /&gt;\nZeigt einen Dialog mit den Schaltflächen „OK“ und „Abbrechen“ an. Zurückgegeben wird einer der [[Boolesche Variable|booleschen Werte]] &lt;code&gt;true&lt;/code&gt; oder &lt;code&gt;false&lt;/code&gt;, je nachdem\
+      \ welche Schaltfläche der Benutzer auswählt.\n&lt;syntaxhighlight lang=&quot;javascript&quot;&gt;\nvar bestaetigt = window.confirm(&quot;Bitte bestätigen&quot;);\n&lt;/syntaxhighlight&gt;\n\n'''Eingabeaufforderung''':&lt;br /&gt;\nEs wird ein Dialog zur\
+      \ Texteingabe angezeigt. Beispiel:\n&lt;syntaxhighlight lang=&quot;javascript&quot;&gt;\nvar eingabe = window.prompt(&quot;Bitte geben Sie einen Text ein:&quot;, &quot;&quot;);\n&lt;/syntaxhighlight&gt;\n\nIn einem fertigen Script sind diese Methoden eher\
+      \ selten anzutreffen, während der Script-Entwicklung hingegen werden sie gerne benutzt, um Fehler auszumachen, um mit geringem Aufwand einen Variablenwert zu prüfen oder um festzustellen, ob eine bestimmte Stelle im Script überhaupt erreicht wird.\n\n\
+      == Siehe auch ==\n* [[ActionScript]] – Bezeichnung für eine JavaScript-ähnliche Skriptsprache in Flash und Macromedia Director, wo es alternativ zu [[Lingo (Programmiersprache)|Lingo]] verwendet werden kann\n* [[Aktive Inhalte]]\n* [[Bookmarklet]] – kleine\
+      \ JavaScript-Programme im Browser\n* [[JavaScript Object Notation]] (JSON)\n* [[Dart (Programmiersprache)]]\n\n== Literatur ==\n* Ralph Steyer: ''JavaScript. Einstieg für Anspruchsvolle''. Addison-Wesley, München 2006, ISBN 3-8273-2466-1\n* Michael Seeboerger-Weichselbaum:\
+      \ ''Das Einsteigerseminar JavaScript''. 4. Auflage. bhv, Bonn 2007, ISBN 3-8266-7472-3\n* Ralph Steyer: ''Das JavaScript Codebook''. Addison-Wesley, München 2008, ISBN 3-8273-2717-2\n* Douglas Crockford: ''Das Beste an JavaScript''. O’Reilly, Köln 2008,\
+      \ ISBN 3-89721-876-3\n* Christian Wenz: ''JavaScript und AJAX. Das umfassende Handbuch''. 9. Auflage. Galileo Press, Bonn 2009, ISBN 3-89842-859-1 ([http://openbook.galileocomputing.de/javascript_ajax/ Online-Fassung])\n* Stefan Koch: ''JavaScript. Einfü\
+      hrung, Programmierung, Referenz – inklusive Ajax.'' 5. Auflage. dpunkt-Verlag, Heidelberg 2009, ISBN 3-89864-594-0\n* David Flanagan: ''JavaScript – das umfassende Referenzwerk''. 6. Auflage. O’Reilly, Köln 2012, ISBN 3-86899-135-2\n* David Flanagan: ''JavaScript\
+      \ – kurz &amp; gut.'' 4. Auflage. O’Reilly, Köln 2012, ISBN 3-86899-388-6\n* Peter Kröner: ''ECMAScript 5 –  Entwickeln mit dem aktuellen JavaScript-Standard.'' 1. Auflage. Open Source Press, München 2013, ISBN 978-3-95539-063-1\n\n== Weblinks ==\n{{Commonscat|JavaScript}}\n\
+      {{Wikibooks|Websiteentwicklung: JavaScript|Websiteentwicklung: JavaScript}}\n* {{dmoz|World/Deutsch/Computer/Programmieren/Internet/JavaScript/}}\n* {{Internetquelle\n   |url=http://chaosradio.ccc.de/cre146.html\n   |titel=JavaScript – Geschichte, Struktur,\
+      \ Eigenschaften und die Zukunft der wichtigsten Programmiersprache des Webs\n   |werk=Chaosradio Express CRE146\n   |datum=2010-02-27\n   |zugriff=2010-02-27\n   |format=MP3\n   |kommentar=97,5 MB\n   |zitat= \n   }}\n* {{Internetquelle|url=http://addyosmani.com/resources/essentialjsdesignpatterns/book/|titel=Learning\
+      \ JavaScript Design Patterns|autor=Addy Osmani|sprache=en|kommentar=[[Entwurfsmuster]] in JavaScript|zugriff=2013-05-24}}\n\n=== Spezifikationen ===\n* [http://standards.iso.org/ittf/PubliclyAvailableStandards/c055755_ISO_IEC_16262_2011(E).zip ISO-genormte\
+      \ ECMAScript-Spezifikation (ISO/IEC 16262:2002)] (englisch/französisch)\n* [http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf ECMAScript-Spezifikation] (englisch, PDF; 3,1&amp;nbsp;MB) ([http://ecma-international.org/ecma-262/5.1/\
+      \ HTML-Version])\n* [https://developer.mozilla.org/en/JavaScript/Reference Referenz von Mozilla] (englisch)\n* [https://developer.mozilla.org/en/JavaScript/New_in_JavaScript/ Übersicht über die Neuerungen in JavaScript] (englisch)\n\n=== Dokumentationen\
+      \ ===\n* [http://de.selfhtml.org/javascript/ JavaScript-Kapitel bei SELFHTML]\n* [http://www.fh-wedel.de/~si/seminare/ws07/Ausarbeitung/11.javascript/ Objektorientierung in JavaScript]\n* [http://eloquentjavascript.net/ Eloquent JavaScript] (Frei verfü\
+      gbares E-Book, englisch)\n\n== Quellen ==\n&lt;references /&gt;\n\n{{Normdaten|TYP=s|GND=4420180-1}}\n\n[[Kategorie:ECMAScript| ]]\n[[Kategorie:Skriptsprache]]\n[[Kategorie:Objektorientierte Programmiersprache]]\n[[Kategorie:Funktionale Programmiersprache]]\n\
+      [[Kategorie:Prozedurale Programmiersprache]]</rev></revisions></page></pages></query></api>"
+- recorded: 2014-04-06T22:23:16.217Z
+  request:
+    method: POST
+    uri: http://de.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '100'
+      Content-Type: application/x-www-form-urlencoded
+      Host: de.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Datei%3AJs-alert-warnung.png&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '487'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:23:16 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1052 miss (0), amssq48 miss (0), amssq59 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 3772123295, 3148004801, 270098503
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=dewikiToken;string-contains=dewikiLoggedOut;string-contains=forceHTTPS;string-contains=dewikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query><pages><page ns="6" title="Datei:Js-alert-warnung.png" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Js-alert-warnung.png/220px-Js-alert-warnung.png" thumbwidth="220" thumbheight="89" url="http://upload.wikimedia.org/wikipedia/commons/a/ab/Js-alert-warnung.png" descriptionurl="http://commons.wikimedia.org/wiki/File:Js-alert-warnung.png" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:23:17.008Z
+  request:
+    method: POST
+    uri: http://de.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '96'
+      Content-Type: application/x-www-form-urlencoded
+      Host: de.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Datei%3ACommons-logo.svg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '549'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:23:16 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1052 miss (0), amssq48 miss (0), amssq59 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 3772123951, 3148005166, 270099263
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=dewikiToken;string-contains=dewikiLoggedOut;string-contains=forceHTTPS;string-contains=dewikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2006-10-30T07:21:17Z" /></query-continue><query><pages><page ns="6" title="Datei:Commons-logo.svg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Commons-logo.svg/220px-Commons-logo.svg.png" thumbwidth="220" thumbheight="296" url="http://upload.wikimedia.org/wikipedia/commons/4/4a/Commons-logo.svg" descriptionurl="http://commons.wikimedia.org/wiki/File:Commons-logo.svg" /></imageinfo></page></pages></query></api>
+- recorded: 2014-04-06T22:23:17.930Z
+  request:
+    method: POST
+    uri: http://de.wikipedia.org/w/api.php
+    headers:
+      Content-Length: '98'
+      Content-Type: application/x-www-form-urlencoded
+      Host: de.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
+    body: action=query&titles=Datei%3AWikibooks-logo.svg&prop=imageinfo&iiprop=url&iiurlwidth=220&format=xml
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Length: '559'
+      Content-Type: text/xml; charset=utf-8
+      Date: Sun, 06 Apr 2014 22:23:17 GMT
+      Server: Apache
+      Vary: Accept-Encoding,X-Forwarded-Proto
+      X-Cache: cp1052 miss (0), amssq48 miss (0), amssq59 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
+      X-Varnish: 3772124716, 3148005562, 270100114
+      X-Vary-Options: Accept-Encoding;list-contains=gzip,X-Forwarded-Proto,Cookie;string-contains=dewikiToken;string-contains=dewikiLoggedOut;string-contains=forceHTTPS;string-contains=dewikiSession;string-contains=centralauth_Token;string-contains=centralauth_Session;string-contains=centralauth_LoggedOut;string-contains=mf_useformat;string-contains=stopMobileRedirect
+    body: <?xml version="1.0"?><api><query-continue><imageinfo iistart="2005-12-26T23:34:30Z" /></query-continue><query><pages><page ns="6" title="Datei:Wikibooks-logo.svg" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wikibooks-logo.svg/220px-Wikibooks-logo.svg.png" thumbwidth="220" thumbheight="220" url="http://upload.wikimedia.org/wikipedia/commons/f/fa/Wikibooks-logo.svg" descriptionurl="http://commons.wikimedia.org/wiki/File:Wikibooks-logo.svg" /></imageinfo></page></pages></query></api>

@@ -1,5 +1,8 @@
 package info.bliki.api.creator;
 
+import co.freeside.betamax.ProxyConfiguration;
+import co.freeside.betamax.junit.Betamax;
+import co.freeside.betamax.junit.RecorderRule;
 import info.bliki.annotations.IntegrationTest;
 import info.bliki.api.User;
 import info.bliki.wiki.impl.APIWikiModel;
@@ -7,6 +10,7 @@ import info.bliki.wiki.model.Configuration;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
@@ -17,7 +21,10 @@ import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Locale;
 
+import static co.freeside.betamax.TapeMode.READ_ONLY;
 import static info.bliki.wiki.filter.Encoder.encodeTitleLocalUrl;
+import static java.util.Locale.ENGLISH;
+import static java.util.Locale.GERMAN;
 import static org.fest.assertions.api.Assertions.assertThat;
 
 @Category(IntegrationTest.class)
@@ -44,98 +51,90 @@ public class HTMLCreatorTest {
         }
     }
 
-    @Test
-    public void testCreator001() throws Exception {
+    @Rule public RecorderRule recorder = new RecorderRule(ProxyConfiguration.builder().build());
+
+    @Betamax(tape="Tom_Hanks")
+    @Test public void testCreator001() throws Exception {
         testWikipediaENAPI("Tom Hanks");
     }
 
-    @Test
-    public void testCreator002() throws Exception {
+    @Betamax(tape="Political_party_strength_in_California")
+    @Test public void testCreator002() throws Exception {
         testWikipediaENAPI("Political party strength in California");
     }
 
-    @Test
-    public void testCreator003() throws Exception {
+
+    @Betamax(tape="Chris_Capuano", mode = READ_ONLY)
+    @Test public void testCreator003() throws Exception {
         testWikipediaENAPI("Chris Capuano");
     }
 
-    @Test
-    public void testCreator004() throws Exception {
+    @Betamax(tape="Protein", mode = READ_ONLY)
+    @Test public void testCreator004() throws Exception {
         testWikipediaENAPI("Protein");
     }
 
-    @Test
-    public void testCreator005() throws Exception {
+    @Betamax(tape="Depeche_Mode", mode = READ_ONLY)
+    @Test public void testCreator005() throws Exception {
         testWikipediaENAPI("Depeche Mode");
     }
 
-    @Test
-    public void testCreator006() throws Exception {
+    @Betamax(tape="Anarchism", mode = READ_ONLY)
+    @Test public void testCreator006() throws Exception {
         testWikipediaENAPI("Anarchism");
     }
 
-    @Test
-    public void testCreator007() throws Exception {
+    @Betamax(tape="Javascript", mode = READ_ONLY)
+    @Test public void testCreator007() throws Exception {
         testWikipediaDEAPI("JavaScript");
     }
 
-    @Test
-    public void testCreator008() throws Exception {
+    @Betamax(tape="libero", mode = READ_ONLY)
+    @Test public void testCreator008() throws Exception {
         testWikipediaENAPI("libero");
     }
 
-    @Test
-    public void testCreator009() throws Exception {
+    @Betamax(tape="Metallica", mode = READ_ONLY)
+    @Test public void testCreator009() throws Exception {
         testWikipediaENAPI("Metallica");
     }
 
-    @Test
-    public void testCreator010() throws Exception {
+    @Betamax(tape="HTTP-Statuscode", mode = READ_ONLY)
+    @Test public void testCreator010() throws Exception {
         testWikipediaDEAPI("HTTP-Statuscode");
     }
 
-    @Test @Ignore
-    public void testCreator011() throws Exception {
-        testAPI("Main Page", "http://simple.wikipedia.org/w/api.php", null, Locale.ENGLISH);
-    }
-
-    @Test @Ignore
-    public void testCreator012() throws Exception {
-        testAPI("Grafenwöhr", "http://bar.wikipedia.org/w/api.php", null, Locale.GERMAN);
-    }
-
-    @Test
-    public void testCreator013() throws Exception {
+    @Ignore @Test public void testCreator013() throws Exception {
         testWikipediaDEAPI("Wikipedia:Hauptseite/Artikel_des_Tages/Montag");
     }
 
-    @Test
-    public void testCreator014() throws Exception {
+    @Betamax(tape="Pakistan", mode = READ_ONLY)
+    @Test public void testCreator014() throws Exception {
         testWikipediaENAPI("Pakistan");
     }
 
-    @Test
-    public void testCreator015() throws Exception {
+    @Betamax(tape="Alps", mode = READ_ONLY)
+    @Test public void testCreator015() throws Exception {
         testWikipediaENAPI("Alps");
     }
 
-    @Test
-    public void testCreator016() throws Exception {
+    @Betamax(tape="Acute_disseminated_encephalomyelitis", mode = READ_ONLY)
+    @Test public void testCreator016() throws Exception {
         testWikipediaENAPI("Acute disseminated encephalomyelitis");
     }
 
-    @Test
-    public void testCreator017() throws Exception {
+    @Betamax(tape="Apatosaurus", mode = READ_ONLY)
+    @Test public void testCreator017() throws Exception {
         testWikipediaENAPI("Apatosaurus");
     }
 
-    @Test
-    public void testCreator018() throws Exception {
+    @Betamax(tape="Batman returns", mode = READ_ONLY)
+    @Test public void testCreator018() throws Exception {
         testWikipediaENAPI("Batman Returns");
     }
 
-    @Test
-    public void testCreateText002() throws Exception {
+    @Betamax(tape="Manchester_United_Football_Club", mode = READ_ONLY)
+    @Ignore @Test public void testCreateText002() throws Exception {
         String redirectedLink = testWikipediaENAPI("Manchester United Football Club").redirectLink;
         if (redirectedLink != null) {
             // see http://code.google.com/p/gwtwiki/issues/detail?id=38
@@ -143,25 +142,35 @@ public class HTMLCreatorTest {
         }
     }
 
-    @Test
-    public void testWiktionary() throws Exception {
+    @Betamax(tape = "backplane", mode = READ_ONLY)
+    @Test public void testWiktionary() throws Exception {
         testWiktionaryENAPI("backplane");
     }
 
+    @Test @Ignore
+    public void testCreator011() throws Exception {
+        testAPI("Main Page", "http://simple.wikipedia.org/w/api.php", null, ENGLISH);
+    }
+
+    @Test @Ignore
+    public void testCreator012() throws Exception {
+        testAPI("Grafenwöhr", "http://bar.wikipedia.org/w/api.php", null, GERMAN);
+    }
+
     private Result testWiktionaryENAPI(String title) throws Exception {
-        return testAPI(title, "http://en.wiktionary.org/w/api.php", wiktionaryEn, Locale.ENGLISH);
+        return testAPI(title, "http://en.wiktionary.org/w/api.php", wiktionaryEn, ENGLISH);
     }
 
     private Result testWikipediaENAPI(String title) throws Exception {
-        return testAPI(title, "http://en.wikipedia.org/w/api.php", wikipediaEn, Locale.ENGLISH);
+        return testAPI(title, "http://en.wikipedia.org/w/api.php", wikipediaEn, ENGLISH);
     }
 
     private Result testWikipediaDEAPI(String title) throws Exception {
-        return testAPI(title, "http://de.wikipedia.org/w/api.php", wikipediaDe, Locale.GERMAN);
+        return testAPI(title, "http://de.wikipedia.org/w/api.php", wikipediaDe, GERMAN);
     }
 
     private Result testAPI(String title, String apiLink, WikiDB db, Locale locale) throws IOException {
-        User user = new User("", "", apiLink);
+        User user = new User(null, null, apiLink);
         user.login();
 
         Path mainDirectory = Files.createTempDirectory("bliki-" + encodeTitleLocalUrl(title).replace("/", "_"));
