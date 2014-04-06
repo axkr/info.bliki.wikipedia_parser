@@ -37,6 +37,30 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>co.freeside.betamax</groupId>
+            <artifactId>betamax-junit</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>co.freeside.betamax</groupId>
+            <artifactId>betamax-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>co.freeside.betamax</groupId>
+            <artifactId>betamax-proxy</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

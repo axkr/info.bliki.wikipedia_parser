@@ -51,6 +51,10 @@
         <module>bliki-addons</module>
     </modules>
 
+    <properties>
+        <betamax.version>2.0-SNAPSHOT</betamax.version>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -103,6 +107,40 @@
                 <groupId>org.easytesting</groupId>
                 <artifactId>fest-assert-core</artifactId>
                 <version>2.0M10</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-all</artifactId>
+                <version>1.9.5</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>co.freeside.betamax</groupId>
+                <artifactId>betamax-junit</artifactId>
+                <version>${betamax.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>co.freeside.betamax</groupId>
+                <artifactId>betamax-core</artifactId>
+                <version>${betamax.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>co.freeside.betamax</groupId>
+                <artifactId>betamax-proxy</artifactId>
+                <version>${betamax.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy</artifactId>
+                <version>2.2.2</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>
@@ -168,5 +206,17 @@
             <id>zegoggles-thirdparty</id>
             <url>http://zegoggl.es:8081/nexus/content/repositories/thirdparty/</url>
         </repository>
+
+        <repository>
+            <id>sonatype</id>
+            <url>https://oss.sonatype.org/content/groups/public/</url>
+        </repository>
+
+        <repository>
+            <id>oss-jfrog-artifactory</id>
+            <name>oss-jfrog-artifactory-snapshots</name>
+            <url>http://oss.jfrog.org/artifactory/oss-snapshot-local</url>
+        </repository>
+
     </repositories>
 </project>

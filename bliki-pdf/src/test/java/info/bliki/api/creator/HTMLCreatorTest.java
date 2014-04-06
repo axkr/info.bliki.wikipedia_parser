@@ -174,7 +174,6 @@ public class HTMLCreatorTest {
                 imageDirectory.toString());
 
         DocumentCreator creator = new DocumentCreator(wikiModel, user, new String[]{title});
-        // create header and CSS information
         @SuppressWarnings("StringBufferReplaceableByString")
         StringBuilder builder = new StringBuilder();
         builder.append(HTMLConstants.HTML_HEADER1)

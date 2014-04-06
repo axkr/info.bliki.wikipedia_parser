@@ -48,26 +48,23 @@ public class User {
     /**
      * Create a User for a Mediawiki wiki
      *
-     * @param lgname
-     *          User Name
-     * @param lgpassword
-     *          Password
+     * @param name User Name
+     * @param password Password
      * @param mediawikiApiUrl
      *          A mediawiki API Url (example: <a
      *          href="http://meta.wikimedia.org/w/api.php"
      *          >http://meta.wikimedia.org/w/api.php</a>
-     * @param lgdomain
-     *          Domain (optional)
+     * @param domain Domain (optional)
      */
-    public User(String lgname, String lgpassword, String mediawikiApiUrl, String lgdomain) {
+    public User(String name, String password, String mediawikiApiUrl, String domain) {
         super();
         this.result = ILLEGAL_ID;
         this.userid = "";
-        this.username = lgname;
+        this.username = name;
         this.normalizedUsername = "";
         this.token = "";
-        this.password = lgpassword;
-        this.domain = lgdomain;
+        this.password = password;
+        this.domain = domain;
         this.actionUrl = mediawikiApiUrl;
         this.connector = new Connector();
     }

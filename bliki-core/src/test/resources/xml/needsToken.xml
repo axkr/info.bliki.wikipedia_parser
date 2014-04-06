@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<api>
+    <login result="NeedToken" token="35bfdf8bfe86f5e3f420cb3296a9f2fc" cookieprefix="metawiki"
+           sessionid="1d9fd3a6cf354fdda3b5d4472f58d0fb"/>
+</api>
