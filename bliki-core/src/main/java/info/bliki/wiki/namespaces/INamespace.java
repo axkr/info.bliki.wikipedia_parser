@@ -213,6 +213,13 @@ public interface INamespace {
          */
         NamespaceValue getContentspace();
 
+        /**
+         * Get the associated namespace.
+         * For talk namespaces, returns the subject (non-talk) namespace
+         * For subject (non-talk) namespaces, returns the talk namespace
+         *
+         * @return int or null if no associated namespace could be found
+         */
         NamespaceValue getAssociatedspace();
 
         /**
