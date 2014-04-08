@@ -1,5 +1,6 @@
 package info.bliki.extensions.scribunto.template;
 
+import info.bliki.wiki.model.WikiModel;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,6 +26,6 @@ public class ModuleExecutorTest {
         templateParams.put("1", "foo");
 
         Frame frame = new Frame(templateParams, null);
-        assertEquals(subject.run(null, "Module:string", "len", frame), "3");
+        assertEquals(subject.run(new WikiModel("${image}", "${title}"), "Module:string", "len", frame), "3");
     }
 }
