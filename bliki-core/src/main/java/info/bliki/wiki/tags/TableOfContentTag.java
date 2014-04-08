@@ -120,14 +120,14 @@ public class TableOfContentTag extends HTMLTag implements IBodyTag,
         if (this.fTableOfContent == null) {
             tocTag.fTableOfContent = null;
         } else {
-            tocTag.fTableOfContent = new ArrayList<Object>(this.fTableOfContent);
+            tocTag.fTableOfContent = new ArrayList<>(this.fTableOfContent);
         }
         return tocTag;
     }
 
     public List<Object> getTableOfContent() {
         if (fTableOfContent == null) {
-            fTableOfContent = new ArrayList<Object>();
+            fTableOfContent = new ArrayList<>();
         }
         return fTableOfContent;
     }
@@ -142,7 +142,7 @@ public class TableOfContentTag extends HTMLTag implements IBodyTag,
 
     @Override
     public List<SectionHeader> getSectionHeaders() {
-        List<SectionHeader> resultList = new ArrayList<SectionHeader>();
+        List<SectionHeader> resultList = new ArrayList<>();
         extractSectionHeaders(fTableOfContent, resultList);
         return resultList;
     }

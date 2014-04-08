@@ -208,28 +208,28 @@ public class Configuration implements IConfiguration {
     /**
      * Map from the interwiki shortcut to the real Interwiki-URL
      */
-    protected static final Map<String, String> INTERWIKI_MAP = new TreeMap<String, String>(String.CASE_INSENSITIVE_ORDER);
+    protected static final Map<String, String> INTERWIKI_MAP = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
 
     /**
      * Map the HTML token string to the correspoding TagToken implementation
      */
-    protected static final HashMap<String, TagToken> TAG_TOKEN_MAP = new HashMap<String, TagToken>();
+    protected static final HashMap<String, TagToken> TAG_TOKEN_MAP = new HashMap<>();
 
     /**
      * Map the source code's language string to the code formatter implementation
      */
-    protected static final HashMap<String, SourceCodeFormatter> CODE_FORMATTER_MAP = new HashMap<String, SourceCodeFormatter>();
+    protected static final HashMap<String, SourceCodeFormatter> CODE_FORMATTER_MAP = new HashMap<>();
 
     /**
      * Map the template's function name to the TemplateFunction implementation
      */
-    protected static final Map<String, ITemplateFunction> TEMPLATE_FUNCTION_MAP = new TreeMap<String, ITemplateFunction>(
+    protected static final Map<String, ITemplateFunction> TEMPLATE_FUNCTION_MAP = new TreeMap<>(
             String.CASE_INSENSITIVE_ORDER);
 
     /**
      * Allowed URI schemes
      */
-    protected static final Set<String> URI_SCHEME_MAP = new TreeSet<String>(String.CASE_INSENSITIVE_ORDER);
+    protected static final Set<String> URI_SCHEME_MAP = new TreeSet<>(String.CASE_INSENSITIVE_ORDER);
 
     public final static Pattern NOWIKI_OPEN_PATTERN = Pattern.compile("\\<nowiki\\>", Pattern.CASE_INSENSITIVE);
 

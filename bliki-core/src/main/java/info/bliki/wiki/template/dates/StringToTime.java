@@ -403,7 +403,7 @@ public class StringToTime extends Date {
 
         private static Pattern removeExtraSpaces = Pattern.compile(" +");
 
-        private static Map<String, Integer> translateDayOfWeek = new HashMap<String, Integer>();
+        private static Map<String, Integer> translateDayOfWeek = new HashMap<>();
 
         static {
             translateDayOfWeek.put("sunday", 1);

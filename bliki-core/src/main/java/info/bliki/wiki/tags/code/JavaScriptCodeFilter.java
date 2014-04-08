@@ -8,7 +8,7 @@ import java.util.HashMap;
  */
 public class JavaScriptCodeFilter extends AbstractCPPBasedCodeFilter implements SourceCodeFormatter {
 
-    private static HashMap<String, String> KEYWORD_SET = new HashMap<String, String>();
+    private static HashMap<String, String> KEYWORD_SET = new HashMap<>();
 
     private static final String[] KEYWORDS = { "abstract", "boolean", "break", "byte", "case", "catch", "char", "class", "const",
             "continue", "debugger", "default", "delete", "do", "double", "else", "enum", "export", "extends", "false", "final",
@@ -16,7 +16,7 @@ public class JavaScriptCodeFilter extends AbstractCPPBasedCodeFilter implements 
             "native", "new", "null", "package", "private", "protected", "public", "return", "short", "static", "super", "switch",
             "synchronized", "this", "throw", "throws", "transient", "true", "try", "typeof", "var", "void", "volatile", "while", "with" };
 
-    private static HashMap<String, String> OBJECT_SET = new HashMap<String, String>();
+    private static HashMap<String, String> OBJECT_SET = new HashMap<>();
 
     static {
         for (int i = 0; i < KEYWORDS.length; i++) {

@@ -31,7 +31,7 @@ public class XMLPagesParser extends AbstractXMLParser {
 
     public XMLPagesParser(String xmlText) throws SAXException {
         super(xmlText);
-        pagesList = new ArrayList<Page>();
+        pagesList = new ArrayList<>();
     }
 
     @Override
@@ -70,7 +70,7 @@ public class XMLPagesParser extends AbstractXMLParser {
                 fPage.setImageThumbUrl(fAttributes.getValue(THUMB_URL_ID));
             }
         } else if (WARNINGS.equals(qName)) {
-            warnings = new ArrayList<String>();
+            warnings = new ArrayList<>();
         }
         fData = null;
     }

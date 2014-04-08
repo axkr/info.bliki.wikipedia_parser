@@ -29,7 +29,7 @@ public class HtmlForm {
 
     private String mEncType;
 
-    private List<Element> mElements = new ArrayList<Element>();
+    private List<Element> mElements = new ArrayList<>();
 
     /**
      * Constructor.

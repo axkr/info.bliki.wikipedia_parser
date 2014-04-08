@@ -15,7 +15,7 @@ public class FormattingXMLStreamWriter implements XMLStreamWriter {
 
     private XMLStreamWriter delegate;
     private int indentLevel;
-    private Stack<Integer> childCounts = new Stack<Integer>();
+    private Stack<Integer> childCounts = new Stack<>();
     private int childCount;
 
     public FormattingXMLStreamWriter(XMLStreamWriter delegate) {

@@ -52,7 +52,7 @@ public class WPList extends WPTag {
         super("*#:;");
         fLastSequence = null;
         fNestedElements = null;
-        fInternalListStack = new ArrayList<InternalList>();
+        fInternalListStack = new ArrayList<>();
     }
 
     public boolean isEmpty() {

@@ -8,7 +8,7 @@ import java.util.HashMap;
  */
 public class PythonCodeFilter extends AbstractCPPBasedCodeFilter implements SourceCodeFormatter {
 
-    private static HashMap<String, String> KEYWORD_SET = new HashMap<String, String>();
+    private static HashMap<String, String> KEYWORD_SET = new HashMap<>();
 
     private static final String[] KEYWORDS = { "False", "None", "True", "and", "as", "assert", "class", "break", "continue", "def",
             "del", "else", "elif", "except", "finally", "for", "from", "global", "is", "import", "in", "if", "lambda", "nonlocal", "not",
@@ -23,7 +23,7 @@ public class PythonCodeFilter extends AbstractCPPBasedCodeFilter implements Sour
             "reduce", "reload", "repr", "reversed", "round", "set", "setattr", "slice", "sorted", "staticmethod", "str", "sum", "super",
             "tuple", "type", "unichr", "unicode", "vars", "xrange", "zip", "__import__", "apply", "buffer", "coerce", "intern" };
 
-    private static HashMap<String, String> OBJECT_SET = new HashMap<String, String>();
+    private static HashMap<String, String> OBJECT_SET = new HashMap<>();
 
     static {
         for (int i = 0; i < KEYWORDS.length; i++) {

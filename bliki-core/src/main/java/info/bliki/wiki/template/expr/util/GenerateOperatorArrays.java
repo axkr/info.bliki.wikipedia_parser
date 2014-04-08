@@ -50,8 +50,8 @@ public class GenerateOperatorArrays {
             } else {
                 operatorDefinitions = GenerateOperatorArrays.class.getResourceAsStream("/operators.txt");
             }
-            final HashMap<String, Operator> operatorMap = new HashMap<String, Operator>();
-            final HashMap<String, ArrayList<Operator>> operatorTokenStartSet = new HashMap<String, ArrayList<Operator>>();
+            final HashMap<String, Operator> operatorMap = new HashMap<>();
+            final HashMap<String, ArrayList<Operator>> operatorTokenStartSet = new HashMap<>();
             GenerateOperatorArrays.generateOperatorTable(operatorDefinitions, operatorMap, operatorTokenStartSet);
 
             final Iterator<String> i1 = operatorMap.keySet().iterator();

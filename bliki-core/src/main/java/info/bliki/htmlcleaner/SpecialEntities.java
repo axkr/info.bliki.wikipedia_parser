@@ -49,7 +49,7 @@ import java.util.Map;
  */
 public class SpecialEntities {
 
-    static Map<String, Integer> entities = new HashMap<String, Integer>();
+    static Map<String, Integer> entities = new HashMap<>();
 
     static {
         entities.put("quot", Integer.valueOf(34));

@@ -36,8 +36,8 @@ public class Page extends PageInfo {
     public Page() {
         super();
         this.imageUrl = "";
-        this.links = new ArrayList<Link>();
-        this.categories = new ArrayList<PageInfo>();
+        this.links = new ArrayList<>();
+        this.categories = new ArrayList<>();
     }
 
     /**

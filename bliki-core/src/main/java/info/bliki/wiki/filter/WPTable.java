@@ -135,7 +135,7 @@ public class WPTable extends WPTag {
         if (fAttributes == null) {
             tt.fAttributes = null;
         } else {
-            tt.fAttributes = new HashMap<String, String>(fAttributes);
+            tt.fAttributes = new HashMap<>(fAttributes);
         }
         return tt;
     }

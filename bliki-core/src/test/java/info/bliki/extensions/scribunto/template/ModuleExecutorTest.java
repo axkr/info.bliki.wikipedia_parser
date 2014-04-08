@@ -21,7 +21,7 @@ public class ModuleExecutorTest {
     }
 
     @Test public void testRun() throws IOException {
-        Map<String, String> templateParams = new LinkedHashMap<String, String>();
+        Map<String, String> templateParams = new LinkedHashMap<>();
         templateParams.put("1", "foo");
 
         Frame frame = new Frame(templateParams, null);

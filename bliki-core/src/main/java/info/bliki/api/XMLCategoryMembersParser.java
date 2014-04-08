@@ -24,7 +24,7 @@ public class XMLCategoryMembersParser extends AbstractXMLParser {
 
     public XMLCategoryMembersParser(String xmlText) throws SAXException {
         super(xmlText);
-        this.pagesList = new ArrayList<PageInfo>();
+        this.pagesList = new ArrayList<>();
         this.cmContinue = "";
     }
 

@@ -68,7 +68,7 @@ public class WikipediaScanner {
     public WPTable wpTable(ITableOfContent tableOfContentTag) {
         WPTable table = null;
         WPCell cell = null;
-        ArrayList<WPCell> cells = new ArrayList<WPCell>();
+        ArrayList<WPCell> cells = new ArrayList<>();
         WPRow row = new WPRow(cells);
         try {
             if (fScannerPosition < 0) {
@@ -81,7 +81,7 @@ public class WikipediaScanner {
             if (fSource[fScannerPosition++] != '|') {
                 return null;
             }
-            ArrayList<WPRow> rows = new ArrayList<WPRow>();
+            ArrayList<WPRow> rows = new ArrayList<>();
             table = new WPTable(rows);
             int startPos = fScannerPosition;
             // read parameters until end of line
@@ -124,7 +124,7 @@ public class WikipediaScanner {
                         switch (ch) {
                         case '-': // new row - "\n|-"
                             addTableRow(table, row);
-                            cells = new ArrayList<WPCell>();
+                            cells = new ArrayList<>();
                             row = new WPRow(cells);
                             startPos = fScannerPosition;
                             nextNewlineCell(cell);
@@ -132,7 +132,7 @@ public class WikipediaScanner {
                             break;
                         case '+': // new row - "\n|+"
                             addTableRow(table, row);
-                            cells = new ArrayList<WPCell>();
+                            cells = new ArrayList<>();
                             row = new WPRow(cells);
                             row.setType(WPCell.CAPTION);
                             cell = new WPCell(fScannerPosition);
@@ -143,7 +143,7 @@ public class WikipediaScanner {
                             cell = null;
 
                             addTableRow(table, row);
-                            cells = new ArrayList<WPCell>();
+                            cells = new ArrayList<>();
                             row = new WPRow(cells);
                             break;
                         case '}': // end of table - "\n|}"
@@ -242,7 +242,7 @@ public class WikipediaScanner {
     public WPTable tracTable(TableOfContentTag tableOfContentTag) {
         WPTable table = null;
         WPCell cell = null;
-        ArrayList<WPCell> cells = new ArrayList<WPCell>();
+        ArrayList<WPCell> cells = new ArrayList<>();
         WPRow row = new WPRow(cells);
         try {
             if (fScannerPosition < 0) {
@@ -255,7 +255,7 @@ public class WikipediaScanner {
             if (fSource[fScannerPosition++] != '|') {
                 return null;
             }
-            ArrayList<WPRow> rows = new ArrayList<WPRow>();
+            ArrayList<WPRow> rows = new ArrayList<>();
             table = new WPTable(rows);
             fScannerPosition -= 2;
             char ch = ' ';
@@ -266,7 +266,7 @@ public class WikipediaScanner {
                 case '\n':
                     addTableRow(table, row);
                     cell = null;
-                    cells = new ArrayList<WPCell>();
+                    cells = new ArrayList<>();
                     row = new WPRow(cells);
                     if (fSource[fScannerPosition] != '|' || fSource[fScannerPosition + 1] != '|') {
                         return table;
@@ -792,7 +792,7 @@ public class WikipediaScanner {
             List<String> resultList, final int maxParts) {
         assert (maxParts != 0 && maxParts != 1); // this doesn't make any sense!
         if (resultList == null) {
-            resultList = new ArrayList<String>();
+            resultList = new ArrayList<>();
         }
         char ch;
         int[] temp = new int[] { -1, -1 };
@@ -1089,7 +1089,7 @@ public class WikipediaScanner {
         int[] bookmarks;
 
         done = false;
-        ArrayList<NodeAttribute> attributes = new ArrayList<NodeAttribute>();
+        ArrayList<NodeAttribute> attributes = new ArrayList<>();
         state = 0;
         fScannerPosition = start;
         bookmarks = new int[8];
@@ -1240,7 +1240,7 @@ public class WikipediaScanner {
         int[] bookmarks;
 
         done = false;
-        ArrayList<NodeAttribute> attributes = new ArrayList<NodeAttribute>();
+        ArrayList<NodeAttribute> attributes = new ArrayList<>();
         state = 0;
         fScannerPosition = start;
         bookmarks = new int[8];

@@ -9,7 +9,7 @@ import java.util.HashMap;
  */
 public class JavaCodeFilter extends AbstractCPPBasedCodeFilter implements SourceCodeFormatter {
 
-  private static HashMap<String, String> KEYWORD_SET = new HashMap<String, String>();
+  private static HashMap<String, String> KEYWORD_SET = new HashMap<>();
 
   private static final String[] KEYWORDS =
     {
@@ -105,7 +105,7 @@ public class JavaCodeFilter extends AbstractCPPBasedCodeFilter implements Source
       "Void"
       };
 
-  private static HashMap<String, String> OBJECT_SET = new HashMap<String, String>();
+  private static HashMap<String, String> OBJECT_SET = new HashMap<>();
 
   static {
     for (int i = 0; i < KEYWORDS.length; i++) {

@@ -9,7 +9,7 @@ import java.util.HashMap;
  */
 public class PHPCodeFilter extends AbstractCPPBasedCodeFilter implements SourceCodeFormatter {
 
-  private static HashMap<String, String> KEYWORD_SET = new HashMap<String, String>();
+  private static HashMap<String, String> KEYWORD_SET = new HashMap<>();
 
   private static final String[] KEYWORDS =
     {

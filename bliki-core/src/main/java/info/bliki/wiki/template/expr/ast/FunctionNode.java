@@ -17,20 +17,20 @@ public class FunctionNode extends ASTNode implements java.util.List<ASTNode> {
 
     public FunctionNode(final ASTNode head) {
         super(null);
-        fNodesList = new ArrayList<ASTNode>(5);
+        fNodesList = new ArrayList<>(5);
         fNodesList.add(head);
     }
 
     public FunctionNode(final SymbolNode head, final ASTNode arg0) {
         super(null);
-        fNodesList = new ArrayList<ASTNode>(3);
+        fNodesList = new ArrayList<>(3);
         fNodesList.add(head);
         fNodesList.add(arg0);
     }
 
     public FunctionNode(final SymbolNode head, final ASTNode arg0, final ASTNode arg1) {
         super(null);
-        fNodesList = new ArrayList<ASTNode>(3);
+        fNodesList = new ArrayList<>(3);
         fNodesList.add(head);
         fNodesList.add(arg0);
         fNodesList.add(arg1);

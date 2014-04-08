@@ -1772,7 +1772,7 @@ public class TemplateParserTest extends FilterTestSupport {
 
     @Test public void testCategory001() {
         assertEquals("", wikiModel.render("[[Category:Main Page]]", false));
-        HashMap<String, String> expectedCategories = new HashMap<String, String>();
+        HashMap<String, String> expectedCategories = new HashMap<>();
         expectedCategories.put("Main Page", "Category:Main Page");
         assertEquals(expectedCategories, wikiModel.getCategories());
     }

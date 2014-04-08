@@ -15,7 +15,7 @@ import java.util.Map;
  *
  */
 public class ToMoinMoin extends AbstractHTMLToWiki implements IHTMLToWiki {
-    static private final Map<String, HTMLTag> TAG_MAP = new HashMap<String, HTMLTag>();
+    static private final Map<String, HTMLTag> TAG_MAP = new HashMap<>();
     static {
         TAG_MAP.put("a", new ATag("[[", "]]"));
         TAG_MAP.put("b", new OpenCloseTag("'''", "'''"));

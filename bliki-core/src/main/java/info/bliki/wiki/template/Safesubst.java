@@ -61,8 +61,8 @@ public class Safesubst extends AbstractTemplateFunction {
             }
         }
 
-        LinkedHashMap<String, String> parameterMap = new LinkedHashMap<String, String>();
-        List<String> unnamedParameters = new ArrayList<String>();
+        LinkedHashMap<String, String> parameterMap = new LinkedHashMap<>();
+        List<String> unnamedParameters = new ArrayList<>();
         for (int i = 1; i < parts.size(); i++) {
             if (i == parts.size() - 1) {
                 TemplateParser.createSingleParameter(parts.get(i), model, parameterMap, unnamedParameters);

@@ -117,8 +117,8 @@ public class DoubleEvaluator {
     }
 
     static {
-        SYMBOL_DOUBLE_MAP = new HashMap<String, Double>();
-        FUNCTION_BOOLEAN_MAP = new HashMap<String, Object>();
+        SYMBOL_DOUBLE_MAP = new HashMap<>();
+        FUNCTION_BOOLEAN_MAP = new HashMap<>();
         SYMBOL_DOUBLE_MAP.put("E", new Double(Math.E));
         SYMBOL_DOUBLE_MAP.put("Pi", new Double(Math.PI));
 
@@ -178,7 +178,7 @@ public class DoubleEvaluator {
             }
         });
 
-        FUNCTION_DOUBLE_MAP = new HashMap<String, Object>();
+        FUNCTION_DOUBLE_MAP = new HashMap<>();
         FUNCTION_DOUBLE_MAP.put("Sin", new IDouble1Function() {
             @Override
             public double evaluate(double arg1) {
@@ -325,7 +325,7 @@ public class DoubleEvaluator {
     }
 
     private List<String> splitByBrackets(String expression) {
-        ArrayList<String> sp = new ArrayList<String>();
+        ArrayList<String> sp = new ArrayList<>();
         int level = 0;
         int lastPos = 0;
         int startPos = -1;

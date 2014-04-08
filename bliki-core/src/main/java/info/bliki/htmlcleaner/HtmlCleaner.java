@@ -112,11 +112,11 @@ public class HtmlCleaner {
      * unhandled tags.
      */
     private class OpenTags {
-        private List<TagPos> list = new ArrayList<TagPos>();
+        private List<TagPos> list = new ArrayList<>();
 
         private TagPos last = null;
 
-        private Set<String> set = new HashSet<String>();
+        private Set<String> set = new HashSet<>();
 
         private boolean isEmpty() {
             return list.isEmpty();
@@ -217,7 +217,7 @@ public class HtmlCleaner {
 
     private transient DoctypeToken _docType = null;
 
-    private Set<String> allTags = new TreeSet<String>();
+    private Set<String> allTags = new TreeSet<>();
 
     private boolean advancedXmlEscape = true;
 
@@ -618,7 +618,7 @@ public class HtmlCleaner {
                         // tokens
                         // in sequence that must be copied
                         ListIterator<TagNode> closedIt = closed.listIterator(closedCount);
-                        List<TagNode> toBeCopied = new ArrayList<TagNode>();
+                        List<TagNode> toBeCopied = new ArrayList<>();
                         while (closedIt.hasPrevious()) {
                             TagNode currStartToken = closedIt.previous();
                             if (tag.isCopy(currStartToken.getName())) {
@@ -700,7 +700,7 @@ public class HtmlCleaner {
     }
 
     private List<TagNode> closeSnippet(List<? extends Object> nodeList, TagPos tagPos, Object toNode) {
-        List<TagNode> closed = new ArrayList<TagNode>();
+        List<TagNode> closed = new ArrayList<>();
         @SuppressWarnings("unchecked")
         ListIterator<Object> it = (ListIterator<Object>) nodeList.listIterator(tagPos.position);
 

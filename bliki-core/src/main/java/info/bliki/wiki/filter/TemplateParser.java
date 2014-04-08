@@ -716,9 +716,9 @@ public class TemplateParser extends AbstractParser {
             return false;
         }
         fCurrentPosition = endPosition;
-        LinkedHashMap<String, String> parameterMap = new LinkedHashMap<String, String>();
+        LinkedHashMap<String, String> parameterMap = new LinkedHashMap<>();
         if (parts.size() > 1) {
-            List<String> unnamedParameters = new ArrayList<String>();
+            List<String> unnamedParameters = new ArrayList<>();
             for (int i = 1; i < parts.size(); i++) {
                 createSingleParameter(parts.get(i), fWikiModel, parameterMap, unnamedParameters);
             }
@@ -788,7 +788,7 @@ public class TemplateParser extends AbstractParser {
         Object[] objs = new Object[2];
         int currOffset = startOffset;
         int endOffset = startOffset + len;
-        List<String> resultList = new ArrayList<String>();
+        List<String> resultList = new ArrayList<>();
         objs[0] = resultList;
         splitByPipe(src, currOffset, endOffset, resultList);
         if (resultList.size() <= 1) {

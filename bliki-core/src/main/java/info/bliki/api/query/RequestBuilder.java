@@ -11,7 +11,7 @@ import java.util.TreeMap;
 
 
 public class RequestBuilder {
-    Map<String, String> fQueryMap = new TreeMap<String, String>();
+    Map<String, String> fQueryMap = new TreeMap<>();
 
     public void clear() {
         fQueryMap.clear();

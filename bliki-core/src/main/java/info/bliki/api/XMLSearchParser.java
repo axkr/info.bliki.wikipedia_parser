@@ -27,7 +27,7 @@ public class XMLSearchParser extends AbstractXMLParser {
 
     public XMLSearchParser(String xmlText) throws SAXException {
         super(xmlText);
-        this.searchResultsList = new ArrayList<SearchResult>();
+        this.searchResultsList = new ArrayList<>();
         this.srOffset = "";
     }
 

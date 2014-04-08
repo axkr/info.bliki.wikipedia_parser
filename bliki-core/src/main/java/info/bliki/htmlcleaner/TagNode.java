@@ -72,7 +72,7 @@ public class TagNode extends TagToken {
             "rules", "cellspacing", "cellpadding", "valign", "char", "charoff", "colgroup", "col", "span", "abbr", "axis", "headers",
             "scope", "rowspan", "colspan", "id", "class", "name", "href", "rel", "alt", "src" };
 
-    protected static final HashSet<String> ALLOWED_ATTRIBUTES_SET = new HashSet<String>();
+    protected static final HashSet<String> ALLOWED_ATTRIBUTES_SET = new HashSet<>();
 
     static {
         for (int i = 0; i < ALLOWED_ATTRIBUTES.length; i++) {
@@ -101,11 +101,11 @@ public class TagNode extends TagToken {
 
     private TagNode parent = null;
 
-    private Map<String, String> attributes = new TreeMap<String, String>();
+    private Map<String, String> attributes = new TreeMap<>();
 
     private HashMap<String, Object> objectAttributes = null;
 
-    private List<Object> children = new ArrayList<Object>();
+    private List<Object> children = new ArrayList<>();
 
     private List<BaseToken> itemsToMove = null;
 
@@ -205,7 +205,7 @@ public class TagNode extends TagToken {
     public void addObjectAttribute(String attName, Object attValue) {
         if (attName != null && attValue != null) {
             if (objectAttributes == null) {
-                objectAttributes = new HashMap<String, Object>(4);
+                objectAttributes = new HashMap<>(4);
             }
             objectAttributes.put(attName, attValue);
         }
@@ -229,7 +229,7 @@ public class TagNode extends TagToken {
 
     public void addItemForMoving(BaseToken item) {
         if (itemsToMove == null) {
-            itemsToMove = new ArrayList<BaseToken>();
+            itemsToMove = new ArrayList<>();
         }
 
         itemsToMove.add(item);
@@ -269,12 +269,12 @@ public class TagNode extends TagToken {
         tt.parent = this.parent;
         tt.itemsToMove = this.itemsToMove;
         tt.isFormed = this.isFormed;
-        tt.children = new ArrayList<Object>(this.children);
-        tt.attributes = new TreeMap<String, String>(this.attributes);
+        tt.children = new ArrayList<>(this.children);
+        tt.attributes = new TreeMap<>(this.attributes);
         if (objectAttributes == null) {
             tt.objectAttributes = null;
         } else {
-            tt.objectAttributes = new HashMap<String, Object>(objectAttributes);
+            tt.objectAttributes = new HashMap<>(objectAttributes);
         }
         return tt;
     }

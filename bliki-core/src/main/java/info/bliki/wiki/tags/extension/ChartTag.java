@@ -18,7 +18,7 @@ import java.util.Set;
  *
  */
 public class ChartTag extends HTMLTag implements INoBodyParsingTag {
-    final static public HashSet<String> ALLOWED_ATTRIBUTES_SET = new HashSet<String>(997);
+    final static public HashSet<String> ALLOWED_ATTRIBUTES_SET = new HashSet<>(997);
 
     /**
      * See <a href=

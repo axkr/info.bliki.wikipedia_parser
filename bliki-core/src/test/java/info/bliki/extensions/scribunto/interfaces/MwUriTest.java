@@ -12,6 +12,6 @@ public class MwUriTest extends LuaTestBase {
 
     @Override
     public Set<String> ignoredTests() {
-        return new HashSet<String>(Arrays.asList("uri.anchorEncode"));
+        return new HashSet<>(Arrays.asList("uri.anchorEncode"));
     }
 }

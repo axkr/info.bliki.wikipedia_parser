@@ -22,7 +22,7 @@ public class Namespace implements INamespace {
      * Maps namespaces case-insensitively to their according
      * {@link NamespaceValue} objects.
      */
-    protected final Map<String, NamespaceValue> TEXT_TO_NAMESPACE_MAP = new TreeMap<String, NamespaceValue>(
+    protected final Map<String, NamespaceValue> TEXT_TO_NAMESPACE_MAP = new TreeMap<>(
             String.CASE_INSENSITIVE_ORDER);
 
     /**
@@ -176,7 +176,7 @@ public class Namespace implements INamespace {
                 String... aliases) {
             assert (isTalkspace);
             this.code = code;
-            this.texts = new ArrayList<String>(2);
+            this.texts = new ArrayList<>(2);
             int arrayPos = numberCodeToInt(code.code);
             assert (INT_TO_NAMESPACE[arrayPos] == null);
             INT_TO_NAMESPACE[arrayPos] = this;
@@ -192,7 +192,7 @@ public class Namespace implements INamespace {
             INT_TO_NAMESPACE[arrayPos] = this;
             this.talkspace = null;
             this.contentspace = this;
-            this.texts = new ArrayList<String>(1);
+            this.texts = new ArrayList<>(1);
             this.texts.add(alias);
         }
 
@@ -209,7 +209,7 @@ public class Namespace implements INamespace {
         private NamespaceValue(NamespaceCode code, NamespaceValue talkspace,
                 String... aliases) {
             this.code = code;
-            this.texts = new ArrayList<String>(2);
+            this.texts = new ArrayList<>(2);
             int arrayPos = numberCodeToInt(code.code);
             assert (INT_TO_NAMESPACE[arrayPos] == null);
             INT_TO_NAMESPACE[arrayPos] = this;
@@ -250,7 +250,7 @@ public class Namespace implements INamespace {
                 TEXT_TO_NAMESPACE_MAP.remove(text.replace('_', ' '));
             }
             // note: don't assign the fixed-size list of Arrays.asList to texts!
-            texts = new ArrayList<String>(aliases.length);
+            texts = new ArrayList<>(aliases.length);
             for (String alias : aliases) {
                 assert (alias != null);
                 addAlias(alias);

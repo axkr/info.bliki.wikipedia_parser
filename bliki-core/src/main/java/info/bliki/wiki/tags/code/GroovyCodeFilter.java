@@ -8,7 +8,7 @@ import java.util.HashMap;
  */
 public class GroovyCodeFilter extends AbstractCPPBasedCodeFilter implements SourceCodeFormatter {
 
-    private static HashMap<String, String> KEYWORD_SET = new HashMap<String, String>();
+    private static HashMap<String, String> KEYWORD_SET = new HashMap<>();
 
     private static final String[] KEYWORDS = { "any", "as", "class", "abstract", "break", "byvalue", "case", "cast", "catch",
             "const", "continue", "def", "default", "do", "else", "extends", "false", "final", "finally", "for", "future", "generic",
@@ -23,7 +23,7 @@ public class GroovyCodeFilter extends AbstractCPPBasedCodeFilter implements Sour
             "Double", "Float", "Integer", "Long", "Math", "Number", "Object", "Process", "Runnable", "Runtime", "SecurityManager",
             "Short", "String", "StringBuffer", "System", "Thread", "ThreadGroup", "Void" };
 
-    private static HashMap<String, String> OBJECT_SET = new HashMap<String, String>();
+    private static HashMap<String, String> OBJECT_SET = new HashMap<>();
 
     static {
         for (int i = 0; i < KEYWORDS.length; i++) {

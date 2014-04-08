@@ -49,9 +49,9 @@ public class Invoke extends AbstractTemplateFunction {
     }
 
     private Map<String, String> getParameters(List<String> parts, IWikiModel model) {
-        LinkedHashMap<String, String> parameterMap = new LinkedHashMap<String, String>();
+        LinkedHashMap<String, String> parameterMap = new LinkedHashMap<>();
         if (parts.size() > 2) {
-            List<String> unnamedParameters = new ArrayList<String>();
+            List<String> unnamedParameters = new ArrayList<>();
             for (int i = 2; i < parts.size(); i++) {
                 createSingleParameter(parts.get(i), model, parameterMap,
                         unnamedParameters);

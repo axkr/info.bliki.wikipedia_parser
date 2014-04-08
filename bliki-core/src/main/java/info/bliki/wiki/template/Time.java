@@ -28,7 +28,7 @@ public class Time extends AbstractTemplateFunction {
      */
     public final static ITemplateFunction CONST = new Time();
 
-    protected static Map<String, String> FORMAT_WIKI_TO_JAVA = new HashMap<String, String>();
+    protected static Map<String, String> FORMAT_WIKI_TO_JAVA = new HashMap<>();
     protected final SimpleDateFormat RFC822DATEFORMAT;
 
     static {

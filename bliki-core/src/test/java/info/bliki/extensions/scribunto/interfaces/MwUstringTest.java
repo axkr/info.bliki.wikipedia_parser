@@ -11,7 +11,7 @@ public class MwUstringTest extends LuaTestBase {
     }
 
     public Set<String> ignoredTests() {
-        return new HashSet<String>(Arrays.asList(
+        return new HashSet<>(Arrays.asList(
             "char: invalid codepoint",
             "char: invalid value",
             "find: (%f 5)",

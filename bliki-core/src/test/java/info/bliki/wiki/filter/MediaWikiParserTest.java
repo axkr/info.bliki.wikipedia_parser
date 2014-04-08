@@ -30,7 +30,7 @@ public class MediaWikiParserTest {
 //    protected final static String testFileName = "parserTests-full.txt";
 
     protected MediaWikiTestModel wikiModel = null;
-    static protected HashMap<String, String> db = new HashMap<String, String>();
+    static protected HashMap<String, String> db = new HashMap<>();
 
     protected final String input;
     protected final String expectedResult;
@@ -201,7 +201,7 @@ public class MediaWikiParserTest {
                 int lineNrStartTest = 0;
 
                 String section = null;
-                Map<String, String> data = new HashMap<String, String>();
+                Map<String, String> data = new HashMap<>();
 
                 while((line = br.readLine()) != null) {
                     ++lineNr;
@@ -298,7 +298,7 @@ public class MediaWikiParserTest {
     }
 
     static protected Map<String, Object> parseConfig(String configs) {
-        HashMap<String, Object> result = new HashMap<String, Object>();
+        HashMap<String, Object> result = new HashMap<>();
         for (String config : configs.split("\n")) {
             if (config.length() != 0) {
                 String[] entry = config.split("=", 2);
@@ -323,7 +323,7 @@ public class MediaWikiParserTest {
     }
 
     static protected Map<String, Object> parseOptions(String options) {
-        HashMap<String, Object> result = new HashMap<String, Object>();
+        HashMap<String, Object> result = new HashMap<>();
         Matcher matcher = OPTION.matcher(options);
         while (matcher.find()) {
             String key = matcher.group(1).toLowerCase();
@@ -332,7 +332,7 @@ public class MediaWikiParserTest {
             } else if (matcher.group(3) == null) {
                 result.put(key, cleanupOption(matcher.group(2)));
             } else {
-                List<String> groupValues = new ArrayList<String>(matcher.groupCount() - 1);
+                List<String> groupValues = new ArrayList<>(matcher.groupCount() - 1);
                 for (int i = 2; i <= matcher.groupCount(); ++i) {
                     String group = matcher.group(i);
                     if (group != null) {

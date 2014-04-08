@@ -50,7 +50,7 @@ public class Util {
         if (attributesString != null) {
             String trimmed = attributesString.trim();
             if (trimmed.length() != 0) {
-                map = new TreeMap<String, String>();
+                map = new TreeMap<>();
                 WikipediaScanner scanner = new WikipediaScanner(trimmed);
                 List<NodeAttribute> attributes = scanner.parseAttributes(0, trimmed.length());
                 NodeAttribute attr;

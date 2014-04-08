@@ -78,7 +78,7 @@ public class WikiPatternMatcher {
     }
 
     private void parseCategories() {
-        pageCats = new ArrayList<String>();
+        pageCats = new ArrayList<>();
         // Pattern catPattern = Pattern.compile("\\[\\[Category:(.*?)\\]\\]",
         // Pattern.MULTILINE);
         Matcher matcher = CATEGORY_PATTERN.matcher(wikiText);
@@ -89,7 +89,7 @@ public class WikiPatternMatcher {
     }
 
     private void parseLinks() {
-        pageLinks = new ArrayList<String>();
+        pageLinks = new ArrayList<>();
 
         Matcher matcher = LINKS_PATTERN.matcher(wikiText);
         while (matcher.find()) {

@@ -236,7 +236,7 @@ public class MagicWord {
      *
      * Therefore, tolerate any case here and use lower-case in this hashmap.
      */
-    protected final static HashMap<String, MagicWordE> MAGIC_WORDS = new HashMap<String, MagicWord.MagicWordE>(100);
+    protected final static HashMap<String, MagicWordE> MAGIC_WORDS = new HashMap<>(100);
 
     protected static final String TEMPLATE_INCLUSION = "template-inclusion";
 

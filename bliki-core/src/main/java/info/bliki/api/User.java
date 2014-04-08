@@ -222,7 +222,7 @@ public class User {
     }
 
     private List<String> arrayToList(String[] listOfTitleStrings) {
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         if (listOfTitleStrings != null) {
             Collections.addAll(list, listOfTitleStrings);
         }

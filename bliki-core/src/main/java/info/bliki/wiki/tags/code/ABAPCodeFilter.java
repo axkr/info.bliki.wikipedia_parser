@@ -8,7 +8,7 @@ import java.util.HashMap;
  */
 public class ABAPCodeFilter extends AbstractCodeFormatter {
 
-    private static HashMap<String, String> KEYWORD_SET = new HashMap<String, String>();
+    private static HashMap<String, String> KEYWORD_SET = new HashMap<>();
 
     private static final String[] KEYWORDS = { "ADD", "ALL", "AND", "ANY", "ADD-CORRESPONDING", "APPEND", "APPENDING", "ASSIGN",
             "ASSIGNED", "ASSIGNING", "AT", "AUTHORITY-CHECK", "BACK", "BEGIN", "BETWEEN", "BINARY", "BREAK-POINT", "BY", "CALL", "CASE",
@@ -32,7 +32,7 @@ public class ABAPCodeFilter extends AbstractCodeFormatter {
             "TYPE", "TYPE-POOL", "TYPE-POOLS", "TYPES", "ULINE", "USING", "UNPACK", "UP", "UPDATE", "VALUE", "WHEN", "WHILE", "WINDOW",
             "WAIT", "WHERE", "WITH", "WORK", "WRITE", "Z" };
 
-    private static HashMap<String, String> OBJECT_SET = new HashMap<String, String>();
+    private static HashMap<String, String> OBJECT_SET = new HashMap<>();
 
     static {
         for (int i = 0; i < KEYWORDS.length; i++) {

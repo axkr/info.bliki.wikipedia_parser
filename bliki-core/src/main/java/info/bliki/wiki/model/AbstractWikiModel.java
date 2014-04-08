@@ -233,8 +233,8 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
         String[] result = new String[2];
         result[1] = null;
         if (fReferences == null) {
-            fReferences = new ArrayList<Reference>();
-            fReferenceNames = new HashMap<String, Integer>();
+            fReferences = new ArrayList<>();
+            fReferenceNames = new HashMap<>();
         }
         if (nameAttribute != null) {
             Integer index = fReferenceNames.get(nameAttribute);
@@ -293,7 +293,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
                     return;
                 }
             }
-            ArrayList<Object> list = new ArrayList<Object>();
+            ArrayList<Object> list = new ArrayList<>();
             toc.add(list);
             addToTableOfContent(list, strPair, --headLevel);
         }
@@ -860,7 +860,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
             }
         }
         if (fToCSet == null) {
-            fToCSet = new HashSet<String>();
+            fToCSet = new HashSet<>();
         }
         return fTableOfContentTag;
     }
@@ -1266,7 +1266,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
             fSectionCounter = 0;
             fExternalLinksCounter = 0;
             fInitialized = true;
-            fTemplates = new HashMap<String, Counter>();
+            fTemplates = new HashMap<>();
         }
     }
 
@@ -1483,7 +1483,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
     public void registerRenderer(Class<?> attributeClassType,
             AttributeRenderer renderer) {
         if (attributeRenderers == null) {
-            attributeRenderers = new HashMap<Class<?>, Object>();
+            attributeRenderers = new HashMap<>();
         }
         attributeRenderers.put(attributeClassType, renderer);
     }
@@ -1595,7 +1595,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
                     "cannot have '.' in attribute names");
         }
         if (attributes == null) {
-            attributes = new HashMap<String, Object>();
+            attributes = new HashMap<>();
         }
 
         // if (value instanceof StringTemplate) {
@@ -1714,7 +1714,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
         fRedirectLink = null;
         fSectionCounter = 0;
         fExternalLinksCounter = 0;
-        fTemplates = new HashMap<String, Counter>();
+        fTemplates = new HashMap<>();
         fParameterParsingMode = false;
     }
 

@@ -38,7 +38,7 @@ public class InMemoryCreatorExample {
 
         // set up a simple cache for this example. HashMap is not usable for
         // production! Use something like http://ehcache.org for production!
-        Map<String, String> contentCache = new HashMap<String, String>(2000);
+        Map<String, String> contentCache = new HashMap<>(2000);
         APIWikiModelInMemory wikiModel = new APIWikiModelInMemory(wikiUser, Locale.ENGLISH, "${image}", "${title}", contentCache);
         DocumentCreator documentCreator = new DocumentCreator(wikiModel, wikiUser, new String[0]);
         wikiModel.setUp();

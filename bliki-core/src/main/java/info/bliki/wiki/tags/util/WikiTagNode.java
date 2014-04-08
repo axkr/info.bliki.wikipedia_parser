@@ -342,7 +342,7 @@ public class WikiTagNode extends AbstractNode {
         attribute = new NodeAttribute(name, null, (char) 0);
         attributes = getAttributesEx();
         if (null == attributes) {
-            attributes = new ArrayList<NodeAttribute>();
+            attributes = new ArrayList<>();
             setAttributesEx(attributes);
         }
         if (0 == attributes.size())

@@ -12,7 +12,7 @@ public class MwTextTest extends LuaTestBase {
 
     @Override
     public Set<String> ignoredTests() {
-        return new HashSet<String>(Arrays.asList(
+        return new HashSet<>(Arrays.asList(
             "decode named",
             "unstrip",
             "listToText, alternate conjunction",

@@ -27,7 +27,7 @@ public class TagStack extends ArrayList<TagToken> {
 
     public TagStack(int initialStackCapacity, int initialNodelistCapacity) {
         super(initialStackCapacity);
-        fNodeList = new ArrayList<BaseToken>(initialNodelistCapacity);
+        fNodeList = new ArrayList<>(initialNodelistCapacity);
     }
 
     /**

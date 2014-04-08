@@ -117,15 +117,15 @@ public class TagInfo {
 
     private String contentType;
 
-    private Set<String> mustCloseTags = new HashSet<String>();
+    private Set<String> mustCloseTags = new HashSet<>();
 
-    private Set<String> higherTags = new HashSet<String>();
+    private Set<String> higherTags = new HashSet<>();
 
-    private Set<String> childTags = new HashSet<String>();
+    private Set<String> childTags = new HashSet<>();
 
-    private Set<String> permittedTags = new HashSet<String>();
+    private Set<String> permittedTags = new HashSet<>();
 
-    private Set<String> copyTags = new HashSet<String>();
+    private Set<String> copyTags = new HashSet<>();
 
     private int belongsTo = BODY;
 

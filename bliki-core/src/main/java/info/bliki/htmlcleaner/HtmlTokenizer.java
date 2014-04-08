@@ -70,7 +70,7 @@ public class HtmlTokenizer {
 
     private transient TagToken _currentTagToken = null;
 
-    private transient List<BaseToken> _tokenList = new ArrayList<BaseToken>();
+    private transient List<BaseToken> _tokenList = new ArrayList<>();
 
     private boolean _asExpected = true;
 

@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ToWikipedia extends AbstractHTMLToWiki implements IHTMLToWiki {
-    static private final Map<String, HTMLTag> TAG_MAP = new HashMap<String, HTMLTag>();
+    static private final Map<String, HTMLTag> TAG_MAP = new HashMap<>();
     static {
         TAG_MAP.put("body", new OpenCloseTag("", ""));
         TAG_MAP.put("a", new ATag());

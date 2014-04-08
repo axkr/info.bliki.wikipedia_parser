@@ -24,7 +24,7 @@ public class ListGCTag extends AbstractHTMLTag {
     }
 
     public List<String> getListLines(String listChar, AbstractHTMLToWiki w, TagNode listNode) {
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         List<String> subList;
         List<Object> children = listNode.getChildren();
         TagNode subNode;

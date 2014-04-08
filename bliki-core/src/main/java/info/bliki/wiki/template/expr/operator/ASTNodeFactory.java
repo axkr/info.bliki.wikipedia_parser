@@ -51,19 +51,19 @@ public class ASTNodeFactory implements IParserFactory {
      * private HashMap<String, Operator> fOperatorMap = new HashMap<String,
      * Operator>();
      */
-    private static HashMap<String, Operator> fOperatorMap = new HashMap<String, Operator>();
+    private static HashMap<String, Operator> fOperatorMap = new HashMap<>();
 
     /**
      * private HashMap<String, ArrayList<Operator>> fOperatorTokenStartSet = new
      * HashMap<String, ArrayList<Operator>>();
      */
-    private static HashMap<String, ArrayList<Operator>> fOperatorTokenStartSet = new HashMap<String, ArrayList<Operator>>();
+    private static HashMap<String, ArrayList<Operator>> fOperatorTokenStartSet = new HashMap<>();
 
-    private static HashMap<String, String> fConstantSymbols = new HashMap<String, String>();
+    private static HashMap<String, String> fConstantSymbols = new HashMap<>();
 
     static {
-        fOperatorMap = new HashMap<String, Operator>();
-        fOperatorTokenStartSet = new HashMap<String, ArrayList<Operator>>();
+        fOperatorMap = new HashMap<>();
+        fOperatorTokenStartSet = new HashMap<>();
         fConstantSymbols.put("e", "E");
         fConstantSymbols.put("pi", "Pi");
         for (int i = 0; i < HEADER_STRINGS.length; i++) {
@@ -85,7 +85,7 @@ public class ASTNodeFactory implements IParserFactory {
         operatorMap.put(headStr, oper);
         list = operatorTokenStartSet.get(operatorStr);
         if (list == null) {
-            list = new ArrayList<Operator>(2);
+            list = new ArrayList<>(2);
             list.add(oper);
             operatorTokenStartSet.put(operatorStr, list);
         } else {

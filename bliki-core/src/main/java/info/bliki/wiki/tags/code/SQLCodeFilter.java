@@ -7,7 +7,7 @@ public class SQLCodeFilter extends AbstractCPPBasedCodeFilter implements SourceC
             "constraint", "create", "default", "delete", "drop", "false", "from", "in", "insert", "integer", "is", "key", "lob", "not", "null",
             "on", "or", "procedure", "references", "select", "set", "table", "timestamp", "true", "update", "varchar", "where", };
 
-    private static HashMap<String, String> KEYWORD_SET = new HashMap<String, String>();
+    private static HashMap<String, String> KEYWORD_SET = new HashMap<>();
 
     static {
         for (String k : KEYWORDS) {

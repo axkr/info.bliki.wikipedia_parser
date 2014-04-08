@@ -107,7 +107,7 @@ public class TemplateFunctionsTest  {
     }
 
     @Test public void testRendererWithFormatAndSeparatorAndNull() throws Exception {
-        List<String> names = new ArrayList<String>();
+        List<String> names = new ArrayList<>();
         names.add("ter");
         names.add(null);
         names.add("sriram");
