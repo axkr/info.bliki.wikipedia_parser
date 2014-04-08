@@ -11,19 +11,21 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.TreeMap;
 
+import static info.bliki.wiki.namespaces.INamespace.NamespaceCode.*;
+import static java.lang.String.CASE_INSENSITIVE_ORDER;
+
 /**
- * Mediawiki Namespaces. See <a
- * href="http://www.mediawiki.org/wiki/Manual:Namespace#Built-in_namespaces"
- * >Mediawiki - Manual:Namespace</a>
- *
+ * Mediawiki Namespaces.
+ * See <a href="http://www.mediawiki.org/wiki/Manual:Namespace#Built-in_namespaces">
+ *  Mediawiki - Manual:Namespace
+ * </a>
  */
 public class Namespace implements INamespace {
     /**
      * Maps namespaces case-insensitively to their according
      * {@link NamespaceValue} objects.
      */
-    protected final Map<String, NamespaceValue> TEXT_TO_NAMESPACE_MAP = new TreeMap<>(
-            String.CASE_INSENSITIVE_ORDER);
+    protected final Map<String, NamespaceValue> TEXT_TO_NAMESPACE_MAP = new TreeMap<>(CASE_INSENSITIVE_ORDER);
 
     /**
      * Fast access to each {@link NamespaceValue} via an integer index similar
@@ -37,117 +39,93 @@ public class Namespace implements INamespace {
     /**
      * The &quot;Media&quot; namespace for the current language.
      */
-    public final NamespaceValue MEDIA = new NamespaceValue(
-            NamespaceCode.MEDIA_NAMESPACE_KEY, null, "Media");
+    public final NamespaceValue MEDIA = new NamespaceValue(MEDIA_NAMESPACE_KEY, (NamespaceValue) null, "Media");
     /**
      * The &quot;Special&quot; namespace for the current language.
      */
-    public final NamespaceValue SPECIAL = new NamespaceValue(
-            NamespaceCode.SPECIAL_NAMESPACE_KEY, null, "Special");
+    public final NamespaceValue SPECIAL = new NamespaceValue(SPECIAL_NAMESPACE_KEY, (NamespaceValue) null, "Special");
     /**
      * The &quot;Talk&quot; namespace for the current language.
      */
-    public final NamespaceValue TALK = new NamespaceValue(
-            NamespaceCode.TALK_NAMESPACE_KEY, true, "Talk");
+    public final NamespaceValue TALK = new NamespaceValue(TALK_NAMESPACE_KEY, "Talk");
     /**
      * The main namespace for the current language.
      */
-    public final NamespaceValue MAIN = new NamespaceValue(
-            NamespaceCode.MAIN_NAMESPACE_KEY, TALK, "");
+    public final NamespaceValue MAIN = new NamespaceValue(MAIN_NAMESPACE_KEY, TALK, "");
     /**
      * The &quot;User talk&quot; namespace for the current language.
      */
-    public final NamespaceValue USER_TALK = new NamespaceValue(
-            NamespaceCode.USER_TALK_NAMESPACE_KEY, true, "User_talk");
+    public final NamespaceValue USER_TALK = new NamespaceValue(USER_TALK_NAMESPACE_KEY, "User_talk");
     /**
      * The &quot;User&quot; namespace for the current language.
      */
-    public final NamespaceValue USER = new NamespaceValue(
-            NamespaceCode.USER_NAMESPACE_KEY, USER_TALK, "User");
+    public final NamespaceValue USER = new NamespaceValue(USER_NAMESPACE_KEY, USER_TALK, "User");
     /**
      * The &quot;Meta talk&quot; namespace for the current language.
      */
-    public final NamespaceValue META_TALK = new NamespaceValue(
-            NamespaceCode.PROJECT_TALK_NAMESPACE_KEY, true, "Meta_talk");
+    public final NamespaceValue META_TALK = new NamespaceValue(PROJECT_TALK_NAMESPACE_KEY, "Meta_talk", "Project_talk");
     /**
      * The &quot;Meta&quot; namespace for the current language.
      */
-    public final NamespaceValue META = new NamespaceValue(
-            NamespaceCode.PROJECT_NAMESPACE_KEY, META_TALK, "Meta");
+    public final NamespaceValue META = new NamespaceValue(PROJECT_NAMESPACE_KEY, META_TALK, "Meta", "Project");
+
     /**
-     * The &quot;File talk&quot; namespace for the current language.
+     * NS_IMAGE and NS_IMAGE_TALK are the pre-v1.14 names for NS_FILE and
+     * NS_FILE_TALK respectively, and are kept for compatibility.
      */
-    public final NamespaceValue IMAGE_TALK = new NamespaceValue(
-            NamespaceCode.FILE_TALK_NAMESPACE_KEY, true, "File_talk",
-            "Image_talk");
-    /**
-     * The &quot;File&quot; namespace for the current language.
-     */
-    public final NamespaceValue IMAGE = new NamespaceValue(
-            NamespaceCode.FILE_NAMESPACE_KEY, IMAGE_TALK, "File", "Image");
+    public final NamespaceValue IMAGE_TALK = new NamespaceValue(FILE_TALK_NAMESPACE_KEY,  "File_talk", "Image_talk");
+    public final NamespaceValue IMAGE = new NamespaceValue(FILE_NAMESPACE_KEY, IMAGE_TALK, "File", "Image");
     /**
      * The &quot;MediaWiki talk&quot; namespace for the current language.
      */
-    public final NamespaceValue MEDIAWIKI_TALK = new NamespaceValue(
-            NamespaceCode.MEDIAWIKI_TALK_NAMESPACE_KEY, true, "MediaWiki_talk");
+    public final NamespaceValue MEDIAWIKI_TALK = new NamespaceValue(MEDIAWIKI_TALK_NAMESPACE_KEY,  "MediaWiki_talk");
     /**
      * The &quot;MediaWiki&quot; namespace for the current language.
      */
-    public final NamespaceValue MEDIAWIKI = new NamespaceValue(
-            NamespaceCode.MEDIAWIKI_NAMESPACE_KEY, MEDIAWIKI_TALK, "MediaWiki");
+    public final NamespaceValue MEDIAWIKI = new NamespaceValue(MEDIAWIKI_NAMESPACE_KEY, MEDIAWIKI_TALK, "MediaWiki");
 
     /**
      * The &quot;Module talk&quot; namespace for the current language.
      */
-    public final NamespaceValue MODULE_TALK = new NamespaceValue(
-            NamespaceCode.MODULE_TALK_NAMESPACE_KEY, true, "Module_talk");
+    public final NamespaceValue MODULE_TALK = new NamespaceValue(MODULE_TALK_NAMESPACE_KEY, "Module_talk");
 
     /**
      * The &quot;Module&quot; namespace for the current language.
      */
-    public final NamespaceValue MODULE = new NamespaceValue(
-            NamespaceCode.MODULE_NAMESPACE_KEY, MODULE_TALK, "Module");
+    public final NamespaceValue MODULE = new NamespaceValue(MODULE_NAMESPACE_KEY, MODULE_TALK, "Module");
     /**
      * The &quot;Template talk&quot; namespace for the current language.
      */
-    public final NamespaceValue TEMPLATE_TALK = new NamespaceValue(
-            NamespaceCode.TEMPLATE_TALK_NAMESPACE_KEY, true, "Template_talk");
+    public final NamespaceValue TEMPLATE_TALK = new NamespaceValue(TEMPLATE_TALK_NAMESPACE_KEY, "Template_talk");
     /**
      * The &quot;Template&quot; namespace for the current language.
      */
-    public final NamespaceValue TEMPLATE = new NamespaceValue(
-            NamespaceCode.TEMPLATE_NAMESPACE_KEY, TEMPLATE_TALK, "Template");
+    public final NamespaceValue TEMPLATE = new NamespaceValue(TEMPLATE_NAMESPACE_KEY, TEMPLATE_TALK, "Template");
 
     /**
      * The &quot;Help talk&quot; namespace for the current language.
      */
-    public final NamespaceValue HELP_TALK = new NamespaceValue(
-            NamespaceCode.HELP_TALK_NAMESPACE_KEY, true, "Help_talk");
+    public final NamespaceValue HELP_TALK = new NamespaceValue(HELP_TALK_NAMESPACE_KEY,  "Help_talk");
     /**
      * The &quot;Help&quot; namespace for the current language.
      */
-    public final NamespaceValue HELP = new NamespaceValue(
-            NamespaceCode.HELP_NAMESPACE_KEY, HELP_TALK, "Help");
+    public final NamespaceValue HELP = new NamespaceValue(HELP_NAMESPACE_KEY, HELP_TALK, "Help");
     /**
      * The &quot;Category talk&quot; namespace for the current language.
      */
-    public final NamespaceValue CATEGORY_TALK = new NamespaceValue(
-            NamespaceCode.CATEGORY_TALK_NAMESPACE_KEY, true, "Category_talk");
+    public final NamespaceValue CATEGORY_TALK = new NamespaceValue(CATEGORY_TALK_NAMESPACE_KEY, "Category_talk");
     /**
      * The &quot;Category&quot; namespace for the current language.
      */
-    public final NamespaceValue CATEGORY = new NamespaceValue(
-            NamespaceCode.CATEGORY_NAMESPACE_KEY, CATEGORY_TALK, "Category");
+    public final NamespaceValue CATEGORY = new NamespaceValue(CATEGORY_NAMESPACE_KEY, CATEGORY_TALK, "Category");
     /**
      * The &quot;Portal talk&quot; namespace for the current language.
      */
-    public final NamespaceValue PORTAL_TALK = new NamespaceValue(
-            NamespaceCode.PORTAL_TALK_NAMESPACE_KEY, true, "Portal_talk");
+    public final NamespaceValue PORTAL_TALK = new NamespaceValue(PORTAL_TALK_NAMESPACE_KEY, "Portal_talk");
     /**
      * The &quot;Portal&quot; namespace for the current language.
      */
-    public final NamespaceValue PORTAL = new NamespaceValue(
-            NamespaceCode.PORTAL_NAMESPACE_KEY, PORTAL_TALK, "Portal");
+    public final NamespaceValue PORTAL = new NamespaceValue(PORTAL_NAMESPACE_KEY, PORTAL_TALK, "Portal");
 
     /**
      * Base class for all namespace constants.
@@ -172,9 +150,7 @@ public class Namespace implements INamespace {
          * @param aliases
          *            all aliases identifying this namespace
          */
-        private NamespaceValue(NamespaceCode code, boolean isTalkspace,
-                String... aliases) {
-            assert (isTalkspace);
+        private NamespaceValue(NamespaceCode code, String... aliases) {
             this.code = code;
             this.texts = new ArrayList<>(2);
             int arrayPos = numberCodeToInt(code.code);
@@ -185,29 +161,14 @@ public class Namespace implements INamespace {
             setTexts(aliases);
         }
 
-        public NamespaceValue(NamespaceCode code, String alias) {
-            this.code = code;
-            int arrayPos = numberCodeToInt(code.code);
-            assert (INT_TO_NAMESPACE[arrayPos] == null);
-            INT_TO_NAMESPACE[arrayPos] = this;
-            this.talkspace = null;
-            this.contentspace = this;
-            this.texts = new ArrayList<>(1);
-            this.texts.add(alias);
-        }
-
         /**
          * Constructor for content namespaces.
          *
-         * @param code
-         *            the (internal) integer code of this namespace
-         * @param talkspace
-         *            the associated talk namespace (must not be <tt>null</tt>)
-         * @param aliases
-         *            all aliases identifying this namespace
+         * @param code the (internal) integer code of this namespace
+         * @param talkspace the associated talk namespace (must not be <tt>null</tt>)
+         * @param aliases all aliases identifying this namespace
          */
-        private NamespaceValue(NamespaceCode code, NamespaceValue talkspace,
-                String... aliases) {
+        private NamespaceValue(NamespaceCode code, NamespaceValue talkspace, String... aliases) {
             this.code = code;
             this.texts = new ArrayList<>(2);
             int arrayPos = numberCodeToInt(code.code);
@@ -224,22 +185,11 @@ public class Namespace implements INamespace {
             setTexts(aliases);
         }
 
-        /*
-         * (non-Javadoc)
-         *
-         * @see info.bliki.wiki.namespaces.INamespaceValue#getCode()
-         */
         @Override
         public NamespaceCode getCode() {
             return code;
         }
 
-        /*
-         * (non-Javadoc)
-         *
-         * @see
-         * info.bliki.wiki.namespaces.INamespaceValue#setTexts(java.lang.String)
-         */
         @Override
         public void setTexts(String... aliases) {
             assert (aliases.length >= 1);
@@ -257,12 +207,6 @@ public class Namespace implements INamespace {
             }
         }
 
-        /*
-         * (non-Javadoc)
-         *
-         * @see
-         * info.bliki.wiki.namespaces.INamespaceValue#addAlias(java.lang.String)
-         */
         @Override
         public void addAlias(String alias) {
             if (!TEXT_TO_NAMESPACE_MAP.containsKey(alias)) {
@@ -273,52 +217,46 @@ public class Namespace implements INamespace {
             }
         }
 
-        /*
-         * (non-Javadoc)
-         *
-         * @see info.bliki.wiki.namespaces.INamespaceValue#getPrimaryText()
-         */
         @Override
         public String getPrimaryText() {
             return texts.get(0);
         }
 
-        /*
-         * (non-Javadoc)
-         *
-         * @see info.bliki.wiki.namespaces.INamespaceValue#getTexts()
-         */
+        @Override
+        public String getCanonicalName() { return getPrimaryText(); }
+
         @Override
         public List<String> getTexts() {
             return texts;
         }
 
-        /*
-         * (non-Javadoc)
-         *
-         * @see info.bliki.wiki.namespaces.INamespaceValue#getTalkspace()
-         */
         @Override
         public NamespaceValue getTalkspace() {
             return talkspace;
         }
 
-        /*
-         * (non-Javadoc)
-         *
-         * @see info.bliki.wiki.namespaces.INamespaceValue#getContentspace()
-         */
         @Override
         public NamespaceValue getContentspace() {
             return contentspace;
         }
 
-        /*
-         * (non-Javadoc)
+        /**
+         * Get the associated namespace.
+         * For talk namespaces, returns the subject (non-talk) namespace
+         * For subject (non-talk) namespaces, returns the talk namespace
          *
-         * @see
-         * info.bliki.wiki.namespaces.INamespaceValue#makeFullPagename(String)
+         * @return int or null if no associated namespace could be found
          */
+        public NamespaceValue getAssociatedspace() {
+            if (isSubject()) {
+                return getTalkspace();
+            } else if (isTalk()) {
+                return getContentspace();
+            } else {
+                return null;
+            }
+        }
+
         @Override
         public String makeFullPagename(String pageName) {
             String primaryText = getPrimaryText();
@@ -329,23 +267,51 @@ public class Namespace implements INamespace {
             }
         }
 
-        /*
-         * (non-Javadoc)
-         *
-         * @see
-         * info.bliki.wiki.namespaces.INamespace.INamespaceValue#isType(info
-         * .bliki .wiki.namespaces.INamespace.NamespaceCode)
-         */
         @Override
         public boolean isType(NamespaceCode code) {
             return this.code == code;
         }
 
-        /*
-         * (non-Javadoc)
-         *
-         * @see java.lang.Object#toString()
-         */
+        @Override
+        public boolean hasSubpages() {
+            return this.code.hasSubpages();
+        }
+
+        @Override
+        public boolean hasGenderDistinction() {
+            return this.code == USER_NAMESPACE_KEY || this.code == USER_TALK_NAMESPACE_KEY;
+        }
+
+        @Override
+        public boolean isCapitalized() {
+            return true;
+        }
+
+        @Override
+        public boolean isContent() {
+            return this.code == MAIN_NAMESPACE_KEY;
+        }
+
+        @Override
+        public boolean isIncludable() {
+            return true;
+        }
+
+        @Override
+        public boolean isMovable() {
+            return false;
+        }
+
+        @Override
+        public boolean isSubject() {
+            return this.talkspace != this;
+        }
+
+        @Override
+        public boolean isTalk() {
+            return this.talkspace == this;
+        }
+
         @Override
         public String toString() {
             return getPrimaryText();
@@ -499,58 +465,58 @@ public class Namespace implements INamespace {
             return;
         }
         extractFromResource(resource, Messages.WIKI_API_MEDIA1,
-                Messages.WIKI_API_MEDIA2, NamespaceCode.MEDIA_NAMESPACE_KEY,
+                Messages.WIKI_API_MEDIA2, MEDIA_NAMESPACE_KEY,
                 cmd);
         extractFromResource(resource, Messages.WIKI_API_SPECIAL1,
                 Messages.WIKI_API_SPECIAL2,
-                NamespaceCode.SPECIAL_NAMESPACE_KEY, cmd);
+                SPECIAL_NAMESPACE_KEY, cmd);
         extractFromResource(resource, Messages.WIKI_API_TALK1,
-                Messages.WIKI_API_TALK2, NamespaceCode.TALK_NAMESPACE_KEY, cmd);
+                Messages.WIKI_API_TALK2, TALK_NAMESPACE_KEY, cmd);
         extractFromResource(resource, Messages.WIKI_API_USER1,
-                Messages.WIKI_API_USER2, NamespaceCode.USER_NAMESPACE_KEY, cmd);
+                Messages.WIKI_API_USER2, USER_NAMESPACE_KEY, cmd);
         extractFromResource(resource, Messages.WIKI_API_USERTALK1,
                 Messages.WIKI_API_USERTALK2,
-                NamespaceCode.USER_TALK_NAMESPACE_KEY, cmd);
+                USER_TALK_NAMESPACE_KEY, cmd);
         extractFromResource(resource, Messages.WIKI_API_META1,
-                Messages.WIKI_API_META2, NamespaceCode.PROJECT_NAMESPACE_KEY,
+                Messages.WIKI_API_META2, PROJECT_NAMESPACE_KEY,
                 cmd);
         extractFromResource(resource, Messages.WIKI_API_METATALK1,
                 Messages.WIKI_API_METATALK2,
-                NamespaceCode.PROJECT_TALK_NAMESPACE_KEY, cmd);
+                PROJECT_TALK_NAMESPACE_KEY, cmd);
         extractFromResource(resource, Messages.WIKI_API_IMAGE1,
-                Messages.WIKI_API_IMAGE2, NamespaceCode.FILE_NAMESPACE_KEY, cmd);
+                Messages.WIKI_API_IMAGE2, FILE_NAMESPACE_KEY, cmd);
         extractFromResource(resource, Messages.WIKI_API_IMAGETALK1,
                 Messages.WIKI_API_IMAGETALK2,
-                NamespaceCode.FILE_TALK_NAMESPACE_KEY, cmd);
+                FILE_TALK_NAMESPACE_KEY, cmd);
         extractFromResource(resource, Messages.WIKI_API_MEDIAWIKI1,
                 Messages.WIKI_API_MEDIAWIKI2,
-                NamespaceCode.MEDIAWIKI_NAMESPACE_KEY, cmd);
+                MEDIAWIKI_NAMESPACE_KEY, cmd);
         extractFromResource(resource, Messages.WIKI_API_MEDIAWIKITALK1,
                 Messages.WIKI_API_MEDIAWIKITALK2,
-                NamespaceCode.MEDIAWIKI_TALK_NAMESPACE_KEY, cmd);
+                MEDIAWIKI_TALK_NAMESPACE_KEY, cmd);
         extractFromResource(resource, Messages.WIKI_API_TEMPLATE1,
                 Messages.WIKI_API_TEMPLATE2,
-                NamespaceCode.TEMPLATE_NAMESPACE_KEY, cmd);
+                TEMPLATE_NAMESPACE_KEY, cmd);
         extractFromResource(resource, Messages.WIKI_API_TEMPLATETALK1,
                 Messages.WIKI_API_TEMPLATETALK2,
-                NamespaceCode.TEMPLATE_TALK_NAMESPACE_KEY, cmd);
+                TEMPLATE_TALK_NAMESPACE_KEY, cmd);
         extractFromResource(resource, Messages.WIKI_API_HELP1,
-                Messages.WIKI_API_HELP2, NamespaceCode.HELP_NAMESPACE_KEY, cmd);
+                Messages.WIKI_API_HELP2, HELP_NAMESPACE_KEY, cmd);
         extractFromResource(resource, Messages.WIKI_API_HELPTALK1,
                 Messages.WIKI_API_HELPTALK2,
-                NamespaceCode.HELP_TALK_NAMESPACE_KEY, cmd);
+                HELP_TALK_NAMESPACE_KEY, cmd);
         extractFromResource(resource, Messages.WIKI_API_CATEGORY1,
                 Messages.WIKI_API_CATEGORY2,
-                NamespaceCode.CATEGORY_NAMESPACE_KEY, cmd);
+                CATEGORY_NAMESPACE_KEY, cmd);
         extractFromResource(resource, Messages.WIKI_API_CATEGORYTALK1,
                 Messages.WIKI_API_CATEGORYTALK2,
-                NamespaceCode.CATEGORY_TALK_NAMESPACE_KEY, cmd);
+                CATEGORY_TALK_NAMESPACE_KEY, cmd);
         extractFromResource(resource, Messages.WIKI_API_PORTAL1,
-                Messages.WIKI_API_PORTAL2, NamespaceCode.PORTAL_NAMESPACE_KEY,
+                Messages.WIKI_API_PORTAL2, PORTAL_NAMESPACE_KEY,
                 cmd);
         extractFromResource(resource, Messages.WIKI_API_PORTALTALK1,
                 Messages.WIKI_API_PORTALTALK2,
-                NamespaceCode.PORTAL_TALK_NAMESPACE_KEY, cmd);
+                PORTAL_TALK_NAMESPACE_KEY, cmd);
     }
 
     private void initializeNamespaces() {
@@ -617,9 +583,7 @@ public class Namespace implements INamespace {
     }
 
     @Override
-    public INamespaceValue getMeta() {
-        return META;
-    }
+    public INamespaceValue getMeta() { return META; }
 
     @Override
     public INamespaceValue getMeta_talk() {
@@ -691,17 +655,11 @@ public class Namespace implements INamespace {
         return PORTAL_TALK;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public String[] splitNsTitle(String fullTitle) {
         return splitNsTitle(fullTitle, true, ' ', true);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public String[] splitNsTitle(String fullTitle,
             boolean underScoreIsWhitespace, char whiteSpaceChar,

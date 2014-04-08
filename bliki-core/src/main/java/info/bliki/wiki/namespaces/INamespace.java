@@ -3,6 +3,7 @@ package info.bliki.wiki.namespaces;
 import info.bliki.wiki.filter.Encoder;
 import info.bliki.wiki.namespaces.Namespace.NamespaceValue;
 
+import java.util.EnumSet;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -10,6 +11,8 @@ import java.util.ResourceBundle;
  * Mediawiki namespace for a specific language. See <a
  * href="http://www.mediawiki.org/wiki/Manual:Namespace#Built-in_namespaces"
  * >Mediawiki - Manual:Namespace</a>
+ *
+ * @see <a href="https://github.com/wikimedia/mediawiki-core/blob/master/includes/Defines.php">Defines.php</a>
  *
  */
 public interface INamespace {
@@ -62,10 +65,6 @@ public interface INamespace {
          * Media description pages.
          */
         FILE_NAMESPACE_KEY(6),
-
-        /**
-         *
-         */
         FILE_TALK_NAMESPACE_KEY(7),
 
         /**
@@ -131,6 +130,30 @@ public interface INamespace {
         private NamespaceCode(Integer code) {
             this.code = code;
         }
+
+        /**
+         * Which namespaces should support subpages?
+         * See Language.php for a list of namespaces.
+         * @see $wgNamespacesWithSubpages
+         */
+        private static final EnumSet<NamespaceCode> wgNamespacesWithSubpages = EnumSet.of(
+            TALK_NAMESPACE_KEY,
+            USER_NAMESPACE_KEY,
+            USER_TALK_NAMESPACE_KEY,
+            PROJECT_NAMESPACE_KEY,
+            PROJECT_TALK_NAMESPACE_KEY,
+            FILE_TALK_NAMESPACE_KEY,
+            MEDIAWIKI_NAMESPACE_KEY,
+            MEDIAWIKI_TALK_NAMESPACE_KEY,
+            TEMPLATE_TALK_NAMESPACE_KEY,
+            HELP_NAMESPACE_KEY,
+            HELP_TALK_NAMESPACE_KEY,
+            CATEGORY_TALK_NAMESPACE_KEY
+        );
+
+        public boolean hasSubpages() {
+            return wgNamespacesWithSubpages.contains(this);
+        }
     }
 
     /**
@@ -143,7 +166,7 @@ public interface INamespace {
         /**
          * @return the (internal) integer code of this namespace
          */
-        public abstract NamespaceCode getCode();
+        NamespaceCode getCode();
 
         /**
          * Re-sets the texts used for this namespace. The first will be the
@@ -152,7 +175,7 @@ public interface INamespace {
          * @param aliases
          *            all aliases for the namespace
          */
-        public abstract void setTexts(String... aliases);
+        void setTexts(String... aliases);
 
         /**
          * Adds a single alias to the namespace.
@@ -160,7 +183,7 @@ public interface INamespace {
          * @param alias
          *            the alias
          */
-        public abstract void addAlias(String alias);
+        void addAlias(String alias);
 
         /**
          * Provided for convenience.
@@ -168,22 +191,29 @@ public interface INamespace {
          * @return the primary text for the namespace, i.e. the first value of
          *         {@link #getTexts()}.
          */
-        public abstract String getPrimaryText();
+        String getPrimaryText();
+
+        /**
+         * @return the canonical / english name
+         */
+        String getCanonicalName();
 
         /**
          * @return the texts
          */
-        public abstract List<String> getTexts();
+        List<String> getTexts();
 
         /**
          * @return the associated talk namespace (may be <tt>null</tt>)
          */
-        public abstract NamespaceValue getTalkspace();
+        NamespaceValue getTalkspace();
 
         /**
          * @return the associated content namespace
          */
-        public abstract NamespaceValue getContentspace();
+        NamespaceValue getContentspace();
+
+        NamespaceValue getAssociatedspace();
 
         /**
          * Prepends the namespace to the given pagename and returns the full
@@ -195,7 +225,7 @@ public interface INamespace {
          *
          * @return the full page name, e.g. &quot;Template:Test&quot;
          */
-        public abstract String makeFullPagename(String pageName);
+        String makeFullPagename(String pageName);
 
         /**
          * Checks whether the namespace is a namespace of the given type.
@@ -206,8 +236,49 @@ public interface INamespace {
          * @return <tt>true</tt> if the namespace is of the given code,
          *         <tt>false</tt> otherwise
          */
-        public abstract boolean isType(NamespaceCode code);
+        boolean isType(NamespaceCode code);
 
+        /**
+         * Does the namespace allow subpages?
+         */
+        boolean hasSubpages();
+
+        /**
+         * Does the namespace (potentially) have different aliases for different
+         * genders. Not all languages make a distinction here.
+         */
+        boolean hasGenderDistinction();
+
+        /**
+         * Is the namespace first-letter capitalized?
+         */
+        boolean isCapitalized();
+
+        /**
+         * Does this namespace contain content, for the purposes of calculating
+         * statistics, etc?
+         */
+        boolean isContent();
+
+        /**
+         * It possible to use pages from this namespace as template?
+         */
+        boolean isIncludable();
+
+        /**
+         * Can pages in the given namespace be moved?
+         */
+        boolean isMovable();
+
+        /**
+         * Is the given namespace is a subject (non-talk) namespace?
+         */
+        boolean isSubject();
+
+        /**
+         * Is the given namespace a talk namespace?
+         */
+        boolean isTalk();
     }
     /**
      * Get the &quot;Media&quot; namespace for the current language.

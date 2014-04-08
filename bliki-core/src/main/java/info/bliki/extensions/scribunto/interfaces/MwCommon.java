@@ -39,22 +39,24 @@ public class MwCommon extends MwInterface {
         "modules"
     };
 
-    private static final MwInterface[] INTERFACES = {
-        new MwSite(),
-        new MwUstring(),
-        new MwTitle(),
-        new MwText(),
-        new MwUri(),
-        new MwMessage(),
-        new MwHtml(),
-        // new MwLanguage()
-    };
+    private final MwInterface[] interfaces;
 
     public MwCommon(IWikiModel model, Globals globals)
             throws IOException {
         this.globals = globals;
         this.model = model;
         extendGlobals(globals);
+
+        this.interfaces = new MwInterface[] {
+            new MwSite(model),
+            new MwUstring(),
+            new MwTitle(),
+            new MwText(),
+            new MwUri(),
+            new MwMessage(),
+            new MwHtml(),
+        };
+
         load();
     }
 
@@ -82,7 +84,7 @@ public class MwCommon extends MwInterface {
 
     private void load() throws IOException {
         load(this);
-        for (MwInterface iface : INTERFACES) {
+        for (MwInterface iface : interfaces) {
             load(iface);
         }
     }

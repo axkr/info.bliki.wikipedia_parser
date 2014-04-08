@@ -23,8 +23,8 @@ public class WikiDB {
     private final PreparedStatement fInsertImage;
     private final PreparedStatement fUpdateImage;
 
-    private Connection fConnection;
-    private Logger logger = LoggerFactory.getLogger(getClass());
+    protected Connection fConnection;
+    protected Logger logger = LoggerFactory.getLogger(getClass());
 
     /**
      * The Wiki database constructor. Creates a new Derby Wiki database, if it
@@ -171,5 +171,4 @@ public class WikiDB {
             statement.close();
         }
     }
-
 }

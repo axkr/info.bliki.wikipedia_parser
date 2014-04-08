@@ -1,5 +1,6 @@
 package info.bliki.extensions.scribunto.interfaces;
 
+import info.bliki.wiki.model.WikiModel;
 import org.junit.runner.Description;
 import org.junit.runner.RunWith;
 import org.junit.runner.notification.Failure;
@@ -35,7 +36,7 @@ public abstract class LuaTestBase {
 
     public void setUp() throws IOException {
         globals  = JsePlatform.standardGlobals();
-        mwCommon = new MwCommon(null, globals);
+        mwCommon = new MwCommon(new WikiModel("${image}", "${title}"), globals);
         tests    = loadTests();
     }
 

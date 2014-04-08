@@ -33,15 +33,16 @@ public class HTMLCreatorTest {
     private static final File TEST_DB = new File(TEST_RESOURCES, "WikiDB");
     private static final File TEST_DB_BZ2 = new File(TEST_RESOURCES, "WikiDB.tar.bz2");
 
-    private static WikiDB wikipediaEn, wikipediaDe, wiktionaryEn;
+    private static TestWikiDB wikipediaEn, wikipediaDe, wiktionaryEn;
 
     @BeforeClass
     public static void setupDb() throws Exception {
         DbUtils.uncompressDb(TEST_DB_BZ2, TEST_DB);
 
-        wikipediaEn  = new WikiDB(new File(TEST_DB, "Wikipedia-EN"));
-        wikipediaDe  = new WikiDB(new File(TEST_DB, "Wikipedia-DE"));
-        wiktionaryEn = new WikiDB(new File(TEST_DB, "Wiktionary-EN"));
+        wikipediaEn  = new TestWikiDB(new File(TEST_DB, "Wikipedia-EN"));
+        wikipediaDe  = new TestWikiDB(new File(TEST_DB, "Wikipedia-DE"));
+        wiktionaryEn = new TestWikiDB(new File(TEST_DB, "Wiktionary-EN"));
+//        wikipediaEn.dumpToDirectory(new File("../wikidb-en"));
     }
 
     @AfterClass
