@@ -189,13 +189,9 @@
     </build>
 
     <distributionManagement>
-        <repository>
-            <id>googlecode.svn.gwtwiki</id>
-            <url>dav:https://gwtwiki.googlecode.com/svn/maven-repository/</url>
-        </repository>
         <snapshotRepository>
-            <id>googlecode.svn.gwtwiki</id>
-            <url>dav:https://gwtwiki.googlecode.com/svn/maven-snapshot-repository/</url>
+            <id>sonatype-oss-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
             <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
     </distributionManagement>
