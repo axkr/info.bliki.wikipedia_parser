@@ -2,7 +2,8 @@ package info.bliki.wiki.filter;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.fest.assertions.api.Assertions.assertThat;
+
 /**
  * JUnit tests for time parser function. Uncomment the test method below if you
  * would test a new time formatter.
@@ -12,7 +13,7 @@ public class TimeFilterTest extends FilterTestSupport {
 
     @Test public void testTime001() {
         // TODO implement more options for time
-        assertEquals("\n" + "<p>29 February 2004</p>", wikiModel.render("{{#time: d F Y | 29 Feb 2004 }}", false));
+        assertThat(wikiModel.render("{{#time: d F Y | 29 Feb 2004 }}", false)).isEqualTo("\n" + "<p>29 February 2004</p>");
     }
 
     @Test public void testTime002() {

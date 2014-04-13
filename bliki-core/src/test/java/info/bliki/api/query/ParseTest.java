@@ -3,7 +3,7 @@ package info.bliki.api.query;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.fest.assertions.api.Assertions.assertThat;
 
 /**
  * Tests Parse query.
@@ -12,7 +12,7 @@ public class ParseTest extends BaseQueryTest {
 
     @Test public void test001() {
         RequestBuilder request = Parse.create().text("{{Project:Sandbox}}").title("A Sandbox Template test");
-        assertEquals("action=parse&amp;format=xml&amp;text={{Project:Sandbox}}&amp;title=A Sandbox Template test", request.toString());
+        assertThat(request.toString()).isEqualTo("action=parse&amp;format=xml&amp;text={{Project:Sandbox}}&amp;title=A Sandbox Template test");
     }
 
     /**

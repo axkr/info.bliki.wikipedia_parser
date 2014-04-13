@@ -3,18 +3,18 @@ package info.bliki.wiki.tags.code;
 import info.bliki.wiki.filter.FilterTestSupport;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.fest.assertions.api.Assertions.assertThat;
+
 public class GroovyTest extends FilterTestSupport {
     @Test public void testGroovy001() {
         String result = wikiModel.render("'''Groovy Example'''\n" + "<source lang=\"groovy\">\n" + "public class Test {\n"
                 + "< > \" \' &" + "}\n" + "</source>", false);
 
-        assertEquals(
-                "\n"
-                        + "<p><b>Groovy Example</b>\n"
-                        + "</p><pre class=\"groovy\">\n"
-                        + "<span style=\"color:#7F0055; font-weight: bold; \">public</span> <span style=\"color:#7F0055; font-weight: bold; \">class</span> Test {\n"
-                        + "&#60; &#62; <span style=\"color:#2A00FF; \">&#34; &#39; &#38;}\n" + "</span></pre>", result);
+        assertThat(result).isEqualTo("\n"
+                + "<p><b>Groovy Example</b>\n"
+                + "</p><pre class=\"groovy\">\n"
+                + "<span style=\"color:#7F0055; font-weight: bold; \">public</span> <span style=\"color:#7F0055; font-weight: bold; \">class</span> Test {\n"
+                + "&#60; &#62; <span style=\"color:#2A00FF; \">&#34; &#39; &#38;}\n" + "</span></pre>");
     }
 
     @Test public void testGroovy002() {
@@ -24,8 +24,7 @@ public class GroovyTest extends FilterTestSupport {
                 + "      <item>Paper</item>\n" + "      <item quantity=\"4\">Pens</item>\n" + "  </category>\n"
                 + "  <category type=\"present\">\n" + "      <item when=\"Aug 10\">Kathryn's Birthday</item>\n" + "  </category>\n"
                 + "</shopping>\n" + "'''\n" + "</source>", false);
-        assertEquals(
-                "<pre class=\"groovy\">\n" +
+        assertThat(result).isEqualTo("<pre class=\"groovy\">\n" +
                 "<span style=\"color:#7F0055; font-weight: bold; \">import</span> groovy.xml.StreamingMarkupBuilder\n" +
                 "<span style=\"color:#7F0055; font-weight: bold; \">import</span> groovy.xml.XmlUtil\n" +
                 "\n" +
@@ -44,6 +43,6 @@ public class GroovyTest extends FilterTestSupport {
                 "  &#60;/category&#62;\n" +
                 "&#60;/shopping&#62;\n" +
                 "&#39;</span><span style=\"color:#2A00FF; \">&#39;&#39;</span>\n" +
-                "</pre>", result);
+                "</pre>");
     }
 }

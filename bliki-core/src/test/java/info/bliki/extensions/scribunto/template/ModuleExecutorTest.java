@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import static org.junit.Assert.assertEquals;
+import static org.fest.assertions.api.Assertions.assertThat;
 
 public class ModuleExecutorTest {
     private ModuleExecutor subject;
@@ -23,6 +23,6 @@ public class ModuleExecutorTest {
         templateParams.put("1", "foo");
 
         Frame frame = new Frame(templateParams, null);
-        assertEquals(subject.run(new WikiModel("${image}", "${title}"), "Module:string", "len", frame), "3");
+        assertThat("3").isEqualTo(subject.run(new WikiModel("${image}", "${title}"), "Module:string", "len", frame));
     }
 }

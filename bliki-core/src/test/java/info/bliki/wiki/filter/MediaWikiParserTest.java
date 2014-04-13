@@ -3,6 +3,7 @@ package info.bliki.wiki.filter;
 import info.bliki.wiki.model.Configuration;
 import junit.framework.Test;
 import junit.framework.TestSuite;
+import org.fest.assertions.api.Assertions;
 import org.junit.After;
 import org.junit.Before;
 
@@ -19,7 +20,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static org.junit.Assert.assertEquals;
+import static org.fest.assertions.api.Assertions.assertThat;
 import static org.junit.Assume.assumeTrue;
 
 public class MediaWikiParserTest {
@@ -176,7 +177,7 @@ public class MediaWikiParserTest {
         if (matcher.matches()) {
             actualResult = actualResult.substring(1);
         }
-        assertEquals(expectedResult, actualResult);
+        assertThat(actualResult).isEqualTo(expectedResult);
     }
 
 

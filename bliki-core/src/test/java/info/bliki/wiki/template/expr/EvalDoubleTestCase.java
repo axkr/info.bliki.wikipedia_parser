@@ -3,7 +3,7 @@ package info.bliki.wiki.template.expr;
 import info.bliki.wiki.template.expr.eval.DoubleEvaluator;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.fest.assertions.api.Assertions.assertThat;
 
 /**
  * Tests evaluation in <code>double</code> Mediwiki expression mode
@@ -15,10 +15,10 @@ public class EvalDoubleTestCase {
         try {
             DoubleEvaluator engine = new DoubleEvaluator();
             double d = engine.evaluate(in);
-            assertEquals(Double.valueOf(d).toString(), compareWith);
+            assertThat(compareWith).isEqualTo(Double.valueOf(d).toString());
         } catch (Exception e) {
             e.printStackTrace();
-            assertEquals("", e.getMessage());
+            assertThat(e.getMessage()).isEqualTo("");
         }
     }
 

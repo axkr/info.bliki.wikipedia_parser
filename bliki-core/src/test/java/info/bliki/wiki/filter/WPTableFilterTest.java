@@ -2,7 +2,8 @@ package info.bliki.wiki.filter;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.fest.assertions.api.Assertions.assertThat;
+
 public class WPTableFilterTest extends FilterTestSupport {
     // unclosed outer table:
     public static final String TEST = "{| width=\"100%\" cellspacing=\"3\" cellpadding=\"6\"   \n"
@@ -68,8 +69,8 @@ public class WPTableFilterTest extends FilterTestSupport {
     // assertEquals("", wikiModel.render(TEST2));
     // }
     @Test public void testNestedTable1() {
-        assertEquals(
-                "\n" +
+        assertThat(wikiModel
+                .render(TEST, false)).isEqualTo("\n" +
                 "<div style=\"page-break-inside: avoid;\">\n" +
                 "<table cellpadding=\"6\" cellspacing=\"3\" width=\"100%\">\n" +
                 "<tr valign=\"top\">\n" +
@@ -89,12 +90,13 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "<td bgcolor=\"#f0f0ff\">\n" +
                 "</td></tr></table></div>\n" +
                 "\n" +
-                "</td></tr></table></div>", wikiModel
-                        .render(TEST, false));
+                "</td></tr></table></div>");
     }
 
     @Test public void testNestedTable2() {
-        assertEquals("\n" +
+        assertThat(wikiModel.render("{| border=1\n" + "|[[Test Link|Test]]\n"
+                + "| &alpha;\n" + "|\n" + "{| bgcolor=#ABCDEF border=2\n" + "|nested\n" + "|-\n" + "|table\n" + "|}\n"
+                + "|the original table again\n" + "|}", false)).isEqualTo("\n" +
                 "<div style=\"page-break-inside: avoid;\">\n" +
                 "<table border=\"1\">\n" +
                 "<tr>\n" +
@@ -108,14 +110,11 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "<td>nested</td></tr>\n" +
                 "<tr>\n" +
                 "<td>table</td></tr></table></div></td>\n" +
-                "<td>the original table again</td></tr></table></div>", wikiModel.render("{| border=1\n" + "|[[Test Link|Test]]\n"
-                + "| &alpha;\n" + "|\n" + "{| bgcolor=#ABCDEF border=2\n" + "|nested\n" + "|-\n" + "|table\n" + "|}\n"
-                + "|the original table again\n" + "|}", false));
+                "<td>the original table again</td></tr></table></div>");
     }
 
     @Test public void testBlockquoteTable01() {
-        assertEquals(
-                "<h3><span class=\"mw-headline\" id=\"Simple_example\">Simple example</span></h3>\n" +
+        assertThat(wikiModel.render(TEST3, false)).isEqualTo("<h3><span class=\"mw-headline\" id=\"Simple_example\">Simple example</span></h3>\n" +
                 "<p>Both of these generate the same output.  Choose a style based on the number of cells in each row and the total text inside each cell.</p>\n" +
                 "<p><b>Wiki markup</b>\n" +
                 "</p><blockquote style=\"background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;\">\n" +
@@ -148,16 +147,16 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "<tr>\n" +
                 "<td>C</td>\n" +
                 "<td>D</td></tr></table></div>\n</blockquote>\n" +
-                "", wikiModel.render(TEST3, false));
+                "");
     }
 
     @Test public void testBlockquoteTable02() {
-        assertEquals("\n" + "<table>\n" + "\n" + "<tr>\n" + " \n" + "\n" + "\n" + "\n" + "</tr>\n" + "\n" + "</table>\n"
-                + "", wikiModel.render("<table><tr> \n" + "<td></td>\n\n</tr>\n</table>\n", false));
+        assertThat(wikiModel.render("<table><tr> \n" + "<td></td>\n\n</tr>\n</table>\n", false)).isEqualTo("\n" + "<table>\n" + "\n" + "<tr>\n" + " \n" + "\n" + "\n" + "\n" + "</tr>\n" + "\n" + "</table>\n"
+                + "");
     }
 
     @Test public void testBlockquoteTable03() {
-        assertEquals("\n" +
+        assertThat(wikiModel.render("<table><tr> \n" + "<td></td><tr><td></tr></table>\n", false)).isEqualTo("\n" +
                 "<table>\n" +
                 "\n" +
                 "<tr>\n" +
@@ -168,17 +167,17 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "\n" +
                 "</tr>\n" +
                 "</table>\n" +
-                "" + "", wikiModel.render("<table><tr> \n" + "<td></td><tr><td></tr></table>\n", false));
+                "" + "");
     }
 
     @Test public void testBlockquoteTable04() {
-        assertEquals("\n" + "<table>\n" + "\n" + "<tr>\n" + " \n" + "\n" + "<td>number 1</td>\n" + "</tr>\n" + "<tr>\n" + "\n"
-                + "<td>number2\n" + "</td>\n" + "</tr>\n" + "</table>", wikiModel.render("<table><tr> \n"
-                + "<td>number 1<tr><td>number2</table>\n", false));
+        assertThat(wikiModel.render("<table><tr> \n"
+                + "<td>number 1<tr><td>number2</table>\n", false)).isEqualTo("\n" + "<table>\n" + "\n" + "<tr>\n" + " \n" + "\n" + "<td>number 1</td>\n" + "</tr>\n" + "<tr>\n" + "\n"
+                + "<td>number2\n" + "</td>\n" + "</tr>\n" + "</table>");
     }
 
     @Test public void testBlockquoteTable05() {
-        assertEquals("\n" +
+        assertThat(wikiModel.render(TEST5, false)).isEqualTo("\n" +
                 "<table>\n" +
                 "\n" +
                 "<tr>\n" +
@@ -221,11 +220,14 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "<td>15</td></tr></table></div>\n</blockquote></td>\n" +
                 "</tr>\n" +
                 "</table>\n" +
-                "", wikiModel.render(TEST5, false));
+                "");
     }
 
     @Test public void testBlockquoteTable06() {
-        assertEquals("\n" +
+        assertThat(wikiModel
+                .render("<table align=\"center\" border=\"1\" cellspacing=\"0\" cellpadding=\"3\">\n" + "   <tr>\n" + "      <td>1</td>\n"
+                        + "      <td>2</td>\n" + "   </tr> \n" + "   <tr>\n" + "      <td>3</td> \n" + "      <td>4</td> \n" + "   </tr>\n"
+                        + "</table>\n", false)).isEqualTo("\n" +
                 "<table align=\"center\" border=\"1\" cellpadding=\"3\" cellspacing=\"0\">\n" +
                 "\n" +
                 "   \n" +
@@ -248,10 +250,7 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "</tr>\n" +
                 "\n" +
                 "</table>\n" +
-                "", wikiModel
-                .render("<table align=\"center\" border=\"1\" cellspacing=\"0\" cellpadding=\"3\">\n" + "   <tr>\n" + "      <td>1</td>\n"
-                        + "      <td>2</td>\n" + "   </tr> \n" + "   <tr>\n" + "      <td>3</td> \n" + "      <td>4</td> \n" + "   </tr>\n"
-                        + "</table>\n", false));
+                "");
     }
 
     // @Test public void testBlockquoteTable07() {
@@ -259,15 +258,14 @@ public class WPTableFilterTest extends FilterTestSupport {
     // }
 
     @Test public void testMathTable1() {
-        assertEquals("\n" + "<div style=\"page-break-inside: avoid;\">\n" + "<table border=\"1\">\n" + "<tr>\n"
-                + "<td><span class=\"math\">\\frac{1}{|a|} G \\left( \\frac{\\omega}{a} \\right)\\,</span></td></tr></table></div>",
-                wikiModel.render("{| border=1\n" + "|-\n" + "|<math>\\frac{1}{|a|} G \\left( \\frac{\\omega}{a} \\right)\\,</math>\n"
-                        + "|}", false));
+        assertThat(wikiModel.render("{| border=1\n" + "|-\n" + "|<math>\\frac{1}{|a|} G \\left( \\frac{\\omega}{a} \\right)\\,</math>\n"
+                + "|}", false)).isEqualTo("\n" + "<div style=\"page-break-inside: avoid;\">\n" + "<table border=\"1\">\n" + "<tr>\n"
+                + "<td><span class=\"math\">\\frac{1}{|a|} G \\left( \\frac{\\omega}{a} \\right)\\,</span></td></tr></table></div>");
     }
 
     @Test public void testAll() {
-        assertEquals(
-                "\n" +
+        assertThat(wikiModel
+                .render(TEST, false)).isEqualTo("\n" +
                 "<div style=\"page-break-inside: avoid;\">\n" +
                 "<table cellpadding=\"6\" cellspacing=\"3\" width=\"100%\">\n" +
                 "<tr valign=\"top\">\n" +
@@ -287,10 +285,11 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "<td bgcolor=\"#f0f0ff\">\n" +
                 "</td></tr></table></div>\n" +
                 "\n" +
-                "</td></tr></table></div>", wikiModel
-                        .render(TEST, false));
+                "</td></tr></table></div>");
 
-        assertEquals("\n" +
+        assertThat(wikiModel.render("{| border=1\n" + "|[[Test Link|Test]]\n"
+                + "| &alpha;\n" + "|\n" + "{| bgcolor=#ABCDEF border=2\n" + "|nested\n" + "|-\n" + "|table\n" + "|}\n"
+                + "|the original table again\n" + "|}", false)).isEqualTo("\n" +
                 "<div style=\"page-break-inside: avoid;\">\n" +
                 "<table border=\"1\">\n" +
                 "<tr>\n" +
@@ -304,26 +303,33 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "<td>nested</td></tr>\n" +
                 "<tr>\n" +
                 "<td>table</td></tr></table></div></td>\n" +
-                "<td>the original table again</td></tr></table></div>", wikiModel.render("{| border=1\n" + "|[[Test Link|Test]]\n"
-                + "| &alpha;\n" + "|\n" + "{| bgcolor=#ABCDEF border=2\n" + "|nested\n" + "|-\n" + "|table\n" + "|}\n"
-                + "|the original table again\n" + "|}", false));
+                "<td>the original table again</td></tr></table></div>");
 
-        assertEquals("\n" + "<div style=\"page-break-inside: avoid;\">\n" + "<table border=\"1\">\n" + "<tr>\n"
-                + "<td><span class=\"math\">\\frac{1}{|a|} G \\left( \\frac{\\omega}{a} \\right)\\,</span></td></tr></table></div>",
-                wikiModel.render("{| border=1\n" + "|-\n" + "|<math>\\frac{1}{|a|} G \\left( \\frac{\\omega}{a} \\right)\\,</math>\n"
-                        + "|}", false));
+        assertThat(wikiModel.render("{| border=1\n" + "|-\n" + "|<math>\\frac{1}{|a|} G \\left( \\frac{\\omega}{a} \\right)\\,</math>\n"
+                + "|}", false)).isEqualTo("\n" + "<div style=\"page-break-inside: avoid;\">\n" + "<table border=\"1\">\n" + "<tr>\n"
+                + "<td><span class=\"math\">\\frac{1}{|a|} G \\left( \\frac{\\omega}{a} \\right)\\,</span></td></tr></table></div>");
 
-        assertEquals("\n" + "<div style=\"page-break-inside: avoid;\">\n" + "<table class=\"wikitable\" style=\"text-align:left\">\n"
-                + "<caption align=\"bottom\">My special table caption for &#60;Name of Topic&#62;</caption>\n" + "<tr>\n"
-                + "<td><b>Start</b></td>\n" + "<td colspan=\"3\">&#60;From Date - To Date&#62;</td></tr></table></div>", wikiModel
+        assertThat(wikiModel
                 .render("{| class=\"wikitable\" style=\"text-align:left\"\n"
                         + "|+align=\"bottom\"|My special table caption for {{{TopicName|<Name of Topic>}}}\n" + "|-\n" + "|\'\'\'Start\'\'\'\n"
-                        + "| colspan=\"3\" | {{{Period|<From Date - To Date>}}}\n" + "|-\n" + "|}", false));
+                        + "| colspan=\"3\" | {{{Period|<From Date - To Date>}}}\n" + "|-\n" + "|}", false)).isEqualTo("\n" + "<div style=\"page-break-inside: avoid;\">\n" + "<table class=\"wikitable\" style=\"text-align:left\">\n"
+                + "<caption align=\"bottom\">My special table caption for &#60;Name of Topic&#62;</caption>\n" + "<tr>\n"
+                + "<td><b>Start</b></td>\n" + "<td colspan=\"3\">&#60;From Date - To Date&#62;</td></tr></table></div>");
     }
 
     @Test public void testTHTableMix001() {
-        assertEquals(
-                "\n" +
+        assertThat(wikiModel
+                .render("{| class=\"infobox bordered vcard\" style=\"width: 25em; text-align: left; font-size: 95%;\"\n"
+                        + "! colspan=\"2\" style=\"text-align:center; font-size:larger;\" class=\"fn\"| Chris Capuano\n"
+                        + "|-\n"
+                        + "<th colspan=\"2\" style=\"text-align:center;\">[[Image:Cap.jpg|300px]]<br></th>\n"
+                        + "|-\n"
+                        + "| colspan=\"2\" style=\"text-align:center; background: #042462;\"| <span style=\"color:white;\" class=\"note\">'''<span style=\"color:white;\">Milwaukee Brewers</span> — No. 39'''</span>\n"
+                        + "|- style=\"text-align: center;\"\n" + "| ! colspan=\"2\" | '''[[Starting pitcher]]'''\n"
+                        + "|- style=\"text-align: center;\"\n" + "\n" + "|-\n"
+                        + "<th colspan=\"2\" style=\"text-align:center;\">Born: [[18]] [[1978]]<span\n"
+                        + "style=\"display:none\"> (<span class=\"bday\">1978-{{padleft:8}}-{{padleft:\n"
+                        + "18}}</span>)</span><span class=\"noprint\"> (age&nbsp;29)</span></th> \n" + "|-\n" + "|}", false)).isEqualTo("\n" +
                 "<div style=\"page-break-inside: avoid;\">\n" +
                 "<table class=\"infobox bordered vcard\" style=\"width: 25em; text-align: left; font-size: 95%;\">\n" +
                 "<tr>\n" +
@@ -340,30 +346,17 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "<tr>\n" +
                 "<th colspan=\"2\" style=\"text-align:center;\">\n" +
                 "Born: <a href=\"http://www.bliki.info/wiki/18\" title=\"18\">18</a> <a href=\"http://www.bliki.info/wiki/1978\" title=\"1978\">1978</a><span style=\"display:none\"> (<span class=\"bday\">1978-8-18</span>)</span><span class=\"noprint\"> (age 29)</span>\n" +
-                "</th> </tr></table></div>",
-                wikiModel
-                        .render("{| class=\"infobox bordered vcard\" style=\"width: 25em; text-align: left; font-size: 95%;\"\n"
-                                + "! colspan=\"2\" style=\"text-align:center; font-size:larger;\" class=\"fn\"| Chris Capuano\n"
-                                + "|-\n"
-                                + "<th colspan=\"2\" style=\"text-align:center;\">[[Image:Cap.jpg|300px]]<br></th>\n"
-                                + "|-\n"
-                                + "| colspan=\"2\" style=\"text-align:center; background: #042462;\"| <span style=\"color:white;\" class=\"note\">'''<span style=\"color:white;\">Milwaukee Brewers</span> — No. 39'''</span>\n"
-                                + "|- style=\"text-align: center;\"\n" + "| ! colspan=\"2\" | '''[[Starting pitcher]]'''\n"
-                                + "|- style=\"text-align: center;\"\n" + "\n" + "|-\n"
-                                + "<th colspan=\"2\" style=\"text-align:center;\">Born: [[18]] [[1978]]<span\n"
-                                + "style=\"display:none\"> (<span class=\"bday\">1978-{{padleft:8}}-{{padleft:\n"
-                                + "18}}</span>)</span><span class=\"noprint\"> (age&nbsp;29)</span></th> \n" + "|-\n" + "|}", false));
+                "</th> </tr></table></div>");
     }
 
     @Test public void testEmptyCellTable() {
-        assertEquals("\n" + "<div style=\"page-break-inside: avoid;\">\n" + "<table border=\"1\">\n" + "<tr>\n" + "<td></td>\n"
-                + "<td>a.</td></tr>\n" + "<tr>\n" + "<td></td>\n" + "<td>b.</td></tr></table></div>\n" + "", wikiModel
-                .render("{|border=\"1\"\n" + "|\n" + "|a.\n" + "|-\n" + "|\n" + "|b.\n" + "|}\n" + "", false));
+        assertThat(wikiModel
+                .render("{|border=\"1\"\n" + "|\n" + "|a.\n" + "|-\n" + "|\n" + "|b.\n" + "|}\n" + "", false)).isEqualTo("\n" + "<div style=\"page-break-inside: avoid;\">\n" + "<table border=\"1\">\n" + "<tr>\n" + "<td></td>\n"
+                + "<td>a.</td></tr>\n" + "<tr>\n" + "<td></td>\n" + "<td>b.</td></tr></table></div>\n" + "");
     }
 
     @Test public void testBlockquoteTableText01() {
-        assertEquals(
-                "\n" +
+        assertThat(wikiModel.render(new PlainTextConverter(), TEST3, false)).isEqualTo("\n" +
                 "Simple example\n" +
                 "Both of these generate the same output.  Choose a style based on the number of cells in each row and the total text inside each cell. \n" +
                 "Wiki markup\n" +
@@ -391,17 +384,17 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "\n" +
                 "\n" +
                 "\n" +
-                "", wikiModel.render(new PlainTextConverter(), TEST3, false));
+                "");
     }
 
     @Test public void testWPTableText01() {
-        assertEquals("\n" + "\n" + "\n" + "\n" + "Plog4u.org is dedicated to developing a Wikipedia Eclipse Plugin\n" + "     \n"
-                + "\n" + "\n" + " \n" + "\n" + " ", wikiModel.render(new PlainTextConverter(), TEST, false));
+        assertThat(wikiModel.render(new PlainTextConverter(), TEST, false)).isEqualTo("\n" + "\n" + "\n" + "\n" + "Plog4u.org is dedicated to developing a Wikipedia Eclipse Plugin\n" + "     \n"
+                + "\n" + "\n" + " \n" + "\n" + " ");
     }
 
     @Test public void testUmlauts01() {
-        assertEquals("\n" +
-                "Eine große Überraschung", wikiModel.render(new PlainTextConverter(), "Eine große''' <del>Überraschung</del>", false));
+        assertThat(wikiModel.render(new PlainTextConverter(), "Eine große''' <del>Überraschung</del>", false)).isEqualTo("\n" +
+                "Eine große Überraschung");
     }
 
     @Test public void testTableCross() {
@@ -423,7 +416,7 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "<td align=\"center\"><a class=\"image\" href=\"http://www.bliki.info/wiki/Image:140px-test.png\" ><img src=\"http://www.bliki.info/wiki/140px-test.png\" width=\"140\" />\n" +
                 "</a></td></tr></table></div>\n" +
                 "";
-        assertEquals(expected, wikiModel.render(raw, false));
+        assertThat(wikiModel.render(raw, false)).isEqualTo(expected);
     }
 
     // @Test public void testWPTable02() {

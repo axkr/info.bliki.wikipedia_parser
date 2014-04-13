@@ -1,14 +1,15 @@
 package info.bliki.wiki.filter;
 
+import org.fest.assertions.api.Assertions;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.fest.assertions.api.Assertions.assertThat;
 
 public class BehaviorSwitchTest extends FilterTestSupport {
 
 
     @Test public void test001() {
-        assertEquals("\n" +
-                "<p>before  after</p>", wikiModel.render("before __NOEDITSECTION__ after", false));
+        assertThat(wikiModel.render("before __NOEDITSECTION__ after", false)).isEqualTo("\n" +
+                "<p>before  after</p>");
     }
 }

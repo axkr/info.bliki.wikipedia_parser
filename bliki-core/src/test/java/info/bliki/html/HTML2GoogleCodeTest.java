@@ -3,7 +3,7 @@ package info.bliki.html;
 import info.bliki.html.googlecode.ToGoogleCode;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.fest.assertions.api.Assertions.assertThat;
 
 public class HTML2GoogleCodeTest {
 
@@ -11,21 +11,21 @@ public class HTML2GoogleCodeTest {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<b>hello<em>world</em></b>");
         String result = conv.toWiki(new ToGoogleCode());
-        assertEquals(result, "*hello_world_*");
+        assertThat("*hello_world_*").isEqualTo(result);
     }
 
     @Test public void test1() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<ul><li>hello world<ol><li>hello subworld1<ul><li>sub sub test1</li>\n<li>sub sub test2</li></ul></li><li>hello subworld2</li></ol></li><li>second line</li></ul>");
         String result = conv.toWiki(new ToGoogleCode());
-        assertEquals(result, "\n" +
+        assertThat("\n" +
                 "* hello world\n" +
                 " # hello subworld1\n" +
                 "  * sub sub test1\n" +
                 "  * sub sub test2\n" +
                 " # hello subworld2\n" +
                 "* second line\n" +
-                "");
+                "").isEqualTo(result);
     }
 
     @Test public void test2() {
@@ -33,7 +33,7 @@ public class HTML2GoogleCodeTest {
         // invalid nested html test
         conv.setInputHTML("<ul><li>hello world<ol><li>hello subworld</ol><li>second line</ul>");
         String result = conv.toWiki(new ToGoogleCode());
-        assertEquals(result, "\n" + "* hello world\n" + " # hello subworld\n" + "* second line\n" + "");
+        assertThat("\n" + "* hello world\n" + " # hello subworld\n" + "* second line\n" + "").isEqualTo(result);
     }
 
     @Test public void test3() {
@@ -41,7 +41,7 @@ public class HTML2GoogleCodeTest {
         // invalid nested html test
         conv.setInputHTML("<h2>the good</h2><h3>the bad</h3><h2>and the ugly</h2>");
         String result = conv.toWiki(new ToGoogleCode());
-        assertEquals(result, "\n" + "== the good ==\n" + "\n" + "=== the bad ===\n" + "\n" + "== and the ugly ==\n");
+        assertThat("\n" + "== the good ==\n" + "\n" + "=== the bad ===\n" + "\n" + "== and the ugly ==\n").isEqualTo(result);
     }
 
     @Test public void test4() {
@@ -62,66 +62,66 @@ public class HTML2GoogleCodeTest {
                 + "<td><i><a href=\"/wiki/Art_%28Biologie%29\" title=\"Art (Biologie)\">Art</a>:</i></td>\n"
                 + "<td>Afrikanischer Strauß</td>\n" + "</tr>\n" + "</table>");
         String result = conv.toWiki(new ToGoogleCode());
-        assertEquals(result, "                         \n" + "||_[Klasse]:_||[Vögel] (Aves)||\n"
+        assertThat("                         \n" + "||_[Klasse]:_||[Vögel] (Aves)||\n"
                 + "||_[Unterklasse]:_||[Urkiefervögel] (Palaeognathae)||\n" + "||_[Ordnung]:_||[Laufvögel] (Struthioniformes)||\n"
                 + "||_[Familie]:_||Strauße (Struthionidae)||\n" + "||_[Gattung]:_||Strauße (_Struthio_)||\n"
-                + "||_[Art]:_||Afrikanischer Strauß||\n");
+                + "||_[Art]:_||Afrikanischer Strauß||\n").isEqualTo(result);
     }
 
     @Test public void test6() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<b>hello</b> <em>world</em>");
         String result = conv.toWiki(new ToGoogleCode());
-        assertEquals(result, "*hello* _world_");
+        assertThat("*hello* _world_").isEqualTo(result);
     }
 
     @Test public void test7() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<html><body><table>\n<tr>\n<td>hello world</td>\n</tr></table></body></html>");
         String result = conv.toWiki(new ToGoogleCode());
-        assertEquals(result, "   \n" + "||hello world||\n");
+        assertThat("   \n" + "||hello world||\n").isEqualTo(result);
     }
 
     @Test public void test8() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<font size=\"1\">hello</font> <em>world</em>");
         String result = conv.toWiki(new ToGoogleCode(true, true));
-        assertEquals(result, "hello _world_");
+        assertThat("hello _world_").isEqualTo(result);
     }
 
     @Test public void test9() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<h2>hello \n world\n</h2>");
         String result = conv.toWiki(new ToGoogleCode(true, true));
-        assertEquals(result, "\n" + "== hello   world ==\n");
+        assertThat("\n" + "== hello   world ==\n").isEqualTo(result);
     }
 
     @Test public void test10() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<b>hello&nbsp;<em>world</em></b>");
         String result = conv.toWiki(new ToGoogleCode());
-        assertEquals(result, "*hello _world_*");
+        assertThat("*hello _world_*").isEqualTo(result);
     }
 
     @Test public void test11() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<h2> \n \n</h2>");
         String result = conv.toWiki(new ToGoogleCode(true, true));
-        assertEquals(result, "");
+        assertThat("").isEqualTo(result);
     }
 
     @Test public void test12() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<b> </b> <em> </em>");
         String result = conv.toWiki(new ToGoogleCode());
-        assertEquals(result, "   ");
+        assertThat("   ").isEqualTo(result);
     }
 
     @Test public void test13() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<div> </div>");
         String result = conv.toWiki(new ToGoogleCode());
-        assertEquals(result, " ");
+        assertThat(" ").isEqualTo(result);
     }
 
     @Test public void test14() {
@@ -130,7 +130,7 @@ public class HTML2GoogleCodeTest {
         conv
                 .setInputHTML("<h2>the <a href=\"http://good\">good</a></h2><h3>the <div>bad</div></h3><h2>and <b><i>the</i> ugly</b></h2>");
         String result = conv.toWiki(new ToGoogleCode());
-        assertEquals(result, "\n" + "== the good ==\n" + "\n" + "=== the bad ===\n" + "\n" + "== and the ugly ==\n");
+        assertThat("\n" + "== the good ==\n" + "\n" + "=== the bad ===\n" + "\n" + "== and the ugly ==\n").isEqualTo(result);
     }
 
     @Test public void test15() {
@@ -138,7 +138,7 @@ public class HTML2GoogleCodeTest {
         // invalid nested html test
         conv.setInputHTML("The <a href=\"http://good\">good</a> the <div>bad</div> and <b><i>the</i> ugly</b>");
         String result = conv.toWiki(new ToGoogleCode());
-        assertEquals(result, "The [good] the bad and *_the_ ugly*");
+        assertThat("The [good] the bad and *_the_ ugly*").isEqualTo(result);
     }
 
     @Test public void test16() {
@@ -152,9 +152,9 @@ public class HTML2GoogleCodeTest {
                 "                    <td align=\"left\" valign=\"top\">Set the html accesskey attribute on rendered html element</td>\n" +
                 "   </tr></table>");
         String result = conv.toWiki(new ToGoogleCode());
-        assertEquals(result, "          \n" +
+        assertThat("          \n" +
                 "||accesskey||false|| ||false||String||Set the html accesskey attribute on rendered html element||\n" +
-                "");
+                "").isEqualTo(result);
     }
 
     @Test public void test17() {
@@ -163,9 +163,9 @@ public class HTML2GoogleCodeTest {
                 "                    <td align=\"left\" valign=\"top\"></td>             \n" +
                 "   </tr></table>");
         String result = conv.toWiki(new ToGoogleCode());
-        assertEquals(result, "    \n" +
+        assertThat("    \n" +
                 "|| ||\n" +
-                "");
+                "").isEqualTo(result);
     }
 
     public static void main(String[] args) {

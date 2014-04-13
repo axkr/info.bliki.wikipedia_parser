@@ -3,17 +3,15 @@ package info.bliki.wiki.tags.code;
 import info.bliki.wiki.filter.FilterTestSupport;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.fest.assertions.api.Assertions.assertThat;
 
 public class PHPTest extends FilterTestSupport
 {
-    @Test public void testPHP()
-    {
+    @Test public void testPHP() {
         String result = wikiModel.render("<source lang=php>\n" + "<?php\n" + "/* A simple php script */\n" + " \n" + "$choice = $_GET[\'foo\'];\n"
                 + "if ( $choice == 1 )\n" + "{\n" + "  echo \"Hello world\";\n" + "}\n" + "# end of script\n" + "?>\n" + "</source>", false);
 
-        assertEquals(
-                "<pre class=\"php\">\n" +
+        assertThat(result).isEqualTo("<pre class=\"php\">\n" +
                 "<span style=\"color:#7F0055; font-weight: bold; \">&#60;?php</span>\n" +
                 "<span style=\"color:#3F7F5F; \">/* A simple php script */</span>\n" +
                 " \n" +
@@ -24,6 +22,6 @@ public class PHPTest extends FilterTestSupport
                 "}\n" +
                 "# end of script\n" +
                 "<span style=\"color:#7F0055; font-weight: bold; \">?&#62;</span>\n" +
-                "</pre>", result);
+                "</pre>");
     }
 }

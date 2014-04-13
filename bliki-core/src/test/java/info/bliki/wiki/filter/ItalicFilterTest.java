@@ -2,15 +2,16 @@ package info.bliki.wiki.filter;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.fest.assertions.api.Assertions.assertThat;
+
 public class ItalicFilterTest extends FilterTestSupport {
 
     @Test public void testEM() {
-        assertEquals("\n" + "<p>a <em> project </em>.</p>", wikiModel.render("a <em> project </em>.", false));
+        assertThat(wikiModel.render("a <em> project </em>.", false)).isEqualTo("\n" + "<p>a <em> project </em>.</p>");
     }
 
     @Test public void testItalic01() {
-        assertEquals("\n" + "<p><i>Text</i></p>", wikiModel.render("''Text''", false));
+        assertThat(wikiModel.render("''Text''", false)).isEqualTo("\n" + "<p><i>Text</i></p>");
     }
 
 //    @Test public void testItalic02() {
@@ -21,6 +22,6 @@ public class ItalicFilterTest extends FilterTestSupport {
 //    }
 
     @Test public void testItalicWithPunctuation() {
-        assertEquals("\n" + "<p><i>Text</i>:</p>", wikiModel.render("''Text'':", false));
+        assertThat(wikiModel.render("''Text'':", false)).isEqualTo("\n" + "<p><i>Text</i>:</p>");
     }
 }

@@ -2,7 +2,8 @@ package info.bliki.wiki.filter;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.fest.assertions.api.Assertions.assertThat;
+
 public class TemplateSubstParserTest extends FilterTestSupport {
 
     /**
@@ -11,8 +12,8 @@ public class TemplateSubstParserTest extends FilterTestSupport {
      * Substitution</a>
      */
     @Test public void testSubst001() {
-        assertEquals("", wikiModel.parseTemplates("{{subst:}}", false));
-        assertEquals("a nested template text", wikiModel.parseTemplates("{{subst:Nested}}", false));
+        assertThat(wikiModel.parseTemplates("{{subst:}}", false)).isEqualTo("");
+        assertThat(wikiModel.parseTemplates("{{subst:Nested}}", false)).isEqualTo("a nested template text");
     }
 
     /**
@@ -21,7 +22,7 @@ public class TemplateSubstParserTest extends FilterTestSupport {
      * Substitution</a>
      */
     @Test public void testSubst002() {
-        assertEquals("File", wikiModel.parseTemplates("{{subst:ns:{{subst:#expr:2*3}}}}", false));
+        assertThat(wikiModel.parseTemplates("{{subst:ns:{{subst:#expr:2*3}}}}", false)).isEqualTo("File");
     }
 
     /**
@@ -30,7 +31,7 @@ public class TemplateSubstParserTest extends FilterTestSupport {
      * Substitution</a>
      */
     @Test public void testSubst003() {
-        assertEquals("File", wikiModel.parseTemplates("{{ns:{{subst:#expr:2*3}}}}", false));
+        assertThat(wikiModel.parseTemplates("{{ns:{{subst:#expr:2*3}}}}", false)).isEqualTo("File");
     }
 
     /**
@@ -39,7 +40,7 @@ public class TemplateSubstParserTest extends FilterTestSupport {
      * Substitution</a>
      */
     @Test public void testSubst004() {
-        assertEquals("1.0e-5", wikiModel.parseTemplates("{{subst:LC:{{subst:#expr:1/100000}}}}", false));
+        assertThat(wikiModel.parseTemplates("{{subst:LC:{{subst:#expr:1/100000}}}}", false)).isEqualTo("1.0e-5");
     }
 
     /**
@@ -48,27 +49,27 @@ public class TemplateSubstParserTest extends FilterTestSupport {
      * Substitution</a>
      */
     @Test public void testSubst005() {
-        assertEquals("IN", wikiModel.parseTemplates("{{subst:UC:{{subst:tc}}}}", false));
+        assertThat(wikiModel.parseTemplates("{{subst:UC:{{subst:tc}}}}", false)).isEqualTo("IN");
     }
 
     @Test public void testSubst006() {
         // http://www.mediawiki.org/wiki/Manual:Substitution#Predefined_templates
         wikiModel.setNamespaceName("help");
-        assertEquals("startHelpend", wikiModel.parseTemplates("{{subst:t1|{{subst:NAMESPACE}}}}", true));
-        assertEquals("startHelpend", wikiModel.parseTemplates("{{subst:t1|{{subst:NAMESPACE}}}}", false));
+        assertThat(wikiModel.parseTemplates("{{subst:t1|{{subst:NAMESPACE}}}}", true)).isEqualTo("startHelpend");
+        assertThat(wikiModel.parseTemplates("{{subst:t1|{{subst:NAMESPACE}}}}", false)).isEqualTo("startHelpend");
         wikiModel.setNamespaceName("");
     }
 
     @Test public void testSubst007() {
-        assertEquals("yes", wikiModel.parseTemplates("{{subst:#if:{{x0}}|yes|no}}"));
+        assertThat(wikiModel.parseTemplates("{{subst:#if:{{x0}}|yes|no}}")).isEqualTo("yes");
     }
 
     @Test public void testSubst008() {
-        assertEquals("no", wikiModel.parseTemplates("{{subst:#if:{{subst:x0}}|yes|no}}"));
+        assertThat(wikiModel.parseTemplates("{{subst:#if:{{subst:x0}}|yes|no}}")).isEqualTo("no");
     }
 
     @Test public void testSubst009() {
-        assertEquals("6", wikiModel
-                .parseTemplates("{{subst:#expr:2*{{{p|3}}}}}"));
+        assertThat(wikiModel
+                .parseTemplates("{{subst:#expr:2*{{{p|3}}}}}")).isEqualTo("6");
     }
 }

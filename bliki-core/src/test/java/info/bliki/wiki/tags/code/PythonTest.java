@@ -3,16 +3,17 @@ package info.bliki.wiki.tags.code;
 import info.bliki.wiki.filter.FilterTestSupport;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.fest.assertions.api.Assertions.assertThat;
+
 public class PythonTest extends FilterTestSupport {
     @Test public void testPython() {
         String result = wikiModel.render("<source lang=python>\n" + "# Python: \"Hello, world!\"\n" + "print \"Hello, world!\"\n"
                 + "# last comment line" + "</source>", false);
 
-        assertEquals("<pre class=\"python\">\n" +
+        assertThat(result).isEqualTo("<pre class=\"python\">\n" +
                 "<span style=\"color:#3F7F5F; \"># Python: &#34;Hello, world!&#34;\n" +
                 "</span><span style=\"color:#7F0055; \">print</span> <span style=\"color:#2A00FF; \">&#34;Hello, world!&#34;</span>\n" +
-                "<span style=\"color:#3F7F5F; \"># last comment line</span></pre>", result);
+                "<span style=\"color:#3F7F5F; \"># last comment line</span></pre>");
     }
 
 }

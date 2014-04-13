@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.fest.assertions.api.Assertions.assertThat;
 
 public class TemplateFunctionsTest  {
 
@@ -22,70 +22,70 @@ public class TemplateFunctionsTest  {
 
     @Test public void testIf01() {
         // {{ #if: {{{x| }}} | not blank | blank }} = blank
-        assertEquals("blank", wikiModel.parseTemplates("{{ #if: {{{x| }}} | not blank | blank }}", false));
+        assertThat(wikiModel.parseTemplates("{{ #if: {{{x| }}} | not blank | blank }}", false)).isEqualTo("blank");
     }
 
     @Test public void testIferror01() {
-        assertEquals("correct", wikiModel.parseTemplates("{{#iferror: {{#expr: 1 + 2 }} | error | correct }}", false));
+        assertThat(wikiModel.parseTemplates("{{#iferror: {{#expr: 1 + 2 }} | error | correct }}", false)).isEqualTo("correct");
     }
 
     @Test public void testIferror02() {
-        assertEquals("error", wikiModel.parseTemplates("{{#iferror: {{#expr: 1 + X }} | error | correct }}", false));
+        assertThat(wikiModel.parseTemplates("{{#iferror: {{#expr: 1 + X }} | error | correct }}", false)).isEqualTo("error");
     }
 
     @Test public void testIferror03() {
-        assertEquals("3", wikiModel.parseTemplates("{{#iferror: {{#expr: 1 + 2 }} | error }}", false));
+        assertThat(wikiModel.parseTemplates("{{#iferror: {{#expr: 1 + 2 }} | error }}", false)).isEqualTo("3");
     }
 
     @Test public void testIferror04() {
-        assertEquals("error", wikiModel.parseTemplates("{{#iferror: {{#expr: 1 * }} | error }}", false));
+        assertThat(wikiModel.parseTemplates("{{#iferror: {{#expr: 1 * }} | error }}", false)).isEqualTo("error");
     }
 
     @Test public void testIferror05() {
-        assertEquals("3", wikiModel.parseTemplates("{{#iferror: {{#expr: 1 + 2 }} }}", false));
+        assertThat(wikiModel.parseTemplates("{{#iferror: {{#expr: 1 + 2 }} }}", false)).isEqualTo("3");
     }
 
     @Test public void testIferror06() {
-        assertEquals("", wikiModel.parseTemplates("{{#iferror: {{#expr: 1 + X }} }}", false));
+        assertThat(wikiModel.parseTemplates("{{#iferror: {{#expr: 1 + X }} }}", false)).isEqualTo("");
     }
 
     @Test public void testIfEq01() {
         // {{ #ifeq: +07 | 007 | 1 | 0 }} gives 1
-        assertEquals("1", wikiModel.parseTemplates("{{ #ifeq: +07 | 007 | 1 | 0 }}", false));
+        assertThat(wikiModel.parseTemplates("{{ #ifeq: +07 | 007 | 1 | 0 }}", false)).isEqualTo("1");
     }
 
     @Test public void testIfEq02() {
         // {{ #ifeq: "+07" | "007" | 1 | 0 }} gives 0
-        assertEquals("0", wikiModel.parseTemplates("{{ #ifeq: \"+07\" | \"007\" | 1 | 0 }}", false));
+        assertThat(wikiModel.parseTemplates("{{ #ifeq: \"+07\" | \"007\" | 1 | 0 }}", false)).isEqualTo("0");
     }
 
     @Test public void testIfEq03() {
         // {{ #ifeq: A | a | 1 | 0 }} gives 0
-        assertEquals("0", wikiModel.parseTemplates("{{ #ifeq: A | a | 1 | 0 }}", false));
+        assertThat(wikiModel.parseTemplates("{{ #ifeq: A | a | 1 | 0 }}", false)).isEqualTo("0");
     }
 
     @Test public void testIfEq05() {
         // {{ #ifeq: {{{x| }}} | | blank | not blank }} = blank,
-        assertEquals("blank", wikiModel.parseTemplates("{{ #ifeq: {{{x| }}} | | blank | not blank }}", false));
+        assertThat(wikiModel.parseTemplates("{{ #ifeq: {{{x| }}} | | blank | not blank }}", false)).isEqualTo("blank");
     }
 
     @Test public void testIfEq06() {
         // {{ #ifeq: {{{x| }}} | {{{x|u}}} | defined | undefined }} = undefined.
-        assertEquals("undefined", wikiModel.parseTemplates("{{ #ifeq: {{{x| }}} | {{{x|u}}} | defined | undefined }}", false));
+        assertThat(wikiModel.parseTemplates("{{ #ifeq: {{{x| }}} | {{{x|u}}} | defined | undefined }}", false)).isEqualTo("undefined");
     }
 
     @Test public void testIfEq07() {
         // {{ #ifeq: {{{x}}} | {{concat| {|{|{x}|}|} }} | 1 | 0 }} = 1
-        assertEquals(" {{{x}}} ", wikiModel.parseTemplates("{{concat| {|{|{x}|}|} }}", false));
+        assertThat(wikiModel.parseTemplates("{{concat| {|{|{x}|}|} }}", false)).isEqualTo(" {{{x}}} ");
 
-        assertEquals("1", wikiModel.parseTemplates("{{ #ifeq: {{{x}}} | {{concat| {|{|{x}|}|} }} | 1 | 0 }}", false));
+        assertThat(wikiModel.parseTemplates("{{ #ifeq: {{{x}}} | {{concat| {|{|{x}|}|} }} | 1 | 0 }}", false)).isEqualTo("1");
     }
 
     @Test public void testRendererForST() throws Exception {
         wikiModel.setAttribute("created", new GregorianCalendar(2005, 07 - 1, 05));
         wikiModel.registerRenderer(GregorianCalendar.class, wikiModel.new DateRenderer());
         String expecting = "date: 2005.07.05";
-        assertEquals(expecting, wikiModel.parseTemplates("date: {{#$:created}}"));
+        assertThat(wikiModel.parseTemplates("date: {{#$:created}}")).isEqualTo(expecting);
     }
 
     @Test public void testRendererWithFormatAndList() throws Exception {
@@ -94,7 +94,7 @@ public class TemplateFunctionsTest  {
         wikiModel.setAttribute("names", "sriram");
         wikiModel.registerRenderer(String.class, wikiModel.new UppercaseRenderer());
         String expecting = "The names: TERTOMSRIRAM";
-        assertEquals(expecting, wikiModel.parseTemplates("The names: {{#$:names|upper}}"));
+        assertThat(wikiModel.parseTemplates("The names: {{#$:names|upper}}")).isEqualTo(expecting);
     }
 
     @Test public void testRendererWithFormatAndSeparator() throws Exception {
@@ -103,7 +103,7 @@ public class TemplateFunctionsTest  {
         wikiModel.setAttribute("names", "sriram");
         wikiModel.registerRenderer(String.class, wikiModel.new UppercaseRenderer());
         String expecting = "The names: TER and TOM and SRIRAM";
-        assertEquals(expecting, wikiModel.parseTemplates("The names: {{#$:names|upper|' and '}}"));
+        assertThat(wikiModel.parseTemplates("The names: {{#$:names|upper|' and '}}")).isEqualTo(expecting);
     }
 
     @Test public void testRendererWithFormatAndSeparatorAndNull() throws Exception {
@@ -114,7 +114,7 @@ public class TemplateFunctionsTest  {
         wikiModel.setAttribute("names", names);
         wikiModel.registerRenderer(String.class, wikiModel.new UppercaseRenderer());
         String expecting = "The names: TER and N/A and SRIRAM";
-        assertEquals(expecting, wikiModel.parseTemplates("The names: {{#$:names|upper|' and '|n/a}}"));
+        assertThat(wikiModel.parseTemplates("The names: {{#$:names|upper|' and '|n/a}}")).isEqualTo(expecting);
     }
 
     /**
@@ -123,7 +123,7 @@ public class TemplateFunctionsTest  {
      * >Help:Calculation - Operators, numbers, and constants</a>
      */
     @Test public void testMod_001() {
-        assertEquals("2", wikiModel.parseTemplates("{{#expr:30mod7}}"));
+        assertThat(wikiModel.parseTemplates("{{#expr:30mod7}}")).isEqualTo("2");
     }
 
     /**
@@ -132,7 +132,7 @@ public class TemplateFunctionsTest  {
      * >Help:Calculation - Operators, numbers, and constants</a>
      */
     @Test public void testMod_002() {
-        assertEquals("-2", wikiModel.parseTemplates("{{#expr:-30mod7}}"));
+        assertThat(wikiModel.parseTemplates("{{#expr:-30mod7}}")).isEqualTo("-2");
     }
 
     /**
@@ -141,7 +141,7 @@ public class TemplateFunctionsTest  {
      * >Help:Calculation - Operators, numbers, and constants</a>
      */
     @Test public void testMod_003() {
-        assertEquals("2", wikiModel.parseTemplates("{{#expr:30mod-7}}"));
+        assertThat(wikiModel.parseTemplates("{{#expr:30mod-7}}")).isEqualTo("2");
     }
 
     /**
@@ -150,7 +150,7 @@ public class TemplateFunctionsTest  {
      * >Help:Calculation - Operators, numbers, and constants</a>
      */
     @Test public void testMod_004() {
-        assertEquals("-2", wikiModel.parseTemplates("{{#expr:-30mod-7}}"));
+        assertThat(wikiModel.parseTemplates("{{#expr:-30mod-7}}")).isEqualTo("-2");
     }
 
     /**
@@ -159,14 +159,14 @@ public class TemplateFunctionsTest  {
      * >Help:Calculation - Operators, numbers, and constants</a>
      */
     @Test public void testMod_005() {
-        assertEquals("2", wikiModel.parseTemplates("{{#expr:30.5mod7.9}}"));
+        assertThat(wikiModel.parseTemplates("{{#expr:30.5mod7.9}}")).isEqualTo("2");
     }
 
     @Test public void testMod10_001() {
-        assertEquals("5", wikiModel.parseTemplates("{{#expr:0.515654*1E1mod10}}"));
+        assertThat(wikiModel.parseTemplates("{{#expr:0.515654*1E1mod10}}")).isEqualTo("5");
     }
 
     @Test public void testMod10_002() {
-        assertEquals("0", wikiModel.parseTemplates("{{#expr:0.515654mod10}}"));
+        assertThat(wikiModel.parseTemplates("{{#expr:0.515654mod10}}")).isEqualTo("0");
     }
 }

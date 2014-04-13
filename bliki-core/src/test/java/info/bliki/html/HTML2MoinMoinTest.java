@@ -3,7 +3,7 @@ package info.bliki.html;
 import info.bliki.html.googlecode.ToMoinMoin;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.fest.assertions.api.Assertions.assertThat;
 
 public class HTML2MoinMoinTest {
 
@@ -12,7 +12,7 @@ public class HTML2MoinMoinTest {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<b>hello<em>world</em></b>");
         String result = conv.toWiki(new ToMoinMoin());
-        assertEquals(result, "'''hello''world'''''");
+        assertThat("'''hello''world'''''").isEqualTo(result);
     }
 
     @Test public void test1() {
@@ -20,8 +20,8 @@ public class HTML2MoinMoinTest {
         conv
                 .setInputHTML("<ul><li>hello world<ol><li>hello subworld1<ul><li>sub sub test1</li>\n<li>sub sub test2</li></ul></li><li>hello subworld2</li></ol></li><li>second line</li></ul>");
         String result = conv.toWiki(new ToMoinMoin());
-        assertEquals(result, "\n" + "* hello world\n" + " 1. hello subworld1\n" + "  * sub sub test1\n"
-                + "  * sub sub test2\n" + " 1. hello subworld2\n" + "* second line\n" + "");
+        assertThat("\n" + "* hello world\n" + " 1. hello subworld1\n" + "  * sub sub test1\n"
+                + "  * sub sub test2\n" + " 1. hello subworld2\n" + "* second line\n" + "").isEqualTo(result);
     }
 
     @Test public void test2() {
@@ -29,7 +29,7 @@ public class HTML2MoinMoinTest {
         // invalid nested html test
         conv.setInputHTML("<ul><li>hello world<ol><li>hello subworld</ol><li>second line</ul>");
         String result = conv.toWiki(new ToMoinMoin());
-        assertEquals(result, "\n" + "* hello world\n" + " 1. hello subworld\n" + "* second line\n" + "");
+        assertThat("\n" + "* hello world\n" + " 1. hello subworld\n" + "* second line\n" + "").isEqualTo(result);
     }
 
     @Test public void test3() {
@@ -37,7 +37,7 @@ public class HTML2MoinMoinTest {
         // invalid nested html test
         conv.setInputHTML("<h2>the good</h2><h3>the bad</h3><h2>and the ugly</h2>");
         String result = conv.toWiki(new ToMoinMoin());
-        assertEquals(result, "\n" + "== the good ==\n" + "\n" + "=== the bad ===\n" + "\n" + "== and the ugly ==\n");
+        assertThat("\n" + "== the good ==\n" + "\n" + "=== the bad ===\n" + "\n" + "== and the ugly ==\n").isEqualTo(result);
     }
 
     @Test public void test4() {
@@ -58,70 +58,70 @@ public class HTML2MoinMoinTest {
                 + "<td><i><a href=\"/wiki/Art_%28Biologie%29\" title=\"Art (Biologie)\">Art</a>:</i></td>\n"
                 + "<td>Afrikanischer Strauß</td>\n" + "</tr>\n" + "</table>");
         String result = conv.toWiki(new ToMoinMoin());
-        assertEquals(result, "                         \n" +
+        assertThat("                         \n" +
                 "||\'\'[[Klasse]]:\'\'||[[Vögel]] (Aves)||\n" +
                 "||\'\'[[Unterklasse]]:\'\'||[[Urkiefervögel]] (Palaeognathae)||\n" +
                 "||\'\'[[Ordnung]]:\'\'||[[Laufvögel]] (Struthioniformes)||\n" +
                 "||\'\'[[Familie]]:\'\'||Strauße (Struthionidae)||\n" +
                 "||\'\'[[Gattung]]:\'\'||Strauße (\'\'Struthio\'\')||\n" +
                 "||\'\'[[Art]]:\'\'||Afrikanischer Strauß||\n" +
-                "");
+                "").isEqualTo(result);
     }
 
     @Test public void test6() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<b>hello</b> <em>world</em>");
         String result = conv.toWiki(new ToMoinMoin());
-        assertEquals(result, "'''hello''' ''world''");
+        assertThat("'''hello''' ''world''").isEqualTo(result);
     }
 
     @Test public void test7() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<html><body><table>\n<tr>\n<td>hello world</td>\n</tr></table></body></html>");
         String result = conv.toWiki(new ToMoinMoin());
-        assertEquals(result, "   \n" + "||hello world||\n");
+        assertThat("   \n" + "||hello world||\n").isEqualTo(result);
     }
 
     @Test public void test8() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<font size=\"1\">hello</font> <em>world</em>");
         String result = conv.toWiki(new ToMoinMoin(true, true));
-        assertEquals(result, "hello ''world''");
+        assertThat("hello ''world''").isEqualTo(result);
     }
 
     @Test public void test9() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<h2>hello \n world\n</h2>");
         String result = conv.toWiki(new ToMoinMoin(true, true));
-        assertEquals(result, "\n" + "== hello   world ==\n");
+        assertThat("\n" + "== hello   world ==\n").isEqualTo(result);
     }
 
     @Test public void test10() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<b>hello&nbsp;<em>world</em></b>");
         String result = conv.toWiki(new ToMoinMoin());
-        assertEquals(result, "'''hello ''world'''''");
+        assertThat("'''hello ''world'''''").isEqualTo(result);
     }
 
     @Test public void test11() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<h2> \n \n</h2>");
         String result = conv.toWiki(new ToMoinMoin(true, true));
-        assertEquals(result, "");
+        assertThat("").isEqualTo(result);
     }
 
     @Test public void test12() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<b> </b> <em> </em>");
         String result = conv.toWiki(new ToMoinMoin());
-        assertEquals(result, "   ");
+        assertThat("   ").isEqualTo(result);
     }
 
     @Test public void test13() {
         HTML2WikiConverter conv = new HTML2WikiConverter();
         conv.setInputHTML("<div> </div>");
         String result = conv.toWiki(new ToMoinMoin());
-        assertEquals(result, " ");
+        assertThat(" ").isEqualTo(result);
     }
 
     @Test public void test14() {
@@ -130,7 +130,7 @@ public class HTML2MoinMoinTest {
         conv
                 .setInputHTML("<h2>the <a href=\"http://good\">good</a></h2><h3>the <div>bad</div></h3><h2>and <b><i>the</i> ugly</b></h2>");
         String result = conv.toWiki(new ToMoinMoin());
-        assertEquals(result, "\n" + "== the good ==\n" + "\n" + "=== the bad ===\n" + "\n" + "== and the ugly ==\n");
+        assertThat("\n" + "== the good ==\n" + "\n" + "=== the bad ===\n" + "\n" + "== and the ugly ==\n").isEqualTo(result);
     }
 
     @Test public void test15() {
@@ -138,7 +138,7 @@ public class HTML2MoinMoinTest {
         // invalid nested html test
         conv.setInputHTML("The <a href=\"http://good\">good</a> the <div>bad</div> and <b><i>the</i> ugly</b>");
         String result = conv.toWiki(new ToMoinMoin());
-        assertEquals(result, "The [[good]] the bad and '''''the'' ugly'''");
+        assertThat("The [[good]] the bad and '''''the'' ugly'''").isEqualTo(result);
     }
 
     public static void main(String[] args) {

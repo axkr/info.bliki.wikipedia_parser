@@ -3,7 +3,8 @@ package info.bliki.wiki.tags.code;
 import info.bliki.wiki.filter.FilterTestSupport;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.fest.assertions.api.Assertions.assertThat;
+
 public class XMLTest extends FilterTestSupport {
     @Test public void testXml() {
         String result = wikiModel.render("\'\'\'XML example:\'\'\'\n" + "<source lang=xml>\n" + "  <extension\n"
@@ -11,8 +12,7 @@ public class XMLTest extends FilterTestSupport {
                 + "              primary=\"true\">\n" + "     <!-- simple comment -->                      \n" + "        </toc>\n"
                 + "  </extension>\n" + "</source>", false);
 
-        assertEquals(
-                "\n" +
+        assertThat(result).isEqualTo("\n" +
                 "<p><b>XML example:</b>\n" +
                 "</p><pre class=\"xml\">\n" +
                 "  <span style=\"color:#7F0055; font-weight: bold; \">&#60;extension</span>\n" +
@@ -23,7 +23,7 @@ public class XMLTest extends FilterTestSupport {
                 "     <span style=\"color:#3F7F5F; \">&#60;!-- simple comment --&#62;</span>                      \n" +
                 "        <span style=\"color:#7F0055; font-weight: bold; \">&#60;/toc&#62;</span>\n" +
                 "  <span style=\"color:#7F0055; font-weight: bold; \">&#60;/extension&#62;</span>\n" +
-                "</pre>", result);
+                "</pre>");
     }
 
     @Test public void testXmlWithoutLangAttr() {
@@ -32,8 +32,7 @@ public class XMLTest extends FilterTestSupport {
                 + "              primary=\"true\">\n" + "     <!-- simple comment -->                      \n" + "        </toc>\n"
                 + "  </extension>\n" + "</source>", false);
 
-        assertEquals(
-                "\n" +
+        assertThat(result).isEqualTo("\n" +
                 "<p><b>XML example:</b>\n" +
                 "</p><pre class=\"xml\">\n" +
                 "  <span style=\"color:#7F0055; font-weight: bold; \">&#60;extension</span>\n" +
@@ -44,7 +43,7 @@ public class XMLTest extends FilterTestSupport {
                 "     <span style=\"color:#3F7F5F; \">&#60;!-- simple comment --&#62;</span>                      \n" +
                 "        <span style=\"color:#7F0055; font-weight: bold; \">&#60;/toc&#62;</span>\n" +
                 "  <span style=\"color:#7F0055; font-weight: bold; \">&#60;/extension&#62;</span>\n" +
-                "</pre>", result);
+                "</pre>");
     }
 
     @Test public void testXmlColon() {
@@ -53,7 +52,7 @@ public class XMLTest extends FilterTestSupport {
                 + "   <!-- das ist der kommentar -->\n"
                 + "</ui:remove>\n" + "</source>\n test", false);
 
-        assertEquals("\n" +
+        assertThat(result).isEqualTo("\n" +
                 "<p>a <b>simple XML</b> \n" +
                 "</p><pre class=\"xml\">\n" +
                 "<span style=\"color:#7F0055; font-weight: bold; \">&#60;ui:remove&#62;</span>\n" +
@@ -62,7 +61,7 @@ public class XMLTest extends FilterTestSupport {
                 "</pre>\n" +
                 "<pre>" +
                 "test\n" +
-                "</pre>", result);
+                "</pre>");
     }
 
     @Test public void testXmlColonNotClosed() {
@@ -71,13 +70,13 @@ public class XMLTest extends FilterTestSupport {
                 + "   <!-- das ist der kommentar -->\n"
                 + "</ui:remove>\n" + "</src>\n test", false);
 
-        assertEquals("\n" +
+        assertThat(result).isEqualTo("\n" +
                 "<p>a <b>simple XML</b> \n" +
                 "</p><pre class=\"xml\">\n" +
                 "<span style=\"color:#7F0055; font-weight: bold; \">&#60;ui:remove&#62;</span>\n" +
                 "   <span style=\"color:#3F7F5F; \">&#60;!-- das ist der kommentar --&#62;</span>\n" +
                 "<span style=\"color:#7F0055; font-weight: bold; \">&#60;/ui:remove&#62;</span>\n" +
                 "<span style=\"color:#7F0055; font-weight: bold; \">&#60;/src&#62;</span>\n" +
-                " test</pre>", result);
+                " test</pre>");
     }
 }

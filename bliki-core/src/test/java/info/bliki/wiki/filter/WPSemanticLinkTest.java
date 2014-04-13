@@ -6,8 +6,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.fest.assertions.api.Assertions.assertThat;
 
 public class WPSemanticLinkTest extends FilterTestSupport {
 
@@ -25,14 +24,12 @@ public class WPSemanticLinkTest extends FilterTestSupport {
      */
     @Test public void testLink01() {
 
-        assertEquals(
-                "\n"
-                        + "<p>Berlin is the capital of <a class=\"interwiki\" href=\"http://www.bliki.info/wiki/Germany\" title=\"Germany\">Germany</a>.</p>",
-                wikiModel.render("Berlin is the capital of [[Is capital of::Germany]].", false));
+        assertThat(wikiModel.render("Berlin is the capital of [[Is capital of::Germany]].", false)).isEqualTo("\n"
+                + "<p>Berlin is the capital of <a class=\"interwiki\" href=\"http://www.bliki.info/wiki/Germany\" title=\"Germany\">Germany</a>.</p>");
         List<SemanticRelation> list = wikiModel.getSemanticRelations();
         SemanticRelation rel = list.get(0);
-        assertTrue(rel.getRelation().equals("Is capital of"));
-        assertTrue(rel.getValue().equals("Germany"));
+        assertThat(rel.getRelation()).isEqualTo("Is capital of");
+        assertThat(rel.getValue()).isEqualTo("Germany");
     }
 
     /*
@@ -43,41 +40,39 @@ public class WPSemanticLinkTest extends FilterTestSupport {
      */
     @Test public void testLink02() {
 
-        assertEquals("\n<p>The population is 3,993,933.</p>", wikiModel.render("The population is [[Has population:=3,993,933]].", false));
+        assertThat(wikiModel.render("The population is [[Has population:=3,993,933]].", false)).isEqualTo("\n<p>The population is 3,993,933.</p>");
         List<SemanticAttribute> list = wikiModel.getSemanticAttributes();
         SemanticAttribute rel = list.get(0);
-        assertTrue(rel.getAttribute().equals("Has population"));
-        assertTrue(rel.getValue().equals("3,993,933"));
+        assertThat(rel.getAttribute()).isEqualTo("Has population");
+        assertThat(rel.getValue()).isEqualTo("3,993,933");
     }
 
     @Test public void testLink03() {
 
-        assertEquals(
-                "\n"
-                        + "<p>Make <a class=\"interwiki\" href=\"http://www.bliki.info/wiki/Link\" title=\"Link\">alternate text</a> appear in place of the link.</p>",
-                wikiModel.render("Make [[example relation::link|alternate text]] appear in place of the link.", false));
+        assertThat(wikiModel.render("Make [[example relation::link|alternate text]] appear in place of the link.", false)).isEqualTo("\n"
+                + "<p>Make <a class=\"interwiki\" href=\"http://www.bliki.info/wiki/Link\" title=\"Link\">alternate text</a> appear in place of the link.</p>");
         List<SemanticRelation> list = wikiModel.getSemanticRelations();
         SemanticRelation rel = list.get(0);
-        assertTrue(rel.getRelation().equals("example relation"));
-        assertTrue(rel.getValue().equals("link"));
+        assertThat(rel.getRelation()).isEqualTo("example relation");
+        assertThat(rel.getValue()).isEqualTo("link");
     }
 
     @Test public void testLink04() {
 
-        assertEquals("\n<p>To hide the property  from appearing at all</p>", wikiModel
-                .render("To hide the property [[    example relation::link   | ]] from appearing at all", false));
+        assertThat(wikiModel
+                .render("To hide the property [[    example relation::link   | ]] from appearing at all", false)).isEqualTo("\n<p>To hide the property  from appearing at all</p>");
         List<SemanticRelation> list = wikiModel.getSemanticRelations();
         SemanticRelation rel = list.get(0);
-        assertTrue(rel.getRelation().equals("example relation"));
-        assertTrue(rel.getValue().equals("link"));
+        assertThat(rel.getRelation()).isEqualTo("example relation");
+        assertThat(rel.getValue()).isEqualTo("link");
     }
 
     @Test public void testLink05() {
 
-        assertEquals("\n" +
-                "<p>The <a href=\"http://www.bliki.info/wiki/C%2B%2B_::_operator\" title=\"C++ :: operator\">C++ :: operator</a>.</p>", wikiModel
-                .render("The [[:C++ :: operator]].", false));
+        assertThat(wikiModel
+                .render("The [[:C++ :: operator]].", false)).isEqualTo("\n" +
+                "<p>The <a href=\"http://www.bliki.info/wiki/C%2B%2B_::_operator\" title=\"C++ :: operator\">C++ :: operator</a>.</p>");
         List<SemanticRelation> list = wikiModel.getSemanticRelations();
-        assertTrue(list == null);
+        assertThat(list).isNull();
     }
 }

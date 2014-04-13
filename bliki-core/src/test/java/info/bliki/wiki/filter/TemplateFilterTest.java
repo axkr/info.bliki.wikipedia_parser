@@ -6,9 +6,7 @@ import org.junit.Test;
 import java.util.HashSet;
 import java.util.Locale;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.fest.assertions.api.Assertions.assertThat;
 
 public class TemplateFilterTest extends FilterTestSupport {
 
@@ -28,9 +26,9 @@ public class TemplateFilterTest extends FilterTestSupport {
                 + "<div style=\"float:left; padding-top:0.5em; padding-right:0.5em;\"><a class=\"image\" href=\"http://www.bliki.info/wiki/File:150px-Waterberg_Nashorn1.jpg\" title=\"Breitmaulnashörner in Namibia\"><img src=\"http://www.bliki.info/wiki/150px-Waterberg_Nashorn1.jpg\" alt=\"Breitmaulnashörner in Namibia\" width=\"150\" />\n"
                 + "</a></div>\n"
                 + "<p>Die <b><a href=\"http://www.bliki.info/wiki/Nash%C3%B6rner\" title=\"Nashörner\">Nashörner</a></b> (Rhinocerotidae) oder auch <b>Rhinozerosse</b> zählen zu den markantesten Säugetieren mit ihrem großen Kopf und den namengebenden ein bis zwei Hörnern. <small><a href=\"http://www.bliki.info/wiki/Nash%C3%B6rner\" title=\"Nashörner\">mehr</a></small></p>";
-        assertEquals(expected, wikiModel.render(rawWikiText));
+        assertThat(wikiModel.render(rawWikiText)).isEqualTo(expected);
         WikiModel germanWikiTextModel = newWikiTestModel(Locale.GERMAN);
-        assertEquals(expected, germanWikiTextModel.render(rawWikiText));
+        assertThat(germanWikiTextModel.render(rawWikiText)).isEqualTo(expected);
     }
 
     /**
@@ -40,60 +38,51 @@ public class TemplateFilterTest extends FilterTestSupport {
         final String rawWikiText = "[[File:Waterberg Nashorn1.jpg|150px]]";
         final String expected = "\n"
                 + "<p><a class=\"image\" href=\"http://www.bliki.info/wiki/File:150px-Waterberg_Nashorn1.jpg\" ><img src=\"http://www.bliki.info/wiki/150px-Waterberg_Nashorn1.jpg\" width=\"150\" />\n</a></p>";
-        assertEquals(expected, wikiModel.render(rawWikiText));
+        assertThat(wikiModel.render(rawWikiText)).isEqualTo(expected);
         WikiModel germanWikiTextModel = newWikiTestModel(Locale.GERMAN);
-        assertEquals(expected, germanWikiTextModel.render(rawWikiText));
+        assertThat(germanWikiTextModel.render(rawWikiText)).isEqualTo(expected);
     }
 
     @Test public void testTemplate06() {
-        assertEquals("\n" + "<p>start- 5.0 equals +5 -end</p>", wikiModel.render("start- {{ifeq|5.0|+5}} -end", false));
+        assertThat(wikiModel.render("start- {{ifeq|5.0|+5}} -end", false)).isEqualTo("\n" + "<p>start- 5.0 equals +5 -end</p>");
     }
 
     @Test public void testTemplate09() {
-        assertEquals("\n" + "<p>start- test is not equal Test -end</p>", wikiModel.render("start- {{ifeq|test|Test}} -end", false));
+        assertThat(wikiModel.render("start- {{ifeq|test|Test}} -end", false)).isEqualTo("\n" + "<p>start- test is not equal Test -end</p>");
     }
 
     @Test public void testTemplateCall3() {
         // see method WikiTestModel#getRawWikiContent()
-        assertEquals("\n" + "<p>b) First: Test1 Second:  c) First: sdfsf Second: klj </p>\n" + "", wikiModel.render("{{templ1\n"
-                + " | a = Test1\n" + " | {{templ2|sdfsf|klj}} \n" + "}}\n" + "", false));
+        assertThat(wikiModel.render("{{templ1\n"
+                + " | a = Test1\n" + " | {{templ2|sdfsf|klj}} \n" + "}}\n" + "", false)).isEqualTo("\n" + "<p>b) First: Test1 Second:  c) First: sdfsf Second: klj </p>\n" + "");
     }
 
     @Test public void testSwitch001() {
-        assertEquals(
-                "\n"
-                        + "<p><a href=\"http://www.bliki.info/wiki/Template:Templ1/ind%26\" title=\"Template:Templ1/ind&amp;\">Template:Templ1/ind&#38;</a></p>",
-                wikiModel.render("{{Templ1/{{ #switch: imperative  | ind | ind&}}}}", false));
+        assertThat(wikiModel.render("{{Templ1/{{ #switch: imperative  | ind | ind&}}}}", false)).isEqualTo("\n"
+                + "<p><a href=\"http://www.bliki.info/wiki/Template:Templ1/ind%26\" title=\"Template:Templ1/ind&amp;\">Template:Templ1/ind&#38;</a></p>");
     }
 
     @Test public void testNonExistingTemplate01() {
-        assertEquals(
-                "<h2><span class=\"mw-headline\" id=\"Other_areas_of_Wikipedia\">Other areas of Wikipedia</span></h2>\n"
-                        + "<p><a href=\"http://www.bliki.info/wiki/Template:WikipediaOther\" title=\"Template:WikipediaOther\">Template:WikipediaOther</a></p>",
-                wikiModel.render("==Other areas of Wikipedia==\n" + "{{WikipediaOther}}<!--Template:WikipediaOther-->", false));
+        assertThat(wikiModel.render("==Other areas of Wikipedia==\n" + "{{WikipediaOther}}<!--Template:WikipediaOther-->", false)).isEqualTo("<h2><span class=\"mw-headline\" id=\"Other_areas_of_Wikipedia\">Other areas of Wikipedia</span></h2>\n"
+                + "<p><a href=\"http://www.bliki.info/wiki/Template:WikipediaOther\" title=\"Template:WikipediaOther\">Template:WikipediaOther</a></p>");
     }
 
     @Test public void testNonExistingTemplate02() {
-        assertEquals(
-                "\n"
-                        + "<p>start <a href=\"http://www.bliki.info/wiki/Template:NonExistingTemplate\" title=\"Template:NonExistingTemplate\">Template:NonExistingTemplate</a> end</p>",
-                wikiModel.render("start {{NonExistingTemplate}} end", false));
+        assertThat(wikiModel.render("start {{NonExistingTemplate}} end", false)).isEqualTo("\n"
+                + "<p>start <a href=\"http://www.bliki.info/wiki/Template:NonExistingTemplate\" title=\"Template:NonExistingTemplate\">Template:NonExistingTemplate</a> end</p>");
     }
 
     private void nonExistingTemplateTestLink(String wikiText, String linkTitle, String templateName) {
         String urlTitle = Character.toUpperCase(linkTitle.charAt(0)) + linkTitle.substring(1);
-        assertEquals(wikiText, "\n<p><a href=\"http://www.bliki.info/wiki/" + urlTitle + "\" title=\"" + urlTitle + "\">" + linkTitle
-                + "</a></p>", wikiModel.render(wikiText, false));
+        assertThat(wikiModel.render(wikiText, false)).isEqualTo("\n<p><a href=\"http://www.bliki.info/wiki/" + urlTitle + "\" title=\"" + urlTitle + "\">" + linkTitle
+                + "</a></p>");
         if (templateName != null) {
-            assertTrue(wikiText + ", wikiModel.getTemplates().contains(" + templateName + ")", wikiModel.getTemplates().contains(
-                    templateName));
-            assertFalse(wikiText + ", !wikiModel.getIncludes().contains(" + templateName + ")", wikiModel.getIncludes().contains(
-                    linkTitle));
-            assertFalse(wikiText + ", !wikiModel.getIncludes().contains(" + linkTitle + ")", wikiModel.getIncludes().contains(linkTitle));
+            assertThat(wikiModel.getTemplates()).contains(templateName);
+            assertThat(wikiModel.getIncludes()).doesNotContain(linkTitle);
+            assertThat(wikiModel.getIncludes()).doesNotContain(linkTitle);
         } else {
-            assertFalse(wikiText + ", !wikiModel.getTemplates().contains(" + linkTitle + ")", wikiModel.getTemplates().contains(
-                    null));
-            assertTrue(wikiText + ", wikiModel.getIncludes().contains(" + linkTitle + ")", wikiModel.getIncludes().contains(linkTitle));
+            assertThat(wikiModel.getTemplates()).doesNotContainNull();
+            assertThat(wikiModel.getIncludes()).contains(linkTitle);
         }
     }
 
@@ -108,180 +97,171 @@ public class TemplateFilterTest extends FilterTestSupport {
         nonExistingTemplateTestLink("{{:foo:test123456789}}", "foo:test123456789", null);
         nonExistingTemplateTestLink("{{foo:test123456789}}", "Template:foo:test123456789", "foo:test123456789");
         nonExistingTemplateTestLink("{{:PAGESIZE:Help:test}}", "PAGESIZE:Help:test", null);
-        assertEquals("\n<p>{{::Help:test123456789}}</p>", wikiModel.render("{{::Help:test123456789}}", false));
-        assertEquals("\n<p>PAGESIZE</p>", wikiModel.render("{{PAGESIZE:Help:test}}", false));
+        assertThat(wikiModel.render("{{::Help:test123456789}}", false)).isEqualTo("\n<p>{{::Help:test123456789}}</p>");
+        assertThat(wikiModel.render("{{PAGESIZE:Help:test}}", false)).isEqualTo("\n<p>PAGESIZE</p>");
     }
 
     @Test public void testTemplateCall1() {
         // see method WikiTestModel#getRawWikiContent()
-        assertEquals("\n" + "<p>start-an include page-end</p>", wikiModel.render("start-{{:Include Page}}-end", false));
+        assertThat(wikiModel.render("start-{{:Include Page}}-end", false)).isEqualTo("\n" + "<p>start-an include page-end</p>");
     }
 
     @Test public void testTemplateCall2() {
         // see method WikiTestModel#getRawWikiContent()
-        assertEquals("\n" + "<p>start-b) First: 3 Second: b-end start-c) First: sdfsf Second: klj-end</p>", wikiModel.render(
-                "start-{{templ1|a=3|b}}-end start-{{templ2|sdfsf|klj}}-end", false));
+        assertThat(wikiModel.render(
+                "start-{{templ1|a=3|b}}-end start-{{templ2|sdfsf|klj}}-end", false)).isEqualTo("\n" + "<p>start-b) First: 3 Second: b-end start-c) First: sdfsf Second: klj-end</p>");
     }
 
     @Test public void testTemplateCall4() {
         // see method WikiTestModel#getRawWikiContent() for template tl
-        assertEquals("\n"
-                + "<p>[[:Template:<a href=\"http://www.bliki.info/wiki/Template:example\" title=\"Template:example\">example</a>]]</p>",
-                wikiModel.render("{{tl|example}}", false));
+        assertThat(wikiModel.render("{{tl|example}}", false)).isEqualTo("\n"
+                + "<p>[[:Template:<a href=\"http://www.bliki.info/wiki/Template:example\" title=\"Template:example\">example</a>]]</p>");
     }
 
     @Test public void testTemplateCall4a() {
         // see method WikiTestModel#getRawWikiContent() for template tl
-        assertEquals("\n" + "<p>[[:Template:[[Template:{{{1}}}|{{{1}}}]]]]</p>", wikiModel.render("{{tl}}", false));
+        assertThat(wikiModel.render("{{tl}}", false)).isEqualTo("\n" + "<p>[[:Template:[[Template:{{{1}}}|{{{1}}}]]]]</p>");
     }
 
     @Test public void testTemplateCall5() {
         // see method WikiTestModel#getRawWikiContent()
-        assertEquals(
-                "\n"
-                        + "<p>(pronounced <span class=\"IPA\" title=\"Pronunciation in the International Phonetic Alphabet (IPA)\"><a href=\"http://www.bliki.info/wiki/WP:IPA_for_English\" title=\"WP:IPA for English\">/dəˌpeʃˈmoʊd/</a></span>)</p>",
-                wikiModel.render("({{pron-en|dəˌpeʃˈmoʊd}})", false));
+        assertThat(wikiModel.render("({{pron-en|dəˌpeʃˈmoʊd}})", false)).isEqualTo("\n"
+                + "<p>(pronounced <span class=\"IPA\" title=\"Pronunciation in the International Phonetic Alphabet (IPA)\"><a href=\"http://www.bliki.info/wiki/WP:IPA_for_English\" title=\"WP:IPA for English\">/dəˌpeʃˈmoʊd/</a></span>)</p>");
     }
 
     @Test public void testTemplateImage1() {
         // see method WikiTestModel#getRawWikiContent()
-        assertEquals(
-                "\n"
-                        + "<div style=\"page-break-inside: avoid;\">\n"
-                        + "<table>\n"
-                        + "<tr>\n"
-                        + "<th><h2 style=\"background:#cedff2;\">In the news</h2></th></tr>\n"
-                        + "<tr>\n"
-                        + "<td style=\"color:#000; padding:2px 5px;\">\n"
-                        + "<div id=\"mp-itn\"><a class=\"image\" href=\"http://www.bliki.info/wiki/File:Yoshihiko_Noda-1.jpg\" title=\"Yoshihiko Noda\"><img src=\"http://www.bliki.info/wiki/Yoshihiko_Noda-1.jpg\" alt=\"Yoshihiko Noda\" width=\"220\" />\n"
-                        + "</a>\n"
-                        + "The ruling Democratic Party of Japan selects <b>Yoshihiko Noda</b> <i>(pictured)</i> as the country&#39;s new prime minister, following the resignation of Naoto Kan\n"
-                        + "</div></td></tr></table></div>",
-                wikiModel
-                        .render(
-                                "{|\n"
-                                        + "! | <h2 style=\"background:#cedff2;\">In the news</h2>\n"
-                                        + "|-\n"
-                                        + "| style=\"color:#000; padding:2px 5px;\" | <div id=\"mp-itn\">{{Image\n"
-                                        + " |image  = Yoshihiko Noda-1.jpg\n"
-                                        + " |title  = Yoshihiko Noda\n"
-                                        + "}}\n"
-                                        + "The ruling Democratic Party of Japan selects '''Yoshihiko Noda''' ''(pictured)'' as the country's new prime minister, following the resignation of Naoto Kan\n"
-                                        + "</div>\n" + "|}", false));
+        assertThat(wikiModel
+                .render(
+                        "{|\n"
+                                + "! | <h2 style=\"background:#cedff2;\">In the news</h2>\n"
+                                + "|-\n"
+                                + "| style=\"color:#000; padding:2px 5px;\" | <div id=\"mp-itn\">{{Image\n"
+                                + " |image  = Yoshihiko Noda-1.jpg\n"
+                                + " |title  = Yoshihiko Noda\n"
+                                + "}}\n"
+                                + "The ruling Democratic Party of Japan selects '''Yoshihiko Noda''' ''(pictured)'' as the country's new prime minister, following the resignation of Naoto Kan\n"
+                                + "</div>\n" + "|}", false
+                )).isEqualTo("\n"
+                + "<div style=\"page-break-inside: avoid;\">\n"
+                + "<table>\n"
+                + "<tr>\n"
+                + "<th><h2 style=\"background:#cedff2;\">In the news</h2></th></tr>\n"
+                + "<tr>\n"
+                + "<td style=\"color:#000; padding:2px 5px;\">\n"
+                + "<div id=\"mp-itn\"><a class=\"image\" href=\"http://www.bliki.info/wiki/File:Yoshihiko_Noda-1.jpg\" title=\"Yoshihiko Noda\"><img src=\"http://www.bliki.info/wiki/Yoshihiko_Noda-1.jpg\" alt=\"Yoshihiko Noda\" width=\"220\" />\n"
+                + "</a>\n"
+                + "The ruling Democratic Party of Japan selects <b>Yoshihiko Noda</b> <i>(pictured)</i> as the country&#39;s new prime minister, following the resignation of Naoto Kan\n"
+                + "</div></td></tr></table></div>");
     }
 
     @Test public void testTemplateNowiki() {
         // see method WikiTestModel#getTemplateContent()
-        assertEquals("\n" + "<p>start-{{templ1|a=3|b}}-end</p>", wikiModel.render("start-<nowiki>{{templ1|a=3|b}}-</noWiKi>end", false));
+        assertThat(wikiModel.render("start-<nowiki>{{templ1|a=3|b}}-</noWiKi>end", false)).isEqualTo("\n" + "<p>start-{{templ1|a=3|b}}-end</p>");
     }
 
     @Test public void testTemplateParameter01() {
         // see method WikiTestModel#getTemplateContent()
-        assertEquals("\n" + "<p>start-a) First: arg1 Second: arg2-end</p>", wikiModel.render("start-{{Test|arg1|arg2}}-end", false));
+        assertThat(wikiModel.render("start-{{Test|arg1|arg2}}-end", false)).isEqualTo("\n" + "<p>start-a) First: arg1 Second: arg2-end</p>");
     }
 
     @Test public void testTemplateParameter02() {
         // see method WikiTestModel#getTemplateContent()
-        assertEquals(
-                "\n"
-                        + "<p>start- <i><a class=\"external text\" href=\"http://www.etymonline.com/index.php?search=hello&#38;searchmode=none\" rel=\"nofollow\">Online Etymology Dictionary</a></i>. -end</p>",
-                wikiModel
-                        .render(
-                                "start- {{cite web|url=http://www.etymonline.com/index.php?search=hello&searchmode=none|title=Online Etymology Dictionary}} -end",
-                                false));
+        assertThat(wikiModel
+                .render(
+                        "start- {{cite web|url=http://www.etymonline.com/index.php?search=hello&searchmode=none|title=Online Etymology Dictionary}} -end",
+                        false)).isEqualTo("\n"
+                + "<p>start- <i><a class=\"external text\" href=\"http://www.etymonline.com/index.php?search=hello&#38;searchmode=none\" rel=\"nofollow\">Online Etymology Dictionary</a></i>. -end</p>");
     }
 
     @Test public void testTemplateParameter03() {
         // see method WikiTestModel#getTemplateContent()
-        assertEquals("\n" + "<p>start- </p>\n"
-                + "<div class=\"references-small\" style=\"-moz-column-count:2; -webkit-column-count:2; column-count:2;\"></div> -end",
-                wikiModel.render("start- {{reflist|2}} -end", false));
+        assertThat(wikiModel.render("start- {{reflist|2}} -end", false)).isEqualTo("\n" + "<p>start- </p>\n"
+                + "<div class=\"references-small\" style=\"-moz-column-count:2; -webkit-column-count:2; column-count:2;\"></div> -end");
     }
 
     @Test public void testTemplate04() {
-        assertEquals("\n" + "<p>A is not equal B</p>", wikiModel.render("{{#ifeq: A | B |A equals B |A is not equal B}}", false));
+        assertThat(wikiModel.render("{{#ifeq: A | B |A equals B |A is not equal B}}", false)).isEqualTo("\n" + "<p>A is not equal B</p>");
     }
 
     @Test public void testTemplate05() {
-        assertEquals("\n" + "<p>start- A is not equal B -end</p>", wikiModel.render("start- {{ifeq|A|B}} -end", false));
+        assertThat(wikiModel.render("start- {{ifeq|A|B}} -end", false)).isEqualTo("\n" + "<p>start- A is not equal B -end</p>");
     }
 
     @Test public void testTemplate07() {
-        assertEquals("\n" + "<p>start- 5.001 is not equal +5 -end</p>", wikiModel.render("start- {{ifeq|5.001|+5}} -end", false));
+        assertThat(wikiModel.render("start- {{ifeq|5.001|+5}} -end", false)).isEqualTo("\n" + "<p>start- 5.001 is not equal +5 -end</p>");
     }
 
     @Test public void testTemplate08() {
-        assertEquals("\n" + "<p>start- test equals test -end</p>", wikiModel.render("start- {{ifeq|test|test}} -end", false));
+        assertThat(wikiModel.render("start- {{ifeq|test|test}} -end", false)).isEqualTo("\n" + "<p>start- test equals test -end</p>");
     }
 
     @Test public void testTemplate10() {
-        assertEquals("", wikiModel.render("{{{x| }}}", false));
+        assertThat(wikiModel.render("{{{x| }}}", false)).isEqualTo("");
     }
 
     @Test public void testTemplate11() {
-        assertEquals("\n" + "<p>{{{title}}}</p>", wikiModel.render("{{{title}}}", false));
+        assertThat(wikiModel.render("{{{title}}}", false)).isEqualTo("\n" + "<p>{{{title}}}</p>");
     }
 
     @Test public void testTemplate12() {
-        assertEquals(
-                "\n"
-                        + "<div style=\"page-break-inside: avoid;\">\n"
-                        + "<table cellspacing=\"5\" class=\"infobox\" style=\"width: 21em; font-size: 90%; text-align: left;\">\n"
-                        + "<tr>\n"
-                        + "<th colspan=\"2\" style=\"text-align: center; font-size: 130%;\">JAMWiki</th></tr>\n"
-                        + "<tr>\n"
-                        + "<th><a href=\"http://www.bliki.info/wiki/Software_release_life_cycle\" title=\"Software release life cycle\">Latest release</a></th>\n"
-                        + "<td>0.6.5 / <a href=\"http://www.bliki.info/wiki/March_16\" title=\"March 16\">March 16</a>, <a href=\"http://www.bliki.info/wiki/2008\" title=\"2008\">2008</a></td></tr>\n"
-                        + "<tr>\n"
-                        + "<th><a href=\"http://www.bliki.info/wiki/Software_release_life_cycle\" title=\"Software release life cycle\">Preview release</a></th>\n"
-                        + "<td>0.6.5  </td></tr>\n"
-                        + "<tr>\n"
-                        + "<th><a href=\"http://www.bliki.info/wiki/Operating_system\" title=\"Operating system\">OS</a></th>\n"
-                        + "<td><a href=\"http://www.bliki.info/wiki/Cross-platform\" title=\"Cross-platform\">Cross-platform</a></td></tr>\n"
-                        + "<tr>\n"
-                        + "<th><a href=\"http://www.bliki.info/wiki/List_of_software_categories\" title=\"List of software categories\">Genre</a></th>\n"
-                        + "<td><a href=\"http://www.bliki.info/wiki/Wiki_software\" title=\"Wiki software\">Wiki software</a></td></tr>\n"
-                        + "<tr>\n"
-                        + "<th><a href=\"http://www.bliki.info/wiki/Software_license\" title=\"Software license\">License</a></th>\n"
-                        + "<td><a href=\"http://www.bliki.info/wiki/GNU_Lesser_General_Public_License\" title=\"GNU Lesser General Public License\">LGPL</a></td></tr>\n"
-                        + "<tr>\n"
-                        + "<th><a href=\"http://www.bliki.info/wiki/Website\" title=\"Website\">Website</a></th>\n"
-                        + "<td><a class=\"external text\" href=\"http://www.jamwiki.org/\" rel=\"nofollow\">JAMWiki wiki</a></td></tr></table></div>\n"
-                        + "", wikiModel.render("{{Infobox_Software\n" + "|name = JAMWiki\n" + "|logo = \n" + "|caption =\n" + "\n"
-                        + "|developer = \n" + "|latest_release_version = 0.6.5\n" + "|latest_release_date = [[March 16]], [[2008]]\n"
-                        + "|latest preview version = 0.6.5 \n" + "|latest preview date = \n" + "|operating_system = [[Cross-platform]]\n"
-                        + "|genre = [[wiki software|Wiki software]]\n" + "|license = [[GNU Lesser General Public License|LGPL]]\n"
-                        + "|website = [http://www.jamwiki.org/ JAMWiki wiki]\n" + "}}\n", false));
+        assertThat(wikiModel.render("{{Infobox_Software\n" + "|name = JAMWiki\n" + "|logo = \n" + "|caption =\n" + "\n"
+                + "|developer = \n" + "|latest_release_version = 0.6.5\n" + "|latest_release_date = [[March 16]], [[2008]]\n"
+                + "|latest preview version = 0.6.5 \n" + "|latest preview date = \n" + "|operating_system = [[Cross-platform]]\n"
+                + "|genre = [[wiki software|Wiki software]]\n" + "|license = [[GNU Lesser General Public License|LGPL]]\n"
+                + "|website = [http://www.jamwiki.org/ JAMWiki wiki]\n" + "}}\n", false)).isEqualTo("\n"
+                + "<div style=\"page-break-inside: avoid;\">\n"
+                + "<table cellspacing=\"5\" class=\"infobox\" style=\"width: 21em; font-size: 90%; text-align: left;\">\n"
+                + "<tr>\n"
+                + "<th colspan=\"2\" style=\"text-align: center; font-size: 130%;\">JAMWiki</th></tr>\n"
+                + "<tr>\n"
+                + "<th><a href=\"http://www.bliki.info/wiki/Software_release_life_cycle\" title=\"Software release life cycle\">Latest release</a></th>\n"
+                + "<td>0.6.5 / <a href=\"http://www.bliki.info/wiki/March_16\" title=\"March 16\">March 16</a>, <a href=\"http://www.bliki.info/wiki/2008\" title=\"2008\">2008</a></td></tr>\n"
+                + "<tr>\n"
+                + "<th><a href=\"http://www.bliki.info/wiki/Software_release_life_cycle\" title=\"Software release life cycle\">Preview release</a></th>\n"
+                + "<td>0.6.5  </td></tr>\n"
+                + "<tr>\n"
+                + "<th><a href=\"http://www.bliki.info/wiki/Operating_system\" title=\"Operating system\">OS</a></th>\n"
+                + "<td><a href=\"http://www.bliki.info/wiki/Cross-platform\" title=\"Cross-platform\">Cross-platform</a></td></tr>\n"
+                + "<tr>\n"
+                + "<th><a href=\"http://www.bliki.info/wiki/List_of_software_categories\" title=\"List of software categories\">Genre</a></th>\n"
+                + "<td><a href=\"http://www.bliki.info/wiki/Wiki_software\" title=\"Wiki software\">Wiki software</a></td></tr>\n"
+                + "<tr>\n"
+                + "<th><a href=\"http://www.bliki.info/wiki/Software_license\" title=\"Software license\">License</a></th>\n"
+                + "<td><a href=\"http://www.bliki.info/wiki/GNU_Lesser_General_Public_License\" title=\"GNU Lesser General Public License\">LGPL</a></td></tr>\n"
+                + "<tr>\n"
+                + "<th><a href=\"http://www.bliki.info/wiki/Website\" title=\"Website\">Website</a></th>\n"
+                + "<td><a class=\"external text\" href=\"http://www.jamwiki.org/\" rel=\"nofollow\">JAMWiki wiki</a></td></tr></table></div>\n"
+                + "");
     }
 
     @Test public void testTemplateParameter13() {
         // see method WikiTestModel#getTemplateContent()
-        assertEquals(
-                "\n"
-                        + "<div style=\"page-break-inside: avoid;\">\n"
-                        + "<table class=\"wikitable\">\n"
-                        + "<caption>Versionsgeschichte von JavaScript<sup id=\"_ref-1\" class=\"reference\"><a href=\"#_note-1\" title=\"\">[1]</a></sup></caption>\n"
-                        + "<tr>\n"
-                        + "<th>Version </th>\n"
-                        + "<th>Release </th>\n"
-                        + "<th>Entsprechung </th>\n"
-                        + "<th>Netscape Navigator </th>\n"
-                        + "<th>Mozilla Firefox </th>\n"
-                        + "<th>Internet Explorer </th>\n"
-                        + "<th>Opera </th>\n"
-                        + "<th>Safari </th>\n"
-                        + "<th>Google Chrome</th></tr></table></div>\n"
-                        + "<pre>"
-                        + "<ol class=\"references\">\n"
-                        + "<li id=\"_note-1\"><b><a href=\"#_ref-1\" title=\"\">&#8593;</a></b> John Resig. <i><a class=\"external text\" href=\"http://ejohn.org/blog/versions-of-javascript\" rel=\"nofollow\">Versions of JavaScript</a></i>. Ejohn.org. Abgerufen am <a href=\"http://www.bliki.info/wiki/Template:safesubst:\" title=\"Template:safesubst:\">Template:safesubst:</a>.</li>\n</ol>\n"
-                        + "</pre>",
-                wikiModel
-                        .render(
-                                "{| class=\"wikitable\"\n"
-                                        + "|+Versionsgeschichte von JavaScript<ref>{{cite web|author=John Resig |url=http://ejohn.org/blog/versions-of-javascript |title=Versions of JavaScript |publisher=Ejohn.org |date= |accessdate=2009-05-19}}</ref>\n"
-                                        + "|-\n"
-                                        + "! Version !! Release !! Entsprechung !! Netscape Navigator !! Mozilla Firefox !! Internet Explorer !! Opera !! Safari !! Google Chrome\n"
-                                        + "|}\n" + " <references/>\n", false));
+        assertThat(wikiModel
+                .render(
+                        "{| class=\"wikitable\"\n"
+                                + "|+Versionsgeschichte von JavaScript<ref>{{cite web|author=John Resig |url=http://ejohn.org/blog/versions-of-javascript |title=Versions of JavaScript |publisher=Ejohn.org |date= |accessdate=2009-05-19}}</ref>\n"
+                                + "|-\n"
+                                + "! Version !! Release !! Entsprechung !! Netscape Navigator !! Mozilla Firefox !! Internet Explorer !! Opera !! Safari !! Google Chrome\n"
+                                + "|}\n" + " <references/>\n", false
+                )).isEqualTo("\n"
+                + "<div style=\"page-break-inside: avoid;\">\n"
+                + "<table class=\"wikitable\">\n"
+                + "<caption>Versionsgeschichte von JavaScript<sup id=\"_ref-1\" class=\"reference\"><a href=\"#_note-1\" title=\"\">[1]</a></sup></caption>\n"
+                + "<tr>\n"
+                + "<th>Version </th>\n"
+                + "<th>Release </th>\n"
+                + "<th>Entsprechung </th>\n"
+                + "<th>Netscape Navigator </th>\n"
+                + "<th>Mozilla Firefox </th>\n"
+                + "<th>Internet Explorer </th>\n"
+                + "<th>Opera </th>\n"
+                + "<th>Safari </th>\n"
+                + "<th>Google Chrome</th></tr></table></div>\n"
+                + "<pre>"
+                + "<ol class=\"references\">\n"
+                + "<li id=\"_note-1\"><b><a href=\"#_ref-1\" title=\"\">&#8593;</a></b> John Resig. <i><a class=\"external text\" href=\"http://ejohn.org/blog/versions-of-javascript\" rel=\"nofollow\">Versions of JavaScript</a></i>. Ejohn.org. Abgerufen am <a href=\"http://www.bliki.info/wiki/Template:safesubst:\" title=\"Template:safesubst:\">Template:safesubst:</a>.</li>\n</ol>\n"
+                + "</pre>");
     }
 
     // private final String TEST_STRING_01 =
@@ -365,18 +345,18 @@ public class TemplateFilterTest extends FilterTestSupport {
             + "{{{disambiguation|}}}}}}}}}|articles|{{#if:{{{mulcat|}}}|categories|an\n" + "article}}}}}} on:\n";
 
     @Test public void testNestedIf02() {
-        assertEquals("\n" + "<pre>an\n</pre>\n" + "<p>article on:\n" + "</p>" + "", wikiModel.render(TEST_STRING_02, false));
+        assertThat(wikiModel.render(TEST_STRING_02, false)).isEqualTo("\n" + "<pre>an\n</pre>\n" + "<p>article on:\n" + "</p>" + "");
     }
 
     @Test public void testParserFunctionLC001() {
-        assertEquals("\n" + "<p>A lower case text</p>", wikiModel.render("A {{lc: Lower Case}} text", false));
+        assertThat(wikiModel.render("A {{lc: Lower Case}} text", false)).isEqualTo("\n" + "<p>A lower case text</p>");
     }
 
     @Test public void testParserFunctionTag001() {
-        assertEquals("\n"
+        assertThat(wikiModel
+                .render("{{#tag:ref|'''a simple test'''}}{{#tag:references}}", false)).isEqualTo("\n"
                 + "<p><sup id=\"_ref-1\" class=\"reference\"><a href=\"#_note-1\" title=\"\">[1]</a></sup></p><ol class=\"references\">\n"
-                + "<li id=\"_note-1\"><b><a href=\"#_ref-1\" title=\"\">&#8593;</a></b> <b>a simple test</b></li>\n</ol>", wikiModel
-                .render("{{#tag:ref|'''a simple test'''}}{{#tag:references}}", false));
+                + "<li id=\"_note-1\"><b><a href=\"#_ref-1\" title=\"\">&#8593;</a></b> <b>a simple test</b></li>\n</ol>");
     }
 
     public final static String NAVBOX_STRING = "{{Navbox\n" + "|name  = AcademyAwardBestActor 1981-2000\n"
@@ -401,449 +381,439 @@ public class TemplateFilterTest extends FilterTestSupport {
             + "[[Category:Academy Award for Best Actor templates| 1981-2000]]\n" + "</noinclude>";
 
     @Test public void testNavbox() {
-        assertEquals(
-                "\n"
-                        + "<table cellspacing=\"0\" class=\"navbox\" style=\"border-spacing:0;;\">\n"
-                        + "\n"
-                        + "<tr>\n"
-                        + "\n"
-                        + "<td style=\"padding:2px;\">\n"
-                        + "<table cellspacing=\"0\" class=\"nowraplinks  collapsible autocollapse navbox-inner\" style=\"border-spacing:0;background:transparent;color:inherit;;\">\n"
-                        + "\n"
-                        + "<tr>\n"
-                        + "\n"
-                        + "<th class=\"navbox-title\" colspan=\"2\" scope=\"col\" style=\";background: #EEDD82\">\n"
-                        + "\n"
-                        + "<div class=\"noprint plainlinks hlist navbar mini\">\n"
-                        + "<ul>\n"
-                        + "\n"
-                        + "<li class=\"nv-view\"><a href=\"http://www.bliki.info/wiki/Template:AcademyAwardBestActor_1981-2000\" title=\"Template:AcademyAwardBestActor 1981-2000\"><span style=\";background: #EEDD82;background:none transparent;border:none;\" title=\"View this template\">v</span></a></li>\n"
-                        + "<li class=\"nv-talk\"><a href=\"http://www.bliki.info/wiki/Template_talk:AcademyAwardBestActor_1981-2000\" title=\"Template talk:AcademyAwardBestActor 1981-2000\"><span style=\";background: #EEDD82;background:none transparent;border:none;\" title=\"Discuss this template\">t</span></a></li>\n"
-                        + "<li class=\"nv-edit\"><a class=\"external text\" href=\"http://en.wikipedia.org/w/index.php?title=Template%3AAcademyAwardBestActor+1981-2000&#38;action=edit\" rel=\"nofollow\"><span style=\";background: #EEDD82;background:none transparent;border:none;\" title=\"Edit this template\">e</span></a></li>\n"
-                        + "</ul></div>\n"
-                        + "<div style=\"font-size:110%;\">\n"
-                        + "<p><a href=\"http://www.bliki.info/wiki/Academy_Award_for_Best_Actor\" title=\"Academy Award for Best Actor\">Academy Award for</a> <a href=\"http://www.bliki.info/wiki/Academy_Award_for_Best_Actor#1980s\" title=\"Academy Award for Best Actor\">Best Actor</a></p></div>\n"
-                        + "</th>\n"
-                        + "</tr>\n"
-                        + "<tr style=\"height:2px;\">\n"
-                        + "\n"
-                        + "</tr>\n"
-                        + "<tr>\n"
-                        + "\n"
-                        + "<td class=\"navbox-list navbox-odd \" colspan=\"2\" style=\"width:100%;padding:0px;;;\">\n"
-                        + "<div style=\"padding:0em 0.25em\">\n"
-                        + "<div>\n"
-                        + "<p><span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Henry_Fonda\" title=\"Henry Fonda\">Henry Fonda</a> (1981)</span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Ben_Kingsley\" title=\"Ben Kingsley\">Ben Kingsley</a> (1982)</span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Robert_Duvall\" title=\"Robert Duvall\">Robert Duvall</a> (1983)</span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/F._Murray_Abraham\" title=\"F. Murray Abraham\">F. Murray Abraham</a> (1984)</span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/William_Hurt\" title=\"William Hurt\">William Hurt</a> (1985)</span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Paul_Newman\" title=\"Paul Newman\">Paul Newman</a> (1986)</span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Michael_Douglas\" title=\"Michael Douglas\">Michael Douglas</a> (1987)</span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Dustin_Hoffman\" title=\"Dustin Hoffman\">Dustin Hoffman</a> (1988)</span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Daniel_Day-Lewis\" title=\"Daniel Day-Lewis\">Daniel Day-Lewis</a> (1989)</span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Jeremy_Irons\" title=\"Jeremy Irons\">Jeremy Irons</a> (1990)</span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Anthony_Hopkins\" title=\"Anthony Hopkins\">Anthony Hopkins</a> (1991)</span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Al_Pacino\" title=\"Al Pacino\">Al Pacino</a> (1992)</span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Tom_Hanks\" title=\"Tom Hanks\">Tom Hanks</a> (1993)</span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Tom_Hanks\" title=\"Tom Hanks\">Tom Hanks</a> (1994)</span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Nicolas_Cage\" title=\"Nicolas Cage\">Nicolas Cage</a> (1995)</span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Geoffrey_Rush\" title=\"Geoffrey Rush\">Geoffrey Rush</a> (1996)</span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Jack_Nicholson\" title=\"Jack Nicholson\">Jack Nicholson</a> (1997)</span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Roberto_Benigni\" title=\"Roberto Benigni\">Roberto Benigni</a> (1998)</span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Kevin_Spacey\" title=\"Kevin Spacey\">Kevin Spacey</a> (1999)</span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Russell_Crowe\" title=\"Russell Crowe\">Russell Crowe</a> (2000) </span></p><hr />\n"
-                        + "<p><span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Template:Academy_Award_Best_Actor\" title=\"Template:Academy Award Best Actor\">Complete List</a></span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Template:AcademyAwardBestActor_1927-1940\" title=\"Template:AcademyAwardBestActor 1927-1940\">(1928–1940)</a></span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Template:AcademyAwardBestActor_1941-1960\" title=\"Template:AcademyAwardBestActor 1941-1960\">(1941–1960)</a></span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Template:AcademyAwardBestActor_1961-1980\" title=\"Template:AcademyAwardBestActor 1961-1980\">(1961–1980)</a></span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Template:AcademyAwardBestActor_1981-2000\" title=\"Template:AcademyAwardBestActor 1981-2000\"><b>(1981–2000)</b></a></span><span style=\"font-weight:bold;\"> ·</span> \n"
-                        + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Template:AcademyAwardBestActor_2001-2020\" title=\"Template:AcademyAwardBestActor 2001-2020\">(2001-present)</a></span>\n"
-                        + "</p></div></div></td>\n" + "</tr>\n" + "</table></td>\n" + "</tr>\n" + "</table>", wikiModel.render(NAVBOX_STRING,
-                        false));
+        assertThat(wikiModel.render(NAVBOX_STRING,
+                false)).isEqualTo("\n"
+                + "<table cellspacing=\"0\" class=\"navbox\" style=\"border-spacing:0;;\">\n"
+                + "\n"
+                + "<tr>\n"
+                + "\n"
+                + "<td style=\"padding:2px;\">\n"
+                + "<table cellspacing=\"0\" class=\"nowraplinks  collapsible autocollapse navbox-inner\" style=\"border-spacing:0;background:transparent;color:inherit;;\">\n"
+                + "\n"
+                + "<tr>\n"
+                + "\n"
+                + "<th class=\"navbox-title\" colspan=\"2\" scope=\"col\" style=\";background: #EEDD82\">\n"
+                + "\n"
+                + "<div class=\"noprint plainlinks hlist navbar mini\">\n"
+                + "<ul>\n"
+                + "\n"
+                + "<li class=\"nv-view\"><a href=\"http://www.bliki.info/wiki/Template:AcademyAwardBestActor_1981-2000\" title=\"Template:AcademyAwardBestActor 1981-2000\"><span style=\";background: #EEDD82;background:none transparent;border:none;\" title=\"View this template\">v</span></a></li>\n"
+                + "<li class=\"nv-talk\"><a href=\"http://www.bliki.info/wiki/Template_talk:AcademyAwardBestActor_1981-2000\" title=\"Template talk:AcademyAwardBestActor 1981-2000\"><span style=\";background: #EEDD82;background:none transparent;border:none;\" title=\"Discuss this template\">t</span></a></li>\n"
+                + "<li class=\"nv-edit\"><a class=\"external text\" href=\"http://en.wikipedia.org/w/index.php?title=Template%3AAcademyAwardBestActor+1981-2000&#38;action=edit\" rel=\"nofollow\"><span style=\";background: #EEDD82;background:none transparent;border:none;\" title=\"Edit this template\">e</span></a></li>\n"
+                + "</ul></div>\n"
+                + "<div style=\"font-size:110%;\">\n"
+                + "<p><a href=\"http://www.bliki.info/wiki/Academy_Award_for_Best_Actor\" title=\"Academy Award for Best Actor\">Academy Award for</a> <a href=\"http://www.bliki.info/wiki/Academy_Award_for_Best_Actor#1980s\" title=\"Academy Award for Best Actor\">Best Actor</a></p></div>\n"
+                + "</th>\n"
+                + "</tr>\n"
+                + "<tr style=\"height:2px;\">\n"
+                + "\n"
+                + "</tr>\n"
+                + "<tr>\n"
+                + "\n"
+                + "<td class=\"navbox-list navbox-odd \" colspan=\"2\" style=\"width:100%;padding:0px;;;\">\n"
+                + "<div style=\"padding:0em 0.25em\">\n"
+                + "<div>\n"
+                + "<p><span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Henry_Fonda\" title=\"Henry Fonda\">Henry Fonda</a> (1981)</span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Ben_Kingsley\" title=\"Ben Kingsley\">Ben Kingsley</a> (1982)</span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Robert_Duvall\" title=\"Robert Duvall\">Robert Duvall</a> (1983)</span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/F._Murray_Abraham\" title=\"F. Murray Abraham\">F. Murray Abraham</a> (1984)</span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/William_Hurt\" title=\"William Hurt\">William Hurt</a> (1985)</span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Paul_Newman\" title=\"Paul Newman\">Paul Newman</a> (1986)</span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Michael_Douglas\" title=\"Michael Douglas\">Michael Douglas</a> (1987)</span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Dustin_Hoffman\" title=\"Dustin Hoffman\">Dustin Hoffman</a> (1988)</span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Daniel_Day-Lewis\" title=\"Daniel Day-Lewis\">Daniel Day-Lewis</a> (1989)</span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Jeremy_Irons\" title=\"Jeremy Irons\">Jeremy Irons</a> (1990)</span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Anthony_Hopkins\" title=\"Anthony Hopkins\">Anthony Hopkins</a> (1991)</span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Al_Pacino\" title=\"Al Pacino\">Al Pacino</a> (1992)</span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Tom_Hanks\" title=\"Tom Hanks\">Tom Hanks</a> (1993)</span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Tom_Hanks\" title=\"Tom Hanks\">Tom Hanks</a> (1994)</span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Nicolas_Cage\" title=\"Nicolas Cage\">Nicolas Cage</a> (1995)</span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Geoffrey_Rush\" title=\"Geoffrey Rush\">Geoffrey Rush</a> (1996)</span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Jack_Nicholson\" title=\"Jack Nicholson\">Jack Nicholson</a> (1997)</span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Roberto_Benigni\" title=\"Roberto Benigni\">Roberto Benigni</a> (1998)</span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Kevin_Spacey\" title=\"Kevin Spacey\">Kevin Spacey</a> (1999)</span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Russell_Crowe\" title=\"Russell Crowe\">Russell Crowe</a> (2000) </span></p><hr />\n"
+                + "<p><span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Template:Academy_Award_Best_Actor\" title=\"Template:Academy Award Best Actor\">Complete List</a></span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Template:AcademyAwardBestActor_1927-1940\" title=\"Template:AcademyAwardBestActor 1927-1940\">(1928–1940)</a></span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Template:AcademyAwardBestActor_1941-1960\" title=\"Template:AcademyAwardBestActor 1941-1960\">(1941–1960)</a></span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Template:AcademyAwardBestActor_1961-1980\" title=\"Template:AcademyAwardBestActor 1961-1980\">(1961–1980)</a></span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Template:AcademyAwardBestActor_1981-2000\" title=\"Template:AcademyAwardBestActor 1981-2000\"><b>(1981–2000)</b></a></span><span style=\"font-weight:bold;\"> ·</span> \n"
+                + "<span style=\"white-space:nowrap;\"><a href=\"http://www.bliki.info/wiki/Template:AcademyAwardBestActor_2001-2020\" title=\"Template:AcademyAwardBestActor 2001-2020\">(2001-present)</a></span>\n"
+                + "</p></div></div></td>\n" + "</tr>\n" + "</table></td>\n" + "</tr>\n" + "</table>");
     }
 
     @Test public void test11() {
-        assertEquals(
-                "\n"
-                        + "<p><a href=\"http://www.bliki.info/wiki/Template:AcademyAwardBestActor_1981-2000\" title=\"Template:AcademyAwardBestActor 1981-2000\"><span style=\";background: #EEDD82;border:none;;\" title=\"View this template\">v</span></a></p>",
-                wikiModel
-                        .render(
-                                "[[Template:AcademyAwardBestActor_1981-2000|<span title=\"View this template\" style=\";background: #EEDD82;border:none;;\">v</span>]]",
-                                false));
+        assertThat(wikiModel
+                .render(
+                        "[[Template:AcademyAwardBestActor_1981-2000|<span title=\"View this template\" style=\";background: #EEDD82;border:none;;\">v</span>]]",
+                        false)).isEqualTo("\n"
+                + "<p><a href=\"http://www.bliki.info/wiki/Template:AcademyAwardBestActor_1981-2000\" title=\"Template:AcademyAwardBestActor 1981-2000\"><span style=\";background: #EEDD82;border:none;;\" title=\"View this template\">v</span></a></p>");
     }
 
     @Test public void testPipe001a() {
-        assertEquals("\n" + "<p>Hello World\n" + "Hello World\n" + "</p>", wikiModel.render("{{2x|Hello World\n" + "}}", false));
+        assertThat(wikiModel.render("{{2x|Hello World\n" + "}}", false)).isEqualTo("\n" + "<p>Hello World\n" + "Hello World\n" + "</p>");
     }
 
     @Test public void testPipe001() {
-        assertEquals("\n" + "<p>hello worldhello world </p>", wikiModel.render("{{2x|hello world" + "}} ", false));
+        assertThat(wikiModel.render("{{2x|hello world" + "}} ", false)).isEqualTo("\n" + "<p>hello worldhello world </p>");
     }
 
     @Test public void testPipe002() {
-        assertEquals("\n" + "<div style=\"page-break-inside: avoid;\">\n" + "<table>\n" + "<tr>\n" + "<td>A </td>\n"
+        assertThat(wikiModel.render("{{2x|{{{!}} \n" + "{{!}} A \n" + "{{!}} B\n"
+                + "{{!}}- \n" + "{{!}} C\n" + "{{!}} D\n" + "{{!}}}\n" + "}}", false)).isEqualTo("\n" + "<div style=\"page-break-inside: avoid;\">\n" + "<table>\n" + "<tr>\n" + "<td>A </td>\n"
                 + "<td>B</td></tr>\n" + "<tr>\n" + "<td>C</td>\n" + "<td>D</td></tr></table></div>\n" + "\n"
                 + "<div style=\"page-break-inside: avoid;\">\n" + "<table>\n" + "<tr>\n" + "<td>A </td>\n" + "<td>B</td></tr>\n" + "<tr>\n"
-                + "<td>C</td>\n" + "<td>D</td></tr></table></div>\n" + "", wikiModel.render("{{2x|{{{!}} \n" + "{{!}} A \n" + "{{!}} B\n"
-                + "{{!}}- \n" + "{{!}} C\n" + "{{!}} D\n" + "{{!}}}\n" + "}}", false));
+                + "<td>C</td>\n" + "<td>D</td></tr></table></div>\n" + "");
     }
 
     @Test public void testPipe003() {
-        assertEquals("\n" + "<div style=\"page-break-inside: avoid;\">\n" + "<table>\n" + "<tr>\n" + "<td>A </td>\n"
+        assertThat(wikiModel.render("{{2x|{{2x|{{{!}} \n" + "{{!}} A \n"
+                + "{{!}} B\n" + "{{!}}- \n" + "{{!}} C\n" + "{{!}} D\n" + "{{!}}}\n" + "}}}}", false)).isEqualTo("\n" + "<div style=\"page-break-inside: avoid;\">\n" + "<table>\n" + "<tr>\n" + "<td>A </td>\n"
                 + "<td>B</td></tr>\n" + "<tr>\n" + "<td>C</td>\n" + "<td>D</td></tr></table></div>\n" + "\n"
                 + "<div style=\"page-break-inside: avoid;\">\n" + "<table>\n" + "<tr>\n" + "<td>A </td>\n" + "<td>B</td></tr>\n" + "<tr>\n"
                 + "<td>C</td>\n" + "<td>D</td></tr></table></div>\n" + "\n" + "<div style=\"page-break-inside: avoid;\">\n" + "<table>\n"
                 + "<tr>\n" + "<td>A </td>\n" + "<td>B</td></tr>\n" + "<tr>\n" + "<td>C</td>\n" + "<td>D</td></tr></table></div>\n" + "\n"
                 + "<div style=\"page-break-inside: avoid;\">\n" + "<table>\n" + "<tr>\n" + "<td>A </td>\n" + "<td>B</td></tr>\n" + "<tr>\n"
-                + "<td>C</td>\n" + "<td>D</td></tr></table></div>\n" + "", wikiModel.render("{{2x|{{2x|{{{!}} \n" + "{{!}} A \n"
-                + "{{!}} B\n" + "{{!}}- \n" + "{{!}} C\n" + "{{!}} D\n" + "{{!}}}\n" + "}}}}", false));
+                + "<td>C</td>\n" + "<td>D</td></tr></table></div>\n" + "");
     }
 
     @Test public void testFurther() {
-        assertEquals(
-                "\n"
-                        + "<dl>\n"
-                        + "<dd><span class=\"boilerplate further\"><i>Further information: <a href=\"http://www.bliki.info/wiki/History_of_molecular_biology\" title=\"History of molecular biology\">History of molecular biology</a></i></span></dd>\n</dl>",
-                wikiModel.render("{{further|[[History of molecular biology]]}}", false));
+        assertThat(wikiModel.render("{{further|[[History of molecular biology]]}}", false)).isEqualTo("\n"
+                + "<dl>\n"
+                + "<dd><span class=\"boilerplate further\"><i>Further information: <a href=\"http://www.bliki.info/wiki/History_of_molecular_biology\" title=\"History of molecular biology\">History of molecular biology</a></i></span></dd>\n</dl>");
     }
 
     @Test public void testInvalidNoinclude() {
-        assertEquals("\n" + "<p>test123 start</p>", wikiModel.render("test123 start<noinclude>\n" + "test123 end", false));
+        assertThat(wikiModel.render("test123 start<noinclude>\n" + "test123 end", false)).isEqualTo("\n" + "<p>test123 start</p>");
     }
 
     @Test public void testInvalidIncludeonly() {
-        assertEquals("\n" + "<p>test123 start\n" + "test123 end</p>", wikiModel.render("test123 start<includeonly>\n" + "test123 end",
-                false));
+        assertThat(wikiModel.render("test123 start<includeonly>\n" + "test123 end",
+                false)).isEqualTo("\n" + "<p>test123 start\n" + "test123 end</p>");
     }
 
     @Test public void testInvalidOnlyinclude() {
-        assertEquals("\n" + "<p>test123 end</p>", wikiModel.render("test123 start<onlyinclude>\n" + "test123 end", false));
+        assertThat(wikiModel.render("test123 start<onlyinclude>\n" + "test123 end", false)).isEqualTo("\n" + "<p>test123 end</p>");
     }
 
     @Test public void testIf_image_test() {
-        assertEquals(
-                "\n"
-                        + "<p>test <a class=\"image\" href=\"http://www.bliki.info/wiki/File:220px-test.jpg\" ><img src=\"http://www.bliki.info/wiki/220px-test.jpg\" width=\"220\" />\n"
-                        + "</a> test123</p>", wikiModel.render("test {{If_image_test|  image =  test.jpg}} test123", false));
+        assertThat(wikiModel.render("test {{If_image_test|  image =  test.jpg}} test123", false)).isEqualTo("\n"
+                + "<p>test <a class=\"image\" href=\"http://www.bliki.info/wiki/File:220px-test.jpg\" ><img src=\"http://www.bliki.info/wiki/220px-test.jpg\" width=\"220\" />\n"
+                + "</a> test123</p>");
     }
 
     @Test public void testMONTHNAME() {
-        assertEquals("\n" + "<p>test October test123</p>", wikiModel.render("test {{MONTHNAME | 10 }} test123", false));
+        assertThat(wikiModel.render("test {{MONTHNAME | 10 }} test123", false)).isEqualTo("\n" + "<p>test October test123</p>");
     }
 
     @Test public void testMONTHNUMBER() {
-        assertEquals("\n" + "<p>test 10 test123</p>", wikiModel.render("test {{MONTHNUMBER | OctoBer }} test123", false));
+        assertThat(wikiModel.render("test {{MONTHNUMBER | OctoBer }} test123", false)).isEqualTo("\n" + "<p>test 10 test123</p>");
     }
 
     @Test public void testInfoboxProgrammiersprachen() {
-        assertEquals(
-                "\n"
-                        + "<div style=\"page-break-inside: avoid;\">\n"
-                        + "<table class=\"prettytable float-right\" style=\"font-size:90%; width:21em;\">\n"
-                        + "<tr class=\"hintergrundfarbe6\">\n"
-                        + "<th colspan=\"2\" style=\"font-size:105%; text-align: center;\"><big>JavaScript</big></th></tr>\n"
-                        + "<tr valign=\"top\">\n"
-                        + "<td><b><a href=\"http://www.bliki.info/wiki/Programmierparadigma\" title=\"Programmierparadigma\">Paradigmen</a>:</b>\n"
-                        + " </td>\n"
-                        + "<td>multiparadigmatisch</td></tr>\n"
-                        + "<tr valign=\"top\">\n"
-                        + "<td><b>Erscheinungsjahr:</b>\n"
-                        + " </td>\n"
-                        + "<td>1995</td></tr>\n"
-                        + "<tr valign=\"top\">\n"
-                        + "<td><b>Entwickler:</b>\n"
-                        + " </td>\n"
-                        + "<td><a href=\"http://www.bliki.info/wiki/Brendan_Eich\" title=\"Brendan Eich\">Brendan Eich</a></td></tr>\n"
-                        + "<tr valign=\"top\">\n"
-                        + "<td><b>Aktuelle <a href=\"http://www.bliki.info/wiki/Versionierung\" title=\"Versionierung\">Version</a>:</b>\n"
-                        + " </td>\n"
-                        + "<td style=\"white-space:nowrap;\">1.8  <small>(2008)</small></td></tr>\n"
-                        + "<tr valign=\"top\">\n"
-                        + "<td><b><a href=\"http://www.bliki.info/wiki/Typisierung_(Informatik)\" title=\"Typisierung (Informatik)\">Typisierung</a>:</b>\n"
-                        + " </td>\n"
-                        + "<td><a href=\"http://www.bliki.info/wiki/Schwache_Typisierung\" title=\"Schwache Typisierung\">schwach</a>, <a href=\"http://www.bliki.info/wiki/Dynamische_Typisierung\" title=\"Dynamische Typisierung\">dynamisch</a>, <a href=\"http://www.bliki.info/wiki/Duck_Typing\" title=\"Duck Typing\">duck</a></td></tr>\n"
-                        + "<tr valign=\"top\">\n"
-                        + "<td><b>wichtige <a href=\"http://www.bliki.info/wiki/Implementierung\" title=\"Implementierung\">Implementierungen</a>:</b>\n"
-                        + " </td>\n"
-                        + "<td><a href=\"http://www.bliki.info/wiki/SpiderMonkey\" title=\"SpiderMonkey\">SpiderMonkey</a>, <a href=\"http://www.bliki.info/wiki/Rhino\" title=\"Rhino\">Rhino</a>, <a href=\"http://www.bliki.info/wiki/SquirrelFish\" title=\"SquirrelFish\">SquirrelFish</a>, <a href=\"http://www.bliki.info/wiki/V8_(JavaScript-Engine)\" title=\"V8 (JavaScript-Engine)\">V8</a></td></tr>\n"
-                        + "<tr valign=\"top\">\n"
-                        + "<td><b>Einflüsse:</b>\n"
-                        + " </td>\n"
-                        + "<td><a href=\"http://www.bliki.info/wiki/Self_(Programmiersprache)\" title=\"Self (Programmiersprache)\">Self</a>, <a href=\"http://www.bliki.info/wiki/C_(Programmiersprache)\" title=\"C (Programmiersprache)\">C</a>, <a href=\"http://www.bliki.info/wiki/Scheme\" title=\"Scheme\">Scheme</a>, <a href=\"http://www.bliki.info/wiki/Perl_(Programmiersprache)\" title=\"Perl (Programmiersprache)\">Perl</a>, <a href=\"http://www.bliki.info/wiki/Python_(Programmiersprache)\" title=\"Python (Programmiersprache)\">Python</a>, <a href=\"http://www.bliki.info/wiki/Java_(Programmiersprache)\" title=\"Java (Programmiersprache)\">Java</a></td></tr></table></div>",
-                wikiModel
-                        .render(
-                                "{{Infobox Programmiersprache"
-                                        + "|Name = JavaScript"
-                                        + "|Beschreibung = Skriptsprache"
-                                        + "|Paradigma = multiparadigmatisch"
-                                        + "|Erscheinungsjahr = 1995"
-                                        + "|Entwickler = [[Brendan Eich]]"
-                                        + "|AktuelleVersion = 1.8"
-                                        + "|AktuelleVersionFreigabeDatum = 2008"
-                                        + "|Typisierung = [[Schwache Typisierung|schwach]], [[Dynamische Typisierung|dynamisch]], [[Duck Typing|duck]]"
-                                        + "|Implementierung = [[SpiderMonkey]], [[Rhino]], [[SquirrelFish]], [[V8 (JavaScript-Engine)|V8]]"
-                                        + "|Beeinflusst_von = [[Self (Programmiersprache)|Self]], [[C (Programmiersprache)|C]], [[Scheme]], [[Perl (Programmiersprache)|Perl]], [[Python (Programmiersprache)|Python]], [[Java (Programmiersprache)|Java]]"
-                                        + "}}", false));
+        assertThat(wikiModel
+                .render(
+                        "{{Infobox Programmiersprache"
+                                + "|Name = JavaScript"
+                                + "|Beschreibung = Skriptsprache"
+                                + "|Paradigma = multiparadigmatisch"
+                                + "|Erscheinungsjahr = 1995"
+                                + "|Entwickler = [[Brendan Eich]]"
+                                + "|AktuelleVersion = 1.8"
+                                + "|AktuelleVersionFreigabeDatum = 2008"
+                                + "|Typisierung = [[Schwache Typisierung|schwach]], [[Dynamische Typisierung|dynamisch]], [[Duck Typing|duck]]"
+                                + "|Implementierung = [[SpiderMonkey]], [[Rhino]], [[SquirrelFish]], [[V8 (JavaScript-Engine)|V8]]"
+                                + "|Beeinflusst_von = [[Self (Programmiersprache)|Self]], [[C (Programmiersprache)|C]], [[Scheme]], [[Perl (Programmiersprache)|Perl]], [[Python (Programmiersprache)|Python]], [[Java (Programmiersprache)|Java]]"
+                                + "}}", false
+                )).isEqualTo("\n"
+                + "<div style=\"page-break-inside: avoid;\">\n"
+                + "<table class=\"prettytable float-right\" style=\"font-size:90%; width:21em;\">\n"
+                + "<tr class=\"hintergrundfarbe6\">\n"
+                + "<th colspan=\"2\" style=\"font-size:105%; text-align: center;\"><big>JavaScript</big></th></tr>\n"
+                + "<tr valign=\"top\">\n"
+                + "<td><b><a href=\"http://www.bliki.info/wiki/Programmierparadigma\" title=\"Programmierparadigma\">Paradigmen</a>:</b>\n"
+                + " </td>\n"
+                + "<td>multiparadigmatisch</td></tr>\n"
+                + "<tr valign=\"top\">\n"
+                + "<td><b>Erscheinungsjahr:</b>\n"
+                + " </td>\n"
+                + "<td>1995</td></tr>\n"
+                + "<tr valign=\"top\">\n"
+                + "<td><b>Entwickler:</b>\n"
+                + " </td>\n"
+                + "<td><a href=\"http://www.bliki.info/wiki/Brendan_Eich\" title=\"Brendan Eich\">Brendan Eich</a></td></tr>\n"
+                + "<tr valign=\"top\">\n"
+                + "<td><b>Aktuelle <a href=\"http://www.bliki.info/wiki/Versionierung\" title=\"Versionierung\">Version</a>:</b>\n"
+                + " </td>\n"
+                + "<td style=\"white-space:nowrap;\">1.8  <small>(2008)</small></td></tr>\n"
+                + "<tr valign=\"top\">\n"
+                + "<td><b><a href=\"http://www.bliki.info/wiki/Typisierung_(Informatik)\" title=\"Typisierung (Informatik)\">Typisierung</a>:</b>\n"
+                + " </td>\n"
+                + "<td><a href=\"http://www.bliki.info/wiki/Schwache_Typisierung\" title=\"Schwache Typisierung\">schwach</a>, <a href=\"http://www.bliki.info/wiki/Dynamische_Typisierung\" title=\"Dynamische Typisierung\">dynamisch</a>, <a href=\"http://www.bliki.info/wiki/Duck_Typing\" title=\"Duck Typing\">duck</a></td></tr>\n"
+                + "<tr valign=\"top\">\n"
+                + "<td><b>wichtige <a href=\"http://www.bliki.info/wiki/Implementierung\" title=\"Implementierung\">Implementierungen</a>:</b>\n"
+                + " </td>\n"
+                + "<td><a href=\"http://www.bliki.info/wiki/SpiderMonkey\" title=\"SpiderMonkey\">SpiderMonkey</a>, <a href=\"http://www.bliki.info/wiki/Rhino\" title=\"Rhino\">Rhino</a>, <a href=\"http://www.bliki.info/wiki/SquirrelFish\" title=\"SquirrelFish\">SquirrelFish</a>, <a href=\"http://www.bliki.info/wiki/V8_(JavaScript-Engine)\" title=\"V8 (JavaScript-Engine)\">V8</a></td></tr>\n"
+                + "<tr valign=\"top\">\n"
+                + "<td><b>Einflüsse:</b>\n"
+                + " </td>\n"
+                + "<td><a href=\"http://www.bliki.info/wiki/Self_(Programmiersprache)\" title=\"Self (Programmiersprache)\">Self</a>, <a href=\"http://www.bliki.info/wiki/C_(Programmiersprache)\" title=\"C (Programmiersprache)\">C</a>, <a href=\"http://www.bliki.info/wiki/Scheme\" title=\"Scheme\">Scheme</a>, <a href=\"http://www.bliki.info/wiki/Perl_(Programmiersprache)\" title=\"Perl (Programmiersprache)\">Perl</a>, <a href=\"http://www.bliki.info/wiki/Python_(Programmiersprache)\" title=\"Python (Programmiersprache)\">Python</a>, <a href=\"http://www.bliki.info/wiki/Java_(Programmiersprache)\" title=\"Java (Programmiersprache)\">Java</a></td></tr></table></div>");
     }
 
     @Test public void testProgrammiersprachen() {
-        assertEquals(
-                "<h3><span class=\"mw-headline\" id=\"Versionsgeschichte\">Versionsgeschichte</span></h3>\n"
-                        + "\n"
-                        + "<div style=\"page-break-inside: avoid;\">\n"
-                        + "<table class=\"wikitable\">\n"
-                        + "<caption>Versionsgeschichte von JavaScript<sup id=\"_ref-1\" class=\"reference\"><a href=\"#_note-1\" title=\"\">[1]</a></sup></caption>\n"
-                        + "<tr>\n"
-                        + "<th>Version </th>\n"
-                        + "<th>Release </th>\n"
-                        + "<th>Entsprechung </th>\n"
-                        + "<th>Netscape Navigator </th>\n"
-                        + "<th>Mozilla Firefox </th>\n"
-                        + "<th>Internet Explorer </th>\n"
-                        + "<th>Opera </th>\n"
-                        + "<th>Safari </th>\n"
-                        + "<th>Google Chrome </th></tr>\n"
-                        + "<tr>\n"
-                        + "<td>1.0 </td>\n"
-                        + "<td>März 1996 </td>\n"
-                        + "<td />\n"
-                        + "<td>2.0 </td>\n"
-                        + "<td />\n"
-                        + "<td>3.0 </td>\n"
-                        + "<td />\n"
-                        + "<td />\n"
-                        + "<td /></tr>\n"
-                        + "<tr>\n"
-                        + "<td>1.1 </td>\n"
-                        + "<td>August 1996 </td>\n"
-                        + "<td />\n"
-                        + "<td>3.0 </td>\n"
-                        + "<td />\n"
-                        + "<td />\n"
-                        + "<td />\n"
-                        + "<td />\n"
-                        + "<td /></tr>\n"
-                        + "<tr>\n"
-                        + "<td>1.2 </td>\n"
-                        + "<td>Juni 1997 </td>\n"
-                        + "<td />\n"
-                        + "<td>4.0-4.05 </td>\n"
-                        + "<td />\n"
-                        + "<td />\n"
-                        + "<td />\n"
-                        + "<td />\n"
-                        + "<td /></tr>\n"
-                        + "<tr>\n"
-                        + "<td>1.3 </td>\n"
-                        + "<td>Oktober 1998 </td>\n"
-                        + "<td>ECMA-262 1<sup>st</sup> edition / ECMA-262 2<sup>nd</sup> edition </td>\n"
-                        + "<td>4.06-4.7x </td>\n"
-                        + "<td />\n"
-                        + "<td>4.0 </td>\n"
-                        + "<td />\n"
-                        + "<td />\n"
-                        + "<td /></tr>\n"
-                        + "<tr>\n"
-                        + "<td>1.4 </td>\n"
-                        + "<td />\n"
-                        + "<td />\n"
-                        + "<td>Netscape Server </td>\n"
-                        + "<td />\n"
-                        + "<td />\n"
-                        + "<td />\n"
-                        + "<td />\n"
-                        + "<td /></tr>\n"
-                        + "<tr>\n"
-                        + "<td>1.5 </td>\n"
-                        + "<td>November 2000 </td>\n"
-                        + "<td>ECMA-262 3<sup>rd</sup> edition </td>\n"
-                        + "<td>6.0 </td>\n"
-                        + "<td>1.0</td>\n"
-                        + "<td>\n"
-                        + "\n"
-                        + "<ul>\n"
-                        + "<li>5.5 (JScript 5.5)</li>\n"
-                        + "<li>6 (JScript 5.6)</li>\n"
-                        + "<li>7 (JScript 5.7)</li>\n"
-                        + "<li>8 (JScript 6)</li>\n</ul></td>\n"
-                        + "<td>\n"
-                        + "\n"
-                        + "<ul>\n"
-                        + "<li>6.0</li>\n"
-                        + "<li>7.0</li>\n"
-                        + "<li>8.0</li>\n"
-                        + "<li>9.0</li>\n</ul></td>\n"
-                        + "<td />\n"
-                        + "<td /></tr>\n"
-                        + "<tr>\n"
-                        + "<td>1.6 </td>\n"
-                        + "<td>November 2005 </td>\n"
-                        + "<td>1.5 + Array extras + Array &#38; String generics + E4X </td>\n"
-                        + "<td />\n"
-                        + "<td>1.5 </td>\n"
-                        + "<td />\n"
-                        + "<td></td>\n"
-                        + "<td>\n"
-                        + "\n"
-                        + "<ul>\n"
-                        + "<li>3.0</li>\n"
-                        + "<li>3.1</li>\n</ul></td>\n"
-                        + "<td /></tr>\n"
-                        + "<tr>\n"
-                        + "<td>1.7 </td>\n"
-                        + "<td>Oktober 2006 </td>\n"
-                        + "<td>1.6 + Pythonic generators + Iterators + let + destructuring assignments </td>\n"
-                        + "<td />\n"
-                        + "<td>2.0 </td>\n"
-                        + "<td />\n"
-                        + "<td></td>\n"
-                        + "<td>\n"
-                        + "\n"
-                        + "<ul>\n"
-                        + "<li>3.2</li>\n"
-                        + "<li>4.0</li>\n</ul></td>\n"
-                        + "<td>1.0</td></tr>\n"
-                        + "<tr>\n"
-                        + "<td>1.8 </td>\n"
-                        + "<td>Juni 2008 </td>\n"
-                        + "<td>1.7 + Generator expressions + Expression closures </td>\n"
-                        + "<td />\n"
-                        + "<td>3.0 </td>\n"
-                        + "<td />\n"
-                        + "<td />\n"
-                        + "<td />\n"
-                        + "<td /></tr>\n"
-                        + "<tr>\n"
-                        + "<td>1.8.1 </td>\n"
-                        + "<td />\n"
-                        + "<td>1.8 + geringfügige Updates </td>\n"
-                        + "<td />\n"
-                        + "<td>3.5 </td>\n"
-                        + "<td />\n"
-                        + "<td />\n"
-                        + "<td />\n"
-                        + "<td /></tr>\n"
-                        + "<tr>\n"
-                        + "<td>1.9 </td>\n"
-                        + "<td />\n"
-                        + "<td>1.8.1 + ECMAScript 5 Compliance </td>\n"
-                        + "<td />\n"
-                        + "<td>4 </td>\n"
-                        + "<td />\n"
-                        + "<td />\n"
-                        + "<td />\n"
-                        + "<td /></tr></table></div>\n"
-                        + "<ol class=\"references\">\n"
-                        + "<li id=\"_note-1\"><b><a href=\"#_ref-1\" title=\"\">&#8593;</a></b> John Resig. <i><a class=\"external text\" href=\"http://ejohn.org/blog/versions-of-javascript\" rel=\"nofollow\">Versions of JavaScript</a></i>. Ejohn.org. Abgerufen am <a href=\"http://www.bliki.info/wiki/Template:safesubst:\" title=\"Template:safesubst:\">Template:safesubst:</a>.</li>\n</ol>",
-                wikiModel
-                        .render(
-                                "=== Versionsgeschichte ===\n"
-                                        + "{| class=\"wikitable\"\n"
-                                        + "|+Versionsgeschichte von JavaScript<ref>{{cite web|author=John Resig |url=http://ejohn.org/blog/versions-of-javascript |title=Versions of JavaScript |publisher=Ejohn.org |date= |accessdate=2009-05-19}}</ref>\n"
-                                        + "|-\n"
-                                        + "! Version !! Release !! Entsprechung !! Netscape Navigator !! Mozilla Firefox !! Internet Explorer !! Opera !! Safari !! Google Chrome \n"
-                                        + "|-\n"
-                                        + "| 1.0 || März 1996 ||  || 2.0 ||  || 3.0 ||  || || \n"
-                                        + "|-\n"
-                                        + "| 1.1 || August 1996 ||  || 3.0 ||  ||  ||  || || \n"
-                                        + "|-\n"
-                                        + "| 1.2 || Juni 1997 ||  || 4.0-4.05 ||  ||  ||  || || \n"
-                                        + "|-\n"
-                                        + "| 1.3 || Oktober 1998 || ECMA-262 1<sup>st</sup> edition / ECMA-262 2<sup>nd</sup> edition || 4.06-4.7x ||  || 4.0 ||  || || \n"
-                                        + "|-\n"
-                                        + "| 1.4 ||  ||  || Netscape Server ||  ||  ||  || || \n"
-                                        + "|-\n"
-                                        + "| 1.5 || November 2000 || ECMA-262 3<sup>rd</sup> edition || 6.0 || 1.0\n"
-                                        + "|\n"
-                                        + "*5.5 (JScript 5.5)\n"
-                                        + "*6 (JScript 5.6)\n"
-                                        + "*7 (JScript 5.7)\n"
-                                        + "*8 (JScript 6)\n"
-                                        + "|\n"
-                                        + "*6.0\n"
-                                        + "*7.0\n"
-                                        + "*8.0\n"
-                                        + "*9.0\n"
-                                        + "| || \n"
-                                        + "|-\n"
-                                        + "| 1.6 || November 2005 || 1.5 + Array extras + Array & String generics + E4X ||  || 1.5 ||  ||\n"
-                                        + "|\n"
-                                        + "*3.0\n"
-                                        + "*3.1\n"
-                                        + "| \n"
-                                        + "|-\n"
-                                        + "| 1.7 || Oktober 2006 || 1.6 + Pythonic generators + Iterators + let + destructuring assignments ||  || 2.0 ||  ||\n"
-                                        + "|\n" + "* 3.2\n" + "* 4.0\n" + "| 1.0\n" + "|-\n"
-                                        + "| 1.8 || Juni 2008 || 1.7 + Generator expressions + Expression closures ||  || 3.0 ||  ||  || || \n"
-                                        + "|-\n" + "| 1.8.1 ||  || 1.8 + geringfügige Updates ||  || 3.5 ||  ||  || || \n" + "|-\n"
-                                        + "| 1.9 ||  || 1.8.1 + ECMAScript 5 Compliance ||  || 4 ||  ||  || || \n" + "|}\n" + "\n" + "<references/>\n",
-                                false));
+        assertThat(wikiModel
+                .render(
+                        "=== Versionsgeschichte ===\n"
+                                + "{| class=\"wikitable\"\n"
+                                + "|+Versionsgeschichte von JavaScript<ref>{{cite web|author=John Resig |url=http://ejohn.org/blog/versions-of-javascript |title=Versions of JavaScript |publisher=Ejohn.org |date= |accessdate=2009-05-19}}</ref>\n"
+                                + "|-\n"
+                                + "! Version !! Release !! Entsprechung !! Netscape Navigator !! Mozilla Firefox !! Internet Explorer !! Opera !! Safari !! Google Chrome \n"
+                                + "|-\n"
+                                + "| 1.0 || März 1996 ||  || 2.0 ||  || 3.0 ||  || || \n"
+                                + "|-\n"
+                                + "| 1.1 || August 1996 ||  || 3.0 ||  ||  ||  || || \n"
+                                + "|-\n"
+                                + "| 1.2 || Juni 1997 ||  || 4.0-4.05 ||  ||  ||  || || \n"
+                                + "|-\n"
+                                + "| 1.3 || Oktober 1998 || ECMA-262 1<sup>st</sup> edition / ECMA-262 2<sup>nd</sup> edition || 4.06-4.7x ||  || 4.0 ||  || || \n"
+                                + "|-\n"
+                                + "| 1.4 ||  ||  || Netscape Server ||  ||  ||  || || \n"
+                                + "|-\n"
+                                + "| 1.5 || November 2000 || ECMA-262 3<sup>rd</sup> edition || 6.0 || 1.0\n"
+                                + "|\n"
+                                + "*5.5 (JScript 5.5)\n"
+                                + "*6 (JScript 5.6)\n"
+                                + "*7 (JScript 5.7)\n"
+                                + "*8 (JScript 6)\n"
+                                + "|\n"
+                                + "*6.0\n"
+                                + "*7.0\n"
+                                + "*8.0\n"
+                                + "*9.0\n"
+                                + "| || \n"
+                                + "|-\n"
+                                + "| 1.6 || November 2005 || 1.5 + Array extras + Array & String generics + E4X ||  || 1.5 ||  ||\n"
+                                + "|\n"
+                                + "*3.0\n"
+                                + "*3.1\n"
+                                + "| \n"
+                                + "|-\n"
+                                + "| 1.7 || Oktober 2006 || 1.6 + Pythonic generators + Iterators + let + destructuring assignments ||  || 2.0 ||  ||\n"
+                                + "|\n" + "* 3.2\n" + "* 4.0\n" + "| 1.0\n" + "|-\n"
+                                + "| 1.8 || Juni 2008 || 1.7 + Generator expressions + Expression closures ||  || 3.0 ||  ||  || || \n"
+                                + "|-\n" + "| 1.8.1 ||  || 1.8 + geringfügige Updates ||  || 3.5 ||  ||  || || \n" + "|-\n"
+                                + "| 1.9 ||  || 1.8.1 + ECMAScript 5 Compliance ||  || 4 ||  ||  || || \n" + "|}\n" + "\n" + "<references/>\n",
+                        false
+                )).isEqualTo("<h3><span class=\"mw-headline\" id=\"Versionsgeschichte\">Versionsgeschichte</span></h3>\n"
+                + "\n"
+                + "<div style=\"page-break-inside: avoid;\">\n"
+                + "<table class=\"wikitable\">\n"
+                + "<caption>Versionsgeschichte von JavaScript<sup id=\"_ref-1\" class=\"reference\"><a href=\"#_note-1\" title=\"\">[1]</a></sup></caption>\n"
+                + "<tr>\n"
+                + "<th>Version </th>\n"
+                + "<th>Release </th>\n"
+                + "<th>Entsprechung </th>\n"
+                + "<th>Netscape Navigator </th>\n"
+                + "<th>Mozilla Firefox </th>\n"
+                + "<th>Internet Explorer </th>\n"
+                + "<th>Opera </th>\n"
+                + "<th>Safari </th>\n"
+                + "<th>Google Chrome </th></tr>\n"
+                + "<tr>\n"
+                + "<td>1.0 </td>\n"
+                + "<td>März 1996 </td>\n"
+                + "<td />\n"
+                + "<td>2.0 </td>\n"
+                + "<td />\n"
+                + "<td>3.0 </td>\n"
+                + "<td />\n"
+                + "<td />\n"
+                + "<td /></tr>\n"
+                + "<tr>\n"
+                + "<td>1.1 </td>\n"
+                + "<td>August 1996 </td>\n"
+                + "<td />\n"
+                + "<td>3.0 </td>\n"
+                + "<td />\n"
+                + "<td />\n"
+                + "<td />\n"
+                + "<td />\n"
+                + "<td /></tr>\n"
+                + "<tr>\n"
+                + "<td>1.2 </td>\n"
+                + "<td>Juni 1997 </td>\n"
+                + "<td />\n"
+                + "<td>4.0-4.05 </td>\n"
+                + "<td />\n"
+                + "<td />\n"
+                + "<td />\n"
+                + "<td />\n"
+                + "<td /></tr>\n"
+                + "<tr>\n"
+                + "<td>1.3 </td>\n"
+                + "<td>Oktober 1998 </td>\n"
+                + "<td>ECMA-262 1<sup>st</sup> edition / ECMA-262 2<sup>nd</sup> edition </td>\n"
+                + "<td>4.06-4.7x </td>\n"
+                + "<td />\n"
+                + "<td>4.0 </td>\n"
+                + "<td />\n"
+                + "<td />\n"
+                + "<td /></tr>\n"
+                + "<tr>\n"
+                + "<td>1.4 </td>\n"
+                + "<td />\n"
+                + "<td />\n"
+                + "<td>Netscape Server </td>\n"
+                + "<td />\n"
+                + "<td />\n"
+                + "<td />\n"
+                + "<td />\n"
+                + "<td /></tr>\n"
+                + "<tr>\n"
+                + "<td>1.5 </td>\n"
+                + "<td>November 2000 </td>\n"
+                + "<td>ECMA-262 3<sup>rd</sup> edition </td>\n"
+                + "<td>6.0 </td>\n"
+                + "<td>1.0</td>\n"
+                + "<td>\n"
+                + "\n"
+                + "<ul>\n"
+                + "<li>5.5 (JScript 5.5)</li>\n"
+                + "<li>6 (JScript 5.6)</li>\n"
+                + "<li>7 (JScript 5.7)</li>\n"
+                + "<li>8 (JScript 6)</li>\n</ul></td>\n"
+                + "<td>\n"
+                + "\n"
+                + "<ul>\n"
+                + "<li>6.0</li>\n"
+                + "<li>7.0</li>\n"
+                + "<li>8.0</li>\n"
+                + "<li>9.0</li>\n</ul></td>\n"
+                + "<td />\n"
+                + "<td /></tr>\n"
+                + "<tr>\n"
+                + "<td>1.6 </td>\n"
+                + "<td>November 2005 </td>\n"
+                + "<td>1.5 + Array extras + Array &#38; String generics + E4X </td>\n"
+                + "<td />\n"
+                + "<td>1.5 </td>\n"
+                + "<td />\n"
+                + "<td></td>\n"
+                + "<td>\n"
+                + "\n"
+                + "<ul>\n"
+                + "<li>3.0</li>\n"
+                + "<li>3.1</li>\n</ul></td>\n"
+                + "<td /></tr>\n"
+                + "<tr>\n"
+                + "<td>1.7 </td>\n"
+                + "<td>Oktober 2006 </td>\n"
+                + "<td>1.6 + Pythonic generators + Iterators + let + destructuring assignments </td>\n"
+                + "<td />\n"
+                + "<td>2.0 </td>\n"
+                + "<td />\n"
+                + "<td></td>\n"
+                + "<td>\n"
+                + "\n"
+                + "<ul>\n"
+                + "<li>3.2</li>\n"
+                + "<li>4.0</li>\n</ul></td>\n"
+                + "<td>1.0</td></tr>\n"
+                + "<tr>\n"
+                + "<td>1.8 </td>\n"
+                + "<td>Juni 2008 </td>\n"
+                + "<td>1.7 + Generator expressions + Expression closures </td>\n"
+                + "<td />\n"
+                + "<td>3.0 </td>\n"
+                + "<td />\n"
+                + "<td />\n"
+                + "<td />\n"
+                + "<td /></tr>\n"
+                + "<tr>\n"
+                + "<td>1.8.1 </td>\n"
+                + "<td />\n"
+                + "<td>1.8 + geringfügige Updates </td>\n"
+                + "<td />\n"
+                + "<td>3.5 </td>\n"
+                + "<td />\n"
+                + "<td />\n"
+                + "<td />\n"
+                + "<td /></tr>\n"
+                + "<tr>\n"
+                + "<td>1.9 </td>\n"
+                + "<td />\n"
+                + "<td>1.8.1 + ECMAScript 5 Compliance </td>\n"
+                + "<td />\n"
+                + "<td>4 </td>\n"
+                + "<td />\n"
+                + "<td />\n"
+                + "<td />\n"
+                + "<td /></tr></table></div>\n"
+                + "<ol class=\"references\">\n"
+                + "<li id=\"_note-1\"><b><a href=\"#_ref-1\" title=\"\">&#8593;</a></b> John Resig. <i><a class=\"external text\" href=\"http://ejohn.org/blog/versions-of-javascript\" rel=\"nofollow\">Versions of JavaScript</a></i>. Ejohn.org. Abgerufen am <a href=\"http://www.bliki.info/wiki/Template:safesubst:\" title=\"Template:safesubst:\">Template:safesubst:</a>.</li>\n</ol>");
     }
 
     @Test public void testIssue77_001() {
-        assertEquals(
-                "\n"
-                        + "<div style=\"page-break-inside: avoid;\">\n"
-                        + "<table>\n"
-                        + "<tr>\n"
-                        + "<th><h2 style=\"background:#cedff2;\">In the news</h2></th></tr>\n"
-                        + "<tr>\n"
-                        + "<td>\n"
-                        + "<div>\n"
-                        + "<div style=\"float:right;margin-left:0.5em;\">\n"
-                        + "<a class=\"image\" href=\"http://www.bliki.info/wiki/File:Yoshihiko_Noda-1.jpg\" title=\"Yoshihiko Noda\"><img src=\"http://www.bliki.info/wiki/100px-Yoshihiko_Noda-1.jpg\" alt=\"Yoshihiko Noda\" height=\"100\" width=\"100\" />\n"
-                        + "</a>\n"
-                        + "</div>\n"
-                        + "The ruling Democratic Party of Japan selects <b>Yoshihiko Noda</b> <i>(pictured)</i> as the country&#39;s new Prime Minister of Japan|prime minister, following the resignation of Naoto Kan.</div></td></tr></table></div>",
-                wikiModel
-                        .render(
-                                "{|\n"
-                                        + "! | <h2 style=\"background:#cedff2;\">In the news</h2>\n"
-                                        + "|-\n"
-                                        + "| | <div>{{In the news/image\n"
-                                        + " |image  = Yoshihiko Noda-1.jpg\n"
-                                        + " |size   = 100x100px\n"
-                                        + " |title  = Yoshihiko Noda\n"
-                                        + " |link   = \n"
-                                        + " |border = no\n"
-                                        + "}}\n"
-                                        + "The ruling Democratic Party of Japan selects '''Yoshihiko Noda''' ''(pictured)'' as the country's new Prime Minister of Japan|prime minister, following the resignation of Naoto Kan.</div>\n"
-                                        + "|}", false));
+        assertThat(wikiModel
+                .render(
+                        "{|\n"
+                                + "! | <h2 style=\"background:#cedff2;\">In the news</h2>\n"
+                                + "|-\n"
+                                + "| | <div>{{In the news/image\n"
+                                + " |image  = Yoshihiko Noda-1.jpg\n"
+                                + " |size   = 100x100px\n"
+                                + " |title  = Yoshihiko Noda\n"
+                                + " |link   = \n"
+                                + " |border = no\n"
+                                + "}}\n"
+                                + "The ruling Democratic Party of Japan selects '''Yoshihiko Noda''' ''(pictured)'' as the country's new Prime Minister of Japan|prime minister, following the resignation of Naoto Kan.</div>\n"
+                                + "|}", false
+                )).isEqualTo("\n"
+                + "<div style=\"page-break-inside: avoid;\">\n"
+                + "<table>\n"
+                + "<tr>\n"
+                + "<th><h2 style=\"background:#cedff2;\">In the news</h2></th></tr>\n"
+                + "<tr>\n"
+                + "<td>\n"
+                + "<div>\n"
+                + "<div style=\"float:right;margin-left:0.5em;\">\n"
+                + "<a class=\"image\" href=\"http://www.bliki.info/wiki/File:Yoshihiko_Noda-1.jpg\" title=\"Yoshihiko Noda\"><img src=\"http://www.bliki.info/wiki/100px-Yoshihiko_Noda-1.jpg\" alt=\"Yoshihiko Noda\" height=\"100\" width=\"100\" />\n"
+                + "</a>\n"
+                + "</div>\n"
+                + "The ruling Democratic Party of Japan selects <b>Yoshihiko Noda</b> <i>(pictured)</i> as the country&#39;s new Prime Minister of Japan|prime minister, following the resignation of Naoto Kan.</div></td></tr></table></div>");
     }
 
     @Test public void testIssue77_002() {
-        assertEquals(
-                "\n"
-                        + "<div style=\"page-break-inside: avoid;\">\n"
-                        + "<table cellspacing=\"6\" style=\"width: 100%; height: auto; border: 1px solid #88A; background-color: #ACF; vertical-align: top; margin: 0em 0em 0.5em 0em; border-spacing: 0.6em;\">\n"
-                        + "<tr>\n"
-                        + "<td colspan=\"2\" style=\"width: 100%; vertical-align:top; color:#000; border: 3px double #AAA; background-color: #ffffff; padding: 0.5em; margin: 0em;\">\n"
-                        + "\n"
-                        + "<div style=\"page-break-inside: avoid;\">\n"
-                        + "<table style=\"vertical-align: top; margin: 0em; width: 100% !important; width: auto; display: table !important; display: inline; background-color: transparent;\">\n"
-                        + "<tr>\n"
-                        + "<th colspan=\"2\" style=\"background:#F0F0F0; margin: 0em; height: 1em; font-weight:bold; border:1px solid #AAA; text-align:left; color:#000;\"><h1 style=\"text-align: left; font-size: 1.2em; border: none; margin: 0; padding: 1.5px 0 2px 4px;\"><b>Knowledge groups</b></h1></th></tr>\n"
-                        + "<tr>\n"
-                        + "<td>\n"
-                        + "TEST1</td></tr></table></div></td></tr>\n"
-                        + "<tr>\n"
-                        + "<td colspan=\"2\" style=\"width: 100%; vertical-align:top; color:#000; border: 3px double #AAA; background-color: #ffffff; padding: 0.5em; margin: 0em;\">\n"
-                        + "\n"
-                        + "<div style=\"page-break-inside: avoid;\">\n"
-                        + "<table style=\"vertical-align: top; margin: 0em; width: 100% !important; width: auto; display: table !important; display: inline; background-color: transparent;\">\n"
-                        + "<tr>\n"
-                        + "<th colspan=\"2\" style=\"background:#F0F0F0; margin: 0em; height: 1em; font-weight:bold; border:1px solid #AAA; text-align:left; color:#000;\"><h1 style=\"text-align: left; font-size: 1.2em; border: none; margin: 0; padding: 1.5px 0 2px 4px;\"><b>Sister projects</b></h1></th></tr>\n"
-                        + "<tr>\n" + "<td>\n" + "TEST2</td></tr></table></div></td></tr></table></div>",
-                wikiModel
-                        .render(
-                                "{| style=\"width: 100%; height: auto; border: 1px solid #88A; background-color: #ACF; vertical-align: top; margin: 0em 0em 0.5em 0em; border-spacing: 0.6em;\" cellspacing=\"6\"\n"
-                                        + "|-\n"
-                                        + "{{Main Page subpanel|column=both|title=Knowledge groups|1=\n"
-                                        + "TEST1\n"
-                                        + "}}\n"
-                                        + "{{!}}-\n"
-                                        + "{{Main Page subpanel|column=both|title=Sister projects|1=\n" + "TEST2\n" + "}}\n" + "|}", false));
+        assertThat(wikiModel
+                .render(
+                        "{| style=\"width: 100%; height: auto; border: 1px solid #88A; background-color: #ACF; vertical-align: top; margin: 0em 0em 0.5em 0em; border-spacing: 0.6em;\" cellspacing=\"6\"\n"
+                                + "|-\n"
+                                + "{{Main Page subpanel|column=both|title=Knowledge groups|1=\n"
+                                + "TEST1\n"
+                                + "}}\n"
+                                + "{{!}}-\n"
+                                + "{{Main Page subpanel|column=both|title=Sister projects|1=\n" + "TEST2\n" + "}}\n" + "|}", false
+                )).isEqualTo("\n"
+                + "<div style=\"page-break-inside: avoid;\">\n"
+                + "<table cellspacing=\"6\" style=\"width: 100%; height: auto; border: 1px solid #88A; background-color: #ACF; vertical-align: top; margin: 0em 0em 0.5em 0em; border-spacing: 0.6em;\">\n"
+                + "<tr>\n"
+                + "<td colspan=\"2\" style=\"width: 100%; vertical-align:top; color:#000; border: 3px double #AAA; background-color: #ffffff; padding: 0.5em; margin: 0em;\">\n"
+                + "\n"
+                + "<div style=\"page-break-inside: avoid;\">\n"
+                + "<table style=\"vertical-align: top; margin: 0em; width: 100% !important; width: auto; display: table !important; display: inline; background-color: transparent;\">\n"
+                + "<tr>\n"
+                + "<th colspan=\"2\" style=\"background:#F0F0F0; margin: 0em; height: 1em; font-weight:bold; border:1px solid #AAA; text-align:left; color:#000;\"><h1 style=\"text-align: left; font-size: 1.2em; border: none; margin: 0; padding: 1.5px 0 2px 4px;\"><b>Knowledge groups</b></h1></th></tr>\n"
+                + "<tr>\n"
+                + "<td>\n"
+                + "TEST1</td></tr></table></div></td></tr>\n"
+                + "<tr>\n"
+                + "<td colspan=\"2\" style=\"width: 100%; vertical-align:top; color:#000; border: 3px double #AAA; background-color: #ffffff; padding: 0.5em; margin: 0em;\">\n"
+                + "\n"
+                + "<div style=\"page-break-inside: avoid;\">\n"
+                + "<table style=\"vertical-align: top; margin: 0em; width: 100% !important; width: auto; display: table !important; display: inline; background-color: transparent;\">\n"
+                + "<tr>\n"
+                + "<th colspan=\"2\" style=\"background:#F0F0F0; margin: 0em; height: 1em; font-weight:bold; border:1px solid #AAA; text-align:left; color:#000;\"><h1 style=\"text-align: left; font-size: 1.2em; border: none; margin: 0; padding: 1.5px 0 2px 4px;\"><b>Sister projects</b></h1></th></tr>\n"
+                + "<tr>\n" + "<td>\n" + "TEST2</td></tr></table></div></td></tr></table></div>");
     }
 
 //    @Test public void testIssue81() {
@@ -855,7 +825,7 @@ public class TemplateFilterTest extends FilterTestSupport {
 //    }
 
     @Test public void testIssue82_002() {
-        assertEquals("105th", wikiModel.parseTemplates("{{ordinal|105}}"));
+        assertThat(wikiModel.parseTemplates("{{ordinal|105}}")).isEqualTo("105th");
     }
 // time dependent tests
 //    @Test public void testIssue82_003() {
@@ -875,228 +845,43 @@ public class TemplateFilterTest extends FilterTestSupport {
     // }
 
     @Test public void testRndfracTemplate001() {
-        assertEquals("\n" + "<p><span class=\"frac nowrap\"><sup>1</sup>⁄<sub>8</sub></span></p>", wikiModel.render(
-                "{{rndfrac|0.1234|8}}", false));
+        assertThat(wikiModel.render(
+                "{{rndfrac|0.1234|8}}", false)).isEqualTo("\n" + "<p><span class=\"frac nowrap\"><sup>1</sup>⁄<sub>8</sub></span></p>");
     }
 
     @Test public void testRndfracTemplate002() {
-        assertEquals("\n" + "<p><span class=\"frac nowrap\">12<sup> </sup><sup>4</sup>⁄<sub>6</sub></span></p>", wikiModel.render(
-                "{{rndfrac|12.65|6}}", false));
+        assertThat(wikiModel.render(
+                "{{rndfrac|12.65|6}}", false)).isEqualTo("\n" + "<p><span class=\"frac nowrap\">12<sup> </sup><sup>4</sup>⁄<sub>6</sub></span></p>");
     }
 
     @Test public void testTemplateMain() {
-        assertEquals(
-                "\n"
-                        + "<div class=\"rellink relarticle mainarticle\">Main articles: <a href=\"http://www.bliki.info/wiki/Demographics_of_Pakistan\" title=\"Demographics of Pakistan\">Demographics of Pakistan</a> and <a href=\"http://www.bliki.info/wiki/Pakistani_people\" title=\"Pakistani people\">Pakistani people</a></div>",
-                wikiModel.render("{{Main|Demographics of Pakistan|Pakistani people}}", false));
+        assertThat(wikiModel.render("{{Main|Demographics of Pakistan|Pakistani people}}", false)).isEqualTo("\n"
+                + "<div class=\"rellink relarticle mainarticle\">Main articles: <a href=\"http://www.bliki.info/wiki/Demographics_of_Pakistan\" title=\"Demographics of Pakistan\">Demographics of Pakistan</a> and <a href=\"http://www.bliki.info/wiki/Pakistani_people\" title=\"Pakistani people\">Pakistani people</a></div>");
     }
 
     @Test public void testTemplateSeeAlso() {
-        assertEquals(
-                "\n"
-                        + "<div class=\"rellink boilerplate seealso\">See also: <a href=\"http://www.bliki.info/wiki/Ethnic_groups_in_Pakistan\" title=\"Ethnic groups in Pakistan\">Ethnic groups in Pakistan</a> and <a href=\"http://www.bliki.info/wiki/Religion_in_Pakistan\" title=\"Religion in Pakistan\">Religion in Pakistan</a></div>",
-                wikiModel.render("{{See also|Ethnic groups in Pakistan|Religion in Pakistan}}", false));
+        assertThat(wikiModel.render("{{See also|Ethnic groups in Pakistan|Religion in Pakistan}}", false)).isEqualTo("\n"
+                + "<div class=\"rellink boilerplate seealso\">See also: <a href=\"http://www.bliki.info/wiki/Ethnic_groups_in_Pakistan\" title=\"Ethnic groups in Pakistan\">Ethnic groups in Pakistan</a> and <a href=\"http://www.bliki.info/wiki/Religion_in_Pakistan\" title=\"Religion in Pakistan\">Religion in Pakistan</a></div>");
     }
 
     @Test public void testTemplateMain002() {
-        assertEquals(
-                "<h2><span class=\"mw-headline\" id=\"Demographics\">Demographics</span></h2>\n"
-                        + "<div class=\"rellink relarticle mainarticle\">Main articles: <a href=\"http://www.bliki.info/wiki/Demographics_of_Pakistan\" title=\"Demographics of Pakistan\">Demographics of Pakistan</a> and <a href=\"http://www.bliki.info/wiki/Pakistani_people\" title=\"Pakistani people\">Pakistani people</a></div>\n"
-                        + "<div class=\"rellink boilerplate seealso\">See also: <a href=\"http://www.bliki.info/wiki/Ethnic_groups_in_Pakistan\" title=\"Ethnic groups in Pakistan\">Ethnic groups in Pakistan</a> and <a href=\"http://www.bliki.info/wiki/Religion_in_Pakistan\" title=\"Religion in Pakistan\">Religion in Pakistan</a></div>",
-                wikiModel.render("==Demographics==\n" + "{{Main|Demographics of Pakistan|Pakistani people}}\n"
-                        + "{{See also|Ethnic groups in Pakistan|Religion in Pakistan}}", false));
+        assertThat(wikiModel.render("==Demographics==\n" + "{{Main|Demographics of Pakistan|Pakistani people}}\n"
+                + "{{See also|Ethnic groups in Pakistan|Religion in Pakistan}}", false)).isEqualTo("<h2><span class=\"mw-headline\" id=\"Demographics\">Demographics</span></h2>\n"
+                + "<div class=\"rellink relarticle mainarticle\">Main articles: <a href=\"http://www.bliki.info/wiki/Demographics_of_Pakistan\" title=\"Demographics of Pakistan\">Demographics of Pakistan</a> and <a href=\"http://www.bliki.info/wiki/Pakistani_people\" title=\"Pakistani people\">Pakistani people</a></div>\n"
+                + "<div class=\"rellink boilerplate seealso\">See also: <a href=\"http://www.bliki.info/wiki/Ethnic_groups_in_Pakistan\" title=\"Ethnic groups in Pakistan\">Ethnic groups in Pakistan</a> and <a href=\"http://www.bliki.info/wiki/Religion_in_Pakistan\" title=\"Religion in Pakistan\">Religion in Pakistan</a></div>");
     }
 
     @Test public void testUnknownTag001() {
-        assertEquals("\n" +
+        assertThat(wikiModel.render("start<unknowntag>\nsome text\n new line\ntest</unknowntag>end", false)).isEqualTo("\n" +
                 "<p>start&#60;unknowntag&#62;\n" +
                 "some text</p>\n" +
                 "<pre>new line\n" +
                 "</pre>\n" +
-                "<p>test&#60;/unknowntag&#62;end</p>",
-                wikiModel.render("start<unknowntag>\nsome text\n new line\ntest</unknowntag>end", false));
+                "<p>test&#60;/unknowntag&#62;end</p>");
     }
 
     @Test public void testTemplateNavbox() {
-        assertEquals(
-                "\n"
-                        + "<table cellspacing=\"0\" class=\"navbox\" style=\"border-spacing:0;;\">\n"
-                        + "\n"
-                        + "<tr>\n"
-                        + "\n"
-                        + "<td style=\"padding:2px;\">\n"
-                        + "<table cellspacing=\"0\" class=\"nowraplinks  collapsible autocollapse navbox-inner\" style=\"border-spacing:0;background:transparent;color:inherit;;\">\n"
-                        + "\n"
-                        + "<tr>\n"
-                        + "\n"
-                        + "<th class=\"navbox-title\" colspan=\"2\" scope=\"col\" style=\";\">\n"
-                        + "\n"
-                        + "<div class=\"noprint plainlinks hlist navbar mini\">\n"
-                        + "<ul>\n"
-                        + "\n"
-                        + "<li class=\"nv-view\"><a href=\"http://www.bliki.info/wiki/Template:National_Board_of_Review_Award_for_Best_Actor\" title=\"Template:National Board of Review Award for Best Actor\"><span style=\";;background:none transparent;border:none;\" title=\"View this template\">v</span></a></li>\n"
-                        + "<li class=\"nv-talk\"><a href=\"http://www.bliki.info/wiki/Template_talk:National_Board_of_Review_Award_for_Best_Actor\" title=\"Template talk:National Board of Review Award for Best Actor\"><span style=\";;background:none transparent;border:none;\" title=\"Discuss this template\">t</span></a></li>\n"
-                        + "<li class=\"nv-edit\"><a class=\"external text\" href=\"http://en.wikipedia.org/w/index.php?title=Template%3ANational+Board+of+Review+Award+for+Best+Actor&#38;action=edit\" rel=\"nofollow\"><span style=\";;background:none transparent;border:none;\" title=\"Edit this template\">e</span></a></li>\n"
-                        + "</ul></div>\n"
-                        + "<div style=\"font-size:110%;\">\n"
-                        + "<p><a href=\"http://www.bliki.info/wiki/National_Board_of_Review_Award_for_Best_Actor\" title=\"National Board of Review Award for Best Actor\">National Board of Review Award for Best Actor</a></p></div>\n"
-                        + "</th>\n"
-                        + "</tr>\n"
-                        + "<tr style=\"height:2px;\">\n"
-                        + "\n"
-                        + "</tr>\n"
-                        + "<tr>\n"
-                        + "\n"
-                        + "<td class=\"navbox-list navbox-odd hlist\n"
-                        + "\" colspan=\"2\" style=\"width:100%;padding:0px;;;\">\n"
-                        + "<div style=\"padding:0em 0.25em\">\n"
-                        + "\n"
-                        + "<ul>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Ray_Milland\" title=\"Ray Milland\">Ray Milland</a> (1945)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Laurence_Olivier\" title=\"Laurence Olivier\">Laurence Olivier</a> (1946)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Michael_Redgrave\" title=\"Michael Redgrave\">Michael Redgrave</a> (1947)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Walter_Huston\" title=\"Walter Huston\">Walter Huston</a> (1948)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Ralph_Richardson\" title=\"Ralph Richardson\">Ralph Richardson</a> (1949)</li>\n</ul></div></td>\n"
-                        + "</tr>\n"
-                        + "<tr style=\"height:2px\">\n"
-                        + "\n"
-                        + "</tr>\n"
-                        + "<tr>\n"
-                        + "\n"
-                        + "<td class=\"navbox-list navbox-even hlist\n"
-                        + "\" colspan=\"2\" style=\"width:100%;padding:0px;;;\">\n"
-                        + "<div style=\"padding:0em 0.25em\">\n"
-                        + "\n"
-                        + "<ul>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Alec_Guinness\" title=\"Alec Guinness\">Alec Guinness</a> (1950)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Richard_Basehart\" title=\"Richard Basehart\">Richard Basehart</a> (1951)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Ralph_Richardson\" title=\"Ralph Richardson\">Ralph Richardson</a> (1952)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/James_Mason\" title=\"James Mason\">James Mason</a> (1953)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Bing_Crosby\" title=\"Bing Crosby\">Bing Crosby</a> (1954)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Ernest_Borgnine\" title=\"Ernest Borgnine\">Ernest Borgnine</a> (1955)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Yul_Brynner\" title=\"Yul Brynner\">Yul Brynner</a> (1956)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Alec_Guinness\" title=\"Alec Guinness\">Alec Guinness</a> (1957)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Spencer_Tracy\" title=\"Spencer Tracy\">Spencer Tracy</a> (1958)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Victor_Sj%C3%B6str%C3%B6m\" title=\"Victor Sjöström\">Victor Sjöström</a> (1959)</li>\n</ul></div></td>\n"
-                        + "</tr>\n"
-                        + "<tr style=\"height:2px\">\n"
-                        + "\n"
-                        + "</tr>\n"
-                        + "<tr>\n"
-                        + "\n"
-                        + "<td class=\"navbox-list navbox-odd hlist\n"
-                        + "\" colspan=\"2\" style=\"width:100%;padding:0px;;;\">\n"
-                        + "<div style=\"padding:0em 0.25em\">\n"
-                        + "\n"
-                        + "<ul>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Robert_Mitchum\" title=\"Robert Mitchum\">Robert Mitchum</a> (1960)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Albert_Finney\" title=\"Albert Finney\">Albert Finney</a> (1961)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Jason_Robards\" title=\"Jason Robards\">Jason Robards</a> (1962)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Rex_Harrison\" title=\"Rex Harrison\">Rex Harrison</a> (1963)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Anthony_Quinn\" title=\"Anthony Quinn\">Anthony Quinn</a> (1964)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Lee_Marvin\" title=\"Lee Marvin\">Lee Marvin</a> (1965)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Paul_Scofield\" title=\"Paul Scofield\">Paul Scofield</a> (1966)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Peter_Finch\" title=\"Peter Finch\">Peter Finch</a> (1967)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Cliff_Robertson\" title=\"Cliff Robertson\">Cliff Robertson</a> (1968)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Peter_O&#39;Toole\" title=\"Peter O&#39;Toole\">Peter O&#39;Toole</a> (1969)</li>\n</ul></div></td>\n"
-                        + "</tr>\n"
-                        + "<tr style=\"height:2px\">\n"
-                        + "\n"
-                        + "</tr>\n"
-                        + "<tr>\n"
-                        + "\n"
-                        + "<td class=\"navbox-list navbox-even hlist\n"
-                        + "\" colspan=\"2\" style=\"width:100%;padding:0px;;;\">\n"
-                        + "<div style=\"padding:0em 0.25em\">\n"
-                        + "\n"
-                        + "<ul>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/George_C._Scott\" title=\"George C. Scott\">George C. Scott</a> (1970)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Gene_Hackman\" title=\"Gene Hackman\">Gene Hackman</a> (1971)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Peter_O&#39;Toole\" title=\"Peter O&#39;Toole\">Peter O&#39;Toole</a> (1972)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Al_Pacino\" title=\"Al Pacino\">Al Pacino</a> / <a href=\"http://www.bliki.info/wiki/Robert_Ryan\" title=\"Robert Ryan\">Robert Ryan</a> (1973)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Gene_Hackman\" title=\"Gene Hackman\">Gene Hackman</a> (1974)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Jack_Nicholson\" title=\"Jack Nicholson\">Jack Nicholson</a> (1975)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/David_Carradine\" title=\"David Carradine\">David Carradine</a> (1976)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/John_Travolta\" title=\"John Travolta\">John Travolta</a> (1977)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Jon_Voight\" title=\"Jon Voight\">Jon Voight</a> / <a href=\"http://www.bliki.info/wiki/Laurence_Olivier\" title=\"Laurence Olivier\">Laurence Olivier</a> (1978)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Peter_Sellers\" title=\"Peter Sellers\">Peter Sellers</a> (1979)</li>\n</ul></div></td>\n"
-                        + "</tr>\n"
-                        + "<tr style=\"height:2px\">\n"
-                        + "\n"
-                        + "</tr>\n"
-                        + "<tr>\n"
-                        + "\n"
-                        + "<td class=\"navbox-list navbox-odd hlist\n"
-                        + "\" colspan=\"2\" style=\"width:100%;padding:0px;;;\">\n"
-                        + "<div style=\"padding:0em 0.25em\">\n"
-                        + "\n"
-                        + "<ul>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Robert_De_Niro\" title=\"Robert De Niro\">Robert De Niro</a> (1980)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Peter_Fonda\" title=\"Peter Fonda\">Peter Fonda</a> (1981)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Ben_Kingsley\" title=\"Ben Kingsley\">Ben Kingsley</a> (1982)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Tom_Conti\" title=\"Tom Conti\">Tom Conti</a> (1983)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Victor_Banerjee\" title=\"Victor Banerjee\">Victor Banerjee</a> (1984)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/William_Hurt\" title=\"William Hurt\">William Hurt</a> / <a href=\"http://www.bliki.info/wiki/Ra%C3%BAl_Juli%C3%A1\" title=\"Raúl Juliá\">Raúl Juliá</a> (1985)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Paul_Newman\" title=\"Paul Newman\">Paul Newman</a> (1986)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Michael_Douglas\" title=\"Michael Douglas\">Michael Douglas</a> (1987)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Gene_Hackman\" title=\"Gene Hackman\">Gene Hackman</a> (1988)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Morgan_Freeman\" title=\"Morgan Freeman\">Morgan Freeman</a> (1989)</li>\n</ul></div></td>\n"
-                        + "</tr>\n"
-                        + "<tr style=\"height:2px\">\n"
-                        + "\n"
-                        + "</tr>\n"
-                        + "<tr>\n"
-                        + "\n"
-                        + "<td class=\"navbox-list navbox-even hlist\n"
-                        + "\" colspan=\"2\" style=\"width:100%;padding:0px;;;\">\n"
-                        + "<div style=\"padding:0em 0.25em\">\n"
-                        + "\n"
-                        + "<ul>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Robert_De_Niro\" title=\"Robert De Niro\">Robert De Niro</a> / <a href=\"http://www.bliki.info/wiki/Robin_Williams\" title=\"Robin Williams\">Robin Williams</a> (1990)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Warren_Beatty\" title=\"Warren Beatty\">Warren Beatty</a> (1991)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Jack_Lemmon\" title=\"Jack Lemmon\">Jack Lemmon</a> (1992)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Anthony_Hopkins\" title=\"Anthony Hopkins\">Anthony Hopkins</a> (1993)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Tom_Hanks\" title=\"Tom Hanks\">Tom Hanks</a> (1994)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Nicolas_Cage\" title=\"Nicolas Cage\">Nicolas Cage</a> (1995)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Tom_Cruise\" title=\"Tom Cruise\">Tom Cruise</a> (1996)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Jack_Nicholson\" title=\"Jack Nicholson\">Jack Nicholson</a> (1997)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Ian_McKellen\" title=\"Ian McKellen\">Ian McKellen</a> (1998)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Russell_Crowe\" title=\"Russell Crowe\">Russell Crowe</a> (1999)</li>\n</ul></div></td>\n"
-                        + "</tr>\n"
-                        + "<tr style=\"height:2px\">\n"
-                        + "\n"
-                        + "</tr>\n"
-                        + "<tr>\n"
-                        + "\n"
-                        + "<td class=\"navbox-list navbox-odd hlist\n"
-                        + "\" colspan=\"2\" style=\"width:100%;padding:0px;;;\">\n"
-                        + "<div style=\"padding:0em 0.25em\">\n"
-                        + "\n"
-                        + "<ul>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Javier_Bardem\" title=\"Javier Bardem\">Javier Bardem</a> (2000)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Billy_Bob_Thornton\" title=\"Billy Bob Thornton\">Billy Bob Thornton</a> (2001)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Campbell_Scott\" title=\"Campbell Scott\">Campbell Scott</a> (2002)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Sean_Penn\" title=\"Sean Penn\">Sean Penn</a> (2003)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Jamie_Foxx\" title=\"Jamie Foxx\">Jamie Foxx</a> (2004)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Philip_Seymour_Hoffman\" title=\"Philip Seymour Hoffman\">Philip Seymour Hoffman</a> (2005)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Forest_Whitaker\" title=\"Forest Whitaker\">Forest Whitaker</a> (2006)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/George_Clooney\" title=\"George Clooney\">George Clooney</a> (2007)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Clint_Eastwood\" title=\"Clint Eastwood\">Clint Eastwood</a> (2008)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/George_Clooney\" title=\"George Clooney\">George Clooney</a> / <a href=\"http://www.bliki.info/wiki/Morgan_Freeman\" title=\"Morgan Freeman\">Morgan Freeman</a> (2009)</li>\n</ul></div></td>\n"
-                        + "</tr>\n"
-                        + "<tr style=\"height:2px\">\n"
-                        + "\n"
-                        + "</tr>\n"
-                        + "<tr>\n"
-                        + "\n"
-                        + "<td class=\"navbox-list navbox-even hlist\n"
-                        + "\" colspan=\"2\" style=\"width:100%;padding:0px;;;\">\n"
-                        + "<div style=\"padding:0em 0.25em\">\n"
-                        + "\n"
-                        + "<ul>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/Jesse_Eisenberg\" title=\"Jesse Eisenberg\">Jesse Eisenberg</a> (2010)</li>\n"
-                        + "<li><a href=\"http://www.bliki.info/wiki/George_Clooney\" title=\"George Clooney\">George Clooney</a> (2011)</li>\n</ul>\n"
-                        + "</div></td>\n" + "</tr>\n" + "</table></td>\n" + "</tr>\n" + "</table>\n" + "", wikiModel.render("{{Navbox \n"
+        assertThat(wikiModel.render("{{Navbox \n"
                         + "| name       = National Board of Review Award for Best Actor\n"
                         + "| title      = [[National Board of Review Award for Best Actor]]\n" + "| listclass = hlist\n" + "\n"
                         + "|group 1 = 1945-1949\n" + "|list1=\n" + "* [[Ray Milland]] (1945)\n" + "* [[Laurence Olivier]] (1946)\n"
@@ -1128,75 +913,245 @@ public class TemplateFilterTest extends FilterTestSupport {
                         + "[[Category:National Board of Review Awards|*|National Board of Review Award for Best Actor]]\n"
                         + "[[Category:National Board of Review Awards|*]]\n" + "[[Category:Film award templates|{{PAGENAME}}]]\n"
                         + "[[fr:Modèle:Palette Critics Choice Awards]]\n" + "[[ja:Template:ナショナル・ボード・オブ・レビュー賞]]\n" + "</noinclude>\n" + "",
-                        false));
+                false
+        )).isEqualTo("\n"
+                + "<table cellspacing=\"0\" class=\"navbox\" style=\"border-spacing:0;;\">\n"
+                + "\n"
+                + "<tr>\n"
+                + "\n"
+                + "<td style=\"padding:2px;\">\n"
+                + "<table cellspacing=\"0\" class=\"nowraplinks  collapsible autocollapse navbox-inner\" style=\"border-spacing:0;background:transparent;color:inherit;;\">\n"
+                + "\n"
+                + "<tr>\n"
+                + "\n"
+                + "<th class=\"navbox-title\" colspan=\"2\" scope=\"col\" style=\";\">\n"
+                + "\n"
+                + "<div class=\"noprint plainlinks hlist navbar mini\">\n"
+                + "<ul>\n"
+                + "\n"
+                + "<li class=\"nv-view\"><a href=\"http://www.bliki.info/wiki/Template:National_Board_of_Review_Award_for_Best_Actor\" title=\"Template:National Board of Review Award for Best Actor\"><span style=\";;background:none transparent;border:none;\" title=\"View this template\">v</span></a></li>\n"
+                + "<li class=\"nv-talk\"><a href=\"http://www.bliki.info/wiki/Template_talk:National_Board_of_Review_Award_for_Best_Actor\" title=\"Template talk:National Board of Review Award for Best Actor\"><span style=\";;background:none transparent;border:none;\" title=\"Discuss this template\">t</span></a></li>\n"
+                + "<li class=\"nv-edit\"><a class=\"external text\" href=\"http://en.wikipedia.org/w/index.php?title=Template%3ANational+Board+of+Review+Award+for+Best+Actor&#38;action=edit\" rel=\"nofollow\"><span style=\";;background:none transparent;border:none;\" title=\"Edit this template\">e</span></a></li>\n"
+                + "</ul></div>\n"
+                + "<div style=\"font-size:110%;\">\n"
+                + "<p><a href=\"http://www.bliki.info/wiki/National_Board_of_Review_Award_for_Best_Actor\" title=\"National Board of Review Award for Best Actor\">National Board of Review Award for Best Actor</a></p></div>\n"
+                + "</th>\n"
+                + "</tr>\n"
+                + "<tr style=\"height:2px;\">\n"
+                + "\n"
+                + "</tr>\n"
+                + "<tr>\n"
+                + "\n"
+                + "<td class=\"navbox-list navbox-odd hlist\n"
+                + "\" colspan=\"2\" style=\"width:100%;padding:0px;;;\">\n"
+                + "<div style=\"padding:0em 0.25em\">\n"
+                + "\n"
+                + "<ul>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Ray_Milland\" title=\"Ray Milland\">Ray Milland</a> (1945)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Laurence_Olivier\" title=\"Laurence Olivier\">Laurence Olivier</a> (1946)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Michael_Redgrave\" title=\"Michael Redgrave\">Michael Redgrave</a> (1947)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Walter_Huston\" title=\"Walter Huston\">Walter Huston</a> (1948)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Ralph_Richardson\" title=\"Ralph Richardson\">Ralph Richardson</a> (1949)</li>\n</ul></div></td>\n"
+                + "</tr>\n"
+                + "<tr style=\"height:2px\">\n"
+                + "\n"
+                + "</tr>\n"
+                + "<tr>\n"
+                + "\n"
+                + "<td class=\"navbox-list navbox-even hlist\n"
+                + "\" colspan=\"2\" style=\"width:100%;padding:0px;;;\">\n"
+                + "<div style=\"padding:0em 0.25em\">\n"
+                + "\n"
+                + "<ul>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Alec_Guinness\" title=\"Alec Guinness\">Alec Guinness</a> (1950)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Richard_Basehart\" title=\"Richard Basehart\">Richard Basehart</a> (1951)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Ralph_Richardson\" title=\"Ralph Richardson\">Ralph Richardson</a> (1952)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/James_Mason\" title=\"James Mason\">James Mason</a> (1953)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Bing_Crosby\" title=\"Bing Crosby\">Bing Crosby</a> (1954)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Ernest_Borgnine\" title=\"Ernest Borgnine\">Ernest Borgnine</a> (1955)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Yul_Brynner\" title=\"Yul Brynner\">Yul Brynner</a> (1956)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Alec_Guinness\" title=\"Alec Guinness\">Alec Guinness</a> (1957)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Spencer_Tracy\" title=\"Spencer Tracy\">Spencer Tracy</a> (1958)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Victor_Sj%C3%B6str%C3%B6m\" title=\"Victor Sjöström\">Victor Sjöström</a> (1959)</li>\n</ul></div></td>\n"
+                + "</tr>\n"
+                + "<tr style=\"height:2px\">\n"
+                + "\n"
+                + "</tr>\n"
+                + "<tr>\n"
+                + "\n"
+                + "<td class=\"navbox-list navbox-odd hlist\n"
+                + "\" colspan=\"2\" style=\"width:100%;padding:0px;;;\">\n"
+                + "<div style=\"padding:0em 0.25em\">\n"
+                + "\n"
+                + "<ul>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Robert_Mitchum\" title=\"Robert Mitchum\">Robert Mitchum</a> (1960)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Albert_Finney\" title=\"Albert Finney\">Albert Finney</a> (1961)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Jason_Robards\" title=\"Jason Robards\">Jason Robards</a> (1962)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Rex_Harrison\" title=\"Rex Harrison\">Rex Harrison</a> (1963)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Anthony_Quinn\" title=\"Anthony Quinn\">Anthony Quinn</a> (1964)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Lee_Marvin\" title=\"Lee Marvin\">Lee Marvin</a> (1965)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Paul_Scofield\" title=\"Paul Scofield\">Paul Scofield</a> (1966)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Peter_Finch\" title=\"Peter Finch\">Peter Finch</a> (1967)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Cliff_Robertson\" title=\"Cliff Robertson\">Cliff Robertson</a> (1968)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Peter_O&#39;Toole\" title=\"Peter O&#39;Toole\">Peter O&#39;Toole</a> (1969)</li>\n</ul></div></td>\n"
+                + "</tr>\n"
+                + "<tr style=\"height:2px\">\n"
+                + "\n"
+                + "</tr>\n"
+                + "<tr>\n"
+                + "\n"
+                + "<td class=\"navbox-list navbox-even hlist\n"
+                + "\" colspan=\"2\" style=\"width:100%;padding:0px;;;\">\n"
+                + "<div style=\"padding:0em 0.25em\">\n"
+                + "\n"
+                + "<ul>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/George_C._Scott\" title=\"George C. Scott\">George C. Scott</a> (1970)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Gene_Hackman\" title=\"Gene Hackman\">Gene Hackman</a> (1971)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Peter_O&#39;Toole\" title=\"Peter O&#39;Toole\">Peter O&#39;Toole</a> (1972)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Al_Pacino\" title=\"Al Pacino\">Al Pacino</a> / <a href=\"http://www.bliki.info/wiki/Robert_Ryan\" title=\"Robert Ryan\">Robert Ryan</a> (1973)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Gene_Hackman\" title=\"Gene Hackman\">Gene Hackman</a> (1974)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Jack_Nicholson\" title=\"Jack Nicholson\">Jack Nicholson</a> (1975)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/David_Carradine\" title=\"David Carradine\">David Carradine</a> (1976)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/John_Travolta\" title=\"John Travolta\">John Travolta</a> (1977)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Jon_Voight\" title=\"Jon Voight\">Jon Voight</a> / <a href=\"http://www.bliki.info/wiki/Laurence_Olivier\" title=\"Laurence Olivier\">Laurence Olivier</a> (1978)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Peter_Sellers\" title=\"Peter Sellers\">Peter Sellers</a> (1979)</li>\n</ul></div></td>\n"
+                + "</tr>\n"
+                + "<tr style=\"height:2px\">\n"
+                + "\n"
+                + "</tr>\n"
+                + "<tr>\n"
+                + "\n"
+                + "<td class=\"navbox-list navbox-odd hlist\n"
+                + "\" colspan=\"2\" style=\"width:100%;padding:0px;;;\">\n"
+                + "<div style=\"padding:0em 0.25em\">\n"
+                + "\n"
+                + "<ul>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Robert_De_Niro\" title=\"Robert De Niro\">Robert De Niro</a> (1980)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Peter_Fonda\" title=\"Peter Fonda\">Peter Fonda</a> (1981)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Ben_Kingsley\" title=\"Ben Kingsley\">Ben Kingsley</a> (1982)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Tom_Conti\" title=\"Tom Conti\">Tom Conti</a> (1983)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Victor_Banerjee\" title=\"Victor Banerjee\">Victor Banerjee</a> (1984)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/William_Hurt\" title=\"William Hurt\">William Hurt</a> / <a href=\"http://www.bliki.info/wiki/Ra%C3%BAl_Juli%C3%A1\" title=\"Raúl Juliá\">Raúl Juliá</a> (1985)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Paul_Newman\" title=\"Paul Newman\">Paul Newman</a> (1986)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Michael_Douglas\" title=\"Michael Douglas\">Michael Douglas</a> (1987)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Gene_Hackman\" title=\"Gene Hackman\">Gene Hackman</a> (1988)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Morgan_Freeman\" title=\"Morgan Freeman\">Morgan Freeman</a> (1989)</li>\n</ul></div></td>\n"
+                + "</tr>\n"
+                + "<tr style=\"height:2px\">\n"
+                + "\n"
+                + "</tr>\n"
+                + "<tr>\n"
+                + "\n"
+                + "<td class=\"navbox-list navbox-even hlist\n"
+                + "\" colspan=\"2\" style=\"width:100%;padding:0px;;;\">\n"
+                + "<div style=\"padding:0em 0.25em\">\n"
+                + "\n"
+                + "<ul>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Robert_De_Niro\" title=\"Robert De Niro\">Robert De Niro</a> / <a href=\"http://www.bliki.info/wiki/Robin_Williams\" title=\"Robin Williams\">Robin Williams</a> (1990)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Warren_Beatty\" title=\"Warren Beatty\">Warren Beatty</a> (1991)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Jack_Lemmon\" title=\"Jack Lemmon\">Jack Lemmon</a> (1992)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Anthony_Hopkins\" title=\"Anthony Hopkins\">Anthony Hopkins</a> (1993)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Tom_Hanks\" title=\"Tom Hanks\">Tom Hanks</a> (1994)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Nicolas_Cage\" title=\"Nicolas Cage\">Nicolas Cage</a> (1995)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Tom_Cruise\" title=\"Tom Cruise\">Tom Cruise</a> (1996)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Jack_Nicholson\" title=\"Jack Nicholson\">Jack Nicholson</a> (1997)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Ian_McKellen\" title=\"Ian McKellen\">Ian McKellen</a> (1998)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Russell_Crowe\" title=\"Russell Crowe\">Russell Crowe</a> (1999)</li>\n</ul></div></td>\n"
+                + "</tr>\n"
+                + "<tr style=\"height:2px\">\n"
+                + "\n"
+                + "</tr>\n"
+                + "<tr>\n"
+                + "\n"
+                + "<td class=\"navbox-list navbox-odd hlist\n"
+                + "\" colspan=\"2\" style=\"width:100%;padding:0px;;;\">\n"
+                + "<div style=\"padding:0em 0.25em\">\n"
+                + "\n"
+                + "<ul>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Javier_Bardem\" title=\"Javier Bardem\">Javier Bardem</a> (2000)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Billy_Bob_Thornton\" title=\"Billy Bob Thornton\">Billy Bob Thornton</a> (2001)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Campbell_Scott\" title=\"Campbell Scott\">Campbell Scott</a> (2002)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Sean_Penn\" title=\"Sean Penn\">Sean Penn</a> (2003)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Jamie_Foxx\" title=\"Jamie Foxx\">Jamie Foxx</a> (2004)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Philip_Seymour_Hoffman\" title=\"Philip Seymour Hoffman\">Philip Seymour Hoffman</a> (2005)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Forest_Whitaker\" title=\"Forest Whitaker\">Forest Whitaker</a> (2006)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/George_Clooney\" title=\"George Clooney\">George Clooney</a> (2007)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Clint_Eastwood\" title=\"Clint Eastwood\">Clint Eastwood</a> (2008)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/George_Clooney\" title=\"George Clooney\">George Clooney</a> / <a href=\"http://www.bliki.info/wiki/Morgan_Freeman\" title=\"Morgan Freeman\">Morgan Freeman</a> (2009)</li>\n</ul></div></td>\n"
+                + "</tr>\n"
+                + "<tr style=\"height:2px\">\n"
+                + "\n"
+                + "</tr>\n"
+                + "<tr>\n"
+                + "\n"
+                + "<td class=\"navbox-list navbox-even hlist\n"
+                + "\" colspan=\"2\" style=\"width:100%;padding:0px;;;\">\n"
+                + "<div style=\"padding:0em 0.25em\">\n"
+                + "\n"
+                + "<ul>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/Jesse_Eisenberg\" title=\"Jesse Eisenberg\">Jesse Eisenberg</a> (2010)</li>\n"
+                + "<li><a href=\"http://www.bliki.info/wiki/George_Clooney\" title=\"George Clooney\">George Clooney</a> (2011)</li>\n</ul>\n"
+                + "</div></td>\n" + "</tr>\n" + "</table></td>\n" + "</tr>\n" + "</table>\n" + "");
     }
 
     @Test public void testTemplateNavbar() {
-        assertEquals(
-                "\n"
-                        + "<div class=\"noprint plainlinks hlist navbar \"><span style=\"word-spacing:0;\">This box: </span>\n"
-                        + "<ul>\n"
-                        + "\n"
-                        + "<li class=\"nv-view\"><a href=\"http://www.bliki.info/wiki/Template:Screen_Actors_Guild_Award_for_Outstanding_Performance_by_a_Cast_in_a_Motion_Picture_(1995%E2%80%932000)\" title=\"Template:Screen Actors Guild Award for Outstanding Performance by a Cast in a Motion Picture (1995–2000)\"><span title=\"View this template\">view</span></a></li>\n"
-                        + "<li class=\"nv-talk\"><a href=\"http://www.bliki.info/wiki/Template_talk:Screen_Actors_Guild_Award_for_Outstanding_Performance_by_a_Cast_in_a_Motion_Picture_(1995%E2%80%932000)\" title=\"Template talk:Screen Actors Guild Award for Outstanding Performance by a Cast in a Motion Picture (1995–2000)\"><span title=\"Discuss this template\">talk</span></a></li>\n"
-                        + "<li class=\"nv-edit\"><a class=\"external text\" href=\"http://en.wikipedia.org/w/index.php?title=Template%3AScreen+Actors+Guild+Award+for+Outstanding+Performance+by+a+Cast+in+a+Motion+Picture+%281995%E2%80%932000%29&#38;action=edit\" rel=\"nofollow\"><span title=\"Edit this template\">edit</span></a></li>\n"
-                        + "</ul></div>\n" + "", wikiModel.render(
-                        "{{Navbar|Screen Actors Guild Award for Outstanding Performance by a Cast in a Motion Picture (1995–2000)}}\n", false));
+        assertThat(wikiModel.render(
+                "{{Navbar|Screen Actors Guild Award for Outstanding Performance by a Cast in a Motion Picture (1995–2000)}}\n", false)).isEqualTo("\n"
+                + "<div class=\"noprint plainlinks hlist navbar \"><span style=\"word-spacing:0;\">This box: </span>\n"
+                + "<ul>\n"
+                + "\n"
+                + "<li class=\"nv-view\"><a href=\"http://www.bliki.info/wiki/Template:Screen_Actors_Guild_Award_for_Outstanding_Performance_by_a_Cast_in_a_Motion_Picture_(1995%E2%80%932000)\" title=\"Template:Screen Actors Guild Award for Outstanding Performance by a Cast in a Motion Picture (1995–2000)\"><span title=\"View this template\">view</span></a></li>\n"
+                + "<li class=\"nv-talk\"><a href=\"http://www.bliki.info/wiki/Template_talk:Screen_Actors_Guild_Award_for_Outstanding_Performance_by_a_Cast_in_a_Motion_Picture_(1995%E2%80%932000)\" title=\"Template talk:Screen Actors Guild Award for Outstanding Performance by a Cast in a Motion Picture (1995–2000)\"><span title=\"Discuss this template\">talk</span></a></li>\n"
+                + "<li class=\"nv-edit\"><a class=\"external text\" href=\"http://en.wikipedia.org/w/index.php?title=Template%3AScreen+Actors+Guild+Award+for+Outstanding+Performance+by+a+Cast+in+a+Motion+Picture+%281995%E2%80%932000%29&#38;action=edit\" rel=\"nofollow\"><span title=\"Edit this template\">edit</span></a></li>\n"
+                + "</ul></div>\n" + "");
     }
 
     @Test public void testTemplateWithNewlines001() {
-        assertEquals("\n" + "<p>{{Serie de TV</p>\n" + "<pre>" + " Nombre        = FabulÃ³polis\n" + "</pre>\n" + "<p>}}</p>",
-                wikiModel.render("{{Serie de TV\n  Nombre        = FabulÃ³polis\n}}", false));
+        assertThat(wikiModel.render("{{Serie de TV\n  Nombre        = FabulÃ³polis\n}}", false)).isEqualTo("\n" + "<p>{{Serie de TV</p>\n" + "<pre>" + " Nombre        = FabulÃ³polis\n" + "</pre>\n" + "<p>}}</p>");
 
-        assertEquals(new HashSet<String>(), wikiModel.getTemplates());
+        assertThat(wikiModel.getTemplates()).isEqualTo(new HashSet<String>());
     }
 
     @Test public void testTemplateWithNewlines002() {
-        assertEquals("[[:Template:Serie de TV]]", wikiModel.parseTemplates("{{Serie de TV\n\n}}"));
-
-        assertTrue("wikiModel.getTemplates() = " + wikiModel.getTemplates().toString(), wikiModel.getTemplates()
-                .contains("Serie de TV"));
+        assertThat(wikiModel.parseTemplates("{{Serie de TV\n\n}}")).isEqualTo("[[:Template:Serie de TV]]");
+        assertThat(wikiModel.getTemplates()).contains("Serie de TV");
     }
 
     @Test public void testTemplateWithNewlines003() {
-        assertEquals("[[:Template:Serie de TV]]", wikiModel.parseTemplates("{{Serie de TV\n}}"));
+        assertThat(wikiModel.parseTemplates("{{Serie de TV\n}}")).isEqualTo("[[:Template:Serie de TV]]");
 
-        assertTrue("wikiModel.getTemplates() = " + wikiModel.getTemplates().toString(), wikiModel.getTemplates()
-                .contains("Serie de TV"));
+        assertThat(wikiModel.getTemplates()).contains("Serie de TV");
     }
 
     @Test public void testTemplateWithHashtag001() {
-        assertEquals("\n" + "<p>{{::Viva_World_Cup#Tournament_results}}\n"
-                + "<a href=\"http://www.bliki.info/wiki/Viva_World_Cup\" title=\"Viva World Cup\">Viva_World_Cup</a>\n"
-                + "<a href=\"http://www.bliki.info/wiki/Viva_World_Cup\" title=\"Viva World Cup\">Viva_World_Cup</a>\n" + "</p>", wikiModel
+        assertThat(wikiModel
                 .render("{{::Viva_World_Cup#Tournament_results}}\n" + "{{:Viva_World_Cup#Tournament_results}}\n"
-                        + "{{:Viva_World_Cup#Tournament_results#History}}\n" + "[[Category:Test#test]]", false));
+                        + "{{:Viva_World_Cup#Tournament_results#History}}\n" + "[[Category:Test#test]]", false)).isEqualTo("\n" + "<p>{{::Viva_World_Cup#Tournament_results}}\n"
+                + "<a href=\"http://www.bliki.info/wiki/Viva_World_Cup\" title=\"Viva World Cup\">Viva_World_Cup</a>\n"
+                + "<a href=\"http://www.bliki.info/wiki/Viva_World_Cup\" title=\"Viva World Cup\">Viva_World_Cup</a>\n" + "</p>");
 
-        assertTrue("wikiModel.getIncludes() = " + wikiModel.getIncludes().toString(), wikiModel.getIncludes()
-                .contains("Viva_World_Cup"));
-        assertTrue("wikiModel.getCategories() = " + wikiModel.getCategories().keySet().toString(), wikiModel.getCategories().keySet()
-                .contains("Test"));
+        assertThat(wikiModel.getIncludes()).contains("Viva_World_Cup");
+        assertThat(wikiModel.getCategories().keySet()).contains("Test");
     }
 
     @Test public void testTransclusionInPre001() {
-        assertEquals("<pre>{{:Viva_World_Cup}}</pre>", wikiModel.parseTemplates("<pre>{{:Viva_World_Cup}}</pre>"));
+        assertThat(wikiModel.parseTemplates("<pre>{{:Viva_World_Cup}}</pre>")).isEqualTo("<pre>{{:Viva_World_Cup}}</pre>");
 
-        assertTrue("wikiModel.getIncludes() = " + wikiModel.getIncludes().toString(), wikiModel.getIncludes().size() == 0);
-        assertTrue("wikiModel.getTemplates() = " + wikiModel.getTemplates().toString(), wikiModel.getTemplates().size() == 0);
+        assertThat(wikiModel.getIncludes()).isEmpty();
+        assertThat(wikiModel.getTemplates()).isEmpty();
     }
 
     @Test public void testPreAlmostEqualToNowiki001() {
         // https://en.wikipedia.org/wiki/Help:Wiki_markup#Pre
-        assertEquals("\n<pre>Text\n[[wiki]] markup</pre>", wikiModel.render("<pre>Text\n[[wiki]] markup</pre>", false));
+        assertThat(wikiModel.render("<pre>Text\n[[wiki]] markup</pre>", false)).isEqualTo("\n<pre>Text\n[[wiki]] markup</pre>");
 
-        assertTrue("wikiModel.getLinks() = " + wikiModel.getLinks().toString(), wikiModel.getLinks().size() == 0);
+        assertThat(wikiModel.getLinks()).isEmpty();
     }
 
     @Test public void testPreAlmostEqualToNowiki002() {
         // https://en.wikipedia.org/wiki/Help:Wiki_markup#Nowiki
-        assertEquals("\n<p>Text\n[[wiki]] markup</p>", wikiModel.render("<nowiki>Text\n[[wiki]] markup</nowiki>", false));
-
-        assertTrue("wikiModel.getLinks() = " + wikiModel.getLinks().toString(), wikiModel.getLinks().size() == 0);
+        assertThat(wikiModel.render("<nowiki>Text\n[[wiki]] markup</nowiki>", false)).isEqualTo("\n<p>Text\n[[wiki]] markup</p>");
+        assertThat(wikiModel.getLinks()).isEmpty();
     }
 
     /**
@@ -1204,9 +1159,7 @@ public class TemplateFilterTest extends FilterTestSupport {
      * appended
      */
     @Test public void testLinkWithExtraHTMLTag001() {
-        assertEquals(
-                "\n<p><a class=\"external free\" href=\"http://www.example.com/\" rel=\"nofollow\">http://www.example.com/</a>&#60;hello&#62;</p>",
-                wikiModel.render("http://www.example.com/<hello>", false));
+        assertThat(wikiModel.render("http://www.example.com/<hello>", false)).isEqualTo("\n<p><a class=\"external free\" href=\"http://www.example.com/\" rel=\"nofollow\">http://www.example.com/</a>&#60;hello&#62;</p>");
     }
 
     /**
@@ -1214,11 +1167,9 @@ public class TemplateFilterTest extends FilterTestSupport {
      */
     @Test public void testSelfRecusion001() {
         // https://en.wikipedia.org/wiki/Help:Template#Nesting_templates
-        assertEquals(
-                "\n<p>Line1</p>"
-                        + "\n<p>Line1</p>"
-                        + "\n<p><span class=\"error\">Template loop detected: <strong class=\"selflink\">Template:SELF_RECURSION</strong></span></p>",
-                wikiModel.render(WikiTestModel.SELF_RECURSION, false));
+        assertThat(wikiModel.render(WikiTestModel.SELF_RECURSION, false)).isEqualTo("\n<p>Line1</p>"
+                + "\n<p>Line1</p>"
+                + "\n<p><span class=\"error\">Template loop detected: <strong class=\"selflink\">Template:SELF_RECURSION</strong></span></p>");
     }
 
     /**
@@ -1226,8 +1177,8 @@ public class TemplateFilterTest extends FilterTestSupport {
      */
     @Test public void testSelfRecusion002() {
         // check that a template can be included more than once
-        assertEquals("\n<p>a, a</p>", wikiModel.render("{{1x|a}}, {{1x|a}}", false));
-        assertEquals("\n<p>a, b</p>", wikiModel.render("{{1x|a}}, {{1x|b}}", false));
+        assertThat(wikiModel.render("{{1x|a}}, {{1x|a}}", false)).isEqualTo("\n<p>a, a</p>");
+        assertThat(wikiModel.render("{{1x|a}}, {{1x|b}}", false)).isEqualTo("\n<p>a, b</p>");
     }
 
     /**
@@ -1235,8 +1186,8 @@ public class TemplateFilterTest extends FilterTestSupport {
      */
     @Test public void testSelfRecusion003() {
         // check that a template can be included as a parameter to itself
-        assertEquals("\n<p>a</p>", wikiModel.render("{{1x|{{1x|a}}}}", false));
-        assertEquals("\n<p>ab</p>", wikiModel.render("{{1x|a{{1x|b}}}}", false));
+        assertThat(wikiModel.render("{{1x|{{1x|a}}}}", false)).isEqualTo("\n<p>a</p>");
+        assertThat(wikiModel.render("{{1x|a{{1x|b}}}}", false)).isEqualTo("\n<p>ab</p>");
     }
 
     /**
@@ -1244,31 +1195,28 @@ public class TemplateFilterTest extends FilterTestSupport {
      */
     @Test public void testSelfRecusion004() {
         // check that a template which includes itself via a parameter is recognised as a loop
-        assertEquals("\n<p>Line1</p>"
-                        + "\n<p><span class=\"error\">Template loop detected: <strong class=\"selflink\">Template:SELF_RECURSION1</strong></span></p>",
-                wikiModel.render("{{SELF_RECURSION1|SELF_RECURSION1}}", false));
+        assertThat(wikiModel.render("{{SELF_RECURSION1|SELF_RECURSION1}}", false)).isEqualTo("\n<p>Line1</p>"
+                + "\n<p><span class=\"error\">Template loop detected: <strong class=\"selflink\">Template:SELF_RECURSION1</strong></span></p>");
     }
 
     @Test public void testSelfRecusion005() {
-        assertEquals("foo|bar", wikiModel.parseTemplates("{{1x|{{1x|foo{{!}}bar}}}}"));
+        assertThat(wikiModel.parseTemplates("{{1x|{{1x|foo{{!}}bar}}}}")).isEqualTo("foo|bar");
     }
 
     @Test public void testSelfRecusion005a() {
-        assertEquals("\n" +
-                "<p>foo|bar</p>", wikiModel.render("{{1x|{{1x|foo{{!}}bar}}}}"));
+        assertThat(wikiModel.render("{{1x|{{1x|foo{{!}}bar}}}}")).isEqualTo("\n" +
+                "<p>foo|bar</p>");
     }
     /**
      * Issue 133 - self-inclusion is only allowed once in MediaWiki
      */
     @Test public void testIndirectSelfRecusion001() {
         // https://en.wikipedia.org/wiki/Help:Template#Nesting_templates
-        assertEquals(
-                "\n"
-                        + "<p>INDIRECT_SELF_RECURSION1</p>\n"
-                        + "<p>INDIRECT_SELF_RECURSION2</p>\n"
-                        + "<p>INDIRECT_SELF_RECURSION1</p>\n"
-                        + "<p><span class=\"error\">Template loop detected: <strong class=\"selflink\">Template:INDIRECT_SELF_RECURSION2</strong></span></p>",
-                wikiModel.render(WikiTestModel.INDIRECT_SELF_RECURSION1, false));
+        assertThat(wikiModel.render(WikiTestModel.INDIRECT_SELF_RECURSION1, false)).isEqualTo("\n"
+                + "<p>INDIRECT_SELF_RECURSION1</p>\n"
+                + "<p>INDIRECT_SELF_RECURSION2</p>\n"
+                + "<p>INDIRECT_SELF_RECURSION1</p>\n"
+                + "<p><span class=\"error\">Template loop detected: <strong class=\"selflink\">Template:INDIRECT_SELF_RECURSION2</strong></span></p>");
     }
 
     /**
@@ -1276,13 +1224,11 @@ public class TemplateFilterTest extends FilterTestSupport {
      */
     @Test public void testIndirectSelfRecusion002() {
         // https://en.wikipedia.org/wiki/Help:Template#Nesting_templates
-        assertEquals(
-                "\n"
-                        + "<p>INDIRECT_SELF_RECURSION2</p>\n"
-                        + "<p>INDIRECT_SELF_RECURSION1</p>\n"
-                        + "<p>INDIRECT_SELF_RECURSION2</p>\n"
-                        + "<p><span class=\"error\">Template loop detected: <strong class=\"selflink\">Template:INDIRECT_SELF_RECURSION1</strong></span></p>",
-                wikiModel.render(WikiTestModel.INDIRECT_SELF_RECURSION2, false));
+        assertThat(wikiModel.render(WikiTestModel.INDIRECT_SELF_RECURSION2, false)).isEqualTo("\n"
+                + "<p>INDIRECT_SELF_RECURSION2</p>\n"
+                + "<p>INDIRECT_SELF_RECURSION1</p>\n"
+                + "<p>INDIRECT_SELF_RECURSION2</p>\n"
+                + "<p><span class=\"error\">Template loop detected: <strong class=\"selflink\">Template:INDIRECT_SELF_RECURSION1</strong></span></p>");
     }
 
     /**
@@ -1290,13 +1236,11 @@ public class TemplateFilterTest extends FilterTestSupport {
      */
     @Test public void testIndirectSelfRecusion001a() {
         // https://en.wikipedia.org/wiki/Help:Template#Nesting_templates
-        assertEquals(
-                "\n"
-                        + "<p>INDIRECT_SELF_RECURSION1a</p>\n"
-                        + "<p>INDIRECT_SELF_RECURSION2a</p>\n"
-                        + "<p>INDIRECT_SELF_RECURSION1a</p>\n"
-                        + "<p><span class=\"error\">Template loop detected: <strong class=\"selflink\">Template:INDIRECT_SELF_RECURSION2a</strong></span></p>",
-                wikiModel.render(WikiTestModel.INDIRECT_SELF_RECURSION1a, false));
+        assertThat(wikiModel.render(WikiTestModel.INDIRECT_SELF_RECURSION1a, false)).isEqualTo("\n"
+                + "<p>INDIRECT_SELF_RECURSION1a</p>\n"
+                + "<p>INDIRECT_SELF_RECURSION2a</p>\n"
+                + "<p>INDIRECT_SELF_RECURSION1a</p>\n"
+                + "<p><span class=\"error\">Template loop detected: <strong class=\"selflink\">Template:INDIRECT_SELF_RECURSION2a</strong></span></p>");
     }
 
     /**
@@ -1304,13 +1248,11 @@ public class TemplateFilterTest extends FilterTestSupport {
      */
     @Test public void testIndirectSelfRecusion002a() {
         // https://en.wikipedia.org/wiki/Help:Template#Nesting_templates
-        assertEquals(
-                "\n"
-                        + "<p>INDIRECT_SELF_RECURSION2a</p>\n"
-                        + "<p>INDIRECT_SELF_RECURSION1a</p>\n"
-                        + "<p>INDIRECT_SELF_RECURSION2a</p>\n"
-                        + "<p><span class=\"error\">Template loop detected: <strong class=\"selflink\">Template:INDIRECT_SELF_RECURSION1a</strong></span></p>",
-                wikiModel.render(WikiTestModel.INDIRECT_SELF_RECURSION2a, false));
+        assertThat(wikiModel.render(WikiTestModel.INDIRECT_SELF_RECURSION2a, false)).isEqualTo("\n"
+                + "<p>INDIRECT_SELF_RECURSION2a</p>\n"
+                + "<p>INDIRECT_SELF_RECURSION1a</p>\n"
+                + "<p>INDIRECT_SELF_RECURSION2a</p>\n"
+                + "<p><span class=\"error\">Template loop detected: <strong class=\"selflink\">Template:INDIRECT_SELF_RECURSION1a</strong></span></p>");
     }
 
     /**
@@ -1318,7 +1260,7 @@ public class TemplateFilterTest extends FilterTestSupport {
      * namespaces with the same page title.
      */
     @Test public void testTemplateCache001() {
-        assertEquals("\n<p>FOOBAR</p>", wikiModel.render("{{FOO}}{{:FOO}}", false));
+        assertThat(wikiModel.render("{{FOO}}{{:FOO}}", false)).isEqualTo("\n<p>FOOBAR</p>");
     }
 
     /**
@@ -1326,7 +1268,7 @@ public class TemplateFilterTest extends FilterTestSupport {
      * namespaces with the same page title.
      */
     @Test public void testTemplateCache002() {
-        assertEquals("\n<p>FOOFOO</p>", wikiModel.render("{{FOO}}{{Template:FOO}}", false));
+        assertThat(wikiModel.render("{{FOO}}{{Template:FOO}}", false)).isEqualTo("\n<p>FOOFOO</p>");
     }
 
     /**
@@ -1334,7 +1276,7 @@ public class TemplateFilterTest extends FilterTestSupport {
      * namespaces with the same page title.
      */
     @Test public void testTemplateCache003() {
-        assertEquals("\n<p>FOOFOO</p>", wikiModel.render("{{Template:FOO}}{{FOO}}", false));
+        assertThat(wikiModel.render("{{Template:FOO}}{{FOO}}", false)).isEqualTo("\n<p>FOOFOO</p>");
     }
 
     /**
@@ -1343,12 +1285,12 @@ public class TemplateFilterTest extends FilterTestSupport {
      */
     @Test public void testTemplateCache004() {
         String foodate = wikiModel.render("{{FOODATE}}", false);
-        System.out.println("testTemplateCache004: "+foodate);
+        System.out.println("testTemplateCache004: " + foodate);
         try {
             Thread.sleep(1);
         } catch (InterruptedException ignored) {
         }
-        assertEquals(foodate, wikiModel.render("{{Template:FOODATE}}", false));
+        assertThat(wikiModel.render("{{Template:FOODATE}}", false)).isEqualTo(foodate);
     }
 
     /**
@@ -1357,11 +1299,11 @@ public class TemplateFilterTest extends FilterTestSupport {
      */
     @Test public void testTemplateCache005() {
         String foodate = wikiModel.render("{{Template:FOODATE}}", false);
-        System.out.println("testTemplateCache005: "+foodate);
+        System.out.println("testTemplateCache005: " + foodate);
         try {
             Thread.sleep(1);
         } catch (InterruptedException ignored) {
         }
-        assertEquals(foodate, wikiModel.render("{{FOODATE}}", false));
+        assertThat(wikiModel.render("{{FOODATE}}", false)).isEqualTo(foodate);
     }
 }

@@ -7,8 +7,7 @@ import org.junit.Test;
 
 import java.util.Locale;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.fest.assertions.api.Assertions.assertThat;
 
 /**
  * Tests for {@link Namespace}.
@@ -28,7 +27,7 @@ public class NamespaceTest {
      */
     @Test public void testNumberCodeConversion01() {
         for (NamespaceCode nsCode : NamespaceCode.values()) {
-            assertEquals((int) nsCode.code, Namespace.intToNumberCode(Namespace.numberCodeToInt(nsCode.code)));
+            assertThat(Namespace.intToNumberCode(Namespace.numberCodeToInt(nsCode.code))).isEqualTo((int) nsCode.code);
         }
     }
 
@@ -37,7 +36,7 @@ public class NamespaceTest {
      */
     @Test public void testNumberCodeConversion02() {
         for (int i = 0; i <= NamespaceCode.values().length-1; ++i) {
-            assertEquals(i, Namespace.numberCodeToInt(Namespace.intToNumberCode(i)));
+            assertThat(Namespace.numberCodeToInt(Namespace.intToNumberCode(i))).isEqualTo(i);
         }
     }
 
@@ -48,52 +47,53 @@ public class NamespaceTest {
         Namespace namespaceObj = new Namespace();
         for (NamespaceCode nsCode : NamespaceCode.values()) {
             NamespaceValue namespace = namespaceObj.getNamespaceByNumber(nsCode.code);
-            assertNotNull("contentspace of " + nsCode + ", " + namespace, namespace.getContentspace());
+
+            assertThat(namespace.getContentspace()).isNotNull();
         }
     }
 
     @Test public void testNamespace001() {
-        assertEquals(namespace.PROJECT, namespace.getNamespace("Meta"));
-        assertEquals(namespace.PROJECT_TALK, namespace.getNamespace("Meta_talk"));
-        assertEquals(namespace.PROJECT_TALK, namespace.getNamespace("Meta talk"));
-        assertEquals(namespace.PROJECT, namespace.getNamespace("Project"));
-        assertEquals(namespace.PROJECT_TALK, namespace.getNamespace("Project_talk"));
-        assertEquals(namespace.PROJECT_TALK, namespace.getNamespace("Project talk"));
+        assertThat(namespace.getNamespace("Meta")).isEqualTo(namespace.PROJECT);
+        assertThat(namespace.getNamespace("Meta_talk")).isEqualTo(namespace.PROJECT_TALK);
+        assertThat(namespace.getNamespace("Meta talk")).isEqualTo(namespace.PROJECT_TALK);
+        assertThat(namespace.getNamespace("Project")).isEqualTo(namespace.PROJECT);
+        assertThat(namespace.getNamespace("Project_talk")).isEqualTo(namespace.PROJECT_TALK);
+        assertThat(namespace.getNamespace("Project talk")).isEqualTo(namespace.PROJECT_TALK);
     }
 
     @Test public void testTalkspace001() {
-        assertEquals(namespace.PROJECT_TALK, namespace.getTalkspace("Meta"));
-        assertEquals(namespace.PROJECT_TALK, namespace.getTalkspace("Meta_talk"));
-        assertEquals(namespace.PROJECT_TALK, namespace.getTalkspace("Meta talk"));
-        assertEquals(namespace.PROJECT_TALK, namespace.getTalkspace("Project"));
-        assertEquals(namespace.PROJECT_TALK, namespace.getTalkspace("Project_talk"));
-        assertEquals(namespace.PROJECT_TALK, namespace.getTalkspace("Project talk"));
+        assertThat(namespace.getTalkspace("Meta")).isEqualTo(namespace.PROJECT_TALK);
+        assertThat(namespace.getTalkspace("Meta_talk")).isEqualTo(namespace.PROJECT_TALK);
+        assertThat(namespace.getTalkspace("Meta talk")).isEqualTo(namespace.PROJECT_TALK);
+        assertThat(namespace.getTalkspace("Project")).isEqualTo(namespace.PROJECT_TALK);
+        assertThat(namespace.getTalkspace("Project_talk")).isEqualTo(namespace.PROJECT_TALK);
+        assertThat(namespace.getTalkspace("Project talk")).isEqualTo(namespace.PROJECT_TALK);
     }
 
     @Test public void testContentspace001() {
-        assertEquals(namespace.PROJECT, namespace.getContentspace("Meta"));
-        assertEquals(namespace.PROJECT, namespace.getContentspace("Meta_talk"));
-        assertEquals(namespace.PROJECT, namespace.getContentspace("Meta talk"));
-        assertEquals(namespace.PROJECT, namespace.getContentspace("Project"));
-        assertEquals(namespace.PROJECT, namespace.getContentspace("Project_talk"));
-        assertEquals(namespace.PROJECT, namespace.getContentspace("Project talk"));
+        assertThat(namespace.getContentspace("Meta")).isEqualTo(namespace.PROJECT);
+        assertThat(namespace.getContentspace("Meta_talk")).isEqualTo(namespace.PROJECT);
+        assertThat(namespace.getContentspace("Meta talk")).isEqualTo(namespace.PROJECT);
+        assertThat(namespace.getContentspace("Project")).isEqualTo(namespace.PROJECT);
+        assertThat(namespace.getContentspace("Project_talk")).isEqualTo(namespace.PROJECT);
+        assertThat(namespace.getContentspace("Project talk")).isEqualTo(namespace.PROJECT);
     }
 
     @Test public void testOldAliases001() {
         namespace.getCategory_talk().setTexts("Kategorie Diskussion");
-        assertEquals(null, namespace.getNamespace("Category talk"));
-        assertEquals(null, namespace.getNamespace("Category_talk"));
+        assertThat(namespace.getNamespace("Category talk")).isEqualTo(null);
+        assertThat(namespace.getNamespace("Category_talk")).isEqualTo(null);
     }
 
     @Test public void testModuleNamespace() {
-        assertEquals(namespace.MODULE, namespace.getNamespace("Module"));
-        assertEquals(namespace.MODULE, namespace.getContentspace("Module_talk"));
-        assertEquals(namespace.MODULE_TALK, namespace.getNamespace("Module_talk"));
+        assertThat(namespace.getNamespace("Module")).isEqualTo(namespace.MODULE);
+        assertThat(namespace.getContentspace("Module_talk")).isEqualTo(namespace.MODULE);
+        assertThat(namespace.getNamespace("Module_talk")).isEqualTo(namespace.MODULE_TALK);
     }
 
     @Test public void testCanonicalNamespace() throws Exception {
-        assertEquals("Project_talk", namespace.PROJECT_TALK.getCanonicalName());
-        assertEquals("Project_talk", new Namespace(Locale.GERMAN).PROJECT_TALK.getCanonicalName());
-        assertEquals("Project_talk", new Namespace(Locale.FRENCH).PROJECT_TALK.getCanonicalName());
+        assertThat(namespace.PROJECT_TALK.getCanonicalName()).isEqualTo("Project_talk");
+        assertThat(new Namespace(Locale.GERMAN).PROJECT_TALK.getCanonicalName()).isEqualTo("Project_talk");
+        assertThat(new Namespace(Locale.FRENCH).PROJECT_TALK.getCanonicalName()).isEqualTo("Project_talk");
     }
 }

@@ -4,7 +4,7 @@ import info.bliki.wiki.model.WikiModel;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.fest.assertions.api.Assertions.assertThat;
 
 public class HelloRenderTest  {
 
@@ -102,33 +102,29 @@ public class HelloRenderTest  {
     @Test public void test997() {
         HelloWikiLinkListener listener = new HelloWikiLinkListener();
         wikiModel.parseEvents(listener, HELLO_TEXT);
-        assertEquals("salutation (greeting)|salutation\n" + "Greeting habits|greeting\n"
-                        + "English language\n" + "synonym\n" + "wikt:hi|Hi\n" + "wikt:hey|Hey\n" + "1883\n" + "telephone\n" + "Roughing It\n"
-                        + "Mark Twain\n" + "1849\n" + "1846\n" + "1860s\n" + "1826\n" + "contraction\n" + "Archaism|archaic\n"
-                        + "English language|English\n" + "Thomas Edison\n" + "telephone\n" + "Alexander Graham Bell\n" + "Ahoy-hoy|Ahoy\n"
-                        + "1889\n" + "Caller ID\n" + "Charles Dickens\n" + "Oliver Twist\n" + "1838\n" + "the Artful Dodger\n"
-                        + "Tom Brown\'s Schooldays\n" + "British English\n" + "exclamation\n" + "fox hunt|hunt\n"
-                        + "Coriolanus (play)|Coriolanus\n" + "William Shakespeare\n" + "Webster\'s dictionary\n" + "1913\n"
-                        + "American Heritage Dictionary\n" + "Category:Greetings\n" + "de:Hallo\n" + "es:Hola\n" + "fr:Bonjour\n" + "it:Ciao\n"
-                        + "nl:Hoi\n" + "nn:Hallo\n" + "pt:Oi\n" + "ru:Алло\n" + "simple:Hello\n" + "tr:Günaydin\n" + "vec:Ciao\n" + "zh:Hello\n"
-                        + "",
-                listener.getCollectorBuffer().toString()
-        );
+        assertThat(listener.getCollectorBuffer().toString()).isEqualTo("salutation (greeting)|salutation\n" + "Greeting habits|greeting\n"
+                + "English language\n" + "synonym\n" + "wikt:hi|Hi\n" + "wikt:hey|Hey\n" + "1883\n" + "telephone\n" + "Roughing It\n"
+                + "Mark Twain\n" + "1849\n" + "1846\n" + "1860s\n" + "1826\n" + "contraction\n" + "Archaism|archaic\n"
+                + "English language|English\n" + "Thomas Edison\n" + "telephone\n" + "Alexander Graham Bell\n" + "Ahoy-hoy|Ahoy\n"
+                + "1889\n" + "Caller ID\n" + "Charles Dickens\n" + "Oliver Twist\n" + "1838\n" + "the Artful Dodger\n"
+                + "Tom Brown\'s Schooldays\n" + "British English\n" + "exclamation\n" + "fox hunt|hunt\n"
+                + "Coriolanus (play)|Coriolanus\n" + "William Shakespeare\n" + "Webster\'s dictionary\n" + "1913\n"
+                + "American Heritage Dictionary\n" + "Category:Greetings\n" + "de:Hallo\n" + "es:Hola\n" + "fr:Bonjour\n" + "it:Ciao\n"
+                + "nl:Hoi\n" + "nn:Hallo\n" + "pt:Oi\n" + "ru:Алло\n" + "simple:Hello\n" + "tr:Günaydin\n" + "vec:Ciao\n" + "zh:Hello\n"
+                + "");
     }
 
     @Test public void test998() {
         HelloHeadListener listener = new HelloHeadListener();
         wikiModel.parseEvents(listener, HELLO_TEXT);
-        assertEquals("First use\n" + "Etymology\n" + "Telephone\n" + "Hullo\n" + "Hallo\n"
-                + "External links\n" + "References\n" + "",
-                listener.getCollectorBuffer().toString());
+        assertThat(listener.getCollectorBuffer().toString()).isEqualTo("First use\n" + "Etymology\n" + "Telephone\n" + "Hullo\n" + "Hallo\n"
+                + "External links\n" + "References\n" + "");
     }
 
     @Test public void test999() {
         HelloTemplateListener listener = new HelloTemplateListener();
         wikiModel.parseEvents(listener, HELLO_TEXT);
-        assertEquals(
-                "pp-semi-protected|small=yes\n" +
+        assertThat(listener.getCollectorBuffer().toString()).isEqualTo("pp-semi-protected|small=yes\n" +
                 "wiktionarypar|hello\n" +
                 "otheruses|Hello (disambiguation)\n" +
                 "cite web|url=http://www.etymonline.com/index.php?search=hello&searchmode=none|title=Online Etymology Dictionary\n" +
@@ -147,8 +143,6 @@ public class HelloRenderTest  {
                 "cn|date=October 2007\n" +
                 "cite web|url=http://www.m-w.com/dictionary/hello|title=Hello|publisher=Merriam-Webster Online\n" +
                 "cite web|url=http://www.bartelby.com/61/60/H0136000.html|title=Hello|publisher= The American Heritage® Dictionary of the English Language: Fourth Edition.|date=2000|accessdate=2006-09-01\n" +
-                "reflist|2\n",
-                listener.getCollectorBuffer().toString()
-                );
+                "reflist|2\n");
     }
 }

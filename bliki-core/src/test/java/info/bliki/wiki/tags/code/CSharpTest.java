@@ -3,20 +3,19 @@ package info.bliki.wiki.tags.code;
 import info.bliki.wiki.filter.FilterTestSupport;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.fest.assertions.api.Assertions.assertThat;
 
 public class CSharpTest extends FilterTestSupport
 {
-    @Test public void testCSharp()
-    {
+    @Test public void testCSharp() {
         String result = wikiModel.render("'''C# Example'''\n" + "<source lang=csharp>\n" + "public class Test {\n" + "< > \" \' &" + "}\n"
                 + "</source>", false);
 
-        assertEquals("\n" +
+        assertThat(result).isEqualTo("\n" +
                 "<p><b>C# Example</b>\n" +
                 "</p><pre class=\"csharp\">\n" +
                 "<span style=\"color:#7F0055; font-weight: bold; \">public</span> <span style=\"color:#7F0055; font-weight: bold; \">class</span> Test {\n" +
                 "&#60; &#62; <span style=\"color:#2A00FF; \">&#34; &#39; &#38;}\n" +
-                "</span></pre>", result);
+                "</span></pre>");
     }
 }
