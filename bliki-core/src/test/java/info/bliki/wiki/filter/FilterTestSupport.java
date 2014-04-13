@@ -4,7 +4,6 @@ import info.bliki.wiki.model.Configuration;
 import info.bliki.wiki.model.WikiModel;
 import info.bliki.wiki.tags.HTMLBlockTag;
 import org.junit.Before;
-import org.junit.Test;
 
 import java.util.Locale;
 
@@ -13,12 +12,6 @@ import java.util.Locale;
  *
  */
 public class FilterTestSupport {
-    public static final String WINDOWS_NEWLINE = "\r\n";
-
-    public static final String UNIX_NEWLINE = "\n";
-
-    public static final String NEWLINE = WINDOWS_NEWLINE;
-
     protected WikiModel wikiModel = null;
 
     static {
@@ -44,9 +37,6 @@ public class FilterTestSupport {
                 "http://www.bliki.info/wiki/${title}");
         wikiModel.setUp();
         return wikiModel;
-    }
-
-    @Test public void testStub() {
     }
 
     /**

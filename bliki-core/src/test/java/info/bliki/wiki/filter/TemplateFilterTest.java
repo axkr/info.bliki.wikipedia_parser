@@ -92,7 +92,7 @@ public class TemplateFilterTest extends FilterTestSupport {
             assertFalse(wikiText + ", !wikiModel.getIncludes().contains(" + linkTitle + ")", wikiModel.getIncludes().contains(linkTitle));
         } else {
             assertFalse(wikiText + ", !wikiModel.getTemplates().contains(" + linkTitle + ")", wikiModel.getTemplates().contains(
-                    templateName));
+                    null));
             assertTrue(wikiText + ", wikiModel.getIncludes().contains(" + linkTitle + ")", wikiModel.getIncludes().contains(linkTitle));
         }
     }
@@ -361,7 +361,7 @@ public class TemplateFilterTest extends FilterTestSupport {
     // wikiModel.render(temp));
     // }
 
-    private final String TEST_STRING_02 = " {{#if:{{{cat|\n" + "{{{category|}}}}}}|a category|{{#if:{{{mul|{{{dab|\n"
+    private final static String TEST_STRING_02 = " {{#if:{{{cat|\n" + "{{{category|}}}}}}|a category|{{#if:{{{mul|{{{dab|\n"
             + "{{{disambiguation|}}}}}}}}}|articles|{{#if:{{{mulcat|}}}|categories|an\n" + "article}}}}}} on:\n";
 
     @Test public void testNestedIf02() {
@@ -1346,7 +1346,7 @@ public class TemplateFilterTest extends FilterTestSupport {
         System.out.println("testTemplateCache004: "+foodate);
         try {
             Thread.sleep(1);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException ignored) {
         }
         assertEquals(foodate, wikiModel.render("{{Template:FOODATE}}", false));
     }
@@ -1360,7 +1360,7 @@ public class TemplateFilterTest extends FilterTestSupport {
         System.out.println("testTemplateCache005: "+foodate);
         try {
             Thread.sleep(1);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException ignored) {
         }
         assertEquals(foodate, wikiModel.render("{{FOODATE}}", false));
     }
