@@ -3,8 +3,6 @@ package info.bliki.extensions.scribunto.template;
 import info.bliki.wiki.model.WikiModel;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
 
 import java.io.IOException;
 import java.util.LinkedHashMap;
@@ -12,7 +10,6 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-@RunWith(JUnit4.class)
 public class ModuleExecutorTest {
     private ModuleExecutor subject;
 

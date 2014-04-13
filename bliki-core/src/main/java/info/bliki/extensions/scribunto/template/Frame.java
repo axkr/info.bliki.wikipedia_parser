@@ -22,6 +22,15 @@ public class Frame {
         }
     }
 
+    public LuaValue getAllArguments() {
+        LuaValue[] values = new LuaValue[templateParameters.size()];
+        String[]   templateValues = templateParameters.values().toArray(new String[templateParameters.size()]);
+        for (int i = 0; i<values.length; i++) {
+            values[i] = LuaValue.valueOf(templateValues[i]);
+        }
+        return LuaValue.listOf(values);
+    }
+
     public Frame getParent() {
         return parent;
     }

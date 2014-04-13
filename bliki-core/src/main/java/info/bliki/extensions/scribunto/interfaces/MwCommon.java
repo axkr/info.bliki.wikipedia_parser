@@ -1,16 +1,15 @@
 package info.bliki.extensions.scribunto.interfaces;
 
+import info.bliki.extensions.scribunto.Importer;
+import info.bliki.extensions.scribunto.template.Frame;
 import info.bliki.wiki.filter.AbstractParser;
 import info.bliki.wiki.filter.AbstractParser.ParsedPageName;
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.model.WikiModelContentException;
-import info.bliki.extensions.scribunto.Importer;
-import info.bliki.extensions.scribunto.template.Frame;
 import org.luaj.vm2.Globals;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.Varargs;
-import org.luaj.vm2.lib.LibFunction;
 import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.ThreeArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
@@ -133,22 +132,27 @@ public class MwCommon extends MwInterface {
         return new TwoArgFunction() {
             @Override
             public LuaValue call(LuaValue frameId, LuaValue name) {
-                Frame frame;
-                if (frameId.tojstring().equals("parent")) {
-                    frame = currentFrame.getParent();
-                } else {
-                    frame = currentFrame;
-                }
-
-                if (frame == null) {
-                    throw new AssertionError("No frame set: "+ frameId + "," + name);
-                }
+                Frame frame = getFrameById(frameId);
                 LuaValue argument = frame.getArgument(name.tojstring());
                 System.err.println("getExpandedArgument(" + frameId + "," + name + ") => "+argument);
 
                 return argument;
             }
         };
+    }
+
+    private Frame getFrameById(LuaValue frameId) {
+        Frame frame;
+        if (frameId.tojstring().equals("parent")) {
+            frame = currentFrame.getParent();
+        } else {
+            frame = currentFrame;
+        }
+
+        if (frame == null) {
+            throw new AssertionError("No frame set: "+ frameId);
+        }
+        return frame;
     }
 
     private LuaValue getFrameTitle() {
@@ -162,10 +166,9 @@ public class MwCommon extends MwInterface {
     }
 
     private LuaValue getAllExpandedArguments() {
-        return new LibFunction() {
-            @Override
-            public LuaValue invoke(Varargs arg) {
-                throw new UnsupportedOperationException("no implemented");
+        return new OneArgFunction() {
+            @Override public LuaValue call(LuaValue frameId) {
+                return getFrameById(frameId).getAllArguments();
             }
         };
     }
@@ -173,8 +176,7 @@ public class MwCommon extends MwInterface {
     private LuaValue newChildFrame() {
         return new ThreeArgFunction() {
             @Override
-            public LuaValue call(LuaValue arg1, LuaValue arg2, LuaValue arg3) {
-                // logger.debug("newChildFrame");
+            public LuaValue call(LuaValue frameId, LuaValue title, LuaValue args) {
                 return LuaValue.NIL;
             }
         };
