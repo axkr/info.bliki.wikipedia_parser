@@ -4,7 +4,6 @@ import info.bliki.htmlcleaner.TagToken;
 import info.bliki.wiki.model.Configuration;
 import info.bliki.wiki.model.ITableOfContent;
 import info.bliki.wiki.model.IWikiModel;
-import info.bliki.wiki.tags.TableOfContentTag;
 import info.bliki.wiki.tags.util.NodeAttribute;
 import info.bliki.wiki.tags.util.WikiTagNode;
 
@@ -222,76 +221,6 @@ public class WikipediaScanner {
             if (cell != null) {
                 cell.createTagStack(table, fSource, fWikiModel, fScannerPosition);
                 cell = null;
-            }
-            if (table != null && row != null && row.size() > 0) {
-                addTableRow(table, row);
-            }
-        }
-        if (table != null) {
-            return table;
-        }
-        return null;
-    }
-
-    /**
-     * Scan a Trac simple wiki table
-     *
-     * @param tableOfContentTag
-     * @return
-     */
-    public WPTable tracTable(TableOfContentTag tableOfContentTag) {
-        WPTable table = null;
-        WPCell cell = null;
-        ArrayList<WPCell> cells = new ArrayList<>();
-        WPRow row = new WPRow(cells);
-        try {
-            if (fScannerPosition < 0) {
-                // simulate newline
-                fScannerPosition = 0;
-            }
-            if (fSource[fScannerPosition++] != '|') {
-                return null;
-            }
-            if (fSource[fScannerPosition++] != '|') {
-                return null;
-            }
-            ArrayList<WPRow> rows = new ArrayList<>();
-            table = new WPTable(rows);
-            fScannerPosition -= 2;
-            char ch = ' ';
-
-            while (true) {
-                ch = fSource[fScannerPosition++];
-                switch (ch) {
-                case '\n':
-                    addTableRow(table, row);
-                    cell = null;
-                    cells = new ArrayList<>();
-                    row = new WPRow(cells);
-                    if (fSource[fScannerPosition] != '|' || fSource[fScannerPosition + 1] != '|') {
-                        return table;
-                    }
-                    continue;
-                case '|':
-                    ch = fSource[fScannerPosition++];
-                    if (ch == '|') {
-                        if (cell != null) {
-                            cell.createTagStack(table, fSource, fWikiModel, fScannerPosition - 2);
-                            cells.add(cell);
-                        }
-                        cell = new WPCell(fScannerPosition);
-                    } else {
-                        fScannerPosition--;
-                    }
-                    break;
-                }
-            }
-        } catch (IndexOutOfBoundsException e) {
-            // ...
-            fScannerPosition = fSource.length;
-            if (cell != null) {
-                cell.createTagStack(table, fSource, fWikiModel, fScannerPosition);
-                cells.add(cell);
             }
             if (table != null && row != null && row.size() > 0) {
                 addTableRow(table, row);
@@ -608,12 +537,6 @@ public class WikipediaScanner {
             return false;
         }
         return str.regionMatches(ignoreCase, toffset, prefix, 0, prefix.length());
-    }
-
-    public void scanWhiteSpace() {
-        while (Character.isWhitespace(fSource[fScannerPosition++])) {
-        }
-        --fScannerPosition;
     }
 
     /**

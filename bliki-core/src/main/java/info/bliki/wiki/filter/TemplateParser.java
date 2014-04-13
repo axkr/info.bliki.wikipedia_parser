@@ -6,6 +6,8 @@ import info.bliki.wiki.tags.util.WikiTagNode;
 import info.bliki.wiki.template.ITemplateFunction;
 import info.bliki.wiki.template.Safesubst;
 import info.bliki.wiki.template.Subst;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,11 +23,10 @@ import java.util.regex.Pattern;
  */
 public class TemplateParser extends AbstractParser {
     private static final Pattern HTML_COMMENT_PATTERN = Pattern.compile("<!--(.*?)-->");
+    protected static Logger logger = LoggerFactory.getLogger(TemplateParser.class);
 
-    public final boolean fParseOnlySignature;
-
+    private  final boolean fParseOnlySignature;
     private final boolean fRenderTemplate;
-
     private boolean fOnlyIncludeFlag;
 
     public TemplateParser(String stringSource) {
@@ -122,13 +123,8 @@ public class TemplateParser extends AbstractParser {
                 }
             }
             writer.append(sb);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            writer.append(e.getClass().getSimpleName());
-        } catch (Error e) {
-            e.printStackTrace();
-            writer.append(e.getClass().getSimpleName());
+        } catch (Exception | Error e) {
+            handleParserError(e, writer);
         } finally {
             wikiModel.decrementTemplateRecursionLevel();
         }
@@ -171,9 +167,9 @@ public class TemplateParser extends AbstractParser {
             }
 
             if (!renderTemplate) {
-                String redirectedLink = AbstractParser.parseRedirect(sb.toString(), wikiModel);
+                String redirectedLink = parseRedirect(sb.toString(), wikiModel);
                 if (redirectedLink != null) {
-                    String redirectedContent = AbstractParser.getRedirectedTemplateContent(wikiModel, redirectedLink, null);
+                    String redirectedContent = getRedirectedTemplateContent(wikiModel, redirectedLink, null);
                     if (redirectedContent != null) {
                         parseRecursive(redirectedContent, wikiModel, writer, parseOnlySignature, renderTemplate);
                         return;
@@ -181,14 +177,18 @@ public class TemplateParser extends AbstractParser {
                 }
             }
             writer.append(sb);
-        } catch (Exception e) {
-            e.printStackTrace();
-            writer.append(e.getClass().getSimpleName());
-        } catch (Error e) {
-            e.printStackTrace();
-            writer.append(e.getClass().getSimpleName());
+        } catch (Exception | Error e) {
+            handleParserError(e, writer);
         } finally {
             wikiModel.decrementTemplateRecursionLevel();
+        }
+    }
+
+    private static void handleParserError(Throwable e, Appendable writer) {
+        logger.error("parser error", e);
+        try {
+            writer.append(e.getClass().getSimpleName());
+        } catch (IOException ignored) {
         }
     }
 
@@ -894,7 +894,7 @@ public class TemplateParser extends AbstractParser {
                     } finally {
                         wikiModel.setParameterParsingMode(parameterParsingMode);
                     }
-                } catch (IOException e) {
+                } catch (IOException ignored) {
                 }
             }
         }

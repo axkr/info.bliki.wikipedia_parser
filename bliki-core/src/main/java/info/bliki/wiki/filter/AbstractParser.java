@@ -20,31 +20,18 @@ import java.util.Map;
 public abstract class AbstractParser extends WikipediaScanner {
     public static final String[] TOC_IDENTIFIERS = { "TOC", "NOTOC", "FORCETOC" };
 
-    final static String HEADER_STRINGS[] = { "=", "==", "===", "====", "=====", "======" };
+    protected static final  int TokenIgnore = -1;
+    protected static final  int TokenSTART = 0;
+    protected static final  int TokenEOF = 1;
+    protected static final  int TokenBOLD = 3;
+    protected static final  int TokenITALIC = 4;
+    protected static final  int TokenBOLDITALIC = 5;
 
-    final static int TokenNotFound = -2;
-
-    final static int TokenIgnore = -1;
-
-    final static int TokenSTART = 0;
-
-    final static int TokenEOF = 1;
-
-    final static int TokenBOLD = 3;
-
-    final static int TokenITALIC = 4;
-
-    final static int TokenBOLDITALIC = 5;
-
-    final static HTMLTag BOLD = new WPTag("b");
-
-    final static HTMLTag ITALIC = new WPTag("i");
-
-    final static HTMLTag BOLDITALIC = new WPBoldItalicTag();
-
-    final static HTMLTag STRONG = new WPTag("strong");
-
-    final static HTMLTag EM = new WPTag("em");
+    protected static final  HTMLTag BOLD = new WPTag("b");
+    protected static final  HTMLTag ITALIC = new WPTag("i");
+    protected static final  HTMLTag BOLDITALIC = new WPBoldItalicTag();
+    protected static final  HTMLTag STRONG = new WPTag("strong");
+    protected static final  HTMLTag EM = new WPTag("em");
 
     /**
      * The current scanned character
@@ -55,10 +42,8 @@ public abstract class AbstractParser extends WikipediaScanner {
      * The current offset in the character source array
      */
     protected int fCurrentPosition;
-
-    protected boolean fWhiteStart = false;
-
-    protected int fWhiteStartPosition = 0;
+    protected boolean fWhiteStart;
+    protected int fWhiteStartPosition;
 
     public AbstractParser(String stringSource) {
         super(stringSource);
@@ -673,13 +658,7 @@ public abstract class AbstractParser extends WikipediaScanner {
             setNoToC(noTOC);
             runParser();
             return localStack;
-        } catch (Exception e) {
-            e.printStackTrace();
-            TagNode error = new TagNode("span");
-            error.addAttribute("class", "error", true);
-            error.addChild(new ContentToken(e.getClass().getSimpleName()));
-            localStack.append(error);
-        } catch (Error e) {
+        } catch (Exception | Error e) {
             e.printStackTrace();
             TagNode error = new TagNode("span");
             error.addAttribute("class", "error", true);
