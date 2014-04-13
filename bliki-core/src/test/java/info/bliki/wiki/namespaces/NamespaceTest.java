@@ -53,30 +53,30 @@ public class NamespaceTest {
     }
 
     @Test public void testNamespace001() {
-        assertEquals(namespace.META, namespace.getNamespace("Meta"));
-        assertEquals(namespace.META_TALK, namespace.getNamespace("Meta_talk"));
-        assertEquals(namespace.META_TALK, namespace.getNamespace("Meta talk"));
-        assertEquals(namespace.META, namespace.getNamespace("Project"));
-        assertEquals(namespace.META_TALK, namespace.getNamespace("Project_talk"));
-        assertEquals(namespace.META_TALK, namespace.getNamespace("Project talk"));
+        assertEquals(namespace.PROJECT, namespace.getNamespace("Meta"));
+        assertEquals(namespace.PROJECT_TALK, namespace.getNamespace("Meta_talk"));
+        assertEquals(namespace.PROJECT_TALK, namespace.getNamespace("Meta talk"));
+        assertEquals(namespace.PROJECT, namespace.getNamespace("Project"));
+        assertEquals(namespace.PROJECT_TALK, namespace.getNamespace("Project_talk"));
+        assertEquals(namespace.PROJECT_TALK, namespace.getNamespace("Project talk"));
     }
 
     @Test public void testTalkspace001() {
-        assertEquals(namespace.META_TALK, namespace.getTalkspace("Meta"));
-        assertEquals(namespace.META_TALK, namespace.getTalkspace("Meta_talk"));
-        assertEquals(namespace.META_TALK, namespace.getTalkspace("Meta talk"));
-        assertEquals(namespace.META_TALK, namespace.getTalkspace("Project"));
-        assertEquals(namespace.META_TALK, namespace.getTalkspace("Project_talk"));
-        assertEquals(namespace.META_TALK, namespace.getTalkspace("Project talk"));
+        assertEquals(namespace.PROJECT_TALK, namespace.getTalkspace("Meta"));
+        assertEquals(namespace.PROJECT_TALK, namespace.getTalkspace("Meta_talk"));
+        assertEquals(namespace.PROJECT_TALK, namespace.getTalkspace("Meta talk"));
+        assertEquals(namespace.PROJECT_TALK, namespace.getTalkspace("Project"));
+        assertEquals(namespace.PROJECT_TALK, namespace.getTalkspace("Project_talk"));
+        assertEquals(namespace.PROJECT_TALK, namespace.getTalkspace("Project talk"));
     }
 
     @Test public void testContentspace001() {
-        assertEquals(namespace.META, namespace.getContentspace("Meta"));
-        assertEquals(namespace.META, namespace.getContentspace("Meta_talk"));
-        assertEquals(namespace.META, namespace.getContentspace("Meta talk"));
-        assertEquals(namespace.META, namespace.getContentspace("Project"));
-        assertEquals(namespace.META, namespace.getContentspace("Project_talk"));
-        assertEquals(namespace.META, namespace.getContentspace("Project talk"));
+        assertEquals(namespace.PROJECT, namespace.getContentspace("Meta"));
+        assertEquals(namespace.PROJECT, namespace.getContentspace("Meta_talk"));
+        assertEquals(namespace.PROJECT, namespace.getContentspace("Meta talk"));
+        assertEquals(namespace.PROJECT, namespace.getContentspace("Project"));
+        assertEquals(namespace.PROJECT, namespace.getContentspace("Project_talk"));
+        assertEquals(namespace.PROJECT, namespace.getContentspace("Project talk"));
     }
 
     @Test public void testOldAliases001() {
@@ -89,5 +89,11 @@ public class NamespaceTest {
         assertEquals(namespace.MODULE, namespace.getNamespace("Module"));
         assertEquals(namespace.MODULE, namespace.getContentspace("Module_talk"));
         assertEquals(namespace.MODULE_TALK, namespace.getNamespace("Module_talk"));
+    }
+
+    @Test public void testCanonicalNamespace() throws Exception {
+        assertEquals("Project_talk", namespace.PROJECT_TALK.getCanonicalName());
+        assertEquals("Project_talk", new Namespace(Locale.GERMAN).PROJECT_TALK.getCanonicalName());
+        assertEquals("Project_talk", new Namespace(Locale.FRENCH).PROJECT_TALK.getCanonicalName());
     }
 }

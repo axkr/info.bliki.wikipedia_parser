@@ -830,17 +830,17 @@ public class TemplateParserTest extends FilterTestSupport {
 
     @Test public void testNAMESPACE004() {
         wikiModel.setPageName("Sandbox");
-        wikiModel.setNamespaceName("meta");
-        assertEquals("Meta", wikiModel.parseTemplates("{{NAMESPACE}}", false));
+        wikiModel.setNamespaceName("project");
+        assertEquals("Project", wikiModel.parseTemplates("{{NAMESPACE}}", false));
         assertEquals("", wikiModel.parseTemplates("{{NAMESPACE:}}", false));
     }
 
     @Test public void testNAMESPACE005() {
         wikiModel.setPageName("Sandbox");
-        wikiModel.setNamespaceName("meta_talk");
-        assertEquals("Meta_talk", wikiModel.parseTemplates("{{NAMESPACEE}}", false));
+        wikiModel.setNamespaceName("project_talk");
+        assertEquals("Project_talk", wikiModel.parseTemplates("{{NAMESPACEE}}", false));
         // TODO: namespace should actually have a space:
-        assertEquals("Meta_talk", wikiModel.parseTemplates("{{NAMESPACE}}", false));
+        assertEquals("Project_talk", wikiModel.parseTemplates("{{NAMESPACE}}", false));
     }
 
     @Test public void testNAMESPACE006() {
@@ -867,17 +867,17 @@ public class TemplateParserTest extends FilterTestSupport {
 
     @Test public void testTALKSPACE004() {
         wikiModel.setPageName("Sandbox");
-        wikiModel.setNamespaceName("meta");
-        assertEquals("Meta_talk", wikiModel.parseTemplates("{{TALKSPACE}}", false));
+        wikiModel.setNamespaceName("project");
+        assertEquals("Project_talk", wikiModel.parseTemplates("{{TALKSPACE}}", false));
         assertEquals("", wikiModel.parseTemplates("{{TALKSPACE:}}", false));
     }
 
     @Test public void testTALKSPACE005() {
         wikiModel.setPageName("Sandbox");
-        wikiModel.setNamespaceName("meta_talk");
-        assertEquals("Meta_talk", wikiModel.parseTemplates("{{TALKSPACEE}}", false));
+        wikiModel.setNamespaceName("project_talk");
+        assertEquals("Project_talk", wikiModel.parseTemplates("{{TALKSPACEE}}", false));
         // TODO: talkspace should actually have a space:
-        assertEquals("Meta_talk", wikiModel.parseTemplates("{{TALKSPACE}}", false));
+        assertEquals("Project_talk", wikiModel.parseTemplates("{{TALKSPACE}}", false));
     }
 
     @Test public void testTALKSPACE006() {
@@ -910,16 +910,16 @@ public class TemplateParserTest extends FilterTestSupport {
 
     @Test public void testSUBJECTSPACE004() {
         wikiModel.setPageName("Sandbox");
-        wikiModel.setNamespaceName("meta");
-        assertEquals("Meta", wikiModel.parseTemplates("{{SUBJECTSPACE}}", false));
+        wikiModel.setNamespaceName("project");
+        assertEquals("Project", wikiModel.parseTemplates("{{SUBJECTSPACE}}", false));
         assertEquals("", wikiModel.parseTemplates("{{SUBJECTSPACE:}}", false));
     }
 
     @Test public void testSUBJECTSPACE005() {
         wikiModel.setPageName("Sandbox");
-        wikiModel.setNamespaceName("meta_talk");
-        assertEquals("Meta", wikiModel.parseTemplates("{{SUBJECTSPACEE}}", false));
-        assertEquals("Meta", wikiModel.parseTemplates("{{SUBJECTSPACE}}", false));
+        wikiModel.setNamespaceName("project_talk");
+        assertEquals("Project", wikiModel.parseTemplates("{{SUBJECTSPACEE}}", false));
+        assertEquals("Project", wikiModel.parseTemplates("{{SUBJECTSPACE}}", false));
     }
 
     @Test public void testPAGENAME001() {

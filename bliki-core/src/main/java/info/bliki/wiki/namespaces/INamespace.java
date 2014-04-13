@@ -334,14 +334,14 @@ public interface INamespace {
      *
      * @return the namespace
      */
-    public INamespaceValue getMeta();
+    public INamespaceValue getProject();
 
     /**
      * The &quot;Meta talk&quot; namespace for the current language.
      *
      * @return the namespace
      */
-    public INamespaceValue getMeta_talk();
+    public INamespaceValue getProject_talk();
 
     /**
      * The &quot;File&quot; namespace for the current language.
