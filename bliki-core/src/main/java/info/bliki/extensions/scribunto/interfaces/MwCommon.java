@@ -73,6 +73,10 @@ public class MwCommon extends MwInterface {
         LuaValue luaFunction = chunk.get(method);
         LuaValue executeFunction = globals.get("mw").get("executeFunction");
 
+        if (luaFunction == null || luaFunction.isnil()) {
+            throw new AssertionError("luaFunction is nil");
+        }
+
         try {
             currentFrame = frame;
             return executeFunction.call(luaFunction).tojstring();
@@ -159,8 +163,7 @@ public class MwCommon extends MwInterface {
         return new OneArgFunction() {
             @Override
             public LuaValue call(LuaValue arg) {
-                // logger.debug("getFrameTitle");
-                return NIL;
+                return LuaValue.valueOf("getFrameTitleNotImplemented");
             }
         };
     }
