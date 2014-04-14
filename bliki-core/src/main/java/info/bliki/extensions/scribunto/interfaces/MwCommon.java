@@ -172,11 +172,7 @@ public class MwCommon extends MwInterface {
         return new TwoArgFunction() {
             @Override
             public LuaValue call(LuaValue frameId, LuaValue name) {
-                Frame frame = getFrameById(frameId);
-                LuaValue argument = frame.getArgument(name.tojstring());
-                System.err.println("getExpandedArgument(" + frameId + "," + name + ") => "+argument);
-
-                return argument;
+                return getFrameById(frameId).getArgument(name.tojstring());
             }
         };
     }
