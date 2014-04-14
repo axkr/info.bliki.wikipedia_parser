@@ -14,6 +14,7 @@ import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.ThreeArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
 import org.luaj.vm2.lib.VarArgFunction;
+import org.luaj.vm2.lib.ZeroArgFunction;
 
 import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
@@ -90,6 +91,31 @@ public class MwCommon extends MwInterface {
         for (MwInterface iface : interfaces) {
             load(iface);
         }
+
+        stubExecuteModule();
+        fakeWikiBase();
+    }
+
+    private void stubExecuteModule() {
+        // don't need module isolation
+        final LuaValue mw = globals.get("mw");
+        mw.set("executeModule", new TwoArgFunction() {
+            @Override public LuaValue call(LuaValue chunk, LuaValue isConsole) {
+                return chunk.call();
+            }
+        });
+    }
+
+    private void fakeWikiBase() {
+        // fake http://www.mediawiki.org/wiki/Extension:Wikibase
+        final LuaValue mw = globals.get("mw");
+        final LuaTable wikibase = new LuaTable();
+        wikibase.set("getEntity", new ZeroArgFunction() {
+            @Override public LuaValue call() {
+                return NIL;
+            }
+        });
+        mw.set("wikibase", wikibase);
     }
 
     private void load(MwInterface luaInterface) throws IOException {
@@ -117,10 +143,20 @@ public class MwCommon extends MwInterface {
         table.set("getFrameTitle", getFrameTitle());
         table.set("expandTemplate", expandTemplate());
         table.set("callParserFunction", defaultFunction());
-        table.set("preprocess", defaultFunction());
+        table.set("preprocess", preprocess());
         table.set("incrementExpensiveFunctionCount", defaultFunction());
         table.set("isSubstring", defaultFunction());
         return table;
+    }
+
+    private LuaValue preprocess() {
+        return new TwoArgFunction() {
+            @Override public LuaValue call(LuaValue frameId, LuaValue text) {
+                Frame frame = getFrameById(frameId);
+
+                return LuaValue.valueOf(model.render(text.checkjstring()));
+            }
+        };
     }
 
     private LuaValue expandTemplate() {
