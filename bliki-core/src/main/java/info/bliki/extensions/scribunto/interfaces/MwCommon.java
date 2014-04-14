@@ -288,11 +288,21 @@ public class MwCommon extends MwInterface {
         });
         globals.set("unpack", new unpack());
 
+        // math.log10 got removed in 5.2
         LuaValue math = globals.get("math");
         math.set("log10", new OneArgFunction() {
             @Override
             public LuaValue call(LuaValue luaValue) {
                 return LuaValue.valueOf(Math.log10(luaValue.checkdouble()));
+            }
+        });
+
+        // table.maxn got removed in 5.2
+        LuaValue table = globals.get("table");
+        table.set("maxn", new OneArgFunction() {
+            @Override public LuaValue call(LuaValue arg) {
+                // TODO: is this correct?
+                return arg.checktable().len();
             }
         });
     }

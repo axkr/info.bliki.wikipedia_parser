@@ -45,7 +45,7 @@ public abstract class LuaTestBase {
         final LuaValue provideFunc = tests.get("provide");
         final LuaValue runFunc     = tests.get("run");
 
-        for (int i=1; i<testCount; i++) {
+        for (int i=1; i<testCount+1; i++) {
             final Varargs provideValue = provideFunc.invoke(LuaValue.valueOf(i));
             final LuaValue name = provideValue.arg(2);
             final LuaValue expected = provideValue.arg(3);

@@ -29,7 +29,10 @@ public class TestWikiDB extends WikiDB {
                 while (resultSet.next()) {
                     String name = resultSet.getString(1);
                     try (InputStream input = resultSet.getClob(2).getAsciiStream()) {
-                        String quotedName = name.replace("/", "_").replace(":", "_");
+                        String quotedName = name
+                                .replaceAll("/", "_")
+                                .replaceAll(":", "_");
+
                         if (quotedName.startsWith("Module")) {
                             quotedName = quotedName + ".lua";
                         }

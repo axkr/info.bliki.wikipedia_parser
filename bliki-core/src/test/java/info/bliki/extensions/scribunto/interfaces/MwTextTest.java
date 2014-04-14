@@ -18,7 +18,8 @@ public class MwTextTest extends LuaTestBase {
             "listToText, alternate conjunction",
             "truncate, with adjusted length",
             "truncate, with adjusted length (2)",
-            "truncate, ridiculously short"
+            "truncate, ridiculously short",
+            "truncate, ridiculously short (2)"
         ));
     }
 }

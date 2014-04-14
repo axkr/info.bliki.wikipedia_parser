@@ -20,7 +20,8 @@ public class MwUstringTest extends LuaTestBase {
             "find: (%f 8)",
             "find: (%f 9)",
             "gsub: invalid replacement string",
-            "string length limit"
+            "string length limit",
+            "pattern length limit"
         ));
     }
 }
