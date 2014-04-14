@@ -18,6 +18,7 @@ public class TestWikiDB extends WikiDB {
     public void dumpToDirectory(File directory) throws IOException, SQLException {
         if (directory.exists()) {
             logger.debug("directory "+directory+ " already exists, skipping");
+            return;
         } else {
             assert(directory.mkdirs());
         }
