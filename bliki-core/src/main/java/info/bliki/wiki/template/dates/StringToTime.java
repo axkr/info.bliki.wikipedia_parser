@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -100,6 +101,7 @@ public class StringToTime extends Date {
 
     // default SimpleDateFormat string is the standard MySQL date format
     private static final String defaultSimpleDateFormat = "yyyy-MM-dd HH:mm:ss.SSS";
+    private static final Locale DEFAULT_LOCALE = Locale.ENGLISH;
 
     // An expression of time (hour)(:(minute))?((:(second))(.(millisecond))?)?(
     // *(am?|pm?))?(RFC 822 time zone|general time zone)?
@@ -262,7 +264,7 @@ public class StringToTime extends Date {
      * @return Date formatted according to <code>simpleDateFormat</code>
      */
     public String format(String simpleDateFormat) {
-        return new SimpleDateFormat(simpleDateFormat).format(this);
+        return new SimpleDateFormat(simpleDateFormat, DEFAULT_LOCALE).format(this);
     }
 
     /**
@@ -273,9 +275,9 @@ public class StringToTime extends Date {
     @Override
     public String toString() {
         if (simpleDateFormat != null)
-            return new SimpleDateFormat(simpleDateFormat).format(this);
+            return new SimpleDateFormat(simpleDateFormat, DEFAULT_LOCALE).format(this);
         else
-            return new SimpleDateFormat("yyyy/dd/MM").format(this); // String.valueOf(super.getTime());
+            return new SimpleDateFormat("yyyy/dd/MM", DEFAULT_LOCALE).format(this); // String.valueOf(super.getTime());
     }
 
     /**
@@ -444,7 +446,7 @@ public class StringToTime extends Date {
 
         public Date parse(String dateTimeString, Date now, Matcher m) throws ParseException {
             if (sdf != null)
-                return new SimpleDateFormat(sdf).parse(dateTimeString);
+                return new SimpleDateFormat(sdf, DEFAULT_LOCALE).parse(dateTimeString);
             else {
                 dateTimeString = removeExtraSpaces.matcher(dateTimeString).replaceAll(" ").toLowerCase();
 
@@ -655,7 +657,7 @@ public class StringToTime extends Date {
                     // month of the year
                     else if (type == FormatType.MONTH) {
                         Calendar ref = Calendar.getInstance();
-                        ref.setTime(new SimpleDateFormat("MMM d, y").parse(String.format("%s 1, 1970", m.group(1))));
+                        ref.setTime(new SimpleDateFormat("MMM d, y", DEFAULT_LOCALE).parse(String.format("%s 1, 1970", m.group(1))));
                         cal.set(Calendar.MONTH, ref.get(Calendar.MONTH));
 
                         return new Date(cal.getTimeInMillis());
@@ -674,7 +676,7 @@ public class StringToTime extends Date {
                     // month and day with slashes
                     else if (type == FormatType.MONTH_AND_DATE_WITH_SLASHES) {
                         Calendar ref = Calendar.getInstance();
-                        ref.setTime(new SimpleDateFormat("M/d/y").parse(String.format("%s/%s/1970", m.group(1), m.group(3))));
+                        ref.setTime(new SimpleDateFormat("M/d/y", DEFAULT_LOCALE).parse(String.format("%s/%s/1970", m.group(1), m.group(3))));
                         cal.set(Calendar.MONTH, ref.get(Calendar.MONTH));
                         cal.set(Calendar.DATE, ref.get(Calendar.DATE));
 
@@ -684,7 +686,7 @@ public class StringToTime extends Date {
                     // month and day long-hand
                     else if (type == FormatType.MONTH_AND_DATE) {
                         Calendar ref = Calendar.getInstance();
-                        ref.setTime(new SimpleDateFormat("MMM d, y").parse(String.format("%s %s, 1970", m.group(1), m.group(2))));
+                        ref.setTime(new SimpleDateFormat("MMM d, y", DEFAULT_LOCALE).parse(String.format("%s %s, 1970", m.group(1), m.group(2))));
                         cal.set(Calendar.MONTH, ref.get(Calendar.MONTH));
                         cal.set(Calendar.DATE, ref.get(Calendar.DATE));
 
@@ -752,11 +754,7 @@ public class StringToTime extends Date {
                     // unimplemented format type
                     else
                         throw new IllegalStateException(String.format("Unimplemented FormatType: %s", type));
-                } catch (ParseException e) {
-                    throw e;
-                } catch (IllegalStateException e) {
-                    throw e;
-                } catch (IllegalArgumentException e) {
+                } catch (ParseException | IllegalStateException | IllegalArgumentException e) {
                     throw e;
                 } catch (Exception e) {
                     throw new RuntimeException(String.format("Unknown failure in string-to-time conversion: %s", e.getMessage()), e);
