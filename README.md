@@ -31,7 +31,10 @@ Try the [online converter][] on Google App Engine.
 
 ## Installation from source
 
-	$ git submodule init && git submodule update
-	$ mvn install -DskipTests
+    $ git submodule init && git submodule update
+    $ mvn install -DskipTests
+
 
 [online converter]: http://w-i-k-i.appspot.com/
+[drone.io]: https://drone.io/bitbucket.org/axelclk/info.bliki.wiki
+[project page]: https://code.google.com/p/gwtwiki/
