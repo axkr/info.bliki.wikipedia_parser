@@ -5,6 +5,8 @@ import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.TwoArgFunction;
 import org.luaj.vm2.lib.ZeroArgFunction;
 
+import static java.util.Locale.forLanguageTag;
+
 public class MwLanguage extends MwInterface {
     private Languages languages = new Languages();
 
@@ -24,7 +26,38 @@ public class MwLanguage extends MwInterface {
         table.set("fetchLanguageNames", fetchLanguageNames());
         table.set("getFallbacksFor", defaultFunction());
         table.set("getContLangCode", getContLangCode());
+        table.set("lc", lc());
+        table.set("uc", uc());
+        /*
+        // TODO
+        lcfirst
+        ucfirst
+        caseFold
+        formatNum
+        formatDate
+        formatDuration
+        getDurationIntervals
+        convertPlural
+        convertGrammar
+        gender
+        */
         return table;
+    }
+
+    private LuaValue lc() {
+        return new TwoArgFunction() {
+            @Override public LuaValue call(LuaValue code, LuaValue string) {
+                return valueOf(string.checkjstring().toLowerCase(forLanguageTag(code.checkjstring())));
+            }
+        };
+    }
+
+    private LuaValue uc() {
+        return new TwoArgFunction() {
+            @Override public LuaValue call(LuaValue code, LuaValue string) {
+                return valueOf(string.checkjstring().toUpperCase(forLanguageTag(code.checkjstring())));
+            }
+        };
     }
 
     private LuaValue fetchLanguageNames() {
@@ -63,7 +96,7 @@ public class MwLanguage extends MwInterface {
         return new ZeroArgFunction() {
             @Override
             public LuaValue call() {
-                return LuaValue.valueOf("en");
+                return valueOf("en");
             }
         };
     }
