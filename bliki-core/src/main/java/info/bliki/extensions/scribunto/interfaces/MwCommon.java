@@ -23,10 +23,12 @@ import java.io.InputStream;
 
 public class MwCommon extends MwInterface {
     public static final String MODULE_NS = "Module:";
+    private static final int MAX_EXPENSIVE_CALLS = 10;
 
     private final Globals globals;
     private final IWikiModel model;
     private Frame currentFrame;
+    private int expensiveFunctionCount;
 
     private static final String[] LIBRARY_PATH = new String[] {
         ".",
@@ -134,19 +136,47 @@ public class MwCommon extends MwInterface {
 
     @Override
     public LuaTable getInterface() {
-        LuaTable table = new LuaTable();
-        table.set("loadPackage", load_package());
+        final LuaTable table = new LuaTable();
+        table.set("loadPackage", loadPackage());
         table.set("frameExists", frameExists());
         table.set("newChildFrame", newChildFrame());
         table.set("getExpandedArgument", getExpandedArgument());
         table.set("getAllExpandedArguments", getAllExpandedArguments());
         table.set("getFrameTitle", getFrameTitle());
         table.set("expandTemplate", expandTemplate());
-        table.set("callParserFunction", defaultFunction());
+        table.set("callParserFunction", callParserFunction());
         table.set("preprocess", preprocess());
-        table.set("incrementExpensiveFunctionCount", defaultFunction());
-        table.set("isSubstring", defaultFunction());
+        table.set("incrementExpensiveFunctionCount", incrementExpensiveFunctionCount());
+        table.set("isSubsting", isSubsting());
         return table;
+    }
+
+    private LuaValue callParserFunction() {
+        return new ThreeArgFunction() {
+            @Override public LuaValue call(LuaValue frameId, LuaValue function, LuaValue args) {
+                return null;
+            }
+        };
+    }
+
+    private LuaValue isSubsting() {
+        return new ZeroArgFunction() {
+            @Override public LuaValue call() {
+                // TODO
+                return FALSE;
+            }
+        };
+    }
+
+    private LuaValue incrementExpensiveFunctionCount() {
+        return new ZeroArgFunction() {
+            @Override public LuaValue call() {
+                if (++expensiveFunctionCount > MAX_EXPENSIVE_CALLS) {
+                    error("too many expensive function calls");
+                }
+                return NIL;
+            }
+        };
     }
 
     private LuaValue preprocess() {
@@ -154,7 +184,7 @@ public class MwCommon extends MwInterface {
             @Override public LuaValue call(LuaValue frameId, LuaValue text) {
                 Frame frame = getFrameById(frameId);
 
-                return LuaValue.valueOf(model.render(text.checkjstring()));
+                return valueOf(model.render(text.checkjstring()));
             }
         };
     }
@@ -195,7 +225,7 @@ public class MwCommon extends MwInterface {
         return new OneArgFunction() {
             @Override
             public LuaValue call(LuaValue arg) {
-                return LuaValue.valueOf("getFrameTitleNotImplemented");
+                return valueOf("getFrameTitleNotImplemented");
             }
         };
     }
@@ -212,7 +242,7 @@ public class MwCommon extends MwInterface {
         return new ThreeArgFunction() {
             @Override
             public LuaValue call(LuaValue frameId, LuaValue title, LuaValue args) {
-                return LuaValue.NIL;
+                return NIL;
             }
         };
     }
@@ -222,12 +252,12 @@ public class MwCommon extends MwInterface {
             @Override
             public LuaValue call(LuaValue arg) {
                 // logger.debug("frameExists(" + arg + ")");
-                return LuaValue.TRUE;
+                return TRUE;
             }
         };
     }
 
-    private OneArgFunction load_package() {
+    private OneArgFunction loadPackage() {
         return new OneArgFunction() {
             @Override
             public LuaValue call(LuaValue arg) {
@@ -247,7 +277,7 @@ public class MwCommon extends MwInterface {
                         try { is.close(); } catch (IOException ignored) { }
                     }
                 } else {
-                    return LuaValue.error("Could not load " + name);
+                    return error("Could not load " + name);
                 }
             }
         };
@@ -325,7 +355,7 @@ public class MwCommon extends MwInterface {
         math.set("log10", new OneArgFunction() {
             @Override
             public LuaValue call(LuaValue luaValue) {
-                return LuaValue.valueOf(Math.log10(luaValue.checkdouble()));
+                return valueOf(Math.log10(luaValue.checkdouble()));
             }
         });
 

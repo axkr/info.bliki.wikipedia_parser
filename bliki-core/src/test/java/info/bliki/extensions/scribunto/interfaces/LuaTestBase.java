@@ -17,6 +17,7 @@ import java.util.Collections;
 import java.util.Set;
 
 import static org.fest.assertions.api.Assertions.assertThat;
+import static org.luaj.vm2.LuaValue.valueOf;
 
 @RunWith(LuaTestRunner.class)
 public abstract class LuaTestBase {
@@ -46,9 +47,9 @@ public abstract class LuaTestBase {
         final LuaValue runFunc     = tests.get("run");
 
         for (int i=1; i<testCount+1; i++) {
-            final Varargs provideValue = provideFunc.invoke(LuaValue.valueOf(i));
+            final Varargs provideValue = provideFunc.invoke(valueOf(i));
             final LuaValue name = provideValue.arg(2);
-            final LuaValue expected = provideValue.arg(3);
+            final String expected = provideValue.arg(3).checkjstring();
 
             Description testDescription = Description.createTestDescription(getClass(), name.toString());
 
@@ -59,7 +60,11 @@ public abstract class LuaTestBase {
 
             notifier.fireTestStarted(testDescription);
             try {
-                assertThat(runFunc.call(LuaValue.valueOf(i))).isEqualTo(expected);
+                final String actual = runFunc.call(valueOf(i))
+                        .checkjstring()
+                        .replaceAll("@?\\w+\\.lua:\\d+\\s*", "");
+
+                assertThat(actual).isEqualTo(expected);
                 notifier.fireTestFinished(testDescription);
             } catch (Throwable e) {
                 notifier.fireTestFailure(new Failure(testDescription, e));
