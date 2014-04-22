@@ -3,6 +3,8 @@
 > is a parser library for converting
 > Wikipedia wikitext notation to HTML.
 
+[![Build Status](https://drone.io/bitbucket.org/axelclk/info.bliki.wiki/status.png)](https://drone.io/bitbucket.org/axelclk/info.bliki.wiki)
+
 ## Features
 
   * renders Mediawiki/Wikipedia wiki syntax to HTML. It supports:
