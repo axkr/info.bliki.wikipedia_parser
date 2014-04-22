@@ -17,7 +17,7 @@
         `Expr`, `If`, `Ifeq`, `Iferror`, `Ifexist`, `Ifexpr`, `LC`, `LCFirst`, `Padleft`,
         `Padright`, `Subst`, `Switch`, `Tag`, `UC`, `UCFirst`, `URLEncode`
         only partial support is available for: `Fullurl`, `Localurl`, `NS`, `Time`
-     * Lua/[Scribunto extension][] (WIP)
+     * Lua / [Scribunto extension][] (WIP)
   * extendable through a model interface (IWikiModel.java)
   * converts HTML to Wikipedia (available as Appengine, GWT application)
   * helper classes for the Wikimedia api.php for downloading wiki texts...
