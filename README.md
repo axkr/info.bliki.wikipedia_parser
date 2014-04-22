@@ -3,7 +3,6 @@
 > is a parser library for converting
 > Wikipedia wikitext notation to HTML.
 
-[![Build Status](https://drone.io/bitbucket.org/axelclk/info.bliki.wiki/status.png)](https://drone.io/bitbucket.org/axelclk/info.bliki.wiki)
 
 ## Features
 
@@ -38,7 +37,7 @@ Try the [online converter][] on Google App Engine.
 
 ## Links
 
-  * Continous Integration: [drone.io][]
+  * Continous Integration: [drone.io][] [![Build Status](https://drone.io/bitbucket.org/axelclk/info.bliki.wiki/status.png)](https://drone.io/bitbucket.org/axelclk/info.bliki.wiki)
   * [Google Code project page][]
 
 [online converter]: http://w-i-k-i.appspot.com/
