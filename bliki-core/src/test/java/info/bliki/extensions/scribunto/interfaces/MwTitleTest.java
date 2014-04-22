@@ -10,6 +10,6 @@ public class MwTitleTest extends LuaTestBase {
 
     @Override
     public boolean isIgnored(Description testDescription) {
-        return false;
+        return true;
     }
 }
