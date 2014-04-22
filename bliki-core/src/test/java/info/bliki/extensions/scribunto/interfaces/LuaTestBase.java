@@ -62,7 +62,7 @@ public abstract class LuaTestBase {
             try {
                 final String actual = runFunc.call(valueOf(i))
                         .checkjstring()
-                        .replaceAll("@?\\w+\\.lua:\\d+\\s*", "");
+                        .replaceAll("@?[\\w\\.]+\\.lua:\\d+\\s*", "");
 
                 assertThat(actual).isEqualTo(expected);
                 notifier.fireTestFinished(testDescription);
