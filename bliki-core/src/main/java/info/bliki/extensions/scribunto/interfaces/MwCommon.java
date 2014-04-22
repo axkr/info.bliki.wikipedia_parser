@@ -57,6 +57,7 @@ public class MwCommon extends MwInterface {
             new MwUri(),
             new MwMessage(),
             new MwHtml(),
+            new MwLanguage(),
         };
 
         load();

@@ -1,11 +1,14 @@
 package info.bliki.extensions.scribunto.interfaces;
 
-import org.junit.Ignore;
+import org.junit.runner.Description;
 
-@Ignore
 public class MwLanguageTest extends LuaTestBase {
     @Override
     public String getLuaTest() {
         return "LanguageLibraryTests.lua";
+    }
+
+    @Override public boolean isIgnored(Description testDescription) {
+        return true;
     }
 }
