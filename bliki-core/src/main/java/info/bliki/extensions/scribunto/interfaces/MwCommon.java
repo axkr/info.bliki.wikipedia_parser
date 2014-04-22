@@ -296,12 +296,9 @@ public class MwCommon extends MwInterface {
         return null;
     }
 
-    private InputStream findModule(String moduleName)
-            throws IOException {
-        String name = moduleName;
+    private InputStream findModule(final String moduleName) throws IOException {
+        final String name = moduleName.replaceAll("[/:]", "_");
         InputStream is = null;
-        name = name.replaceAll("/", "_");
-        name = name.replaceAll(":", "_");
 
         for (String path : MODULE_PATH) {
             is = globals.finder.findResource(path+"/"+name);
