@@ -31,13 +31,13 @@ public class MwCommon extends MwInterface {
     private int expensiveFunctionCount;
 
     private static final String[] LIBRARY_PATH = new String[] {
-        ".",
+        "",
         "luabit",
         "ustring",
     };
 
     private static final String[] MODULE_PATH = new String[] {
-        ".",
+        "",
         "modules"
     };
 
