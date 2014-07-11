@@ -24,8 +24,8 @@
     </scm>
 
     <issueManagement>
-        <system>Google Code</system>
-        <url>http://code.google.com/p/gwtwiki/issues/list</url>
+        <system>Bitbucket</system>
+        <url>https://bitbucket.org/axelclk/info.bliki.wiki/issues</url>
     </issueManagement>
 
     <ciManagement>
