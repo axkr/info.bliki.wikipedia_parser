@@ -1,4 +1,4 @@
 [submodule "bliki-core/src/main/scribunto"]
 	path = bliki-core/src/main/scribunto
-	url = https://bitbucket.org/jberkel/scribunto.git
-	branch = legunto
+	url = https://bitbucket.org/axelclk/scribunto.git
+	branch = bliki
