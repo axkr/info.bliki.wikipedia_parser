@@ -1,5 +1,7 @@
 package info.bliki.wiki.model;
 
+import info.bliki.extensions.scribunto.engine.ScribuntoEngine;
+import info.bliki.extensions.scribunto.template.Frame;
 import info.bliki.htmlcleaner.BaseToken;
 import info.bliki.htmlcleaner.TagToken;
 import info.bliki.wiki.filter.AbstractParser;
@@ -19,9 +21,6 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
-
-import info.bliki.extensions.scribunto.template.Frame;
-import info.bliki.extensions.scribunto.template.ModuleExecutor;
 
 /**
  * Interface for rendering a wiki model
@@ -469,8 +468,11 @@ public interface IWikiModel extends IConfiguration {
      */
     public TagToken getNode(int offset);
 
+    // scribunto stuff
     public Frame getFrame();
-    public ModuleExecutor getModuleExecutor();
+    public void setFrame(Frame frame);
+
+    public ScribuntoEngine getScribuntoEngine();
 
     /**
      * Get the title of the current wiki article.
@@ -969,8 +971,6 @@ public interface IWikiModel extends IConfiguration {
      */
     public void setNamespaceName(String namespaceLowercase);
 
-    public void setFrame(Frame frame);
-    public void setModuleExecutor(ModuleExecutor executor);
     /**
      * Set to <code>true</code> if the rendering of the &quot;table of
      * contents&quot; should be disabled globally.

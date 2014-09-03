@@ -21,6 +21,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
+
+/**
+ * scribunto/engines/LuaCommon/LuaCommon.php
+ */
 public class MwCommon extends MwInterface {
     public static final String MODULE_NS = "Module:";
     private static final int MAX_EXPENSIVE_CALLS = 10;
@@ -68,24 +72,46 @@ public class MwCommon extends MwInterface {
         return "mw";
     }
 
-    public String execute(String module, String method, Frame frame) throws IOException {
-        String name = module;
-        if (!name.startsWith(Importer.MODULE)) {
-            name = Importer.MODULE + name;
-        }
-        LuaValue chunk = globals.load(findModule(module), name, "t", globals).call();
-        LuaValue luaFunction = chunk.get(method);
-        LuaValue executeFunction = globals.get("mw").get("executeFunction");
+    public String execute(String moduleName, String method, Frame frame) throws IOException {
+        return executeFunctionChunk(exports(moduleName).get(method), frame);
+    }
 
-        if (luaFunction == null || luaFunction.isnil()) {
-            throw new AssertionError("luaFunction is nil");
-        }
+    private String executeFunctionChunk(LuaValue luaFunction, Frame frame) {
+        assertFunction(luaFunction);
 
         try {
             currentFrame = frame;
-            return executeFunction.call(luaFunction).tojstring();
+            final long execStart = System.currentTimeMillis();
+            LuaValue executeFunction = globals.get("mw").get("executeFunction");
+            final String result = executeFunction.call(luaFunction).tojstring();
+
+            final long execDuration = System.currentTimeMillis() - execStart;
+
+            System.err.println("execDuration:"+execDuration);
+
+            return result;
         } finally {
             currentFrame = null;
+        }
+    }
+
+    private LuaValue exports(String module) throws IOException {
+        return globals.load(findModule(module), normalizeModuleName(module), "t", globals).call();
+    }
+
+    private String normalizeModuleName(String moduleName) {
+        if (!moduleName.startsWith(Importer.MODULE)) {
+            return Importer.MODULE + moduleName;
+        } else {
+            return moduleName;
+        }
+    }
+
+
+
+    private void assertFunction(LuaValue luaFunction) {
+        if (luaFunction == null || luaFunction.isnil()) {
+            throw new AssertionError("luaFunction is nil");
         }
     }
 

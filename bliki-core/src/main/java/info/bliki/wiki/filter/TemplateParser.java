@@ -185,9 +185,9 @@ public class TemplateParser extends AbstractParser {
     }
 
     private static void handleParserError(Throwable e, Appendable writer) {
-        logger.error("parser error", e);
+        logger.error("TemplateParserError:", e);
         try {
-            writer.append(e.getClass().getSimpleName());
+            writer.append("TemplateParserError:").append(e.getClass().getSimpleName());
         } catch (IOException ignored) {
         }
     }

@@ -36,7 +36,7 @@ import info.bliki.wiki.template.Ifeq;
 import info.bliki.wiki.template.Iferror;
 import info.bliki.wiki.template.Ifexist;
 import info.bliki.wiki.template.Ifexpr;
-import info.bliki.wiki.template.Invoke;
+import info.bliki.extensions.scribunto.template.Invoke;
 import info.bliki.wiki.template.LC;
 import info.bliki.wiki.template.LCFirst;
 import info.bliki.wiki.template.Localurl;

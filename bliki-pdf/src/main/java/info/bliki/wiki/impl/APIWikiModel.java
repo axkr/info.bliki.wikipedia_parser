@@ -95,7 +95,6 @@ public class APIWikiModel extends WikiModel {
     public APIWikiModel(User user, WikiDB wikiDB, Locale locale, String imageBaseURL, String linkBaseURL, String imageDirectoryName) {
         super(Configuration.DEFAULT_CONFIGURATION, locale, imageBaseURL, linkBaseURL);
 
-        fModuleExecutor = new ModuleExecutor();
         fUser = user;
         fWikiDB = wikiDB;
         if (imageDirectoryName != null) {

@@ -1,8 +1,10 @@
-package info.bliki.wiki.template;
+package info.bliki.extensions.scribunto.template;
 
-import info.bliki.extensions.scribunto.template.Frame;
-import info.bliki.extensions.scribunto.template.ModuleExecutor;
+import info.bliki.extensions.scribunto.engine.ScribuntoEngine;
+import info.bliki.extensions.scribunto.engine.ScribuntoEngineModule;
 import info.bliki.wiki.model.IWikiModel;
+import info.bliki.wiki.template.AbstractTemplateFunction;
+import info.bliki.wiki.template.ITemplateFunction;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,6 +18,7 @@ import static info.bliki.wiki.filter.TemplateParser.mergeParameters;
 /**
  * A template parser function for <code>{{ #invoke: ... }}</code> syntax.
  *
+ * scribunto/common/Hooks.php
  */
 public class Invoke extends AbstractTemplateFunction {
     public final static ITemplateFunction CONST = new Invoke();
@@ -27,16 +30,22 @@ public class Invoke extends AbstractTemplateFunction {
             throw new AssertionError("not enough arguments");
         }
 
-        ModuleExecutor executor = model.getModuleExecutor();
-        if (executor == null) {
-            throw new AssertionError("no ModuleExecutor defined");
+        ScribuntoEngine engine = model.getScribuntoEngine();
+
+        if (engine == null) {
+            throw new AssertionError("no scribuntoEngine defined");
         }
-        String module = parts.get(0).trim();
-        String method = parts.get(1).trim();
+
+        final String moduleName   = parts.get(0).trim();  // TODO trim( $frame->expand( $args[0] ) );
+        final String functionName = parts.get(1).trim();  // TODO trim( $frame->expand( $args[1] ) );
+
+        final Title title = Title.makeTitleSafe(model.getNamespace().getModule(), moduleName);
+
+        ScribuntoEngineModule module = engine.fetchModuleFromParser(title);
+
         Frame parent = model.getFrame();
         try {
-            Map<String, String> map = getParameters(parts, model);
-            return executor.run(model, module, method, new Frame(map, parent));
+            return module.invoke(functionName, model.getFrame().newChild(getParameters(parts, model), title));
         } finally {
             model.setFrame(parent);
         }

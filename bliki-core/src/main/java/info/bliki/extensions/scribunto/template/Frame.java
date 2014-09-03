@@ -13,6 +13,10 @@ public class Frame {
         this.parent = parent;
     }
 
+    public Frame newChild(Map<String, String> templateParameters, Title title) {
+        return new Frame(templateParameters, this);
+    }
+
     public LuaValue getArgument(String name) {
         String value = templateParameters.get(name);
         if (value != null) {

@@ -1,8 +1,9 @@
 package info.bliki.wiki.model;
 
 import info.bliki.Messages;
+import info.bliki.extensions.scribunto.engine.ScribuntoLuaEngine;
+import info.bliki.extensions.scribunto.engine.ScribuntoEngine;
 import info.bliki.extensions.scribunto.template.Frame;
-import info.bliki.extensions.scribunto.template.ModuleExecutor;
 import info.bliki.htmlcleaner.BaseToken;
 import info.bliki.htmlcleaner.ContentToken;
 import info.bliki.htmlcleaner.TagNode;
@@ -118,9 +119,9 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
      * the general renderer map for all templates in that group. Sometimes
      * though you want to override the group's renderers.
      */
-    protected Map<Class<?>, Object> attributeRenderers;
-    protected ModuleExecutor fModuleExecutor;
-    protected Frame fFrame;
+    private Map<Class<?>, Object> attributeRenderers;
+    private Frame fFrame;
+    private ScribuntoEngine fScribuntoEngine;
 
     public AbstractWikiModel() {
         this(Configuration.DEFAULT_CONFIGURATION);
@@ -140,6 +141,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
         fLocale = locale;
         fInitialized = false;
         fConfiguration = configuration;
+        fScribuntoEngine = new ScribuntoLuaEngine(this);
         fNamespace = namespace;
         initialize();
     }
@@ -1989,15 +1991,12 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
         return fFrame;
     }
 
-    public ModuleExecutor getModuleExecutor() {
-        return fModuleExecutor;
-    }
-
     public void setFrame(Frame frame) {
         fFrame = frame;
     }
 
-    public void setModuleExecutor(ModuleExecutor executor) {
-        fModuleExecutor = executor;
+    @Override
+    public ScribuntoEngine getScribuntoEngine() {
+        return fScribuntoEngine;
     }
 }

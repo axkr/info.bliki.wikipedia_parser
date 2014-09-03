@@ -14,7 +14,9 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -56,7 +58,8 @@ public class HTMLCreatorTest {
 
     @Betamax(tape="Tom_Hanks")
     @Test public void testCreator001() throws Exception {
-        testWikipediaENAPI("Tom Hanks");
+        Result result = testWikipediaENAPI("Tom Hanks");
+        assertThat(result.contentAsString()).doesNotContain("TemplateParserError:");
     }
 
     @Betamax(tape="Political_party_strength_in_California")
@@ -211,6 +214,20 @@ public class HTMLCreatorTest {
         Result(File content, String redirectLink) {
             this.redirectLink = redirectLink;
             this.content = content;
+        }
+
+        public String contentAsString() {
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            try (FileInputStream fis = new FileInputStream(content)) {
+                byte[] buffer = new byte[8192];
+                int n;
+                while ((n = fis.read(buffer)) != -1) {
+                    bos.write(buffer, 0, n);
+                }
+                return new String(bos.toByteArray());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }
