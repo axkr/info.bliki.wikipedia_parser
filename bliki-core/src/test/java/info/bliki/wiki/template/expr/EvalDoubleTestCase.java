@@ -3,7 +3,7 @@ package info.bliki.wiki.template.expr;
 import info.bliki.wiki.template.expr.eval.DoubleEvaluator;
 import org.junit.Test;
 
-import static org.fest.assertions.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Tests evaluation in <code>double</code> Mediwiki expression mode

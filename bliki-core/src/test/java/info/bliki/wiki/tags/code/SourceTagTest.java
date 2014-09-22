@@ -3,7 +3,7 @@ package info.bliki.wiki.tags.code;
 import info.bliki.wiki.filter.FilterTestSupport;
 import org.junit.Test;
 
-import static org.fest.assertions.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 public class SourceTagTest extends FilterTestSupport {
     @Test public void testUnknownSourceTag001() {
         String result = wikiModel.render("start <source lang=unknown>Hello World</source> end", false);

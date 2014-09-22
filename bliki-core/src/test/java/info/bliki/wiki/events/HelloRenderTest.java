@@ -4,7 +4,7 @@ import info.bliki.wiki.model.WikiModel;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.fest.assertions.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class HelloRenderTest  {
 

@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.List;
 
 import static info.bliki.api.Fixtures.xml;
-import static org.fest.assertions.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class XMLPagesParserTest {
     @Test public void testParsePage() throws Exception {

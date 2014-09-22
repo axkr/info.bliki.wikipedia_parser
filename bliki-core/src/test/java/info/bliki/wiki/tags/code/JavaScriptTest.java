@@ -1,10 +1,9 @@
 package info.bliki.wiki.tags.code;
 
 import info.bliki.wiki.filter.FilterTestSupport;
-import org.fest.assertions.api.Assertions;
 import org.junit.Test;
 
-import static org.fest.assertions.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class JavaScriptTest extends FilterTestSupport
 {

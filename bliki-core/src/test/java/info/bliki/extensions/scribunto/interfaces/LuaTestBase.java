@@ -16,7 +16,7 @@ import java.io.InputStream;
 import java.util.Collections;
 import java.util.Set;
 
-import static org.fest.assertions.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.luaj.vm2.LuaValue.valueOf;
 
 @RunWith(LuaTestRunner.class)

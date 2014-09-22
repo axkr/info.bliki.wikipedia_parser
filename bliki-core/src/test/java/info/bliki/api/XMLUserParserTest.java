@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static info.bliki.api.Fixtures.xml;
-import static org.fest.assertions.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class XMLUserParserTest {
     private User user;

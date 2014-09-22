@@ -2,7 +2,7 @@ package info.bliki.wiki.filter;
 
 import org.junit.Test;
 
-import static org.fest.assertions.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class WPListFilterTest extends FilterTestSupport {
     final public static String LIST0 = "*Mixed list\n" + "*# with numbers\n" + "** and bullets\n" + "*# and numbers\n"

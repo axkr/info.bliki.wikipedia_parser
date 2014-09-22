@@ -1,12 +1,11 @@
 package info.bliki.wiki.filter;
 
-import org.fest.assertions.api.Assertions;
 import org.junit.Test;
 
 import java.util.Map;
 import java.util.Set;
 
-import static org.fest.assertions.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class WPLinkFilterTest extends FilterTestSupport {
 
@@ -119,15 +118,15 @@ public class WPLinkFilterTest extends FilterTestSupport {
         assertThat(wikiModel.render("kellereien wie [[Henkell & Söhnlein|Henkell]], [[Söhnlein]]", false)).isEqualTo("\n"
                 + "<p>kellereien wie <a href=\"http://www.bliki.info/wiki/Henkell_%26_S%C3%B6hnlein\" title=\"Henkell &amp; Söhnlein\">Henkell</a>, <a href=\"http://www.bliki.info/wiki/S%C3%B6hnlein\" title=\"Söhnlein\">Söhnlein</a></p>");
         Set<String> set = wikiModel.getLinks();
-        Assertions.assertThat(set).contains("Söhnlein");
-        Assertions.assertThat(set).contains("Henkell & Söhnlein");
+        assertThat(set).contains("Söhnlein");
+        assertThat(set).contains("Henkell & Söhnlein");
     }
 
     @Test public void testLink13() {
         assertThat(wikiModel.render("test [[lets start a [[nested]] link]] test", false)).isEqualTo("\n"
                 + "<p>test [[lets start a <a href=\"http://www.bliki.info/wiki/Nested\" title=\"Nested\">nested</a> link]] test</p>");
         Set<String> set = wikiModel.getLinks();
-        Assertions.assertThat(set).contains("nested");
+        assertThat(set).contains("nested");
     }
 
     @Test public void testLink14() {

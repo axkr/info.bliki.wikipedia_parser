@@ -3,7 +3,7 @@ package info.bliki.html;
 import info.bliki.html.googlecode.ToMoinMoin;
 import org.junit.Test;
 
-import static org.fest.assertions.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class HTML2MoinMoinTest {
 

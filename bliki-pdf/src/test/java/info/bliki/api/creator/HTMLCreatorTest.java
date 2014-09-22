@@ -25,7 +25,7 @@ import static co.freeside.betamax.TapeMode.READ_ONLY;
 import static info.bliki.wiki.filter.Encoder.encodeTitleLocalUrl;
 import static java.util.Locale.ENGLISH;
 import static java.util.Locale.GERMAN;
-import static org.fest.assertions.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @Category(IntegrationTest.class)
 public class HTMLCreatorTest {
