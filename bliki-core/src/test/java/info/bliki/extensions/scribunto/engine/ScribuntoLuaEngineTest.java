@@ -9,12 +9,15 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 
+import java.util.Map;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.isNull;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+@SuppressWarnings("unchecked")
 public class ScribuntoLuaEngineTest {
     @Mock private IWikiModel model;
     private ScribuntoLuaEngine subject;
@@ -27,7 +30,7 @@ public class ScribuntoLuaEngineTest {
 
     @Test public void testFetchModuleFromParserWhenModuleDoesNOTExistReturnsNull() throws Exception {
 
-        when(model.getRawWikiContent(any(AbstractParser.ParsedPageName.class), (java.util.Map<String, String>) isNull()))
+        when(model.getRawWikiContent(any(AbstractParser.ParsedPageName.class), isNull(Map.class)))
                 .thenThrow(new WikiModelContentException(null, null));
 
         ScribuntoEngineModule module =
