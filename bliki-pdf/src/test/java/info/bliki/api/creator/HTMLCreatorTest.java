@@ -14,9 +14,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -28,6 +26,7 @@ import static info.bliki.wiki.filter.Encoder.encodeTitleLocalUrl;
 import static java.util.Locale.ENGLISH;
 import static java.util.Locale.GERMAN;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.contentOf;
 
 @Category(IntegrationTest.class)
 public class HTMLCreatorTest {
@@ -59,7 +58,7 @@ public class HTMLCreatorTest {
     @Betamax(tape="Tom_Hanks")
     @Test public void testCreator001() throws Exception {
         Result result = testWikipediaENAPI("Tom Hanks");
-        assertThat(result.contentAsString()).doesNotContain("TemplateParserError:");
+        assertThat(contentOf(result.content)).doesNotContain("TemplateParserError:");
     }
 
     @Betamax(tape="Political_party_strength_in_California")
@@ -216,18 +215,5 @@ public class HTMLCreatorTest {
             this.content = content;
         }
 
-        public String contentAsString() {
-            ByteArrayOutputStream bos = new ByteArrayOutputStream();
-            try (FileInputStream fis = new FileInputStream(content)) {
-                byte[] buffer = new byte[8192];
-                int n;
-                while ((n = fis.read(buffer)) != -1) {
-                    bos.write(buffer, 0, n);
-                }
-                return new String(bos.toByteArray());
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
     }
 }
