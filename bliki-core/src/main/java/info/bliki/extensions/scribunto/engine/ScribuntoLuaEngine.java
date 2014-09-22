@@ -24,18 +24,8 @@ public class ScribuntoLuaEngine implements ScribuntoEngine {
         this.globals = initializeGlobals();
     }
 
-    /**
-     * Load a module from some parser-defined template loading mechanism and
-     * register a parser output dependency.
-     *
-     * Does not initialize the module, i.e. do not expect it to complain if the module
-     * text is garbage or has syntax error.
-     *
-     * @param title The title of the module
-     * @return a module or null if it doesn't exist.
-     */
-    @Override
-    public ScribuntoEngineModule fetchModuleFromParser(Title title) {
+    /** {@inheritDoc} */
+    @Override public ScribuntoEngineModule fetchModuleFromParser(Title title) {
         logger.debug("fetchModuleFromParser("+title+")");
         try {
             String content = wikiModel.getRawWikiContent(title.parsedPageName(), null);

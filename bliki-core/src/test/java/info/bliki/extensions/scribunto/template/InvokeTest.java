@@ -3,6 +3,7 @@ package info.bliki.extensions.scribunto.template;
 import info.bliki.extensions.scribunto.engine.ScribuntoEngine;
 import info.bliki.extensions.scribunto.engine.ScribuntoEngineModule;
 import info.bliki.wiki.model.IWikiModel;
+import info.bliki.wiki.namespaces.Namespace;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -26,6 +27,8 @@ public class InvokeTest {
         subject = new Invoke();
         initMocks(this);
         when(model.getScribuntoEngine()).thenReturn(scribuntoEngine);
+        when(model.getNamespace()).thenReturn(new Namespace());
+        when(model.getFrame()).thenReturn(new Frame(null, null));
         when(scribuntoEngine.fetchModuleFromParser(any(Title.class))).thenReturn(scribuntoModule);
     }
 
@@ -44,4 +47,5 @@ public class InvokeTest {
         String result = subject.parseFunction(parts, model, source.toCharArray(), 0, source.length(), false);
         assertThat(result).isEqualTo("expanded");
     }
+
 }

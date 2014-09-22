@@ -5,6 +5,8 @@ import info.bliki.extensions.scribunto.engine.ScribuntoEngineModule;
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.template.AbstractTemplateFunction;
 import info.bliki.wiki.template.ITemplateFunction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,6 +24,7 @@ import static info.bliki.wiki.filter.TemplateParser.mergeParameters;
  */
 public class Invoke extends AbstractTemplateFunction {
     public final static ITemplateFunction CONST = new Invoke();
+    private static Logger logger = LoggerFactory.getLogger(Invoke.class);
 
     @Override
     public String parseFunction(List<String> parts, IWikiModel model,
@@ -42,6 +45,10 @@ public class Invoke extends AbstractTemplateFunction {
         final Title title = Title.makeTitleSafe(model.getNamespace().getModule(), moduleName);
 
         ScribuntoEngineModule module = engine.fetchModuleFromParser(title);
+        if (module == null) {
+            logger.warn("module "+title+" not found");
+            return null;
+        }
 
         Frame parent = model.getFrame();
         try {
