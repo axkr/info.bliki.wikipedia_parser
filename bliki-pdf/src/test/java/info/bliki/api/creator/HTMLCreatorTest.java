@@ -57,8 +57,7 @@ public class HTMLCreatorTest {
 
     @Betamax(tape="Tom_Hanks")
     @Test public void testCreator001() throws Exception {
-        Result result = testWikipediaENAPI("Tom Hanks");
-        assertThat(contentOf(result.content)).doesNotContain("TemplateParserError:");
+        testWikipediaENAPI("Tom Hanks");
     }
 
     @Betamax(tape="Political_party_strength_in_California")
@@ -161,15 +160,15 @@ public class HTMLCreatorTest {
     }
 
     private Result testWiktionaryENAPI(String title) throws Exception {
-        return testAPI(title, "http://en.wiktionary.org/w/api.php", wiktionaryEn, ENGLISH);
+        return testAPI(title, "http://en.wiktionary.org/w/api.php", wiktionaryEn, ENGLISH).assertNoTemplateError();
     }
 
     private Result testWikipediaENAPI(String title) throws Exception {
-        return testAPI(title, "http://en.wikipedia.org/w/api.php", wikipediaEn, ENGLISH);
+        return testAPI(title, "http://en.wikipedia.org/w/api.php", wikipediaEn, ENGLISH).assertNoTemplateError();
     }
 
     private Result testWikipediaDEAPI(String title) throws Exception {
-        return testAPI(title, "http://de.wikipedia.org/w/api.php", wikipediaDe, GERMAN);
+        return testAPI(title, "http://de.wikipedia.org/w/api.php", wikipediaDe, GERMAN).assertNoTemplateError();
     }
 
     private Result testAPI(String title, String apiLink, WikiDB db, Locale locale) throws IOException {
@@ -215,5 +214,9 @@ public class HTMLCreatorTest {
             this.content = content;
         }
 
+        public Result assertNoTemplateError() {
+            assertThat(contentOf(content)).doesNotContain("TemplateParserError:");
+            return this;
+        }
     }
 }
