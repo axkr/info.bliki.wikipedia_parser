@@ -40,8 +40,7 @@ public class APIWikiModelInMemory extends WikiModel {
 
         if (parsedPagename.namespace
                 .isType(NamespaceCode.TEMPLATE_NAMESPACE_KEY)) {
-            final String contentKey = parsedPagename.namespace
-                    .makeFullPagename(parsedPagename.pagename);
+            final String contentKey = parsedPagename.fullPagename();
             String content = contentCache.get(contentKey);
             if (content == null) {
                 final String[] pageTitles = new String[] { contentKey };

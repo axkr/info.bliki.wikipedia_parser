@@ -1762,8 +1762,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
                 writer.append("}}");
                 return;
             }
-            String fullTemplateStr = parsedPagename.namespace
-                    .makeFullPagename(parsedPagename.pagename);
+            String fullTemplateStr = parsedPagename.fullPagename();
 
             val = fTemplates.get(fullTemplateStr);
             if (val == null) {

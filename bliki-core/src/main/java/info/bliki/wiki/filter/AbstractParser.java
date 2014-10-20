@@ -816,6 +816,10 @@ public abstract class AbstractParser extends WikipediaScanner {
                     ", pagename='" + pagename + '\'' +
                     '}';
         }
+
+        public String fullPagename() {
+            return namespace.makeFullPagename(pagename);
+        }
     }
 
     /**

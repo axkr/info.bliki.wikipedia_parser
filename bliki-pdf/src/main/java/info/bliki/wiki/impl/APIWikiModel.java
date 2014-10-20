@@ -141,7 +141,7 @@ public class APIWikiModel extends WikiModel {
 
         if (isTemplate || isModule) {
             String content = null;
-            String fullPageName = parsedPagename.namespace.makeFullPagename(parsedPagename.pagename);
+            final String fullPageName = parsedPagename.fullPagename();
 
             if (isTemplate) {
                 setFrame(new Frame(templateParameters, getFrame()));
