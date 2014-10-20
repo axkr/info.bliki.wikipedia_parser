@@ -123,7 +123,7 @@ public class WikiDB {
 
     public void insertImage(ImageData imageData) throws SQLException {
         fInsertImage.setString(1, imageData.getName());
-        fInsertImage.setString(2, imageData.getUrl());
+        fInsertImage.setString(2, imageData.getUrl() != null ? imageData.getUrl() : "");
         fInsertImage.setString(3, imageData.getFilename());
         fInsertImage.execute();
     }
