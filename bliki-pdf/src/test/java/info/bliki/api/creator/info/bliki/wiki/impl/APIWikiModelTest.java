@@ -1,0 +1,58 @@
+package info.bliki.api.creator.info.bliki.wiki.impl;
+
+import info.bliki.api.User;
+import info.bliki.api.creator.WikiDB;
+import info.bliki.wiki.impl.APIWikiModel;
+import info.bliki.wiki.model.WikiModelContentException;
+import info.bliki.wiki.namespaces.INamespace;
+import info.bliki.wiki.namespaces.Namespace;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mock;
+
+import java.sql.SQLException;
+import java.util.Locale;
+
+import static info.bliki.wiki.filter.AbstractParser.ParsedPageName;
+import static info.bliki.wiki.filter.MagicWord.MagicWordE;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.when;
+import static org.mockito.MockitoAnnotations.initMocks;
+
+public class APIWikiModelTest {
+    private APIWikiModel subject;
+    private @Mock User user;
+    private @Mock WikiDB wikiDB;
+    private ParsedPageName modulePageName, templatePageName;
+    private final INamespace ns = new Namespace();
+
+    @Before
+    public void setUp() throws Exception {
+        initMocks(this);
+        modulePageName = new ParsedPageName(ns.getModule(), "moduleTestPage", true);
+        templatePageName = new ParsedPageName(ns.getTemplate(), "templateTestPage", true);
+
+        subject = new APIWikiModel(user, wikiDB, Locale.getDefault(), null, null, null);
+    }
+
+    @Test public void getRawWikiContentWithMagicWordReturnsContent() throws Exception {
+        ParsedPageName magicParsedPage = new ParsedPageName(new Namespace().getMain(), "foo", MagicWordE.MAGIC_PAGE_NAME, null, true);
+        String content = subject.getRawWikiContent(magicParsedPage, null);
+        assertThat(content).isEqualTo("PAGENAME");
+    }
+
+    @Test(expected = WikiModelContentException.class) public void getRawWikiContentForTemplateRaisesWikiModelExceptionWhenSQLExceptionIsEncountered() throws Exception {
+        when(wikiDB.selectTopic(templatePageName.fullPagename())).thenThrow(new SQLException());
+        subject.getRawWikiContent(templatePageName, null);
+    }
+
+    @Test(expected = WikiModelContentException.class) public void getRawWikiContentForModuleRaisesWikiModelExceptionWhenSQLExceptionIsEncountered() throws Exception {
+        when(wikiDB.selectTopic(modulePageName.fullPagename())).thenThrow(new SQLException());
+        subject.getRawWikiContent(modulePageName, null);
+    }
+
+    @Test public void getRawWikiContentReturnsNullIfNotTemplateNorModuleNorMagicWord() throws Exception {
+        String content = subject.getRawWikiContent(new ParsedPageName(ns.getMain(), "whatever", true), null);
+        assertThat(content).isNull();
+    }
+}
