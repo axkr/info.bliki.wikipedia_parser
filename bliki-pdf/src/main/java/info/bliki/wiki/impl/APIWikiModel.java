@@ -6,7 +6,6 @@ import info.bliki.api.creator.ImageData;
 import info.bliki.api.creator.TopicData;
 import info.bliki.api.creator.WikiDB;
 import info.bliki.extensions.scribunto.template.Frame;
-import info.bliki.extensions.scribunto.template.ModuleExecutor;
 import info.bliki.htmlcleaner.TagNode;
 import info.bliki.wiki.filter.AbstractParser;
 import info.bliki.wiki.filter.AbstractParser.ParsedPageName;
@@ -128,7 +127,7 @@ public class APIWikiModel extends WikiModel {
      * @see info.bliki.api.User#queryContent(String[])
      */
     @Override
-    public String getRawWikiContent(ParsedPageName parsedPagename, Map<String, String> templateParameters)
+    public String getRawWikiContent(final ParsedPageName parsedPagename, final Map<String, String> templateParameters)
             throws WikiModelContentException {
         String result = super.getRawWikiContent(parsedPagename, templateParameters);
         if (result != null) {

@@ -28,7 +28,8 @@ public class ScribuntoLuaEngine implements ScribuntoEngine {
     @Override public ScribuntoEngineModule fetchModuleFromParser(Title title) {
         logger.debug("fetchModuleFromParser("+title+")");
         try {
-            String content = wikiModel.getRawWikiContent(title.parsedPageName(), null);
+            final String content = wikiModel.getRawWikiContent(title.parsedPageName(), null);
+
             return new ScribuntoEngineModule() {
                 @Override
                 public String invoke(String functionName, Frame frame) {
