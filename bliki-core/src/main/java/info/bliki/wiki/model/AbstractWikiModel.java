@@ -1108,7 +1108,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
             System.out.println("AbstractWikiModel raw: " + " " + namespace
                     + " " + templateName);
         }
-        if (parsedPagename.magicWord != null) {
+        if (parsedPagename.magicWord instanceof MagicWordE) {
             return MagicWord.processMagicWord(
                     (MagicWordE) parsedPagename.magicWord,
                     parsedPagename.magicWordParameter, this);
