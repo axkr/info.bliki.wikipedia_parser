@@ -8,4 +8,10 @@
     <root level="debug">
         <appender-ref ref="STDOUT"/>
     </root>
+
+    <logger name="com.barchart.udt" level="WARN"/>
+    <logger name="org.littleshoot" level="WARN"/>
+    <logger name="io.netty" level="WARN"/>
+    <logger name="co.freeside.betamax" level="WARN"/>
+
 </configuration>
