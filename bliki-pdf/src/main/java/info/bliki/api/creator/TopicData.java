@@ -1,5 +1,7 @@
 package info.bliki.api.creator;
 
+import javax.annotation.Nullable;
+
 public class TopicData {
     private String fTopicName;
     private String fTopicContent;
@@ -13,7 +15,7 @@ public class TopicData {
         fTopicContent = content;
     }
 
-    public String getName() {
+    @Nullable public String getName() {
         return fTopicName;
     }
 
@@ -21,7 +23,7 @@ public class TopicData {
         this.fTopicName = topicName;
     }
 
-    public String getContent() {
+    @Nullable public String getContent() {
         return fTopicContent;
     }
 

@@ -1,6 +1,7 @@
 package info.bliki.wiki.impl;
 
 import info.bliki.api.User;
+import info.bliki.api.creator.TopicData;
 import info.bliki.api.creator.WikiDB;
 import info.bliki.wiki.model.WikiModelContentException;
 import info.bliki.wiki.namespaces.INamespace;
@@ -48,6 +49,23 @@ public class APIWikiModelTest {
     @Test(expected = WikiModelContentException.class) public void getRawWikiContentForModuleRaisesWikiModelExceptionWhenSQLExceptionIsEncountered() throws Exception {
         when(wikiDB.selectTopic(modulePageName.fullPagename())).thenThrow(new SQLException());
         subject.getRawWikiContent(modulePageName, null);
+    }
+
+    @Test public void testWikiDBReturnsCachedContent() throws Exception {
+        TopicData topicData = new TopicData("name", "content");
+        when(wikiDB.selectTopic(modulePageName.fullPagename())).thenReturn(topicData);
+        assertThat(subject.getRawWikiContent(modulePageName, null)).isEqualTo(topicData.getContent());
+    }
+
+    @Test public void testWikiDBReturnsNullContent() throws Exception {
+        TopicData topicData = new TopicData("name", null);
+        when(wikiDB.selectTopic(modulePageName.fullPagename())).thenReturn(topicData);
+        assertThat(subject.getRawWikiContent(modulePageName, null)).isNull();
+    }
+
+    @Test public void testWikiDBReturnsNullTopicData() throws Exception {
+        when(wikiDB.selectTopic(modulePageName.fullPagename())).thenReturn(null);
+        assertThat(subject.getRawWikiContent(modulePageName, null)).isNull();
     }
 
     @Test public void getRawWikiContentReturnsNullIfNotTemplateNorModuleNorMagicWord() throws Exception {

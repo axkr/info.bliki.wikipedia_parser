@@ -3,6 +3,7 @@ package info.bliki.api.creator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.Nullable;
 import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -76,7 +77,7 @@ public class WikiDB {
      * @return <code>null</code> if no data was found
      * @throws SQLException
      */
-    public TopicData selectTopic(String name) throws SQLException {
+    @Nullable public TopicData selectTopic(String name) throws SQLException {
         TopicData topicData = new TopicData(name);
         fSelectContent.setString(1, name);
         try (ResultSet resultSet = fSelectContent.executeQuery()) {
@@ -108,7 +109,7 @@ public class WikiDB {
      * @return <code>null</code> if no data was found
      * @throws SQLException
      */
-    public ImageData selectImage(String imageName) throws SQLException {
+    @Nullable public ImageData selectImage(String imageName) throws SQLException {
         ImageData imageData = new ImageData(imageName);
         fSelectImage.setString(1, imageName);
         try (ResultSet resultSet = fSelectImage.executeQuery()) {

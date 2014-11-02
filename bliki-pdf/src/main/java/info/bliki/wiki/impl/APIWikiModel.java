@@ -17,6 +17,7 @@ import info.bliki.wiki.model.WikiModel;
 import info.bliki.wiki.model.WikiModelContentException;
 import info.bliki.wiki.namespaces.INamespace.NamespaceCode;
 
+import javax.annotation.Nullable;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -126,7 +127,7 @@ public class APIWikiModel extends WikiModel {
      *
      * @see info.bliki.api.User#queryContent(String[])
      */
-    @Override
+    @Override @Nullable
     public String getRawWikiContent(final ParsedPageName parsedPagename, final Map<String, String> templateParameters)
             throws WikiModelContentException {
         String result = super.getRawWikiContent(parsedPagename, templateParameters);
@@ -191,7 +192,7 @@ public class APIWikiModel extends WikiModel {
     }
 
     private String getRedirectedWikiContent(String rawWikitext, Map<String, String> templateParameters) {
-        if (rawWikitext.length() < 9) {
+        if (rawWikitext == null || rawWikitext.length() < 9) {
             // less than "#REDIRECT" string
             return rawWikitext;
         }
