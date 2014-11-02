@@ -1,8 +1,7 @@
-package info.bliki.api.creator.info.bliki.wiki.impl;
+package info.bliki.wiki.impl;
 
 import info.bliki.api.User;
 import info.bliki.api.creator.WikiDB;
-import info.bliki.wiki.impl.APIWikiModel;
 import info.bliki.wiki.model.WikiModelContentException;
 import info.bliki.wiki.namespaces.INamespace;
 import info.bliki.wiki.namespaces.Namespace;
