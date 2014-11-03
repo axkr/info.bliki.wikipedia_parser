@@ -41,7 +41,7 @@ public class MwUri implements MwInterface {
         return new OneArgFunction() {
             @Override
             public LuaValue call(LuaValue arg) {
-                return null;
+                return LuaValue.EMPTYSTRING;
             }
         };
     }

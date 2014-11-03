@@ -30,13 +30,12 @@ public class MwTitle implements MwInterface {
     }
 
     private LuaValue getUrl() {
-
         return new LibFunction() {
             /**
              *  $text, $which, $query = null, $proto = null
              */
             @Override public Varargs invoke(Varargs args) {
-                return NIL;
+                return LuaValue.EMPTYSTRING;
             }
         };
     }
@@ -131,12 +130,12 @@ public class MwTitle implements MwInterface {
         table.set("isLocal", "");
         table.set("isRedirect", "");
         table.set("subjectNsText", "");
-        table.set("interwiki", interwiki);
+        table.set("interwiki", interwiki.isnil() ? LuaValue.EMPTYSTRING : interwiki);
         table.set("namespace", LuaValue.valueOf(MAIN_NAMESPACE_KEY.code));
         table.set("nsText", "");
         table.set("text", "");
         table.set("id", title);
-        table.set("fragment", fragment);
+        table.set("fragment", fragment.isnil() ? LuaValue.EMPTYSTRING : fragment);
         table.set("contentModel", "");
         table.set("thePartialUrl", "");
         return table;

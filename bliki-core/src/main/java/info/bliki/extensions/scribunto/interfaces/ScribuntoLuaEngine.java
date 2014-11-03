@@ -10,6 +10,7 @@ import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.model.WikiModelContentException;
 import org.luaj.vm2.Globals;
 import org.luaj.vm2.LuaError;
+import org.luaj.vm2.LuaFunction;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.Varargs;
@@ -60,7 +61,6 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         extendGlobals(globals);
 
         this.interfaces = new MwInterface[] {
-            new MwInit(),
             new MwSite(model),
             new MwUstring(),
             new MwTitle(),
@@ -69,7 +69,6 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
             new MwMessage(),
             new MwHtml(),
             new MwLanguage(),
-
         };
 
         try {
@@ -118,6 +117,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
     }
 
     private void load() throws IOException {
+        load(new MwInit());
         load(this);
         for (MwInterface iface : interfaces) {
             load(iface);
@@ -130,9 +130,22 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
     private void stubExecuteModule() {
         // don't need module isolation
         final LuaValue mw = globals.get("mw");
-        mw.set("executeModule", new TwoArgFunction() {
-            @Override public LuaValue call(LuaValue chunk, LuaValue isConsole) {
-                return chunk.call();
+        mw.set("executeModule", new VarArgFunction() {
+            @Override public Varargs invoke(Varargs args) {
+                LuaFunction chunk = args.arg(1).checkfunction();
+                LuaValue name     = args.arg(2);
+
+                final LuaValue res = chunk.call();
+
+                if (name.isnil()) {
+                    return LuaValue.varargsOf(new LuaValue[]{LuaValue.TRUE, res});
+                } else {
+                    if (!res.istable()) {
+                        return LuaValue.varargsOf(new LuaValue[]{LuaValue.FALSE, LuaValue.valueOf(res.typename())});
+                    } else {
+                        return LuaValue.varargsOf(new LuaValue[]{LuaValue.TRUE, res.checktable().get(name)});
+                    }
+                }
             }
         });
     }
