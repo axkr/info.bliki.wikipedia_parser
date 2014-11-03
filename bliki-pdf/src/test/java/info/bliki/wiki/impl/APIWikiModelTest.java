@@ -19,6 +19,7 @@ import java.util.Locale;
 import static info.bliki.wiki.filter.AbstractParser.ParsedPageName;
 import static info.bliki.wiki.filter.MagicWord.MagicWordE;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.fail;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
@@ -48,6 +49,17 @@ public class APIWikiModelTest {
         when(wikiDB.selectTopic(templatePageName.fullPagename())).thenThrow(new SQLException());
         subject.getRawWikiContent(templatePageName, null);
     }
+
+    @Test public void getRawWikiContentForTemplateRaisesWikiModelExceptionWithCorrectMessageWhenSQLExceptionIsEncountered() throws Exception {
+        when(wikiDB.selectTopic(templatePageName.fullPagename())).thenThrow(new SQLException());
+        try {
+            subject.getRawWikiContent(templatePageName, null);
+            fail("expected exception");
+        } catch (WikiModelContentException e) {
+            assertThat(e.getMessage()).isEqualTo("<span class=\"error\">Exception: SQLException</span>");
+        }
+    }
+
 
     @Test(expected = WikiModelContentException.class) public void getRawWikiContentForModuleRaisesWikiModelExceptionWhenSQLExceptionIsEncountered() throws Exception {
         when(wikiDB.selectTopic(modulePageName.fullPagename())).thenThrow(new SQLException());
