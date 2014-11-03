@@ -14,13 +14,23 @@ public class ScribuntoLuaModule extends ScribuntoModuleBase {
     }
 
     @Override public String invoke(String functionName, Frame frame) throws ScribuntoException {
-        LuaValue function = loadExportTable().get(functionName);
-
+        final LuaValue function = loadExportTable().get(functionName);
         if (function.isnil()) {
             throw new ScribuntoException("no such function '"+functionName+"'");
         }
 
-        return getEngine().executeFunctionChunk(function, frame);
+        final long execStart = System.currentTimeMillis();
+        final String result = getEngine().executeFunctionChunk(function, frame);
+        final long execDuration = System.currentTimeMillis() - execStart;
+
+        logger.warn("execDuration("+toString()+" "+functionName+"):"+execDuration+ " ms");
+        return result;
+    }
+
+    @Override public String toString() {
+        return "ScribuntoLuaModule{" +
+                getChunkName() +
+                '}';
     }
 
     @Override public Status validate() {

@@ -99,13 +99,11 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
 
         try {
             currentFrame = frame;
-            final long execStart = System.currentTimeMillis();
             LuaValue executeFunction = globals.get("mw").get("executeFunction");
             final String result = executeFunction.call(luaFunction).tojstring();
 
-            final long execDuration = System.currentTimeMillis() - execStart;
 
-            System.err.println("execDuration:"+execDuration);
+
 
             return result;
         } finally {
@@ -352,8 +350,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
                         moduleName,
                         model.getNamespace().getModule(), false, false);
 
-                System.err.println("fetching "+pageName);
-
+                logger.debug("fetching "+pageName);
                 String content = model.getRawWikiContent(pageName, null);
 
                 if (content != null) {
