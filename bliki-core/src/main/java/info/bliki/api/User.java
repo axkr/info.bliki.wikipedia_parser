@@ -151,7 +151,7 @@ public class User {
         return queryImageinfo(arrayToList(listOfImageStrings));
     }
 
-    public List<Page> queryImageinfo(String... listOfImageStrings, int imageWidth) {
+    public List<Page> queryImageinfo(String[] listOfImageStrings, int imageWidth) {
         return queryImageinfo(arrayToList(listOfImageStrings), imageWidth);
     }
 
