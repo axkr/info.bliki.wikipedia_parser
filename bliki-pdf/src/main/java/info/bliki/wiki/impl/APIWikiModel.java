@@ -246,8 +246,6 @@ public class APIWikiModel extends WikiModel {
                     String filename = fImageDirectoryName + urlImageName;
                     File file = new File(filename);
                     if (!file.exists()) {
-                        // if the file doesn't exist try to download from Wikipedia
-
                         try (OutputStream os = new FileOutputStream(filename)) {
                             page.downloadImageUrl(os, imageUrl);
                         } catch (IOException e) {
@@ -272,17 +270,7 @@ public class APIWikiModel extends WikiModel {
             ImageFormat imageFormat = ImageFormat.getImageFormat(rawImageLink, imageNamespace);
 
             String imageName = imageFormat.getFilename();
-            // String sizeStr = imageFormat.getSizeStr();
-            // if (sizeStr != null) {
-            // imageName = sizeStr + '-' + imageName;
-            // }
-            // if (imageName.endsWith(".svg")) {
-            // imageName += ".png";
-            // }
             imageName = Encoder.encodeUrl(imageName);
-            // if (replaceColon()) {
-            // imageName = imageName.replaceAll(":", "/");
-            // }
             if (replaceColon()) {
                 imageHref = imageHref.replace("${title}", imageNamespace + '/' + imageName);
                 imageSrc = imageSrc.replace("${image}", imageName);
