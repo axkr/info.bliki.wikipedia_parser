@@ -157,26 +157,24 @@ public class APIWikiModel extends WikiModel {
                     } else {
                         return null;
                     }
-                }
-                String[] listOfTitleStrings = { fullPageName };
-                fUser.login();
-                List<Page> listOfPages = fUser.queryContent(listOfTitleStrings);
-                if (listOfPages.size() > 0) {
-                    Page page = listOfPages.get(0);
-                    content = page.getCurrentContent();
-                    if (content != null) {
-                        // System.out.println(name);
-                        // System.out.println(content);
-                        // System.out.println("-----------------------");
-                        topicData = new TopicData(fullPageName, content);
-                        fWikiDB.insertTopic(topicData);
-                        content = getRedirectedWikiContent(content, templateParameters);
+                } else {
+                    String[] listOfTitleStrings = {fullPageName};
+                    fUser.login();
+                    List<Page> listOfPages = fUser.queryContent(listOfTitleStrings);
+                    if (listOfPages.size() > 0) {
+                        final Page page = listOfPages.get(0);
+                        content = page.getCurrentContent();
                         if (content != null) {
-                            content = content.length() == 0 ? null : content;
+                            topicData = new TopicData(fullPageName, content);
+                            fWikiDB.insertTopic(topicData);
+                            content = getRedirectedWikiContent(content, templateParameters);
+                            if (content != null) {
+                                content = content.length() == 0 ? null : content;
+                            }
                         }
                     }
+                    return content;
                 }
-                return content;
             } catch (SQLException e) {
                 logger.warn(null, e);
 

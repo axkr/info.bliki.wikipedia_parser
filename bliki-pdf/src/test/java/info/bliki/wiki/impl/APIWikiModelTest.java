@@ -1,5 +1,7 @@
 package info.bliki.wiki.impl;
 
+import info.bliki.api.Page;
+import info.bliki.api.Revision;
 import info.bliki.api.User;
 import info.bliki.api.creator.TopicData;
 import info.bliki.api.creator.WikiDB;
@@ -11,6 +13,7 @@ import org.junit.Test;
 import org.mockito.Mock;
 
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.Locale;
 
 import static info.bliki.wiki.filter.AbstractParser.ParsedPageName;
@@ -61,6 +64,16 @@ public class APIWikiModelTest {
         TopicData topicData = new TopicData("name", null);
         when(wikiDB.selectTopic(modulePageName.fullPagename())).thenReturn(topicData);
         assertThat(subject.getRawWikiContent(modulePageName, null)).isNull();
+    }
+
+    @Test public void testWikiDBReturnsNullContentAndUserFetchesData() throws Exception {
+        when(wikiDB.selectTopic(modulePageName.fullPagename())).thenReturn(null);
+        Page page = new Page();
+        Revision revision = new Revision();
+        revision.setContent("testContent");
+        page.setCurrentRevision(revision);
+        when(user.queryContent(new String[]{modulePageName.fullPagename()})).thenReturn(Arrays.asList(page));
+        assertThat(subject.getRawWikiContent(modulePageName, null)).isEqualTo("testContent");
     }
 
     @Test public void testWikiDBReturnsNullTopicData() throws Exception {
