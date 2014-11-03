@@ -9,7 +9,6 @@ import org.luaj.vm2.Globals;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.Varargs;
-import org.luaj.vm2.lib.jse.JsePlatform;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -22,7 +21,6 @@ import static org.luaj.vm2.LuaValue.valueOf;
 @RunWith(LuaTestRunner.class)
 public abstract class LuaTestBase {
     private ScribuntoLuaEngine scribuntoLuaEngine;
-    private Globals globals;
     private LuaTable tests;
 
     public abstract String getLuaTest();
@@ -36,8 +34,7 @@ public abstract class LuaTestBase {
     }
 
     public void setUp() throws IOException {
-        globals  = JsePlatform.standardGlobals();
-        scribuntoLuaEngine = new ScribuntoLuaEngine(new WikiModel("${image}", "${title}"), globals);
+        scribuntoLuaEngine = new ScribuntoLuaEngine(new WikiModel("${image}", "${title}"));
         tests    = loadTests();
     }
 
@@ -75,14 +72,17 @@ public abstract class LuaTestBase {
     private LuaTable loadTests() throws IOException {
         InputStream is = null;
         try {
-            is = globals.finder.findResource(getLuaTest());
+            is = globals().finder.findResource(getLuaTest());
             if (is == null) {
                 throw new IOException("test "+getLuaTest()+ " not found");
             }
-            return globals.load(is, getLuaTest(), "t", globals).call().checktable();
+            return globals().load(is, getLuaTest(), "t", globals()).call().checktable();
         } finally {
             if (is != null) is.close();
         }
     }
 
+    private Globals globals() {
+        return scribuntoLuaEngine.getGlobals();
+    }
 }

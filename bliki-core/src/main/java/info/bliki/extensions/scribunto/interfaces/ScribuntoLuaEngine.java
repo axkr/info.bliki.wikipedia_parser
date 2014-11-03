@@ -54,12 +54,13 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         this(model, JsePlatform.standardGlobals());
     }
 
-    protected ScribuntoLuaEngine(IWikiModel model, Globals globals) {
+    private ScribuntoLuaEngine(IWikiModel model, Globals globals) {
         super(model);
         this.globals = globals;
         extendGlobals(globals);
 
         this.interfaces = new MwInterface[] {
+            new MwInit(),
             new MwSite(model),
             new MwUstring(),
             new MwTitle(),
@@ -68,6 +69,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
             new MwMessage(),
             new MwHtml(),
             new MwLanguage(),
+
         };
 
         try {
@@ -86,6 +88,10 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         return "mw";
     }
 
+    protected Globals getGlobals() {
+        return globals;
+    }
+
     protected LuaValue load(String code) throws ScribuntoException {
         try {
             return globals.load(code);
@@ -96,16 +102,10 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
 
     protected String executeFunctionChunk(LuaValue luaFunction, Frame frame) {
         assertFunction(luaFunction);
-
         try {
             currentFrame = frame;
             LuaValue executeFunction = globals.get("mw").get("executeFunction");
-            final String result = executeFunction.call(luaFunction).tojstring();
-
-
-
-
-            return result;
+            return executeFunction.call(luaFunction).tojstring();
         } finally {
             currentFrame = null;
         }
@@ -167,6 +167,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
     public LuaTable getInterface() {
         final LuaTable table = new LuaTable();
         table.set("loadPackage", loadPackage());
+        table.set("loadPHPLibrary", loadPHPLibrary());
         table.set("frameExists", frameExists());
         table.set("newChildFrame", newChildFrame());
         table.set("getExpandedArgument", getExpandedArgument());
@@ -305,6 +306,14 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         };
     }
 
+    private OneArgFunction loadPHPLibrary() {
+        return new OneArgFunction() {
+            @Override public LuaValue call(LuaValue arg) {
+                return LuaValue.NIL;
+            }
+        };
+    }
+
     private InputStream findPackage(String name) {
         final InputStream is = loadLocally(name);
         if (is != null) {
@@ -350,7 +359,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
                         moduleName,
                         model.getNamespace().getModule(), false, false);
 
-                logger.debug("fetching "+pageName);
+                logger.debug("fetching " + pageName);
                 String content = model.getRawWikiContent(pageName, null);
 
                 if (content != null) {

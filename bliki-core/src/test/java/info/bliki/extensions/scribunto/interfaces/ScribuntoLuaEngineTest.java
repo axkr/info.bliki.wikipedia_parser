@@ -1,6 +1,6 @@
-package info.bliki.extensions.scribunto.engine;
+package info.bliki.extensions.scribunto.interfaces;
 
-import info.bliki.extensions.scribunto.interfaces.ScribuntoLuaEngine;
+import info.bliki.extensions.scribunto.engine.ScribuntoModule;
 import info.bliki.extensions.scribunto.template.Frame;
 import info.bliki.extensions.scribunto.template.Title;
 import info.bliki.wiki.model.IWikiModel;

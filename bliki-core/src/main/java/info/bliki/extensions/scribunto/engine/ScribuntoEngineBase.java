@@ -23,7 +23,7 @@ public abstract class ScribuntoEngineBase implements ScribuntoEngine {
         if (!modules.containsKey(key)) {
             try {
                 String content = model.getRawWikiContent(title.parsedPageName(), null);
-                modules.put(key, newModule(content, title.parsedPageName().pagename));
+                modules.put(key, newModule(content, title.parsedPageName().fullPagename()));
             } catch (WikiModelContentException e) {
                 logger.warn("error fetching content");
             }
