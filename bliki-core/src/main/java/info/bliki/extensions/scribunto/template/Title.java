@@ -106,7 +106,14 @@ public class Title {
         }
     }
 
-
+    /**
+     * Get the prefixed database key form
+     *
+     * @return string The prefixed title, with underscores and any interwiki and namespace prefixes
+     */
+    public String getPrefixedDBkey() {
+        return ns.makeFullPagename(dbKeyForm);
+    }
 
     @Override
     public String toString() {

@@ -10,7 +10,7 @@ import org.luaj.vm2.lib.TwoArgFunction;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class MwMessage extends MwInterface {
+public class MwMessage implements MwInterface {
     @Override
     public String name() {
         return "mw.message";

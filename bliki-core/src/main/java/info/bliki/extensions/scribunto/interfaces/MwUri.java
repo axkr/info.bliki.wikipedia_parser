@@ -5,7 +5,7 @@ import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
 
-public class MwUri extends MwInterface {
+public class MwUri implements MwInterface {
     private String wgServer;
     private String wgCanonicalServer;
     private boolean wgUsePathInfo;

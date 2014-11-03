@@ -1,7 +1,7 @@
 package info.bliki.extensions.scribunto.template;
 
 import info.bliki.extensions.scribunto.engine.ScribuntoEngine;
-import info.bliki.extensions.scribunto.engine.ScribuntoEngineModule;
+import info.bliki.extensions.scribunto.engine.ScribuntoModule;
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.namespaces.Namespace;
 import org.junit.Before;
@@ -21,7 +21,7 @@ public class InvokeTest {
     private Invoke subject;
     private @Mock IWikiModel model;
     private @Mock ScribuntoEngine scribuntoEngine;
-    private @Mock ScribuntoEngineModule scribuntoModule;
+    private @Mock ScribuntoModule scribuntoModule;
 
     @Before public void before() {
         subject = new Invoke();
@@ -47,5 +47,4 @@ public class InvokeTest {
         String result = subject.parseFunction(parts, model, source.toCharArray(), 0, source.length(), false);
         assertThat(result).isEqualTo("expanded");
     }
-
 }

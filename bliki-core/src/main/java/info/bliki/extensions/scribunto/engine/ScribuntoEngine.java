@@ -15,5 +15,5 @@ public interface ScribuntoEngine {
      * @param title The title of the module
      * @return a module or null if it doesn't exist.
      */
-    @Nullable ScribuntoEngineModule fetchModuleFromParser(Title title);
+    @Nullable ScribuntoModule fetchModuleFromParser(Title title);
 }

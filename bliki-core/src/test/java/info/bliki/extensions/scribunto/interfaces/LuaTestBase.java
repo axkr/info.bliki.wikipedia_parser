@@ -21,7 +21,7 @@ import static org.luaj.vm2.LuaValue.valueOf;
 
 @RunWith(LuaTestRunner.class)
 public abstract class LuaTestBase {
-    private MwCommon mwCommon;
+    private ScribuntoLuaEngine scribuntoLuaEngine;
     private Globals globals;
     private LuaTable tests;
 
@@ -37,7 +37,7 @@ public abstract class LuaTestBase {
 
     public void setUp() throws IOException {
         globals  = JsePlatform.standardGlobals();
-        mwCommon = new MwCommon(new WikiModel("${image}", "${title}"), globals);
+        scribuntoLuaEngine = new ScribuntoLuaEngine(new WikiModel("${image}", "${title}"), globals);
         tests    = loadTests();
     }
 

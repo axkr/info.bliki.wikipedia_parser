@@ -11,7 +11,7 @@ import org.luaj.vm2.lib.TwoArgFunction;
 import static info.bliki.wiki.namespaces.INamespace.INamespaceValue;
 import static org.luaj.vm2.LuaValue.NIL;
 
-public class MwSite extends MwInterface {
+public class MwSite implements MwInterface {
     private final IWikiModel wikiModel;
 
     public MwSite(IWikiModel wikiModel) {

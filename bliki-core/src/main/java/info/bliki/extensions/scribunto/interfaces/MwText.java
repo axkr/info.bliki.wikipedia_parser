@@ -5,7 +5,7 @@ import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.ZeroArgFunction;
 
-public class MwText extends MwInterface {
+public class MwText implements MwInterface {
     @Override
     public String name() {
         return "mw.text";

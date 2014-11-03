@@ -7,10 +7,11 @@ import org.luaj.vm2.lib.LibFunction;
 import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
 
+import static info.bliki.extensions.scribunto.interfaces.MwInterface.DefaultFunction.defaultFunction;
 import static info.bliki.wiki.namespaces.INamespace.NamespaceCode.MAIN_NAMESPACE_KEY;
 import static info.bliki.wiki.namespaces.INamespace.NamespaceCode.MEDIA_NAMESPACE_KEY;
 
-public class MwTitle extends MwInterface {
+public class MwTitle implements MwInterface {
     @Override
     public String name() {
         return "mw.title";

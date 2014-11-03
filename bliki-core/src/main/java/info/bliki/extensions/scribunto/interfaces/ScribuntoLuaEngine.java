@@ -1,12 +1,15 @@
 package info.bliki.extensions.scribunto.interfaces;
 
-import info.bliki.extensions.scribunto.Importer;
+import info.bliki.extensions.scribunto.ScribuntoException;
+import info.bliki.extensions.scribunto.engine.ScribuntoEngineBase;
+import info.bliki.extensions.scribunto.engine.ScribuntoModule;
 import info.bliki.extensions.scribunto.template.Frame;
 import info.bliki.wiki.filter.AbstractParser;
 import info.bliki.wiki.filter.AbstractParser.ParsedPageName;
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.model.WikiModelContentException;
 import org.luaj.vm2.Globals;
+import org.luaj.vm2.LuaError;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.Varargs;
@@ -15,6 +18,7 @@ import org.luaj.vm2.lib.ThreeArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
 import org.luaj.vm2.lib.VarArgFunction;
 import org.luaj.vm2.lib.ZeroArgFunction;
+import org.luaj.vm2.lib.jse.JsePlatform;
 
 import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
@@ -25,12 +29,11 @@ import java.io.InputStream;
 /**
  * scribunto/engines/LuaCommon/LuaCommon.php
  */
-public class MwCommon extends MwInterface {
+public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterface {
     public static final String MODULE_NS = "Module:";
     private static final int MAX_EXPENSIVE_CALLS = 10;
 
     private final Globals globals;
-    private final IWikiModel model;
     private Frame currentFrame;
     private int expensiveFunctionCount;
 
@@ -47,10 +50,13 @@ public class MwCommon extends MwInterface {
 
     private final MwInterface[] interfaces;
 
-    public MwCommon(IWikiModel model, Globals globals)
-            throws IOException {
+    public ScribuntoLuaEngine(IWikiModel model) {
+        this(model, JsePlatform.standardGlobals());
+    }
+
+    protected ScribuntoLuaEngine(IWikiModel model, Globals globals) {
+        super(model);
         this.globals = globals;
-        this.model = model;
         extendGlobals(globals);
 
         this.interfaces = new MwInterface[] {
@@ -64,7 +70,15 @@ public class MwCommon extends MwInterface {
             new MwLanguage(),
         };
 
-        load();
+        try {
+            load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override public ScribuntoModule newModule(String text, String chunkName) {
+        return new ScribuntoLuaModule(this, text, chunkName);
     }
 
     @Override
@@ -72,11 +86,15 @@ public class MwCommon extends MwInterface {
         return "mw";
     }
 
-    public String execute(String moduleName, String method, Frame frame) throws IOException {
-        return executeFunctionChunk(exports(moduleName).get(method), frame);
+    protected LuaValue load(String code) throws ScribuntoException {
+        try {
+            return globals.load(code);
+        } catch (LuaError e) {
+            throw new ScribuntoException(e);
+        }
     }
 
-    private String executeFunctionChunk(LuaValue luaFunction, Frame frame) {
+    protected String executeFunctionChunk(LuaValue luaFunction, Frame frame) {
         assertFunction(luaFunction);
 
         try {
@@ -94,20 +112,6 @@ public class MwCommon extends MwInterface {
             currentFrame = null;
         }
     }
-
-    private LuaValue exports(String module) throws IOException {
-        return globals.load(findModule(module), normalizeModuleName(module), "t", globals).call();
-    }
-
-    private String normalizeModuleName(String moduleName) {
-        if (!moduleName.startsWith(Importer.MODULE)) {
-            return Importer.MODULE + moduleName;
-        } else {
-            return moduleName;
-        }
-    }
-
-
 
     private void assertFunction(LuaValue luaFunction) {
         if (luaFunction == null || luaFunction.isnil()) {
@@ -288,15 +292,8 @@ public class MwCommon extends MwInterface {
         return new OneArgFunction() {
             @Override
             public LuaValue call(LuaValue arg) {
-                String name = arg.tojstring();
-
-                InputStream is = loadLocally(name);
-                if (is == null) {
-                    try {
-                        is = findModule(name);
-                    } catch (IOException ignored) {
-                    }
-                }
+                final String name = arg.tojstring();
+                final InputStream is = findPackage(name);
                 if (is != null) {
                     try {
                         return globals.load(is, name, "t", globals);
@@ -308,6 +305,19 @@ public class MwCommon extends MwInterface {
                 }
             }
         };
+    }
+
+    private InputStream findPackage(String name) {
+        final InputStream is = loadLocally(name);
+        if (is != null) {
+            return is;
+        } else {
+            try {
+                return findModule(name);
+            } catch (IOException ignored) {
+                return null;
+            }
+        }
     }
 
     private InputStream loadLocally(String name) {
@@ -392,6 +402,7 @@ public class MwCommon extends MwInterface {
             }
         });
     }
+
 
     private static class unpack extends VarArgFunction {
         public Varargs invoke(Varargs args) {

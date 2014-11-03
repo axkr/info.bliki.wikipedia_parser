@@ -3,7 +3,7 @@ package info.bliki.extensions.scribunto.interfaces;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 
-public class MwHtml extends MwInterface {
+public class MwHtml implements MwInterface {
     @Override
     public String name() {
         return "mw.html";

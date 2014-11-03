@@ -1,8 +1,8 @@
 package info.bliki.wiki.model;
 
 import info.bliki.Messages;
-import info.bliki.extensions.scribunto.engine.ScribuntoLuaEngine;
 import info.bliki.extensions.scribunto.engine.ScribuntoEngine;
+import info.bliki.extensions.scribunto.interfaces.ScribuntoLuaEngine;
 import info.bliki.extensions.scribunto.template.Frame;
 import info.bliki.htmlcleaner.BaseToken;
 import info.bliki.htmlcleaner.ContentToken;
@@ -141,7 +141,6 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
         fLocale = locale;
         fInitialized = false;
         fConfiguration = configuration;
-        fScribuntoEngine = new ScribuntoLuaEngine(this);
         fNamespace = namespace;
         initialize();
     }
@@ -1996,6 +1995,9 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 
     @Override
     public ScribuntoEngine getScribuntoEngine() {
+        if (fScribuntoEngine == null) {
+            fScribuntoEngine = new ScribuntoLuaEngine(this);
+        }
         return fScribuntoEngine;
     }
 }

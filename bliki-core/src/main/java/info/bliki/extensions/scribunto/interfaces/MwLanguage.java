@@ -5,9 +5,10 @@ import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.TwoArgFunction;
 import org.luaj.vm2.lib.ZeroArgFunction;
 
+import static info.bliki.extensions.scribunto.interfaces.MwInterface.DefaultFunction.defaultFunction;
 import static java.util.Locale.forLanguageTag;
 
-public class MwLanguage extends MwInterface {
+public class MwLanguage implements MwInterface {
     private Languages languages = new Languages();
 
     @Override

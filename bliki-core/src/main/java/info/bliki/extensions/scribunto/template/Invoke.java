@@ -1,7 +1,8 @@
 package info.bliki.extensions.scribunto.template;
 
+import info.bliki.extensions.scribunto.ScribuntoException;
 import info.bliki.extensions.scribunto.engine.ScribuntoEngine;
-import info.bliki.extensions.scribunto.engine.ScribuntoEngineModule;
+import info.bliki.extensions.scribunto.engine.ScribuntoModule;
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.template.AbstractTemplateFunction;
 import info.bliki.wiki.template.ITemplateFunction;
@@ -44,7 +45,7 @@ public class Invoke extends AbstractTemplateFunction {
 
         final Title title = Title.makeTitleSafe(model.getNamespace().getModule(), moduleName);
 
-        ScribuntoEngineModule module = engine.fetchModuleFromParser(title);
+        ScribuntoModule module = engine.fetchModuleFromParser(title);
         if (module == null) {
             logger.warn("module "+title+" not found");
             return null;
@@ -53,6 +54,10 @@ public class Invoke extends AbstractTemplateFunction {
         Frame parent = model.getFrame();
         try {
             return module.invoke(functionName, model.getFrame().newChild(getParameters(parts, model), title));
+        } catch (ScribuntoException e) {
+            // TODO handle
+            logger.error("error invoking function", e);
+            return null;
         } finally {
             model.setFrame(parent);
         }
@@ -75,5 +80,4 @@ public class Invoke extends AbstractTemplateFunction {
     public String getFunctionDoc() {
         return null;
     }
-
 }

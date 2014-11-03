@@ -4,26 +4,37 @@ import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.OneArgFunction;
 
-public abstract class MwInterface {
-    // protected Logger logger = LoggerFactory.getLogger(getClass());
+public interface MwInterface {
 
-    public abstract String name();
+    /**
+     * @return the name of this interface
+     */
+    String name();
 
-    public abstract LuaTable getInterface();
+    /**
+     * @return a table with all methods exposed
+     */
+    LuaTable getInterface();
 
-    public abstract LuaValue getSetupOptions();
 
-    protected OneArgFunction defaultFunction() {
-        return defaultFunction(null);
-    }
+    /**
+     * @return options needed for setup
+     */
+    LuaValue getSetupOptions();
 
-    protected OneArgFunction defaultFunction(final String argName) {
-        return new OneArgFunction() {
-            @Override
-            public LuaValue call(LuaValue arg) {
-                // logger.warn("defaultFunction " + argName + " called");
-                return LuaValue.NIL;
-            }
-        };
+    public static class DefaultFunction {
+        public static OneArgFunction defaultFunction() {
+            return defaultFunction(null);
+        }
+
+        public static OneArgFunction defaultFunction(final String argName) {
+            return new OneArgFunction() {
+                @Override
+                public LuaValue call(LuaValue arg) {
+                    // logger.warn("defaultFunction " + argName + " called");
+                    return LuaValue.NIL;
+                }
+            };
+        }
     }
 }
