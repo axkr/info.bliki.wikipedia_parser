@@ -140,9 +140,7 @@ public class APIWikiModel extends WikiModel {
         boolean isModule   = parsedPagename.namespace.isType(NamespaceCode.MODULE_NAMESPACE_KEY);
 
         if (isTemplate || isModule) {
-            String content = null;
             final String fullPageName = parsedPagename.fullPagename();
-
             if (isTemplate) {
                 setFrame(new Frame(templateParameters, getFrame()));
             }
@@ -150,43 +148,40 @@ public class APIWikiModel extends WikiModel {
             try {
                 TopicData topicData = fWikiDB.selectTopic(fullPageName);
                 if (topicData != null) {
-                    content = topicData.getContent();
-                    content = getRedirectedWikiContent(content, templateParameters);
-                    if (content != null) {
-                        return content.length() == 0 ? null : content;
+                    final String content = getRedirectedWikiContent(topicData.getContent(), templateParameters);
+                    if (content != null && content.length() > 0) {
+                        return content;
                     } else {
                         return null;
                     }
                 } else {
-                    String[] listOfTitleStrings = {fullPageName};
-                    fUser.login();
-                    List<Page> listOfPages = fUser.queryContent(listOfTitleStrings);
-                    if (listOfPages.size() > 0) {
-                        final Page page = listOfPages.get(0);
-                        content = page.getCurrentContent();
-                        if (content != null) {
-                            topicData = new TopicData(fullPageName, content);
-                            fWikiDB.insertTopic(topicData);
-                            content = getRedirectedWikiContent(content, templateParameters);
-                            if (content != null) {
-                                content = content.length() == 0 ? null : content;
-                            }
-                        }
-                    }
-                    return content;
+                    return fetchAndCacheContent(fullPageName, templateParameters);
                 }
             } catch (SQLException e) {
                 logger.warn(null, e);
-
-                String temp = e.getMessage();
-                if (temp != null) {
-                    throw new WikiModelContentException("<span class=\"error\">Exception: " + temp + "</span>", e);
-                }
-                throw new WikiModelContentException("<span class=\"error\">Exception: " + e.getClass().getSimpleName() + "</span>", e);
-
+                final String message = e.getMessage() == null ? e.getClass().getSimpleName() : e.getMessage();
+                throw new WikiModelContentException("<span class=\"error\">Exception: " + message + "</span>", e);
             }
         }
         return null;
+    }
+
+    private String fetchAndCacheContent(String fullPageName, Map<String, String> templateParameters) throws SQLException {
+        String content = null;
+        fUser.login();
+        List<Page> listOfPages = fUser.queryContent(new String[]{fullPageName});
+        if (listOfPages.size() > 0) {
+            final Page page = listOfPages.get(0);
+            content = page.getCurrentContent();
+            if (content != null) {
+                fWikiDB.insertTopic(new TopicData(fullPageName, content));
+                content = getRedirectedWikiContent(content, templateParameters);
+                if (content != null) {
+                    content = content.length() == 0 ? null : content;
+                }
+            }
+        }
+        return content;
     }
 
     private String getRedirectedWikiContent(String rawWikitext, Map<String, String> templateParameters) {
