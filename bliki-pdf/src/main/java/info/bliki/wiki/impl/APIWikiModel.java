@@ -169,7 +169,7 @@ public class APIWikiModel extends WikiModel {
     private String fetchAndCacheContent(String fullPageName, Map<String, String> templateParameters) throws SQLException {
         String content = null;
         fUser.login();
-        List<Page> listOfPages = fUser.queryContent(new String[]{fullPageName});
+        List<Page> listOfPages = fUser.queryContent(fullPageName);
         if (listOfPages.size() > 0) {
             final Page page = listOfPages.get(0);
             content = page.getCurrentContent();

@@ -111,7 +111,7 @@ public class User {
      *          a list of title Strings "ArticleA,ArticleB,..."
      * @return a list of downloaded Mediawiki pages.
      */
-    public List<Page> queryContent(String[] listOfTitleStrings) {
+    public List<Page> queryContent(String... listOfTitleStrings) {
         return queryContent(arrayToList(listOfTitleStrings));
     }
 
@@ -119,7 +119,7 @@ public class User {
         return connector.queryCategories(this, listOfTitleStrings);
     }
 
-    public List<Page> queryCategories(String[] listOfTitleStrings) {
+    public List<Page> queryCategories(String... listOfTitleStrings) {
         return queryCategories(arrayToList(listOfTitleStrings));
     }
 
@@ -127,7 +127,7 @@ public class User {
         return connector.queryInfo(this, listOfTitleStrings);
     }
 
-    public List<Page> queryInfo(String[] listOfTitleStrings) {
+    public List<Page> queryInfo(String... listOfTitleStrings) {
         return queryInfo(arrayToList(listOfTitleStrings));
     }
 
@@ -135,7 +135,7 @@ public class User {
         return connector.queryLinks(this, listOfTitleStrings);
     }
 
-    public List<Page> queryLinks(String[] listOfTitleStrings) {
+    public List<Page> queryLinks(String... listOfTitleStrings) {
         return queryLinks(arrayToList(listOfTitleStrings));
     }
 
@@ -147,11 +147,11 @@ public class User {
         return connector.queryImageinfo(this, listOfImageStrings, imageWidth);
     }
 
-    public List<Page> queryImageinfo(String[] listOfImageStrings) {
+    public List<Page> queryImageinfo(String... listOfImageStrings) {
         return queryImageinfo(arrayToList(listOfImageStrings));
     }
 
-    public List<Page> queryImageinfo(String[] listOfImageStrings, int imageWidth) {
+    public List<Page> queryImageinfo(String... listOfImageStrings, int imageWidth) {
         return queryImageinfo(arrayToList(listOfImageStrings), imageWidth);
     }
 

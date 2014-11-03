@@ -84,7 +84,7 @@ public class APIWikiModelTest {
         Revision revision = new Revision();
         revision.setContent("testContent");
         page.setCurrentRevision(revision);
-        when(user.queryContent(new String[]{modulePageName.fullPagename()})).thenReturn(Arrays.asList(page));
+        when(user.queryContent(modulePageName.fullPagename())).thenReturn(Arrays.asList(page));
         assertThat(subject.getRawWikiContent(modulePageName, null)).isEqualTo("testContent");
     }
 
