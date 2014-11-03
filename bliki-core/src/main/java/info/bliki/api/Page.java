@@ -20,18 +20,13 @@ import java.util.List;
  * href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>
  */
 public class Page extends PageInfo {
-    List<Link> links;
+    private List<Link> links;
+    private List<PageInfo> categories;
+    private String editToken;
+    private String imageUrl;
+    private String imageThumbUrl;
 
-    List<PageInfo> categories;
-
-    String editToken;
-
-    // imageinfo
-    String imageUrl;
-
-    String imageThumbUrl;
-
-    Revision revision = null;
+    private Revision revision;
 
     public Page() {
         super();

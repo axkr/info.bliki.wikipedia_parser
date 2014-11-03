@@ -62,7 +62,7 @@ public class ConnectorTest {
 
         assertThat(page.getTitle()).isEqualTo("foo");
         assertThat(page.getCurrentContent()).isNotEmpty();
-        assertThat(page.categories).isEmpty();
+        assertThat(page.sizeOfCategoryList()).isZero();
         assertThat(page.getPageid()).isEqualTo("39480");
     }
 }
