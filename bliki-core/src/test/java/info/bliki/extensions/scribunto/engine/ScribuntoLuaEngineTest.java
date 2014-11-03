@@ -20,6 +20,7 @@ import static org.mockito.Matchers.isNull;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+@SuppressWarnings("unchecked")
 public class ScribuntoLuaEngineTest {
     @Mock private IWikiModel model;
     private ScribuntoLuaEngine subject;
