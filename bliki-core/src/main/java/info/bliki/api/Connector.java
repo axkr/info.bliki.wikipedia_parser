@@ -230,11 +230,8 @@ public class Connector {
      */
     public List<Page> query(User user, Query query) {
         String response = sendXML(user, query);
-        XMLPagesParser xmlPagesParser;
         try {
-            xmlPagesParser = new XMLPagesParser(response);
-            xmlPagesParser.parse();
-            return xmlPagesParser.getPagesList();
+            return parsePageBody(response).getPagesList();
         } catch (SAXException | IOException e) {
             logger.error(null, e);
         }
@@ -257,14 +254,7 @@ public class Connector {
         try {
             String responseBody = queryXML(user, listOfTitleStrings, valuePairs);
             if (responseBody != null) {
-                XMLPagesParser parser = new XMLPagesParser(responseBody);
-                parser.parse();
-
-                List<String> warnings = parser.getWarnings();
-                if (!warnings.isEmpty()) {
-                    logger.warn("parser warnings: "+warnings);
-                }
-                return parser.getPagesList();
+                return parsePageBody(responseBody).getPagesList();
             }
         } catch (IOException | SAXException e) {
             logger.error(null, e);
@@ -362,5 +352,15 @@ public class Connector {
             request.reset();
         }
         return null;
+    }
+
+    private XMLPagesParser parsePageBody(String responseBody) throws SAXException, IOException {
+        XMLPagesParser parser = new XMLPagesParser(responseBody);
+        parser.parse();
+        List<String> warnings = parser.getWarnings();
+        if (!warnings.isEmpty()) {
+            logger.warn("parser warnings: "+warnings);
+        }
+        return parser;
     }
 }
