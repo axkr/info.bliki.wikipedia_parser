@@ -37,8 +37,6 @@
 
 package info.bliki.htmlcleaner;
 
-import info.bliki.api.Connector;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -46,6 +44,8 @@ import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Map;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
  * <p>
@@ -477,7 +477,7 @@ public class Utils {
             writer.append(attributeName);
             writer.append("=");
             try {
-                writer.append(URLEncoder.encode(attributeValue, Connector.UTF8_CHARSET));
+                writer.append(URLEncoder.encode(attributeValue, UTF_8.name()));
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }

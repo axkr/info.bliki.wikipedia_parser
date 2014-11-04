@@ -1,11 +1,12 @@
 package info.bliki.extensions.scribunto.template;
 
-import info.bliki.api.Connector;
 import info.bliki.wiki.filter.AbstractParser;
 import info.bliki.wiki.namespaces.INamespace;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class Title {
     final String fragment;
@@ -100,7 +101,7 @@ public class Title {
 
     private static String urlEncode(String s) {
         try {
-            return URLEncoder.encode(s, Connector.UTF8_CHARSET);
+            return URLEncoder.encode(s, UTF_8.name());
         } catch (UnsupportedEncodingException e) {
             throw new RuntimeException(e);
         }

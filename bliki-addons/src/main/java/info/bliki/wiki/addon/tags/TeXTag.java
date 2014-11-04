@@ -1,6 +1,5 @@
 package info.bliki.wiki.addon.tags;
 
-import info.bliki.api.Connector;
 import info.bliki.wiki.filter.ITextConverter;
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.tags.NowikiTag;
@@ -8,6 +7,8 @@ import info.bliki.wiki.tags.NowikiTag;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.Map;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
  * Wiki tag rendering TeX math with the mathtran.org service
@@ -36,7 +37,7 @@ public class TeXTag extends NowikiTag {
                 }
             }
             String texFormula = "http://www.mathtran.org/cgi-bin/mathtran?" + sizeStr + "&amp;tex="
-                    + URLEncoder.encode(content, Connector.UTF8_CHARSET);
+                    + URLEncoder.encode(content, UTF_8.name());
             writer.append("<span class=\"tex\"><img src=\"" + texFormula + "\" alt=\"");
             copyMathLTGT(content, writer);
             writer.append("\" /></span>");

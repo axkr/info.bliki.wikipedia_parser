@@ -1,11 +1,12 @@
 package info.bliki.wiki.filter;
 
-import info.bliki.api.Connector;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class WikiTextReader {
     /**
@@ -26,7 +27,7 @@ public class WikiTextReader {
         FileInputStream fis = null;
         try {
             fis = new FileInputStream(filename);
-            return new String(getInputStreamAsCharArray(fis, -1, Connector.UTF8_CHARSET));
+            return new String(getInputStreamAsCharArray(fis, -1, UTF_8));
         } catch (IOException e) {
             // e.printStackTrace();
         } finally {
@@ -50,10 +51,10 @@ public class WikiTextReader {
      *             if a problem occured reading the stream.
      */
     public static char[] getInputStreamAsCharArray(InputStream stream,
-            int length, String encoding) throws IOException {
-        InputStreamReader reader = null;
-        reader = encoding == null ? new InputStreamReader(stream)
-                : new InputStreamReader(stream, encoding);
+            int length, Charset charset) throws IOException {
+        InputStreamReader reader;
+        reader = charset == null ? new InputStreamReader(stream)
+                : new InputStreamReader(stream, charset);
         char[] contents;
         if (length == -1) {
             contents = NO_CHAR;

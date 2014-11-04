@@ -10,6 +10,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Properties;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 public class Console {
     /**
      * Constant for an empty char array
@@ -22,7 +24,7 @@ public class Console {
         try {
             String image = "http://en.wikipedia.org/wiki/${image}";
             String link = "http://en.wikipedia.org/wiki/${title}";
-            String encoding = Connector.UTF8_CHARSET;
+            String encoding = UTF_8.name();
             String top = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n"
                     + "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n";
             String header = "<head>\n</head>\n<body>\n";

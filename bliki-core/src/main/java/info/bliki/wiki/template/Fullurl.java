@@ -1,11 +1,12 @@
 package info.bliki.wiki.template;
 
-import info.bliki.api.Connector;
 import info.bliki.wiki.model.IWikiModel;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.List;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
  * A template parser function for <code>{{fullurl: ... }}</code> syntax
@@ -27,8 +28,8 @@ public class Fullurl extends AbstractTemplateFunction {
                 if (list.size() == 1) {
                     String baseUrl = model.getWikiBaseURL();
                     baseUrl = baseUrl.replace("${title}", URLEncoder.encode(Character.toUpperCase(arg0.charAt(0)) + "",
-                            Connector.UTF8_CHARSET)
-                            + URLEncoder.encode(arg0.substring(1), Connector.UTF8_CHARSET));
+                            UTF_8.name())
+                            + URLEncoder.encode(arg0.substring(1), UTF_8.name()));
                     // String result = "http://en.wikipedia.org/wiki/"
                     // + URLEncoder.encode(Character.toUpperCase(arg0.charAt(0)) + "",
                     // Connector.UTF8_CHARSET)
@@ -37,8 +38,8 @@ public class Fullurl extends AbstractTemplateFunction {
                 }
                 String baseEditUrl = model.getWikiBaseEditURL();
                 baseEditUrl = baseEditUrl.replace("${title}", URLEncoder.encode(Character.toUpperCase(arg0.charAt(0)) + "",
-                        Connector.UTF8_CHARSET)
-                        + URLEncoder.encode(arg0.substring(1), Connector.UTF8_CHARSET));
+                        UTF_8.name())
+                        + URLEncoder.encode(arg0.substring(1), UTF_8.name()));
                 StringBuilder builder = new StringBuilder(baseEditUrl.length() + 64);
                 builder.append(baseEditUrl);
                 // builder.append("http://en.wikipedia.org/w/index.php?title=");

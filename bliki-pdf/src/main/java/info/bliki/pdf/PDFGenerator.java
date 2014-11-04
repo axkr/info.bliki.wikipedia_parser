@@ -1,7 +1,15 @@
 package info.bliki.pdf;
 
-import info.bliki.api.Connector;
+import com.lowagie.text.DocumentException;
+import org.w3c.dom.Document;
+import org.xhtmlrenderer.pdf.ITextRenderer;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.FactoryConfigurationError;
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -9,17 +17,7 @@ import java.io.StringReader;
 import java.net.URL;
 import java.text.MessageFormat;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.FactoryConfigurationError;
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.w3c.dom.Document;
-import org.xhtmlrenderer.pdf.ITextRenderer;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-
-import com.lowagie.text.DocumentException;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
  * Create a PDF document from a given rendered XHTML text.
@@ -80,7 +78,7 @@ public class PDFGenerator {
 
         StringReader contentReader = new StringReader(buffer.toString());
         InputSource source = new InputSource(contentReader);
-        source.setEncoding(Connector.UTF8_CHARSET);
+        source.setEncoding(UTF_8.name());
         DocumentBuilderFactory domFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder domBuilder = domFactory.newDocumentBuilder();
         Document xhtmlContent = domBuilder.parse(source);

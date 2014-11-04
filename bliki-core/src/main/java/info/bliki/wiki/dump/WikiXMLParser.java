@@ -1,6 +1,12 @@
 package info.bliki.wiki.dump;
 
-import info.bliki.api.Connector;
+import org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream;
+import org.xml.sax.Attributes;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import org.xml.sax.XMLReader;
+import org.xml.sax.helpers.DefaultHandler;
+import org.xml.sax.helpers.XMLReaderFactory;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -12,13 +18,7 @@ import java.io.Reader;
 import java.io.UnsupportedEncodingException;
 import java.util.zip.GZIPInputStream;
 
-import org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream;
-import org.xml.sax.Attributes;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import org.xml.sax.XMLReader;
-import org.xml.sax.helpers.DefaultHandler;
-import org.xml.sax.helpers.XMLReaderFactory;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
  * A Wikipedia XML dump file parser
@@ -70,15 +70,11 @@ public class WikiXMLParser extends DefaultHandler {
 
     public WikiXMLParser(InputStream inputStream, IArticleFilter filter) throws SAXException {
         super();
-        try {
-            fArticleFilter = filter;
-            fXMLReader = XMLReaderFactory.createXMLReader();
-            fXMLReader.setContentHandler(this);
-            fXMLReader.setErrorHandler(this);
-            fReader = new BufferedReader(new InputStreamReader(inputStream, Connector.UTF8_CHARSET));
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+        fArticleFilter = filter;
+        fXMLReader = XMLReaderFactory.createXMLReader();
+        fXMLReader.setContentHandler(this);
+        fXMLReader.setErrorHandler(this);
+        fReader = new BufferedReader(new InputStreamReader(inputStream, UTF_8));
     }
 
     public WikiXMLParser(Reader reader, IArticleFilter filter) throws SAXException {

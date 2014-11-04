@@ -38,7 +38,6 @@ import java.util.List;
  */
 public class Connector {
     public final static String USER_AGENT = "JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/";
-    public final static String UTF8_CHARSET = "utf-8";
 
     private final static String PARAM_LOGIN_USERNAME = "lgusername";
     private final static String PARAM_LOGIN_NAME     = "lgname";
