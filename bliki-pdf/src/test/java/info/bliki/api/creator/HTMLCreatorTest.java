@@ -56,53 +56,53 @@ public class HTMLCreatorTest {
     @Rule public RecorderRule recorder = new RecorderRule(ProxyConfiguration.builder().build());
 
     @Betamax(tape="Tom_Hanks")
-    @Test public void testCreator001() throws Exception {
+    @Test public void testWikipediaTomHanks() throws Exception {
         testWikipediaENAPI("Tom Hanks");
     }
 
     @Betamax(tape="Political_party_strength_in_California")
-    @Test public void testCreator002() throws Exception {
+    @Test public void testPoliticalPartyStrengthInCalifornia() throws Exception {
         testWikipediaENAPI("Political party strength in California");
     }
 
 
     @Betamax(tape="Chris_Capuano", mode = READ_ONLY)
-    @Test public void testCreator003() throws Exception {
+    @Test public void testWikipediaChrisCapuano() throws Exception {
         testWikipediaENAPI("Chris Capuano");
     }
 
     @Betamax(tape="Protein", mode = READ_ONLY)
-    @Test public void testCreator004() throws Exception {
+    @Test public void testWikipediaProtein() throws Exception {
         testWikipediaENAPI("Protein");
     }
 
     @Betamax(tape="Depeche_Mode", mode = READ_ONLY)
-    @Test public void testCreator005() throws Exception {
+    @Test public void testWikipediaDepeche_Mode() throws Exception {
         testWikipediaENAPI("Depeche Mode");
     }
 
     @Betamax(tape="Anarchism", mode = READ_ONLY)
-    @Test public void testCreator006() throws Exception {
+    @Test public void testWikipediaAnarchism() throws Exception {
         testWikipediaENAPI("Anarchism");
     }
 
     @Betamax(tape="Javascript", mode = READ_ONLY)
-    @Test public void testCreator007() throws Exception {
+    @Test public void testWikipediaJavascript() throws Exception {
         testWikipediaDEAPI("JavaScript");
     }
 
     @Betamax(tape="libero", mode = READ_ONLY)
-    @Test public void testCreator008() throws Exception {
+    @Test public void testWikipediaLibero() throws Exception {
         testWikipediaENAPI("libero");
     }
 
     @Betamax(tape="Metallica", mode = READ_ONLY)
-    @Test public void testCreator009() throws Exception {
+    @Test public void testWikipediaMetallica() throws Exception {
         testWikipediaENAPI("Metallica");
     }
 
     @Betamax(tape="HTTP-Statuscode", mode = READ_ONLY)
-    @Test public void testCreator010() throws Exception {
+    @Test public void testWikipediaHTTPStatusCode() throws Exception {
         testWikipediaDEAPI("HTTP-Statuscode");
     }
 
@@ -111,32 +111,32 @@ public class HTMLCreatorTest {
     }
 
     @Betamax(tape="Pakistan", mode = READ_ONLY)
-    @Test public void testCreator014() throws Exception {
+    @Test public void testWikipediaPakistan() throws Exception {
         testWikipediaENAPI("Pakistan");
     }
 
     @Betamax(tape="Alps", mode = READ_ONLY)
-    @Test public void testCreator015() throws Exception {
+    @Test public void testWikipediaAlps() throws Exception {
         testWikipediaENAPI("Alps");
     }
 
     @Betamax(tape="Acute_disseminated_encephalomyelitis", mode = READ_ONLY)
-    @Test public void testCreator016() throws Exception {
+    @Test public void testWikipediaAcute_disseminated_encephalomyelitis() throws Exception {
         testWikipediaENAPI("Acute disseminated encephalomyelitis");
     }
 
     @Betamax(tape="Apatosaurus", mode = READ_ONLY)
-    @Test public void testCreator017() throws Exception {
+    @Test public void testWikipediaApatosaurus() throws Exception {
         testWikipediaENAPI("Apatosaurus");
     }
 
     @Betamax(tape="Batman returns", mode = READ_ONLY)
-    @Test public void testCreator018() throws Exception {
+    @Test public void testWikipediaBatmanReturns() throws Exception {
         testWikipediaENAPI("Batman Returns");
     }
 
     @Betamax(tape="Manchester_United_Football_Club", mode = READ_ONLY)
-    @Ignore @Test public void testCreateText002() throws Exception {
+    @Ignore @Test public void testWikipediaManchester_United_Football_Club() throws Exception {
         String redirectedLink = testWikipediaENAPI("Manchester United Football Club").redirectLink;
         if (redirectedLink != null) {
             // see http://code.google.com/p/gwtwiki/issues/detail?id=38
@@ -145,18 +145,8 @@ public class HTMLCreatorTest {
     }
 
     @Betamax(tape = "backplane", mode = READ_ONLY)
-    @Test public void testWiktionary() throws Exception {
+    @Test public void testWiktionaryBackplane() throws Exception {
         testWiktionaryENAPI("backplane");
-    }
-
-    @Test @Ignore
-    public void testCreator011() throws Exception {
-        testAPI("Main Page", "http://simple.wikipedia.org/w/api.php", null, ENGLISH);
-    }
-
-    @Test @Ignore
-    public void testCreator012() throws Exception {
-        testAPI("Grafenwöhr", "http://bar.wikipedia.org/w/api.php", null, GERMAN);
     }
 
     private Result testWiktionaryENAPI(String title) throws Exception {
