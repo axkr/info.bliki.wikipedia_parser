@@ -18,4 +18,10 @@ public class XMLPagesParserTest {
         Page page = pages.get(0);
         assertThat(page.getTitle()).isEqualTo("foo");
     }
+
+    @Test public void testParsePageWithWarnings() throws Exception {
+        XMLPagesParser parser = new XMLPagesParser(xml("fooPageWithWarning"));
+        parser.parse();
+        assertThat(parser.getWarnings()).containsExactly("This is a warning");
+    }
 }
