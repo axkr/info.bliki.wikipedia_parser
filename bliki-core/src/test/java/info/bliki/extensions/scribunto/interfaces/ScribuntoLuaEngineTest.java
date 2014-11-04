@@ -24,6 +24,7 @@ import static org.mockito.MockitoAnnotations.initMocks;
 public class ScribuntoLuaEngineTest {
     @Mock private IWikiModel model;
     private ScribuntoLuaEngine subject;
+    private Namespace namespace = new Namespace();
 
     @Before public void setUp() throws Exception {
         initMocks(this);
@@ -36,7 +37,7 @@ public class ScribuntoLuaEngineTest {
                 .thenThrow(new WikiModelContentException(null, null));
 
         ScribuntoModule module =
-                subject.fetchModuleFromParser(Title.makeTitle(new Namespace().getMain(), "test", "", ""));
+                subject.fetchModuleFromParser(Title.makeTitle(namespace.getMain(), "test", "", ""));
 
         assertThat(module).isNull();
     }
@@ -45,7 +46,7 @@ public class ScribuntoLuaEngineTest {
         when(model.getRawWikiContent(any(ParsedPageName.class), anyMap())).thenReturn("return { test_function = function() return \"result\" end }");
 
         ScribuntoModule module =
-                subject.fetchModuleFromParser(Title.makeTitle(new Namespace().getModule(), "string", "", ""));
+                subject.fetchModuleFromParser(Title.makeTitle(namespace.getModule(), "string", "", ""));
 
         String result = module.invoke("test_function", new Frame(null, null));
         assertThat(result).isEqualTo("result");
