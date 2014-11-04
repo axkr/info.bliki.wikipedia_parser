@@ -26,7 +26,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
-
 /**
  * scribunto/engines/LuaCommon/LuaCommon.php
  */
@@ -309,7 +308,6 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         return new OneArgFunction() {
             @Override
             public LuaValue call(LuaValue arg) {
-                // logger.debug("frameExists(" + arg + ")");
                 return TRUE;
             }
         };
@@ -390,9 +388,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
                         moduleName,
                         model.getNamespace().getModule(), false, false);
 
-                logger.debug("fetching " + pageName);
                 String content = model.getRawWikiContent(pageName, null);
-
                 if (content != null) {
                     return new ByteArrayInputStream(content.getBytes());
                 }

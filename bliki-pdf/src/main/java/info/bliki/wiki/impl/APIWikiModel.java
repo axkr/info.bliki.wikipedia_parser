@@ -150,6 +150,7 @@ public class APIWikiModel extends WikiModel {
                 if (topicData != null) {
                     final String content = getRedirectedWikiContent(topicData.getContent(), templateParameters);
                     if (content != null && content.length() > 0) {
+                        logger.debug("retrieved '"+fullPageName+"' from cache");
                         return content;
                     } else {
                         return null;
@@ -167,6 +168,7 @@ public class APIWikiModel extends WikiModel {
     }
 
     private String fetchAndCacheContent(String fullPageName, Map<String, String> templateParameters) throws SQLException {
+        logger.debug("fetching '"+fullPageName+"' from API");
         fUser.login();
         List<Page> listOfPages = fUser.queryContent(fullPageName);
         if (listOfPages.size() > 0) {
