@@ -8,8 +8,10 @@ import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.ContentType;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.conn.SystemDefaultRoutePlanner;
@@ -22,6 +24,7 @@ import org.xml.sax.SAXException;
 
 import java.io.IOException;
 import java.net.ProxySelector;
+import java.net.URI;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -293,10 +296,7 @@ public class Connector {
             }
         }
         return executeHttpMethod(
-                createAuthenticatedPostRequest(
-                    user,
-                    parameters.toArray(new NameValuePair[parameters.size()])
-                ));
+            createAuthenticatedRequest(user, parameters.toArray(new NameValuePair[parameters.size()])));
     }
 
     private String formatTitleString(List<String> titles) {
@@ -311,18 +311,17 @@ public class Connector {
     }
 
     private String sendXML(User user, RequestBuilder requestBuilder) {
-        return executeHttpMethod(createAuthenticatedPostRequest(user, requestBuilder.getParameters()));
+        return executeHttpMethod(createAuthenticatedRequest(user, requestBuilder.getParameters()));
     }
 
-    private HttpPost createAuthenticatedPostRequest(User user, NameValuePair[] parameters) {
-        if (user.getActionUrl() == null || user.getActionUrl().trim().length() == 0) {
+    private HttpRequestBase createAuthenticatedRequest(User user, NameValuePair[] parameters) {
+        final String actionUrl = user.getActionUrl();
+
+        if (actionUrl == null || actionUrl.trim().length() == 0) {
             throw new IllegalArgumentException("no action url");
         }
-
-        HttpPost request = new HttpPost(user.getActionUrl());
-        request.setHeader(HTTP.USER_AGENT, USER_AGENT);
-
         List<NameValuePair> parameterList = new ArrayList<>();
+        parameterList.add(new BasicNameValuePair(PARAM_FORMAT, FORMAT_XML));
         Collections.addAll(parameterList, parameters);
 
         if (user.isAuthenticated()) {
@@ -333,8 +332,10 @@ public class Connector {
                 new BasicNameValuePair(PARAM_LOGIN_TOKEN, user.getToken())
             ));
         }
-        parameterList.add(new BasicNameValuePair(PARAM_FORMAT, FORMAT_XML));
-        request.setEntity(new UrlEncodedFormEntity(parameterList, (Charset) null));
+
+        URIBuilder uriBuilder = new URIBuilder(URI.create(user.getActionUrl()));
+        HttpGet request = new HttpGet(uriBuilder.addParameters(parameterList).toString());
+        request.setHeader(HTTP.USER_AGENT, USER_AGENT);
         return request;
     }
 
