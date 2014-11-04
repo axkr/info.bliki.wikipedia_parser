@@ -37,7 +37,7 @@ import java.util.List;
  * href="http://meta.wikimedia.org/wiki/User-Agent_policy">User-Agent policy</a>
  */
 public class Connector {
-    public final static String USER_AGENT = "JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/";
+    protected final static String USER_AGENT = "JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/";
 
     private final static String PARAM_LOGIN_USERNAME = "lgusername";
     private final static String PARAM_LOGIN_NAME     = "lgname";
