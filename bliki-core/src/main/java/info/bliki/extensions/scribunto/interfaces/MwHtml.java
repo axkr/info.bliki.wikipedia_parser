@@ -13,7 +13,6 @@ public class MwHtml implements MwInterface {
     public LuaTable getInterface() {
         LuaTable iface = new LuaTable();
         return iface;
-
     }
 
     @Override
