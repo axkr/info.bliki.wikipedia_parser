@@ -46,9 +46,14 @@ public class Connector {
     private final static String PARAM_LOGIN_TOKEN    = "lgtoken";
     private final static String PARAM_LOGIN_DOMAIN   = "lgdomain";
 
-    private final static String PARAM_FORMAT = "format";
-    private final static String PARAM_ACTION = "action";
-    private final static String PARAM_TITLES = "titles";
+    private final static String PARAM_FORMAT   = "format";
+    private final static String PARAM_ACTION   = "action";
+    private final static String PARAM_TITLES   = "titles";
+
+    /**
+     * See <a href="http://www.mediawiki.org/wiki/API:Query#Generators_and_continuation">Generators and continuation</a>.
+     */
+    private final static String PARAM_CONTINUE = "continue";
 
     private final static String ACTION_LOGIN = "login";
     private final static String ACTION_QUERY = "query";
@@ -267,6 +272,8 @@ public class Connector {
         String titlesString = formatTitleString(listOfTitleStrings);
         List<NameValuePair> parameters = new ArrayList<>();
         parameters.add(new BasicNameValuePair(PARAM_ACTION, ACTION_QUERY));
+        parameters.add(new BasicNameValuePair(PARAM_CONTINUE, ""));
+
         if (titlesString.length() > 0) {
             // don't encode the title for the NameValuePair !
             parameters.add(new BasicNameValuePair(PARAM_TITLES, titlesString));
