@@ -123,8 +123,26 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
             load(iface);
         }
 
+        stubTitleBlacklist();
         stubExecuteModule();
         fakeWikiBase();
+    }
+
+    private void stubTitleBlacklist() {
+        // TODO move to separate file
+        final LuaValue mw = globals.get("mw");
+        LuaValue ext = mw.get("ext");
+        if (ext.isnil()) {
+            ext = new LuaTable();
+            mw.set("ext", ext);
+        }
+        LuaTable blacklist = new LuaTable();
+        blacklist.set("test", new TwoArgFunction() {
+            @Override public LuaValue call(LuaValue action, LuaValue title) {
+                return NIL;
+            }
+        });
+        ext.set("TitleBlacklist", blacklist);
     }
 
     private void stubExecuteModule() {
@@ -163,8 +181,6 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
     }
 
     private void load(MwInterface luaInterface) throws IOException {
-        // logger.debug("loading interface " + luaInterface);
-
         LuaValue pkg = globals.loadfile(luaInterface.name()+
                 (luaInterface.name().endsWith(".lua") ? "" : ".lua")).call();
 
