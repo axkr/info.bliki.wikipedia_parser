@@ -14,6 +14,7 @@ import org.apache.http.entity.ContentType;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.conn.SystemDefaultRoutePlanner;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -59,6 +60,17 @@ public class Connector {
     private final static String ACTION_QUERY = "query";
 
     private final static String FORMAT_XML   = "xml";
+
+    private static final String LINKS      = "links";
+    private static final String IMAGEINFO  = "imageinfo";
+    private static final String IIPROP     = "iiprop";
+    private static final String URL        = "url";
+    private static final String PROP       = "prop";
+    private static final String IIURLWIDTH = "iiurlwidth";
+    private static final String CATEGORIES = "categories";
+    private static final String REVISIONS  = "revisions";
+    private static final String RVPROP     = "rvprop";
+    private static final String INFO       = "info";
 
     private HttpClient client;
     private Logger logger = LoggerFactory.getLogger(getClass());
@@ -149,7 +161,7 @@ public class Connector {
      */
     public List<Page> queryContent(User user, List<String> listOfTitleStrings) {
         return query(user, listOfTitleStrings,
-                "prop", "revisions", "rvprop", "timestamp|user|comment|content");
+                PROP, REVISIONS, RVPROP, "timestamp|user|comment|content");
     }
 
     /**
@@ -162,7 +174,7 @@ public class Connector {
      * @return page list
      */
     public List<Page> queryCategories(User user, List<String> listOfTitleStrings) {
-        return query(user, listOfTitleStrings, "prop", "categories");
+        return query(user, listOfTitleStrings, PROP, CATEGORIES);
     }
 
     /**
@@ -175,7 +187,7 @@ public class Connector {
      * @return page list
      */
     public List<Page> queryInfo(User user, List<String> listOfTitleStrings) {
-        return query(user, listOfTitleStrings, "prop", "info");
+        return query(user, listOfTitleStrings, PROP, INFO);
     }
 
     /**
@@ -188,7 +200,7 @@ public class Connector {
      * @return page list
      */
     public List<Page> queryLinks(User user, List<String> listOfTitleStrings) {
-        return query(user, listOfTitleStrings, "prop", "links");
+        return query(user, listOfTitleStrings, PROP, LINKS);
     }
 
     /**
@@ -204,7 +216,7 @@ public class Connector {
      * @return page list
      */
     public List<Page> queryImageinfo(User user, List<String> listOfImageStrings) {
-        return query(user, listOfImageStrings, "prop", "imageinfo", "iiprop", "url");
+        return query(user, listOfImageStrings, PROP, IMAGEINFO, IIPROP, URL);
     }
 
     /**
@@ -220,7 +232,7 @@ public class Connector {
      * @return page list
      */
     public List<Page> queryImageinfo(User user, List<String> listOfImageStrings, int imageWidth) {
-        return query(user, listOfImageStrings, "prop", "imageinfo", "iiprop", "url", "iiurlwidth",
+        return query(user, listOfImageStrings, PROP, IMAGEINFO, IIPROP, URL, IIURLWIDTH,
                 Integer.toString(imageWidth));
     }
 
@@ -311,7 +323,7 @@ public class Connector {
         }
 
         HttpPost request = new HttpPost(user.getActionUrl());
-        request.setHeader("User-Agent", USER_AGENT);
+        request.setHeader(HTTP.USER_AGENT, USER_AGENT);
 
         List<NameValuePair> parameterList = new ArrayList<>();
         Collections.addAll(parameterList, parameters);
