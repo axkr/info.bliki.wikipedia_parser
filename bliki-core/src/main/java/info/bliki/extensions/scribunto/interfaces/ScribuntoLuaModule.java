@@ -4,6 +4,7 @@ import info.bliki.extensions.scribunto.ScribuntoException;
 import info.bliki.extensions.scribunto.engine.ScribuntoEngine;
 import info.bliki.extensions.scribunto.engine.ScribuntoModuleBase;
 import info.bliki.extensions.scribunto.template.Frame;
+import org.luaj.vm2.LuaError;
 import org.luaj.vm2.LuaValue;
 
 public class ScribuntoLuaModule extends ScribuntoModuleBase {
@@ -47,7 +48,11 @@ public class ScribuntoLuaModule extends ScribuntoModuleBase {
     }
 
     private LuaValue loadExportTable() throws ScribuntoException {
-        return getInitChunk().checkfunction().call();
+        try {
+            return getInitChunk().checkfunction().call();
+        } catch (LuaError e) {
+            throw new ScribuntoException(e);
+        }
     }
 
     private LuaValue getInitChunk() throws ScribuntoException {

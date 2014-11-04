@@ -7,7 +7,6 @@ import org.luaj.vm2.lib.LibFunction;
 import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
 
-import static info.bliki.extensions.scribunto.interfaces.MwInterface.DefaultFunction.defaultFunction;
 import static info.bliki.wiki.namespaces.INamespace.NamespaceCode.MAIN_NAMESPACE_KEY;
 import static info.bliki.wiki.namespaces.INamespace.NamespaceCode.MEDIA_NAMESPACE_KEY;
 
@@ -25,7 +24,8 @@ public class MwTitle implements MwInterface {
         table.set("getUrl", getUrl());
         table.set("getContent", getContent());
         table.set("fileExists", fileExists());
-        table.set("protectionLevels", defaultFunction());
+        table.set("protectionLevels", protectionLevels());
+        table.set("cascadingProtection", cascadingProtection());
         return table;
     }
 
@@ -49,6 +49,24 @@ public class MwTitle implements MwInterface {
              */
             @Override public LuaValue call(LuaValue page) {
                 return NIL;
+            }
+        };
+    }
+
+    private LuaValue protectionLevels() {
+        return new OneArgFunction() {
+            @Override public LuaValue call(LuaValue action) {
+                return new LuaTable();
+            }
+        };
+    }
+
+    private LuaValue cascadingProtection() {
+        return new OneArgFunction() {
+            @Override public LuaValue call(LuaValue action) {
+                LuaTable table = new LuaTable();
+                table.set("restrictions", new LuaTable());
+                return table;
             }
         };
     }
