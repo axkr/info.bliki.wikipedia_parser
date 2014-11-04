@@ -167,21 +167,18 @@ public class APIWikiModel extends WikiModel {
     }
 
     private String fetchAndCacheContent(String fullPageName, Map<String, String> templateParameters) throws SQLException {
-        String content = null;
         fUser.login();
         List<Page> listOfPages = fUser.queryContent(fullPageName);
         if (listOfPages.size() > 0) {
             final Page page = listOfPages.get(0);
-            content = page.getCurrentContent();
+            String content = page.getCurrentContent();
             if (content != null) {
                 fWikiDB.insertTopic(new TopicData(fullPageName, content));
                 content = getRedirectedWikiContent(content, templateParameters);
-                if (content != null) {
-                    content = content.length() == 0 ? null : content;
-                }
+                return content != null && content.length() > 0 ?  content : null;
             }
         }
-        return content;
+        return null;
     }
 
     private String getRedirectedWikiContent(String rawWikitext, Map<String, String> templateParameters) {
