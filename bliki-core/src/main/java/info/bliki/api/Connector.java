@@ -90,11 +90,9 @@ public class Connector {
      * password and actionURL. See <a
      * href="http://www.mediawiki.org/wiki/API:Login">Mediawiki API:Login</a>
      *
-     * @param user
-     *          a user account from a Mediawiki installation with filled out user
-     *          name, password and the installations API url.
-     * @return the completed user information or <code>null</code>, if the login
-     *         fails
+     * @param user a user account from a Mediawiki installation with filled out user
+     *             name, password and the installations API url.
+     * @return the completed user information or <code>null</code>, if the login fails
      */
     public User login(User user) {
         // The first pass gets the secret token and the second logs the user in
