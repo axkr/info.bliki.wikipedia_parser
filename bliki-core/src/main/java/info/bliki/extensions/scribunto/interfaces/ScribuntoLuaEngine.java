@@ -31,7 +31,6 @@ import java.io.InputStream;
  * scribunto/engines/LuaCommon/LuaCommon.php
  */
 public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterface {
-    public static final String MODULE_NS = "Module:";
     private static final int MAX_EXPENSIVE_CALLS = 10;
 
     private final Globals globals;
@@ -363,10 +362,13 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
                 return is;
             }
         }
-        if (name.startsWith(MODULE_NS)) {
-            return loadLocally(name.substring(MODULE_NS.length()));
+
+        final String moduleNS = model.getNamespace().getModule().getPrimaryText();
+        if (name.startsWith(moduleNS)) {
+            return loadLocally(name.substring(moduleNS.length()+1));
+        } else {
+            return null;
         }
-        return null;
     }
 
     private InputStream findModule(final String moduleName) throws IOException {
