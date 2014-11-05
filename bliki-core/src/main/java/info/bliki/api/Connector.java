@@ -78,14 +78,18 @@ public class Connector {
     private Logger logger = LoggerFactory.getLogger(getClass());
 
     public Connector() {
-        client = HttpClientBuilder
-                .create()
-//                .disableContentCompression()
-                .disableRedirectHandling()
-                .setRoutePlanner(new SystemDefaultRoutePlanner(ProxySelector.getDefault()))
-//                .setMaxConnPerRoute(6)
-//                .setMaxConnTotal(18)
-                .build();
+        this(true);
+    }
+
+    public Connector(boolean disableContentCompression) {
+        HttpClientBuilder builder = HttpClientBuilder
+            .create()
+            .disableRedirectHandling()
+            .setRoutePlanner(new SystemDefaultRoutePlanner(ProxySelector.getDefault()));
+        if (disableContentCompression) {
+            builder.disableContentCompression();
+        }
+        client = builder.build();
     }
 
     /**

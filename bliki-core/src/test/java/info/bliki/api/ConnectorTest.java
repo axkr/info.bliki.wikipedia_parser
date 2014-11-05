@@ -17,7 +17,6 @@ import static org.mockito.MockitoAnnotations.initMocks;
 
 public class ConnectorTest {
     private Connector subject;
-    private User user;
 
     @Rule public RecorderRule recorder = new RecorderRule(ProxyConfiguration.builder().build());
     private User anonUser;
@@ -25,27 +24,28 @@ public class ConnectorTest {
     @Before public void before() {
         subject = new Connector();
         anonUser = new User(null, null, "http://en.wiktionary.org/w/api.php");
+        anonUser.disableContentCompression();
         initMocks(this);
     }
 
     @Test public void testLoginAsAnonymous() {
-        user = new User(null, null, null);
+        User user = new User(null, null, null);
         User result = subject.login(user);
         assertThat(result).isSameAs(user);
     }
 
     @Betamax(tape="loginWithUsernameFailed", mode = READ_SEQUENTIAL)
     @Test public void testLoginWithUsernameFailure() throws Exception {
-        user = new User("someUser", "somePassword", "http://meta.wikimedia.org/w/api.php");
-
+        User user = new User("someUser", "somePassword", "http://meta.wikimedia.org/w/api.php");
+        user.disableContentCompression();
         User result = subject.login(user);
         assertThat(result).isNull();
     }
 
     @Betamax(tape = "loginWithUsernameSuccess", mode = READ_SEQUENTIAL)
     @Test public void testLoginWithUsernameSuccess() throws Exception {
-        user = new User("jberkel", "testing", "http://en.wiktionary.org/w/api.php");
-
+        User user = new User("jberkel", "testing", "http://en.wiktionary.org/w/api.php");
+        user.disableContentCompression();
         User result = subject.login(user);
 
         assertThat(result).isNotNull();

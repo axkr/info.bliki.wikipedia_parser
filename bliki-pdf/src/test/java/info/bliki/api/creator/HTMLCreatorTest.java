@@ -155,6 +155,7 @@ public class HTMLCreatorTest {
 
     private Result testAPI(String title, String apiLink, WikiDB db, Locale locale) throws IOException {
         User user = new User(null, null, apiLink);
+        user.disableContentCompression();
         user.login();
 
         Path mainDirectory = Files.createTempDirectory("bliki-" + encodeTitleLocalUrl(title).replace("/", "_"));

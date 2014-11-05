@@ -35,10 +35,8 @@ public class User {
      *
      * @param name User Name
      * @param password Password
-     * @param mediawikiApiUrl
-     *          A mediawiki API Url (example: <a
-     *          href="http://meta.wikimedia.org/w/api.php"
-     *          >http://meta.wikimedia.org/w/api.php</a>
+     * @param mediawikiApiUrl A mediawiki API Url
+     *                        (example: <a href="http://meta.wikimedia.org/w/api.php">http://meta.wikimedia.org/w/api.php</a>
      */
     public User(String name, String password, String mediawikiApiUrl) {
         this(name, password, mediawikiApiUrl, "");
@@ -209,8 +207,8 @@ public class User {
                 + normalizedUsername + "; Token: " + token + "; ActionURL: " + actionUrl;
     }
 
-    public Connector getConnector() {
-        return connector;
+    public void disableContentCompression() {
+        this.connector = new Connector(true);
     }
 
     public String getNormalizedUsername() {
