@@ -1,6 +1,8 @@
 package info.bliki.extensions.scribunto.engine.lua.interfaces;
 
 
+import info.bliki.extensions.scribunto.engine.lua.LuaTestBase;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;

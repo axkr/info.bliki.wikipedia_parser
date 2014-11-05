@@ -1,5 +1,6 @@
 package info.bliki.extensions.scribunto.engine.lua.interfaces;
 
+import info.bliki.extensions.scribunto.engine.lua.LuaTestBase;
 import org.junit.runner.Description;
 import org.junit.runner.Result;
 import org.junit.runner.Runner;
