@@ -78,7 +78,7 @@ public class Connector {
     private Logger logger = LoggerFactory.getLogger(getClass());
 
     public Connector() {
-        this(true);
+        this(false);
     }
 
     public Connector(boolean disableContentCompression) {
