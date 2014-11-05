@@ -2,6 +2,7 @@ package info.bliki.extensions.scribunto.interfaces;
 
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
+import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
 import org.luaj.vm2.lib.ZeroArgFunction;
 
@@ -20,7 +21,7 @@ public class MwLanguage implements MwInterface {
     public LuaTable getInterface() {
         LuaTable table = new LuaTable();
         table.set("isSupportedLanguage", defaultFunction());
-        table.set("isKnownLanguageTag", defaultFunction());
+        table.set("isKnownLanguageTag", isKnownLanguageTag());
         table.set("isValidCode", defaultFunction());
         table.set("isValidBuiltInCode", defaultFunction());
         table.set("fetchLanguageName", fetchLanguageName());
@@ -57,6 +58,14 @@ public class MwLanguage implements MwInterface {
         return new TwoArgFunction() {
             @Override public LuaValue call(LuaValue code, LuaValue string) {
                 return valueOf(string.checkjstring().toUpperCase(forLanguageTag(code.checkjstring())));
+            }
+        };
+    }
+
+    public LuaValue isKnownLanguageTag() {
+        return new OneArgFunction() {
+            @Override public LuaValue call(LuaValue code) {
+                return LuaValue.TRUE;
             }
         };
     }
