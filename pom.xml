@@ -62,30 +62,41 @@
                 <artifactId>bliki-core</artifactId>
                 <version>3.1.01-SNAPSHOT</version>
             </dependency>
+
             <dependency>
                 <groupId>info.bliki.wiki</groupId>
                 <artifactId>bliki-pdf</artifactId>
                 <version>3.1.01-SNAPSHOT</version>
             </dependency>
+
             <dependency>
                 <groupId>info.bliki.wiki</groupId>
                 <artifactId>bliki-addons</artifactId>
                 <version>3.1.01-SNAPSHOT</version>
             </dependency>
+
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
                 <version>4.3.3</version>
             </dependency>
+
             <dependency>
                 <groupId>commons-lang</groupId>
                 <artifactId>commons-lang</artifactId>
                 <version>2.6</version>
             </dependency>
+
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-compress</artifactId>
                 <version>1.8</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.luaj</groupId>
+                <artifactId>luaj-jse</artifactId>
+                <version>3.0</version>
             </dependency>
 
             <dependency>
