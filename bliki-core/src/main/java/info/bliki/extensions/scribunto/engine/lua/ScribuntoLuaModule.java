@@ -57,7 +57,7 @@ public class ScribuntoLuaModule extends ScribuntoModuleBase {
 
     private LuaValue getInitChunk() throws ScribuntoException {
         if (initChunk == null) {
-            initChunk = getEngine().load(getCode());
+            initChunk = getEngine().load(getCode(), getChunkName());
         }
         return initChunk;
     }

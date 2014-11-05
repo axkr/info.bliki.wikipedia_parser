@@ -35,6 +35,7 @@ import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.StringReader;
 
 /**
  * scribunto/engines/LuaCommon/LuaCommon.php
@@ -99,9 +100,9 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         return globals;
     }
 
-    protected LuaValue load(String code) throws ScribuntoException {
+    protected LuaValue load(String code, String chunkName) throws ScribuntoException {
         try {
-            return globals.load(code);
+            return globals.load(new StringReader(code), chunkName);
         } catch (LuaError e) {
             throw new ScribuntoException(e);
         }
