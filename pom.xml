@@ -225,6 +225,7 @@
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
 
+        <!-- betamax snapshots -->
         <repository>
             <id>oss-jfrog-artifactory</id>
             <name>oss-jfrog-artifactory-snapshots</name>
