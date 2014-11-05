@@ -42,23 +42,21 @@ public class Safesubst extends AbstractTemplateFunction {
         int currOffset = TemplateParser.checkParserFunction(substituted);
         if (currOffset > 0) {
             String function = substituted.substring(0, currOffset - 1).trim();
-            if (function != null) {
-                ITemplateFunction templateFunction = model.getTemplateFunction(function);
-                if (templateFunction != null) {
-                    // if (function.charAt(0) == '#') {
-                    // #if:, #ifeq:,...
-                    parts.set(0, templateName.substring(currOffset));
-                    String plainContent;
-                    try {
-                        plainContent = templateFunction.parseFunction(parts, model, src2, currOffset, src2.length, true);
-                        if (plainContent != null) {
-                            return plainContent;
-                        }
-                    } catch (IOException e) {
+            ITemplateFunction templateFunction = model.getTemplateFunction(function);
+            if (templateFunction != null) {
+                // if (function.charAt(0) == '#') {
+                // #if:, #ifeq:,...
+                parts.set(0, templateName.substring(currOffset));
+                String plainContent;
+                try {
+                    plainContent = templateFunction.parseFunction(parts, model, src2, currOffset, src2.length, true);
+                    if (plainContent != null) {
+                        return plainContent;
                     }
+                } catch (IOException e) {
                 }
-                return "";
             }
+            return "";
         }
 
         LinkedHashMap<String, String> parameterMap = new LinkedHashMap<>();
