@@ -1994,10 +1994,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
     }
 
     @Override
-    public ScribuntoEngine getScribuntoEngine() {
-        if (fScribuntoEngine == null) {
-            fScribuntoEngine = new ScribuntoLuaEngine(this);
-        }
-        return fScribuntoEngine;
+    public ScribuntoEngine createScribuntoEngine() {
+        return new ScribuntoLuaEngine(this);
     }
 }

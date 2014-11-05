@@ -26,7 +26,7 @@ public class InvokeTest {
     @Before public void before() {
         subject = new Invoke();
         initMocks(this);
-        when(model.getScribuntoEngine()).thenReturn(scribuntoEngine);
+        when(model.createScribuntoEngine()).thenReturn(scribuntoEngine);
         when(model.getNamespace()).thenReturn(new Namespace());
         when(model.getFrame()).thenReturn(new Frame(null, null));
         when(scribuntoEngine.fetchModuleFromParser(any(Title.class))).thenReturn(scribuntoModule);

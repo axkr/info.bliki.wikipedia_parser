@@ -472,7 +472,7 @@ public interface IWikiModel extends IConfiguration {
     public Frame getFrame();
     public void setFrame(Frame frame);
 
-    public ScribuntoEngine getScribuntoEngine();
+    public ScribuntoEngine createScribuntoEngine();
 
     /**
      * Get the title of the current wiki article.

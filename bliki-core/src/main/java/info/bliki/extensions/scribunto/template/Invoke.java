@@ -34,7 +34,7 @@ public class Invoke extends AbstractTemplateFunction {
             throw new AssertionError("not enough arguments");
         }
 
-        ScribuntoEngine engine = model.getScribuntoEngine();
+        ScribuntoEngine engine = model.createScribuntoEngine();
 
         if (engine == null) {
             throw new AssertionError("no scribuntoEngine defined");
