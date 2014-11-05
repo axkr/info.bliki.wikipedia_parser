@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Locale;
 
 import static co.freeside.betamax.TapeMode.READ_ONLY;
-import static co.freeside.betamax.TapeMode.WRITE_SEQUENTIAL;
+import static co.freeside.betamax.TapeMode.WRITE_ONLY;
 import static info.bliki.wiki.filter.Encoder.encodeTitleLocalUrl;
 import static java.util.Locale.ENGLISH;
 import static java.util.Locale.GERMAN;
@@ -63,47 +63,47 @@ public class HTMLCreatorTest {
         testWiktionaryENAPI("backplane");
     }
 
-    @Betamax(tape="Political_party_strength_in_California", mode = WRITE_SEQUENTIAL)
+    @Betamax(tape="Political_party_strength_in_California", mode = WRITE_ONLY)
     @Ignore @Test public void testPoliticalPartyStrengthInCalifornia() throws Exception {
         testWikipediaENAPI("Political party strength in California");
     }
 
-    @Betamax(tape="Chris_Capuano", mode = WRITE_SEQUENTIAL)
+    @Betamax(tape="Chris_Capuano", mode = WRITE_ONLY)
     @Ignore @Test public void testWikipediaChrisCapuano() throws Exception {
         testWikipediaENAPI("Chris Capuano");
     }
 
-    @Betamax(tape="Protein", mode = WRITE_SEQUENTIAL)
+    @Betamax(tape="Protein", mode = WRITE_ONLY)
     @Ignore @Test public void testWikipediaProtein() throws Exception {
         testWikipediaENAPI("Protein");
     }
 
-    @Betamax(tape="Depeche_Mode", mode = WRITE_SEQUENTIAL)
+    @Betamax(tape="Depeche_Mode", mode = WRITE_ONLY)
     @Ignore @Test public void testWikipediaDepeche_Mode() throws Exception {
         testWikipediaENAPI("Depeche Mode");
     }
 
-    @Betamax(tape="Anarchism", mode = WRITE_SEQUENTIAL)
+    @Betamax(tape="Anarchism", mode = WRITE_ONLY)
     @Ignore @Test public void testWikipediaAnarchism() throws Exception {
         testWikipediaENAPI("Anarchism");
     }
 
-    @Betamax(tape="Javascript", mode = WRITE_SEQUENTIAL)
+    @Betamax(tape="Javascript", mode = WRITE_ONLY)
     @Ignore @Test public void testWikipediaJavascript() throws Exception {
         testWikipediaDEAPI("JavaScript");
     }
 
-    @Betamax(tape="libero", mode = WRITE_SEQUENTIAL)
+    @Betamax(tape="libero", mode = WRITE_ONLY)
     @Ignore @Test public void testWikipediaLibero() throws Exception {
         testWikipediaENAPI("libero");
     }
 
-    @Ignore @Betamax(tape="Metallica", mode = WRITE_SEQUENTIAL)
+    @Ignore @Betamax(tape="Metallica", mode = WRITE_ONLY)
     @Test public void testWikipediaMetallica() throws Exception {
         testWikipediaENAPI("Metallica");
     }
 
-    @Betamax(tape="HTTP-Statuscode", mode = WRITE_SEQUENTIAL)
+    @Betamax(tape="HTTP-Statuscode", mode = WRITE_ONLY)
     @Ignore @Test public void testWikipediaHTTPStatusCode() throws Exception {
         testWikipediaDEAPI("HTTP-Statuscode");
     }
@@ -112,27 +112,27 @@ public class HTMLCreatorTest {
         testWikipediaDEAPI("Wikipedia:Hauptseite/Artikel_des_Tages/Montag");
     }
 
-    @Betamax(tape="Alps", mode = WRITE_SEQUENTIAL)
+    @Betamax(tape="Alps", mode = WRITE_ONLY)
     @Ignore @Test public void testWikipediaAlps() throws Exception {
         testWikipediaENAPI("Alps");
     }
 
-    @Betamax(tape="Acute_disseminated_encephalomyelitis", mode = WRITE_SEQUENTIAL)
+    @Betamax(tape="Acute_disseminated_encephalomyelitis", mode = WRITE_ONLY)
     @Ignore @Test public void testWikipediaAcute_disseminated_encephalomyelitis() throws Exception {
         testWikipediaENAPI("Acute disseminated encephalomyelitis");
     }
 
-    @Betamax(tape="Apatosaurus", mode = WRITE_SEQUENTIAL)
+    @Betamax(tape="Apatosaurus", mode = WRITE_ONLY)
     @Ignore @Test public void testWikipediaApatosaurus() throws Exception {
         testWikipediaENAPI("Apatosaurus");
     }
 
-    @Betamax(tape="Batman returns", mode = WRITE_SEQUENTIAL)
+    @Betamax(tape="Batman returns", mode = WRITE_ONLY)
     @Ignore @Test public void testWikipediaBatmanReturns() throws Exception {
         testWikipediaENAPI("Batman Returns");
     }
 
-    @Betamax(tape="Manchester_United_Football_Club", mode = WRITE_SEQUENTIAL)
+    @Betamax(tape="Manchester_United_Football_Club", mode = WRITE_ONLY)
     @Ignore @Test public void testWikipediaManchester_United_Football_Club() throws Exception {
         String redirectedLink = testWikipediaENAPI("Manchester United Football Club").redirectLink;
         if (redirectedLink != null) {

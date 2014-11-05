@@ -1,17 +1,19 @@
 !tape
 name: loginWithUsernameSuccess
 interactions:
-- recorded: 2014-04-06T13:41:15.619Z
+- recorded: 2014-11-05T00:16:59.680Z
   request:
     method: POST
     uri: http://en.wiktionary.org/w/api.php
     headers:
-      Content-Length: '57'
+      Content-Length: '100'
       Content-Type: application/x-www-form-urlencoded
+      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4; enwiktionarySession=ffffffffffffffffffffffffffffffff
+      Cookie2: $Version=1
       Host: en.wiktionary.org
       Proxy-Connection: Keep-Alive
-      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
-    body: action=login&format=xml&lgname=jberkel&lgpassword=testing
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+    body: action=login&format=xml&lgname=jberkel&lgpassword=testing&lgtoken=ffffffffffffffffffffffffffffffff
   response:
     status: 200
     headers:
@@ -19,19 +21,19 @@ interactions:
       Age: '0'
       Cache-control: private
       Connection: keep-alive
-      Content-Length: '174'
+      Content-Length: '214'
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 06 Apr 2014 13:41:15 GMT
+      Date: Wed, 05 Nov 2014 00:16:59 GMT
+      P3P: CP="This is not a P3P policy! See http://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
       Server: Apache
-      Set-Cookie: enwiktionarySession=b91c6beed374ac5a147f44392b05e4b0; path=/; HttpOnly, GeoIP=DE:Berlin:52.5167:13.4000:v4; path=/
-      Vary: Accept-Encoding
-      X-Cache: cp1054 miss (0), amssq50 miss (0), amssq61 frontend miss (0)
+      Set-Cookie: centralauth_User=Jberkel; expires=Fri, 05-Dec-2014 00:16:59 GMT; path=/; domain=.wiktionary.org; httponly, centralauth_Token=ffffffffffffffffffffffffffffffff; expires=Fri, 05-Dec-2014 00:16:59 GMT; path=/; domain=.wiktionary.org; httponly, centralauth_Session=ffffffffffffffffffffffffffffffff; path=/; domain=.wiktionary.org; httponly, forceHTTPS=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.wiktionary.org; httponly, enwiktionaryUserID=1580588; expires=Fri, 05-Dec-2014 00:16:59 GMT; path=/; httponly, enwiktionaryUserName=Jberkel; expires=Fri, 05-Dec-2014 00:16:59 GMT; path=/; httponly, forceHTTPS=true; expires=Fri, 05-Dec-2014 00:16:59 GMT; path=/; httponly
+      Vary: Accept-Encoding,X-Use-HHVM
+      X-Analytics: php=zend
+      X-Cache: cp1054 miss (0), amssq50 miss (0), amssq34 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
-      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
-      X-Varnish: 2031437334, 3125219769, 1398650010
-      X-Vary-Options: Accept-Encoding;list-contains=gzip
-    body: <?xml version="1.0"?><api><login result="NeedToken" token="a2e66bc93e77c13490dad2d6e4466167" cookieprefix="enwiktionary" sessionid="b91c6beed374ac5a147f44392b05e4b0" /></api>
+      X-Varnish: 1411546775, 3593815257, 450201222
+    body: <?xml version="1.0"?><api><login result="Success" lguserid="1580588" lgusername="Jberkel" lgtoken="ffffffffffffffffffffffffffffffff" cookieprefix="enwiktionary" sessionid="c86414278dc5a79c32edd148ab60f742" /></api>
 - recorded: 2014-04-06T13:41:15.985Z
   request:
     method: POST
@@ -57,7 +59,7 @@ interactions:
       Date: Sun, 06 Apr 2014 13:41:16 GMT
       P3P: CP="This is not a P3P policy! See http://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
       Server: Apache
-      Set-Cookie: centralauth_User=Jberkel; expires=Tue, 06-May-2014 13:41:16 GMT; path=/; domain=.wiktionary.org; httponly, centralauth_Token=2c809cd3e3db25a90d4433ae6b5c27f1; expires=Tue, 06-May-2014 13:41:16 GMT; path=/; domain=.wiktionary.org; httponly, centralauth_Session=2b13bb06c8d952644a495e8d22dd3ace; path=/; domain=.wiktionary.org; httponly, forceHTTPS=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.wiktionary.org; httponly, enwiktionaryUserID=1580588; expires=Tue, 06-May-2014 13:41:16 GMT; path=/; httponly, enwiktionaryUserName=Jberkel; expires=Tue, 06-May-2014 13:41:16 GMT; path=/; httponly, forceHTTPS=true; expires=Tue, 06-May-2014 13:41:16 GMT; path=/; httponly
+      Set-Cookie: centralauth_User=Jberkel; expires=Tue, 06-May-2014 13:41:16 GMT; path=/; domain=.wiktionary.org; httponly, centralauth_Token=2c809cd3e3db25a90d4433ae6b5c27f1; expires=Tue, 06-May-2014 13:41:16 GMT; path=/; domain=.wiktionary.org; httponly, centralauth_Session=ffffffffffffffffffffffffffffffff; path=/; domain=.wiktionary.org; httponly, forceHTTPS=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.wiktionary.org; httponly, enwiktionaryUserID=1580588; expires=Tue, 06-May-2014 13:41:16 GMT; path=/; httponly, enwiktionaryUserName=Jberkel; expires=Tue, 06-May-2014 13:41:16 GMT; path=/; httponly, forceHTTPS=true; expires=Tue, 06-May-2014 13:41:16 GMT; path=/; httponly
       Vary: Accept-Encoding
       X-Cache: cp1054 miss (0), amssq50 miss (0), amssq61 frontend miss (0)
       X-Content-Type-Options: nosniff
@@ -65,4 +67,4 @@ interactions:
       X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
       X-Varnish: 2031437773, 3125219995, 1398650453
       X-Vary-Options: Accept-Encoding;list-contains=gzip
-    body: <?xml version="1.0"?><api><login result="Success" lguserid="1580588" lgusername="Jberkel" lgtoken="af02e21795b679d9551b4f594b6b4d42" cookieprefix="enwiktionary" sessionid="b91c6beed374ac5a147f44392b05e4b0" /></api>
+    body: <?xml version="1.0"?><api><login result="Success" lguserid="1580588" lgusername="Jberkel" lgtoken="ffffffffffffffffffffffffffffffff" cookieprefix="enwiktionary" sessionid="b91c6beed374ac5a147f44392b05e4b0" /></api>

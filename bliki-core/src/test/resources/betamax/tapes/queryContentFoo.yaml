@@ -132,3 +132,130 @@ interactions:
       [[vi:foo]]
       [[yi:foo]]
       [[zh:foo]]</rev></revisions></page></pages></query></api>
+- recorded: 2014-11-05T00:10:34.786Z
+  request:
+    method: GET
+    uri: http://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=foo&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Content-Length: '0'
+      Host: en.wiktionary.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Type: text/xml; charset=utf-8
+      Date: Wed, 05 Nov 2014 00:10:34 GMT
+      Server: Apache
+      Set-Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4; Path=/; Domain=.wiktionary.org
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
+      X-Analytics: php=zend
+      X-Cache: cp1052 miss (0), amssq55 miss (0), amssq57 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Varnish: 4032374032, 295121601, 3011743777
+    body: |-
+      <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="39480" ns="0" title="foo"><revisions><rev user="Kephir" timestamp="2014-07-24T13:47:13Z" comment="/* References */" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">==English==
+
+      ===Etymology 1===
+      Circa 1935 as nonsense word, circa 1960 in programming sense.
+      {{rel-top|detailed etymology}}
+      [[File:Chinese Good Fortune Cross Stitch Pattern.JPG|thumb|upright|'''foo''' is presumably based on the {{w|fu character}} (fú, 福)]]
+      [[File:Fuxingqi.JPG|thumb|A ''Fú'' figurine of the [[w:Fu Lu Shou|Chinese star god]]]]
+      Originated circa 1935 as nonsense word in ''{{w|Smokey Stover}}'' comic strip (1935–73) by {{w|Bill Holman}} (from which also {{term|foo fighter|lang=en}}).&lt;ref name=&quot;jargon&quot;&gt;“[http://catb.org/jargon/html/F/foo.html foo]”, ''[http://catb.org/jargon/html/index.html The Jargon File]''
+      &lt;/ref&gt; Holman states that his usage was from seeing “foo” on the base of a jade {{etyl|zh|en}} figurine in [[w:Chinatown, San Francisco|Chinatown, San Francisco]], meaning “good luck”, presumably a transliteration of the {{w|fu character}} {{term|福||fortune, happiness, prosperity|tr=fú|lang=cmn}},
+      &lt;ref name=&quot;jargon&quot; /&gt;&lt;ref&gt;&quot;[http://www.smokey-stover.com/history.html The History of Bill Holman]&quot;, [http://www.smokey-stover.com/ Smokey-Stover.com], Smokey Stover LLC – article by nephew of Bill Holman&lt;/ref&gt;&lt;ref&gt;&quot;[http://web.archive.org/web/19990222143614/http://members.aol.com/EOCostello/ Warner Brothers Cartoon Companion]&quot;&lt;/ref&gt; and figurines of the trio of eponymous male &quot;star gods&quot; [[w:Fu Lu Shou|''Fú, Lù, Shòu'']] are common in Chinese communities. Meaning influenced by {{term|fooey|lang=en}}, {{term|fool|lang=en}}, and {{term|feh|lang=en}}. Used throughout the comic strip’s run, with later uses in the 1930s include ''{{w|The Daffy Doc}}'' (1938) and ''[[w:Pogo (comic strip)|Pogo]].''
+
+      In computing usage, popularized by the {{w|Tech Model Railroad Club}} (TMRC), whose 1959 ''Dictionary of the TMRC Language'', had an entry similar to the following, parodying the mantra {{w|Om mani padme hum}} (replacing {{term|om|lang=en}} with '''foo'''):&lt;ref name=&quot;jargon&quot; /&gt;
+      : FOO: The first syllable of the sacred chant phrase “FOO MANE PADME HUM.” Our first obligation is to keep the foo counters turning.
+      Related also to {{term|foobar|lang=en}}, which is presumably derived from '''foo''' rather than the reverse.&lt;ref name=&quot;jargon&quot; /&gt;
+      {{rel-bottom}}
+
+      ====Pronunciation====
+      * {{a|UK}} {{IPA|/fuː/|lang=en}}
+      * {{rhymes|uː|lang=en}}
+      * {{homophones|lang=en|-fu}}
+
+      ====Noun====
+      {{wikipedia}}
+      {{en-noun|-}}
+
+      # {{context|computing|lang=en}} A [[metasyntactic variable]] used to represent an [[unspecified]] entity. If part of a series of such entities, it is often the first in the series, and followed immediately by [[bar]].
+      #: ''Suppose we have two objects, '''foo''' and bar''.
+
+      =====Related terms=====
+      * [[foobar]]
+      * [[foo fighter]]
+      * [[FUBAR]]
+
+      ====References====
+      &lt;references/&gt;
+      * RFC 3092, ''Etymology of &quot;Foo&quot;'', {{w|Internet Engineering Task Force}} (IETF)
+
+      ===Etymology 2===
+      [[onomatopoeia|Onomatopoeia]].
+
+      ====Interjection====
+      {{en-interj}}
+
+      # {{non-gloss definition|Expression of disappointment or disgust.}}
+      #: ''Oh '''foo''' – the cake burnt!''
+
+      =====Synonyms=====
+      * {{sense|expression of disgust}} [[darn]], [[drat]]
+
+      ===Etymology 3===
+      Abbreviation of {{term|fool||foolish person|lang=en}}.
+
+      ====Alternative forms====
+      * [[foo']]
+
+      ====Noun====
+      {{en-noun}}
+
+      # {{context|slang|lang=en}} [[fool]], foolish person.
+
+      ===Anagrams===
+      * [[oof]]
+
+      [[Category:English placeholder terms]]
+
+      ----
+
+      ==Middle English==
+      &lt;!--this Middle English entry was created using Template:new enm entry--&gt;
+
+      ===Alternative forms===
+      * {{l|enm|fo}}
+
+      ===Etymology===
+      {{rfe|lang=enm}}
+
+      ===Noun===
+      {{enm-noun}}
+
+      # [[foe]]
+
+      ----
+
+      ==Tetum==
+
+      ===Verb===
+      {{head|tet|verb}}
+
+      # to [[stink]]
+
+      [[et:foo]]
+      [[el:foo]]
+      [[fr:foo]]
+      [[ko:foo]]
+      [[it:foo]]
+      [[mg:foo]]
+      [[pl:foo]]
+      [[vi:foo]]
+      [[yi:foo]]
+      [[zh:foo]]</rev></revisions></page></pages></query></api>
