@@ -1,8 +1,18 @@
-package info.bliki.extensions.scribunto.interfaces;
+package info.bliki.extensions.scribunto.engine.lua;
 
 import info.bliki.extensions.scribunto.ScribuntoException;
 import info.bliki.extensions.scribunto.engine.ScribuntoEngineBase;
 import info.bliki.extensions.scribunto.engine.ScribuntoModule;
+import info.bliki.extensions.scribunto.engine.lua.interfaces.MwHtml;
+import info.bliki.extensions.scribunto.engine.lua.interfaces.MwInit;
+import info.bliki.extensions.scribunto.engine.lua.interfaces.MwInterface;
+import info.bliki.extensions.scribunto.engine.lua.interfaces.MwLanguage;
+import info.bliki.extensions.scribunto.engine.lua.interfaces.MwMessage;
+import info.bliki.extensions.scribunto.engine.lua.interfaces.MwSite;
+import info.bliki.extensions.scribunto.engine.lua.interfaces.MwText;
+import info.bliki.extensions.scribunto.engine.lua.interfaces.MwTitle;
+import info.bliki.extensions.scribunto.engine.lua.interfaces.MwUri;
+import info.bliki.extensions.scribunto.engine.lua.interfaces.MwUstring;
 import info.bliki.extensions.scribunto.template.Frame;
 import info.bliki.wiki.filter.AbstractParser;
 import info.bliki.wiki.filter.AbstractParser.ParsedPageName;

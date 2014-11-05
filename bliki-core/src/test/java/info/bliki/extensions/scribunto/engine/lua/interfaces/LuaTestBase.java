@@ -1,5 +1,6 @@
-package info.bliki.extensions.scribunto.interfaces;
+package info.bliki.extensions.scribunto.engine.lua.interfaces;
 
+import info.bliki.extensions.scribunto.engine.lua.ScribuntoLuaEngine;
 import info.bliki.wiki.model.WikiModel;
 import org.junit.runner.Description;
 import org.junit.runner.RunWith;

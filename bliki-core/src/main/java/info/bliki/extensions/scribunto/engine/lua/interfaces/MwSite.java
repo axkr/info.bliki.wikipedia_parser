@@ -1,4 +1,4 @@
-package info.bliki.extensions.scribunto.interfaces;
+package info.bliki.extensions.scribunto.engine.lua.interfaces;
 
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.namespaces.INamespace;

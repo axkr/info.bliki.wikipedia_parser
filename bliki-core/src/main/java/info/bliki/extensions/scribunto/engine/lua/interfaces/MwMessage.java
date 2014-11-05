@@ -1,4 +1,4 @@
-package info.bliki.extensions.scribunto.interfaces;
+package info.bliki.extensions.scribunto.engine.lua.interfaces;
 
 import org.luaj.vm2.LuaNumber;
 import org.luaj.vm2.LuaString;

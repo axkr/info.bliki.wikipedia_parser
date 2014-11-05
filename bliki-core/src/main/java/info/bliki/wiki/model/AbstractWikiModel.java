@@ -2,7 +2,7 @@ package info.bliki.wiki.model;
 
 import info.bliki.Messages;
 import info.bliki.extensions.scribunto.engine.ScribuntoEngine;
-import info.bliki.extensions.scribunto.interfaces.ScribuntoLuaEngine;
+import info.bliki.extensions.scribunto.engine.lua.ScribuntoLuaEngine;
 import info.bliki.extensions.scribunto.template.Frame;
 import info.bliki.htmlcleaner.BaseToken;
 import info.bliki.htmlcleaner.ContentToken;

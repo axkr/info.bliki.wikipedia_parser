@@ -1,4 +1,4 @@
-package info.bliki.extensions.scribunto.interfaces;
+package info.bliki.extensions.scribunto.engine.lua.interfaces;
 
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
@@ -6,7 +6,7 @@ import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
 import org.luaj.vm2.lib.ZeroArgFunction;
 
-import static info.bliki.extensions.scribunto.interfaces.MwInterface.DefaultFunction.defaultFunction;
+import static info.bliki.extensions.scribunto.engine.lua.interfaces.MwInterface.DefaultFunction.defaultFunction;
 import static java.util.Locale.forLanguageTag;
 
 public class MwLanguage implements MwInterface {

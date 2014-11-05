@@ -1,20 +1,18 @@
-package info.bliki.extensions.scribunto.interfaces;
-
+package info.bliki.extensions.scribunto.engine.lua.interfaces;
 
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class MwMessageTest extends LuaTestBase {
+public class MwSiteTest extends LuaTestBase {
     @Override
     public String getLuaTest() {
-        return "MessageLibraryTests.lua";
+        return "SiteLibraryTests.lua";
     }
 
     @Override public Set<String> ignoredTests() {
         return new HashSet<>(Arrays.asList(
-            "exists (1)",
-            "inLanguage"
+                "Project talk namespace by name (extraneous spaces and underscores)"
         ));
     }
 }

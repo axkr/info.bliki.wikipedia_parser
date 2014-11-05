@@ -1,4 +1,4 @@
-package info.bliki.extensions.scribunto.interfaces;
+package info.bliki.extensions.scribunto.engine.lua;
 
 import info.bliki.extensions.scribunto.engine.ScribuntoModule;
 import info.bliki.extensions.scribunto.template.Frame;
