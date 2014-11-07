@@ -58,6 +58,11 @@ public class HTMLCreatorTest {
         testWikipediaENAPI("Tom Hanks");
     }
 
+    @Betamax(tape="Foobar", mode = READ_ONLY)
+    @Test public void testWikipediaFoobar() throws Exception {
+        testWikipediaENAPI("Foobar");
+    }
+
     @Betamax(tape = "backplane", mode = READ_ONLY)
     @Test public void testWiktionaryBackplane() throws Exception {
         testWiktionaryENAPI("backplane");
