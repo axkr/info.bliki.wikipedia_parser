@@ -231,7 +231,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         return new ZeroArgFunction() {
             @Override public LuaValue call() {
                 // TODO
-                return FALSE;
+                return TRUE;
             }
         };
     }
