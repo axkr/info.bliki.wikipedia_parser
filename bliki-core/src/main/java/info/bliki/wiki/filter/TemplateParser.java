@@ -689,28 +689,26 @@ public class TemplateParser extends AbstractParser {
         int currOffset = TemplateParser.checkParserFunction(buf);
         if (currOffset > 0) {
             String function = templateName.substring(0, currOffset - 1).trim();
-            if (function != null) {
-                if (Configuration.PARSER_FUNCTIONS) {
-                    System.out.println(function);
-                }
-                ITemplateFunction templateFunction = fWikiModel.getTemplateFunction(function);
-                if (templateFunction != null) {
-                    // if (function.charAt(0) == '#') {
-                    // #if:, #ifeq:,...
-                    parts.set(0, templateName.substring(currOffset));
-                    // if (Configuration.PARSER_FUNCTIONS) {
-                    // System.out.println(function + ": " + parts);
-                    // }
-                    plainContent = templateFunction.parseFunction(parts, fWikiModel, fSource, startTemplatePosition + currOffset, endOffset,
-                            false);
-                    fCurrentPosition = endPosition;
-                    if (plainContent != null) {
-                        TemplateParser.parseRecursive(plainContent, fWikiModel, writer, false, false);
-                    }
-                    return true;
-                }
-                fCurrentPosition = endOffset + 2;
+            if (Configuration.PARSER_FUNCTIONS) {
+                System.out.println(function);
             }
+            ITemplateFunction templateFunction = fWikiModel.getTemplateFunction(function);
+            if (templateFunction != null) {
+                // if (function.charAt(0) == '#') {
+                // #if:, #ifeq:,...
+                parts.set(0, templateName.substring(currOffset));
+                // if (Configuration.PARSER_FUNCTIONS) {
+                // System.out.println(function + ": " + parts);
+                // }
+                plainContent = templateFunction.parseFunction(parts, fWikiModel, fSource, startTemplatePosition + currOffset, endOffset,
+                        false);
+                fCurrentPosition = endPosition;
+                if (plainContent != null) {
+                    TemplateParser.parseRecursive(plainContent, fWikiModel, writer, false, false);
+                }
+                return true;
+            }
+            fCurrentPosition = endOffset + 2;
         }
         if (Util.isInvalidTemplateName(templateName)) {
             return false;
