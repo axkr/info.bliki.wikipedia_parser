@@ -18,7 +18,7 @@ public class FilterTestSupport {
         wikiModel = newWikiTestModel();
     }
 
-    protected final WikiModel newWikiTestModel() {
+    private WikiModel newWikiTestModel() {
         return newWikiTestModel(Locale.ENGLISH);
     }
 
