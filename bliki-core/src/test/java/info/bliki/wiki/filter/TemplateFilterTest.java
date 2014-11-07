@@ -10,11 +10,35 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class TemplateFilterTest extends FilterTestSupport {
     private static final String SELF_RECURSION = "Line1\n\n{{SELF_RECURSION}}";
-    private static final String SELF_RECURSION1 = "Line1\n\n{{{{{1}}}}}";
     private static final String INDIRECT_SELF_RECURSION1 = "INDIRECT_SELF_RECURSION1\n\n{{INDIRECT_SELF_RECURSION2}}";
     private static final String INDIRECT_SELF_RECURSION2 = "INDIRECT_SELF_RECURSION2\n\n{{INDIRECT_SELF_RECURSION1}}";
     private static final String INDIRECT_SELF_RECURSION1a = "INDIRECT_SELF_RECURSION1a\n\n{{INDIRECT_SELF_RECURSION2a|{{#if:{{{1|}}}|{{#expr:{{{1}}}+1}}|1}}}}";
     private static final String INDIRECT_SELF_RECURSION2a = "INDIRECT_SELF_RECURSION2a\n\n{{INDIRECT_SELF_RECURSION1a|{{#if:{{{1|}}}|{{#expr:{{{1}}}+1}}|1}}}}";
+    private static final String NAVBOX_STRING = "{{Navbox\n" + "|name  = AcademyAwardBestActor 1981-2000\n"
+            + "|title = [[Academy Award for Best Actor|Academy Award for]] [[Academy Award for Best Actor#1980s|Best Actor]]\n"
+            + "|titlestyle = background: #EEDD82\n" + "|list1 = <div>\n" + "{{nowrap|[[Henry Fonda]] (1981)}}{{·}}\n"
+            + "{{nowrap|[[Ben Kingsley]] (1982)}}{{·}}\n" + "{{nowrap|[[Robert Duvall]] (1983)}}{{·}}\n"
+            + "{{nowrap|[[F. Murray Abraham]] (1984)}}{{·}}\n" + "{{nowrap|[[William Hurt]] (1985)}}{{·}}\n"
+            + "{{nowrap|[[Paul Newman]] (1986)}}{{·}}\n" + "{{nowrap|[[Michael Douglas]] (1987)}}{{·}}\n"
+            + "{{nowrap|[[Dustin Hoffman]] (1988)}}{{·}}\n" + "{{nowrap|[[Daniel Day-Lewis]] (1989)}}{{·}}\n"
+            + "{{nowrap|[[Jeremy Irons]] (1990)}}{{·}}\n" + "{{nowrap|[[Anthony Hopkins]] (1991)}}{{·}}\n"
+            + "{{nowrap|[[Al Pacino]] (1992)}}{{·}}\n" + "{{nowrap|[[Tom Hanks]] (1993)}}{{·}}\n"
+            + "{{nowrap|[[Tom Hanks]] (1994)}}{{·}}\n" + "{{nowrap|[[Nicolas Cage]] (1995)}}{{·}}\n"
+            + "{{nowrap|[[Geoffrey Rush]] (1996)}}{{·}}\n" + "{{nowrap|[[Jack Nicholson]] (1997)}}{{·}}\n"
+            + "{{nowrap|[[Roberto Benigni]] (1998)}}{{·}}\n" + "{{nowrap|[[Kevin Spacey]] (1999)}}{{·}}\n"
+            + "{{nowrap|[[Russell Crowe]] (2000) }}\n" + "----\n"
+            + "{{nowrap|[[:Template:Academy Award Best Actor|Complete List]]}}{{·}}\n"
+            + "{{nowrap|[[:Template:AcademyAwardBestActor 1927-1940|(1928–1940)]]}}{{·}}\n"
+            + "{{nowrap|[[:Template:AcademyAwardBestActor 1941-1960|(1941–1960)]]}}{{·}}\n"
+            + "{{nowrap|[[:Template:AcademyAwardBestActor 1961-1980|(1961–1980)]]}}{{·}}\n"
+            + "{{nowrap|[[:Template:AcademyAwardBestActor 1981-2000|\'\'\'(1981–2000)\'\'\']]}}{{·}}\n"
+            + "{{nowrap|[[:Template:AcademyAwardBestActor 2001-2020|(2001-present)]]}}\n" + "</div>\n" + "}}<noinclude>\n" + "\n"
+            + "[[Category:Academy Award for Best Actor templates| 1981-2000]]\n" + "</noinclude>";
+
+
+    private static final String TEST_STRING_02 = " {{#if:{{{cat|\n" + "{{{category|}}}}}}|a category|{{#if:{{{mul|{{{dab|\n"
+            + "{{{disambiguation|}}}}}}}}}|articles|{{#if:{{{mulcat|}}}|categories|an\n" + "article}}}}}} on:\n";
+
 
     /**
      * Issue124 - Image URL parsing broken in some cases
@@ -58,7 +82,6 @@ public class TemplateFilterTest extends FilterTestSupport {
     }
 
     @Test public void testTemplateCall3() {
-        // see method WikiTestModel#getRawWikiContent()
         assertThat(wikiModel.render("{{templ1\n"
                 + " | a = Test1\n" + " | {{templ2|sdfsf|klj}} \n" + "}}\n" + "", false)).isEqualTo("\n" + "<p>b) First: Test1 Second:  c) First: sdfsf Second: klj </p>\n" + "");
     }
@@ -108,35 +131,29 @@ public class TemplateFilterTest extends FilterTestSupport {
     }
 
     @Test public void testTemplateCall1() {
-        // see method WikiTestModel#getRawWikiContent()
         assertThat(wikiModel.render("start-{{:Include Page}}-end", false)).isEqualTo("\n" + "<p>start-an include page-end</p>");
     }
 
     @Test public void testTemplateCall2() {
-        // see method WikiTestModel#getRawWikiContent()
         assertThat(wikiModel.render(
                 "start-{{templ1|a=3|b}}-end start-{{templ2|sdfsf|klj}}-end", false)).isEqualTo("\n" + "<p>start-b) First: 3 Second: b-end start-c) First: sdfsf Second: klj-end</p>");
     }
 
     @Test public void testTemplateCall4() {
-        // see method WikiTestModel#getRawWikiContent() for template tl
         assertThat(wikiModel.render("{{tl|example}}", false)).isEqualTo("\n"
                 + "<p>[[:Template:<a href=\"http://www.bliki.info/wiki/Template:example\" title=\"Template:example\">example</a>]]</p>");
     }
 
     @Test public void testTemplateCall4a() {
-        // see method WikiTestModel#getRawWikiContent() for template tl
         assertThat(wikiModel.render("{{tl}}", false)).isEqualTo("\n" + "<p>[[:Template:[[Template:{{{1}}}|{{{1}}}]]]]</p>");
     }
 
     @Test public void testTemplateCall5() {
-        // see method WikiTestModel#getRawWikiContent()
         assertThat(wikiModel.render("({{pron-en|dəˌpeʃˈmoʊd}})", false)).isEqualTo("\n"
                 + "<p>(pronounced <span class=\"IPA\" title=\"Pronunciation in the International Phonetic Alphabet (IPA)\"><a href=\"http://www.bliki.info/wiki/WP:IPA_for_English\" title=\"WP:IPA for English\">/dəˌpeʃˈmoʊd/</a></span>)</p>");
     }
 
     @Test public void testTemplateImage1() {
-        // see method WikiTestModel#getRawWikiContent()
         assertThat(wikiModel
                 .render(
                         "{|\n"
@@ -162,17 +179,14 @@ public class TemplateFilterTest extends FilterTestSupport {
     }
 
     @Test public void testTemplateNowiki() {
-        // see method WikiTestModel#getTemplateContent()
         assertThat(wikiModel.render("start-<nowiki>{{templ1|a=3|b}}-</noWiKi>end", false)).isEqualTo("\n" + "<p>start-{{templ1|a=3|b}}-end</p>");
     }
 
     @Test public void testTemplateParameter01() {
-        // see method WikiTestModel#getTemplateContent()
         assertThat(wikiModel.render("start-{{Test|arg1|arg2}}-end", false)).isEqualTo("\n" + "<p>start-a) First: arg1 Second: arg2-end</p>");
     }
 
     @Test public void testTemplateParameter02() {
-        // see method WikiTestModel#getTemplateContent()
         assertThat(wikiModel
                 .render(
                         "start- {{cite web|url=http://www.etymonline.com/index.php?search=hello&searchmode=none|title=Online Etymology Dictionary}} -end",
@@ -181,7 +195,6 @@ public class TemplateFilterTest extends FilterTestSupport {
     }
 
     @Test public void testTemplateParameter03() {
-        // see method WikiTestModel#getTemplateContent()
         assertThat(wikiModel.render("start- {{reflist|2}} -end", false)).isEqualTo("\n" + "<p>start- </p>\n"
                 + "<div class=\"references-small\" style=\"-moz-column-count:2; -webkit-column-count:2; column-count:2;\"></div> -end");
     }
@@ -242,7 +255,6 @@ public class TemplateFilterTest extends FilterTestSupport {
     }
 
     @Test public void testTemplateParameter13() {
-        // see method WikiTestModel#getTemplateContent()
         assertThat(wikiModel
                 .render(
                         "{| class=\"wikitable\"\n"
@@ -270,86 +282,6 @@ public class TemplateFilterTest extends FilterTestSupport {
                 + "</pre>");
     }
 
-    // private final String TEST_STRING_01 =
-    // "[[Category:Interwiki templates|wikipedia]]\n" +
-    // "[[zh:Template:Wikipedia]]\n"
-    // + "&lt;/noinclude&gt;&lt;div class=&quot;sister-\n"
-    // +
-    // "wikipedia&quot;&gt;&lt;div class=&quot;sister-project&quot;&gt;&lt;div\n"
-    // +
-    // "class=&quot;noprint&quot; style=&quot;clear: right; border: solid #aaa\n"
-    // + "1px; margin: 0 0 1em 1em; font-size: 90%; background: #f9f9f9; width:\n"
-    // + "250px; padding: 4px; text-align: left; float: right;&quot;&gt;\n"
-    // +
-    // "&lt;div style=&quot;float: left;&quot;&gt;[[Image:Wikipedia-logo-en.png|44px|none| ]]&lt;/div&gt;\n"
-    // + "&lt;div style=&quot;margin-left: 60px;&quot;&gt;{{#if:{{{lang|}}}|\n"
-    // + "{{{{{lang}}}}}&amp;nbsp;}}[[Wikipedia]] has {{#if:{{{cat|\n" +
-    // "{{{category|}}}}}}|a category|{{#if:{{{mul|{{{dab|\n"
-    // +
-    // "{{{disambiguation|}}}}}}}}}|articles|{{#if:{{{mulcat|}}}|categories|an\n"
-    // + "article}}}}}} on:\n"
-    // + "&lt;div style=&quot;margin-left: 10px;&quot;&gt;'''''{{#if:{{{cat|\n"
-    // + "{{{category|}}}}}}|[[w:{{#if:{{{lang|}}}|{{{lang}}}:}}Category:\n"
-    // + "{{ucfirst:{{{cat|{{{category}}}}}}}}|{{ucfirst:{{{1|{{{cat|\n"
-    // +
-    // "{{{category}}}}}}}}}}}]]|[[w:{{#if:{{{lang|}}}|{{{lang}}}:}}{{ucfirst:\n"
-    // + "{{#if:{{{dab|{{{disambiguation|}}}}}}|{{{dab|{{{disambiguation}}}}}}|\n"
-    // +
-    // "{{{1|{{PAGENAME}}}}}}}}}|{{ucfirst:{{{2|{{{1|{{{dab|{{{disambiguation|\n"
-    // + "{{PAGENAME}}}}}}}}}}}}}}}}]]}}''''' {{#if:{{{mul|{{{mulcat|}}}}}}|and\n"
-    // + "'''''{{#if:{{{mulcat|}}}|[[w:{{#if:{{{lang|}}}|{{{lang}}}:}}Category:\n"
-    // +
-    // "{{ucfirst:{{{mulcat}}}}}|{{ucfirst:{{{mulcatlabel|{{{mulcat}}}}}}}}]]|\n"
-    // + "[[w:{{#if:{{{lang|}}}|{{{lang}}}:}}{{ucfirst:{{{mul}}}}}|{{ucfirst:\n"
-    // + "{{{mullabel|{{{mul}}}}}}}}]]'''''}}|}}&lt;/div&gt;\n" + "&lt;/div&gt;\n"
-    // + "&lt;/div&gt;\n"
-    // +
-    // "&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;interProject&quot;&gt;[[w:\n"
-    // + "{{#if:{{{lang|}}}|{{{lang}}}:}}{{#if:{{{cat|{{{category|}}}}}}|\n"
-    // + "Category:{{ucfirst:{{{cat|{{{category}}}}}}}}|{{ucfirst:{{{dab|\n"
-    // + "{{{disambiguation|{{{1|{{PAGENAME}}}}}}}}}}}}}}}|Wikipedia {{#if:\n"
-    // + "{{{lang|}}}|&lt;sup&gt;{{{lang}}}&lt;/sup&gt;}}]]&lt;/span&gt;{{#if:\n"
-    // +
-    // "{{{mul|{{{mulcat|}}}}}}|&lt;span class=&quot;interProject&quot;&gt;[[w:\n"
-    // +
-    // "{{#if:{{{lang|}}}|{{{lang}}}:}}{{#if:{{{mulcat|}}}|Category:{{ucfirst:\n"
-    // + "{{{mulcat}}}}}|{{ucfirst:{{{mul}}}}}}}|Wikipedia {{#if:{{{lang|}}}|\n"
-    // + "&lt;sup&gt;{{{lang}}}&lt;/sup&gt;}}]]&lt;/span&gt;}}";
-    //
-    // @Test public void testNestedIf01() {
-    // String temp = StringEscapeUtils.unescapeHtml(TEST_STRING_01);
-    // assertEquals(
-    // "\n"
-    // + "<p>\n"
-    // +
-    // "<a href=\"http://zh.wikipedia.org/wiki/Template:Wikipedia\">zh:Template:Wikipedia</a>\n"
-    // + "&#60;/noinclude&#62;</p>\n"
-    // + "<div class=\"sister-\n"
-    // + "wikipedia\">\n"
-    // + "<div class=\"sister-project\">\n"
-    // + "<div class=\"noprint\" style=\"clear: right; border: solid #aaa\n"
-    // + "1px; margin: 0 0 1em 1em; font-size: 90%; background: #f9f9f9; width:\n"
-    // + "250px; padding: 4px; text-align: left; float: right;\">\n"
-    // +
-    // "<div style=\"float: left;\"><div style=\"width:44px\"><a class=\"internal\" href=\"http://www.bliki.info/wiki/Image:44px-Wikipedia-logo-en.png\" ><img src=\"http://www.bliki.info/wiki/44px-Wikipedia-logo-en.png\" class=\"location-none\" width=\"44\" />\n"
-    // + "</a></div>\n"
-    // + "</div>\n"
-    // +
-    // "<div style=\"margin-left: 60px;\"><a href=\"http://www.bliki.info/wiki/Wikipedia\" title=\"Wikipedia\">Wikipedia</a> has an\n"
-    // + "<p>article on:\n"
-    // + "</p>\n"
-    // +
-    // "<div style=\"margin-left: 10px;\"><b><i><a href=\"http://en.wikipedia.org/wiki/PAGENAME\">PAGENAME</a></i></b> </div>"
-    // + "</div>" + "</div>"
-    // +
-    // "</div></div><span class=\"interProject\"><a href=\"http://en.wikipedia.org/wiki/PAGENAME\">Wikipedia</a></span>"
-    // ,
-    // wikiModel.render(temp));
-    // }
-
-    private final static String TEST_STRING_02 = " {{#if:{{{cat|\n" + "{{{category|}}}}}}|a category|{{#if:{{{mul|{{{dab|\n"
-            + "{{{disambiguation|}}}}}}}}}|articles|{{#if:{{{mulcat|}}}|categories|an\n" + "article}}}}}} on:\n";
-
     @Test public void testNestedIf02() {
         assertThat(wikiModel.render(TEST_STRING_02, false)).isEqualTo("\n" + "<pre>an\n</pre>\n" + "<p>article on:\n" + "</p>" + "");
     }
@@ -364,27 +296,6 @@ public class TemplateFilterTest extends FilterTestSupport {
                 + "<p><sup id=\"_ref-1\" class=\"reference\"><a href=\"#_note-1\" title=\"\">[1]</a></sup></p><ol class=\"references\">\n"
                 + "<li id=\"_note-1\"><b><a href=\"#_ref-1\" title=\"\">&#8593;</a></b> <b>a simple test</b></li>\n</ol>");
     }
-
-    public final static String NAVBOX_STRING = "{{Navbox\n" + "|name  = AcademyAwardBestActor 1981-2000\n"
-            + "|title = [[Academy Award for Best Actor|Academy Award for]] [[Academy Award for Best Actor#1980s|Best Actor]]\n"
-            + "|titlestyle = background: #EEDD82\n" + "|list1 = <div>\n" + "{{nowrap|[[Henry Fonda]] (1981)}}{{·}}\n"
-            + "{{nowrap|[[Ben Kingsley]] (1982)}}{{·}}\n" + "{{nowrap|[[Robert Duvall]] (1983)}}{{·}}\n"
-            + "{{nowrap|[[F. Murray Abraham]] (1984)}}{{·}}\n" + "{{nowrap|[[William Hurt]] (1985)}}{{·}}\n"
-            + "{{nowrap|[[Paul Newman]] (1986)}}{{·}}\n" + "{{nowrap|[[Michael Douglas]] (1987)}}{{·}}\n"
-            + "{{nowrap|[[Dustin Hoffman]] (1988)}}{{·}}\n" + "{{nowrap|[[Daniel Day-Lewis]] (1989)}}{{·}}\n"
-            + "{{nowrap|[[Jeremy Irons]] (1990)}}{{·}}\n" + "{{nowrap|[[Anthony Hopkins]] (1991)}}{{·}}\n"
-            + "{{nowrap|[[Al Pacino]] (1992)}}{{·}}\n" + "{{nowrap|[[Tom Hanks]] (1993)}}{{·}}\n"
-            + "{{nowrap|[[Tom Hanks]] (1994)}}{{·}}\n" + "{{nowrap|[[Nicolas Cage]] (1995)}}{{·}}\n"
-            + "{{nowrap|[[Geoffrey Rush]] (1996)}}{{·}}\n" + "{{nowrap|[[Jack Nicholson]] (1997)}}{{·}}\n"
-            + "{{nowrap|[[Roberto Benigni]] (1998)}}{{·}}\n" + "{{nowrap|[[Kevin Spacey]] (1999)}}{{·}}\n"
-            + "{{nowrap|[[Russell Crowe]] (2000) }}\n" + "----\n"
-            + "{{nowrap|[[:Template:Academy Award Best Actor|Complete List]]}}{{·}}\n"
-            + "{{nowrap|[[:Template:AcademyAwardBestActor 1927-1940|(1928–1940)]]}}{{·}}\n"
-            + "{{nowrap|[[:Template:AcademyAwardBestActor 1941-1960|(1941–1960)]]}}{{·}}\n"
-            + "{{nowrap|[[:Template:AcademyAwardBestActor 1961-1980|(1961–1980)]]}}{{·}}\n"
-            + "{{nowrap|[[:Template:AcademyAwardBestActor 1981-2000|\'\'\'(1981–2000)\'\'\']]}}{{·}}\n"
-            + "{{nowrap|[[:Template:AcademyAwardBestActor 2001-2020|(2001-present)]]}}\n" + "</div>\n" + "}}<noinclude>\n" + "\n"
-            + "[[Category:Academy Award for Best Actor templates| 1981-2000]]\n" + "</noinclude>";
 
     @Test public void testNavbox() {
         assertThat(wikiModel.render(NAVBOX_STRING,
@@ -822,33 +733,9 @@ public class TemplateFilterTest extends FilterTestSupport {
                 + "<tr>\n" + "<td>\n" + "TEST2</td></tr></table></div></td></tr></table></div>");
     }
 
-//    @Test public void testIssue81() {
-//        assertEquals("\n" + "<p>104</p>", wikiModel.render("{{#time:z|{{{1|April 14}}}}}", false));
-//    }
-//
-//    @Test public void testIssue82_001() {
-//        assertEquals("105", wikiModel.parseTemplates("{{#expr:{{#time:z|{{{1|April 14}}}}}+1}}"));
-//    }
-
     @Test public void testIssue82_002() {
         assertThat(wikiModel.parseTemplates("{{ordinal|105}}")).isEqualTo("105th");
     }
-// time dependent tests
-//    @Test public void testIssue82_003() {
-//        assertEquals("105th", wikiModel.parseTemplates("{{ordinal|{{#expr:{{#time:z|{{{1|April 14}}}}}+1}}}}"));
-//    }
-
-    /**
-     * This is a date dependent template test, so only activate it for local tests
-     * please.
-     */
-    // @Test public void testbirth_date_and_age() {
-    // assertEquals(
-    // "\n"
-    // +
-    // "<p>test July 9, 1956<span style=\"display:none\"> (<span class=\"bday\">1956-07-09</span>)</span><span class=\"noprint\"> (age 54)</span> test123</p>",
-    // wikiModel.render("test {{birth date and age|1956|7|9}} test123"));
-    // }
 
     @Test public void testRndfracTemplate001() {
         assertThat(wikiModel.render(
@@ -1171,7 +1058,7 @@ public class TemplateFilterTest extends FilterTestSupport {
     /**
      * Issue 133 - self-inclusion is only allowed once in MediaWiki
      */
-    @Test public void testSelfRecusion001() {
+    @Test public void testSelfRecursion001() {
         // https://en.wikipedia.org/wiki/Help:Template#Nesting_templates
         assertThat(wikiModel.render(SELF_RECURSION, false)).isEqualTo("\n<p>Line1</p>"
                 + "\n<p>Line1</p>"
@@ -1181,42 +1068,36 @@ public class TemplateFilterTest extends FilterTestSupport {
     /**
      * Issue 133 - self-inclusion is only allowed once in MediaWiki
      */
-    @Test public void testSelfRecusion002() {
+    @Test public void testSelfRecursion002() {
         // check that a template can be included more than once
         assertThat(wikiModel.render("{{1x|a}}, {{1x|a}}", false)).isEqualTo("\n<p>a, a</p>");
         assertThat(wikiModel.render("{{1x|a}}, {{1x|b}}", false)).isEqualTo("\n<p>a, b</p>");
     }
 
-    /**
-     * Issue 133 - self-inclusion is only allowed once in MediaWiki
-     */
-    @Test public void testSelfRecusion003() {
+    @Test public void testSelfRecursion003() {
         // check that a template can be included as a parameter to itself
         assertThat(wikiModel.render("{{1x|{{1x|a}}}}", false)).isEqualTo("\n<p>a</p>");
         assertThat(wikiModel.render("{{1x|a{{1x|b}}}}", false)).isEqualTo("\n<p>ab</p>");
     }
 
-    /**
-     * Issue 133 - self-inclusion is only allowed once in MediaWiki
-     */
-    @Test public void testSelfRecusion004() {
+    @Test public void testSelfRecursion004() {
         // check that a template which includes itself via a parameter is recognised as a loop
         assertThat(wikiModel.render("{{SELF_RECURSION1|SELF_RECURSION1}}", false)).isEqualTo("\n<p>Line1</p>"
                 + "\n<p><span class=\"error\">Template loop detected: <strong class=\"selflink\">Template:SELF_RECURSION1</strong></span></p>");
     }
 
-    @Test public void testSelfRecusion005() {
+    @Test public void testSelfRecursion005() {
         assertThat(wikiModel.parseTemplates("{{1x|{{1x|foo{{!}}bar}}}}")).isEqualTo("foo|bar");
     }
 
-    @Test public void testSelfRecusion005a() {
+    @Test public void testSelfRecursion005a() {
         assertThat(wikiModel.render("{{1x|{{1x|foo{{!}}bar}}}}")).isEqualTo("\n" +
                 "<p>foo|bar</p>");
     }
     /**
      * Issue 133 - self-inclusion is only allowed once in MediaWiki
      */
-    @Test public void testIndirectSelfRecusion001() {
+    @Test public void testIndirectSelfRecursion001() {
         // https://en.wikipedia.org/wiki/Help:Template#Nesting_templates
         assertThat(wikiModel.render(INDIRECT_SELF_RECURSION1, false)).isEqualTo("\n"
                 + "<p>INDIRECT_SELF_RECURSION1</p>\n"
@@ -1228,7 +1109,7 @@ public class TemplateFilterTest extends FilterTestSupport {
     /**
      * Issue 133 - self-inclusion is only allowed once in MediaWiki
      */
-    @Test public void testIndirectSelfRecusion002() {
+    @Test public void testIndirectSelfRecursion002() {
         // https://en.wikipedia.org/wiki/Help:Template#Nesting_templates
         assertThat(wikiModel.render(INDIRECT_SELF_RECURSION2, false)).isEqualTo("\n"
                 + "<p>INDIRECT_SELF_RECURSION2</p>\n"
@@ -1240,7 +1121,7 @@ public class TemplateFilterTest extends FilterTestSupport {
     /**
      * Issue 133 - self-inclusion is only allowed once in MediaWiki
      */
-    @Test public void testIndirectSelfRecusion001a() {
+    @Test public void testIndirectSelfRecursion001a() {
         // https://en.wikipedia.org/wiki/Help:Template#Nesting_templates
         assertThat(wikiModel.render(INDIRECT_SELF_RECURSION1a, false)).isEqualTo("\n"
                 + "<p>INDIRECT_SELF_RECURSION1a</p>\n"
@@ -1252,7 +1133,7 @@ public class TemplateFilterTest extends FilterTestSupport {
     /**
      * Issue 133 - self-inclusion is only allowed once in MediaWiki
      */
-    @Test public void testIndirectSelfRecusion002a() {
+    @Test public void testIndirectSelfRecursion002a() {
         // https://en.wikipedia.org/wiki/Help:Template#Nesting_templates
         assertThat(wikiModel.render(INDIRECT_SELF_RECURSION2a, false)).isEqualTo("\n"
                 + "<p>INDIRECT_SELF_RECURSION2a</p>\n"
