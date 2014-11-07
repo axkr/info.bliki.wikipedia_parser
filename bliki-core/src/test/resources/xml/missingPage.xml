@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<api batchcomplete="">
+    <query>
+        <normalized>
+            <n from="Template:safesubst:NAMESPACE" to="Template:Safesubst:NAMESPACE"/>
+        </normalized>
+        <pages>
+            <page ns="10" title="Template:Safesubst:NAMESPACE" missing=""/>
+        </pages>
+    </query>
+</api>

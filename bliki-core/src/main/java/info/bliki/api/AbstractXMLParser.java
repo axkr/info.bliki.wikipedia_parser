@@ -15,11 +15,11 @@ import java.io.StringReader;
  * Base class for reading XML strings.
  */
 public abstract class AbstractXMLParser extends DefaultHandler {
-    public static final String TITLE_ID = "title";
-    public static final String NS_ID = "ns";
-    public static final String PAGE_ID = "pageid";
-    public static final String PAGE_TAG2 = "p";
-    public static final String PAGE_TAG1 = "page";
+    protected static final String TITLE_ID = "title";
+    protected static final String NS_ID = "ns";
+    protected static final String PAGE_ID = "pageid";
+    protected static final String PAGE_TAG2 = "p";
+    protected static final String PAGE_TAG1 = "page";
 
     protected Attributes fAttributes;
     protected StringBuffer fData;

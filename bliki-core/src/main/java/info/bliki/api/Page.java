@@ -25,6 +25,8 @@ public class Page extends PageInfo {
     private String editToken;
     private String imageUrl;
     private String imageThumbUrl;
+    private boolean missing;
+    private boolean invalid;
 
     private Revision revision;
 
@@ -111,8 +113,23 @@ public class Page extends PageInfo {
     public void setEditToken(String editToken) {
         this.editToken = editToken;
     }
+    public boolean isInvalid() {
+        return invalid;
+    }
 
-    protected final static int BLOCK_SIZE = 8192;
+    public void setInvalid(boolean invalid) {
+        this.invalid = invalid;
+    }
+
+    public boolean isMissing() {
+        return missing;
+    }
+
+    public void setMissing(boolean missing) {
+        this.missing = missing;
+    }
+
+    private final static int BLOCK_SIZE = 8192;
 
     /**
      * If this page was created with User#queryImageinfo() you can download the

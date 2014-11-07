@@ -23,6 +23,8 @@ public class XMLPagesParser extends AbstractXMLParser {
     private static final String II_ID = "ii";
     private static final String EDIT_TOKEN_ID = "edittoken";
     private static final String WARNINGS = "warnings";
+    private static final String PAGE_MISSING_ATTRIBUTE = "missing";
+    private static final String PAGE_INVALID_ATTRIBUTE = "invalid";
 
     private Page fPage;
     private Revision fRevision;
@@ -45,6 +47,8 @@ public class XMLPagesParser extends AbstractXMLParser {
             fPage.setNs(fAttributes.getValue(NS_ID));
             fPage.setTitle(fAttributes.getValue(TITLE_ID));
             fPage.setEditToken(fAttributes.getValue(EDIT_TOKEN_ID));
+            fPage.setMissing(fAttributes.getValue(PAGE_MISSING_ATTRIBUTE) != null);
+            fPage.setInvalid(fAttributes.getValue(PAGE_INVALID_ATTRIBUTE) != null);
         } else if (REV_ID.equals(qName)) {
             fRevision = new Revision();
             fRevision.setAnon(fAttributes.getValue(ANON_ID));

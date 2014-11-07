@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<api batchcomplete="">
+    <query>
+        <pages>
+            <page title="Template:safesubst:NAMESPACE:{{{1}}}" invalid=""/>
+        </pages>
+    </query>
+</api>
