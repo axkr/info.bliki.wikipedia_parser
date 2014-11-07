@@ -32,7 +32,6 @@ public class Page extends PageInfo {
 
     public Page() {
         super();
-        this.imageUrl = "";
         this.links = new ArrayList<>();
         this.categories = new ArrayList<>();
     }
@@ -69,13 +68,20 @@ public class Page extends PageInfo {
         this.imageThumbUrl = imageThumbUrl;
     }
 
-    @Override
-    public String toString() {
-        String content = "";
-        if (revision != null) {
-            content = revision.getContent();
-        }
-        return "PageID: " + pageid + "; NS: " + ns + "; Title: " + title + "; \nImage url: " + imageUrl + "\nContent:\n" + content;
+    @Override public String toString() {
+        return "Page{" +
+            "ns=" + ns +
+            ", title=" + title +
+            ", id=" + pageid +
+            ", links=" + links +
+            ", categories=" + categories +
+            ", editToken='" + editToken + '\'' +
+            ", imageUrl='" + imageUrl + '\'' +
+            ", imageThumbUrl='" + imageThumbUrl + '\'' +
+            ", missing=" + missing +
+            ", invalid=" + invalid +
+            ", revision=" + revision +
+            '}';
     }
 
     public boolean addCategory(PageInfo arg0) {
@@ -228,10 +234,10 @@ public class Page extends PageInfo {
     }
 
     public String getCurrentContent() {
-        String content = "";
         if (revision != null) {
-            content = revision.getContent();
+            return revision.getContent();
+        } else {
+            return null;
         }
-        return content;
     }
 }

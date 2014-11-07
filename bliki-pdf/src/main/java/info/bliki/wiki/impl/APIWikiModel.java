@@ -178,6 +178,8 @@ public class APIWikiModel extends WikiModel {
                 fWikiDB.insertTopic(new TopicData(fullPageName, content));
                 content = getRedirectedWikiContent(content, templateParameters);
                 return content != null && content.length() > 0 ?  content : null;
+            } else {
+                logger.warn("no content for page "+page);
             }
         }
         return null;

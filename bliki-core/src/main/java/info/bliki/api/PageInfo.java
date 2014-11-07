@@ -1,17 +1,10 @@
 package info.bliki.api;
 
 public class PageInfo {
-
     protected String pageid;
     protected String ns;
     protected String title;
 
-    public PageInfo() {
-        super();
-        this.pageid = "";
-        this.ns = "";
-        this.title = "";
-    }
 
     @Override
     public boolean equals(Object obj) {
