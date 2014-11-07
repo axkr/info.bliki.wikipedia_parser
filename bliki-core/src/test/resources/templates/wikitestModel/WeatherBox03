@@ -1,0 +1,2 @@
+{{WeatherVal03
+|show={{#if:{{{show1|}}}|1|2}}|jan1=10|jan2=20}}

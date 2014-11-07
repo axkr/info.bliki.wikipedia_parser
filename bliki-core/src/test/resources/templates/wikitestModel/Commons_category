@@ -1,0 +1,11 @@
+{{commons
+| position = {{{position|}}}
+  <!-- {{#if:x|}} strips whitespace from parameter 1,
+       in case it is fed like this: {{Commons category| Some cat }}. -->
+| Category:{{#if:x| {{{1| {{PAGENAME}} }}} }}
+| {{{2| {{{1| {{PAGENAME}} }}} }}}
+}}<noinclude>
+
+{{documentation}}
+<!-- Add categories and interwikis to the /doc subpage, not here! -->
+</noinclude>

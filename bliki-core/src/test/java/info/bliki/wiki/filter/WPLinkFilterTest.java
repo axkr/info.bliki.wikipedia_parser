@@ -203,11 +203,11 @@ public class WPLinkFilterTest extends FilterTestSupport {
     }
 
     @Test public void testRedirect03() {
-        assertThat(wikiModel.render(" \n{{TestRedirect1}}", false)).isEqualTo(" \n" + "<p>Hello World!</p>");
+        assertThat(wikiModel.render(" \n{{TestRedirect1}}", false)).isEqualTo(" \n" + "<p>Hello World!\n</p>");
     }
 
     @Test public void testRedirect04() {
-        assertThat(wikiModel.render(" \n {{TestRedirect1}} ", false)).isEqualTo(" \n" + "<pre>" + "Hello World! \n" + "</pre>");
+        assertThat(wikiModel.render(" \n {{TestRedirect1}} ", false)).isEqualTo(" \n" + "<pre>" + "Hello World!\n\n" + "</pre>");
     }
 
     @Test public void testRedirect05() {

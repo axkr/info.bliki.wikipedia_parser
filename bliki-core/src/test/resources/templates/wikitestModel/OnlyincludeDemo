@@ -1,0 +1,20 @@
+abc<onlyinclude>def</onlyinclude>ghi<includeonly>jkl</includeonly><!---
+-----
+----><noinclude><hr>
+;Only active template content is above.
+
+;The verbatim active code within reads:
+ abc'''&lt;onlyinclude>'''def'''&lt;/onlyinclude>'''ghi'''&lt;includeonly>'''jkl'''&lt;/includeonly>'''
+
+If transposed, the only part included will be the string literal <code>def</code>.
+
+==Example==
+Including [[:Help:Template/onlyinclude demo]] yields only:
+ {{:Help:Template/onlyinclude demo}}
+
+<includeonly>Then there's this other stuff one would think would be included... (I)
+</includeonly><noinclude>
+
+[[Category:Handbook templates]]</noinclude>
+[[Category:Template documentation|{{PAGENAME}}]]
+</noinclude><includeonly>Then there's this other stuff one would think would be included (II)...</includeonly>

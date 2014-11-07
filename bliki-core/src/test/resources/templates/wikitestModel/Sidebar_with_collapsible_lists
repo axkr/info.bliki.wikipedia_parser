@@ -1,0 +1,266 @@
+<noinclude>{{start sidebar page}}
+</noinclude>{{Sidebar
+|name            = {{{name|{{PAGENAME}}}}}
+|class           = {{{class|{{{bodyclass|}}}}}}
+|style           = {{{style|{{{bodystyle|}}}}}} <noinclude>width:15.0em;</noinclude>
+|cellspacing     = {{{cellspacing|}}}
+|cellpadding     = {{{cellpadding|}}}
+
+|outertitle      = {{{outertitle<includeonly>|</includeonly>}}}
+|outertitleclass = {{{outertitleclass|}}}
+|outertitlestyle = {{{outerttitlestyle|}}}
+
+|topimage        = {{{topimage<includeonly>|</includeonly>}}}
+|topimageclass   = {{{topimageclass|}}}
+|topimagestyle   = {{{topimagestyle|}}}
+|topcaption      = {{{topcaption<includeonly>|</includeonly>}}}
+|topcaptionstyle = {{{topcaptionstyle|}}}
+
+|pretitle        = {{{pretitle<includeonly>|</includeonly>}}}
+|pretitlestyle   = {{{pretitlestyle|}}}
+|title           = {{{title<includeonly>|</includeonly>}}}
+|titleclass      = {{{titleclass|}}}
+|titlestyle      = {{{titlestyle|}}}
+
+|image           = {{{image<includeonly>|</includeonly>}}}
+|imageclass      = {{{imageclass|}}}
+|imagestyle      = {{{imagestyle|}}}
+|caption         = {{{caption<includeonly>|</includeonly>}}}
+|captionstyle    = {{{captionstyle|}}}
+
+|abovestyle = border-top:1px solid #aaa; border-bottom:1px solid #aaa; {{{abovestyle|}}}
+|above = {{{above<includeonly>|</includeonly>}}}
+
+|headingstyle    = {{{headingstyle|}}}
+|contentstyle    = {{{contentstyle|}}}
+
+|heading1style = {{{heading1style|}}}
+|heading1 = {{{heading1|}}}
+|content1style = {{{content1style|}}}
+|content1 = {{#if:{{{list1<includeonly>|</includeonly>}}}
+             | {{Collapsible list
+                |framestyle = {{{listframestyle|}}}{{{list1framestyle|}}}
+                |title      = {{{list1title<includeonly>|</includeonly>}}}
+                |titlestyle = {{{listtitlestyle|}}}{{{list1titlestyle|}}}
+                |liststyle  = padding:0.2em 0 0.4em; text-align:center; {{#ifeq:{{{expanded|}}}|all |display:inline;}} {{#ifeq:{{{expanded|}}}|{{{list1name}}} |display:inline;}} {{{liststyle|}}}{{{list1style|}}}
+                | {{{list1}}}
+               }}
+             | {{{content1|}}}
+            }}
+
+|heading2style = {{{heading2style|}}}
+|heading2 = {{{heading2|}}}
+|content2style = {{{content2style|}}}
+|content2 = {{#if:{{{list2<includeonly>|</includeonly>}}}
+             | {{Collapsible list
+                |framestyle = {{{listframestyle|}}}{{{list2framestyle|}}}
+                |title      = {{{list2title<includeonly>|</includeonly>}}}
+                |titlestyle = {{{listtitlestyle|}}}{{{list2titlestyle|}}}
+                |liststyle  = padding:0.2em 0 0.4em; text-align:center; {{#ifeq:{{{expanded|}}}|all |display:inline;}} {{#ifeq:{{{expanded|}}}|{{{list2name}}} |display:inline;}} {{{liststyle|}}}{{{list2style|}}}
+                | {{{list2}}}
+               }}
+             | {{{content2|}}}
+            }}
+
+|heading3style = {{{heading3style|}}}
+|heading3 = {{{heading3|}}}
+|content3style = {{{content3style|}}}
+|content3 = {{#if:{{{list3<includeonly>|</includeonly>}}}
+             | {{Collapsible list
+                |framestyle = {{{listframestyle|}}}{{{list3framestyle|}}}
+                |title      = {{{list3title<includeonly>|</includeonly>}}}
+                |titlestyle = {{{listtitlestyle|}}}{{{list3titlestyle|}}}
+                |liststyle  = padding:0.2em 0 0.4em; text-align:center; {{#ifeq:{{{expanded|}}}|all |display:inline;}} {{#ifeq:{{{expanded|}}}|{{{list3name}}} |display:inline;}} {{{liststyle|}}}{{{list3style|}}}
+                | {{{list3}}}
+               }}
+             | {{{content3|}}}
+            }}
+
+|heading4style = {{{heading4style|}}}
+|heading4 = {{{heading4|}}}
+|content4style = {{{content4style|}}}
+|content4 = <noinclude>''(......etc......)''</noinclude><!--
+         --><includeonly><!--
+          -->{{#if:{{{list4|}}}
+              | {{Collapsible list
+                 |framestyle = {{{listframestyle|}}}{{{list4framestyle|}}}
+                 |title      = {{{list4title|}}}
+                 |titlestyle = {{{listtitlestyle|}}}{{{list4titlestyle|}}}
+                 |liststyle  = padding:0.2em 0 0.4em; text-align:center; {{#ifeq:{{{expanded|}}}|all |display:inline;}} {{#ifeq:{{{expanded|}}}|{{{list4name}}} |display:inline;}} {{{liststyle|}}}{{{list4style|}}}
+                 | {{{list4}}}
+                }}
+              | {{{content4|}}}
+             }}<!--
+         --></includeonly>
+
+|heading5style = {{{heading5style|}}}
+|heading5 = {{{heading5|}}}
+|content5style = {{{content5style|}}}
+|content5 = {{#if:{{{list5|}}}
+             | {{Collapsible list
+                |framestyle = {{{listframestyle|}}}{{{list5framestyle|}}}
+                |title      = {{{list5title|}}}
+                |titlestyle = {{{listtitlestyle|}}}{{{list5titlestyle|}}}
+                |liststyle  = padding:0.2em 0 0.4em; text-align:center; {{#ifeq:{{{expanded|}}}|all |display:inline;}} {{#ifeq:{{{expanded|}}}|{{{list5name}}} |display:inline;}} {{{liststyle|}}}{{{list5style|}}}
+                | {{{list5}}}
+               }}
+             | {{{content5|}}}
+            }}
+
+|heading6style = {{{heading6style|}}}
+|heading6 = {{{heading6|}}}
+|content6style = {{{content6style|}}}
+|content6 = {{#if:{{{list6|}}}
+             | {{Collapsible list
+                |framestyle = {{{listframestyle|}}}{{{list6framestyle|}}}
+                |title      = {{{list6title|}}}
+                |titlestyle = {{{listtitlestyle|}}}{{{list6titlestyle|}}}
+                |liststyle  = padding:0.2em 0 0.4em; text-align:center; {{#ifeq:{{{expanded|}}}|all |display:inline;}} {{#ifeq:{{{expanded|}}}|{{{list6name}}} |display:inline;}} {{{liststyle|}}}{{{list6style|}}}
+                | {{{list6}}}
+               }}
+             | {{{content6|}}}
+            }}
+
+|heading7style = {{{heading7style|}}}
+|heading7 = {{{heading7|}}}
+|content7style = {{{content7style|}}}
+|content7 = {{#if:{{{list7|}}}
+             | {{Collapsible list
+                |framestyle = {{{listframestyle|}}}{{{list7framestyle|}}}
+                |title      = {{{list7title|}}}
+                |titlestyle = {{{listtitlestyle|}}}{{{list7titlestyle|}}}
+                |liststyle  = padding:0.2em 0 0.4em; text-align:center; {{#ifeq:{{{expanded|}}}|all |display:inline;}} {{#ifeq:{{{expanded|}}}|{{{list7name}}} |display:inline;}} {{{liststyle|}}}{{{list7style|}}}
+                | {{{list7}}}
+               }}
+             | {{{content7|}}}
+            }}
+
+|heading8style = {{{heading8style|}}}
+|heading8 = {{{heading8|}}}
+|content8style = {{{content8style|}}}
+|content8 = {{#if:{{{list8|}}}
+             | {{Collapsible list
+                |framestyle = {{{listframestyle|}}}{{{list8framestyle|}}}
+                |title      = {{{list8title|}}}
+                |titlestyle = {{{listtitlestyle|}}}{{{list8titlestyle|}}}
+                |liststyle  = padding:0.2em 0 0.4em; text-align:center; {{#ifeq:{{{expanded|}}}|all |display:inline;}} {{#ifeq:{{{expanded|}}}|{{{list8name}}} |display:inline;}} {{{liststyle|}}}{{{list8style|}}}
+                | {{{list8}}}
+               }}
+             | {{{content8|}}}
+            }}
+
+|heading9style = {{{heading9style|}}}
+|heading9 = {{{heading9|}}}
+|content9style = {{{content9style|}}}
+|content9 = {{#if:{{{list9|}}}
+             | {{Collapsible list
+                |framestyle = {{{listframestyle|}}}{{{list9framestyle|}}}
+                |title      = {{{list9title|}}}
+                |titlestyle = {{{listtitlestyle|}}}{{{list9titlestyle|}}}
+                |liststyle  = padding:0.2em 0 0.4em; text-align:center; {{#ifeq:{{{expanded|}}}|all |display:inline;}} {{#ifeq:{{{expanded|}}}|{{{list9name}}} |display:inline;}} {{{liststyle|}}}{{{list9style|}}}
+                | {{{list9}}}
+               }}
+             | {{{content9|}}}
+            }}
+
+|heading10style = {{{heading10style|}}}
+|heading10 = {{{heading10|}}}
+|content10style = {{{content10style|}}}
+|content10 = {{#if:{{{list10|}}}
+             | {{Collapsible list
+                |framestyle = {{{listframestyle|}}}{{{list10framestyle|}}}
+                |title      = {{{list10title|}}}
+                |titlestyle = {{{listtitlestyle|}}}{{{list10titlestyle|}}}
+                |liststyle  = padding:0.2em 0 0.4em; text-align:center; {{#ifeq:{{{expanded|}}}|all |display:inline;}} {{#ifeq:{{{expanded|}}}|{{{list10name}}} |display:inline;}} {{{liststyle|}}}{{{list10style|}}}
+                | {{{list10}}}
+               }}
+             | {{{content10|}}}
+            }}
+
+|heading11style = {{{heading11style|}}}
+|heading11 = {{{heading11|}}}
+|content11style = {{{content11style|}}}
+|content11 = {{#if:{{{list11|}}}
+             | {{Collapsible list
+                |framestyle = {{{listframestyle|}}}{{{list11framestyle|}}}
+                |title      = {{{list11title|}}}
+                |titlestyle = {{{listtitlestyle|}}}{{{list11titlestyle|}}}
+                |liststyle  = padding:0.2em 0 0.4em; text-align:center; {{#ifeq:{{{expanded|}}}|all |display:inline;}} {{#ifeq:{{{expanded|}}}|{{{list11name}}} |display:inline;}} {{{liststyle|}}}{{{list11style|}}}
+                | {{{list11}}}
+               }}
+             | {{{content11|}}}
+            }}
+
+|heading12style = {{{heading12style|}}}
+|heading12 = {{{heading12|}}}
+|content12style = {{{content12style|}}}
+|content12 = {{#if:{{{list12|}}}
+             | {{Collapsible list
+                |framestyle = {{{listframestyle|}}}{{{list12framestyle|}}}
+                |title      = {{{list12title|}}}
+                |titlestyle = {{{listtitlestyle|}}}{{{list12titlestyle|}}}
+                |liststyle  = padding:0.2em 0 0.4em; text-align:center; {{#ifeq:{{{expanded|}}}|all |display:inline;}} {{#ifeq:{{{expanded|}}}|{{{list12name}}} |display:inline;}} {{{liststyle|}}}{{{list12style|}}}
+                | {{{list12}}}
+               }}
+             | {{{content12|}}}
+            }}
+
+|heading13style = {{{heading13style|}}}
+|heading13 = {{{heading13|}}}
+|content13style = {{{content13style|}}}
+|content13 = {{#if:{{{list13|}}}
+             | {{Collapsible list
+                |framestyle = {{{listframestyle|}}}{{{list13framestyle|}}}
+                |title      = {{{list13title|}}}
+                |titlestyle = {{{listtitlestyle|}}}{{{list13titlestyle|}}}
+                |liststyle  = padding:0.2em 0 0.4em; text-align:center; {{#ifeq:{{{expanded|}}}|all |display:inline;}} {{#ifeq:{{{expanded|}}}|{{{list13name}}} |display:inline;}} {{{liststyle|}}}{{{list13style|}}}
+                | {{{list13}}}
+               }}
+             | {{{content13|}}}
+            }}
+
+|heading14style = {{{heading14style|}}}
+|heading14 = {{{heading14|}}}
+|content14style = {{{content14style|}}}
+|content14 = {{#if:{{{list14|}}}
+             | {{Collapsible list
+                |framestyle = {{{listframestyle|}}}{{{list14framestyle|}}}
+                |title      = {{{list14title|}}}
+                |titlestyle = {{{listtitlestyle|}}}{{{list14titlestyle|}}}
+                |liststyle  = padding:0.2em 0 0.4em; text-align:center; {{#ifeq:{{{expanded|}}}|all |display:inline;}} {{#ifeq:{{{expanded|}}}|{{{list14name}}} |display:inline;}} {{{liststyle|}}}{{{list14style|}}}
+                | {{{list14}}}
+               }}
+             | {{{content14|}}}
+            }}
+
+
+|heading15style = {{{heading15style|}}}
+|heading15 = {{{heading15|}}}
+|content15style = {{{content15style|}}}
+|content15 = {{#if:{{{list15<includeonly>|</includeonly>}}}
+             | {{Collapsible list
+                |framestyle = {{{listframestyle|}}}{{{list15framestyle|}}}
+                |title      = {{{list15title<includeonly>|</includeonly>}}}
+                |titlestyle = {{{listtitlestyle|}}}{{{list15titlestyle|}}}
+                |liststyle  = padding:0.2em 0 0.4em; text-align:center; {{#ifeq:{{{expanded|}}}|all |display:inline;}} {{#ifeq:{{{expanded|}}}|{{{list15name}}} |display:inline;}} {{{liststyle|}}}{{{list15style|}}}
+                | {{{list15}}}
+               }}
+             | {{{content15|}}}
+            }}
+
+<!--Gap between sections above and any subsequent 'below' section:-->
+|content16style = padding:0; line-height:0.4em;
+|content16 = {{#if:{{{below<includeonly>|</includeonly>}}} |&nbsp;}}
+
+|belowstyle = border-top:1px solid #aaa; border-bottom:1px solid #aaa; {{{belowstyle|}}}
+|below = {{{below<includeonly>|</includeonly>}}}
+
+|tnavbar        = {{{tnavbar|}}}
+|tnavbarstyle   = padding-top:0.6em; {{{tnavbarstyle|}}}
+|tnavbaroptions = {{{tnavbaroptions|}}}
+
+}}<noinclude>
+{{end sidebar page}}
+
+<!---Please add metadata (categories, interwikis) to the <includeonly> section at the
+     bottom of [[Template:Sidebar with collapsible lists/doc]] page, not here - thanks!--->

@@ -1,0 +1,25 @@
+<includeonly>{{#if:{{{nodiv|}}}|<!--then:
+-->&nbsp;<span class="noprint plainlinksneverexpand" style="white-space:nowrap; font-weight:normal; font-size:xx-small; {{{fontstyle|}}}; {{#if:{{{fontcolor|}}}|color:{{{fontcolor}}};}} {{{style|}}}">|<!--else:
+--><div class="noprint plainlinksneverexpand" style="background-color:transparent; padding:0; white-space:nowrap; font-weight:normal; font-size:xx-small; {{{fontstyle|}}}; {{#if:{{{fontcolor|}}}|color:{{{fontcolor}}};}} {{{style|}}}"><!--
+-->}}<!--
+
+-->{{#ifeq:{{{mini|}}}{{{miniv|}}}{{{plain|}}}{{{viewplain|}}}|<!--equals:-->1|<!--then:
+-->|<!--else:
+-->This box:&nbsp;<!--
+-->}}<!--
+
+-->{{#ifeq:{{{miniv|}}}{{{viewplain|}}}|<!--equals:-->1|<!--then:
+-->[[Template:{{{1}}}|<span title="View this template" style="{{{fontstyle|}}};{{#if:{{{fontcolor|}}}|color:{{{fontcolor}}};}}">{{#if:{{{viewplain|}}}|view|v}}</span>]]|<!--else:
+-->[[Template:{{{1}}}|<span title="View this template" style="{{{fontstyle|}}};{{#if:{{{fontcolor|}}}|color:{{{fontcolor}}};}}">{{#if:{{{mini|}}}|v|view}}</span>]]&nbsp;<span style="font-size:80%;">•</span>&nbsp;[[Template talk:{{{1}}}|<span style="color:#002bb8;{{{fontstyle|}}};{{#if:{{{fontcolor|}}}|color:{{{fontcolor}}};}}" title="Discussion about this template">{{#if:{{{mini|}}}|d|talk}}</span>]]&nbsp;<span style="font-size:80%;">•</span>&nbsp;[{{fullurl:{{ns:10}}:{{{1}}}|action=edit}} <span style="color:#002bb8;{{{fontstyle|}}};{{#if:{{{fontcolor|}}}|color:{{{fontcolor}}};}}" title="You can edit this template. Please use the preview button before saving.">{{#if:{{{mini|}}}|e|edit}}</span>]<!--
+-->}}<!--
+
+-->{{#if:{{{nodiv|}}}|<!--then:
+--></span>&nbsp;|<!--else:
+--></div><!--
+-->}}</includeonly><noinclude>
+
+{{pp-template|small=yes}}
+<hr/><center>'''{{purge}}''' the Wikipedia cache of this template.<hr/></center><br/>
+{{documentation}}
+<!--Note: Metadata (interwiki links, etc) for this template should be put on [[Template:Tnavbar/doc]]-->
+</noinclude>

@@ -1,0 +1,1 @@
+{{#if:{{{birthname|}}}|{{{birthname|}}}<br />}}{{#if:{{{birth_date|{{{birthdate|}}}}}}|{{{birth_date|{{{birthdate}}}}}}<br />}}{{{location|{{{birth_place|{{{birthplace|}}}}}}}}}

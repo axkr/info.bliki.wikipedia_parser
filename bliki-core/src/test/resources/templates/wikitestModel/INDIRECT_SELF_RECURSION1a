@@ -1,0 +1,3 @@
+INDIRECT_SELF_RECURSION1a
+
+{{INDIRECT_SELF_RECURSION2a|{{#if:{{{1|}}}|{{#expr:{{{1}}}+1}}|1}}}}

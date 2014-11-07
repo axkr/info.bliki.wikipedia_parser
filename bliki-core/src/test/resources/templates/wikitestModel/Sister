@@ -1,0 +1,33 @@
+{{Side box
+| position = {{{position|}}}
+| image    =
+  {{#switch: {{{image|}}}
+  | none =    <!-- "image=none", do nothing -->
+  |      =    <!-- No image fed, select an image -->
+    [[Image:{{#switch: {{lc: {{{project|}}} }}
+    | commons                = Commons-logo.svg
+    | meta|metawiki|m        = Wikimedia Community Logo.svg
+    | wikibooks|wbk|wb|b     = Wikibooks-logo-en-noslogan.svg
+    | wikiquote|quote|wqt|q  = Wikiquote-logo-en.svg
+    | wikipedia|wp|w         = Wikipedia-logo.png
+    | wikisource|source|ws|s = Wikisource-logo.svg
+    | wiktionary|wkt|wdy|d   = Wiktionary-logo-en.svg
+    | wikinews|news|wnw|n    = Wikinews-logo.svg
+    | wikispecies|species    = Wikispecies-logo.svg
+    | wikiversity|wvy|v      = Wikiversity-logo.svg
+    | mediawiki|mw           = Mediawiki.png
+    | #default               = Wikimedia-logo.svg
+    }}|40x40px|link=|alt=
+    ]]
+  | #default = {{{image|}}}
+  }}
+| text       = {{{text}}}
+| below      = {{{below|}}}
+| imageright = {{{imageright|}}}
+| class      = plainlinks
+}}<noinclude>
+
+{{Documentation}}
+
+<!-- Add categories and interwikis to the /doc subpage, not here! -->
+</noinclude>

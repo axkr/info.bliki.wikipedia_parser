@@ -1,0 +1,8 @@
+| style="width: 100%; vertical-align:top; color:#000; border: 3px double #AAA; background-color: #ffffff; padding: 0.5em; margin: 0em;" colspan="2" |
+{| style="vertical-align: top; margin: 0em; width: 100% !important; width: auto; display: table !important; display: inline; background-color: transparent;"
+{{#if:{{{title|}}}|
+! colspan="2" style="background:#F0F0F0; margin: 0em; height: 1em; font-weight:bold; border:1px solid #AAA; text-align:left; color:#000;" {{!}} <div style="float:right;"></div><h1 style="text-align: left; font-size: 1.2em; border: none; margin: 0; padding: 1.5px 0 2px 4px;">'''{{{title}}}'''</h1></div>}}
+|-
+|
+{{{1}}}
+|}

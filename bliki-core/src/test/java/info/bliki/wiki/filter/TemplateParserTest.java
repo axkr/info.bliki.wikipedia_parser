@@ -9,8 +9,46 @@ import java.util.Locale;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TemplateParserTest extends FilterTestSupport {
+    private static final String TEST_STRING_01 = "[[Category:Interwiki templates|wikipedia]]\n" + "[[zh:Template:Wikipedia]]\n"
+            + "</noinclude><div class=\"sister-\n" + "wikipedia\"><div class=\"sister-project\"><div\n"
+            + "class=\"noprint\" style=\"clear: right; border: solid #aaa\n"
+            + "1px; margin: 0 0 1em 1em; font-size: 90%; background: #f9f9f9; width:\n"
+            + "250px; padding: 4px; text-align: left; float: right;\">\n" + "<div style=\"float: left;\">[[Image:Wikipedia-logo-\n"
+            + "en.png|44px|none| ]]</div>\n" + "<div style=\"margin-left: 60px;\">{{#if:{{{lang|}}}|\n"
+            + "{{{{{lang}}}}}&amp;nbsp;}}[[Wikipedia]] has {{#if:{{{cat|\n" + "{{{category|}}}}}}|a category|{{#if:{{{mul|{{{dab|\n"
+            + "{{{disambiguation|}}}}}}}}}|articles|{{#if:{{{mulcat|}}}|categories|an\n" + "article}}}}}} on:\n"
+            + "<div style=\"margin-left: 10px;\">'''''{{#if:{{{cat|\n"
+            + "{{{category|}}}}}}|[[w:{{#if:{{{lang|}}}|{{{lang}}}:}}Category:\n"
+            + "{{ucfirst:{{{cat|{{{category}}}}}}}}|{{ucfirst:{{{1|{{{cat|\n"
+            + "{{{category}}}}}}}}}}}]]|[[w:{{#if:{{{lang|}}}|{{{lang}}}:}}{{ucfirst:\n"
+            + "{{#if:{{{dab|{{{disambiguation|}}}}}}|{{{dab|{{{disambiguation}}}}}}|\n"
+            + "{{{1|{{PAGENAME}}}}}}}}}|{{ucfirst:{{{2|{{{1|{{{dab|{{{disambiguation|\n"
+            + "{{PAGENAME}}}}}}}}}}}}}}}}]]}}''''' {{#if:{{{mul|{{{mulcat|}}}}}}|and\n"
+            + "'''''{{#if:{{{mulcat|}}}|[[w:{{#if:{{{lang|}}}|{{{lang}}}:}}Category:\n"
+            + "{{ucfirst:{{{mulcat}}}}}|{{ucfirst:{{{mulcatlabel|{{{mulcat}}}}}}}}]]|\n"
+            + "[[w:{{#if:{{{lang|}}}|{{{lang}}}:}}{{ucfirst:{{{mul}}}}}|{{ucfirst:\n" + "{{{mullabel|{{{mul}}}}}}}}]]'''''}}|}}</div>\n"
+            + "</div>\n" + "</div>\n" + "</div></div><span class=\"interProject\">[[w:\n"
+            + "{{#if:{{{lang|}}}|{{{lang}}}:}}{{#if:{{{cat|{{{category|}}}}}}|\n"
+            + "Category:{{ucfirst:{{{cat|{{{category}}}}}}}}|{{ucfirst:{{{dab|\n"
+            + "{{{disambiguation|{{{1|{{PAGENAME}}}}}}}}}}}}}}}|Wikipedia {{#if:\n"
+            + "{{{lang|}}}|<sup>{{{lang}}}</sup>}}]]</span>{{#if:\n" + "{{{mul|{{{mulcat|}}}}}}|<span class=\"interProject\">[[w:\n"
+            + "{{#if:{{{lang|}}}|{{{lang}}}:}}{{#if:{{{mulcat|}}}|Category:{{ucfirst:\n"
+            + "{{{mulcat}}}}}|{{ucfirst:{{{mul}}}}}}}|Wikipedia {{#if:{{{lang|}}}|\n" + "<sup>{{{lang}}}</sup>}}]]</span>}}";
 
+
+    private static final String TEST_STRING_02 = " {{#if:{{{cat|\n" + "{{{category|}}}}}}|a category|{{#if:{{{mul|{{{dab|\n"
+            + "{{{disambiguation|}}}}}}}}}|articles|{{#if:{{{mulcat|}}}|categories|an\n" + "article}}}}}} on:\n";
     private static final String TEST_STRING_03 = "{{{1|{{PAGENAME}}}}}";
+    private static final String TEST_STRING_04 = "{{ucfirst:{{{cat|{{{category}}}}}}}}";
+    private static final String ONLYINCLUDE_DEMO = "abc<onlyinclude>def</onlyinclude>ghi<includeonly>jkl</includeonly><!---\n" + "-----\n"
+            + "----><noinclude><hr>\n" + ";Only active template content is above.\n" + "\n" + ";The verbatim active code within reads:\n"
+            + " abc'''&lt;onlyinclude>'''def'''&lt;/onlyinclude>'''ghi'''&lt;includeonly>'''jkl'''&lt;/includeonly>'''\n" + "\n"
+            + "If transposed, the only part included will be the string literal <code>def</code>. \n" + "\n" + "==Example==\n"
+            + "Including [[:Help:Template/onlyinclude demo]] yields only:\n" + " {{:Help:Template/onlyinclude demo}}\n" + "\n"
+            + "<includeonly>Then there's this other stuff one would think would be included... (I)\n" + "</includeonly><noinclude>\n"
+            + "\n" + "[[Category:Handbook templates]]</noinclude>\n" + "[[Category:Template documentation|{{PAGENAME}}]]\n"
+            + "</noinclude><includeonly>Then there's this other stuff one would think would be included (II)...</includeonly>\n" + "";
+
 
     @Test public void testWeather07() {
         assertThat(wikiModel.parseTemplates("{{WeatherBox03}}\n")).isEqualTo("20\n");
@@ -20,35 +58,23 @@ public class TemplateParserTest extends FilterTestSupport {
         assertThat(wikiModel.parseTemplates("{{WeatherBox03|show1=1}}\n")).isEqualTo("10\n");
     }
 
-    /**
-     * Issue 86
-     */
     @Test public void testSortnameDemo001() {
         assertThat(wikiModel.parseTemplates("{{sortname|The|Man with One Red Shoe}}")).isEqualTo("<span style=\"display:none;\">Man with One Red Shoe, The</span><span class=\"vcard\"><span class=\"fn\">[[The Man with One Red Shoe|The Man with One Red Shoe]]</span></span>[[Category:Articles with hCards]]");
     }
 
-    /**
-     * Issue 86
-     */
     @Test public void testNoincludeDemo001() {
         assertThat(wikiModel.parseTemplates("test1<noinclude> noincludetext</noinclude>\n"
                 + "\n" + "<includeonly>includeonlytext<noinclude> noincludetext</noinclude></includeonly>")).isEqualTo("test1 noincludetext\n" + "\n" + "");
     }
 
-    /**
-     * Issue 86
-     */
     @Test public void testNoincludeDemo002() {
         assertThat(wikiModel.render("test1<noinclude> noincludetext</noinclude>\n" + "\n"
                 + "<includeonly>includeonlytext<noinclude> noincludetext</noinclude></includeonly>", true)).isEqualTo("\n" + "<p>test1 noincludetext</p>\n" + "");
     }
 
-    /**
-     * Issue 86
-     */
-    @Test public void testOnlyicludeDemo001() {
+    @Test public void testOnlyincludeDemo001() {
         assertThat(wikiModel
-                .parseTemplates(WikiTestModel.ONLYINCLUDE_DEMO)).isEqualTo("abcdefghi<hr>\n" + ";Only active template content is above.\n" + "\n"
+                .parseTemplates(ONLYINCLUDE_DEMO)).isEqualTo("abcdefghi<hr>\n" + ";Only active template content is above.\n" + "\n"
                 + ";The verbatim active code within reads:\n"
                 + " abc'''&lt;onlyinclude>'''def'''&lt;/onlyinclude>'''ghi'''&lt;includeonly>'''jkl'''&lt;/includeonly>'''\n" + "\n"
                 + "If transposed, the only part included will be the string literal <code>def</code>. \n" + "\n" + "==Example==\n"
@@ -56,18 +82,12 @@ public class TemplateParserTest extends FilterTestSupport {
                 + "\n" + "[[Category:Handbook templates]]\n" + "[[Category:Template documentation|PAGENAME]]\n" + "\n" + "");
     }
 
-    /**
-     * Issue 86
-     */
-    @Test public void testOnlyicludeDemo002() {
-        assertThat(wikiModel.parseTemplates("{{OnlyicludeDemo}}")).isEqualTo("def");
+    @Test public void testOnlyincludeDemo002() {
+        assertThat(wikiModel.parseTemplates("{{OnlyincludeDemo}}")).isEqualTo("def");
     }
 
-    /**
-     * Issue 86
-     */
-    @Test public void testOnlyicludeDemo003() {
-        assertThat(wikiModel.render(WikiTestModel.ONLYINCLUDE_DEMO, true)).isEqualTo("\n"
+    @Test public void testOnlyincludeDemo003() {
+        assertThat(wikiModel.render(ONLYINCLUDE_DEMO, true)).isEqualTo("\n"
                 + "<p>abcdefghi</p><hr />\n"
                 + "\n"
                 + "<dl>\n"
@@ -88,41 +108,25 @@ public class TemplateParserTest extends FilterTestSupport {
                 + "</pre>\n" + "\n" + "\n" + "<p>\n" + "</p>\n" + "");
     }
 
-    /**
-     * Issue 86
-     */
-    @Test public void testOnlyicludeDemo004() {
-        assertThat(wikiModel.render("{{OnlyicludeDemo}}", false)).isEqualTo("\n" + "<p>def</p>");
+    @Test public void testOnlyincludeDemo004() {
+        assertThat(wikiModel.render("{{OnlyincludeDemo}}", false)).isEqualTo("\n" + "<p>def</p>");
     }
 
-    /**
-     * Issue 86
-     */
     @Test public void testInclude() {
         assertThat(wikiModel.parseTemplates("{{TestInclude}}")).isEqualTo("{| class=\"wikitable float-right\" style=\"width:30%; min-width:250px; max-width:400px; font-size:90%; margin-top:0px;\"\n"
                 + "|--\n" + "! colspan=\"2\" style=\"background-color:Khaki; font-size:110%;\" | [[Asteroid]]<br/>{{{Name}}}\n"
                 + "|--\n" + "|}");
     }
 
-    /**
-     * Issue 86
-     */
     @Test public void testInclude2() {
         assertThat(wikiModel.parseTemplates("{{TestInclude2}}")).isEqualTo("{| class=\"wikitable float-right\" style=\"width:30%; min-width:250px; max-width:400px; font-size:90%; margin-top:0px;\"\n"
                 + "|--\n" + "! colspan=\"2\" style=\"background-color:Khaki; font-size:110%;\" | [[Asteroid]]<br/>{{{Name}}}\n"
                 + "|--\n" + "|}");
     }
 
-    /**
-     * Issue 86
-     */
     @Test public void testInclude3() {
         assertThat(wikiModel.parseTemplates("{{TestInclude3}}")).isEqualTo("text");
     }
-
-    /**
-     * Issue 86
-     */
     @Test public void testInclude4() {
         assertThat(wikiModel.parseTemplates("{{TestInclude4}}")).isEqualTo("Text ");
     }
@@ -394,39 +398,32 @@ public class TemplateParserTest extends FilterTestSupport {
     }
 
     @Test public void testTemplateCall1() {
-        // see method WikiTestModel#getRawWikiContent()
         assertThat(wikiModel.parseTemplates("start-{{:Include Page}}-end", false)).isEqualTo("start-an include page-end");
     }
 
     @Test public void testTemplateCall2() {
-        // see method WikiTestModel#getRawWikiContent()
         assertThat(wikiModel.parseTemplates(
                 "start-{{templ1|a=3|b}}-end start-{{templ2|sdfsf|klj}}-end", false)).isEqualTo("start-b) First: 3 Second: b-end start-c) First: sdfsf Second: klj-end");
     }
 
     @Test public void testTemplateCall3() {
-        // see method WikiTestModel#getRawWikiContent()
         assertThat(wikiModel.parseTemplates("{{templ1\n"
                 + " | a = Test1\n" + " |{{templ2|sdfsf|klj}} \n" + "}}\n" + "", false)).isEqualTo("b) First: Test1 Second: c) First: sdfsf Second: klj \n" + "\n" + "");
     }
 
     @Test public void testTemplateCall4() {
-        // see method WikiTestModel#getRawWikiContent()
         assertThat(wikiModel.parseTemplates("{{tl|example}}", false)).isEqualTo("[[:Template:[[Template:example|example]]]]");
     }
 
     @Test public void testTemplateCall5() {
-        // see method WikiTestModel#getRawWikiContent()
         assertThat(wikiModel.parseTemplates("({{pron-en|dəˌpeʃˈmoʊd}})", false)).isEqualTo("(pronounced <span title=\"Pronunciation in the International Phonetic Alphabet (IPA)\" class=\"IPA\">[[WP:IPA for English|/dəˌpeʃˈmoʊd/]]</span>)");
     }
 
     @Test public void testTemplateParameter01() {
-        // see method WikiTestModel#getTemplateContent()
         assertThat(wikiModel.parseTemplates("start-{{Test|arg1|arg2}}-end", false)).isEqualTo("start-a) First: arg1 Second: arg2-end");
     }
 
     @Test public void testTemplateParameter02() {
-        // see method WikiTestModel#getTemplateContent()
         assertThat(wikiModel
                 .parseTemplates(
                         "start- {{cite web|url=http://www.etymonline.com/index.php?search=hello&searchmode=none|title=Online Etymology Dictionary}} -end",
@@ -434,23 +431,19 @@ public class TemplateParserTest extends FilterTestSupport {
     }
 
     @Test public void testTemplateParameter03() {
-        // see method WikiTestModel#getTemplateContent()
         assertThat(wikiModel.parseTemplates("start- {{reflist|2}} -end", false)).isEqualTo("start- <div class=\"references-small\" style=\"-moz-column-count:2; -webkit-column-count:2; column-count:2;\">\n"
                 + "<references /></div> -end");
     }
 
     @Test public void testTemplateParameter04() {
-        // see method WikiTestModel#getTemplateContent()
         assertThat(wikiModel.parseTemplates(
                 "start-<nowiki>{{Test|arg1|arg2}}-</noWiKi>end", false)).isEqualTo("start-<nowiki>{{Test|arg1|arg2}}-</noWiKi>end");
     }
 
     @Test public void testTemplateParameter05() {
-        // see method WikiTestModel#getTemplateContent()
         assertThat(wikiModel.parseTemplates("start- <!-- {{Test|arg1|arg2}} \n --->end", false)).isEqualTo("start- end");
     }
 
-    //
     @Test public void testTemplate06() {
         assertThat(wikiModel.parseTemplates("{{#ifeq: A | B | A equals B | A is not equal B}}", false)).isEqualTo("A is not equal B");
     }
@@ -467,36 +460,9 @@ public class TemplateParserTest extends FilterTestSupport {
         assertThat(wikiModel.parseTemplates("{{recursion}}", false)).isEqualTo("<span class=\"error\">Template loop detected: <strong class=\"selflink\">Template:recursion</strong></span>");
     }
 
-    private static final String TEST_STRING_01 = "[[Category:Interwiki templates|wikipedia]]\n" + "[[zh:Template:Wikipedia]]\n"
-            + "</noinclude><div class=\"sister-\n" + "wikipedia\"><div class=\"sister-project\"><div\n"
-            + "class=\"noprint\" style=\"clear: right; border: solid #aaa\n"
-            + "1px; margin: 0 0 1em 1em; font-size: 90%; background: #f9f9f9; width:\n"
-            + "250px; padding: 4px; text-align: left; float: right;\">\n" + "<div style=\"float: left;\">[[Image:Wikipedia-logo-\n"
-            + "en.png|44px|none| ]]</div>\n" + "<div style=\"margin-left: 60px;\">{{#if:{{{lang|}}}|\n"
-            + "{{{{{lang}}}}}&amp;nbsp;}}[[Wikipedia]] has {{#if:{{{cat|\n" + "{{{category|}}}}}}|a category|{{#if:{{{mul|{{{dab|\n"
-            + "{{{disambiguation|}}}}}}}}}|articles|{{#if:{{{mulcat|}}}|categories|an\n" + "article}}}}}} on:\n"
-            + "<div style=\"margin-left: 10px;\">'''''{{#if:{{{cat|\n"
-            + "{{{category|}}}}}}|[[w:{{#if:{{{lang|}}}|{{{lang}}}:}}Category:\n"
-            + "{{ucfirst:{{{cat|{{{category}}}}}}}}|{{ucfirst:{{{1|{{{cat|\n"
-            + "{{{category}}}}}}}}}}}]]|[[w:{{#if:{{{lang|}}}|{{{lang}}}:}}{{ucfirst:\n"
-            + "{{#if:{{{dab|{{{disambiguation|}}}}}}|{{{dab|{{{disambiguation}}}}}}|\n"
-            + "{{{1|{{PAGENAME}}}}}}}}}|{{ucfirst:{{{2|{{{1|{{{dab|{{{disambiguation|\n"
-            + "{{PAGENAME}}}}}}}}}}}}}}}}]]}}''''' {{#if:{{{mul|{{{mulcat|}}}}}}|and\n"
-            + "'''''{{#if:{{{mulcat|}}}|[[w:{{#if:{{{lang|}}}|{{{lang}}}:}}Category:\n"
-            + "{{ucfirst:{{{mulcat}}}}}|{{ucfirst:{{{mulcatlabel|{{{mulcat}}}}}}}}]]|\n"
-            + "[[w:{{#if:{{{lang|}}}|{{{lang}}}:}}{{ucfirst:{{{mul}}}}}|{{ucfirst:\n" + "{{{mullabel|{{{mul}}}}}}}}]]'''''}}|}}</div>\n"
-            + "</div>\n" + "</div>\n" + "</div></div><span class=\"interProject\">[[w:\n"
-            + "{{#if:{{{lang|}}}|{{{lang}}}:}}{{#if:{{{cat|{{{category|}}}}}}|\n"
-            + "Category:{{ucfirst:{{{cat|{{{category}}}}}}}}|{{ucfirst:{{{dab|\n"
-            + "{{{disambiguation|{{{1|{{PAGENAME}}}}}}}}}}}}}}}|Wikipedia {{#if:\n"
-            + "{{{lang|}}}|<sup>{{{lang}}}</sup>}}]]</span>{{#if:\n" + "{{{mul|{{{mulcat|}}}}}}|<span class=\"interProject\">[[w:\n"
-            + "{{#if:{{{lang|}}}|{{{lang}}}:}}{{#if:{{{mulcat|}}}|Category:{{ucfirst:\n"
-            + "{{{mulcat}}}}}|{{ucfirst:{{{mul}}}}}}}|Wikipedia {{#if:{{{lang|}}}|\n" + "<sup>{{{lang}}}</sup>}}]]</span>}}";
 
     @Test public void testNestedIf01() {
-        // String temp = StringEscapeUtils.unescapeHtml(TEST_STRING_01);
-        String temp = TEST_STRING_01;
-        assertThat(wikiModel.parseTemplates(temp, false)).isEqualTo("[[Category:Interwiki templates|wikipedia]]\n" + "[[zh:Template:Wikipedia]]\n"
+        assertThat(wikiModel.parseTemplates(TEST_STRING_01, false)).isEqualTo("[[Category:Interwiki templates|wikipedia]]\n" + "[[zh:Template:Wikipedia]]\n"
                 + "</noinclude><div class=\"sister-\n" + "wikipedia\"><div class=\"sister-project\"><div\n"
                 + "class=\"noprint\" style=\"clear: right; border: solid #aaa\n"
                 + "1px; margin: 0 0 1em 1em; font-size: 90%; background: #f9f9f9; width:\n"
@@ -506,8 +472,6 @@ public class TemplateParserTest extends FilterTestSupport {
                 + "</div></div><span class=\"interProject\">[[w:\n" + "PAGENAME|Wikipedia ]]</span>");
     }
 
-    private static final String TEST_STRING_02 = " {{#if:{{{cat|\n" + "{{{category|}}}}}}|a category|{{#if:{{{mul|{{{dab|\n"
-            + "{{{disambiguation|}}}}}}}}}|articles|{{#if:{{{mulcat|}}}|categories|an\n" + "article}}}}}} on:\n";
 
     @Test public void testNestedIf02() {
         assertThat(wikiModel.parseTemplates(TEST_STRING_02, false)).isEqualTo(" an\n" + "article on:\n" + "");
@@ -517,11 +481,10 @@ public class TemplateParserTest extends FilterTestSupport {
         assertThat(wikiModel.parseTemplates(TEST_STRING_03, false)).isEqualTo("PAGENAME");
     }
 
-    private static final String TEST_STRING_04 = "{{ucfirst:{{{cat|{{{category}}}}}}}}";
 
     @Test public void testNestedIf04() {
         assertThat(wikiModel.parseTemplates(TEST_STRING_04, false)).isEqualTo("{{{category}}}");
-    }//
+    }
 
     @Test public void testSwitch001() {
         assertThat(wikiModel.parseTemplates("{{ #switch: A | a=lower | A=UPPER  }}", false)).isEqualTo("UPPER");

@@ -1,0 +1,25 @@
+<onlyinclude>pronounced <span title="Pronunciation in the International Phonetic Alphabet (IPA)" class="IPA">[[WP:IPA for English|/{{{1}}}/]]</span></onlyinclude>
+
+==Example==
+
+This code:
+
+: <code><nowiki>A battleship, {{pron-en|ˈbætəlʃɪp}}, is ...</nowiki></code>
+
+will display:
+
+: A battleship, {{pron-en|ˈbætəlʃɪp}}, is ...
+
+==Usage==
+{{usage of IPA templates}}
+
+<!-- PLEASE ADD CATEGORIES BELOW THIS LINE, THANKS. -->
+
+[[Category:IPA templates|{{PAGENAME}}]]
+
+<!-- PLEASE ADD INTERWIKIS BELOW THIS LINE, THANKS. -->
+<noinclude>
+[[ar:PronEng]]
+[[tl:Template:PronEng]]
+[[simple:Template:IPA-en]]
+</noinclude>

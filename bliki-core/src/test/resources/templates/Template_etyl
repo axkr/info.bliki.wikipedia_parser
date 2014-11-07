@@ -1,5 +1,0 @@
-{{#invoke:etymology language|show}}<!--
-
---><includeonly>{{#if:{{{2|}}}||[[Category:Language code missing/etyl]]}}</includeonly><!--
-
---><noinclude>{{documentation}}</noinclude>

@@ -1,0 +1,10 @@
+{{sister
+| position = {{{position|}}}
+| project  = commons
+| text     =
+Wikimedia Commons has media related to: '''''{{sec link auto| commons | {{{1| Special:Search/{{PAGENAME}} }}} | {{{2| {{{1| {{PAGENAME}} }}} }}} }}'''''
+}}<noinclude>
+
+{{documentation}}
+<!-- Add categories and interwikis to the /doc subpage, not here! -->
+</noinclude>

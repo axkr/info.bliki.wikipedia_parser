@@ -1,0 +1,3 @@
+<div class="rellink{{#if:{{{extraclasses|}}}|<nowiki> </nowiki>{{{extraclasses}}}}}">{{{1}}}</div><noinclude>
+{{documentation}}
+</noinclude>

@@ -1,0 +1,25 @@
+<includeonly><div class="noprint plainlinks hlist navbar {{#if:{{{mini|}}}|mini}}" style="{{{style|}}}"><!--
+
+-->{{#if:{{{mini|}}}{{{plain|}}}|<!--nothing-->|<!--else:
+--><span style="word-spacing:0;{{{fontstyle|}}}">{{{text|This box:}}} </span>}}<!--
+
+-->{{#if:{{{brackets|}}}|<span style="margin-right:-0.125em;{{{fontstyle|}}}">&#91;</span>}}<!--
+
+--><ul><!--
+--><li class="nv-view">[[{{transclude|{{{1}}}}}|<span title="View this template" <!--
+-->style="{{{fontstyle|}}}">{{#if:{{{mini|}}}|v|view}}</span>]]</li><!--
+
+--><li class="nv-talk">[[{{TALKPAGENAME:{{transclude|{{{1}}}}}}}|<span title="Discuss this template" <!--
+-->style="{{{fontstyle|}}}">{{#if:{{{mini|}}}|t|talk}}</span>]]</li><!--
+
+-->{{#if:{{{noedit|}}}|<!--nothing-->|<!--else:
+--><li class="nv-edit">[{{fullurl:{{transclude|{{{1}}}}}|action=edit}} <span title="Edit this template" <!--
+-->style="{{{fontstyle|}}}">{{#if:{{{mini|}}}|e|edit}}</span>]</li>}}<!--
+--></ul><!--
+
+-->{{#if:{{{brackets|}}}|<span style="margin-left:-0.125em;{{{fontstyle|}}}">&#93;</span>}}<!--
+
+--></div></includeonly><noinclude>
+
+{{documentation}}
+</noinclude>

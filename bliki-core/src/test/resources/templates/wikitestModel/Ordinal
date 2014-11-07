@@ -1,0 +1,15 @@
+{{{1}}}{{{{{|safesubst:}}}#ifeq:{{{sup}}}|yes
+ |<sup>
+}}{{{{{|safesubst:}}}#switch:{{{{{|safesubst:}}}#expr:abs({{{1}}}) mod 100}}
+  |11|12|13=th
+  |{{{{{|safesubst:}}}#switch:{{{{{|safesubst:}}}#expr:abs{{{1}}} mod 10}}
+   |1=st
+   |2={{{{{|safesubst:}}}#ifeq:{{{2|}}}|d|d|nd}}
+   |3={{{{{|safesubst:}}}#ifeq:{{{2|}}}|d|d|rd}}
+   |th
+  }}
+ }}{{{{{|safesubst:}}}#ifeq:{{{sup}}}|yes
+ |</sup>
+}}<noinclude>
+{{documentation}}
+</noinclude>

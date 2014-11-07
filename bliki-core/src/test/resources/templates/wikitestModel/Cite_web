@@ -1,0 +1,65 @@
+<includeonly>{{
+#if: {{#if: {{{url|}}} | {{#if: {{{title|}}} |1}}}}
+  ||Fehler beim Aufruf der [[Vorlage:cite web]]: Die Parameter '''url''' und '''title''' müssen vorhanden sein.
+}}{{
+#if: {{{archiveurl|}}}{{{archivedate|}}}
+  | {{#if: {{#if: {{{archiveurl|}}}| {{#if: {{{archivedate|}}} |1}}}}
+    ||Fehler beim Aufruf der [[Vorlage:cite web]]: Die Parameter '''archiveurl''' und '''archivedate''' müssen beide vorhanden sein oder müssen beide fehlen.
+}}
+}}{{#if: {{{author|}}}{{{last|}}}
+  | {{#if: {{{authorlink|}}}
+    | [[{{{authorlink}}}|{{#if: {{{last|}}}
+      | {{{last}}}{{#if: {{{first|}}} | , {{{first}}} }}
+      | {{{author}}}
+    }}]]
+    | {{#if: {{{last|}}}
+      | {{{last}}}{{#if: {{{first|}}} | , {{{first}}} }}
+      | {{{author}}}
+    }}
+  }}
+}}{{#if: {{{author|}}}{{{last|}}}
+  | {{#if: {{{coauthors|}}}| <nowiki>;</nowiki>&#32;{{{coauthors}}} }}
+}}{{#if: {{{author|}}}{{{last|}}}|
+    {{#if: {{{date|}}}
+    | &#32;({{#iferror:{{FormatDate|{{{date}}}}}|{{{date}}}}})
+    | {{#if: {{{year|}}}
+      | {{#if: {{{month|}}}
+        | &#32;({{{month}}} {{{year}}})
+        | &#32;({{{year}}})
+      }}
+    }}
+  |}}
+}}{{#if: {{{last|}}}{{{author|}}}
+  | .&#32;}}{{#if: {{{archiveurl|}}}
+    | {{#if: {{{archiveurl|}}} | {{#if: {{{title|}}} | ''[{{{archiveurl}}} {{{title}}}]'' }}}}
+    | {{#if: {{{url|}}} | {{#if: {{{title|}}} | ''[{{{url}}} {{{title}}}]'' }}}}
+}}{{#if: {{{language|}}} | &#32;<span style="font-size: 0.90em; color:#555;">({{{language}}})</span>
+}}{{#if: {{{format|}}}
+  | &#32;({{{format|}}})
+}}{{#if: {{{work|}}}
+  | .&#32;''{{{work}}}''
+}}{{#if: {{{pages|}}}
+  | &#32;S. {{{pages}}}
+}}{{#if: {{{publisher|}}}
+  | .&#32;{{{publisher}}}{{#if: {{{author|}}}{{{last|}}}
+    |
+    | {{#if: {{{date|}}}{{{year|}}}{{{month|}}} || }}
+  }}
+}}{{#if: {{{author|}}}{{{last|}}}
+  ||{{#if: {{{date|}}}
+    | &#32;({{#iferror:{{FormatDate|{{{date}}}}}|{{{date}}}}})
+    | {{#if: {{{year|}}}
+      | {{#if: {{{month|}}}
+        | &#32;({{{month}}} {{{year}}})
+        | &#32;({{{year}}})
+      }}
+    }}
+  }}
+}}.{{#if: {{{archivedate|}}}
+  | &#32;Archiviert vom [{{{url}}} Original] am {{#iferror: {{FormatDate|{{{archivedate}}} }} | {{{archivedate}}} }}.
+}}{{#if: {{{accessdate|}}}
+  | &#32;Abgerufen am {{#iferror: {{FormatDate|{{{accessdate}}} }} | {{{accessdate}}} }}.
+}}{{#if: {{{quote|}}}
+  | &nbsp;„{{{quote}}}“
+}}{{#if:{{{accessmonthday|}}}{{{accessyear|}}}|[[Kategorie:Seiten, die ignorierte Vorlagenargumente enthalten|{{PAGENAME}}]]}}</includeonly><noinclude>
+{{Dokumentation}}</noinclude>

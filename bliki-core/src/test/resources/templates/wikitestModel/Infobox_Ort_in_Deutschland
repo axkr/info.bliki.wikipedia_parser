@@ -1,0 +1,28 @@
+{| class="float-right" style="width:290px; font-size:90%; background:#FAFAFA;  border:1px solid #bbb; margin:0px 0px 1em 1em; border-collapse:collapse;" summary="Infobox"
+|-
+| colspan="2" style="background:#ffffff; text-align:center; font-size:135%;" | '''{{#if: {{{Name|}}} | {{{Name}}} | {{PAGENAME}} }}'''</font></br><small>{{{AndereNamen|}}}</small>
+|- class="hintergrundfarbe2"
+| colspan="2" style="font-weight:bold; padding-left:8px; border-top:solid 1px #bbb;" |
+|- class="hintergrundfarbe2" style="text-align: center;"
+| style="width: 50%;" | [[Bild:Sin escudo.svg|120px|Wappn fêîht]]
+| align="center" style="width: 50%;" | {{#if: {{{Karte|}}} | [[Bild:{{{Karte}}}|140x175px|Deitschlandkartn, Position vo {{#if: {{{Name|}}} | {{{Name}}} | {{PAGENAME}} }} heavoghobn]] | {{#if: {{{lat_deg|}}} |
+{{Lageplan
+|marker     = reddot.svg
+|markersize = 5
+|markertext = {{#if: {{{Name|}}} | {{{Name}}} | {{PAGENAME}} }}
+|pos_y      = {{#expr: (55.1 - {{{lat_deg|52.5}}} - {{{lat_min|0}}} / 60) * 100 / 7.9}}
+|pos_x      = {{#expr: ({{{lon_deg|13.4}}} + {{{lon_min|0}}} / 60) * 10 - 55}}
+|map        = Karte Deutschland.svg
+|mapsize_x  = 140
+|mapsize_y  = 175
+|maptext    = Deitschlandkartn, Position vo {{#if: {{{Name|}}} | {{{Name}}} | {{PAGENAME}} }} heavoghom
+|warning    = [[Bild:Missing Map of Germany.png|140px|Koordinaten san außerhoib vom darstellbarn Bereich]]
+}}
+| [[Bild:Karte Deutschland.png|140px|Koordinatn san net da]] }}
+}}
+|-
+! colspan="2" style="background-color:#ABCDEF; border:1px solid #bbb;" | Basisdatn
+|- class="hintergrundfarbe2"
+| '''[[Bundesland (Deutschland)|Bundesland]]''': || [[{{{Bundesland|}}}{{#if: {{{Bundesland im Dialekt|}}}|{{!}}{{{Bundesland im Dialekt}}}}}]]
+|- class="hintergrundfarbe2"
+|}

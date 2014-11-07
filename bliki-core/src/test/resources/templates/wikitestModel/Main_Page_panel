@@ -1,0 +1,12 @@
+{| style="width: 100%; height: auto; border: 1px solid #88A; background-color: #ACF; vertical-align: top; margin: 0em 0em 0.5em 0em; border-spacing: 0.6em;" cellspacing="6"
+|-
+{{{1}}}{{#if:{{{2|}}}|
+{{!}}-
+{{{2}}}{{#if:{{{3|}}}|
+{{!}}-
+{{{3}}}{{#if:{{{4|}}}|
+{{!}}-
+{{{4}}}{{#if:{{{5|}}}|
+{{!}}-
+{{{5}}}}}}}}}}}
+|}

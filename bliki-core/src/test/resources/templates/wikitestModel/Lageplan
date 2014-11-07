@@ -1,0 +1,3 @@
+{{#if: {{{map|}}} | {{{!}} border="0" cellspacing="0" cellpadding="0" style="margin:0 0 0 0; border-style:none; border-width:0px; border-collapse:collapse; empty-cells:show"
+{{!}}<div style="position: relative;"><div style="font-size: {{{markersize|5}}}px; position: absolute; display: block; left:{{#expr: ({{{mapsize_x|140}}}*{{{pos_x|3}}}/100  - {{{markersize|5}}} /2 ) round 0 }}px; top:{{#expr: ({{{mapsize_y|175}}}*{{{pos_y|3}}}/100 - {{{markersize|5}}} /2 ) round 0 }}px; padding:0;">[[Bild:{{{marker|Reddot.svg}}}|{{{markersize|5}}}px|{{{markertext|}}}]]</div>[[Bild:{{{map|Karte Deutschland.png}}}|{{{mapsize_x|140}}}x{{{mapsize_y|175}}}px|{{{maptext|}}}]]</div>
+{{!}}} }}

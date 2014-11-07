@@ -9,6 +9,12 @@ import java.util.Locale;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TemplateFilterTest extends FilterTestSupport {
+    private static final String SELF_RECURSION = "Line1\n\n{{SELF_RECURSION}}";
+    private static final String SELF_RECURSION1 = "Line1\n\n{{{{{1}}}}}";
+    private static final String INDIRECT_SELF_RECURSION1 = "INDIRECT_SELF_RECURSION1\n\n{{INDIRECT_SELF_RECURSION2}}";
+    private static final String INDIRECT_SELF_RECURSION2 = "INDIRECT_SELF_RECURSION2\n\n{{INDIRECT_SELF_RECURSION1}}";
+    private static final String INDIRECT_SELF_RECURSION1a = "INDIRECT_SELF_RECURSION1a\n\n{{INDIRECT_SELF_RECURSION2a|{{#if:{{{1|}}}|{{#expr:{{{1}}}+1}}|1}}}}";
+    private static final String INDIRECT_SELF_RECURSION2a = "INDIRECT_SELF_RECURSION2a\n\n{{INDIRECT_SELF_RECURSION1a|{{#if:{{{1|}}}|{{#expr:{{{1}}}+1}}|1}}}}";
 
     /**
      * Issue124 - Image URL parsing broken in some cases
@@ -1167,7 +1173,7 @@ public class TemplateFilterTest extends FilterTestSupport {
      */
     @Test public void testSelfRecusion001() {
         // https://en.wikipedia.org/wiki/Help:Template#Nesting_templates
-        assertThat(wikiModel.render(WikiTestModel.SELF_RECURSION, false)).isEqualTo("\n<p>Line1</p>"
+        assertThat(wikiModel.render(SELF_RECURSION, false)).isEqualTo("\n<p>Line1</p>"
                 + "\n<p>Line1</p>"
                 + "\n<p><span class=\"error\">Template loop detected: <strong class=\"selflink\">Template:SELF_RECURSION</strong></span></p>");
     }
@@ -1212,7 +1218,7 @@ public class TemplateFilterTest extends FilterTestSupport {
      */
     @Test public void testIndirectSelfRecusion001() {
         // https://en.wikipedia.org/wiki/Help:Template#Nesting_templates
-        assertThat(wikiModel.render(WikiTestModel.INDIRECT_SELF_RECURSION1, false)).isEqualTo("\n"
+        assertThat(wikiModel.render(INDIRECT_SELF_RECURSION1, false)).isEqualTo("\n"
                 + "<p>INDIRECT_SELF_RECURSION1</p>\n"
                 + "<p>INDIRECT_SELF_RECURSION2</p>\n"
                 + "<p>INDIRECT_SELF_RECURSION1</p>\n"
@@ -1224,7 +1230,7 @@ public class TemplateFilterTest extends FilterTestSupport {
      */
     @Test public void testIndirectSelfRecusion002() {
         // https://en.wikipedia.org/wiki/Help:Template#Nesting_templates
-        assertThat(wikiModel.render(WikiTestModel.INDIRECT_SELF_RECURSION2, false)).isEqualTo("\n"
+        assertThat(wikiModel.render(INDIRECT_SELF_RECURSION2, false)).isEqualTo("\n"
                 + "<p>INDIRECT_SELF_RECURSION2</p>\n"
                 + "<p>INDIRECT_SELF_RECURSION1</p>\n"
                 + "<p>INDIRECT_SELF_RECURSION2</p>\n"
@@ -1236,7 +1242,7 @@ public class TemplateFilterTest extends FilterTestSupport {
      */
     @Test public void testIndirectSelfRecusion001a() {
         // https://en.wikipedia.org/wiki/Help:Template#Nesting_templates
-        assertThat(wikiModel.render(WikiTestModel.INDIRECT_SELF_RECURSION1a, false)).isEqualTo("\n"
+        assertThat(wikiModel.render(INDIRECT_SELF_RECURSION1a, false)).isEqualTo("\n"
                 + "<p>INDIRECT_SELF_RECURSION1a</p>\n"
                 + "<p>INDIRECT_SELF_RECURSION2a</p>\n"
                 + "<p>INDIRECT_SELF_RECURSION1a</p>\n"
@@ -1248,7 +1254,7 @@ public class TemplateFilterTest extends FilterTestSupport {
      */
     @Test public void testIndirectSelfRecusion002a() {
         // https://en.wikipedia.org/wiki/Help:Template#Nesting_templates
-        assertThat(wikiModel.render(WikiTestModel.INDIRECT_SELF_RECURSION2a, false)).isEqualTo("\n"
+        assertThat(wikiModel.render(INDIRECT_SELF_RECURSION2a, false)).isEqualTo("\n"
                 + "<p>INDIRECT_SELF_RECURSION2a</p>\n"
                 + "<p>INDIRECT_SELF_RECURSION1a</p>\n"
                 + "<p>INDIRECT_SELF_RECURSION2a</p>\n"

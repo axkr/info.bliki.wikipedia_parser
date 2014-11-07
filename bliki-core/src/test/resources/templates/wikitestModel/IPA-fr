@@ -1,0 +1,29 @@
+<onlyinclude><small>{{#if: {{{2|}}}|{{#switch: {{{2}}}|lang=French:&nbsp;|pron=pronounced:&nbsp;|IPA=IPA:&nbsp;|=|French pronunciation:&nbsp;}}|{{#if: {{{2}}}|French pronunciation:&nbsp;}}}}</small><span title="Pronunciation in IPA" class="IPA">[[WP:IPA for French|[{{{1}}}]]]</span><small>{{#if:{{{3|}}}|&nbsp; {{nowrap|([[File:Speaker Icon.svg|13px|link=|alt=]] [[:Media:{{{3|}}}|listen]])}}}}</small></onlyinclude>
+{{pp-template|small=yes}}
+
+==Usage==
+This template formats IPA transcriptions and links them to [[WP:IPA for French]]. The transcription should match the conventions of that key; for narrower dialect transcriptions, use {{tl|IPA-all}}, which links to a more complete IPA key.
+
+The first cell in the template is for the transcription, and a second optional cell is a switch that controls the lede. With no second value, the lede ''French pronunciation:'' appears:
+*<code><nowiki>{{IPA-fr|o}}</nowiki></code> → {{IPA-fr|o}}
+*<code><nowiki>{{IPA-fr|o|pron}}</nowiki></code> → {{IPA-fr|o|pron}}
+*<code><nowiki>{{IPA-fr|o|lang}}</nowiki></code> → {{IPA-fr|o|lang}}
+*<code><nowiki>{{IPA-fr|o|IPA}}</nowiki></code> → {{IPA-fr|o|IPA}}
+*<code><nowiki>{{IPA-fr|o|}}</nowiki></code> → {{IPA-fr|o|}}
+
+Any of these may be combined with a sound file in an optional third cell:
+*<code><nowiki>{{IPA-fr|o|IPA|Fr-eau.ogg}}</nowiki></code> → {{IPA-fr|o|IPA|Fr-eau.ogg}}
+
+For the default lede, however, the placeholder ‹-› is required in the second cell:
+*<code><nowiki>{{IPA-fr|o|-|Fr-eau.ogg}}</nowiki></code> → {{IPA-fr|o|-|Fr-eau.ogg}}
+
+{{usage of IPA templates}}
+
+
+
+<!-- PLEASE ADD CATEGORIES BELOW THIS LINE, THANKS. -->
+
+[[Category:IPA templates|{{PAGENAME}}]]
+
+<!-- PLEASE ADD INTERWIKIS BELOW THIS LINE, THANKS. -->
+[[id:Templat:IPA-fr]]

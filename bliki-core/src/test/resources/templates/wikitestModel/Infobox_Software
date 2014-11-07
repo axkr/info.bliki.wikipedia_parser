@@ -1,0 +1,120 @@
+<includeonly>{| class="infobox" cellspacing="5" style="width: 21em; font-size: 90%; text-align: left;"
+! colspan="2" style="text-align: center; font-size: 130%;" | {{{title|{{{name|{{PAGENAME}}}}}}}}
+|-
+{{#if:{{{logo|}}}|
+{{!}} colspan="2" style="text-align: center;" {{!}} {{{logo|}}}
+{{!}}-
+}}
+{{#if:{{{collapsible|}}}|
+{{!}} colspan="2" {{!}}
+{{hidden|Screenshot|{{{screenshot}}}{{#if:{{{caption|}}}|<br />{{{caption|}}}}}|bg1=#ccccff|ta2=center}}
+{{!}}-
+|
+{{#if:{{{screenshot|}}}|
+{{!}} colspan="2" style="text-align: center;" {{!}} {{{screenshot|}}}{{#if:{{{caption|}}}|<br />{{{caption|}}}}}
+{{!}}-
+}}
+}}
+{{#if:{{{author|}}}|
+! [[Software design|Design by]]
+{{!}} {{{author|}}}
+{{!}}-
+}}
+{{#if:{{{developer|}}}|
+! [[Software developer|Developed by]]
+{{!}} {{{developer|}}}
+{{!}}-
+}}
+{{#if:{{{released|}}}|
+! Initial release
+{{!}} {{{released|}}}
+{{!}}-
+}}
+{{#if:{{{frequently updated|{{{frequently_updated|}}}}}}|<!-- then -->
+{{#ifexist:Template:Latest stable release/{{{name|{{PAGENAME}}}}}|
+! [[Software release|Stable release]]
+{{!}} {{Latest stable release/{{{name|{{PAGENAME}}}}}}} <sub class="plainlinks">[[{{SERVER}}{{localurl:Template:Latest_stable_release/{{{name|{{PAGENAME}}}}}|action=edit&preload=Template:LSR/syntax}} +/−]]</sub>
+{{!}}-
+}}
+{{#ifexist:Template:Latest preview release/{{{name|{{PAGENAME}}}}}|
+! [[Software release|Preview release]]
+{{!}} {{Latest preview release/{{{name|{{PAGENAME}}}}}}} <sub class="plainlinks">[[{{SERVER}}{{localurl:Template:Latest_preview_release/{{{name|{{PAGENAME}}}}}|action=edit&preload=Template:LPR/syntax}} +/−]]</sub>
+{{!}}-
+}}
+|<!-- else -->
+{{#if:{{{latest release version|{{{latest_release_version|}}}}}}|
+! [[Software release life cycle|Latest release]]
+{{!}} {{{latest release version|{{{latest_release_version|}}}}}} {{#if:{{{latest release date|{{{latest_release_date|}}}}}}| / {{{latest release date|{{{latest_release_date|}}}}}}}}
+{{!}}-
+}}
+{{#if:{{{latest preview version|{{{latest_preview_version|}}}}}}|
+! [[Software release life cycle|Preview release]]
+{{!}} {{{latest preview version|{{{latest_preview_version|}}}}}} {{#if:{{{latest preview date|{{{latest_preview_date|}}}}}}| / {{{latest preview date|{{{latest_preview_date|}}}}}}}}
+{{!}}-
+}}
+}}
+{{#if:{{{programming language|{{{programming_language|}}}}}}|
+! [[Programming language|Written in]]
+{{!}} {{{programming language|{{{programming_language|}}}}}}
+{{!}}-
+}}
+{{#if:{{{operating system|{{{operating_system|}}}}}}|
+! [[Operating system|OS]]
+{{!}} {{{operating system|{{{operating_system}}}}}}
+{{!}}-
+}}
+{{#if:{{{platform|}}}|
+! [[Platform (computing)|Platform]]
+{{!}} {{{platform|}}}
+{{!}}-
+}}
+{{#if:{{{size|}}}|
+! [[File size|Size]]
+{{!}} {{{size|}}}
+{{!}}-
+}}
+{{#if:{{{language|}}}|
+! [[Language|Available in]]
+{{!}} {{{language|}}}
+{{!}}-
+}}
+{{#if:{{{status|}}}|
+! Development status
+{{!}} {{{status|}}}
+{{!}}-
+}}
+{{#if:{{{genre|}}}|
+! [[List of software categories|Genre]]
+{{!}} {{{genre|}}}
+{{!}}-
+}}
+{{#if:{{{license|}}}|
+! [[Software license|License]]
+{{!}} {{{license|}}}
+{{!}}-
+}}
+{{#if:{{{licence|}}}|
+! [[Software license|Licence]]
+{{!}} {{{licence|}}}
+{{!}}-
+}}
+{{#if:{{{website|}}}|
+! [[Website]]
+{{!}} {{{website|}}}
+{{!}}-
+}}
+{{#if:{{{standard|}}}|
+! [[Standard]](s)
+{{!}} {{{standard|}}}
+{{!}}-
+}}
+{{#if:{{{AsOf|}}}|
+! As of
+{{!}} {{{AsOf|}}}
+{{!}}-
+}}
+|}</includeonly><noinclude>
+{{pp-template|small=yes}}
+{{documentation}}
+<!-- Add cats and interwikis to the /doc subpage, not here! -->
+</noinclude>

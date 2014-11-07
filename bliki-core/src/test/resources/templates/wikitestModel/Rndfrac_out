@@ -1,0 +1,1 @@
+<includeonly>{{#ifeq:{{{2}}}|0|{{{1}}}|<span class="frac nowrap">{{#ifexpr:{{{1}}}>0|{{{1}}}<sup>&#32;</sup>}}{{#iferror:{{#expr:1/{{{4}}}}}|<sup>{{{2}}}</sup>&frasl;<sub>{{{3}}}</sub>|<sup>{{#expr:{{{2}}}/{{{4}}}}}</sup>&frasl;<sub>{{#expr:{{{3}}}/{{{4}}}}}</sub>}}</span>}}</includeonly><noinclude>{{documentation}}</noinclude>

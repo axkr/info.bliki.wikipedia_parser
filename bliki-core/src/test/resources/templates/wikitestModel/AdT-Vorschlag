@@ -1,0 +1,71 @@
+<includeonly>{{#if: {{{LEMMA|}}} | | {{Achtung|1=Das Lemma ist nicht eingetragen.}} }}{{#if: {{{BILD|}}} | {{#if: {{{BILDBESCHREIBUNG|}}} | | {{Achtung|1=Die Bildbeschreibung ist nicht eingetragen.}} }} }}</includeonly>{{#ifeq: {{NAMESPACEE}} | Wikipedia_Diskussion
+| <div style="width:50%;">
+<div id="hauptseite" class="hauptseite-links">
+<!--<div style="background-color:#D8E8FF; border:1px solid #8898BF; font-size:1em; font-weight:bold; margin:0; padding:0.1em 0.8em;">{{#if: {{{DATUM|}}} | AdT-Vorschlag für den {{{DATUM}}}:<br/>}}{{{LEMMA}}}</div> -->
+<div style="background-color:#D8E8FF; border:1px solid #8898BF; font-size:1em; font-weight:bold; margin:0; padding:0.1em 0.8em;">&nbsp;</div>
+<div class="inhalt">
+}}{{#if: {{{BILD|}}} | <div style="float:left; padding-top:0.5em; padding-right:0.5em;">[[{{{BILD|}}}|{{#if: {{{BILDGROESSE|}}} | {{{BILDGROESSE|}}} | x89px}}|{{#if: {{{BILDUMRANDUNG|}}} | border}}|{{{BILDBESCHREIBUNG|}}}]]</div> }}
+{{{TEASERTEXT|}}} <small>[[{{{LEMMA|}}}|mehr]]{{#if: {{{AUDIOVERSION|}}} | &nbsp;&nbsp;{{Audio|{{{AUDIOVERSION}}}|Gesprochene Version}} }}{{#if: {{{AUDIOVERSION1|}}} | [[Datei:Loudspeaker.svg|12px|link=|alt=]]&nbsp;Gesprochener Artikel:
+[[Media:{{{AUDIOVERSION1}}}|Teil&nbsp;1]]<sup>[[Hilfe:Audio|<span title="Hilfe&nbsp;– Audio">?</span>]]/[[:Datei:{{{AUDIOVERSION1}}}|<span title="Tondateibeschreibungsseite mit Lizenzangabe für „{{{AUDIOVERSION1}}}“"><tt>i</tt></span>]]</sup> }}{{#if: {{{AUDIOVERSION2|}}} | &nbsp;·
+[[Media:{{{AUDIOVERSION2}}}|Teil&nbsp;2]]<sup>[[Hilfe:Audio|<span title="Hilfe&nbsp;– Audio">?</span>]]/[[:Datei:{{{AUDIOVERSION2}}}|<span title="Tondateibeschreibungsseite mit Lizenzangabe für „{{{AUDIOVERSION2}}}“"><tt>i</tt></span>]]</sup> }}{{#if: {{{AUDIOVERSION3|}}} | &nbsp;·
+[[Media:{{{AUDIOVERSION3}}}|Teil&nbsp;3]]<sup>[[Hilfe:Audio|<span title="Hilfe&nbsp;– Audio">?</span>]]/[[:Datei:{{{AUDIOVERSION3}}}|<span title="Tondateibeschreibungsseite mit Lizenzangabe für „{{{AUDIOVERSION3}}}“"><tt>i</tt></span>]]</sup> }}{{#if: {{{AUDIOVERSION4|}}} | &nbsp;·
+[[Media:{{{AUDIOVERSION4}}}|Teil&nbsp;4]]<sup>[[Hilfe:Audio|<span title="Hilfe&nbsp;– Audio">?</span>]]/[[:Datei:{{{AUDIOVERSION4}}}|<span title="Tondateibeschreibungsseite mit Lizenzangabe für „{{{AUDIOVERSION4}}}“"><tt>i</tt></span>]]</sup> }}{{#if: {{{AUDIOVERSION5|}}} | &nbsp;·
+[[Media:{{{AUDIOVERSION5}}}|Teil&nbsp;5]]<sup>[[Hilfe:Audio|<span title="Hilfe&nbsp;– Audio">?</span>]]/[[:Datei:{{{AUDIOVERSION5}}}|<span title="Tondateibeschreibungsseite mit Lizenzangabe für „{{{AUDIOVERSION5}}}“"><tt>i</tt></span>]]</sup> }}{{#if: {{{AUDIOVERSION6|}}} | &nbsp;·
+[[Media:{{{AUDIOVERSION6}}}|Teil&nbsp;6]]<sup>[[Hilfe:Audio|<span title="Hilfe&nbsp;– Audio">?</span>]]/[[:Datei:{{{AUDIOVERSION6}}}|<span title="Tondateibeschreibungsseite mit Lizenzangabe für „{{{AUDIOVERSION6}}}“"><tt>i</tt></span>]]</sup> }}</small>{{#ifeq: {{NAMESPACEE}} | Wikipedia_Diskussion
+| <div style="clear:left;"></div>
+</div>
+</div>
+</div>
+}}<noinclude>
+
+ <nowiki>
+{{AdT-Vorschlag
+ | DATUM            = <!-- Datum des Wunschtermins -->
+ | LEMMA            = <!-- Angabe ohne Klammern -->
+ | BILD             = <!-- Angabe ohne Klammern, aber mit „Datei:“ o. ä. -->
+ | BILDBESCHREIBUNG = <!-- nur Text, keine Formatierungen außer &amp;nbsp; -->
+ | BILDGROESSE      = <!-- kann weggelassen werden -->
+ | BILDUMRANDUNG    = <!-- kann weggelassen werden, Angaben JA, RAND oder BORDER möglich -->
+ | TEASERTEXT       = <!-- nur Text, inkl. Wiki-Formatierungen -->
+ | AUDIOVERSION     = <!-- Audiodatei, falls einteilig vorhanden -->
+ | AUDIOVERSION1    = <!-- 1. Audiodatei, falls mehrteilig vorhanden -->
+ | AUDIOVERSION2    = <!-- 2. Audiodatei, falls mehrteilig vorhanden -->
+ | AUDIOVERSION3    = <!-- 3. Audiodatei, falls mehrteilig vorhanden -->
+ | AUDIOVERSION4    = <!-- 4. Audiodatei, falls mehrteilig vorhanden -->
+ | AUDIOVERSION5    = <!-- 5. Audiodatei, falls mehrteilig vorhanden -->
+ | AUDIOVERSION6    = <!-- 6. Audiodatei, falls mehrteilig vorhanden -->
+}}
+</nowiki>
+
+== Beispiel ==
+<pre>
+{{AdT-Vorschlag
+ | DATUM            = 29.07.2010
+ | LEMMA            = Satz des Pythagoras
+ | BILD             = Datei:pythagoras_abc.svg
+ | BILDBESCHREIBUNG = Rechtwinkliges Dreieck
+ | BILDGROESSE      = 100px
+ | BILDUMRANDUNG    = JA
+ | TEASERTEXT       = Der '''[[Satz des Pythagoras]]''' ist einer der fundamentalen Sätze der euklidischen Geometrie. Er besagt, dass in allen ebenen rechtwinkligen Dreiecken die Summe der Flächeninhalte der Kathetenquadrate gleich dem Flächeninhalt des Hypotenusenquadrates ist. Als Gleichung ausgedrückt lautet er:<br /> <math>a^2 + b^2 = c^2</math>,
+wobei ''a'' und ''b'' wie im Bild für die Längen der am rechten Winkel anliegenden Seiten, der Katheten, stehen und ''c'' die Länge der dem rechten Winkel gegenüberliegenden Seite, der Hypotenuse, darstellt.
+In der modernen Mathematik motiviert der Satz das Konzept des Senkrechtstehens in abstrakten Räumen.
+Der Satz ist nach Pythagoras von Samos benannt, der als erster einen Beweis dafür gefunden haben soll, was allerdings in der Forschung umstritten ist. Schon lange vor Pythagoras war der ''Satz des Pythagoras'' in Babylon und Indien bekannt. Es gibt jedoch keinen Nachweis dafür, dass man dort bereits einen mathematischen Beweis hatte.
+}}
+</pre>
+wird zu
+{{AdT-Vorschlag
+ | DATUM            = 29.07.2010
+ | LEMMA            = Satz des Pythagoras
+ | BILD             = Datei:pythagoras_abc.svg
+ | BILDBESCHREIBUNG = Rechtwinkliges Dreieck
+ | BILDGROESSE      = 100px
+ | BILDUMRANDUNG    = JA
+ | TEASERTEXT       = Der '''[[Satz des Pythagoras]]''' ist einer der fundamentalen Sätze der euklidischen Geometrie. Er besagt, dass in allen ebenen rechtwinkligen Dreiecken die Summe der Flächeninhalte der Kathetenquadrate gleich dem Flächeninhalt des Hypotenusenquadrates ist. Als Gleichung ausgedrückt lautet er:<br /> <math>a^2 + b^2 = c^2</math>,
+wobei ''a'' und ''b'' wie im Bild für die Längen der am rechten Winkel anliegenden Seiten, der Katheten, stehen und ''c'' die Länge der dem rechten Winkel gegenüberliegenden Seite, der Hypotenuse, darstellt.
+In der modernen Mathematik motiviert der Satz das Konzept des Senkrechtstehens in abstrakten Räumen.
+Der Satz ist nach Pythagoras von Samos benannt, der als erster einen Beweis dafür gefunden haben soll, was allerdings in der Forschung umstritten ist. Schon lange vor Pythagoras war der ''Satz des Pythagoras'' in Babylon und Indien bekannt. Es gibt jedoch keinen Nachweis dafür, dass man dort bereits einen mathematischen Beweis hatte.
+}}
+
+[[Kategorie:Vorlage:Wikipedia:|Adt-Vorschlag]]
+[[Kategorie:Wikipedia:Hauptseite/Artikel des Tages|{{PAGENAME}}]]
+</noinclude>

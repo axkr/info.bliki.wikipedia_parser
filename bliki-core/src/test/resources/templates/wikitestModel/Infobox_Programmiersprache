@@ -1,0 +1,85 @@
+{| class="prettytable float-right" style="font-size:90%; width:21em;"
+|- class="hintergrundfarbe6"
+  ! colspan="2" style="font-size:105%; text-align: center;" | <big>{{{Name<includeonly>|{{PAGENAME}}</includeonly>}}}</big>
+|-
+  {{#if:{{{Logo<includeonly>|</includeonly>}}}|
+  {{!}} colspan="2" style="text-align:center" {{!}} {{{Logo}}}{{#if:{{{Beschreibung<includeonly>|</includeonly>}}}|<br />{{{Beschreibung}}}
+  }}
+  {{!~}} colspan="2" class="hintergrundfarbe5" style="font-size: 105%; text-align:center" {{!}} Basisdaten
+  }}
+|- valign="top"
+  {{#if:{{{Paradigma<includeonly>|</includeonly>}}}|
+  {{!}} '''[[Programmierparadigma|Paradigmen]]:'''
+  {{!}} {{{Paradigma}}}
+  }}
+|- valign="top"
+  {{#if:{{{Erscheinungsjahr<includeonly>|</includeonly>}}}|
+  {{!}} '''Erscheinungsjahr:'''
+  {{!}} {{{Erscheinungsjahr}}}
+  }}
+|- valign="top"
+  {{#if:{{{Designer<includeonly>|</includeonly>}}}|
+  {{!}} '''Designer:'''
+  {{!}} {{{Designer}}}
+  }}
+|- valign="top"
+  {{#if:{{{Entwickler<includeonly>|</includeonly>}}}|
+  {{!}} '''Entwickler:'''
+  {{!}} {{{Entwickler}}}
+  }}
+|- valign="top"
+  {{#if:{{{AktuelleVersion<includeonly>|</includeonly>}}}|
+  {{!}} '''Aktuelle&nbsp;[[Versionierung|Version]]:'''
+  {{!}} style="white-space:nowrap;" {{!}} {{{AktuelleVersion}}} &nbsp;<small>({{{AktuelleVersionFreigabeDatum}}})</small>
+  }}
+|- valign="top"
+  {{#if:{{{AktuelleVorabVersion<includeonly>|</includeonly>}}}|
+  {{!}} '''Aktuelle&nbsp;Vorabversion:'''
+  {{!}} style="white-space:nowrap;" {{!}} {{{AktuelleVorabVersion}}} &nbsp;<small>({{{AktuelleVorabVersionFreigabeDatum}}})</small>
+  }}
+|- valign="top"
+  {{#if:{{{Typisierung<includeonly>|</includeonly>}}}|
+  {{!}} '''[[Typisierung (Informatik)|Typisierung]]:'''
+  {{!}} {{{Typisierung}}}
+  }}
+|- valign="top"
+  {{#if:{{{Implementierung<includeonly>|</includeonly>}}}|
+  {{!}} '''wichtige [[Implementierung]]en:'''
+  {{!}} {{{Implementierung}}}
+  }}
+|- valign="top"
+  {{#if:{{{Dialekte<includeonly>|</includeonly>}}}|
+  {{!}} '''Dialekte:'''
+  {{!}} {{{Dialekte}}}
+  }}
+
+|- valign="top"
+  {{#if:{{{Standardisierungen<includeonly>|</includeonly>}}}|
+  {{!}} '''Standardisierungen:'''
+  {{!}} {{{Standardisierungen}}}
+  }}
+|- valign="top"
+  {{#if:{{{Beeinflusst_von<includeonly>|</includeonly>}}}|
+  {{!}} '''Einflüsse:'''
+  {{!}} {{{Beeinflusst_von}}}
+  }}
+|- valign="top"
+  {{#if:{{{Beeinflusste<includeonly>|</includeonly>}}}|
+  {{!}} '''Beeinflusste:'''
+  {{!}} {{{Beeinflusste}}}
+  }}
+|- valign="top"
+  {{#if:{{{Betriebssystem<includeonly>|</includeonly>}}}|
+  {{!}} '''[[Betriebssystem]]:'''
+  {{!}} {{{Betriebssystem}}}
+  }}
+|- valign="top"
+  {{#if:{{{Lizenz<includeonly>|</includeonly>}}}|
+  {{!}} '''[[Lizenz]]:'''
+  {{!}} {{{Lizenz}}}
+  }}
+|- style="text-align:center;" class="hintergrundfarbe5"
+  {{#if:{{{Website<includeonly>|</includeonly>}}}|
+  {{!}} colspan="2" {{!}} {{{Website}}}
+  }}
+|}<noinclude>{{Dokumentation}}</noinclude>

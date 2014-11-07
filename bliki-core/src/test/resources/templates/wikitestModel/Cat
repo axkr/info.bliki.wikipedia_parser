@@ -1,0 +1,16 @@
+[[:Category:{{{1}}}]]<noinclude>
+{{Interwikitmp-grp ineligible|CAT|Commons|Wiktionary}}
+Creates a link to the specified category.
+
+'''Example''':
+<pre>{{Cat|stubs}}
+</pre>
+{{Cat|stubs}}
+
+==See also==
+* {{Tl|Cl}}
+* {{Tl|Ccl}}
+* {{Tl|Lcs}}
+
+[[sl:predloga:kat]]
+</noinclude>

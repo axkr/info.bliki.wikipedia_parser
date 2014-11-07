@@ -1,0 +1,56 @@
+{{#ifeq: {{SERVERNAME}} | secure.wikimedia.org
+| {{#switch: {{lc: {{{padlock|}}} }}
+  | yes    <!--Supress CSS icon, to not get double icon-->
+  | no = <span class="plainlinks">
+  }}[{{sec link/secure url
+  | project = {{{1|}}}
+  | pagename = {{{2|}}}
+  | lang = {{{lang|}}}
+  | query = {{{query|}}}
+  | anchor = {{{anchor|}}}
+  }} {{sec link/text
+  | project = {{{1|}}}
+  | pagename = {{{2|}}}
+  | text = {{{3|}}}
+  | lang = {{{lang|}}}
+  | query = {{{query|}}}
+  | anchor = {{{anchor|}}}
+  }}]{{#switch: {{lc: {{{padlock|}}} }}
+  | no = </span>
+  | yes = </span>[[File:Lock icon blue.gif|16x13px|link=]]
+  }}
+
+| <!--Not on the secure server, make a normal link-->
+  {{#if: {{{query|}}} {{{lang|}}}
+  | <!--Make a full url link, needed when query or lang-->
+    <span class="plainlinks">[{{sec link/normal url
+    | project = {{{1|}}}
+    | pagename = {{{2|}}}
+    | lang = {{{lang|}}}
+    | query = {{{query|}}}
+    | anchor = {{{anchor|}}}
+    }} {{sec link/text
+    | project = {{{1|}}}
+    | pagename = {{{2|}}}
+    | text = {{{3|}}}
+    | lang = {{{lang|}}}
+    | query = {{{query|}}}
+    | anchor = {{{anchor|}}}
+    }}]</span>
+  | <!--Make a normal link-->
+    [[:{{sec link/normal link
+    | project = {{{1|}}}
+    | pagename = {{{2|}}}
+    | anchor = {{{anchor|}}}
+    }}|{{sec link/text
+    | project = {{{1|}}}
+    | pagename = {{{2|}}}
+    | text = {{{3|}}}
+    | anchor = {{{anchor|}}}
+    }}]]
+  }}
+}}<noinclude>
+
+{{documentation}}
+<!-- Add categories and interwikis to the /doc subpage, not here! -->
+</noinclude>

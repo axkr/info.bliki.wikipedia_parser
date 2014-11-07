@@ -1,0 +1,1 @@
+{{#if:{{{image|}}}|[[File:{{{image|}}}|{{#if:{{{image_size|{{{imagesize|}}}}}}|{{{image_size|{{{imagesize|}}}}}}|220px}}|alt={{{alt|}}}]]}}

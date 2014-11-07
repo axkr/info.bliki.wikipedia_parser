@@ -1,0 +1,19 @@
+<table class="metadata mbox-small{{#ifeq:{{lc:{{{position|}}}}}|left|-left}} {{{class|}}}" style="border:1px solid #aaa; background-color:#f9f9f9; {{{style|}}}">
+<tr>
+{{#switch:{{{image|}}}
+|<!--BLANK-->|none={{td}}
+|#default=<td class="mbox-image">{{{image}}}</td>
+}}
+<td class="mbox-text" style="{{{textstyle|}}}"> {{{text}}} </td>
+{{#if:{{{imageright|}}}
+| <td class="mbox-imageright">{{{imageright}}}</td>
+}}
+</tr>
+{{#if:{{{below|}}}
+| <tr><td colspan={{#if:{{{imageright|}}}|3|2}} class="mbox-text" style="{{{textstyle|}}}"> {{{below}}} </td></tr>
+}}
+</table><noinclude>
+
+{{Documentation}}
+<!-- Add categories and interwikis to the /doc subpage, not here! -->
+</noinclude>
