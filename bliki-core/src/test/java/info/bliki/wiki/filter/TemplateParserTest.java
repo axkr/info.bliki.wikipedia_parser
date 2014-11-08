@@ -1704,4 +1704,9 @@ public class TemplateParserTest extends FilterTestSupport {
         expectedCategories.put("Main Page", "Category:Main Page");
         assertThat(wikiModel.getCategories()).isEqualTo(expectedCategories);
     }
+
+    @Test
+    public void testFULLROOTPAGENAME() throws Exception {
+        assertThat(wikiModel.render("{{FULLROOTPAGENAME|Foo}}", false)).isEqualTo("");
+    }
 }

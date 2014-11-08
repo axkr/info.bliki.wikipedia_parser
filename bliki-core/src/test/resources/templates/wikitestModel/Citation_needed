@@ -1,0 +1,12 @@
+{{ {{{|safesubst:}}}#invoke:Unsubst||$N=Citation needed |date=__DATE__ |$B=
+{{Fix
+|name={{{name|Citation needed}}}
+|link=Wikipedia:Citation needed
+|text=citation needed
+|class=Template-Fact
+|title={{{reason|This claim needs references to reliable sources.}}}
+|date={{{date|}}}
+|cat=[[Category:All articles with unsourced statements]]
+|cat-date=Category:Articles with unsourced statements
+}}{{#if:{{{1|}}}|[[Category:Pages containing citation needed template with deprecated parameters]]}}
+}}

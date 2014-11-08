@@ -1,0 +1,25 @@
+{{#switch:{{{subst|¬}}}
+ |¬={{category handler
+  |template=[[Category:Templates needing substitution checking]]
+  |nocat={{{nocat|<noinclude>true</noinclude>}}}
+ }}
+ |SUBST=[[Category:Pages with incorrectly substituted templates]]
+}}{{Category handler
+ |main={{Fix/category
+  |cat-date={{{cat-date|}}}
+  |cat={{{cat|}}}
+  |cat-date2={{{cat-date2|}}}
+  |cat2={{{cat2|}}}
+  |cat-date3={{{cat-date3|}}}
+  |cat3={{{cat3|}}}
+  |date={{{date|}}}
+ }}
+ |template={{#if:{{{name|}}}|{{#ifeq:{{{name}}}|{{ROOTPAGENAME}}||{{#if:{{{date|}}}||[[Category:Templates including undated clean-up tags]]}}}}}}
+ |subpage=no
+}}{{#if:{{{text|}}}
+ |<sup class="noprint Inline-Template {{{class|}}}" style="white-space:nowrap;">&#91;<i>{{#if:{{{pre-text|}}}
+  |{{{pre-text}}}&#32;
+ }}[[{{{link|Wikipedia:Cleanup}}}|<span title="{{{title|{{{link|Wikipedia:Cleanup}}}}}}{{#if:{{{date|}}}|<nowiki/> ({{{date}}})}}">{{{text|}}}</span>]]{{#if:{{{post-text|}}}
+  |&#32;{{{post-text}}}
+ }}</i>&#93;</sup>|{{{special|}}}
+}}

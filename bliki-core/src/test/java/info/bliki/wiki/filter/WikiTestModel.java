@@ -126,6 +126,8 @@ public class WikiTestModel extends WikiModel {
     }
 
     private String resourceNameFromTemplateName(String name) {
-        return "/templates/wikitestModel/" + name.replace("/", "_");
+        return "/templates/wikitestModel/" + name
+                .replace(" ", "_")
+                .replace("/", "_");
     }
 }

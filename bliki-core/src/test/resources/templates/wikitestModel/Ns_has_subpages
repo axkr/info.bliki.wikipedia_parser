@@ -1,0 +1,7 @@
+{{ {{{|safesubst:}}}#switch: {{ {{{|safesubst:}}}NAMESPACE: {{{1|{{ {{{|safesubst:}}}FULLPAGENAME}}}}}:Foo }}
+ |{{ {{{|safesubst:}}}ns:0}}
+ |{{ {{{|safesubst:}}}ns:File}}
+ |{{ {{{|safesubst:}}}ns:MediaWiki}}
+ |{{ {{{|safesubst:}}}ns:Category}} =
+ |yes
+}}
