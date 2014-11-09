@@ -23,6 +23,8 @@ import java.util.regex.Pattern;
  */
 public class TemplateParser extends AbstractParser {
     private static final Pattern HTML_COMMENT_PATTERN = Pattern.compile("<!--(.*?)-->");
+    private static final int SUBST_LENGTH = 6;  // subst:
+
     protected static Logger logger = LoggerFactory.getLogger(TemplateParser.class);
 
     private  final boolean fParseOnlySignature;
@@ -132,6 +134,10 @@ public class TemplateParser extends AbstractParser {
 
     public static void parseRecursive(String rawWikitext, IWikiModel wikiModel, Appendable writer, boolean parseOnlySignature,
             boolean renderTemplate, boolean parsePostprocessing, Map<String, String> templateParameterMap) throws IOException {
+
+        System.err.println("parseRecursive("+rawWikitext+")");
+        System.err.println("params("+templateParameterMap+")");
+
         int startIndex = Util.indexOfTemplateParsing(rawWikitext);
         if (startIndex < 0) {
             writer.append(rawWikitext);
@@ -237,7 +243,14 @@ public class TemplateParser extends AbstractParser {
                 // ---------Identify the next token-------------
                 switch (fCurrentCharacter) {
                 case '{': // wikipedia subst: and safesubst: handling
-                    if (fSource[fCurrentPosition] == '{' && (fSource.length > fCurrentPosition + 6) && fSource[fCurrentPosition + 1] == 's') {
+
+
+
+                    if (fSource[fCurrentPosition] == '{' &&
+                            (fSource.length > fCurrentPosition + SUBST_LENGTH) && fSource[fCurrentPosition + 1] == 's') {
+
+
+
                         oldPosition = fCurrentPosition;
                         if (parseSubstOrSafesubst(writer)) {
                             fWhiteStart = true;
@@ -583,11 +596,10 @@ public class TemplateParser extends AbstractParser {
         int templateEndPosition = findNestedTemplateEnd(fSource, fCurrentPosition);
         if (templateEndPosition < 0) {
             fCurrentPosition--;
+            return false;
         } else {
             return parseSubst(writer, startTemplatePosition, templateEndPosition);
         }
-
-        return false;
     }
 
     private boolean parseTemplateOrTemplateParameter(Appendable writer) throws IOException {
@@ -625,14 +637,14 @@ public class TemplateParser extends AbstractParser {
         fCurrentPosition = templateEndPosition;
         // insert template handling
         int endPosition = fCurrentPosition;
-        String plainContent = null;
+        String plainContent;
         int endOffset = fCurrentPosition - 2;
         Object[] objs = createParameterMap(fSource, startTemplatePosition, fCurrentPosition - startTemplatePosition - 2);
         String templateName = ((String) objs[1]);
         @SuppressWarnings("unchecked")
         List<String> parts = (List<String>) objs[0];
         ITemplateFunction templateFunction = null;
-        int currOffset = 0;
+        int currOffset;
         if (templateName.startsWith("subst:")) {
             templateFunction = Subst.CONST;
             currOffset = 6;

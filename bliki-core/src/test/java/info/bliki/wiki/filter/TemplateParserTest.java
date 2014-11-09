@@ -51,30 +51,36 @@ public class TemplateParserTest extends FilterTestSupport {
 
 
     @Test public void testWeather07() {
-        assertThat(wikiModel.parseTemplates("{{WeatherBox03}}\n")).isEqualTo("20\n");
+        assertThat(wikiModel.parseTemplates("{{WeatherBox03}}\n"))
+                .isEqualTo("20\n");
     }
 
     @Test public void testWeather06() {
-        assertThat(wikiModel.parseTemplates("{{WeatherBox03|show1=1}}\n")).isEqualTo("10\n");
+        assertThat(wikiModel.parseTemplates("{{WeatherBox03|show1=1}}\n"))
+                .isEqualTo("10\n");
     }
 
     @Test public void testSortnameDemo001() {
-        assertThat(wikiModel.parseTemplates("{{sortname|The|Man with One Red Shoe}}")).isEqualTo("<span style=\"display:none;\">Man with One Red Shoe, The</span><span class=\"vcard\"><span class=\"fn\">[[The Man with One Red Shoe|The Man with One Red Shoe]]</span></span>[[Category:Articles with hCards]]");
+        assertThat(wikiModel.parseTemplates("{{sortname|The|Man with One Red Shoe}}"))
+                .isEqualTo("<span style=\"display:none;\">Man with One Red Shoe, The</span><span class=\"vcard\"><span class=\"fn\">[[The Man with One Red Shoe|The Man with One Red Shoe]]</span></span>[[Category:Articles with hCards]]");
     }
 
     @Test public void testNoincludeDemo001() {
         assertThat(wikiModel.parseTemplates("test1<noinclude> noincludetext</noinclude>\n"
-                + "\n" + "<includeonly>includeonlytext<noinclude> noincludetext</noinclude></includeonly>")).isEqualTo("test1 noincludetext\n" + "\n" + "");
+                + "\n" + "<includeonly>includeonlytext<noinclude> noincludetext</noinclude></includeonly>"))
+                .isEqualTo("test1 noincludetext\n" + "\n" + "");
     }
 
     @Test public void testNoincludeDemo002() {
         assertThat(wikiModel.render("test1<noinclude> noincludetext</noinclude>\n" + "\n"
-                + "<includeonly>includeonlytext<noinclude> noincludetext</noinclude></includeonly>", true)).isEqualTo("\n" + "<p>test1 noincludetext</p>\n" + "");
+                + "<includeonly>includeonlytext<noinclude> noincludetext</noinclude></includeonly>", true))
+                .isEqualTo("\n" + "<p>test1 noincludetext</p>\n" + "");
     }
 
     @Test public void testOnlyincludeDemo001() {
         assertThat(wikiModel
-                .parseTemplates(ONLYINCLUDE_DEMO)).isEqualTo("abcdefghi<hr>\n" + ";Only active template content is above.\n" + "\n"
+                .parseTemplates(ONLYINCLUDE_DEMO))
+                .isEqualTo("abcdefghi<hr>\n" + ";Only active template content is above.\n" + "\n"
                 + ";The verbatim active code within reads:\n"
                 + " abc'''&lt;onlyinclude>'''def'''&lt;/onlyinclude>'''ghi'''&lt;includeonly>'''jkl'''&lt;/includeonly>'''\n" + "\n"
                 + "If transposed, the only part included will be the string literal <code>def</code>. \n" + "\n" + "==Example==\n"
@@ -87,7 +93,8 @@ public class TemplateParserTest extends FilterTestSupport {
     }
 
     @Test public void testOnlyincludeDemo003() {
-        assertThat(wikiModel.render(ONLYINCLUDE_DEMO, true)).isEqualTo("\n"
+        assertThat(wikiModel.render(ONLYINCLUDE_DEMO, true))
+                .isEqualTo("\n"
                 + "<p>abcdefghi</p><hr />\n"
                 + "\n"
                 + "<dl>\n"
@@ -113,13 +120,15 @@ public class TemplateParserTest extends FilterTestSupport {
     }
 
     @Test public void testInclude() {
-        assertThat(wikiModel.parseTemplates("{{TestInclude}}")).isEqualTo("{| class=\"wikitable float-right\" style=\"width:30%; min-width:250px; max-width:400px; font-size:90%; margin-top:0px;\"\n"
+        assertThat(wikiModel.parseTemplates("{{TestInclude}}"))
+                .isEqualTo("{| class=\"wikitable float-right\" style=\"width:30%; min-width:250px; max-width:400px; font-size:90%; margin-top:0px;\"\n"
                 + "|--\n" + "! colspan=\"2\" style=\"background-color:Khaki; font-size:110%;\" | [[Asteroid]]<br/>{{{Name}}}\n"
                 + "|--\n" + "|}");
     }
 
     @Test public void testInclude2() {
-        assertThat(wikiModel.parseTemplates("{{TestInclude2}}")).isEqualTo("{| class=\"wikitable float-right\" style=\"width:30%; min-width:250px; max-width:400px; font-size:90%; margin-top:0px;\"\n"
+        assertThat(wikiModel.parseTemplates("{{TestInclude2}}"))
+                .isEqualTo("{| class=\"wikitable float-right\" style=\"width:30%; min-width:250px; max-width:400px; font-size:90%; margin-top:0px;\"\n"
                 + "|--\n" + "! colspan=\"2\" style=\"background-color:Khaki; font-size:110%;\" | [[Asteroid]]<br/>{{{Name}}}\n"
                 + "|--\n" + "|}");
     }
@@ -135,7 +144,8 @@ public class TemplateParserTest extends FilterTestSupport {
         assertThat(wikiModel.parseTemplates("{{Infobox Ort in Deutschland\n"
                 + "|Art               = Stadt\n" + "|Wappen            = Wappen_Grafenwöhr.png\n"
                 + "|lat_deg           = 49 |lat_min = 43\n" + "|lon_deg           = 11 |lon_min = 54\n" + "|Lageplan          = \n"
-                + "|Bundesland        = Bayern\n" + "}}")).isEqualTo("{| class=\"float-right\" style=\"width:290px; font-size:90%; background:#FAFAFA;  border:1px solid #bbb; margin:0px 0px 1em 1em; border-collapse:collapse;\" summary=\"Infobox\"\n"
+                + "|Bundesland        = Bayern\n" + "}}"))
+                .isEqualTo("{| class=\"float-right\" style=\"width:290px; font-size:90%; background:#FAFAFA;  border:1px solid #bbb; margin:0px 0px 1em 1em; border-collapse:collapse;\" summary=\"Infobox\"\n"
                 + "|-\n"
                 + "| colspan=\"2\" style=\"background:#ffffff; text-align:center; font-size:135%;\" | '''PAGENAME'''</font></br><small></small>\n"
                 + "|- class=\"hintergrundfarbe2\"\n"
@@ -161,7 +171,8 @@ public class TemplateParserTest extends FilterTestSupport {
                         + "|map        = Karte Deutschland.svg\n" + "|mapsize_x  = 140\n" + "|mapsize_y  = 175\n"
                         + "|maptext    = Deitschlandkartn, Position vo {{#if: {{{Name|}}} | {{{Name}}} | {{PAGENAME}} }} heavoghom\n"
                         + "|warning    = [[Bild:Missing Map of Germany.png|140px|Koordinaten san außerhoib vom darstellbarn Bereich]]\n"
-                        + "}}")).isEqualTo("{| border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin:0 0 0 0; border-style:none; border-width:0px; border-collapse:collapse; empty-cells:show\"\n"
+                        + "}}"))
+                .isEqualTo("{| border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin:0 0 0 0; border-style:none; border-width:0px; border-collapse:collapse; empty-cells:show\"\n"
                 + "|<div style=\"position: relative;\"><div style=\"font-size: 5px; position: absolute; display: block; left:108px; top:55px; padding:0;\">[[Bild:reddot.svg|5px|PAGENAME]]</div>[[Bild:Karte Deutschland.svg|140x175px|Deitschlandkartn, Position vo PAGENAME heavoghom]]</div>\n"
                 + "|}");
     }
@@ -188,7 +199,8 @@ public class TemplateParserTest extends FilterTestSupport {
     }
 
     @Test public void test002() {
-        assertThat(wikiModel.parseTemplates("{{Infobox Ort in Deutschland}}")).isEqualTo("{| class=\"float-right\" style=\"width:290px; font-size:90%; background:#FAFAFA;  border:1px solid #bbb; margin:0px 0px 1em 1em; border-collapse:collapse;\" summary=\"Infobox\"\n"
+        assertThat(wikiModel.parseTemplates("{{Infobox Ort in Deutschland}}"))
+                .isEqualTo("{| class=\"float-right\" style=\"width:290px; font-size:90%; background:#FAFAFA;  border:1px solid #bbb; margin:0px 0px 1em 1em; border-collapse:collapse;\" summary=\"Infobox\"\n"
                 + "|-\n"
                 + "| colspan=\"2\" style=\"background:#ffffff; text-align:center; font-size:135%;\" | '''PAGENAME'''</font></br><small></small>\n"
                 + "|- class=\"hintergrundfarbe2\"\n"
@@ -205,7 +217,8 @@ public class TemplateParserTest extends FilterTestSupport {
 
     @Test public void test003() {
         assertThat(wikiModel.render(
-                "{{Infobox Ort in Deutschland}}", false)).isEqualTo("\n"
+                "{{Infobox Ort in Deutschland}}", false))
+                .isEqualTo("\n"
                 + "<div style=\"page-break-inside: avoid;\">\n"
                 + "<table class=\"float-right\" style=\"width:290px; font-size:90%; background:#FAFAFA;  border:1px solid #bbb; margin:0px 0px 1em 1em; border-collapse:collapse;\" summary=\"Infobox\">\n"
                 + "<tr>\n"
@@ -228,7 +241,8 @@ public class TemplateParserTest extends FilterTestSupport {
         assertThat(wikiModel.parseTemplates("{{Infobox Ort in Deutschland\n"
                 + "|Art               = Stadt\n" + "|Wappen            = Wappen_Grafenwöhr.png\n"
                 + "|lat_deg           = 49 |lat_min = 43\n" + "|lon_deg           = 11 |lon_min = 54\n" + "|Lageplan          = \n"
-                + "|Bundesland        = Bayern\n" + "}}")).isEqualTo("{| class=\"float-right\" style=\"width:290px; font-size:90%; background:#FAFAFA;  border:1px solid #bbb; margin:0px 0px 1em 1em; border-collapse:collapse;\" summary=\"Infobox\"\n"
+                + "|Bundesland        = Bayern\n" + "}}"))
+                .isEqualTo("{| class=\"float-right\" style=\"width:290px; font-size:90%; background:#FAFAFA;  border:1px solid #bbb; margin:0px 0px 1em 1em; border-collapse:collapse;\" summary=\"Infobox\"\n"
                 + "|-\n"
                 + "| colspan=\"2\" style=\"background:#ffffff; text-align:center; font-size:135%;\" | '''PAGENAME'''</font></br><small></small>\n"
                 + "|- class=\"hintergrundfarbe2\"\n"
@@ -251,7 +265,8 @@ public class TemplateParserTest extends FilterTestSupport {
                                 + "|Wappen            = Wappen_Grafenwöhr.png\n" + "|lat_deg           = 49 |lat_min = 43\n"
                                 + "|lon_deg           = 11 |lon_min = 54\n" + "|Lageplan          = \n" + "|Bundesland        = Bayern\n" + "}}",
                         false
-                )).isEqualTo("\n"
+                ))
+                .isEqualTo("\n"
                 + "<div style=\"page-break-inside: avoid;\">\n"
                 + "<table class=\"float-right\" style=\"width:290px; font-size:90%; background:#FAFAFA;  border:1px solid #bbb; margin:0px 0px 1em 1em; border-collapse:collapse;\" summary=\"Infobox\">\n"
                 + "<tr>\n"
@@ -293,7 +308,8 @@ public class TemplateParserTest extends FilterTestSupport {
                                 + "|maptext    = Deitschlandkartn, Position vo {{#if: {{{Name|}}} | {{{Name}}} | {{PAGENAME}} }} heavoghom\n"
                                 + "|warning    = [[Bild:Missing Map of Germany.png|140px|Koordinaten san außerhoib vom darstellbarn Bereich]]\n"
                                 + "}}\n" + "| [[Bild:Karte Deutschland.png|140px|Koordinatn san net da]] }}\n" + "}}", false
-                )).isEqualTo("\n"
+                ))
+                .isEqualTo("\n"
                 + "<div style=\"page-break-inside: avoid;\">\n"
                 + "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0 0 0 0; border-style:none; border-width:0px; border-collapse:collapse; empty-cells:show\">\n"
                 + "<tr>\n"
@@ -307,22 +323,26 @@ public class TemplateParserTest extends FilterTestSupport {
     @Test public void test010() {
         assertThat(wikiModel
                 .parseTemplates("start\n{{#if: {{{1|test}}} | {{{!}}border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin:0 0 0 0; border-style:none; border-width:0px; border-collapse:collapse; empty-cells:show\"\n"
-                        + "{{!}}<div style=\"position: relative;\"><div style=\"font-size:16px\">middle</div></div> \n{{!}}} }}\nend")).isEqualTo("start\n"
+                        + "{{!}}<div style=\"position: relative;\"><div style=\"font-size:16px\">middle</div></div> \n{{!}}} }}\nend"))
+                .isEqualTo("start\n"
                 + "{|border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin:0 0 0 0; border-style:none; border-width:0px; border-collapse:collapse; empty-cells:show\"\n"
                 + "|<div style=\"position: relative;\"><div style=\"font-size:16px\">middle</div></div> \n" + "|}\n" + "end");
     }
 
     @Test public void testIf00() {
         assertThat(wikiModel
-                .parseTemplates("start{{{{ #if:  | l | u }}cfirst:  {{ es-verb form of/{{ #switch: indicative  | ind | indicative = indicative  | subj | subjunctive = subjunctive  | imp | imperative = imperative  | cond | conditional = conditional  | par | part | participle | past participle  | past-participle = participle  | adv | adverbial | ger | gerund | gerundive  | gerundio | present participle  | present-participle = adverbial  | error  }}  | tense =  {{ #switch: present  | pres | present = present  | imp | imperfect = imperfect  | pret | preterit | preterite = preterite  | fut | future = future  | cond | conditional = conditional  }}  | number =  {{ #switch: singular  | s | sg | sing | singular = singular  | p | pl | plural = plural  }}  | person =  {{ #switch: 1  | 1 | first | first person | first-person = first  | 2 | second|second person | second-person = second  | 3 | third | third person | third-person = third  | 0 | - | imp | impersonal = impersonal  }}  | formal =  {{ #switch: {{{formal}}}  | y | yes = yes  | n | no = no  }}  | gender =  {{ #switch:   | m | masc | masculine = masculine  | f | fem | feminine = feminine  }}  | sense =  {{ #switch: {{{sense}}}  | + | aff | affirmative = affirmative  | - | neg | negative = negative  }}  | sera = {{ #switch: {{{sera}}} | se = se | ra = ra }}  | ending =  {{ #switch: ar  | ar | -ar = -ar  | er | -er = -er  | ir | -ir = -ir  }}  | participle =   | voseo = {{ #if:  | yes | no }}  }}}}end")).isEqualTo("start[[:Template:es-verb form of/indicative]]end");
+                .parseTemplates("start{{{{ #if:  | l | u }}cfirst:  {{ es-verb form of/{{ #switch: indicative  | ind | indicative = indicative  | subj | subjunctive = subjunctive  | imp | imperative = imperative  | cond | conditional = conditional  | par | part | participle | past participle  | past-participle = participle  | adv | adverbial | ger | gerund | gerundive  | gerundio | present participle  | present-participle = adverbial  | error  }}  | tense =  {{ #switch: present  | pres | present = present  | imp | imperfect = imperfect  | pret | preterit | preterite = preterite  | fut | future = future  | cond | conditional = conditional  }}  | number =  {{ #switch: singular  | s | sg | sing | singular = singular  | p | pl | plural = plural  }}  | person =  {{ #switch: 1  | 1 | first | first person | first-person = first  | 2 | second|second person | second-person = second  | 3 | third | third person | third-person = third  | 0 | - | imp | impersonal = impersonal  }}  | formal =  {{ #switch: {{{formal}}}  | y | yes = yes  | n | no = no  }}  | gender =  {{ #switch:   | m | masc | masculine = masculine  | f | fem | feminine = feminine  }}  | sense =  {{ #switch: {{{sense}}}  | + | aff | affirmative = affirmative  | - | neg | negative = negative  }}  | sera = {{ #switch: {{{sera}}} | se = se | ra = ra }}  | ending =  {{ #switch: ar  | ar | -ar = -ar  | er | -er = -er  | ir | -ir = -ir  }}  | participle =   | voseo = {{ #if:  | yes | no }}  }}}}end"))
+                .isEqualTo("start[[:Template:es-verb form of/indicative]]end");
     }
 
     @Test public void testIf01() {
-        assertThat(wikiModel.parseTemplates("start{{#if:\n" + "\n" + "\n" + "| yes | no}}end")).isEqualTo("startnoend");
+        assertThat(wikiModel.parseTemplates("start{{#if:\n" + "\n" + "\n" + "| yes | no}}end"))
+                .isEqualTo("startnoend");
     }
 
     @Test public void testIf02() {
-        assertThat(wikiModel.parseTemplates("start{{      #if:   \n    |{{#ifeq:{{{seperator}}}|;|;|. }}     }}end")).isEqualTo("startend");
+        assertThat(wikiModel.parseTemplates("start{{      #if:   \n    |{{#ifeq:{{{seperator}}}|;|;|. }}     }}end"))
+                .isEqualTo("startend");
     }
 
     @Test public void testIf03() {
@@ -355,11 +375,13 @@ public class TemplateParserTest extends FilterTestSupport {
     @Test public void testIf06() {
         assertThat(wikiModel.parseTemplates("== SpaceInIfTest1 ==\n"
                 + "{{#if:{{NAMESPACE}}\n" + "| <!--Not article space, do nothing-->Not article space\n"
-                + "| <!--Article space-->Article space\n" + "}}")).isEqualTo("== SpaceInIfTest1 ==\n" + "Article space");
+                + "| <!--Article space-->Article space\n" + "}}"))
+                .isEqualTo("== SpaceInIfTest1 ==\n" + "Article space");
 
         assertThat(wikiModel.parseTemplates("== SpaceInIfTest2 ==\n"
                 + "{{#if:{{NAMESPACE}}\n" + "| <!--Not article space, do nothing-->\n" + "  Not article space\n"
-                + "| <!--Article space-->\n" + "  Article space\n" + "}}\n" + "")).isEqualTo("== SpaceInIfTest2 ==\n" + "Article space\n" + "");
+                + "| <!--Article space-->\n" + "  Article space\n" + "}}\n" + ""))
+                .isEqualTo("== SpaceInIfTest2 ==\n" + "Article space\n" + "");
     }
 
     @Test public void testIfexpr01() {
@@ -372,12 +394,14 @@ public class TemplateParserTest extends FilterTestSupport {
 
     @Test public void testIfexpr03() {
         assertThat(wikiModel
-                .parseTemplates("start{{#ifexpr: 1 + |no| }}end")).isEqualTo("start<div class=\"error\">Expression error: Error in factor at character: ' ' (0)</div>end");
+                .parseTemplates("start{{#ifexpr: 1 + |no| }}end"))
+                .isEqualTo("start<div class=\"error\">Expression error: Error in factor at character: ' ' (0)</div>end");
     }
 
     @Test public void testBORN_DATA() {
         assertThat(wikiModel
-                .parseTemplates("test {{Born_data | birthname = Thomas Jeffrey Hanks | birthplace = [[Concord, California]],  [[United States|U.S.]] }} test123")).isEqualTo("test Thomas Jeffrey Hanks<br />[[Concord, California]],  [[United States|U.S.]] test123");
+                .parseTemplates("test {{Born_data | birthname = Thomas Jeffrey Hanks | birthplace = [[Concord, California]],  [[United States|U.S.]] }} test123"))
+                .isEqualTo("test Thomas Jeffrey Hanks<br />[[Concord, California]],  [[United States|U.S.]] test123");
     }
 
     @Test public void testMONTHNUMBER() {
@@ -394,50 +418,60 @@ public class TemplateParserTest extends FilterTestSupport {
 
     @Test public void testNonExistentTemplate() {
         assertThat(wikiModel.parseTemplates(
-                "==Other areas of Wikipedia==\n" + "{{WikipediaOther}}<!--Template:WikipediaOther-->", false)).isEqualTo("==Other areas of Wikipedia==\n" + "[[:Template:WikipediaOther]]");
+                "==Other areas of Wikipedia==\n" + "{{WikipediaOther}}<!--Template:WikipediaOther-->", false))
+                .isEqualTo("==Other areas of Wikipedia==\n" + "[[:Template:WikipediaOther]]");
     }
 
     @Test public void testTemplateCall1() {
-        assertThat(wikiModel.parseTemplates("start-{{:Include Page}}-end", false)).isEqualTo("start-an include page-end");
+        assertThat(wikiModel.parseTemplates("start-{{:Include Page}}-end", false))
+                .isEqualTo("start-an include page-end");
     }
 
     @Test public void testTemplateCall2() {
         assertThat(wikiModel.parseTemplates(
-                "start-{{templ1|a=3|b}}-end start-{{templ2|sdfsf|klj}}-end", false)).isEqualTo("start-b) First: 3 Second: b-end start-c) First: sdfsf Second: klj-end");
+                "start-{{templ1|a=3|b}}-end start-{{templ2|sdfsf|klj}}-end", false))
+                .isEqualTo("start-b) First: 3 Second: b-end start-c) First: sdfsf Second: klj-end");
     }
 
     @Test public void testTemplateCall3() {
         assertThat(wikiModel.parseTemplates("{{templ1\n"
-                + " | a = Test1\n" + " |{{templ2|sdfsf|klj}} \n" + "}}\n" + "", false)).isEqualTo("b) First: Test1 Second: c) First: sdfsf Second: klj \n" + "\n" + "");
+                + " | a = Test1\n" + " |{{templ2|sdfsf|klj}} \n" + "}}\n" + "", false))
+                .isEqualTo("b) First: Test1 Second: c) First: sdfsf Second: klj \n" + "\n" + "");
     }
 
     @Test public void testTemplateCall4() {
-        assertThat(wikiModel.parseTemplates("{{tl|example}}", false)).isEqualTo("[[:Template:[[Template:example|example]]]]");
+        assertThat(wikiModel.parseTemplates("{{tl|example}}", false))
+                .isEqualTo("[[:Template:[[Template:example|example]]]]");
     }
 
     @Test public void testTemplateCall5() {
-        assertThat(wikiModel.parseTemplates("({{pron-en|dəˌpeʃˈmoʊd}})", false)).isEqualTo("(pronounced <span title=\"Pronunciation in the International Phonetic Alphabet (IPA)\" class=\"IPA\">[[WP:IPA for English|/dəˌpeʃˈmoʊd/]]</span>)");
+        assertThat(wikiModel.parseTemplates("({{pron-en|dəˌpeʃˈmoʊd}})", false))
+                .isEqualTo("(pronounced <span title=\"Pronunciation in the International Phonetic Alphabet (IPA)\" class=\"IPA\">[[WP:IPA for English|/dəˌpeʃˈmoʊd/]]</span>)");
     }
 
     @Test public void testTemplateParameter01() {
-        assertThat(wikiModel.parseTemplates("start-{{Test|arg1|arg2}}-end", false)).isEqualTo("start-a) First: arg1 Second: arg2-end");
+        assertThat(wikiModel.parseTemplates("start-{{Test|arg1|arg2}}-end", false))
+                .isEqualTo("start-a) First: arg1 Second: arg2-end");
     }
 
     @Test public void testTemplateParameter02() {
         assertThat(wikiModel
                 .parseTemplates(
                         "start- {{cite web|url=http://www.etymonline.com/index.php?search=hello&searchmode=none|title=Online Etymology Dictionary}} -end",
-                        false)).isEqualTo("start- ''[http://www.etymonline.com/index.php?search=hello&searchmode=none Online Etymology Dictionary]''. -end");
+                        false)).
+                isEqualTo("start- ''[http://www.etymonline.com/index.php?search=hello&searchmode=none Online Etymology Dictionary]''. -end");
     }
 
     @Test public void testTemplateParameter03() {
-        assertThat(wikiModel.parseTemplates("start- {{reflist|2}} -end", false)).isEqualTo("start- <div class=\"references-small\" style=\"-moz-column-count:2; -webkit-column-count:2; column-count:2;\">\n"
+        assertThat(wikiModel.parseTemplates("start- {{reflist|2}} -end", false))
+                .isEqualTo("start- <div class=\"references-small\" style=\"-moz-column-count:2; -webkit-column-count:2; column-count:2;\">\n"
                 + "<references /></div> -end");
     }
 
     @Test public void testTemplateParameter04() {
         assertThat(wikiModel.parseTemplates(
-                "start-<nowiki>{{Test|arg1|arg2}}-</noWiKi>end", false)).isEqualTo("start-<nowiki>{{Test|arg1|arg2}}-</noWiKi>end");
+                "start-<nowiki>{{Test|arg1|arg2}}-</noWiKi>end", false))
+                .isEqualTo("start-<nowiki>{{Test|arg1|arg2}}-</noWiKi>end");
     }
 
     @Test public void testTemplateParameter05() {
@@ -445,24 +479,29 @@ public class TemplateParserTest extends FilterTestSupport {
     }
 
     @Test public void testTemplate06() {
-        assertThat(wikiModel.parseTemplates("{{#ifeq: A | B | A equals B | A is not equal B}}", false)).isEqualTo("A is not equal B");
+        assertThat(wikiModel.parseTemplates("{{#ifeq: A | B | A equals B | A is not equal B}}", false))
+                .isEqualTo("A is not equal B");
     }
 
     @Test public void testTemplate07() {
-        assertThat(wikiModel.parseTemplates("start- {{ifeq|A|B}} \n end", false)).isEqualTo("start- A is not equal B \n" + " end");
+        assertThat(wikiModel.parseTemplates("start- {{ifeq|A|B}} \n end", false))
+                .isEqualTo("start- A is not equal B \n" + " end");
     }
 
     @Test public void testNestedTemplate() {
-        assertThat(wikiModel.parseTemplates("{{nested tempplate test}}", false)).isEqualTo("test a a nested template text template");
+        assertThat(wikiModel.parseTemplates("{{nested tempplate test}}", false))
+                .isEqualTo("test a a nested template text template");
     }
 
     @Test public void testEndlessRecursion() {
-        assertThat(wikiModel.parseTemplates("{{recursion}}", false)).isEqualTo("<span class=\"error\">Template loop detected: <strong class=\"selflink\">Template:recursion</strong></span>");
+        assertThat(wikiModel.parseTemplates("{{recursion}}", false))
+                .isEqualTo("<span class=\"error\">Template loop detected: <strong class=\"selflink\">Template:recursion</strong></span>");
     }
 
 
     @Test public void testNestedIf01() {
-        assertThat(wikiModel.parseTemplates(TEST_STRING_01, false)).isEqualTo("[[Category:Interwiki templates|wikipedia]]\n" + "[[zh:Template:Wikipedia]]\n"
+        assertThat(wikiModel.parseTemplates(TEST_STRING_01, false))
+                .isEqualTo("[[Category:Interwiki templates|wikipedia]]\n" + "[[zh:Template:Wikipedia]]\n"
                 + "</noinclude><div class=\"sister-\n" + "wikipedia\"><div class=\"sister-project\"><div\n"
                 + "class=\"noprint\" style=\"clear: right; border: solid #aaa\n"
                 + "1px; margin: 0 0 1em 1em; font-size: 90%; background: #f9f9f9; width:\n"
@@ -497,7 +536,8 @@ public class TemplateParserTest extends FilterTestSupport {
     @Test public void testSwitch003() {
         assertThat(wikiModel.parseTemplates("{{#switch: {{lc: {{{1| B }}} }}\n" + "| a\n" + "| b\n"
                 + "| c = '''''abc''' or '''ABC'''''\n" + "| A\n" + "| B\n" + "| C = ''Memory corruption due to cosmic rays''\n"
-                + "| #default = N/A\n" + "}}", false)).isEqualTo("'''''abc''' or '''ABC'''''");
+                + "| #default = N/A\n" + "}}", false))
+                .isEqualTo("'''''abc''' or '''ABC'''''");
     }
 
     @Test public void testSwitch004() {
@@ -517,7 +557,8 @@ public class TemplateParserTest extends FilterTestSupport {
     }
 
     @Test public void testSwitch008() {
-        assertThat(wikiModel.parseTemplates("{{Templ1/{{ #switch: imperative  | ind | ind&}}}}", false)).isEqualTo("[[:Template:Templ1/ind&]]");
+        assertThat(wikiModel.parseTemplates("{{Templ1/{{ #switch: imperative  | ind | ind&}}}}", false))
+                .isEqualTo("[[:Template:Templ1/ind&]]");
     }
 
     /**
@@ -656,10 +697,12 @@ public class TemplateParserTest extends FilterTestSupport {
     @Test public void testFormatnum006() {
         // default locale is ENGLISH
         assertThat(wikiModel.parseTemplates("{{formatnum:90.000}}")).isEqualTo("90.000");
-        assertThat(wikiModel.parseTemplates("{{formatnum:90.000000000000000000000000000000000000}}")).isEqualTo("90.000000000000000000000000000000000000");
+        assertThat(wikiModel.parseTemplates("{{formatnum:90.000000000000000000000000000000000000}}"))
+                .isEqualTo("90.000000000000000000000000000000000000");
         WikiModel germanWikiModel = newWikiTestModel(Locale.GERMAN);
         assertThat(germanWikiModel.parseTemplates("{{formatnum:90.000}}")).isEqualTo("90,000");
-        assertThat(germanWikiModel.parseTemplates("{{formatnum:90.000000000000000000000000000000000000}}")).isEqualTo("90,000000000000000000000000000000000000");
+        assertThat(germanWikiModel.parseTemplates("{{formatnum:90.000000000000000000000000000000000000}}"))
+                .isEqualTo("90,000000000000000000000000000000000000");
     }
 
     @Test public void testPlural001() {
@@ -1309,7 +1352,8 @@ public class TemplateParserTest extends FilterTestSupport {
                         + " |border = no\n"
                         + "}}\n"
                         + "The ruling Democratic Party of Japan selects '''Yoshihiko Noda''' ''(pictured)'' as the country's new Prime Minister of Japan|prime minister, following the resignation of Naoto Kan.</div>\n"
-                        + "|}")).isEqualTo("{|\n"
+                        + "|}"))
+                .isEqualTo("{|\n"
                 + "! | <h2 style=\"background:#cedff2;\">In the news</h2>\n"
                 + "|-\n"
                 + "| | <div><div style=\"float:right;margin-left:0.5em;\">\n"
@@ -1383,11 +1427,13 @@ public class TemplateParserTest extends FilterTestSupport {
 //    }
 
     @Test public void testTemplateMain() {
-        assertThat(wikiModel.parseTemplates("{{Main|Demographics of Pakistan|Pakistani people}}")).isEqualTo("<div class=\"rellink<nowiki> </nowiki>relarticle mainarticle\">Main articles: [[Demographics of Pakistan|Demographics of Pakistan]]&#32;and&#32;[[Pakistani people|Pakistani people]]</div>");
+        assertThat(wikiModel.parseTemplates("{{Main|Demographics of Pakistan|Pakistani people}}"))
+                .isEqualTo("<div class=\"rellink<nowiki> </nowiki>relarticle mainarticle\">Main articles: [[Demographics of Pakistan|Demographics of Pakistan]]&#32;and&#32;[[Pakistani people|Pakistani people]]</div>");
     }
 
     @Test public void testTemplateSeeAlso() {
-        assertThat(wikiModel.parseTemplates("{{See also|Ethnic groups in Pakistan|Religion in Pakistan}}")).isEqualTo("<div class=\"rellink<nowiki> </nowiki>boilerplate seealso\">See also: [[:Ethnic groups in Pakistan]]&nbsp;and [[:Religion in Pakistan]]</div>");
+        assertThat(wikiModel.parseTemplates("{{See also|Ethnic groups in Pakistan|Religion in Pakistan}}"))
+                .isEqualTo("<div class=\"rellink<nowiki> </nowiki>boilerplate seealso\">See also: [[:Ethnic groups in Pakistan]]&nbsp;and [[:Religion in Pakistan]]</div>");
     }
 
     @Test public void testTemplateNavbox() {
@@ -1423,7 +1469,9 @@ public class TemplateParserTest extends FilterTestSupport {
                         + "\n" + "\n" + "}}<noinclude>\n" + "\n"
                         + "[[Category:National Board of Review Awards|*|National Board of Review Award for Best Actor]]\n"
                         + "[[Category:National Board of Review Awards|*]]\n" + "[[Category:Film award templates|{{PAGENAME}}]]\n"
-                        + "[[fr:Modèle:Palette Critics Choice Awards]]\n" + "[[ja:Template:ナショナル・ボード・オブ・レビュー賞]]\n" + "</noinclude>\n" + "")).isEqualTo("<table cellspacing=\"0\" class=\"navbox\" style=\"border-spacing:0;;\"><tr><td style=\"padding:2px;\"><table cellspacing=\"0\" class=\"nowraplinks  collapsible autocollapse navbox-inner\" style=\"border-spacing:0;background:transparent;color:inherit;;\"><tr><th scope=\"col\" style=\";\" class=\"navbox-title\" colspan=2><div class=\"noprint plainlinks hlist navbar mini\" style=\"\"><ul><li class=\"nv-view\">[[Template:National Board of Review Award for Best Actor|<span title=\"View this template\" style=\";;background:none transparent;border:none;\">v</span>]]</li><li class=\"nv-talk\">[[Template_talk:National Board of Review Award for Best Actor|<span title=\"Discuss this template\" style=\";;background:none transparent;border:none;\">t</span>]]</li><li class=\"nv-edit\">[http://en.wikipedia.org/w/index.php?title=Template%3ANational+Board+of+Review+Award+for+Best+Actor&amp;action=edit <span title=\"Edit this template\" style=\";;background:none transparent;border:none;\">e</span>]</li></ul></div><div class=\"\" style=\"font-size:110%;\">\n" +
+                        + "[[fr:Modèle:Palette Critics Choice Awards]]\n" + "[[ja:Template:ナショナル・ボード・オブ・レビュー賞]]\n" + "</noinclude>\n" + ""))
+
+                .isEqualTo("<table cellspacing=\"0\" class=\"navbox\" style=\"border-spacing:0;;\"><tr><td style=\"padding:2px;\"><table cellspacing=\"0\" class=\"nowraplinks  collapsible autocollapse navbox-inner\" style=\"border-spacing:0;background:transparent;color:inherit;;\"><tr><th scope=\"col\" style=\";\" class=\"navbox-title\" colspan=2><div class=\"noprint plainlinks hlist navbar mini\" style=\"\"><ul><li class=\"nv-view\">[[Template:National Board of Review Award for Best Actor|<span title=\"View this template\" style=\";;background:none transparent;border:none;\">v</span>]]</li><li class=\"nv-talk\">[[Template_talk:National Board of Review Award for Best Actor|<span title=\"Discuss this template\" style=\";;background:none transparent;border:none;\">t</span>]]</li><li class=\"nv-edit\">[http://en.wikipedia.org/w/index.php?title=Template%3ANational+Board+of+Review+Award+for+Best+Actor&amp;action=edit <span title=\"Edit this template\" style=\";;background:none transparent;border:none;\">e</span>]</li></ul></div><div class=\"\" style=\"font-size:110%;\">\n" +
                 "[[National Board of Review Award for Best Actor]]</div></th></tr><tr style=\"height:2px;\"><td></td></tr><tr><td colspan=2 style=\"width:100%;padding:0px;;;\" class=\"navbox-list navbox-odd hlist\n" +
                 "\"><div style=\"padding:0em 0.25em\">\n" +
                 "* [[Ray Milland]] (1945)\n" +
@@ -1522,8 +1570,15 @@ public class TemplateParserTest extends FilterTestSupport {
 
     @Test public void testTemplateNavbar() {
         assertThat(wikiModel
-                .parseTemplates("{{Navbar|Screen Actors Guild Award for Outstanding Performance by a Cast in a Motion Picture (1995–2000)}}\n")).isEqualTo("<div class=\"noprint plainlinks hlist navbar \" style=\"\"><span style=\"word-spacing:0;\">This box: </span><ul><li class=\"nv-view\">[[Template:Screen Actors Guild Award for Outstanding Performance by a Cast in a Motion Picture (1995–2000)|<span title=\"View this template\" style=\"\">view</span>]]</li><li class=\"nv-talk\">[[Template_talk:Screen Actors Guild Award for Outstanding Performance by a Cast in a Motion Picture (1995–2000)|<span title=\"Discuss this template\" style=\"\">talk</span>]]</li><li class=\"nv-edit\">[http://en.wikipedia.org/w/index.php?title=Template%3AScreen+Actors+Guild+Award+for+Outstanding+Performance+by+a+Cast+in+a+Motion+Picture+%281995%E2%80%932000%29&amp;action=edit <span title=\"Edit this template\" style=\"\">edit</span>]</li></ul></div>\n"
-                + "");
+                .parseTemplates("{{Navbar|Screen Actors Guild Award for Outstanding Performance by a Cast in a Motion Picture (1995–2000)}}\n"))
+                .isEqualTo("<div class=\"noprint plainlinks hlist navbar \" style=\"\"><span style=\"word-spacing:0;\">This box:" +
+                        " </span><ul><li class=\"nv-view\">[[Template:Screen Actors Guild Award for Outstanding Performance by a" +
+                        " Cast in a Motion Picture (1995–2000)|<span title=\"View this template\" style=\"\">view</span>]]</li><" +
+                        "li class=\"nv-talk\">[[Template_talk:Screen Actors Guild Award for Outstanding Performance by a Cast in" +
+                        " a Motion Picture (1995–2000)|<span title=\"Discuss this template\" style=\"\">talk</span>]]</li><li cl" +
+                        "ass=\"nv-edit\">[http://en.wikipedia.org/w/index.php?title=Template%3AScreen+Actors+Guild+Award+for+Out" +
+                        "standing+Performance+by+a+Cast+in+a+Motion+Picture+%281995%E2%80%932000%29&amp;action=edit <span title=\"" +
+                        "Edit this template\" style=\"\">edit</span>]</li></ul></div>\n");
     }
 
     @Test public void testWeather01() {
@@ -1547,7 +1602,8 @@ public class TemplateParserTest extends FilterTestSupport {
     }
 
     @Test public void testTemplateLastTilde01() {
-        assertThat(wikiModel.parseTemplates("{{TestTemplateName01~}}")).isEqualTo("[[:Template:TestTemplateName01~]]" + "");
+        assertThat(wikiModel.parseTemplates("{{TestTemplateName01~}}"))
+                .isEqualTo("[[:Template:TestTemplateName01~]]" + "");
     }
 
     @Test public void testShouldNotBeParsed01() {
