@@ -32,23 +32,18 @@ import java.util.List;
  *
  * @see TemplateParser for the first pass
  */
-public class WikipediaParser extends AbstractParser {
-    private ITableOfContent fTableOfContentTag = null;
+public class WikipediaParser extends AbstractWikipediaParser {
+    public static final String[] TOC_IDENTIFIERS = { "TOC", "NOTOC", "FORCETOC" };
 
-    private int fHeadCounter = 0;
+    private ITableOfContent fTableOfContentTag;
+    private int fHeadCounter;
 
-    /**
-     * Enable HTML tags
-     */
     private boolean fHtmlCodes = true;
+    private boolean fNoToC;
+    private boolean fRenderTemplate;
+    private boolean fForceToC;
 
-    private boolean fNoToC = false;
-
-    private boolean fRenderTemplate = false;
-
-    private boolean fForceToC = false;
-
-    private IEventListener fEventListener = null;
+    private IEventListener fEventListener;
 
     public WikipediaParser(String stringSource, boolean renderTemplate) {
         this(stringSource, renderTemplate, null);
@@ -90,7 +85,7 @@ public class WikipediaParser extends AbstractParser {
         return false;
     }
 
-    public int getNextToken() // throws InvalidInputException
+    private int getNextToken() // throws InvalidInputException
     {
         fWhiteStart = true;
         fWhiteStartPosition = fCurrentPosition;
@@ -769,8 +764,6 @@ public class WikipediaParser extends AbstractParser {
 
     /**
      * Parse <code>----</code> as &lt;hr&gt; tag
-     *
-     * @return
      */
     private boolean parseHorizontalRuler() {
         if (isStartOfLine()) {
@@ -806,10 +799,8 @@ public class WikipediaParser extends AbstractParser {
      * <pre>
      * * first line
      * * second line
-     * ** third line
+     * * third line
      * </pre>
-     *
-     * @return
      */
     private boolean parseLists() {
         // set scanner pointer to '\n' character:

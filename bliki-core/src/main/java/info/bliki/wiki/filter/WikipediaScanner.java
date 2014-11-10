@@ -13,9 +13,6 @@ import java.util.List;
 import java.util.Map;
 
 public class WikipediaScanner {
-
-    public final static String TAG_NAME = "$TAG_NAME";
-
     /**
      * Return value when the source is exhausted. Has a value of <code>-1</code>.
      */
@@ -23,7 +20,7 @@ public class WikipediaScanner {
 
     protected int fScannerPosition;
 
-    protected IWikiModel fWikiModel = null;
+    protected IWikiModel fWikiModel;
 
     /**
      * The <code>String</code> of the given raw wiki text

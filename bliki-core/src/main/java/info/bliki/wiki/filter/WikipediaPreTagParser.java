@@ -26,14 +26,9 @@ import java.util.List;
  * as &lt;pre&gt;...&lt;/pre&gt;)
  *
  */
-public class WikipediaPreTagParser extends AbstractParser {
-
-    /**
-     * Enable HTML tags
-     */
+public class WikipediaPreTagParser extends AbstractWikipediaParser {
     private boolean fHtmlCodes = true;
-
-    private IEventListener fEventListener = null;
+    private IEventListener fEventListener;
 
     public WikipediaPreTagParser(String stringSource) {
         this(stringSource, null);
@@ -362,7 +357,7 @@ public class WikipediaPreTagParser extends AbstractParser {
 
     @Override
     public void runParser() {
-        int token = TokenSTART;
+        int token;
         while ((token = getNextToken()) != TokenEOF) {
             switch (token) {
             case TokenBOLDITALIC:
@@ -525,5 +520,36 @@ public class WikipediaPreTagParser extends AbstractParser {
         }
 
         return localStack;
+    }
+
+    /**
+     * Reduce the current token stack until an allowed parent is at the top of the
+     * stack
+     */
+    private void reduceTokenStack(TagToken node) {
+        String allowedParents = node.getParents();
+        if (allowedParents != null) {
+            TagToken tag;
+            int index;
+
+            while (fWikiModel.stackSize() > 0) {
+                tag = fWikiModel.peekNode();
+                index = allowedParents.indexOf("|" + tag.getName() + "|");
+                if (index < 0) {
+                    fWikiModel.popNode();
+                    if (tag.getName().equals(node.getName())) {
+                        // for wrong nested HTML tags like <table> <tr><td>number
+                        // 1<tr><td>number 2</table>
+                        break;
+                    }
+                } else {
+                    break;
+                }
+            }
+        } else {
+            while (fWikiModel.stackSize() > 0) {
+                fWikiModel.popNode();
+            }
+        }
     }
 }
