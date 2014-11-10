@@ -915,10 +915,8 @@ public class WikipediaParser extends AbstractWikipediaParser {
                     headerStartPosition, headerEndPosition, level);
             fCurrentPosition = endIndex;
 
-            if (head != null) {
-                fTableOfContentTag = fWikiModel.appendHead(head, level, fNoToC,
-                        ++fHeadCounter, startPosition, endPosition);
-            }
+            fTableOfContentTag = fWikiModel.appendHead(head, level, fNoToC,
+                    ++fHeadCounter, startPosition, endPosition);
             return true;
         }
         return false;
@@ -1428,7 +1426,7 @@ public class WikipediaParser extends AbstractWikipediaParser {
      *
      * @return <code>true</code> if the currently parsed wiki text is a template
      */
-    public boolean isTemplate() {
+    private boolean isTemplate() {
         return fRenderTemplate;
     }
 }

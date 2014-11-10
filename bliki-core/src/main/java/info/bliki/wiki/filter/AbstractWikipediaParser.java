@@ -5,10 +5,16 @@ import info.bliki.htmlcleaner.TagNode;
 import info.bliki.htmlcleaner.TagToken;
 import info.bliki.wiki.model.Configuration;
 import info.bliki.wiki.model.IWikiModel;
+import info.bliki.wiki.model.WikiModelContentException;
+import info.bliki.wiki.namespaces.INamespace;
 import info.bliki.wiki.tags.HTMLTag;
 import info.bliki.wiki.tags.WPBoldItalicTag;
 import info.bliki.wiki.tags.WPTag;
 import info.bliki.wiki.tags.util.TagStack;
+
+import java.util.Map;
+
+import static info.bliki.wiki.filter.ParsedPageName.parsePageName;
 
 public abstract class AbstractWikipediaParser extends AbstractParser {
     protected static final int TokenIgnore = -1;
@@ -24,6 +30,40 @@ public abstract class AbstractWikipediaParser extends AbstractParser {
 
     public AbstractWikipediaParser(String stringSource) {
         super(stringSource);
+    }
+
+    public abstract void runParser();
+    protected abstract void setNoToC(boolean noToC);
+
+    public static String getRedirectedRawContent(IWikiModel wikiModel, ParsedPageName parsedPagename,
+                                                 Map<String, String> templateParameters) {
+        try {
+            int level = wikiModel.incrementRecursionLevel();
+            if (level > Configuration.PARSER_RECURSION_LIMIT || !parsedPagename.valid) {
+                return "<span class=\"error\">Error - getting content of redirected link: " + parsedPagename.namespace + ":"
+                        + parsedPagename.pagename + "<span>";
+            }
+            try {
+                return wikiModel.getRawWikiContent(parsedPagename, templateParameters);
+            } catch (WikiModelContentException e) {
+                return "<span class=\"error\">Error - getting content of redirected link: " + parsedPagename.namespace + ":"
+                        + parsedPagename.pagename + "<span>";
+            }
+        } finally {
+            wikiModel.decrementRecursionLevel();
+        }
+    }
+
+    protected static String getRedirectedTemplateContent(IWikiModel wikiModel, String redirectedLink,
+                                                         Map<String, String> templateParameters) {
+        final INamespace namespace = wikiModel.getNamespace();
+        ParsedPageName parsedPagename = parsePageName(wikiModel, redirectedLink, namespace.getMain(), false, false);
+        // note: don't just get redirect content if the namespace is the template
+        // namespace!
+        if (!parsedPagename.valid) {
+            return null;
+        }
+        return getRedirectedRawContent(wikiModel, parsedPagename, templateParameters);
     }
 
     protected void reduceTokenStack() {
@@ -51,7 +91,6 @@ public abstract class AbstractWikipediaParser extends AbstractParser {
             }
         }
     }
-
 
     protected boolean parseHTMLCommentTags() {
         if (fStringSource.startsWith("<!--", fCurrentPosition - 1)) {
@@ -81,6 +120,33 @@ public abstract class AbstractWikipediaParser extends AbstractParser {
         if (found) {
             fWhiteStart = true;
             fWhiteStartPosition = fCurrentPosition;
+        }
+    }
+
+    /**
+     * Reduce the current token stack until the given nodes name is at the top of
+     * the stack. Useful for closing HTML tags.
+     */
+    protected void reduceStackUntilToken(TagToken node) {
+        TagToken tag;
+        int index = -1;
+        String allowedParents = node.getParents();
+        while (fWikiModel.stackSize() > 0) {
+            tag = fWikiModel.peekNode();
+            if (node.getName().equals(tag.getName())) {
+                fWikiModel.popNode();
+                break;
+            }
+            if (allowedParents == null) {
+                fWikiModel.popNode();
+            } else {
+                index = allowedParents.indexOf("|" + tag.getName() + "|");
+                if (index < 0) {
+                    fWikiModel.popNode();
+                } else {
+                    break;
+                }
+            }
         }
     }
 

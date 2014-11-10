@@ -1,14 +1,5 @@
 package info.bliki.wiki.filter;
 
-import info.bliki.wiki.model.Configuration;
-import info.bliki.wiki.model.IWikiModel;
-import info.bliki.wiki.model.WikiModelContentException;
-import info.bliki.wiki.namespaces.INamespace;
-
-import java.util.Map;
-
-import static info.bliki.wiki.filter.ParsedPageName.parsePageName;
-
 public abstract class AbstractParser extends WikipediaScanner {
     protected char fCurrentCharacter;
     protected int fCurrentPosition;
@@ -22,9 +13,6 @@ public abstract class AbstractParser extends WikipediaScanner {
         fWhiteStart = false;
         fWhiteStartPosition = 0;
     }
-
-    public abstract void runParser();
-    protected abstract void setNoToC(boolean noToC);
 
     /**
      * Read the characters until the given string is found and set the current
@@ -86,25 +74,6 @@ public abstract class AbstractParser extends WikipediaScanner {
     }
 
     /**
-     * Read until character is found
-     *
-     * @param testedChar
-     *          search the next position of this char
-     * @return <code>true</code> if the tested character can be found
-     */
-    protected final boolean readUntilChar(char testedChar) {
-        int temp = fCurrentPosition;
-        try {
-            while ((fCurrentCharacter = fSource[fCurrentPosition++]) != testedChar) {
-            }
-            return true;
-        } catch (IndexOutOfBoundsException e) {
-            fCurrentPosition = temp;
-            return false;
-        }
-    }
-
-    /**
      * Read until character is found or stop at end-of-line
      *
      * @param testedChar
@@ -133,34 +102,6 @@ public abstract class AbstractParser extends WikipediaScanner {
         } catch (IndexOutOfBoundsException e) {
             fCurrentPosition = temp;
             return false;
-        }
-    }
-
-    /**
-     * Read until the end-of-line characters (i.e. '\r' or '\n') or the end of the
-     * string is reached
-     *
-     * @return <code>true</code> if the end-of-line characters or the end of the
-     *         string is reached
-     *
-     */
-    protected final boolean readUntilEOL() {
-        try {
-            while (true) {
-                fCurrentCharacter = fSource[fCurrentPosition++];
-                if (fCurrentCharacter == '\n' || fCurrentCharacter == '\r') {
-                    return true;
-                }
-                if (fCurrentCharacter == '<') {
-                    int newPos = readSpecialWikiTags(fCurrentPosition);
-                    if (newPos >= 0) {
-                        fCurrentPosition = newPos;
-                    }
-                }
-            }
-        } catch (IndexOutOfBoundsException e) {
-            --fCurrentPosition;
-            return true;
         }
     }
 
@@ -235,92 +176,11 @@ public abstract class AbstractParser extends WikipediaScanner {
         }
     }
 
-    protected final int getNextChar(char testedChar1, char testedChar2) {
-        int temp = fCurrentPosition;
-        try {
-            int result;
-            fCurrentCharacter = fSource[fCurrentPosition++];
-            if (fCurrentCharacter == testedChar1)
-                result = 0;
-            else if (fCurrentCharacter == testedChar2)
-                result = 1;
-            else {
-                fCurrentPosition = temp;
-                return -1;
-            }
-            return result;
-        } catch (IndexOutOfBoundsException e) {
-            fCurrentPosition = temp;
-            return -1;
-        }
-    }
-
-    protected final boolean getNextCharAsDigit() {
-        int temp = fCurrentPosition;
-        try {
-            fCurrentCharacter = fSource[fCurrentPosition++];
-            if (!Character.isDigit(fCurrentCharacter)) {
-                fCurrentPosition = temp;
-                return false;
-            }
-            return true;
-        } catch (IndexOutOfBoundsException e) {
-            fCurrentPosition = temp;
-            return false;
-        }
-    }
-
     protected final boolean getNextCharAsWhitespace() {
         int temp = fCurrentPosition;
         try {
             fCurrentCharacter = fSource[fCurrentPosition++];
             if (!Character.isWhitespace(fCurrentCharacter)) {
-                fCurrentPosition = temp;
-                return false;
-            }
-            return true;
-        } catch (IndexOutOfBoundsException e) {
-            fCurrentPosition = temp;
-            return false;
-        }
-    }
-
-    protected final boolean getNextCharAsDigit(int radix) {
-
-        int temp = fCurrentPosition;
-        try {
-            fCurrentCharacter = fSource[fCurrentPosition++];
-
-            if (Character.digit(fCurrentCharacter, radix) == -1) {
-                fCurrentPosition = temp;
-                return false;
-            }
-            return true;
-        } catch (IndexOutOfBoundsException e) {
-            fCurrentPosition = temp;
-            return false;
-        }
-    }
-
-    protected final int getNumberOfChar(char testedChar) {
-        int number = 0;
-        try {
-            while ((fCurrentCharacter = fSource[fCurrentPosition++]) == testedChar) {
-                number++;
-            }
-        } catch (IndexOutOfBoundsException e) {
-
-        }
-        fCurrentPosition--;
-        return number;
-    }
-
-    protected final boolean getNextCharAsWikiPluginIdentifierPart() {
-        int temp = fCurrentPosition;
-        try {
-            fCurrentCharacter = fSource[fCurrentPosition++];
-
-            if (!Encoder.isWikiPluginIdentifierPart(fCurrentCharacter)) {
                 fCurrentPosition = temp;
                 return false;
             }
@@ -380,35 +240,4 @@ public abstract class AbstractParser extends WikipediaScanner {
     }
 
 
-
-    public static String getRedirectedTemplateContent(IWikiModel wikiModel, String redirectedLink,
-            Map<String, String> templateParameters) {
-        final INamespace namespace = wikiModel.getNamespace();
-        ParsedPageName parsedPagename = parsePageName(wikiModel, redirectedLink, namespace.getMain(), false, false);
-        // note: don't just get redirect content if the namespace is the template
-        // namespace!
-        if (!parsedPagename.valid) {
-            return null;
-        }
-        return getRedirectedRawContent(wikiModel, parsedPagename, templateParameters);
-    }
-
-    public static String getRedirectedRawContent(IWikiModel wikiModel, ParsedPageName parsedPagename,
-            Map<String, String> templateParameters) {
-        try {
-            int level = wikiModel.incrementRecursionLevel();
-            if (level > Configuration.PARSER_RECURSION_LIMIT || !parsedPagename.valid) {
-                return "<span class=\"error\">Error - getting content of redirected link: " + parsedPagename.namespace + ":"
-                        + parsedPagename.pagename + "<span>";
-            }
-            try {
-                return wikiModel.getRawWikiContent(parsedPagename, templateParameters);
-            } catch (WikiModelContentException e) {
-                return "<span class=\"error\">Error - getting content of redirected link: " + parsedPagename.namespace + ":"
-                        + parsedPagename.pagename + "<span>";
-            }
-        } finally {
-            wikiModel.decrementRecursionLevel();
-        }
-    }
 }

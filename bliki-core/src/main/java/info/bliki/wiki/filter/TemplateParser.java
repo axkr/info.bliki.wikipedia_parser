@@ -9,6 +9,7 @@ import info.bliki.wiki.template.Subst;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.Nullable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -115,7 +116,7 @@ public class TemplateParser extends AbstractParser {
             if (templateParameterMap != null && (!templateParameterMap.isEmpty())) {
                 int indx = sb.indexOf("{{{");
                 if (indx >= 0) {
-                    WikipediaScanner scanner = new WikipediaScanner(sb.toString());
+                    TemplateParser scanner = new TemplateParser(sb.toString());
                     scanner.setModel(wikiModel);
                     sb = scanner.replaceTemplateParameters(templateParameterMap, 0);
                 }
@@ -168,7 +169,7 @@ public class TemplateParser extends AbstractParser {
             if (!renderTemplate) {
                 String redirectedLink = WikipediaParser.parseRedirect(sb.toString(), wikiModel);
                 if (redirectedLink != null) {
-                    String redirectedContent = getRedirectedTemplateContent(wikiModel, redirectedLink, null);
+                    String redirectedContent = WikipediaParser.getRedirectedTemplateContent(wikiModel, redirectedLink, null);
                     if (redirectedContent != null) {
                         parseRecursive(redirectedContent, wikiModel, writer, parseOnlySignature, renderTemplate);
                         return;
@@ -297,10 +298,10 @@ public class TemplateParser extends AbstractParser {
     }
 
     private boolean isSubsOrSafesubst() {
-        return (fSource[fCurrentPosition] == '{' && (fSource.length > fCurrentPosition + 6) && fSource[fCurrentPosition + 1] == 's');
+        return (fSource[fCurrentPosition] == '{' && (fSource.length > fCurrentPosition + SUBST_LENGTH) && fSource[fCurrentPosition + 1] == 's');
     }
 
-    protected void runParser(Appendable writer) throws IOException {
+    private void runParser(Appendable writer) throws IOException {
         fWhiteStart = true;
         fWhiteStartPosition = fCurrentPosition;
         try {
@@ -389,7 +390,7 @@ public class TemplateParser extends AbstractParser {
      * @return
      * @throws IOException
      */
-    protected boolean parseIncludeWikiTags(StringBuilder writer, boolean ignoreTemplateTags) throws IOException {
+    private boolean parseIncludeWikiTags(StringBuilder writer, boolean ignoreTemplateTags) throws IOException {
         try {
             switch (fSource[fCurrentPosition]) {
             case '!': // <!-- html comment -->
@@ -505,7 +506,7 @@ public class TemplateParser extends AbstractParser {
         return false;
     }
 
-    protected boolean parseSpecialWikiTags(Appendable writer) throws IOException {
+    private boolean parseSpecialWikiTags(Appendable writer) throws IOException {
         int startPosition = fCurrentPosition;
         try {
             switch (fSource[fCurrentPosition]) {
@@ -550,7 +551,7 @@ public class TemplateParser extends AbstractParser {
         return false;
     }
 
-    protected void appendContent(Appendable writer, boolean whiteStart, final int whiteStartPosition, final int diff,
+    private void appendContent(Appendable writer, boolean whiteStart, final int whiteStartPosition, final int diff,
             boolean stripHTMLComments) throws IOException {
         if (whiteStart) {
             try {
@@ -766,7 +767,7 @@ public class TemplateParser extends AbstractParser {
         fCurrentPosition = templateEndPosition;
         int indx = plainContent.indexOf("{{{");
         if (indx >= 0) {
-            WikipediaScanner scanner = new WikipediaScanner(plainContent);
+            TemplateParser scanner = new TemplateParser(plainContent);
             scanner.setModel(fWikiModel);
             StringBuilder plainBuffer = scanner.replaceTemplateParameters(null, 0);
             if (plainBuffer == null) {
@@ -960,17 +961,107 @@ public class TemplateParser extends AbstractParser {
         return false;
     }
 
-    @Override
-    public void runParser() {
-        // do nothing here
+    /**
+     * Replace the wiki template parameters in the given template string
+     *
+     * @param templateParameters
+     * @param curlyBraceOffset
+     *          TODO
+     * @param template
+     *
+     * @return <code>null</code> if no replacement could be found
+     */
+    public StringBuilder replaceTemplateParameters(@Nullable Map<String, String> templateParameters, int curlyBraceOffset) {
+        StringBuilder buffer = null;
+        int bufferStart = 0;
+        try {
+            int level = fWikiModel.incrementRecursionLevel();
+            if (level > Configuration.PARSER_RECURSION_LIMIT) {
+                return null; // no further processing
+            }
+            fScannerPosition += curlyBraceOffset;
+            char ch;
+            int parameterStart = -1;
+            StringBuilder recursiveResult;
+            boolean isDefaultValue;
+            while (true) {
+                ch = fSource[fScannerPosition++];
+                if (ch == '{' && fSource[fScannerPosition] == '{' && fSource[fScannerPosition + 1] == '{'
+                        && fSource[fScannerPosition + 2] != '{') {
+                    fScannerPosition += 2;
+                    parameterStart = fScannerPosition;
+
+                    int temp[] = findNestedParamEnd(fSource, parameterStart);
+                    if (temp[0] >= 0) {
+                        fScannerPosition = temp[0];
+                        List<String> list = splitByPipe(fSource, parameterStart, fScannerPosition - 3, null);
+                        if (list.size() > 0) {
+                            String parameterString = list.get(0).trim();
+
+                            TemplateParser scanner1 = new TemplateParser(parameterString);
+                            scanner1.setModel(fWikiModel);
+                            recursiveResult = scanner1.replaceTemplateParameters(templateParameters, curlyBraceOffset);
+                            if (recursiveResult != null) {
+                                parameterString = recursiveResult.toString();
+                            }
+
+                            String value = null;
+                            isDefaultValue = false;
+                            if (templateParameters != null) {
+                                value = templateParameters.get(parameterString);
+                            }
+                            if (value == null && list.size() > 1) {
+                                // default value is available for the template
+                                value = list.get(1);
+                                isDefaultValue = true;
+                            }
+                            if (value != null) {
+                                if (value.length() <= Configuration.TEMPLATE_VALUE_LIMIT) {
+                                    if (buffer == null) {
+                                        buffer = new StringBuilder(fSource.length + 128);
+                                    }
+                                    if (bufferStart < fScannerPosition) {
+                                        buffer.append(fSource, bufferStart, parameterStart - bufferStart - 3);
+                                    }
+
+                                    TemplateParser scanner2 = new TemplateParser(value);
+                                    scanner2.setModel(fWikiModel);
+                                    if (isDefaultValue) {
+                                        recursiveResult = scanner2.replaceTemplateParameters(templateParameters, curlyBraceOffset);
+                                    } else {
+                                        recursiveResult = scanner2.replaceTemplateParameters(null, curlyBraceOffset);
+                                    }
+                                    if (recursiveResult != null) {
+                                        buffer.append(recursiveResult);
+                                    } else {
+                                        buffer.append(value);
+                                    }
+                                    bufferStart = fScannerPosition;
+                                }
+                            }
+                        }
+                        fScannerPosition = temp[0];
+                        parameterStart = -1;
+                    }
+                }
+                if (buffer != null && buffer.length() > Configuration.TEMPLATE_BUFFER_LIMIT) {
+                    // Controls the scanner, when infinite recursion occurs the
+                    // buffer grows out of control.
+                    return buffer;
+                }
+            }
+        } catch (IndexOutOfBoundsException e) {
+            // ignore
+        } finally {
+            fWikiModel.decrementRecursionLevel();
+        }
+        if (buffer != null && bufferStart < fScannerPosition) {
+            buffer.append(fSource, bufferStart, fScannerPosition - bufferStart - 1);
+        }
+        return buffer;
     }
 
-    @Override
-    protected void setNoToC(boolean noToC) {
-        // do nothing here
-    }
-
-    public boolean isTemplate() {
+    private boolean isTemplate() {
         return fRenderTemplate;
     }
 

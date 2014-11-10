@@ -1,25 +1,16 @@
 package info.bliki.wiki.filter;
 
-import info.bliki.htmlcleaner.TagToken;
-import info.bliki.wiki.model.Configuration;
 import info.bliki.wiki.model.ITableOfContent;
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.tags.util.NodeAttribute;
 import info.bliki.wiki.tags.util.WikiTagNode;
 
-import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class WikipediaScanner {
-    /**
-     * Return value when the source is exhausted. Has a value of <code>-1</code>.
-     */
     public static final int EOF = -1;
-
     protected int fScannerPosition;
-
     protected IWikiModel fWikiModel;
 
     /**
@@ -537,105 +528,7 @@ public class WikipediaScanner {
         return str.regionMatches(ignoreCase, toffset, prefix, 0, prefix.length());
     }
 
-    /**
-     * Replace the wiki template parameters in the given template string
-     *
-     * @param templateParameters
-     * @param curlyBraceOffset
-     *          TODO
-     * @param template
-     *
-     * @return <code>null</code> if no replacement could be found
-     */
-    public StringBuilder replaceTemplateParameters(@Nullable Map<String, String> templateParameters, int curlyBraceOffset) {
-        StringBuilder buffer = null;
-        int bufferStart = 0;
-        try {
-            int level = fWikiModel.incrementRecursionLevel();
-            if (level > Configuration.PARSER_RECURSION_LIMIT) {
-                return null; // no further processing
-            }
-            fScannerPosition += curlyBraceOffset;
-            char ch;
-            int parameterStart = -1;
-            StringBuilder recursiveResult;
-            boolean isDefaultValue;
-            while (true) {
-                ch = fSource[fScannerPosition++];
-                if (ch == '{' && fSource[fScannerPosition] == '{' && fSource[fScannerPosition + 1] == '{'
-                        && fSource[fScannerPosition + 2] != '{') {
-                    fScannerPosition += 2;
-                    parameterStart = fScannerPosition;
 
-                    int temp[] = findNestedParamEnd(fSource, parameterStart);
-                    if (temp[0] >= 0) {
-                        fScannerPosition = temp[0];
-                        List<String> list = splitByPipe(fSource, parameterStart, fScannerPosition - 3, null);
-                        if (list.size() > 0) {
-                            String parameterString = list.get(0).trim();
-
-                            WikipediaScanner scanner1 = new WikipediaScanner(parameterString);
-                            scanner1.setModel(fWikiModel);
-                            recursiveResult = scanner1.replaceTemplateParameters(templateParameters, curlyBraceOffset);
-                            if (recursiveResult != null) {
-                                parameterString = recursiveResult.toString();
-                            }
-
-                            String value = null;
-                            isDefaultValue = false;
-                            if (templateParameters != null) {
-                                value = templateParameters.get(parameterString);
-                            }
-                            if (value == null && list.size() > 1) {
-                                // default value is available for the template
-                                value = list.get(1);
-                                isDefaultValue = true;
-                            }
-                            if (value != null) {
-                                if (value.length() <= Configuration.TEMPLATE_VALUE_LIMIT) {
-                                    if (buffer == null) {
-                                        buffer = new StringBuilder(fSource.length + 128);
-                                    }
-                                    if (bufferStart < fScannerPosition) {
-                                        buffer.append(fSource, bufferStart, parameterStart - bufferStart - 3);
-                                    }
-
-                                    WikipediaScanner scanner2 = new WikipediaScanner(value);
-                                    scanner2.setModel(fWikiModel);
-                                    if (isDefaultValue) {
-                                        recursiveResult = scanner2.replaceTemplateParameters(templateParameters, curlyBraceOffset);
-                                    } else {
-                                        recursiveResult = scanner2.replaceTemplateParameters(null, curlyBraceOffset);
-                                    }
-                                    if (recursiveResult != null) {
-                                        buffer.append(recursiveResult);
-                                    } else {
-                                        buffer.append(value);
-                                    }
-                                    bufferStart = fScannerPosition;
-                                }
-                            }
-                        }
-                        fScannerPosition = temp[0];
-                        parameterStart = -1;
-                    }
-                }
-                if (buffer != null && buffer.length() > Configuration.TEMPLATE_BUFFER_LIMIT) {
-                    // Controls the scanner, when infinite recursion occurs the
-                    // buffer grows out of control.
-                    return buffer;
-                }
-            }
-        } catch (IndexOutOfBoundsException e) {
-            // ignore
-        } finally {
-            fWikiModel.decrementRecursionLevel();
-        }
-        if (buffer != null && bufferStart < fScannerPosition) {
-            buffer.append(fSource, bufferStart, fScannerPosition - bufferStart - 1);
-        }
-        return buffer;
-    }
 
     /**
      * Split the given src string by pipe symbol (i.e. &quot;|&quot;)
@@ -1474,32 +1367,4 @@ public class WikipediaScanner {
         }
         return -1;
     }
-
-    /**
-     * Reduce the current token stack until the given nodes name is at the top of
-     * the stack. Useful for closing HTML tags.
-     */
-    protected void reduceStackUntilToken(TagToken node) {
-        TagToken tag;
-        int index = -1;
-        String allowedParents = node.getParents();
-        while (fWikiModel.stackSize() > 0) {
-            tag = fWikiModel.peekNode();
-            if (node.getName().equals(tag.getName())) {
-                fWikiModel.popNode();
-                break;
-            }
-            if (allowedParents == null) {
-                fWikiModel.popNode();
-            } else {
-                index = allowedParents.indexOf("|" + tag.getName() + "|");
-                if (index < 0) {
-                    fWikiModel.popNode();
-                } else {
-                    break;
-                }
-            }
-        }
-    }
-
 }
