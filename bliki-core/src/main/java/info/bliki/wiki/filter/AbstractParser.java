@@ -20,18 +20,18 @@ import java.util.Map;
 public abstract class AbstractParser extends WikipediaScanner {
     public static final String[] TOC_IDENTIFIERS = { "TOC", "NOTOC", "FORCETOC" };
 
-    protected static final  int TokenIgnore = -1;
-    protected static final  int TokenSTART = 0;
-    protected static final  int TokenEOF = 1;
-    protected static final  int TokenBOLD = 3;
-    protected static final  int TokenITALIC = 4;
-    protected static final  int TokenBOLDITALIC = 5;
+    protected static final int TokenIgnore = -1;
+    protected static final int TokenSTART = 0;
+    protected static final int TokenEOF = 1;
+    protected static final int TokenBOLD = 3;
+    protected static final int TokenITALIC = 4;
+    protected static final int TokenBOLDITALIC = 5;
 
-    protected static final  HTMLTag BOLD = new WPTag("b");
-    protected static final  HTMLTag ITALIC = new WPTag("i");
-    protected static final  HTMLTag BOLDITALIC = new WPBoldItalicTag();
-    protected static final  HTMLTag STRONG = new WPTag("strong");
-    protected static final  HTMLTag EM = new WPTag("em");
+    protected static final HTMLTag BOLD = new WPTag("b");
+    protected static final HTMLTag ITALIC = new WPTag("i");
+    protected static final HTMLTag BOLDITALIC = new WPBoldItalicTag();
+    protected static final HTMLTag STRONG = new WPTag("strong");
+    protected static final HTMLTag EM = new WPTag("em");
 
     /**
      * The current scanned character

@@ -98,14 +98,6 @@ public class TemplateParser extends AbstractParser {
     /**
      * Preprocess parsing of the <code>&lt;includeonly&gt;</code>,
      * <code>&lt;onlyinclude&gt;</code> and <code>&lt;noinclude&gt;</code> tags
-     *
-     * @param rawWikitext
-     * @param wikiModel
-     * @param writer
-     * @param renderTemplate
-     * @param onlyIncludeFlag
-     * @param templateParameterMap
-     * @throws IOException
      */
     public static void parsePreprocessRecursive(int startIndex, String rawWikitext, IWikiModel wikiModel, StringBuilder writer,
             boolean renderTemplate, boolean onlyIncludeFlag, Map<String, String> templateParameterMap) throws IOException {
