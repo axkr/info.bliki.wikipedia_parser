@@ -1373,14 +1373,6 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
      * {@inheritDoc}
      */
     @Override
-    public boolean parseBBCodes() {
-        return false;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
     public boolean parseBehaviorSwitch(String identifier) {
         for (int i = 0; i < WikipediaParser.TOC_IDENTIFIERS.length; i++) {
             if (WikipediaParser.TOC_IDENTIFIERS[i].equals(identifier)) {

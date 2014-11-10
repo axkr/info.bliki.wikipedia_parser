@@ -760,16 +760,6 @@ public interface IWikiModel extends IConfiguration {
             String uriSchemeSpecificPart);
 
     /**
-     * Parse BBCode (Bulletin Board Code), like syntax codes in this wiki. See
-     * <a
-     * href="http://en.wikipedia.org/wiki/BBCode">http://en.wikipedia.org/wiki
-     * /BBCode</a> for more information.
-     *
-     * @return <code>true</code> if the bbCodes should be parsed
-     */
-    public boolean parseBBCodes();
-
-    /**
      * Parse a behavior switch (i.e. an identifier with two leading and trailing
      * underscores &quot;__&quot; like for example
      * <code>__NOEDITSECTION__</code> ). See <a href
