@@ -22,24 +22,25 @@ import java.util.regex.Pattern;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assume.assumeTrue;
 
+// TODO: make this work with junit4
 public class MediaWikiParserTest {
 
-    protected final static String testFileName = "parserTests.txt";
+    private final static String testFileName = "parserTests.txt";
 //    protected final static String testFileName = "parserTests-full.txt";
 
-    protected MediaWikiTestModel wikiModel = null;
-    static protected HashMap<String, String> db = new HashMap<>();
+    private MediaWikiTestModel wikiModel;
+    private static HashMap<String, String> db = new HashMap<>();
 
-    protected final String input;
-    protected final String expectedResult;
-    protected final Map<String, Object> options;
-    protected final Map<String, Object> config;
+    private final String input;
+    private final String expectedResult;
+    private final Map<String, Object> options;
+    private final Map<String, Object> config;
 
     private boolean AVOID_PAGE_BREAK_IN_TABLE_before;
 
-    protected static final Pattern COMMAND = Pattern.compile("^!!\\s*(\\w+).*");
-    protected static final Pattern TEST_DISABLED = Pattern.compile(".*\\bdisabled\\b.*", Pattern.CASE_INSENSITIVE);
-    protected static final Pattern NEWLINE_BLOCK = Pattern.compile("^\n<(div|p|li|td|table|ul|ol|th|tr|dl|pre).*", Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
+    private static final Pattern COMMAND = Pattern.compile("^!!\\s*(\\w+).*");
+    private static final Pattern TEST_DISABLED = Pattern.compile(".*\\bdisabled\\b.*", Pattern.CASE_INSENSITIVE);
+    private static final Pattern NEWLINE_BLOCK = Pattern.compile("^\n<(div|p|li|td|table|ul|ol|th|tr|dl|pre).*", Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
     /*
      * foo
      * foo=bar
@@ -47,7 +48,7 @@ public class MediaWikiParserTest {
      * foo=[[bar baz]]
      * foo=bar,"baz quux"
      */
-    protected static final Pattern OPTION = Pattern.compile(
+    private static final Pattern OPTION = Pattern.compile(
             "\\b" +
             "([\\w-]+)" + // Key
             "\\b" +
@@ -83,7 +84,7 @@ public class MediaWikiParserTest {
         this.config = parseConfig(configs);
     }
 
-    protected static MediaWikiTestModel newWikiTestModel(Locale locale) {
+    private static MediaWikiTestModel newWikiTestModel(Locale locale) {
         MediaWikiTestModel wikiModel = new MediaWikiTestModel(locale,
                 "/wiki/${image}",
                 "/wiki/${title}", db);
@@ -100,7 +101,7 @@ public class MediaWikiParserTest {
      * @return a 2-element array with the two components - the first may be
      *         empty if no colon is found
      */
-    protected static String[] splitAtColon(String fullTitle) {
+    private static String[] splitAtColon(String fullTitle) {
         int colonIndex = fullTitle.indexOf(':');
         if (colonIndex != (-1)) {
             return new String[] { fullTitle.substring(0, colonIndex),
@@ -109,9 +110,6 @@ public class MediaWikiParserTest {
         return new String[] { "", fullTitle };
     }
 
-    /**
-     * Set up a test model, which contains predefined templates
-     */
     @Before
     public void setUp() throws Exception {
         AVOID_PAGE_BREAK_IN_TABLE_before = Configuration.AVOID_PAGE_BREAK_IN_TABLE;
@@ -154,11 +152,11 @@ public class MediaWikiParserTest {
     }
 
     @After
-    protected void tearDown() throws Exception {
+    public void tearDown() throws Exception {
         Configuration.AVOID_PAGE_BREAK_IN_TABLE = AVOID_PAGE_BREAK_IN_TABLE_before;
     }
 
-    protected void runTest() throws Throwable {
+    public void runTest() throws Throwable {
         if (options.get("disabled") == Boolean.TRUE) {
             return;
         }
@@ -291,7 +289,7 @@ public class MediaWikiParserTest {
         return suite;
     }
 
-    static protected Map<String, Object> parseConfig(String configs) {
+    private static Map<String, Object> parseConfig(String configs) {
         HashMap<String, Object> result = new HashMap<>();
         for (String config : configs.split("\n")) {
             if (config.length() != 0) {
@@ -316,7 +314,7 @@ public class MediaWikiParserTest {
         return result;
     }
 
-    static protected Map<String, Object> parseOptions(String options) {
+    private static Map<String, Object> parseOptions(String options) {
         HashMap<String, Object> result = new HashMap<>();
         Matcher matcher = OPTION.matcher(options);
         while (matcher.find()) {
@@ -339,7 +337,7 @@ public class MediaWikiParserTest {
         return result;
     }
 
-    static protected String cleanupOption(String option) {
+    private static String cleanupOption(String option) {
         if (option.startsWith("\"")) {
             return option.substring(1, option.length() - 1);
         }
@@ -349,7 +347,7 @@ public class MediaWikiParserTest {
         return option;
     }
 
-    static protected String removeNewlineAtEnd(String value) {
+    private static String removeNewlineAtEnd(String value) {
         if (value.endsWith("\n")) {
             return value.substring(0, value.length() - 1);
         }
