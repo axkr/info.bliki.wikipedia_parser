@@ -2,7 +2,7 @@ package info.bliki.wiki.impl;
 
 import info.bliki.api.Page;
 import info.bliki.api.User;
-import info.bliki.wiki.filter.AbstractParser.ParsedPageName;
+import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.filter.Encoder;
 import info.bliki.wiki.filter.WikipediaParser;
 import info.bliki.wiki.model.Configuration;

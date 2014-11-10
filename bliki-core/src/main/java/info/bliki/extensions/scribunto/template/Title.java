@@ -1,6 +1,6 @@
 package info.bliki.extensions.scribunto.template;
 
-import info.bliki.wiki.filter.AbstractParser;
+import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.namespaces.INamespace;
 
 import java.io.UnsupportedEncodingException;
@@ -29,8 +29,8 @@ public class Title {
         this.textform = textform;
     }
 
-    public AbstractParser.ParsedPageName parsedPageName() {
-        return new AbstractParser.ParsedPageName(this.ns, this.dbKeyForm, true);
+    public ParsedPageName parsedPageName() {
+        return new ParsedPageName(this.ns, this.dbKeyForm, true);
     }
 
     public static Title makeTitleSafe(INamespace.INamespaceValue ns, String moduleName) {

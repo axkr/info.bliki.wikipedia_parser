@@ -16,7 +16,7 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.Locale;
 
-import static info.bliki.wiki.filter.AbstractParser.ParsedPageName;
+import info.bliki.wiki.filter.ParsedPageName;
 import static info.bliki.wiki.filter.MagicWord.MagicWordE;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;

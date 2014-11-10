@@ -14,8 +14,7 @@ import info.bliki.extensions.scribunto.engine.lua.interfaces.MwTitle;
 import info.bliki.extensions.scribunto.engine.lua.interfaces.MwUri;
 import info.bliki.extensions.scribunto.engine.lua.interfaces.MwUstring;
 import info.bliki.extensions.scribunto.template.Frame;
-import info.bliki.wiki.filter.AbstractParser;
-import info.bliki.wiki.filter.AbstractParser.ParsedPageName;
+import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.model.WikiModelContentException;
 import org.luaj.vm2.Globals;
@@ -395,7 +394,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
             return is;
         } else if (model != null) {
             try {
-                ParsedPageName pageName = AbstractParser.parsePageName(model,
+                ParsedPageName pageName = ParsedPageName.parsePageName(model,
                         moduleName,
                         model.getNamespace().getModule(), false, false);
 

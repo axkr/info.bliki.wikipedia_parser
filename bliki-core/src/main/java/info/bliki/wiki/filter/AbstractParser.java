@@ -6,12 +6,11 @@ import info.bliki.wiki.model.Configuration;
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.model.WikiModelContentException;
 import info.bliki.wiki.namespaces.INamespace;
-import info.bliki.wiki.namespaces.INamespace.INamespaceValue;
-import info.bliki.wiki.namespaces.INamespace.NamespaceCode;
 import info.bliki.wiki.tags.util.TagStack;
-import info.bliki.wiki.template.AbstractTemplateFunction;
 
 import java.util.Map;
+
+import static info.bliki.wiki.filter.ParsedPageName.parsePageName;
 
 public abstract class AbstractParser extends WikipediaScanner {
     /**
@@ -443,169 +442,12 @@ public abstract class AbstractParser extends WikipediaScanner {
 
     public abstract void runParser();
 
-    /**
-     * Represents the result of parsing a (potential) page name.
-     *
-     * Note that {@link #magicWord} takes precedence over {@link #pagename}, i.e.
-     * if {@link #magicWord} if not <tt>null</tt>, the parsed name is a magic
-     * word!
-     *
-     * @author Nico Kruber, kruber@zib.de
-     */
-    public static class ParsedPageName {
-        /**
-         * The namespace the page is in.
-         */
-        public final INamespaceValue namespace;
-        /**
-         * The name of the page (without the namespace).
-         */
-        public final String pagename;
-        /**
-         * Whether this pagename was successfully parsed or not.
-         */
-        public final boolean valid;
-        /**
-         * If the pagename was a magic word it will be this, otherwise <tt>null</tt>
-         * .
-         *
-         * The object type depends on the concrete
-         * {@link info.bliki.wiki.filter.MagicWord} implementation used by the
-         * {@link IWikiModel}, e.g.
-         * {@link info.bliki.wiki.filter.MagicWord.MagicWordE} in case
-         * {@link info.bliki.wiki.filter.MagicWord} is used.
-         */
-        public final Object magicWord;
-        /**
-         * Parameters of the magic word (<tt>null</tt> if not supplied).
-         */
-        public final String magicWordParameter;
 
-        /**
-         * Creates a new parsed page name object (no magic word).
-         *
-         * @param namespace
-         *          the namespace the page is in
-         * @param pagename
-         *          the name of the page (without the namespace)
-         * @param valid
-         *          whether this pagename was successfully parsed or not
-         */
-        public ParsedPageName(INamespaceValue namespace, String pagename, boolean valid) {
-            this.namespace = namespace;
-            this.pagename = pagename;
-            this.valid = valid;
-            this.magicWord = null;
-            this.magicWordParameter = null;
-        }
-
-        /**
-         * Creates a new parsed page name object.
-         *
-         * @param namespace
-         *          the namespace the page is in
-         * @param pagename
-         *          the name of the page (without the namespace)
-         * @param magicWord
-         *          the magic word object if the pagename was a magic word,
-         *          otherwise <tt>null</tt>
-         * @param magicWordParameter
-         *          parameters of the magic word (<tt>null</tt> if not supplied)
-         * @param valid
-         *          whether this pagename was successfully parsed or not
-         */
-        public ParsedPageName(INamespaceValue namespace, String pagename, Object magicWord, String magicWordParameter, boolean valid) {
-            this.namespace = namespace;
-            this.pagename = pagename;
-            this.valid = valid;
-            this.magicWord = magicWord;
-            this.magicWordParameter = magicWordParameter;
-        }
-
-        @Override
-        public String toString() {
-            return "ParsedPageName{" +
-                    "namespace=" + namespace +
-                    ", pagename='" + pagename + '\'' +
-                    '}';
-        }
-
-        public String fullPagename() {
-            return namespace.makeFullPagename(pagename);
-        }
-    }
-
-    /**
-     * Parses a given page name into its components, e.g. namespace and pagename
-     * or magic word and parameters.
-     *
-     * @param wikiModel
-     *          the wiki model to use
-     * @param pagename
-     *          the name in wiki text
-     * @param namespace
-     *          the default namespace to use if there is no namespace in the
-     *          pagename
-     * @param magicWordAllowed
-     *          whether the <tt>pagename</tt> may be a magic word or not (if it is
-     *          a magic word and this is set to <tt>false</tt>, it will be parsed
-     *          as if it is a page name)
-     *
-     * @return a parsed page name
-     */
-    public static ParsedPageName parsePageName(IWikiModel wikiModel, String pagename, INamespaceValue namespace,
-            boolean magicWordAllowed, boolean stripOffSection) {
-        // if a magic word is recognised, it will be non-null:
-        Object magicWord = null;
-        String magicWordParameter = null;
-        if (pagename.length() > 0 && pagename.charAt(0) == ':') {
-            magicWordAllowed = false; // this is not allowed for magic words
-            if (pagename.length() > 1 && pagename.charAt(1) == ':') {
-                // double "::" are not parsed as template/transclusion
-                return new ParsedPageName(namespace, pagename, false);
-            }
-            // assume main namespace for now:
-            namespace = wikiModel.getNamespace().getMain();
-            pagename = pagename.substring(1);
-        }
-
-        if (stripOffSection) {
-            // parse away any "#label" markers which are not supported
-            int hashIndex = pagename.indexOf('#');
-            if (hashIndex != (-1)) {
-                pagename = pagename.substring(0, hashIndex);
-            }
-        }
-
-        int indx = pagename.indexOf(':');
-        if (indx > 0) {
-            String maybeNamespaceStr0 = pagename.substring(0, indx);
-            INamespaceValue maybeNamespace = wikiModel.getNamespace().getNamespace(maybeNamespaceStr0);
-            if (maybeNamespace != null) {
-                return new ParsedPageName(maybeNamespace, pagename.substring(indx + 1), true);
-            } else if (magicWordAllowed) {
-                // no namespace? maybe a magic word with a parameter?
-                magicWord = wikiModel.getMagicWord(maybeNamespaceStr0);
-                if (magicWord != null) {
-                    magicWordParameter = pagename.substring(indx + 1);
-                    if (magicWordParameter.length() != 0) {
-                        magicWordParameter = AbstractTemplateFunction.parseTrim(magicWordParameter, wikiModel);
-                    }
-                }
-            }
-        } else if (magicWordAllowed && namespace.isType(NamespaceCode.TEMPLATE_NAMESPACE_KEY)) {
-            Object maybeMagicWord = wikiModel.getMagicWord(pagename);
-            if (maybeMagicWord != null) {
-                magicWord = maybeMagicWord;
-            }
-        }
-        return new ParsedPageName(namespace, pagename, magicWord, magicWordParameter, true);
-    }
 
     public static String getRedirectedTemplateContent(IWikiModel wikiModel, String redirectedLink,
             Map<String, String> templateParameters) {
         final INamespace namespace = wikiModel.getNamespace();
-        ParsedPageName parsedPagename = AbstractParser.parsePageName(wikiModel, redirectedLink, namespace.getMain(), false, false);
+        ParsedPageName parsedPagename = parsePageName(wikiModel, redirectedLink, namespace.getMain(), false, false);
         // note: don't just get redirect content if the namespace is the template
         // namespace!
         if (!parsedPagename.valid) {
@@ -631,44 +473,5 @@ public abstract class AbstractParser extends WikipediaScanner {
         } finally {
             wikiModel.decrementRecursionLevel();
         }
-    }
-
-    /**
-     * Check the text for a <code>#REDIRECT [[...]]</code> or
-     * <code>#redirect [[...]]</code> link
-     *
-     * @param rawWikiText
-     *          the wiki text
-     * @param wikiModel
-     * @return <code>non-null</code> if a redirect was found and further parsing
-     *         should be cancelled according to the model.
-     */
-    public static String parseRedirect(String rawWikiText, IWikiModel wikiModel) {
-        int redirectStart = -1;
-        int redirectEnd = -1;
-        for (int i = 0; i < rawWikiText.length(); i++) {
-            if (rawWikiText.charAt(i) == '#') {
-                if (startsWith(rawWikiText, i + 1, "redirect", true)) {
-                    redirectStart = rawWikiText.indexOf("[[", i + 8);
-                    if (redirectStart > i + 8) {
-                        redirectStart += 2;
-                        redirectEnd = rawWikiText.indexOf("]]", redirectStart);
-                    }
-                }
-                break;
-            }
-            if (Character.isWhitespace(rawWikiText.charAt(i))) {
-                continue;
-            }
-            break;
-        }
-
-        if (redirectEnd >= 0) {
-            String redirectedLink = rawWikiText.substring(redirectStart, redirectEnd);
-            if (wikiModel.appendRedirectLink(redirectedLink)) {
-                return redirectedLink;
-            }
-        }
-        return null;
     }
 }

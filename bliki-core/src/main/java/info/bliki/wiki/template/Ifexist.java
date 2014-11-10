@@ -1,7 +1,6 @@
 package info.bliki.wiki.template;
 
-import info.bliki.wiki.filter.AbstractParser;
-import info.bliki.wiki.filter.AbstractParser.ParsedPageName;
+import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.model.WikiModelContentException;
 import info.bliki.wiki.namespaces.INamespace;
@@ -30,7 +29,7 @@ public class Ifexist extends AbstractTemplateFunction {
             // note: appended "#section" does not count for the check whether a page
             // exists or not!
             // -> strip off
-            ParsedPageName parsedPagename = AbstractParser.parsePageName(model, wikiTopicName, namespace.getMain(), false, true);
+            ParsedPageName parsedPagename = ParsedPageName.parsePageName(model, wikiTopicName, namespace.getMain(), false, true);
             String rawWikiContent = null;
             // if parsing failed, e.g. double "::" at the page titles beginning, this
             // is the same as if the page does not exist.

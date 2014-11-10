@@ -5,7 +5,7 @@ import info.bliki.extensions.scribunto.template.Frame;
 import info.bliki.htmlcleaner.BaseToken;
 import info.bliki.htmlcleaner.TagToken;
 import info.bliki.wiki.filter.AbstractParser;
-import info.bliki.wiki.filter.AbstractParser.ParsedPageName;
+import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.filter.Encoder;
 import info.bliki.wiki.filter.ITextConverter;
 import info.bliki.wiki.namespaces.INamespace;

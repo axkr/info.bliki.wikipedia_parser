@@ -8,7 +8,7 @@ import info.bliki.api.creator.WikiDB;
 import info.bliki.extensions.scribunto.template.Frame;
 import info.bliki.htmlcleaner.TagNode;
 import info.bliki.wiki.filter.AbstractParser;
-import info.bliki.wiki.filter.AbstractParser.ParsedPageName;
+import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.filter.Encoder;
 import info.bliki.wiki.filter.WikipediaParser;
 import info.bliki.wiki.model.Configuration;
@@ -192,7 +192,7 @@ public class APIWikiModel extends WikiModel {
         }
         String redirectedLink = WikipediaParser.parseRedirect(rawWikitext, this);
         if (redirectedLink != null) {
-            ParsedPageName redirParsedPage = AbstractParser.parsePageName(this, redirectedLink, fNamespace.getTemplate(), true, true);
+            ParsedPageName redirParsedPage = ParsedPageName.parsePageName(this, redirectedLink, fNamespace.getTemplate(), true, true);
             return AbstractParser.getRedirectedRawContent(this, redirParsedPage, templateParameters);
         }
         return rawWikitext;

@@ -61,6 +61,44 @@ public class WikipediaParser extends AbstractWikipediaParser {
     }
 
     /**
+     * Check the text for a <code>#REDIRECT [[...]]</code> or
+     * <code>#redirect [[...]]</code> link
+     *
+     * @param rawWikiText the wiki text
+     * @param wikiModel the wikimodel to use
+     * @return <code>non-null</code> if a redirect was found and further parsing
+     *         should be cancelled according to the model.
+     */
+    public static String parseRedirect(String rawWikiText, IWikiModel wikiModel) {
+        int redirectStart = -1;
+        int redirectEnd = -1;
+        for (int i = 0; i < rawWikiText.length(); i++) {
+            if (rawWikiText.charAt(i) == '#') {
+                if (startsWith(rawWikiText, i + 1, "redirect", true)) {
+                    redirectStart = rawWikiText.indexOf("[[", i + 8);
+                    if (redirectStart > i + 8) {
+                        redirectStart += 2;
+                        redirectEnd = rawWikiText.indexOf("]]", redirectStart);
+                    }
+                }
+                break;
+            }
+            if (Character.isWhitespace(rawWikiText.charAt(i))) {
+                continue;
+            }
+            break;
+        }
+
+        if (redirectEnd >= 0) {
+            String redirectedLink = rawWikiText.substring(redirectStart, redirectEnd);
+            if (wikiModel.appendRedirectLink(redirectedLink)) {
+                return redirectedLink;
+            }
+        }
+        return null;
+    }
+
+    /**
      * Copy the read ahead content in the resulting HTML text token.
      *
      * @param diff
@@ -1337,13 +1375,13 @@ public class WikipediaParser extends AbstractWikipediaParser {
                     templatesParsedText = "<span class=\"error\">TemplateParser exception: "
                             + ioe.getClass().getSimpleName() + "</span>";
                 }
-                String redirectedLink = AbstractParser.parseRedirect(
+                String redirectedLink = parseRedirect(
                         templatesParsedText, wikiModel);
                 if (redirectedLink == null) {
                     parseRecursive(templatesParsedText, wikiModel, false, false);
                 }
             } else {
-                if (AbstractParser.parseRedirect(rawWikiText, wikiModel) == null) {
+                if (parseRedirect(rawWikiText, wikiModel) == null) {
                     parseRecursive(rawWikiText, wikiModel, false, false);
                 }
             }

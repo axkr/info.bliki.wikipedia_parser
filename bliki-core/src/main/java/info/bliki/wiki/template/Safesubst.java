@@ -1,8 +1,7 @@
 package info.bliki.wiki.template;
 
 import info.bliki.htmlcleaner.Utils;
-import info.bliki.wiki.filter.AbstractParser;
-import info.bliki.wiki.filter.AbstractParser.ParsedPageName;
+import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.filter.TemplateParser;
 import info.bliki.wiki.filter.Util;
 import info.bliki.wiki.model.IWikiModel;
@@ -72,7 +71,7 @@ public class Safesubst extends AbstractTemplateFunction {
 
         final INamespace namespace = model.getNamespace();
         // TODO: remove trailing "#section"?!
-        ParsedPageName parsedPagename = AbstractParser.parsePageName(model, templateName, namespace.getTemplate(), true, false);
+        ParsedPageName parsedPagename  = ParsedPageName.parsePageName(model, templateName, namespace.getTemplate(), true, false);
         if (!parsedPagename.valid) {
             return "{{" + parsedPagename.pagename + "}}";
         }

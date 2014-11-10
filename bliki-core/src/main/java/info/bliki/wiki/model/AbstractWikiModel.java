@@ -10,7 +10,7 @@ import info.bliki.htmlcleaner.TagNode;
 import info.bliki.htmlcleaner.TagToken;
 import info.bliki.htmlcleaner.Utils;
 import info.bliki.wiki.filter.AbstractParser;
-import info.bliki.wiki.filter.AbstractParser.ParsedPageName;
+import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.filter.Encoder;
 import info.bliki.wiki.filter.HTMLConverter;
 import info.bliki.wiki.filter.ITextConverter;
@@ -1745,7 +1745,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
             throws IOException {
         Counter val = null;
         try {
-            ParsedPageName parsedPagename = AbstractParser.parsePageName(this,
+            ParsedPageName parsedPagename = ParsedPageName.parsePageName(this,
                     templateName, fNamespace.getTemplate(), true, true);
             if (!parsedPagename.valid) {
                 writer.append("{{");

@@ -141,6 +141,7 @@ public class TemplateParser extends AbstractParser {
             writer.append(sb);
             return;
         }
+
         try {
             int templateLevel = wikiModel.incrementTemplateRecursionLevel();
             if (templateLevel > Configuration.TEMPLATE_RECURSION_LIMIT) {
@@ -165,7 +166,7 @@ public class TemplateParser extends AbstractParser {
             }
 
             if (!renderTemplate) {
-                String redirectedLink = parseRedirect(sb.toString(), wikiModel);
+                String redirectedLink = WikipediaParser.parseRedirect(sb.toString(), wikiModel);
                 if (redirectedLink != null) {
                     String redirectedContent = getRedirectedTemplateContent(wikiModel, redirectedLink, null);
                     if (redirectedContent != null) {
