@@ -32,7 +32,7 @@ import java.util.List;
  *
  * @see TemplateParser for the first pass
  */
-public class WikipediaParser extends AbstractParser implements IParser {
+public class WikipediaParser extends AbstractParser {
     private ITableOfContent fTableOfContentTag = null;
 
     private int fHeadCounter = 0;
@@ -1238,7 +1238,6 @@ public class WikipediaParser extends AbstractParser implements IParser {
         }
     }
 
-    @Override
     public void runParser() {
         int token = TokenSTART;
         while ((token = getNextToken()) != TokenEOF) {
@@ -1306,11 +1305,6 @@ public class WikipediaParser extends AbstractParser implements IParser {
             }
         }
 
-    }
-
-    @Override
-    public boolean isNoToC() {
-        return fNoToC;
     }
 
     @Override
@@ -1426,9 +1420,7 @@ public class WikipediaParser extends AbstractParser implements IParser {
      *
      * @return <code>true</code> if the currently parsed wiki text is a template
      */
-    @Override
     public boolean isTemplate() {
         return fRenderTemplate;
     }
-
 }
