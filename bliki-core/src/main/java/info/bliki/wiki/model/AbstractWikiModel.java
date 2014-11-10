@@ -9,7 +9,7 @@ import info.bliki.htmlcleaner.ContentToken;
 import info.bliki.htmlcleaner.TagNode;
 import info.bliki.htmlcleaner.TagToken;
 import info.bliki.htmlcleaner.Utils;
-import info.bliki.wiki.filter.AbstractParser;
+import info.bliki.wiki.filter.AbstractWikipediaParser;
 import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.filter.Encoder;
 import info.bliki.wiki.filter.HTMLConverter;
@@ -823,9 +823,8 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
      * {@inheritDoc}
      */
     @Override
-    public AbstractParser createNewInstance(String rawWikitext) {
-        return new WikipediaParser(rawWikitext, isTemplateTopic(),
-                getWikiListener());
+    public AbstractWikipediaParser createNewInstance(String rawWikitext) {
+        return new WikipediaParser(rawWikitext, isTemplateTopic(), getWikiListener());
     }
 
     /**

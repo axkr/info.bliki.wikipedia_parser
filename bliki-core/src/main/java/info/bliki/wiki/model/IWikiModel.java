@@ -5,9 +5,10 @@ import info.bliki.extensions.scribunto.template.Frame;
 import info.bliki.htmlcleaner.BaseToken;
 import info.bliki.htmlcleaner.TagToken;
 import info.bliki.wiki.filter.AbstractParser;
-import info.bliki.wiki.filter.ParsedPageName;
+import info.bliki.wiki.filter.AbstractWikipediaParser;
 import info.bliki.wiki.filter.Encoder;
 import info.bliki.wiki.filter.ITextConverter;
+import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.namespaces.INamespace;
 import info.bliki.wiki.namespaces.INamespace.INamespaceValue;
 import info.bliki.wiki.tags.util.TagStack;
@@ -329,7 +330,7 @@ public interface IWikiModel extends IConfiguration {
      * @param rawWikitext
      * @return
      */
-    public AbstractParser createNewInstance(String rawWikitext);
+    public AbstractWikipediaParser createNewInstance(String rawWikitext);
 
     /**
      * Create the &quot;table of content&quot; placeholder

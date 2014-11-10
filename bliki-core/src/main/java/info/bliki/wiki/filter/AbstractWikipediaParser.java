@@ -1,10 +1,14 @@
 package info.bliki.wiki.filter;
 
 import info.bliki.htmlcleaner.ContentToken;
+import info.bliki.htmlcleaner.TagNode;
 import info.bliki.htmlcleaner.TagToken;
+import info.bliki.wiki.model.Configuration;
+import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.tags.HTMLTag;
 import info.bliki.wiki.tags.WPBoldItalicTag;
 import info.bliki.wiki.tags.WPTag;
+import info.bliki.wiki.tags.util.TagStack;
 
 public abstract class AbstractWikipediaParser extends AbstractParser {
     protected static final int TokenIgnore = -1;
@@ -80,4 +84,56 @@ public abstract class AbstractWikipediaParser extends AbstractParser {
         }
     }
 
+    protected TagStack parseRecursiveInternal(IWikiModel wikiModel, boolean createOnlyLocalStack, boolean noTOC) {
+        // local stack for this wiki snippet
+        TagStack localStack = new TagStack();
+        // global wiki model stack
+        TagStack globalWikiModelStack = wikiModel.swapStack(localStack);
+        try {
+            // fix for infinite recursion
+
+            int level = wikiModel.incrementRecursionLevel();
+            // int parserRecursionLevel = wikiModel.incrementParserRecursionLevel();
+            // if (parserRecursionLevel > Configuration.PARSER_RECURSION_LIMIT) {
+            // TagNode error = new TagNode("span");
+            // error.addAttribute("class", "error", true);
+            // error.addChild(new
+            // ContentToken("Error - total recursion count limit exceeded parsing wiki tags."));
+            // localStack.append(error);
+            // return localStack;
+            // }
+
+            if (level > Configuration.PARSER_RECURSION_LIMIT) {
+                TagNode error = new TagNode("span");
+                error.addAttribute("class", "error", true);
+                error.addChild(new ContentToken("Error - recursion limit exceeded parsing wiki tags."));
+                localStack.append(error);
+                return localStack;
+            }
+            // WikipediaParser parser = new WikipediaParser(rawWikitext,
+            // wikiModel.isTemplateTopic(), wikiModel.getWikiListener());
+            setModel(wikiModel);
+            setNoToC(noTOC);
+            runParser();
+            return localStack;
+        } catch (Exception | Error e) {
+            e.printStackTrace();
+            TagNode error = new TagNode("span");
+            error.addAttribute("class", "error", true);
+            error.addChild(new ContentToken(e.getClass().getSimpleName()));
+            localStack.append(error);
+        } finally {
+            wikiModel.decrementRecursionLevel();
+            // wikiModel.decrementParserRecursionLevel();
+            if (!createOnlyLocalStack) {
+                // append the resursively parsed local stack to the global wiki
+                // model
+                // stack
+                globalWikiModelStack.append(localStack);
+            }
+            wikiModel.swapStack(globalWikiModelStack);
+        }
+
+        return localStack;
+    }
 }

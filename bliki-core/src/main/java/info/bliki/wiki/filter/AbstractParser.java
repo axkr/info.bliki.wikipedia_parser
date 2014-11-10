@@ -1,26 +1,16 @@
 package info.bliki.wiki.filter;
 
-import info.bliki.htmlcleaner.ContentToken;
-import info.bliki.htmlcleaner.TagNode;
 import info.bliki.wiki.model.Configuration;
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.model.WikiModelContentException;
 import info.bliki.wiki.namespaces.INamespace;
-import info.bliki.wiki.tags.util.TagStack;
 
 import java.util.Map;
 
 import static info.bliki.wiki.filter.ParsedPageName.parsePageName;
 
 public abstract class AbstractParser extends WikipediaScanner {
-    /**
-     * The current scanned character
-     */
     protected char fCurrentCharacter;
-
-    /**
-     * The current offset in the character source array
-     */
     protected int fCurrentPosition;
     protected boolean fWhiteStart;
     protected int fWhiteStartPosition;
@@ -32,6 +22,9 @@ public abstract class AbstractParser extends WikipediaScanner {
         fWhiteStart = false;
         fWhiteStartPosition = 0;
     }
+
+    public abstract void runParser();
+    protected abstract void setNoToC(boolean noToC);
 
     /**
      * Read the characters until the given string is found and set the current
@@ -338,58 +331,6 @@ public abstract class AbstractParser extends WikipediaScanner {
         }
     }
 
-    public TagStack parseRecursiveInternal(IWikiModel wikiModel, boolean createOnlyLocalStack, boolean noTOC) {
-        // local stack for this wiki snippet
-        TagStack localStack = new TagStack();
-        // global wiki model stack
-        TagStack globalWikiModelStack = wikiModel.swapStack(localStack);
-        try {
-            // fix for infinite recursion
-
-            int level = wikiModel.incrementRecursionLevel();
-            // int parserRecursionLevel = wikiModel.incrementParserRecursionLevel();
-            // if (parserRecursionLevel > Configuration.PARSER_RECURSION_LIMIT) {
-            // TagNode error = new TagNode("span");
-            // error.addAttribute("class", "error", true);
-            // error.addChild(new
-            // ContentToken("Error - total recursion count limit exceeded parsing wiki tags."));
-            // localStack.append(error);
-            // return localStack;
-            // }
-
-            if (level > Configuration.PARSER_RECURSION_LIMIT) {
-                TagNode error = new TagNode("span");
-                error.addAttribute("class", "error", true);
-                error.addChild(new ContentToken("Error - recursion limit exceeded parsing wiki tags."));
-                localStack.append(error);
-                return localStack;
-            }
-            // WikipediaParser parser = new WikipediaParser(rawWikitext,
-            // wikiModel.isTemplateTopic(), wikiModel.getWikiListener());
-            setModel(wikiModel);
-            setNoToC(noTOC);
-            runParser();
-            return localStack;
-        } catch (Exception | Error e) {
-            e.printStackTrace();
-            TagNode error = new TagNode("span");
-            error.addAttribute("class", "error", true);
-            error.addChild(new ContentToken(e.getClass().getSimpleName()));
-            localStack.append(error);
-        } finally {
-            wikiModel.decrementRecursionLevel();
-            // wikiModel.decrementParserRecursionLevel();
-            if (!createOnlyLocalStack) {
-                // append the resursively parsed local stack to the global wiki
-                // model
-                // stack
-                globalWikiModelStack.append(localStack);
-            }
-            wikiModel.swapStack(globalWikiModelStack);
-        }
-
-        return localStack;
-    }
 
     /**
      * Read the characters until the end position of the current wiki link is
@@ -439,9 +380,6 @@ public abstract class AbstractParser extends WikipediaScanner {
     }
 
 
-    public abstract void runParser();
-
-
 
     public static String getRedirectedTemplateContent(IWikiModel wikiModel, String redirectedLink,
             Map<String, String> templateParameters) {
@@ -473,6 +411,4 @@ public abstract class AbstractParser extends WikipediaScanner {
             wikiModel.decrementRecursionLevel();
         }
     }
-
-    protected abstract void setNoToC(boolean noToC);
 }

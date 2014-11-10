@@ -449,7 +449,7 @@ public class WikipediaPreTagParser extends AbstractWikipediaParser {
      * @param appendStack
      */
     public static TagStack parseRecursive(String rawWikitext, IWikiModel wikiModel, boolean createOnlyLocalStack, boolean noTOC) {
-        AbstractParser parser = new WikipediaPreTagParser(rawWikitext);
+        WikipediaPreTagParser parser = new WikipediaPreTagParser(rawWikitext);
         return parser.parseRecursiveInternal(wikiModel, createOnlyLocalStack, noTOC);
     }
 

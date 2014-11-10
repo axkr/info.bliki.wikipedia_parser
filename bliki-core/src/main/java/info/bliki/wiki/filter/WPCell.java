@@ -96,7 +96,7 @@ public class WPCell {
             }
             String rawWikiText = Utils.ltrimNewline(content);
 
-            AbstractParser parser = wikiModel.createNewInstance(rawWikiText);
+            AbstractWikipediaParser parser = wikiModel.createNewInstance(rawWikiText);
             fStack = parser.parseRecursiveInternal(wikiModel, true, false);
             List<BaseToken> list = fStack.getNodeList();
             for (int i = 0; i < list.size(); i++) {

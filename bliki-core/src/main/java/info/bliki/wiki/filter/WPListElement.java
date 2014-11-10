@@ -42,7 +42,7 @@ public class WPListElement {
         fEndPos = endPos;
         if (fEndPos > fStartPos) {
             String rawWikiText = new String(src, fStartPos, fEndPos - fStartPos);
-            AbstractParser parser = wikiModel.createNewInstance(rawWikiText);
+            AbstractWikipediaParser parser = wikiModel.createNewInstance(rawWikiText);
             fStack = parser.parseRecursiveInternal(wikiModel, true, true);
         }
     }

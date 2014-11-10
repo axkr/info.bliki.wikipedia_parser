@@ -421,12 +421,6 @@ public class WikipediaParser extends AbstractWikipediaParser {
         return TokenEOF;
     }
 
-    /**
-     * Parse nowiki tags.
-     *
-     * @param input
-     * @return
-     */
     private String parseNowiki(String input) {
         int indx = input.indexOf("<nowiki>");
         if (indx >= 0) {
@@ -1424,7 +1418,7 @@ public class WikipediaParser extends AbstractWikipediaParser {
      */
     public static TagStack parseRecursive(String rawWikitext,
             IWikiModel wikiModel, boolean createOnlyLocalStack, boolean noTOC) {
-        AbstractParser parser = wikiModel.createNewInstance(rawWikitext);
+        AbstractWikipediaParser parser =  wikiModel.createNewInstance(rawWikitext);
         return parser.parseRecursiveInternal(wikiModel, createOnlyLocalStack,
                 noTOC);
     }
