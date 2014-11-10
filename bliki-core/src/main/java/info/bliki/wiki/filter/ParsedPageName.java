@@ -1,9 +1,10 @@
 package info.bliki.wiki.filter;
 
-import com.sun.istack.internal.NotNull;
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.namespaces.INamespace;
 import info.bliki.wiki.template.AbstractTemplateFunction;
+
+import javax.annotation.Nonnull;
 
 /**
  * Represents the result of parsing a (potential) page name.
@@ -99,8 +100,8 @@ public class ParsedPageName {
      *
      * @return a parsed page name
      */
-    @NotNull public static ParsedPageName parsePageName(@NotNull IWikiModel wikiModel,
-                                                        @NotNull String pagename, INamespace.INamespaceValue namespace,
+    @Nonnull public static ParsedPageName parsePageName(@Nonnull IWikiModel wikiModel,
+                                                        @Nonnull String pagename, INamespace.INamespaceValue namespace,
                                                         boolean magicWordAllowed, boolean stripOffSection) {
         // if a magic word is recognised, it will be non-null:
         Object magicWord = null;
