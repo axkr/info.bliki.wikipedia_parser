@@ -156,7 +156,6 @@ public class WikipediaPreTagParser extends AbstractWikipediaParser {
                                                         reduceStackUntilToken(tag);
                                                     }
                                                 }
-                                            } else {
                                             }
                                             return TokenIgnore;
                                         }
@@ -298,7 +297,7 @@ public class WikipediaPreTagParser extends AbstractWikipediaParser {
 
     private void createTag(TagToken tag, WikiTagNode tagNode, int startMacroPosition) {
         String endTag;
-        String macroBodyString = "";
+        String macroBodyString;
         int index0;
         String command = tagNode.getTagName();
         if ((tag != null) && (tag instanceof IBodyTag) && (!tagNode.isEmptyXmlTag())) {
@@ -417,12 +416,8 @@ public class WikipediaPreTagParser extends AbstractWikipediaParser {
 
     }
 
-    public boolean isNoToC() {
-        return false;
-    }
-
     @Override
-    public void setNoToC(boolean noToC) {
+    protected void setNoToC(boolean noToC) {
     }
 
     /**
@@ -435,7 +430,6 @@ public class WikipediaPreTagParser extends AbstractWikipediaParser {
      *
      * @param rawWikitext
      * @param wikiModel
-     * @return
      */
     public static void parseRecursive(String rawWikitext, IWikiModel wikiModel) {
         parseRecursive(rawWikitext, wikiModel, false, true);
@@ -453,8 +447,6 @@ public class WikipediaPreTagParser extends AbstractWikipediaParser {
      * @param wikiModel
      * @param noTOC
      * @param appendStack
-     * @return
-     * @return
      */
     public static TagStack parseRecursive(String rawWikitext, IWikiModel wikiModel, boolean createOnlyLocalStack, boolean noTOC) {
         AbstractParser parser = new WikipediaPreTagParser(rawWikitext);
@@ -496,13 +488,7 @@ public class WikipediaPreTagParser extends AbstractWikipediaParser {
         } catch (InvalidPreWikiTag ipwt) {
             createOnlyLocalStack = true;
             throw ipwt;
-        } catch (Exception e) {
-            e.printStackTrace();
-            TagNode error = new TagNode("span");
-            error.addAttribute("class", "error", true);
-            error.addChild(new ContentToken(e.getClass().getSimpleName()));
-            localStack.append(error);
-        } catch (Error e) {
+        } catch (Exception | Error e) {
             e.printStackTrace();
             TagNode error = new TagNode("span");
             error.addAttribute("class", "error", true);

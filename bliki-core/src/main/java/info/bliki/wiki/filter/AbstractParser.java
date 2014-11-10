@@ -438,7 +438,6 @@ public abstract class AbstractParser extends WikipediaScanner {
         }
     }
 
-    public abstract void setNoToC(boolean noToC);
 
     public abstract void runParser();
 
@@ -474,4 +473,6 @@ public abstract class AbstractParser extends WikipediaScanner {
             wikiModel.decrementRecursionLevel();
         }
     }
+
+    protected abstract void setNoToC(boolean noToC);
 }

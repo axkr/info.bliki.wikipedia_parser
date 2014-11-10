@@ -966,7 +966,7 @@ public class TemplateParser extends AbstractParser {
     }
 
     @Override
-    public void setNoToC(boolean noToC) {
+    protected void setNoToC(boolean noToC) {
         // do nothing here
     }
 
