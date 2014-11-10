@@ -1429,7 +1429,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
             // TemplateParser.parse(rawWikiText, this, buf, parseOnlySignature,
             // true);
             TemplateParser.parseRecursive(rawWikiText, this, buf,
-                    parseOnlySignature, true, true, null);
+                    parseOnlySignature, true, null);
 
         } catch (Exception ioe) {
             ioe.printStackTrace();
@@ -1844,7 +1844,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
             StringBuilder templateBuffer = new StringBuilder(
                     plainContent.length());
             TemplateParser.parseRecursive(plainContent.trim(), this,
-                    templateBuffer, false, false, false, parameterMap);
+                    templateBuffer, false, false, parameterMap);
 
             if (templateCallsCache != null && cacheKey != null) {
                 // save this template call in the cache

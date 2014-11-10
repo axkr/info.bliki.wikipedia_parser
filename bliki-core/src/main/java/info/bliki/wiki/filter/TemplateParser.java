@@ -22,8 +22,12 @@ import java.util.regex.Pattern;
  * @see WikipediaParser for the second pass
  */
 public class TemplateParser extends AbstractParser {
+
     private static final Pattern HTML_COMMENT_PATTERN = Pattern.compile("<!--(.*?)-->");
-    private static final int SUBST_LENGTH = 6;  // subst:
+    private static final String SUBST = "subst:";
+    private static final String SAFESUBST = "safesubst:";
+    private static final int SUBST_LENGTH = SUBST.length();
+    private static final int SAFESUBST_LENGTH = SAFESUBST.length();
 
     protected static Logger logger = LoggerFactory.getLogger(TemplateParser.class);
 
@@ -69,7 +73,7 @@ public class TemplateParser extends AbstractParser {
 
     protected static void parseRecursive(String rawWikitext, IWikiModel wikiModel, Appendable writer, boolean parseOnlySignature,
             boolean renderTemplate) throws IOException {
-        parseRecursive(rawWikitext, wikiModel, writer, parseOnlySignature, renderTemplate, false, null);
+        parseRecursive(rawWikitext, wikiModel, writer, parseOnlySignature, renderTemplate, null);
     }
 
     /**
@@ -133,11 +137,7 @@ public class TemplateParser extends AbstractParser {
     }
 
     public static void parseRecursive(String rawWikitext, IWikiModel wikiModel, Appendable writer, boolean parseOnlySignature,
-            boolean renderTemplate, boolean parsePostprocessing, Map<String, String> templateParameterMap) throws IOException {
-
-        System.err.println("parseRecursive("+rawWikitext+")");
-        System.err.println("params("+templateParameterMap+")");
-
+                                      boolean renderTemplate, Map<String, String> templateParameterMap) throws IOException {
         int startIndex = Util.indexOfTemplateParsing(rawWikitext);
         if (startIndex < 0) {
             writer.append(rawWikitext);
@@ -243,14 +243,7 @@ public class TemplateParser extends AbstractParser {
                 // ---------Identify the next token-------------
                 switch (fCurrentCharacter) {
                 case '{': // wikipedia subst: and safesubst: handling
-
-
-
-                    if (fSource[fCurrentPosition] == '{' &&
-                            (fSource.length > fCurrentPosition + SUBST_LENGTH) && fSource[fCurrentPosition + 1] == 's') {
-
-
-
+                    if (isSubsOrSafesubst()) {
                         oldPosition = fCurrentPosition;
                         if (parseSubstOrSafesubst(writer)) {
                             fWhiteStart = true;
@@ -308,6 +301,10 @@ public class TemplateParser extends AbstractParser {
         } catch (IndexOutOfBoundsException e) {
             // end of scanner text
         }
+    }
+
+    private boolean isSubsOrSafesubst() {
+        return (fSource[fCurrentPosition] == '{' && (fSource.length > fCurrentPosition + 6) && fSource[fCurrentPosition + 1] == 's');
     }
 
     protected void runParser(Appendable writer) throws IOException {
@@ -643,14 +640,14 @@ public class TemplateParser extends AbstractParser {
         String templateName = ((String) objs[1]);
         @SuppressWarnings("unchecked")
         List<String> parts = (List<String>) objs[0];
-        ITemplateFunction templateFunction = null;
+        ITemplateFunction templateFunction;
         int currOffset;
-        if (templateName.startsWith("subst:")) {
+        if (templateName.startsWith(SUBST)) {
             templateFunction = Subst.CONST;
-            currOffset = 6;
-        } else if (templateName.startsWith("safesubst:")) {
+            currOffset = SUBST_LENGTH;
+        } else if (templateName.startsWith(SAFESUBST)) {
             templateFunction = Safesubst.CONST;
-            currOffset = 10;
+            currOffset = SAFESUBST_LENGTH;
         } else {
             return false;
         }

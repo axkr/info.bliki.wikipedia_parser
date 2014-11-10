@@ -1,6 +1,7 @@
 package info.bliki.wiki.filter;
 
 import info.bliki.wiki.model.WikiModel;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -1761,8 +1762,17 @@ public class TemplateParserTest extends FilterTestSupport {
         assertThat(wikiModel.getCategories()).isEqualTo(expectedCategories);
     }
 
-    @Test
-    public void testFULLROOTPAGENAME() throws Exception {
-        assertThat(wikiModel.render("{{FULLROOTPAGENAME|Foo}}", false)).isEqualTo("");
+    @Test public void testSafesubstWithLeadingWhitespace() throws Exception {
+        assertThat(wikiModel.render(new PlainTextConverter(), "{{ safesubst:#expr:1+1}}").trim()).isEqualTo("2");
+    }
+
+    @Test public void testSafesubstWithTrailingWhitespace() throws Exception {
+        assertThat(wikiModel.render(new PlainTextConverter(), "{{safesubst:#expr:1+1  }}").trim()).isEqualTo("2");
+    }
+
+    @Ignore @Test public void testFULLROOTPAGENAME() throws Exception {
+        wikiModel.setNamespaceName("Talk");
+        wikiModel.setPageName("TestPage");
+        assertThat(wikiModel.render(new PlainTextConverter(), "{{FULLROOTPAGENAME}}").trim()).isEqualTo("Talk:TestPage");
     }
 }

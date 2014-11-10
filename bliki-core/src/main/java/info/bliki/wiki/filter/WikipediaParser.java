@@ -1360,7 +1360,7 @@ public class WikipediaParser extends AbstractParser implements IParser {
                     // wikiModel.isTemplateTopic());
                     TemplateParser.parseRecursive(templatesParsedText,
                             wikiModel, buf, false, wikiModel.isTemplateTopic(),
-                            true, null);
+                            null);
                     templatesParsedText = buf.toString();
                 } catch (Exception ioe) {
                     ioe.printStackTrace();

@@ -36,9 +36,6 @@ public class WikiTestModel extends WikiModel {
         Configuration.DEFAULT_CONFIGURATION.addTokenTag("imagemap", new IgnoreTag("imagemap"));
     }
 
-    /**
-     * Add German namespaces to the wiki model
-     */
     public WikiTestModel(Locale locale, String imageBaseURL, String linkBaseURL) {
         super(Configuration.DEFAULT_CONFIGURATION, locale, imageBaseURL, linkBaseURL);
         // set up a simple cache mock-up for JUnit tests. HashMap is not usable for
@@ -54,14 +51,15 @@ public class WikiTestModel extends WikiModel {
     public String getRawWikiContent(ParsedPageName parsedPagename, Map<String, String> map) throws WikiModelContentException {
         String result = super.getRawWikiContent(parsedPagename, map);
         if (result != null) {
-            // found magic word template
             return result;
         }
         String name = encodeTitleToUrl(parsedPagename.pagename, true);
         if (parsedPagename.namespace.isType(NamespaceCode.TEMPLATE_NAMESPACE_KEY)) {
             switch (name) {
                 case FOODATE: return "FOO" + System.currentTimeMillis();
-                default:      return loadTemplateResource(name);
+                default:
+//                    System.err.println("loading template "+name);
+                    return loadTemplateResource(name);
             }
         } else if (parsedPagename.namespace.isType(NamespaceCode.MAIN_NAMESPACE_KEY)) {
             if (name.equals("Include_Page")) {

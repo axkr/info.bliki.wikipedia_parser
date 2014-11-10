@@ -7,6 +7,7 @@ import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.tags.util.NodeAttribute;
 import info.bliki.wiki.tags.util.WikiTagNode;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -549,7 +550,7 @@ public class WikipediaScanner {
      *
      * @return <code>null</code> if no replacement could be found
      */
-    public StringBuilder replaceTemplateParameters(Map<String, String> templateParameters, int curlyBraceOffset) {
+    public StringBuilder replaceTemplateParameters(@Nullable Map<String, String> templateParameters, int curlyBraceOffset) {
         StringBuilder buffer = null;
         int bufferStart = 0;
         try {
@@ -838,6 +839,10 @@ public class WikipediaScanner {
         }
     }
 
+
+    /**
+     * @return the template end position or -1 if there is no end
+     */
     public static int findNestedTemplateEnd(final char[] sourceArray, int startPosition) {
         char ch;
         int countSingleOpenBraces = 0;
