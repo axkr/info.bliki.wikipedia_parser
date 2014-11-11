@@ -49,7 +49,7 @@ public class HTMLCreatorTest {
     @Rule public RecorderRule recorder = new RecorderRule(ProxyConfiguration.builder().build());
 
     @Betamax(tape="Pakistan", mode = READ_ONLY)
-    @Test public void testWikipediaPakistan() throws Exception {
+    @Ignore @Test public void testWikipediaPakistan() throws Exception {
         testWikipediaENAPI("Pakistan");
     }
 
