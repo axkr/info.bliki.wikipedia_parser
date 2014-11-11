@@ -147,15 +147,15 @@ public class HTMLCreatorTest {
     }
 
     private Result testWiktionaryENAPI(String title) throws Exception {
-        return testAPI(title, "http://en.wiktionary.org/w/api.php", wiktionaryEn, ENGLISH).assertNoTemplateError();
+        return testAPI(title, "http://en.wiktionary.org/w/api.php", wiktionaryEn, ENGLISH).assertNoErrors();
     }
 
     private Result testWikipediaENAPI(String title) throws Exception {
-        return testAPI(title, "http://en.wikipedia.org/w/api.php", wikipediaEn, ENGLISH).assertNoTemplateError();
+        return testAPI(title, "http://en.wikipedia.org/w/api.php", wikipediaEn, ENGLISH).assertNoErrors();
     }
 
     private Result testWikipediaDEAPI(String title) throws Exception {
-        return testAPI(title, "http://de.wikipedia.org/w/api.php", wikipediaDe, GERMAN).assertNoTemplateError();
+        return testAPI(title, "http://de.wikipedia.org/w/api.php", wikipediaDe, GERMAN).assertNoErrors();
     }
 
     private Result testAPI(String title, String apiLink, WikiDB db, Locale locale) throws IOException {
@@ -202,9 +202,19 @@ public class HTMLCreatorTest {
             this.content = content;
         }
 
-        public Result assertNoTemplateError() {
-            assertThat(contentOf(content)).doesNotContain("TemplateParserError:");
+        public Result assertNoErrors() {
+            assertNoSubstLeft();
+            assertNoTemplateError();
             return this;
         }
+
+        private void assertNoTemplateError() {
+            assertThat(contentOf(content)).doesNotContain("TemplateParserError:");
+        }
+
+        private void assertNoSubstLeft() {
+            assertThat(contentOf(content)).doesNotContain("safesubst:");
+        }
+
     }
 }
