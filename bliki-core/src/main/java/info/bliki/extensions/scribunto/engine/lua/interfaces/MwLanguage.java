@@ -6,6 +6,10 @@ import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
 import org.luaj.vm2.lib.ZeroArgFunction;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import static info.bliki.extensions.scribunto.engine.lua.interfaces.MwInterface.DefaultFunction.defaultFunction;
 import static java.util.Locale.forLanguageTag;
 
@@ -28,6 +32,7 @@ public class MwLanguage implements MwInterface {
         table.set("fetchLanguageNames", fetchLanguageNames());
         table.set("getFallbacksFor", defaultFunction());
         table.set("getContLangCode", getContLangCode());
+        table.set("formatDate", formatDate());
         table.set("lc", lc());
         table.set("uc", uc());
         /*
@@ -44,6 +49,15 @@ public class MwLanguage implements MwInterface {
         gender
         */
         return table;
+    }
+
+    private LuaValue formatDate() {
+        return new TwoArgFunction() {
+            @Override public LuaValue call(LuaValue locale, LuaValue format) {
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format.checkjstring(), Locale.forLanguageTag(locale.checkjstring()));
+                return LuaValue.valueOf(simpleDateFormat.format(new Date()));
+            }
+        };
     }
 
     private LuaValue lc() {
