@@ -1,7 +1,6 @@
 package info.bliki.wiki.filter;
 
 import info.bliki.wiki.model.WikiModel;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -1762,18 +1761,36 @@ public class TemplateParserTest extends FilterTestSupport {
         assertThat(wikiModel.getCategories()).isEqualTo(expectedCategories);
     }
 
-
-    @Test public void testSafesubstWithTrailingWhitespace() throws Exception {
-        assertThat(wikiModel.render(new PlainTextConverter(), "{{safesubst:#expr:1+1  }}").trim()).isEqualTo("2");
-    }
-
-    @Ignore @Test public void testSafesubstWithLeadingWhitespace() throws Exception {
-        assertThat(wikiModel.render(new PlainTextConverter(), "{{ safesubst:#expr:1+1}}").trim()).isEqualTo("2");
-    }
-
-    @Ignore @Test public void testFULLROOTPAGENAME() throws Exception {
+    @Test public void testFULLROOTPAGENAME() throws Exception {
         wikiModel.setNamespaceName("Talk");
         wikiModel.setPageName("TestPage");
         assertThat(wikiModel.render(new PlainTextConverter(), "{{FULLROOTPAGENAME}}").trim()).isEqualTo("Talk:TestPage");
+    }
+
+    @Test public void testFULLROOTPAGENAMEWithArg() throws Exception {
+        wikiModel.setNamespaceName("Talk");
+        wikiModel.setPageName("TestPage");
+        assertThat(wikiModel.render(new PlainTextConverter(), "{{FULLROOTPAGENAME|Foo}}").trim()).isEqualTo("Foo");
+    }
+
+    @Test public void testReplaceTemplateParameters() throws Exception {
+        TemplateParser templateParser = new TemplateParser("1:{{{1|}}}2", false, true);
+        templateParser.setModel(wikiModel);
+        String result = templateParser.replaceTemplateParameters(null, 0).toString();
+        assertThat(result).isEqualTo("1:2");
+    }
+
+    @Test public void testReplaceTemplateParametersDefault() throws Exception {
+        TemplateParser templateParser = new TemplateParser("1:{{{1|Default}}}2", false, true);
+        templateParser.setModel(wikiModel);
+        String result = templateParser.replaceTemplateParameters(null, 0).toString();
+        assertThat(result).isEqualTo("1:Default2");
+    }
+
+    @Test public void testReplaceTemplateParametersNotSetReturnsNull() throws Exception {
+        TemplateParser templateParser = new TemplateParser("1:{{{1}}}2", false, true);
+        templateParser.setModel(wikiModel);
+        StringBuilder result = templateParser.replaceTemplateParameters(null, 0);
+        assertThat(result).isNull();
     }
 }

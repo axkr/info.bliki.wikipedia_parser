@@ -113,14 +113,18 @@ public class TemplateParser extends AbstractParser {
             parser.setModel(wikiModel);
             parser.runPreprocessParser(0, startIndex, sb, false);
 
-            if (templateParameterMap != null && (!templateParameterMap.isEmpty())) {
-                int indx = sb.indexOf("{{{");
-                if (indx >= 0) {
-                    TemplateParser scanner = new TemplateParser(sb.toString());
-                    scanner.setModel(wikiModel);
-                    sb = scanner.replaceTemplateParameters(templateParameterMap, 0);
+            final boolean hasParamsToReplace    = templateParameterMap != null && !templateParameterMap.isEmpty();
+            final boolean hasEmptyDefaultParams = sb.indexOf("{{{|") != -1;
+
+            if (hasParamsToReplace || hasEmptyDefaultParams) {
+                TemplateParser scanner = new TemplateParser(sb.toString());
+                scanner.setModel(wikiModel);
+                StringBuilder result = scanner.replaceTemplateParameters(templateParameterMap, 0);
+                if (result != null) {
+                    sb = result;
                 }
             }
+
             writer.append(sb);
         } catch (Exception | Error e) {
             handleParserError(e, writer);
@@ -233,8 +237,6 @@ public class TemplateParser extends AbstractParser {
         try {
             while (true) {
                 fCurrentCharacter = fSource[fCurrentPosition++];
-
-                // ---------Identify the next token-------------
                 switch (fCurrentCharacter) {
                 case '{': // wikipedia subst: and safesubst: handling
                     if (isSubsOrSafesubst()) {
@@ -256,7 +258,7 @@ public class TemplateParser extends AbstractParser {
                     fCurrentPosition = htmlStartPosition;
                     break;
                 case '~':
-                    int tildeCounter = 0;
+                    int tildeCounter;
                     if ((fSource.length > fCurrentPosition + 1) && fSource[fCurrentPosition] == '~' && fSource[fCurrentPosition + 1] == '~') {
                         // parse signatures '~~~', '~~~~' or '~~~~~'
                         tildeCounter = 3;
@@ -276,8 +278,8 @@ public class TemplateParser extends AbstractParser {
                         fWhiteStart = true;
                         fWhiteStartPosition = fCurrentPosition;
                     }
+                    break;
                 }
-
                 if (!fWhiteStart) {
                     fWhiteStart = true;
                     fWhiteStartPosition = fCurrentPosition - 1;
@@ -298,7 +300,17 @@ public class TemplateParser extends AbstractParser {
     }
 
     private boolean isSubsOrSafesubst() {
-        return (fSource[fCurrentPosition] == '{' && (fSource.length > fCurrentPosition + SUBST_LENGTH) && fSource[fCurrentPosition + 1] == 's');
+        if (fSource[fCurrentPosition] == '{' && fSource.length > fCurrentPosition + SUBST_LENGTH) {
+            for (int pos = fCurrentPosition + 1; pos<fSource.length; pos++)
+                if (Character.isWhitespace(fSource[pos])) {
+                    continue;
+                } else {
+                    return fSource[pos] == 's';
+                }
+            return false;
+        } else {
+            return false;
+        }
     }
 
     private void runParser(Appendable writer) throws IOException {
@@ -311,18 +323,6 @@ public class TemplateParser extends AbstractParser {
                 // ---------Identify the next token-------------
                 switch (fCurrentCharacter) {
                 case '{': // wikipedia template handling
-                    // if (Configuration.TEMPLATE_NAMES) {
-                    // int level = fWikiModel.getRecursionLevel();
-                    // if (level == 1) {
-                    // try {
-                    // String temp = fStringSource.substring(fCurrentPosition,
-                    // fCurrentPosition + 10);
-                    // System.out.println("==>" + temp);
-                    // } catch (Exception ex) {
-                    //
-                    // }
-                    // }
-                    // }
                     int oldPosition = fCurrentPosition;
                     if (!fParseOnlySignature && parseTemplateOrTemplateParameter(writer)) {
                         fWhiteStart = true;
@@ -582,11 +582,14 @@ public class TemplateParser extends AbstractParser {
 
     private boolean parseSubstOrSafesubst(Appendable writer) throws IOException {
         appendContent(writer, fWhiteStart, fWhiteStartPosition, 1, true);
+        int pos = fCurrentPosition;
+
+        consumeWhitespace();
         int startTemplatePosition = ++fCurrentPosition;
 
         int templateEndPosition = findNestedTemplateEnd(fSource, fCurrentPosition);
         if (templateEndPosition < 0) {
-            fCurrentPosition--;
+            fCurrentPosition = pos;
             return false;
         } else {
             return parseSubst(writer, startTemplatePosition, templateEndPosition);
@@ -971,7 +974,7 @@ public class TemplateParser extends AbstractParser {
      *
      * @return <code>null</code> if no replacement could be found
      */
-    public StringBuilder replaceTemplateParameters(@Nullable Map<String, String> templateParameters, int curlyBraceOffset) {
+    @Nullable public StringBuilder replaceTemplateParameters(@Nullable Map<String, String> templateParameters, int curlyBraceOffset) {
         StringBuilder buffer = null;
         int bufferStart = 0;
         try {

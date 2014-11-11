@@ -1,7 +1,7 @@
 !tape
 name: Foobar
 interactions:
-- recorded: 2014-11-07T00:58:39.337Z
+- recorded: 2014-11-11T01:39:29.460Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Foobar&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -17,16 +17,16 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:39 GMT
+      Date: Tue, 11 Nov 2014 01:39:28 GMT
       Server: Apache
-      Set-Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4; Path=/; Domain=.wikipedia.org
+      Set-Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4; Path=/; Domain=.wikipedia.org
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1055 miss (0), amssq36 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1055 miss (0), amssq36 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 2314467995, 74805945, 1573694911
+      X-Varnish: 2755303964, 219082334, 2134312492
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="11178" ns="0" title="Foobar"><revisions><rev user="Peterl" timestamp="2014-10-13T01:06:11Z" comment="Reverted to revision 628957226 by [[Special:Contributions/Peterl|Peterl]] ([[User talk:Peterl|talk]]): These names are *usually* used as _placeholder_ names. Other names are used normally. ([[WP:TW|TW]])" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{Merge to|Metasyntactic variable|date=September 2014}}
 
@@ -105,13 +105,13 @@ interactions:
 
       [[Category:Placeholder names]]
       [[Category:Variable (computer programming)]]</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:58:39.920Z
+- recorded: 2014-11-11T01:39:29.752Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AMerge+to&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -123,15 +123,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:39 GMT
+      Date: Tue, 11 Nov 2014 01:39:29 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1065 miss (0), amssq61 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1065 miss (0), amssq61 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1479294571, 3921590153, 1573695272
+      X-Varnish: 1909708243, 4096001275, 2134312548
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="1514395" ns="10" title="Template:Merge to"><revisions><rev user="Debresser" timestamp="2013-12-23T08:43:13Z" comment="Avoid redirect." contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{ {{{|safesubst:}}}#invoke:Unsubst||$N=Merge to |date=__DATE__ |$B=
       &lt;!--{{Merge to}} begin--&gt;{{#ifeq:{{NAMESPACE}}|Category
@@ -150,13 +150,50 @@ interactions:
       {{Documentation|Template:Merge/doc}}
       &lt;!-- Add categories and interwikis to the /doc subpage, not here! --&gt;
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:58:40.534Z
+- recorded: 2014-11-11T01:39:30.498Z
+  request:
+    method: GET
+    uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3AUnsubst&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Content-Length: '0'
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      Proxy-Connection: Keep-Alive
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Age: '0'
+      Cache-control: private
+      Connection: keep-alive
+      Content-Type: text/xml; charset=utf-8
+      Date: Tue, 11 Nov 2014 01:39:29 GMT
+      Server: Apache
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
+      X-Analytics: php=zend
+      X-Cache: cp1053 miss (0), amssq61 miss (0), amssq60 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Varnish: 3802697055, 4096001364, 2134312661
+    body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page pageid=\"40945493\" ns=\"828\" title=\"Module:Unsubst\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2014-08-22T15:48:46Z\" comment=\"add tracking category per protected edit\
+      \ request by [[User:Jackmcbarn]]\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">local p = {}\n\nlocal specialParams = {\n\t['$N'] = 'template name', -- Deprecated, but keeping until it is removed from transcluding templates\n\
+      \t['$B'] = 'template content',\n}\n\np[''] = function ( frame )\n\tif not frame:getParent() then\n\t\terror( '{{#invoke:Unsubst|}} makes no sense without a parent frame' )\n\tend\n\tif not frame.args['$B'] then\n\t\terror( '{{#invoke:Unsubst|}} requires\
+      \ parameter $B (template content)' )\n\tend\n\t\n\tif mw.isSubsting() then\n\t\t---- substing\n\t\t-- Combine passed args with passed defaults\n\t\tlocal args = {}\n\t\tfor k, v in pairs( frame.args ) do\n\t\t\tif not specialParams[k] then\n\t\t\t\tif\
+      \ v == '__DATE__' then\n\t\t\t\t\tv = mw.getContentLanguage():formatDate( 'F Y' )\n\t\t\t\tend\n\t\t\t\targs[k] = v\n\t\t\tend\n\t\tend\n\t\tfor k, v in pairs( frame:getParent().args ) do\n\t\t\targs[k] = v\n\t\tend\n\n\t\t-- Build an equivalent template\
+      \ invocation\n\t\t-- First, find the title to use\n\t\tlocal titleobj = mw.title.new(frame:getParent():getTitle())\n\t\tlocal title\n\t\tif titleobj.namespace == 10 then -- NS_TEMPLATE\n\t\t\ttitle = titleobj.text\n\t\telseif titleobj.namespace == 0 then\
+      \ -- NS_MAIN\n\t\t\ttitle = ':' .. titleobj.text\n\t\telse\n\t\t\ttitle = titleobj.prefixedText\n\t\tend\n\n\t\t-- Build the invocation body with numbered args first, then named\n\t\tlocal ret = '{{' .. title\n\t\tfor k, v in ipairs( args ) do\n\t\t\t\
+      if string.find( v, '=', 1, true ) then\n\t\t\t\t-- likely something like 1=foo=bar, we need to do it as a named arg\n\t\t\t\tbreak\n\t\t\tend\n\t\t\tret = ret .. '|' .. v\n\t\t\targs[k] = nil\n\t\tend\n\t\tfor k, v in pairs( args ) do\n\t\t\tret = ret\
+      \ .. '|' .. k .. '=' .. v\n\t\tend\n\t\t\n\t\treturn ret .. '}}'\n\telse\n\t\t---- Not substing\n\t\t-- Just return the &quot;body&quot;\n\t\treturn frame.args['$B'] .. (frame.args['$N'] and frame:getParent():getTitle() == mw.title.getCurrentTitle().prefixedText\
+      \ and '[[Category:Calls to Module:Unsubst that use $N]]' or '')\n\tend\nend\n\nreturn p</rev></revisions></page></pages></query></api>"
+- recorded: 2014-11-11T01:39:30.781Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3APagelist&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -168,27 +205,27 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:40 GMT
+      Date: Tue, 11 Nov 2014 01:39:30 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1054 miss (0), amssq47 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1054 miss (0), amssq47 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1644175478, 418258965, 1573695568
+      X-Varnish: 2053022246, 572852781, 2134312734
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="4472403" ns="10" title="Template:Pagelist"><revisions><rev user="Mr. Stradivarius" timestamp="2013-11-15T15:21:23Z" comment="Changed protection level of Template:Pagelist: [[WP:High-risk templates|Highly visible template]]: allow template editors ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{&lt;includeonly&gt;safesubst:&lt;/includeonly&gt;#invoke:pagelist|main}}&lt;noinclude&gt;
       {{documentation}}
       &lt;!-- Categories go on the /doc subpage, and interwikis go on Wikidata. --&gt;
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:58:40.959Z
+- recorded: 2014-11-11T01:39:31.423Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Apagelist&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -200,15 +237,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:40 GMT
+      Date: Tue, 11 Nov 2014 01:39:30 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1055 miss (0), amssq60 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1055 miss (0), amssq60 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 2314470739, 457517144, 1573696158
+      X-Varnish: 2755305472, 605336404, 2134312790
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><normalized><n from=\"Module:pagelist\" to=\"Module:Pagelist\" /></normalized><pages><page pageid=\"39912004\" ns=\"828\" title=\"Module:Pagelist\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"\
       2013-11-15T15:20:48Z\" comment=\"Changed protection level of Module:Pagelist: [[Wikipedia:Lua/Modules|High-risk Lua module]]: allow template editors ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins]\
       \ (indefinite))\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">local p = {}\n\n-- Get the page object. This will return the page object for the page\n-- specified, or nil if there are errors in the title, if the\n-- expensive\
@@ -228,13 +265,13 @@ interactions:
       \ for the nspace and edelim parameters the behaviour is different\n    -- depending on whether the parameters are blank or absent, and for\n    -- the delim parameter the default should be the blank string anyway.\n    args.delim = origArgs.delim\n   \
       \ args.edelim = origArgs.edelim\n    args.nspace = origArgs.nspace\n    \n    -- Get new named args, &quot;separator&quot; and &quot;conjunction&quot;, and strip blank values.\n    if origArgs.separator and origArgs.separator ~= '' then\n        args.separator\
       \ = origArgs.separator\n    end\n    if origArgs.conjunction and origArgs.conjunction ~= '' then\n        args.conjunction = origArgs.conjunction\n    end\n \n    return _main( args )\nend\n \nreturn p</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:58:41.267Z
+- recorded: 2014-11-11T01:39:31.728Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AMbox&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -246,27 +283,27 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:41 GMT
+      Date: Tue, 11 Nov 2014 01:39:31 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1052 miss (0), amssq60 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1052 miss (0), amssq60 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 4247845062, 457517213, 1573696242
+      X-Varnish: 330295248, 605336498, 2134312918
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="13319244" ns="10" title="Template:Mbox"><revisions><rev user="Mr. Stradivarius" timestamp="2013-10-20T12:33:38Z" comment="switch to Lua version" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{#invoke:Message box|mbox}}&lt;noinclude&gt;
       {{documentation}}
       &lt;!-- Categories go on the /doc subpage, and interwikis go on Wikidata. --&gt;
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:58:41.643Z
+- recorded: 2014-11-11T01:39:32.217Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3AMessage_box&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -278,15 +315,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:41 GMT
+      Date: Tue, 11 Nov 2014 01:39:31 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1068 miss (0), amssq31 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1068 miss (0), amssq31 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1768297249, 989773307, 1573696433
+      X-Varnish: 2173135627, 1160041673, 2134312975
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><normalized><n from=\"Module:Message_box\" to=\"Module:Message box\" /></normalized><pages><page pageid=\"40574910\" ns=\"828\" title=\"Module:Message box\"><revisions><rev user=\"Mr. Stradivarius\"\
       \ timestamp=\"2014-04-08T04:39:12Z\" comment=\"Allow passing attributes per protected edit request by [[User:Jackmcbarn]]. Also remove undocumented &quot;hidden&quot; parameter and format the module so it mostly fits within 80 chars.\" contentformat=\"\
       text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">-- This is a meta-module for producing message box templates, including\n-- {{mbox}}, {{ambox}}, {{imbox}}, {{tmbox}}, {{ombox}}, {{cmbox}} and {{fmbox}}.\n\n-- Require necessary modules.\n\
@@ -367,13 +404,13 @@ interactions:
       \n\treturn tostring(root)\nend\n\nlocal function main(boxType, args)\n\tlocal outputBox = box.new()\n\toutputBox:setTitle(args)\n\tlocal cfg = outputBox:getConfig(boxType)\n\targs = outputBox:removeBlankArgs(cfg, args)\n\toutputBox:setBoxParameters(cfg,\
       \ args)\n\treturn outputBox:export()\nend\n\nlocal function makeWrapper(boxType)\n\treturn function (frame)\n\t\tlocal args = getArgs(frame, {trim = false, removeBlanks = false})\n\t\treturn main(boxType, args)\n\tend\nend\n\nlocal p = {\n\tmain = main,\n\
       \tmbox = makeWrapper('mbox')\n}\n\nfor boxType in pairs(cfgTables) do\n\tp[boxType] = makeWrapper(boxType)\nend\n\nreturn p</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:58:42.378Z
+- recorded: 2014-11-11T01:39:32.477Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3AArguments&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -385,15 +422,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:41 GMT
+      Date: Tue, 11 Nov 2014 01:39:31 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1065 miss (0), amssq39 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1065 miss (0), amssq39 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1479297265, 3780779693, 1573696590
+      X-Varnish: 1909710879, 3933504949, 2134313044
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page pageid=\"41298065\" ns=\"828\" title=\"Module:Arguments\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2014-07-05T03:52:56Z\" comment=\"allow using both the frame and parent\
       \ frame arguments with the wrappers option if specifically requested, per protected edit request by [[User:Jackmcbarn]]\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">-- This module provides easy processing of arguments\
       \ passed to Scribunto from\n-- #invoke. It is intended for use by other Lua modules, and should not be\n-- called from #invoke directly.\n\nlocal libraryUtil = require('libraryUtil')\nlocal checkType = libraryUtil.checkType\n\nlocal arguments = {}\n\n\
@@ -434,13 +471,13 @@ interactions:
       \ = true\n\t\telse\n\t\t\tmetaArgs[key] = val\n\t\tend\n\tend\n\n\tmetatable.__pairs = function ()\n\t\t-- Called when pairs is run on the args table.\n\t\tif not metatable.donePairs then\n\t\t\tmergeArgs(pairs, argTables)\n\t\t\tmetatable.donePairs =\
       \ true\n\t\t\tmetatable.doneIpairs = true\n\t\tend\n\t\treturn pairs(metaArgs)\n\tend\n\n\tmetatable.__ipairs = function ()\n\t\t-- Called when ipairs is run on the args table.\n\t\tif not metatable.doneIpairs then\n\t\t\tmergeArgs(ipairs, argTables)\n\
       \t\t\tmetatable.doneIpairs = true\n\t\tend\n\t\treturn ipairs(metaArgs)\n\tend\n\n\treturn args\nend\n\nreturn arguments</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:58:42.648Z
+- recorded: 2014-11-11T01:39:32.696Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3AHtmlBuilder&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -452,15 +489,16 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:42 GMT
+      Date: Tue, 11 Nov 2014 01:39:32 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
-      X-Analytics: php=zend
-      X-Cache: cp1053 miss (0), amssq50 miss (0), amssq46 frontend miss (0)
+      X-Analytics: php=hhvm
+      X-Cache: cp1053 miss (0), amssq50 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 3363972707, 3689855770, 1573697091
+      X-Powered-By: HHVM/3.3.1
+      X-Varnish: 3802699199, 3845163733, 2134313108
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page pageid=\"38663961\" ns=\"828\" title=\"Module:HtmlBuilder\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2013-09-18T15:22:39Z\" comment=\"don&#039;t add attributes with no\
       \ values, plus a couple of minor tweaks\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">-- Module for building complex HTML (e.g. infoboxes, navboxes) using a fluent interface.\n\nlocal HtmlBuilder = {}\n\nlocal metatable\
       \ = {}\n\nmetatable.__index = function(t, key)\n    local ret = rawget(t, key)\n    if ret then\n        return ret\n    end\n    \n    ret = metatable[key]\n    if type(ret) == 'function' then\n        return function(...) \n            return ret(t,\
@@ -481,13 +519,13 @@ interactions:
       \ function(t)\n    return t.parent or t\nend\n\nmetatable.allDone = function(t)\n    while t.parent do\n        t = t.parent\n    end\n    return t\nend\n\nfunction HtmlBuilder.create(tagName, args)\n    args = args or {}\n    local builder = {}\n    setmetatable(builder,\
       \ metatable)\n    builder.nodes = {}\n    builder.attributes = {}\n    builder.styles = {}\n    builder.tagName = tagName\n    builder.parent = args.parent\n    builder.unclosed = args.unclosed or false\n    builder.selfClosing = args.selfClosing or false\n\
       \    return builder\nend\n\nreturn HtmlBuilder</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:58:42.994Z
+- recorded: 2014-11-11T01:39:32.946Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ACategory+handler&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -499,15 +537,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:42 GMT
+      Date: Tue, 11 Nov 2014 01:39:32 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1068 miss (0), amssq44 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1068 miss (0), amssq44 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1768299545, 3559901441, 1573697550
+      X-Varnish: 2173136438, 3714263887, 2134313157
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page pageid=\"39772274\" ns=\"828\" title=\"Module:Category handler\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2014-07-22T05:08:26Z\" comment=\"allow invocations specifying\
       \ the page parameter to use the mw.loadData optimisations, and don&#039;t call mw.title.new every time\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">--------------------------------------------------------------------------------\n\
       --                                                                            --\n--                              CATEGORY HANDLER                              --\n--                                                                            --\n--   \
@@ -543,13 +581,13 @@ interactions:
       \ data)\n\tdata = data or mw.loadData('Module:Category handler/data')\n\tlocal handler = CategoryHandler.new(data, args)\n\tif handler:isSuppressed() then\n\t\treturn nil\n\tend\n\treturn handler:getCategories()\nend\n\nfunction p.main(frame, data)\n\t\
       data = data or mw.loadData('Module:Category handler/data')\n\tlocal args = require('Module:Arguments').getArgs(frame, {\n\t\twrappers = data.wrappers,\n\t\tvalueFunc = function (k, v)\n\t\t\tv = trimWhitespace(v)\n\t\t\tif type(k) == 'number' then\n\t\t\
       \t\tif v ~= '' then\n\t\t\t\t\treturn v\n\t\t\t\telse\n\t\t\t\t\treturn nil\n\t\t\t\tend\n\t\t\telse\n\t\t\t\treturn v\n\t\t\tend\n\t\tend\n\t})\n\treturn p._main(args, data)\nend\n\nreturn p</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:58:43.251Z
+- recorded: 2014-11-11T01:39:33.164Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3AYesno&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -561,27 +599,28 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:43 GMT
+      Date: Tue, 11 Nov 2014 01:39:32 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
-      X-Analytics: php=zend
-      X-Cache: cp1052 miss (0), amssq40 miss (0), amssq46 frontend miss (0)
+      X-Analytics: php=hhvm
+      X-Cache: cp1052 miss (0), amssq40 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 4247847709, 365617428, 1573697740
+      X-Powered-By: HHVM/3.3.1
+      X-Varnish: 330296456, 514437131, 2134313202
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page pageid=\"38665046\" ns=\"828\" title=\"Module:Yesno\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2014-04-18T10:35:42Z\" comment=\"use the Lua string.lower function instead\
       \ of mw.ustring.lower; this makes the function around 25x faster\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">-- Function allowing for consistent treatment of boolean-like wikitext input.\n-- It works similarly to the\
       \ template {{yesno}}.\n\nreturn function (val, default)\n\t-- If your wiki uses non-ascii characters for any of &quot;yes&quot;, &quot;no&quot;, etc., you\n\t-- should replace &quot;val:lower()&quot; with &quot;mw.ustring.lower(val)&quot; in the\n\t--\
       \ following line.\n\tval = type(val) == 'string' and val:lower() or val\n\tif val == nil then\n\t\treturn nil\n\telseif val == true \n\t\tor val == 'yes'\n\t\tor val == 'y'\n\t\tor val == 'true'\n\t\tor tonumber(val) == 1\n\tthen\n\t\treturn true\n\telseif\
       \ val == false\n\t\tor val == 'no'\n\t\tor val == 'n'\n\t\tor val == 'false'\n\t\tor tonumber(val) == 0\n\tthen\n\t\treturn false\n\telse\n\t\treturn default\n\tend\nend</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:58:43.607Z
+- recorded: 2014-11-11T01:39:33.494Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3AMessage+box%2Fconfiguration&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -593,15 +632,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:43 GMT
+      Date: Tue, 11 Nov 2014 01:39:32 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1066 miss (0), amssq57 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1066 miss (0), amssq57 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 585026919, 3257604911, 1573697921
+      X-Varnish: 989291736, 3415102957, 2134313248
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page pageid=\"40627038\" ns=\"828\" title=\"Module:Message box/configuration\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2014-01-27T01:07:32Z\" comment=\"allow the hidden arg\
       \ to be blank, and allow tmbox to have an id attribute, per protected edit request by [[User:Technical 13]]\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">local ambox = {\n\ttypes = {\n\t\tspeedy = {\n\t\t\tclass = 'ambox-speedy',\n\
       \t\t\timage = 'Ambox speedy deletion.png'\n\t\t},\n\t\tdelete = {\n\t\t\tclass = 'ambox-delete',\n\t\t\timage = 'Ambox deletion.png'\n\t\t},\n\t\tcontent = {\n\t\t\tclass = 'ambox-content',\n\t\t\timage = 'Ambox content.png'\n\t\t},\n\t\tstyle = {\n\t\t\
@@ -628,13 +667,13 @@ interactions:
       \ = {\n\t\t\tclass = 'tmbox-move',\n\t\t\timage = 'Imbox move.png'\n\t\t},\n\t\tprotection = {\n\t\t\tclass = 'tmbox-protection',\n\t\t\timage = 'Imbox protection.png'\n\t\t},\n\t\tnotice = {\n\t\t\tclass = 'tmbox-notice',\n\t\t\timage = 'Imbox notice.png'\n\
       \t\t}\n\t},\n\tdefault              = 'notice',\n\tshowInvalidTypeError = true,\n\tclasses              = {'plainlinks', 'tmbox'},\n\tallowId              = true,\n\tallowSmall           = true,\n\timageRightNone       = true,\n\timageEmptyCell       =\
       \ true,\n\timageEmptyCellStyle  = true,\n\ttemplateCategory     = 'Talk message boxes'\n}\n\nreturn {\n\tambox = ambox,\n\tcmbox = cmbox,\n\tfmbox = fmbox,\n\timbox = imbox,\n\tombox = ombox,\n\ttmbox = tmbox\n}</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:58:44.221Z
+- recorded: 2014-11-11T01:39:33.804Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ACategory+handler%2Fdata&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -646,27 +685,27 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:43 GMT
+      Date: Tue, 11 Nov 2014 01:39:33 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1054 miss (0), amssq47 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1054 miss (0), amssq47 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1644180495, 418261156, 1573698017
+      X-Varnish: 2053025234, 572853232, 2134313345
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page pageid=\"43233647\" ns=\"828\" title=\"Module:Category handler/data\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2014-07-13T09:05:55Z\" comment=\"Protected Module:Category\
       \ handler/data: [[WP:High-risk templates|High-risk Lua module]] ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"\
       preserve\">-- This module assembles data to be passed to [[Module:Category handler]] using\n-- mw.loadData. This includes the configuration data and whether the current\n-- page matches the title blacklist.\n\nlocal data = require('Module:Category handler/config')\n\
       local mShared = require('Module:Category handler/shared')\nlocal blacklist = require('Module:Category handler/blacklist')\nlocal title = mw.title.getCurrentTitle()\n\ndata.currentTitleMatchesBlacklist = mShared.matchesBlacklist(\n\ttitle.prefixedText,\n\
       \tblacklist\n)\n\ndata.currentTitleNamespaceParameters = mShared.getNamespaceParameters(\n\ttitle,\n\tmShared.getParamMappings()\n)\n\nreturn data</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:58:44.836Z
+- recorded: 2014-11-11T01:39:34.033Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ACategory+handler%2Fconfig&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -678,15 +717,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:44 GMT
+      Date: Tue, 11 Nov 2014 01:39:33 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1068 miss (0), amssq34 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1068 miss (0), amssq34 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1768301237, 3536131657, 1573698178
+      X-Varnish: 2173137403, 3685262076, 2134313392
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page pageid=\"42291997\" ns=\"828\" title=\"Module:Category handler/config\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2014-07-13T09:05:36Z\" comment=\"Protected Module:Category\
       \ handler/config: [[WP:High-risk templates|High-risk Lua module]] ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"\
       preserve\">--------------------------------------------------------------------------------\n--            [[Module:Category handler]] configuration data                  --\n--       Language-specific parameter names and values can be set here.      \
@@ -712,13 +751,13 @@ interactions:
       --                                Wrappers                                    --\n-- This is a wrapper template or a list of wrapper templates to be passed to  --\n-- [[Module:Arguments]].                                                      --\n--------------------------------------------------------------------------------\n\
       \ncfg.wrappers = 'Template:Category handler'\n\n--------------------------------------------------------------------------------\n--                           End configuration data                           --\n--------------------------------------------------------------------------------\n\
       \nreturn cfg -- Don't edit this line.</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:58:45.079Z
+- recorded: 2014-11-11T01:39:34.271Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ACategory+handler%2Fshared&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -730,28 +769,28 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:45 GMT
+      Date: Tue, 11 Nov 2014 01:39:33 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1065 miss (0), amssq61 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1065 miss (0), amssq61 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1479301252, 3921592767, 1573698341
+      X-Varnish: 1909712713, 4096001948, 2134313435
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page pageid=\"43232937\" ns=\"828\" title=\"Module:Category handler/shared\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2014-07-13T09:06:15Z\" comment=\"Protected Module:Category\
       \ handler/shared: [[WP:High-risk templates|High-risk Lua module]] ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"\
       preserve\">-- This module contains shared functions used by [[Module:Category handler]]\n-- and its submodules.\n\nlocal p = {}\n\nfunction p.matchesBlacklist(page, blacklist)\n\tfor i, pattern in ipairs(blacklist) do\n\t\tlocal match = mw.ustring.match(page,\
       \ pattern)\n\t\tif match then\n\t\t\treturn true\n\t\tend\n\tend\n\treturn false\nend\n\nfunction p.getParamMappings(useLoadData)\n\tlocal dataPage = 'Module:Namespace detect/data'\n\tif useLoadData then\n\t\treturn mw.loadData(dataPage).mappings\n\telse\n\
       \t\treturn require(dataPage).mappings\n\tend\nend\n\nfunction p.getNamespaceParameters(titleObj, mappings)\n\t-- We don't use title.nsText for the namespace name because it adds\n\t-- underscores.\n\tlocal mappingsKey\n\tif titleObj.isTalkPage then\n\t\
       \tmappingsKey = 'talk'\n\telse\n\t\tmappingsKey = mw.site.namespaces[titleObj.namespace].name\n\tend\n\tmappingsKey = mw.ustring.lower(mappingsKey)\n\treturn mappings[mappingsKey] or {}\nend\n\nreturn p</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:58:45.449Z
+- recorded: 2014-11-11T01:39:34.799Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ACategory+handler%2Fblacklist&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -763,28 +802,28 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:45 GMT
+      Date: Tue, 11 Nov 2014 01:39:34 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1054 miss (0), amssq47 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1054 miss (0), amssq47 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1644181806, 418261402, 1573698385
+      X-Varnish: 2053025885, 572853365, 2134313502
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page pageid=\"43232926\" ns=\"828\" title=\"Module:Category handler/blacklist\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2014-07-13T09:07:09Z\" comment=\"Protected Module:Category\
       \ handler/blacklist: [[WP:High-risk templates|High-risk Lua module]] ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"\
       preserve\">-- This module contains the blacklist used by [[Module:Category handler]].\n-- Pages that match Lua patterns in this list will not be categorised unless\n-- categorisation is explicitly requested.\n\nreturn {\n    '^Main Page$', -- don't categorise\
       \ the main page.\n \n    -- Don't categorise the following pages or their subpages.\n    -- &quot;%f[/\\0]&quot; matches if the next character is &quot;/&quot; or the end of the string.\n    '^Wikipedia:Cascade%-protected items%f[/\\0]',\n    '^User:UBX%f[/\\\
       0]', -- The userbox &quot;template&quot; space.\n    '^User talk:UBX%f[/\\0]',\n \n    -- Don't categorise subpages of these pages, but allow\n    -- categorisation of the base page.\n    '^Wikipedia:Template messages/.*$',\n \n    '/[aA]rchive' -- Don't\
       \ categorise archives.\n}</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:58:45.760Z
+- recorded: 2014-11-11T01:39:35.429Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ANamespace+detect%2Fdata&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -796,15 +835,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:45 GMT
+      Date: Tue, 11 Nov 2014 01:39:34 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1066 miss (0), amssq53 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1066 miss (0), amssq53 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 585029041, 10402956, 1573698466
+      X-Varnish: 989293367, 165717409, 2134313625
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page pageid=\"42257476\" ns=\"828\" title=\"Module:Namespace detect/data\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2014-04-05T17:02:16Z\" comment=\"bug fix - use the demospace\
       \ parameter as both key and value in the argKeys table\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">--------------------------------------------------------------------------------\n--                          Namespace\
       \ detect data                             --\n-- This module holds data for [[Module:Namespace detect]] to be loaded per    --\n-- page, rather than per #invoke, for performance reasons.                    --\n--------------------------------------------------------------------------------\n\
@@ -818,13 +857,13 @@ interactions:
       \ do\n\t\tif nsid ~= 0 then -- Exclude main namespace.\n\t\t\tlocal nsname = mw.ustring.lower(ns.name)\n\t\t\tlocal canonicalName = mw.ustring.lower(ns.canonicalName)\n\t\t\tmappings[nsname] = {nsname}\n\t\t\tif canonicalName ~= nsname then\n\t\t\t\ttable.insert(mappings[nsname],\
       \ canonicalName)\n\t\t\tend\n\t\t\tfor _, alias in ipairs(ns.aliases) do\n\t\t\t\ttable.insert(mappings[nsname], mw.ustring.lower(alias))\n\t\t\tend\n\t\tend\n\tend\n\treturn mappings\nend\n\nreturn {\n\targKeys = argKeys,\n\tcfg = cfg,\n\tmappings = getParamMappings()\n\
       }</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:58:46.372Z
+- recorded: 2014-11-11T01:39:35.738Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ANamespace+detect%2Fconfig&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -836,15 +875,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:46 GMT
+      Date: Tue, 11 Nov 2014 01:39:34 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1052 miss (0), amssq53 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1052 miss (0), amssq53 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 4247850011, 10403021, 1573698555
+      X-Varnish: 330298605, 165717503, 2134313765
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="42256703" ns="828" title="Module:Namespace detect/config"><revisions><rev user="Mr. Stradivarius" timestamp="2014-04-05T17:03:49Z" comment="use cfg.demopage rather than cfg.page now that the default parameter has been changed on the /data page" contentformat="text/plain" contentmodel="Scribunto" xml:space="preserve">--------------------------------------------------------------------------------
       --                    Namespace detect configuration data                     --
@@ -912,13 +951,13 @@ interactions:
       --------------------------------------------------------------------------------
 
       return cfg -- Don't edit this line.</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:58:46.985Z
+- recorded: 2014-11-11T01:39:35.988Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3ADMC&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -930,23 +969,23 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:46 GMT
+      Date: Tue, 11 Nov 2014 01:39:35 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1053 miss (0), amssq44 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1053 miss (0), amssq44 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 3363977506, 3559902398, 1573698745
+      X-Varnish: 3802702312, 3714264412, 2134313817
     body: <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="7581587" ns="10" title="Template:DMC"><revisions><rev user="MSGJ" timestamp="2009-06-15T09:41:37Z" comment="templates merged" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">#redirect[[Template:Dated maintenance category]]</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:58:47.600Z
+- recorded: 2014-11-11T01:39:36.289Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3ADated+maintenance+category&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -958,15 +997,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:47 GMT
+      Date: Tue, 11 Nov 2014 01:39:35 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1065 miss (0), amssq40 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1065 miss (0), amssq40 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1479303395, 365618281, 1573698904
+      X-Varnish: 1909714606, 514437626, 2134313862
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="22598546" ns="10" title="Template:Dated maintenance category"><revisions><rev user="John of Reading" timestamp="2014-01-08T08:14:55Z" comment="Second attempt. Those spaces upset inline templates such as {{As of}}. Instead, try an unconditional &lt;nowiki/&gt;" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;nowiki/&gt;&lt;!--This nowiki helps to prevent whitespace at the top of articles--&gt;{{#ifeq:{{FULLROOTPAGENAME}}|Wikipedia:Template messages|&lt;!--Do not categorize--&gt;|&lt;!--
       --&gt;{{#ifexpr:{{#if:{{NAMESPACE}}|0|1}}+{{#ifeq:{{{onlyarticles|no}}}|yes|0|1}}
@@ -986,13 +1025,13 @@ interactions:
       --&gt;}}&lt;noinclude&gt;
       {{documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:58:48.214Z
+- recorded: 2014-11-11T01:39:36.518Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AFULLROOTPAGENAME&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -1004,26 +1043,26 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:47 GMT
+      Date: Tue, 11 Nov 2014 01:39:35 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1067 miss (0), amssq36 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1067 miss (0), amssq36 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 2377407083, 74809574, 1573699249
+      X-Varnish: 2811197468, 219083361, 2134313960
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page pageid=\"34701984\" ns=\"10\" title=\"Template:FULLROOTPAGENAME\"><revisions><rev user=\"PrimeHunter\" timestamp=\"2012-02-12T12:42:22Z\" comment=\"Protected Template:FULLROOTPAGENAME:\
       \ [[WP:High-risk templates|Highly visible template]] ([edit=sysop] (indefinite) [move=sysop] (indefinite))\" contentformat=\"text/x-wiki\" contentmodel=\"wikitext\" xml:space=\"preserve\">{{ {{{|safesubst:}}}#if: {{ {{{|safesubst:}}}Ns has subpages | {{\
       \ {{{|safesubst:}}}#if:{{{1|}}}|{{ {{{|safesubst:}}}NAMESPACE:{{{1}}}}}|{{ {{{|safesubst:}}}NAMESPACE}}}} }} \n  | {{ {{{|safesubst:}}}#titleparts:{{ {{{|safesubst:}}}#if:{{{1|}}}|{{{1}}}|{{ {{{|safesubst:}}}FULLPAGENAME}}}}|1}}\n  | {{ {{{|safesubst:}}}#if:{{{1|}}}|{{{1}}}|{{\
       \ {{{|safesubst:}}}FULLPAGENAME}}}}\n}}&lt;noinclude&gt;\n\n{{documentation}}\n\n&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:58:48.828Z
+- recorded: 2014-11-11T01:39:36.799Z
   request:
     method: GET
-    uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Asafesubst%3ANAMESPACE%3A%7B%7B%7B1%7D%7D%7D&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3ANs+has+subpages&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -1035,137 +1074,25 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:48 GMT
+      Date: Tue, 11 Nov 2014 01:39:36 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1066 miss (0), amssq35 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1067 miss (0), amssq41 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 585031907, 4262046807, 1573699431
-    body: <?xml version="1.0"?><api batchcomplete=""><query><pages><page title="Template:safesubst:NAMESPACE:{{{1}}}" invalid="" /></pages></query></api>
-- recorded: 2014-11-07T00:58:49.074Z
-  request:
-    method: GET
-    uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Asafesubst%3ANAMESPACE&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
-    headers:
-      Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
-      Cookie2: $Version=1
-      Host: en.wikipedia.org
-      Proxy-Connection: Keep-Alive
-      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
-  response:
-    status: 200
-    headers:
-      Age: '0'
-      Cache-control: private
-      Connection: keep-alive
-      Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:48 GMT
-      Server: Apache
-      Transfer-Encoding: chunked
-      Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
-      X-Analytics: php=zend
-      X-Cache: cp1052 miss (0), amssq53 miss (0), amssq46 frontend miss (0)
-      X-Content-Type-Options: nosniff
-      X-Frame-Options: SAMEORIGIN
-      X-Varnish: 4247852893, 10404116, 1573699856
-    body: <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:safesubst:NAMESPACE" to="Template:Safesubst:NAMESPACE" /></normalized><pages><page ns="10" title="Template:Safesubst:NAMESPACE" missing="" /></pages></query></api>
-- recorded: 2014-11-07T00:59:04.431Z
-  request:
-    method: GET
-    uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Asafesubst%3A&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
-    headers:
-      Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
-      Cookie2: $Version=1
-      Host: en.wikipedia.org
-      Proxy-Connection: Keep-Alive
-      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
-  response:
-    status: 200
-    headers:
-      Accept-Ranges: bytes
-      Age: '0'
-      Cache-control: private
-      Connection: keep-alive
-      Content-Length: '216'
-      Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:04 GMT
-      Server: Apache
-      Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
-      X-Analytics: php=zend
-      X-Cache: cp1066 miss (0), amssq40 miss (0), amssq46 frontend miss (0)
-      X-Content-Type-Options: nosniff
-      X-Frame-Options: SAMEORIGIN
-      X-Pad: avoid browser bug
-      X-Varnish: 585051260, 365625882, 1573707729
-    body: <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:safesubst:" to="Template:Safesubst:" /></normalized><pages><page ns="10" title="Template:Safesubst:" missing="" /></pages></query></api>
-- recorded: 2014-11-07T00:58:49.631Z
-  request:
-    method: GET
-    uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Asafesubst%3ANs+has+subpages&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
-    headers:
-      Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
-      Cookie2: $Version=1
-      Host: en.wikipedia.org
-      Proxy-Connection: Keep-Alive
-      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
-  response:
-    status: 200
-    headers:
-      Age: '0'
-      Cache-control: private
-      Connection: keep-alive
-      Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:49 GMT
-      Server: Apache
-      Transfer-Encoding: chunked
-      Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
-      X-Analytics: php=zend
-      X-Cache: cp1068 miss (0), amssq52 miss (0), amssq46 frontend miss (0)
-      X-Content-Type-Options: nosniff
-      X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1768307165, 493257843, 1573699995
-    body: <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:safesubst:Ns has subpages" to="Template:Safesubst:Ns has subpages" /></normalized><pages><page ns="10" title="Template:Safesubst:Ns has subpages" missing="" /></pages></query></api>
-- recorded: 2014-11-07T00:58:49.874Z
-  request:
-    method: GET
-    uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Asafesubst%3AFULLPAGENAME&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
-    headers:
-      Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
-      Cookie2: $Version=1
-      Host: en.wikipedia.org
-      Proxy-Connection: Keep-Alive
-      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
-  response:
-    status: 200
-    headers:
-      Age: '0'
-      Cache-control: private
-      Connection: keep-alive
-      Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:49 GMT
-      Server: Apache
-      Transfer-Encoding: chunked
-      Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
-      X-Analytics: php=zend
-      X-Cache: cp1066 miss (0), amssq31 miss (0), amssq46 frontend miss (0)
-      X-Content-Type-Options: nosniff
-      X-Frame-Options: SAMEORIGIN
-      X-Varnish: 585033484, 989776459, 1573700166
-    body: <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:safesubst:FULLPAGENAME" to="Template:Safesubst:FULLPAGENAME" /></normalized><pages><page ns="10" title="Template:Safesubst:FULLPAGENAME" missing="" /></pages></query></api>
-- recorded: 2014-11-07T00:58:51.245Z
+      X-Varnish: 2811197691, 894231866, 2134314010
+    body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page pageid=\"22589696\" ns=\"10\" title=\"Template:Ns has subpages\"><revisions><rev user=\"Amalthea\" timestamp=\"2010-05-03T11:20:44Z\" comment=\"Allow substitution using safesubst:\
+      \ ([[meta:Help:Safesubst]])\" contentformat=\"text/x-wiki\" contentmodel=\"wikitext\" xml:space=\"preserve\">{{ {{{|safesubst:}}}#switch: {{ {{{|safesubst:}}}NAMESPACE: {{{1|{{ {{{|safesubst:}}}FULLPAGENAME}}}}}:Foo }}\n |{{ {{{|safesubst:}}}ns:0}}\n |{{\
+      \ {{{|safesubst:}}}ns:File}}\n |{{ {{{|safesubst:}}}ns:MediaWiki}}\n |{{ {{{|safesubst:}}}ns:Category}} = \n |yes\n}}&lt;noinclude&gt;\n{{documentation}}\n\n&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>"
+- recorded: 2014-11-11T01:39:37.044Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AMerge+partner&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -1177,25 +1104,26 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:51 GMT
+      Date: Tue, 11 Nov 2014 01:39:36 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
-      X-Analytics: php=zend
-      X-Cache: cp1055 miss (0), amssq37 miss (0), amssq46 frontend miss (0)
+      X-Analytics: php=hhvm
+      X-Cache: cp1055 miss (0), amssq37 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 2314483240, 1580991566, 1573700724
+      X-Powered-By: HHVM/3.3.1
+      X-Varnish: 2755311448, 1756254293, 2134314058
     body: '<?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="24232167" ns="10" title="Template:Merge partner"><revisions><rev user="Mark Arsten" timestamp="2013-12-16T21:41:21Z" comment="Changed protection level of Template:Merge partner:
       Allowing Protected Template editors ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;includeonly&gt;{{#if:{{{1|}}}||[[Category:Articles
       for merging with no partner|{{ns0||{{Namespace Greek}}}}{{PAGENAME}}]]}}&lt;/includeonly&gt;&lt;noinclude&gt;{{documentation}}&lt;!-- Add categories and interwikis to the /doc subpage, not here! --&gt;&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>'
-- recorded: 2014-11-07T00:58:51.742Z
+- recorded: 2014-11-11T01:39:37.318Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3ADistinguish&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -1207,15 +1135,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:51 GMT
+      Date: Tue, 11 Nov 2014 01:39:36 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1053 miss (0), amssq43 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1053 miss (0), amssq43 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 3363984599, 2893056902, 1573701016
+      X-Varnish: 3802703594, 3033602871, 2134314097
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="3406012" ns="10" title="Template:Distinguish"><revisions><rev user="Paine Ellsworth" timestamp="2014-07-14T22:14:55Z" comment="minor update" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{Hatnote|Not to be confused with [[:{{{1}}}]]{{
           #if: {{{3|}}}{{{4|}}}
@@ -1232,13 +1160,13 @@ interactions:
       {{Documentation}}
       &lt;!-- Add categories to the /doc subpage and interwikis to Wikidata, not here! --&gt;
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:58:52.207Z
+- recorded: 2014-11-11T01:39:37.641Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AHatnote&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -1250,27 +1178,27 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:52 GMT
+      Date: Tue, 11 Nov 2014 01:39:36 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1054 miss (0), amssq50 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1054 miss (0), amssq50 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1644188961, 3689859143, 1573701066
+      X-Varnish: 2053028888, 3845164544, 2134314135
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="945764" ns="10" title="Template:Hatnote"><revisions><rev user="SMcCandlish" timestamp="2014-05-23T15:55:04Z" comment="tweak" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;includeonly&gt;{{#invoke:Hatnote|hatnote}}&lt;/includeonly&gt;&lt;noinclude&gt;
       {{documentation}}
       &lt;!-- Categories go on the /doc subpage, and interwikis go on Wikidata. --&gt;
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:58:52.822Z
+- recorded: 2014-11-11T01:39:37.931Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3AHatnote&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -1282,15 +1210,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:52 GMT
+      Date: Tue, 11 Nov 2014 01:39:37 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1054 miss (0), amssq46 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1054 miss (0), amssq46 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1644189683, 3067257995, 1573701175
+      X-Varnish: 2053029203, 3211140534, 2134314210
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page pageid=\"42498502\" ns=\"828\" title=\"Module:Hatnote\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2014-10-07T10:35:12Z\" comment=\"detect piped link hacks made with the\
       \ {{!}} parser function\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">--------------------------------------------------------------------------------\n--                              Module:Hatnote                  \
       \              --\n--                                                                            --\n-- This module produces hatnote links and links to related articles. It       --\n-- implements the {{hatnote}} and {{format hatnote link}} meta-templates,\
@@ -1320,13 +1248,13 @@ interactions:
       \ p._hatnote(s, options)\nend\n\nfunction p._hatnote(s, options)\n\tcheckType('_hatnote', 1, s, 'string')\n\tcheckType('_hatnote', 2, options, 'table', true)\n\tlocal classes = {'hatnote'}\n\tlocal extraclasses = options.extraclasses\n\tlocal selfref =\
       \ options.selfref\n\tif type(extraclasses) == 'string' then\n\t\tclasses[#classes + 1] = extraclasses\n\tend\n\tif selfref then\n\t\tclasses[#classes + 1] = 'selfref'\n\tend\n\treturn string.format(\n\t\t'&lt;div class=&quot;%s&quot;&gt;%s&lt;/div&gt;',\n\
       \t\ttable.concat(classes, ' '),\n\t\ts\n\t)\nend\n\nreturn p</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:58:53.436Z
+- recorded: 2014-11-11T01:39:38.258Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3ARedirect&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -1338,27 +1266,27 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:53 GMT
+      Date: Tue, 11 Nov 2014 01:39:37 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1065 miss (0), amssq57 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1065 miss (0), amssq57 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1479310317, 3257608355, 1573701971
+      X-Varnish: 1909716725, 3415103771, 2134314270
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="1649987" ns="10" title="Template:Redirect"><revisions><rev user="Mr. Stradivarius" timestamp="2014-08-05T21:42:33Z" comment="convert this to use [[Module:Redirect hatnote]]" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;includeonly&gt;{{#invoke:redirect hatnote|redirect}}&lt;/includeonly&gt;&lt;noinclude&gt;
       {{documentation}}
       &lt;!-- Categories go on the /doc subpage, and interwikis go on Wikidata. --&gt;
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:58:53.755Z
+- recorded: 2014-11-11T01:39:38.552Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Aredirect_hatnote&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -1370,15 +1298,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:53 GMT
+      Date: Tue, 11 Nov 2014 01:39:37 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1052 miss (0), amssq59 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1052 miss (0), amssq59 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 4247857759, 3365931946, 1573702181
+      X-Varnish: 330301039, 3517399231, 2134314364
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><normalized><n from=\"Module:redirect_hatnote\" to=\"Module:Redirect hatnote\" /></normalized><pages><page pageid=\"42680232\" ns=\"828\" title=\"Module:Redirect hatnote\"><revisions><rev user=\"\
       Mr. Stradivarius\" timestamp=\"2014-09-25T01:55:22Z\" comment=\"detect more types of invalid and missing redirects\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">--[[\n-- This module produces a &quot;redirect&quot; hatnote.\
       \ It looks like this:\n-- '&quot;X&quot; redirects here. For other uses, see Y.'\n-- It implements the {{redirect}} template.\n--]]\n\nlocal mHatnote = require('Module:Hatnote')\nlocal libraryUtil = require('libraryUtil')\nlocal checkType = libraryUtil.checkType\n\
@@ -1402,13 +1330,13 @@ interactions:
       \ targetTitle ~= currentTitle then\n\t\t\t\tcategory = 'Invalid redirects'\n\t\t\tend\n\t\tend\n\tend\n\tcategory = category and string.format('[[Category:%s]]', category) or ''\n\n\t-- Generate the options to pass to [[Module:Hatnote]].\n\tlocal mhOptions\
       \ = {}\n\tif currentTitle.namespace == 0\n\t\tand redirectTitle and redirectTitle.namespace ~= 0\n\tthen\n\t\t-- We are on a mainspace page, and the hatnote starts with something\n\t\t-- like &quot;Wikipedia:Foo redirects here&quot;, so automatically label\
       \ it as a\n\t\t-- self-reference.\n\t\tmhOptions.selfref = true\n\telse\n\t\tmhOptions.selfref = options.selfref\n\tend\n\n\treturn mHatnote._hatnote(text, mhOptions) .. category\nend\n \nreturn p</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:58:54.359Z
+- recorded: 2014-11-11T01:39:38.803Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AIPAc-en&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -1420,15 +1348,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:54 GMT
+      Date: Tue, 11 Nov 2014 01:39:38 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1068 miss (0), amssq54 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1068 miss (0), amssq54 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1768312786, 318097174, 1573702346
+      X-Varnish: 2173141792, 476357167, 2134314426
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="24747137" ns="10" title="Template:IPAc-en"><revisions><rev user="Dcoetzee" timestamp="2013-08-31T11:14:53Z" comment="Add to [[Category:Articles including recorded pronunciations]] if audio parameter supplied" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{nowrap|{{IPAc-en/pronunciation|{{{1}}}}}{{IPAc-en/pronunciation|{{{2}}}}}{{IPAc-en/pronunciation|{{{3}}}}}{{#if:{{{audio|}}}|&lt;span class=&quot;noexcerpt&quot;&gt;[[file:speakerlink-new.svg|11px|link={{filepath:{{{audio|}}}}}|Listen]]&lt;sup&gt;&lt;span style=&quot;color: #00e; font: bold 80% sans-serif; padding: 0 .1em;&quot; class=&quot;IPA&quot;&gt;[[:File:{{{audio|}}}|i]]&lt;/span&gt;&lt;/sup&gt;&lt;/span&gt;}}{{IPA|[[Help:IPA for English|/]]}}&lt;!--
       --&gt;{{#ifeq:{{IPAc-en/pronunciation|{{{1}}}}}||{{H:IPA|{{{1}}}}}}}&lt;!--
@@ -1485,13 +1413,13 @@ interactions:
 
       {{documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:58:54.628Z
+- recorded: 2014-11-11T01:39:39.051Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AIPAc-en%2Fpronunciation&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -1503,15 +1431,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:54 GMT
+      Date: Tue, 11 Nov 2014 01:39:38 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1067 miss (0), amssq54 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1067 miss (0), amssq54 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 2377415058, 318097567, 1573702778
+      X-Varnish: 2811199892, 476357241, 2134314505
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="32230453" ns="10" title="Template:IPAc-en/pronunciation"><revisions><rev user="Anomie" timestamp="2011-11-19T23:09:00Z" comment="Protected Template:IPAc-en/pronunciation: Used in a [[WP:High-risk templates|highly-visible template]] ([edit=sysop] (indefinite) [move=sysop] (indefinite))" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{#switch:{{lc:{{{type|{{{1}}}}}}}}
        |lang
@@ -1526,13 +1454,13 @@ interactions:
       }}&lt;noinclude&gt;
       {{documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:58:54.995Z
+- recorded: 2014-11-11T01:39:39.297Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AIPA&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -1544,26 +1472,26 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:54 GMT
+      Date: Tue, 11 Nov 2014 01:39:38 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1066 miss (0), amssq32 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1066 miss (0), amssq32 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 585039489, 570544983, 1573702828
+      X-Varnish: 989297275, 729711382, 2134314552
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="1346385" ns="10" title="Template:IPA"><revisions><rev user="Callanecc" timestamp="2014-03-27T01:03:59Z" comment="Changed protection level of Template:IPA: [[WP:High-risk templates|Highly visible template]]: over 68000 transclusions. Allowing template editors ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (in" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;span title=&quot;Representation in the International Phonetic Alphabet (IPA)&quot; class=&quot;IPA&quot;&gt;{{{1}}}&lt;/span&gt;&lt;noinclude&gt;
       {{documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:58:55.265Z
+- recorded: 2014-11-11T01:39:39.714Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AH%3AIPA&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -1575,15 +1503,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:55 GMT
+      Date: Tue, 11 Nov 2014 01:39:38 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1054 miss (0), amssq45 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1054 miss (0), amssq45 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1644193228, 1060601711, 1573703248
+      X-Varnish: 2053030799, 1233121252, 2134314584
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="25197482" ns="10" title="Template:H:IPA"><revisions><rev user="Mee Merone" timestamp="2014-06-19T16:50:40Z" comment="add capital A to ɑr" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;span class=&quot;IPA nopopups&quot;&gt;[[Help:IPA for English#Key|{{#switch:{{{1}}}
       | b                              ={{H:title| 'b' in 'buy' |b}}]]
@@ -1683,13 +1611,13 @@ interactions:
       }}&lt;/span&gt;&lt;noinclude&gt;
       {{documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:58:55.556Z
+- recorded: 2014-11-11T01:39:40.329Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AH%3Atitle&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -1701,15 +1629,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:55 GMT
+      Date: Tue, 11 Nov 2014 01:39:39 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1066 miss (0), amssq35 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1066 miss (0), amssq35 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 585040451, 4262050356, 1573703306
+      X-Varnish: 989298029, 134355180, 2134314690
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="3235839" ns="10" title="Template:H:title"><revisions><rev user="MSGJ" timestamp="2010-01-18T22:14:45Z" comment="fix" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{#ifeq:{{{link}}}|yes
        |[[{{{2}}}|&lt;span title=&quot;{{{1}}}&quot; {{#ifeq:{{{dotted|yes}}}|no|
@@ -1721,13 +1649,13 @@ interactions:
       }}&lt;noinclude&gt;
       {{documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:58:55.831Z
+- recorded: 2014-11-11T01:39:40.737Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Anowrap&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -1739,27 +1667,27 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:55 GMT
+      Date: Tue, 11 Nov 2014 01:39:40 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1068 miss (0), amssq47 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1068 miss (0), amssq47 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1768315316, 418265737, 1573703390
+      X-Varnish: 2173143475, 572854437, 2134314849
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:nowrap" to="Template:Nowrap" /></normalized><pages><page pageid="1627975" ns="10" title="Template:Nowrap"><revisions><rev user="Edokter" timestamp="2011-11-25T01:55:12Z" comment="use nowrap class" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;span class=&quot;nowrap&quot;&gt;{{{1}}}&lt;/span&gt;&lt;noinclude&gt;
       {{documentation}}
       &lt;!--interwikis/categories go inside doc--&gt;
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:58:56.080Z
+- recorded: 2014-11-11T01:39:41.122Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Acite+book&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -1771,28 +1699,28 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:56 GMT
+      Date: Tue, 11 Nov 2014 01:39:40 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1066 miss (0), amssq56 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1066 miss (0), amssq56 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 585040980, 3394453026, 1573703454
+      X-Varnish: 989298769, 3543421775, 2134314895
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:cite book" to="Template:Cite book" /></normalized><pages><page pageid="4086375" ns="10" title="Template:Cite book"><revisions><rev user="Fuhghettaboutit" timestamp="2013-11-02T04:57:54Z" comment="Changed protection level of Template:Cite book: Enable access by template editors ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;includeonly&gt;{{#invoke:citation/CS1|citation
       |CitationClass=book
       }}&lt;/includeonly&gt;&lt;noinclude&gt;
       {{documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:58:56.688Z
+- recorded: 2014-11-11T01:39:41.749Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Acitation%2FCS1&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -1804,15 +1732,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:56 GMT
+      Date: Tue, 11 Nov 2014 01:39:40 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1053 miss (0), amssq34 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1053 miss (0), amssq34 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 3363991990, 3536136292, 1573703610
+      X-Varnish: 3802707433, 3685263275, 2134314983
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><normalized><n from=\"Module:citation/CS1\" to=\"Module:Citation/CS1\" /></normalized><pages><page pageid=\"38573037\" ns=\"828\" title=\"Module:Citation/CS1\"><revisions><rev user=\"Trappist the\
       \ monk\" timestamp=\"2014-10-24T14:36:06Z\" comment=\"Better version of strip_apostrophe_markup()?\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">\nlocal z = {\n\terror_categories = {};\t\t-- for categorizing citations\
       \ that contain errors\n\terror_ids = {};\n\tmessage_tail = {};\n\tmaintenance_cats = {};\t\t-- for categorizing citations that aren't erroneous per se, but could use a little work\n\tproperties_cats = {};\t\t-- for categorizing citations based on certain\
@@ -2241,13 +2169,13 @@ interactions:
       \tsuggestions = mw.loadData( 'Module:Citation/CS1/Suggestions' );\n\t\t\t\t\tend\n\t\t\t\t\tif suggestions[ k:lower() ] ~= nil then\n\t\t\t\t\t\terror_text, error_state = seterror( 'parameter_ignored_suggest', {k, suggestions[ k:lower() ]}, true );\n\t\
       \t\t\t\telse\n\t\t\t\t\t\terror_text, error_state = seterror( 'parameter_ignored', {k}, true );\n\t\t\t\t\tend\n\t\t\t\tend\t\t\t\t  \n\t\t\t\tif error_text ~= '' then\n\t\t\t\t\ttable.insert( z.message_tail, {error_text, error_state} );\n\t\t\t\tend\t\
       \t\t\t\n\t\t\tend\n\t\t\targs[k] = v;\n\t\telseif args[k] ~= nil or (k == 'postscript') then\n\t\t\targs[k] = v;\n\t\tend\t\t\n\tend\t\n\t\n\treturn citation0( config, args)\nend\n\nreturn z</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:58:57.132Z
+- recorded: 2014-11-11T01:39:42.039Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ACitation%2FCS1%2FConfiguration&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -2259,15 +2187,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:57 GMT
+      Date: Tue, 11 Nov 2014 01:39:41 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1065 miss (0), amssq51 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1065 miss (0), amssq51 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1479315145, 674068608, 1573703848
+      X-Varnish: 1909720460, 834898903, 2134315093
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page pageid=\"39043527\" ns=\"828\" title=\"Module:Citation/CS1/Configuration\"><revisions><rev user=\"Trappist the monk\" timestamp=\"2014-10-11T12:16:37Z\" comment=\"Synch from sandbox;\"\
       \ contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">citation_config = {};\n\n-- override &lt;code&gt;...&lt;/code&gt; styling to remove color, border, and padding.  &lt;code&gt; css is specified here:\n-- https://git.wikimedia.org/blob/mediawiki%2Fcore.git/69cd73811f7aadd093050dbf20ed70ef0b42a713/skins%2Fcommon%2FcommonElements.css#L199\n\
       local code_style=&quot;color:inherit; border:inherit; padding:inherit;&quot;;\n\n--[[\nList of namespaces that should not be included in citation\nerror categories.  Same as setting notracking = true by default\n\nNote: Namespace names should use underscores\
@@ -2369,13 +2297,13 @@ interactions:
       \ protocol relative tested 2013-09-04\n\t\tCOinS = 'info:ssrn',\n\t\tencode = true,\n\t\tseparator = '&amp;nbsp;',\n\t},\n--[[ Hide unfinished cite newsgroup code so that long delayed update can take place\n\t['USENETID'] = {\n\t\tparameters = {'id', 'ID'},\
       \ \n\t\tlink = 'Usenet',\n\t\tlabel = 'Usenet:',\n\t\tmode = 'external',\n\t\tprefix = 'news:',\n\t\tencode = false,\n\t\tCOinS = 'info:usenet',\n\t\tseparator = '&amp;nbsp;',\n\t},\n]]\t['ZBL'] = {\n\t\tparameters = {'ZBL', 'zbl'}, \n\t\tlink = 'Zentralblatt\
       \ MATH',\n\t\tlabel = 'Zbl',\n\t\tmode = 'external',\n\t\tprefix = '//zbmath.org/?format=complete&amp;q=an:',\n\t\tCOinS = 'info:zbl',\n\t\tencode = true,\n\t\tseparator = '&amp;nbsp;',\n\t},\n}\n\nreturn citation_config;</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:58:57.394Z
+- recorded: 2014-11-11T01:39:42.347Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ACitation%2FCS1%2FWhitelist&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -2387,15 +2315,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:57 GMT
+      Date: Tue, 11 Nov 2014 01:39:41 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1054 miss (0), amssq44 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1054 miss (0), amssq44 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1644195557, 3559907172, 1573704151
+      X-Varnish: 2053033427, 3714265445, 2134315174
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page pageid=\"39013723\" ns=\"828\" title=\"Module:Citation/CS1/Whitelist\"><revisions><rev user=\"Trappist the monk\" timestamp=\"2014-10-11T12:15:10Z\" comment=\"Synch from sandbox;\"\
       \ contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">--[[\nBecause a steady-state signal conveys no useful information, whitelist.basic_arguments[] list items now can have three values:\n\ttrue - these parameters are valid and\
       \ supported parameters\n\tfalse - these parameters are deprecated but still supported\n\tnil - these parameters are no longer supported (when setting a parameter to nil, leave a comment stating the reasons for invalidating the parameter)\n]]\nwhitelist\
@@ -2432,13 +2360,13 @@ interactions:
       ['editor-given#'] = true,\n\t['editor-last#'] = true,\n\t['editor#-last'] = true,\n\t['editor-link#'] = true,\n\t['editor#link'] = true,\n\t['editor#-link'] = true,\n\t['editorlink#'] = true,\n\t['editor-mask#'] = true,\n\t['editor#mask'] = true,\n\t['editor#-mask']\
       \ = true,\n\t['editormask#'] = true,\n\t['editors#'] = true,\n\t['EditorSurname#'] = true,\n\t['editor#-surname'] = true,\n\t['editor-surname#'] = true,\n\t['first#'] = true,\n\t['given#'] = true,\n\t['last#'] = true,\n\t['subject#'] = true,\n\t['subject-link#']\
       \ = true,\n\t['subject#link'] = true,\n\t['subject#-link'] = true,\n\t['subjectlink#'] = true,\n\t['surname#'] = true,\n},\n};\n\nreturn whitelist;</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:58:57.739Z
+- recorded: 2014-11-11T01:39:42.588Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ACitation%2FCS1%2FDate_validation&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -2450,15 +2378,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:57 GMT
+      Date: Tue, 11 Nov 2014 01:39:41 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1054 miss (0), amssq38 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1054 miss (0), amssq38 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1644195808, 279804609, 1573704212
+      X-Varnish: 2053033652, 441578624, 2134315240
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><normalized><n from=\"Module:Citation/CS1/Date_validation\" to=\"Module:Citation/CS1/Date validation\" /></normalized><pages><page pageid=\"42164542\" ns=\"828\" title=\"Module:Citation/CS1/Date\
       \ validation\"><revisions><rev user=\"Trappist the monk\" timestamp=\"2014-10-11T12:13:12Z\" comment=\"Synch from sandbox;\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">\nlocal p = {}\n\n-- returns a number according\
       \ to the month in a date: 1 for January, etc.  Capitalization and spelling must be correct. If not a valid month, returns 0\nfunction get_month_number (month)\nlocal long_months = {['January']=1, ['February']=2, ['March']=3, ['April']=4, ['May']=5, ['June']=6,\
@@ -2547,13 +2475,13 @@ interactions:
       \t\t\tif false==good_date then\t\t\t\t\t\t\t\t\t\t\t\t-- assemble one error message so we don't add the tracking category multiple times\n\t\t\t\tif is_set(error_message) then\t\t\t\t\t\t\t\t\t\t-- once we've added the first portion of the error message\
       \ ...\n\t\t\t\t\terror_message=error_message .. &quot;, &quot;;\t\t\t\t\t\t\t-- ... add a comma space separator\n\t\t\t\tend\n\t\t\t\terror_message=error_message .. &quot;&amp;#124;&quot; .. k .. &quot;=&quot;;\t\t\t\t-- add the failed parameter\n\t\t\t\
       end\n\t\tend\n\tend\n\n\treturn anchor_year, COinS_date, error_message;\t\t-- and done\nend\n\nreturn p;</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:58:58.027Z
+- recorded: 2014-11-11T01:39:42.889Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Acite+web&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -2565,28 +2493,28 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:57 GMT
+      Date: Tue, 11 Nov 2014 01:39:42 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1055 miss (0), amssq40 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1055 miss (0), amssq40 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 2314492186, 365622907, 1573704300
+      X-Varnish: 2755317132, 514438710, 2134315302
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:cite web" to="Template:Cite web" /></normalized><pages><page pageid="4148498" ns="10" title="Template:Cite web"><revisions><rev user="Fuhghettaboutit" timestamp="2013-11-02T04:56:36Z" comment="Changed protection level of Template:Cite web: Enable access by template editors ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;includeonly&gt;{{#invoke:citation/CS1|citation
       |CitationClass=web
       }}&lt;/includeonly&gt;&lt;noinclude&gt;
       {{documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:58:58.965Z
+- recorded: 2014-11-11T01:39:43.707Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Awhich&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -2598,15 +2526,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:58 GMT
+      Date: Tue, 11 Nov 2014 01:39:42 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1055 miss (0), amssq42 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1055 miss (0), amssq42 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 2314493217, 2500754871, 1573704756
+      X-Varnish: 2755317945, 2653543385, 2134315436
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:which" to="Template:Which" /></normalized><pages><page pageid="11572404" ns="10" title="Template:Which"><revisions><rev user="AnomieBOT II" timestamp="2013-11-17T18:10:10Z" comment="[[Module:Unsubst|Unsubstifying]] template, so {{subst:Which}} results in {{Which|date=...}}" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{ {{{|safesubst:}}}#invoke:Unsubst||$N=Which |date=__DATE__ |$B=
       &lt;!-- {{Which?}} begin --&gt;{{Fix
@@ -2621,13 +2549,13 @@ interactions:
       }}&lt;noinclude&gt;
       {{Documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:58:59.578Z
+- recorded: 2014-11-11T01:39:44.036Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Asubstcheck&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -2639,23 +2567,23 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:59 GMT
+      Date: Tue, 11 Nov 2014 01:39:43 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1066 miss (0), amssq41 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1066 miss (0), amssq41 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 585044608, 749103751, 1573704958
+      X-Varnish: 989301697, 894232990, 2134315544
     body: <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:substcheck" to="Template:Substcheck" /></normalized><pages><page pageid="22465489" ns="10" title="Template:Substcheck"><revisions><rev user="Thumperward" timestamp="2010-09-07T17:05:47Z" comment="add docs" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">SUBST&lt;noinclude&gt;{{documentation}}&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:59:00.194Z
+- recorded: 2014-11-11T01:39:44.373Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AFix&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -2667,15 +2595,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:58:59 GMT
+      Date: Tue, 11 Nov 2014 01:39:43 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1054 miss (0), amssq56 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1054 miss (0), amssq56 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1644198502, 3394454605, 1573705302
+      X-Varnish: 2053035456, 3543422375, 2134315666
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page pageid=\"5632010\" ns=\"10\" title=\"Template:Fix\"><revisions><rev user=\"Waldir\" timestamp=\"2014-05-11T01:03:11Z\" comment=\"if the noprint and inline-template classes need to\
       \ be preserved, according to the docs, then why not enforcing in the code rather than asking people to do it (and relying on them reading the docs attentively enough not to miss that)?\" contentformat=\"text/x-wiki\" contentmodel=\"wikitext\" xml:space=\"\
       preserve\">{{#switch:{{{subst|¬}}}\n |¬={{category handler\n  |template=[[Category:Templates needing substitution checking]]\n  |nocat={{{nocat|&lt;noinclude&gt;true&lt;/noinclude&gt;}}}\n }}\n |SUBST=[[Category:Pages with incorrectly substituted templates]]\n\
@@ -2683,13 +2611,13 @@ interactions:
       \ including undated clean-up tags]]}}}}}} \n |subpage=no\n}}{{#if:{{{text|}}}\n |&lt;sup class=&quot;noprint Inline-Template {{{class|}}}&quot; style=&quot;white-space:nowrap;&quot;&gt;&amp;#91;&lt;i&gt;{{#if:{{{pre-text|}}}\n  |{{{pre-text}}}&amp;#32;\n\
       \ }}[[{{{link|Wikipedia:Cleanup}}}|&lt;span title=&quot;{{{title|{{{link|Wikipedia:Cleanup}}}}}}{{#if:{{{date|}}}|&lt;nowiki/&gt; ({{{date}}})}}&quot;&gt;{{{text|}}}&lt;/span&gt;]]{{#if:{{{post-text|}}}\n  |&amp;#32;{{{post-text}}}\n }}&lt;/i&gt;&amp;#93;&lt;/sup&gt;|{{{special|}}}\n\
       }}&lt;noinclude&gt;\n{{Documentation}}\n&lt;!-- Add cats and interwikis to the /doc subpage, not here! --&gt;\n&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:59:00.444Z
+- recorded: 2014-11-11T01:39:44.650Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AFix%2Fcategory&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -2701,15 +2629,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:00 GMT
+      Date: Tue, 11 Nov 2014 01:39:43 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1052 miss (0), amssq60 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1052 miss (0), amssq60 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 4247864734, 457524973, 1573705441
+      X-Varnish: 330306290, 605338579, 2134315720
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="34017846" ns="10" title="Template:Fix/category"><revisions><rev user="TheDJ" timestamp="2012-01-17T21:00:05Z" comment="Adding {{pp-template}} ([[WP:TW|TW]])" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;noinclude&gt;{{pp-template|small=yes}}&lt;/noinclude&gt;{{{cat|[[Category:All pages needing cleanup]]}}}{{#if:{{{cat-date|}}}
         |[[{{{cat-date}}} {{#if:{{{date|}}}
@@ -2736,13 +2664,13 @@ interactions:
          }}
         }}
        }}</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:59:00.705Z
+- recorded: 2014-11-11T01:39:44.917Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3ACategory+handler&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -2754,27 +2682,27 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:00 GMT
+      Date: Tue, 11 Nov 2014 01:39:44 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1066 miss (0), amssq56 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1066 miss (0), amssq56 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 585046372, 3394454734, 1573705495
+      X-Varnish: 989302496, 3543422467, 2134315784
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="25084818" ns="10" title="Template:Category handler"><revisions><rev user="Mr. Stradivarius" timestamp="2013-10-20T10:48:53Z" comment="Changed protection level of Template:Category handler: [[WP:High-risk templates|Highly visible template]]: allow template editors to edit ([Edit=Protected template] (indefinite) [Move=Protected template] (indefinite))" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{#invoke:Category handler|main}}&lt;noinclude&gt;
       {{documentation}}
       &lt;!-- Add categories to the /doc subpage, and interwikis to Wikidata. --&gt;
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:59:01.040Z
+- recorded: 2014-11-11T01:39:45.191Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ACategory_handler&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -2786,16 +2714,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:00 GMT
+      Date: Tue, 11 Nov 2014 01:39:44 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
-      X-Analytics: php=hhvm
-      X-Cache: cp1053 miss (0), amssq32 miss (0), amssq46 frontend miss (0)
+      X-Analytics: php=zend
+      X-Cache: cp1053 miss (0), amssq32 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Powered-By: HHVM/3.3.1
-      X-Varnish: 3363998922, 570547542, 1573705746
+      X-Varnish: 3802711324, 729712412, 2134315886
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><normalized><n from=\"Module:Category_handler\" to=\"Module:Category handler\" /></normalized><pages><page pageid=\"39772274\" ns=\"828\" title=\"Module:Category handler\"><revisions><rev user=\"\
       Mr. Stradivarius\" timestamp=\"2014-07-22T05:08:26Z\" comment=\"allow invocations specifying the page parameter to use the mw.loadData optimisations, and don&#039;t call mw.title.new every time\" contentformat=\"text/plain\" contentmodel=\"Scribunto\"\
       \ xml:space=\"preserve\">--------------------------------------------------------------------------------\n--                                                                            --\n--                              CATEGORY HANDLER              \
@@ -2832,13 +2759,13 @@ interactions:
       \ data)\n\tdata = data or mw.loadData('Module:Category handler/data')\n\tlocal handler = CategoryHandler.new(data, args)\n\tif handler:isSuppressed() then\n\t\treturn nil\n\tend\n\treturn handler:getCategories()\nend\n\nfunction p.main(frame, data)\n\t\
       data = data or mw.loadData('Module:Category handler/data')\n\tlocal args = require('Module:Arguments').getArgs(frame, {\n\t\twrappers = data.wrappers,\n\t\tvalueFunc = function (k, v)\n\t\t\tv = trimWhitespace(v)\n\t\t\tif type(k) == 'number' then\n\t\t\
       \t\tif v ~= '' then\n\t\t\t\t\treturn v\n\t\t\t\telse\n\t\t\t\t\treturn nil\n\t\t\t\tend\n\t\t\telse\n\t\t\t\treturn v\n\t\t\tend\n\t\tend\n\t})\n\treturn p._main(args, data)\nend\n\nreturn p</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:59:01.730Z
+- recorded: 2014-11-11T01:39:45.530Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AQuote&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -2850,15 +2777,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:01 GMT
+      Date: Tue, 11 Nov 2014 01:39:44 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1068 miss (0), amssq58 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1068 miss (0), amssq58 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1768322885, 438291158, 1573706310
+      X-Varnish: 2173147908, 584701184, 2134315958
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="994397" ns="10" title="Template:Quote"><revisions><rev user="Pigsonthewing" timestamp="2014-10-21T19:33:12Z" comment="Nominated for merging with [[Template:Quotation]]; see [[Wikipedia:Templates for discussion/Log/2014 October 21#Template:Quotation]]. ([[WP:TW|TW]])" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;noinclude&gt;{{Tfm/dated|page=Quote|otherpage=Quotation|link=Wikipedia:Templates for discussion/Log/2014 October 21#Template:Quote|help=off}}&lt;/noinclude&gt;&lt;blockquote class=&quot;templatequote&quot;&gt;{{{text|{{{quote|{{{1|&lt;noinclude&gt;{{lorem ipsum}}&lt;/noinclude&gt;&lt;includeonly&gt;{{error|Error: No text given for quotation (or equals sign used in the actual argument to an unnamed parameter)}}&lt;/includeonly&gt;}}}}}}}}}{{#if:{{{sign|{{{cite|{{{2|&lt;noinclude&gt;TRUE&lt;/noinclude&gt;}}}}}}}}}
        |&lt;div class=&quot;templatequotecite&quot;&gt;&amp;#8212;{{{sign|{{{cite|{{{2|&lt;noinclude&gt;[[Someone's full name|Someone]]&lt;/noinclude&gt;}}}}}}}}}{{#if:{{{source|{{{3|&lt;noinclude&gt;TRUE&lt;/noinclude&gt;}}}}}}
@@ -2869,13 +2796,13 @@ interactions:
       {{documentation}}
       &lt;!-- Add cats and interwikis to the /doc subpage, not here! --&gt;
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:59:02.345Z
+- recorded: 2014-11-11T01:39:45.772Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Acitation+needed&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -2887,15 +2814,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:01 GMT
+      Date: Tue, 11 Nov 2014 01:39:45 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1053 miss (0), amssq42 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1053 miss (0), amssq42 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 3364000895, 2500756632, 1573706736
+      X-Varnish: 3802711872, 2653543858, 2134316018
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:citation needed" to="Template:Citation needed" /></normalized><pages><page pageid="2048472" ns="10" title="Template:Citation needed"><revisions><rev user="HJ Mitchell" timestamp="2014-03-29T13:47:10Z" comment="Changed protection level of Template:Citation needed: listed on [[WP:CASC]], and probably needs to stay at full prot; cf. https://en.wikipedia.org/w/index.php?title=Wikipedia:Requests_for_page_protection&amp;diff=601804535&amp;oldid=601804352 ([Edit=Allow only ad" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{ {{{|safesubst:}}}#invoke:Unsubst||$N=Citation needed |date=__DATE__ |$B=
       {{Fix
@@ -2913,13 +2840,13 @@ interactions:
       {{Documentation}}
 
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:59:02.959Z
+- recorded: 2014-11-11T01:39:46.031Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Acategory+handler&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -2931,27 +2858,27 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:02 GMT
+      Date: Tue, 11 Nov 2014 01:39:45 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1066 miss (0), amssq46 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1066 miss (0), amssq46 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 585049241, 3067263111, 1573707035
+      X-Varnish: 989303529, 3211141884, 2134316073
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:category handler" to="Template:Category handler" /></normalized><pages><page pageid="25084818" ns="10" title="Template:Category handler"><revisions><rev user="Mr. Stradivarius" timestamp="2013-10-20T10:48:53Z" comment="Changed protection level of Template:Category handler: [[WP:High-risk templates|Highly visible template]]: allow template editors to edit ([Edit=Protected template] (indefinite) [Move=Protected template] (indefinite))" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{#invoke:Category handler|main}}&lt;noinclude&gt;
       {{documentation}}
       &lt;!-- Add categories to the /doc subpage, and interwikis to Wikidata. --&gt;
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:59:03.291Z
+- recorded: 2014-11-11T01:39:46.317Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AROOTPAGENAME&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -2963,83 +2890,27 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:03 GMT
+      Date: Tue, 11 Nov 2014 01:39:45 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1053 miss (0), amssq37 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1053 miss (0), amssq37 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 3364002866, 1580997414, 1573707288
+      X-Varnish: 3802712448, 1756255981, 2134316133
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="22351615" ns="10" title="Template:ROOTPAGENAME"><revisions><rev user="Amalthea" timestamp="2010-05-03T11:31:08Z" comment="Allow substitution using safesubst: ([[meta:Help:Safesubst]])" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{ {{{|safesubst:}}}PAGENAME:{{ {{{|safesubst:}}}FULLROOTPAGENAME|{{{1|}}}}}}}&lt;noinclude&gt;
 
       {{documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:59:03.880Z
-  request:
-    method: GET
-    uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Asafesubst%3AFULLROOTPAGENAME&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
-    headers:
-      Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
-      Cookie2: $Version=1
-      Host: en.wikipedia.org
-      Proxy-Connection: Keep-Alive
-      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
-  response:
-    status: 200
-    headers:
-      Age: '0'
-      Cache-control: private
-      Connection: keep-alive
-      Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:03 GMT
-      Server: Apache
-      Transfer-Encoding: chunked
-      Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
-      X-Analytics: php=zend
-      X-Cache: cp1053 miss (0), amssq37 miss (0), amssq46 frontend miss (0)
-      X-Content-Type-Options: nosniff
-      X-Frame-Options: SAMEORIGIN
-      X-Varnish: 3364003310, 1580997548, 1573707445
-    body: <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:safesubst:FULLROOTPAGENAME" to="Template:Safesubst:FULLROOTPAGENAME" /></normalized><pages><page ns="10" title="Template:Safesubst:FULLROOTPAGENAME" missing="" /></pages></query></api>
-- recorded: 2014-11-07T00:59:04.116Z
-  request:
-    method: GET
-    uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Asafesubst%3APAGENAME%3A%5B%5B%3ATemplate%3Asafesubst%3AFULLROOTPAGENAME%5D%5D&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
-    headers:
-      Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
-      Cookie2: $Version=1
-      Host: en.wikipedia.org
-      Proxy-Connection: Keep-Alive
-      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
-  response:
-    status: 200
-    headers:
-      Age: '0'
-      Cache-control: private
-      Connection: keep-alive
-      Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:04 GMT
-      Server: Apache
-      Transfer-Encoding: chunked
-      Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
-      X-Analytics: php=zend
-      X-Cache: cp1065 miss (0), amssq51 miss (0), amssq46 frontend miss (0)
-      X-Content-Type-Options: nosniff
-      X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1479323953, 674071923, 1573707581
-    body: <?xml version="1.0"?><api batchcomplete=""><query><pages><page title="Template:safesubst:PAGENAME:[[:Template:safesubst:FULLROOTPAGENAME]]" invalid="" /></pages></query></api>
-- recorded: 2014-11-07T00:59:04.802Z
+- recorded: 2014-11-11T01:39:46.660Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Ade+icon&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -3051,26 +2922,26 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:04 GMT
+      Date: Tue, 11 Nov 2014 01:39:45 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1068 miss (0), amssq48 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1068 miss (0), amssq48 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1768326953, 395240278, 1573707916
+      X-Varnish: 2173148832, 549180747, 2134316203
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:de icon" to="Template:De icon" /></normalized><pages><page pageid="20845104" ns="10" title="Template:De icon"><revisions><rev user="Plastikspork" timestamp="2013-10-19T16:50:22Z" comment="Fix" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{Language icon|de|German}}&lt;noinclude&gt;
       {{Documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:59:05.053Z
+- recorded: 2014-11-11T01:39:47.087Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3ALanguage+icon&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -3082,24 +2953,24 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:04 GMT
+      Date: Tue, 11 Nov 2014 01:39:46 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1065 miss (0), amssq54 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1065 miss (0), amssq54 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1479325111, 318102353, 1573708108
+      X-Varnish: 1909725697, 476358742, 2134316288
     body: '<?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="40797933" ns="10" title="Template:Language icon"><revisions><rev user="Anthony Appleyard" timestamp="2013-10-15T08:22:12Z" comment="Anthony Appleyard moved page [[Template:Language
       icon]] to [[Template:Link language]]: Requested at [[WP:RM]] as uncontroversial ([[Special:Permalink/577248632|permalink]])" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">#REDIRECT [[Template:Link language]]</rev></revisions></page></pages></query></api>'
-- recorded: 2014-11-07T00:59:05.416Z
+- recorded: 2014-11-11T01:39:47.336Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3ALink+language&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -3111,15 +2982,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:05 GMT
+      Date: Tue, 11 Nov 2014 01:39:46 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1053 miss (0), amssq42 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1053 miss (0), amssq42 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 3364006059, 2500758016, 1573708354
+      X-Varnish: 3802713360, 2653544166, 2134316370
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="3483283" ns="10" title="Template:Link language"><revisions><rev user="Anthony Appleyard" timestamp="2013-10-15T08:22:10Z" comment="Anthony Appleyard moved page [[Template:Language icon]] to [[Template:Link language]]: Requested at [[WP:RM]] as uncontroversial ([[Special:Permalink/577248632|permalink]])" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{#ifexist:Template:ISO 639 name {{{1&lt;noinclude&gt;|&lt;/noinclude&gt;}}}
        |&lt;span class=&quot;languageicon&quot; style=&quot;font-size:0.95em; font-weight:bold; color:#555;&quot;&gt;({{ISO 639 name {{{1}}}}})&lt;/span&gt;{{category handler
@@ -3129,13 +3000,13 @@ interactions:
       }}&lt;noinclude&gt;
       {{documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:59:05.694Z
+- recorded: 2014-11-11T01:39:47.591Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AISO+639+name+de&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -3147,27 +3018,27 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:05 GMT
+      Date: Tue, 11 Nov 2014 01:39:46 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1052 miss (0), amssq51 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1052 miss (0), amssq51 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 4247871021, 674072723, 1573708466
+      X-Varnish: 330308696, 834900009, 2134316417
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="19086232" ns="10" title="Template:ISO 639 name de"><revisions><rev user="Closedmouth" timestamp="2011-06-18T06:16:17Z" comment="Protected Template:ISO 639 name de: [[WP:High-risk templates|Highly visible template]] ([edit=sysop] (indefinite) [move=sysop] (indefinite))" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">German&lt;noinclude&gt;
       {{ISO 639 name conversion template doc|{{ISO 639 name de}}|de}}
       [[id:Templat:ISO 639 name de]]
       [[pt:Predefinição:ISO 639 nome de]]&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:59:06.338Z
+- recorded: 2014-11-11T01:39:47.897Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3APortal&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -3179,28 +3050,27 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:05 GMT
+      Date: Tue, 11 Nov 2014 01:39:47 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
-      X-Analytics: php=hhvm
-      X-Cache: cp1067 miss (0), amssq38 miss (0), amssq46 frontend miss (0)
+      X-Analytics: php=zend
+      X-Cache: cp1067 miss (0), amssq38 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Powered-By: HHVM/3.3.1
-      X-Varnish: 2377428720, 279808864, 1573708857
+      X-Varnish: 2811208082, 441579713, 2134316495
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="1780010" ns="10" title="Template:Portal"><revisions><rev user="Mr. Stradivarius" timestamp="2013-11-24T05:37:16Z" comment="Changed protection level of Template:Portal: [[WP:High-risk templates|Highly visible template]]: allow template editors ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;includeonly&gt;{{#invoke:Portal|portal}}&lt;/includeonly&gt;&lt;noinclude&gt;
       {{documentation}}
       &lt;!-- Categories go on the /doc subpage, and interwikis go on Wikidata --&gt;
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:59:06.725Z
+- recorded: 2014-11-11T01:39:48.195Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3APortal&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -3212,15 +3082,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:06 GMT
+      Date: Tue, 11 Nov 2014 01:39:47 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1066 miss (0), amssq35 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1066 miss (0), amssq35 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 585054019, 4262055505, 1573709002
+      X-Varnish: 989305373, 134356721, 2134316546
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page pageid=\"38965350\" ns=\"828\" title=\"Module:Portal\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2013-11-24T05:28:16Z\" comment=\"Changed protection level of Module:Portal:\
       \ [[Wikipedia:Lua/Modules|High-risk Lua module]]: allow template editors ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"\
       preserve\">--[==[ This module is a Lua implementation of the old {{Portal}} template. As of August 2013 it is used on nearly 5,000,000 articles.\n-- Please take care when updating it! It outputs two functions: p.portal, which generates a table of portals,\
@@ -3268,13 +3138,13 @@ interactions:
       \ whitespace and remove blank arguments.\n\t\tlocal args = {}\n\t\tfor k, v in pairs(origArgs) do\n\t\t\tif type(v) == 'string' then\n\t\t\t\tv = mw.text.trim(v)\n\t\t\tend\n\t\t\tif v ~= '' then\n\t\t\t\targs[k] = v\n\t\t\tend\n\t\tend\n\t\treturn p[funcName](processPortalArgs(args))\
       \ -- passes two tables to func: an array of portal names, and a table of named arguments.\n\tend\nend\n\nlocal funcNames = {'portal', 'image', 'imageDupes', 'displayAll'}\n\nfor _, funcName in ipairs(funcNames) do\n\tp[funcName] = makeWrapper('_' .. funcName)\n\
       end\n\nreturn p</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:59:07.260Z
+- recorded: 2014-11-11T01:39:48.460Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3APortal%2Fimages%2Fc&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -3286,15 +3156,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:06 GMT
+      Date: Tue, 11 Nov 2014 01:39:47 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1067 miss (0), amssq54 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1067 miss (0), amssq54 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 2377429661, 318103214, 1573709110
+      X-Varnish: 2811208577, 476358974, 2134316605
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page pageid=\"40416122\" ns=\"828\" title=\"Module:Portal/images/c\"><revisions><rev user=\"Andrwsc\" timestamp=\"2014-10-25T00:24:33Z\" comment=\"use standard flag images\" contentformat=\"\
       text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">--[==[ This is the &quot;C&quot; list of portal image names. It contains a list of portal images for use with [[Module:Portal]]\n-- for portal names that start with the letter &quot;C&quot;.\
       \ For aliases to existing portal names, and for portal names that\n-- start with other letters, please use the appropriate page from the following list:\n \n-- [[Module:Portal/images/a]]       - for portal names beginning with &quot;A&quot;.\n-- [[Module:Portal/images/b]]\
@@ -3341,13 +3211,13 @@ interactions:
       \ japonica.jpg&quot;,\n\t[&quot;cryptography&quot;] = &quot;Crypto key.svg&quot;,\n\t[&quot;cryptozoology&quot;] = &quot;Okapi2.jpg&quot;,\n\t[&quot;cuba&quot;] = &quot;Flag of Cuba.svg&quot;,\n\t[&quot;cultural heritage of serbia&quot;] = &quot;Spomenik\
       \ Kulture.svg&quot;,\n\t[&quot;culture&quot;] = &quot;P culture.svg&quot;,\n\t[&quot;cumbria&quot;] = &quot;Herdwick sheep crop.jpg&quot;,\n\t[&quot;current events&quot;] = &quot;Ambox globe.svg&quot;,\n\t[&quot;current events/turkey&quot;] = &quot;Wikinews-logo.png&quot;,\n\
       \t[&quot;cycling&quot;] = &quot;Cycling pictogram.svg&quot;,\n\t[&quot;cyprus&quot;] = &quot;Satellite image of Cyprus, cropped.jpg|border&quot;,\n\t[&quot;czech republic&quot;] = &quot;Flag of the Czech Republic.svg|border&quot;,\n}</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:59:07.521Z
+- recorded: 2014-11-11T01:39:48.742Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AClear&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -3359,26 +3229,26 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:07 GMT
+      Date: Tue, 11 Nov 2014 01:39:48 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1052 miss (0), amssq47 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1052 miss (0), amssq47 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 4247872734, 418270914, 1573709384
+      X-Varnish: 330309531, 572855918, 2134316672
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="1239772" ns="10" title="Template:Clear"><revisions><rev user="Fuhghettaboutit" timestamp="2013-11-02T04:54:10Z" comment="Changed protection level of Template:Clear: Enable access by template editors ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;div style=&quot;clear:{{{1|both}}};&quot;&gt;&lt;/div&gt;&lt;noinclude&gt;
       {{documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:59:07.803Z
+- recorded: 2014-11-11T01:39:48.984Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AReflist&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -3390,28 +3260,28 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:07 GMT
+      Date: Tue, 11 Nov 2014 01:39:48 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1054 miss (0), amssq38 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1054 miss (0), amssq38 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1644208050, 279809356, 1573709451
+      X-Varnish: 2053039798, 441579886, 2134316716
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page pageid=\"7585648\" ns=\"10\" title=\"Template:Reflist\"><revisions><rev user=\"Edokter\" timestamp=\"2014-07-19T16:16:30Z\" comment=\"Undid revision 617584734 by [[Special:Contributions/Nikkimaria|Nikkimaria]]\
       \ ([[User talk:Nikkimaria|talk]]) Undo; we know the number (&gt;250,000)\" contentformat=\"text/x-wiki\" contentmodel=\"wikitext\" xml:space=\"preserve\">&lt;div class=&quot;reflist &lt;!--\n --&gt;{{#if: {{{1|}}}\n    | columns {{#iferror: {{#ifexpr:\
       \ {{{1|1}}} &gt; 1 }}\n      | references-column-width \n      | references-column-count references-column-count-{{#if:1|{{{1}}}}} }}\n    | {{#if: {{{colwidth|}}}\n      | references-column-width }} }}&quot; style=&quot;&lt;!--\n --&gt;{{#if: {{{1|}}}\n\
       \    | {{#iferror: {{#ifexpr: {{{1|1}}} &gt; 1 }}\n      | {{column-width|{{#if:1|{{{1}}}}}}}\n      | {{column-count|{{#if:1|{{{1}}}}}}} }}\n    | {{#if: {{{colwidth|}}}\n      | {{column-width|{{{colwidth}}}}} }} }} list-style-type: &lt;!--\n --&gt;{{{liststyle|{{#switch:\
       \ {{{group|}}}\n    | upper-alpha\n    | upper-roman\n    | lower-alpha\n    | lower-greek\n    | lower-roman = {{{group}}}\n    | #default = decimal}}}}};&quot;&gt;\n{{#tag:references|{{{refs|}}}|group={{{group|}}}}}&lt;/div&gt;&lt;noinclude&gt;\n{{Documentation}}\n\
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:59:08.050Z
+- recorded: 2014-11-11T01:39:49.543Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Acolumn-count&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -3423,28 +3293,28 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:07 GMT
+      Date: Tue, 11 Nov 2014 01:39:48 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1068 miss (0), amssq60 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1068 miss (0), amssq60 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1768331212, 457528614, 1573709625
+      X-Varnish: 2173151124, 605339334, 2134316771
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:column-count" to="Template:Column-count" /></normalized><pages><page pageid="29216387" ns="10" title="Template:Column-count"><revisions><rev user="Fuhghettaboutit" timestamp="2013-11-02T05:06:56Z" comment="Changed protection level of Template:Column-count: Enable access by template editors ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;includeonly&gt;-moz-column-count: {{{1|2}}}; -webkit-column-count: {{{1|2}}}; column-count: {{{1|2}}};&lt;/includeonly&gt;&lt;noinclude&gt;
 
       &lt;!-- ADD CATEGORIES AND INTERWIKIS TO THE /doc PAGE, NOT HERE, THANKS --&gt;
       {{documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:59:08.316Z
+- recorded: 2014-11-11T01:39:49.782Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Awiktionary&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -3456,15 +3326,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:08 GMT
+      Date: Tue, 11 Nov 2014 01:39:49 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1054 miss (0), amssq37 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1054 miss (0), amssq37 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1644208547, 1580999481, 1573709702
+      X-Varnish: 2053040495, 1756256583, 2134316869
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:wiktionary" to="Template:Wiktionary" /></normalized><pages><page pageid="960068" ns="10" title="Template:Wiktionary"><revisions><rev user="WOSlinker" timestamp="2013-10-19T20:40:12Z" comment="Changed protection level of Template:Wiktionary: allow template editors to modify ([Edit=Protected template] (indefinite) [Move=Protected template] (indefinite))" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{sister
       |position={{{position|}}}
@@ -3490,13 +3360,13 @@ interactions:
       }}&lt;noinclude&gt;
       {{documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:59:08.579Z
+- recorded: 2014-11-11T01:39:50.041Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Asister&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -3508,25 +3378,25 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:08 GMT
+      Date: Tue, 11 Nov 2014 01:39:49 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1055 miss (0), amssq48 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1055 miss (0), amssq48 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 2314506112, 395241824, 1573709770
+      X-Varnish: 2755324055, 549181283, 2134316927
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:sister" to="Template:Sister" /></normalized><pages><page pageid="44221346" ns="10" title="Template:Sister"><revisions><rev user="Dekimasu" timestamp="2014-10-27T01:35:02Z" comment="Dekimasu moved page [[Template:Sister]] to [[Template:Sister project]] over redirect: per request on the talk page and listing at [[WP:RM]]; please revert if this breaks anything" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">#REDIRECT [[Template:Sister project]]
       {{R from move}}</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:59:08.825Z
+- recorded: 2014-11-11T01:39:50.466Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3ASister+project&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -3538,15 +3408,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:08 GMT
+      Date: Tue, 11 Nov 2014 01:39:49 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1054 miss (0), amssq31 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1054 miss (0), amssq31 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1644209042, 989784798, 1573709844
+      X-Varnish: 2053040931, 1160044947, 2134317004
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page pageid=\"20505184\" ns=\"10\" title=\"Template:Sister project\"><revisions><rev user=\"Dekimasu\" timestamp=\"2014-10-27T01:35:01Z\" comment=\"Dekimasu moved page [[Template:Sister]]\
       \ to [[Template:Sister project]] over redirect: per request on the talk page and listing at [[WP:RM]]; please revert if this breaks anything\" contentformat=\"text/x-wiki\" contentmodel=\"wikitext\" xml:space=\"preserve\">{{Side box\n| metadata=no\n| position\
       \ = {{{position|}}}\n| image    = \n  {{#switch: {{{image|}}}\n  | none =    &lt;!-- &quot;image=none&quot;, do nothing --&gt;\n  |      =    &lt;!-- No image fed, select an image --&gt;\n    [[Image:{{#switch: {{lc: {{{project|}}} }}\n    | commons  \
@@ -3555,13 +3425,13 @@ interactions:
       \    | wikiversity|wvy|v      = Wikiversity-logo.svg\n    | wikivoyage|voyage|voy  = Wikivoyage-Logo-v3-icon.svg\n    | mediawiki|mw           = Mediawiki.png\n    | outreachwiki|outreach  = Wikimedia Outreach.png\n    | incubator              = Incubator-notext.svg\n\
       \    | #default               = Wikimedia-logo.svg\n    }}|40x40px|link=|alt=\n    ]]\n  | #default = {{{image|}}}\n  }}\n| text       = {{{text}}}\n| below      = {{{below|}}}\n| imageright = {{{imageright|}}}\n| class      = plainlinks\n}}&lt;noinclude&gt;{{Documentation}}&lt;!--\
       \ Add categories and interwikis to the /doc subpage, not here! --&gt;&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:59:09.077Z
+- recorded: 2014-11-11T01:39:51.082Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3ASide+box&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -3573,27 +3443,27 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:09 GMT
+      Date: Tue, 11 Nov 2014 01:39:50 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1053 miss (0), amssq38 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1053 miss (0), amssq38 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 3364011593, 279809825, 1573710006
+      X-Varnish: 3802716424, 441580216, 2134317113
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="20504849" ns="10" title="Template:Side box"><revisions><rev user="Mr. Stradivarius" timestamp="2014-06-03T04:58:23Z" comment="convert to [[Module:Side box]]" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{#invoke:Side box|main}}&lt;noinclude&gt;
       {{documentation}}
       &lt;!-- Categories go on the /doc subpage, and interwikis go on Wikidata. --&gt;
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2014-11-07T00:59:09.344Z
+- recorded: 2014-11-11T01:39:51.695Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ASide_box&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -3605,16 +3475,15 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:09 GMT
+      Date: Tue, 11 Nov 2014 01:39:50 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
-      X-Analytics: php=hhvm
-      X-Cache: cp1052 miss (0), amssq42 miss (0), amssq46 frontend miss (0)
+      X-Analytics: php=zend
+      X-Cache: cp1052 miss (0), amssq42 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Powered-By: HHVM/3.3.1
-      X-Varnish: 4247874423, 2500759393, 1573710076
+      X-Varnish: 330311702, 2653544828, 2134317240
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><normalized><n from=\"Module:Side_box\" to=\"Module:Side box\" /></normalized><pages><page pageid=\"42926982\" ns=\"828\" title=\"Module:Side box\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"\
       2014-06-03T04:58:46Z\" comment=\"Protected Module:Side box: [[WP:High-risk templates|High-risk Lua module]] ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))\" contentformat=\"text/plain\"\
       \ contentmodel=\"Scribunto\" xml:space=\"preserve\">-- This module implements {{side box}}.\n\nlocal yesno = require('Module:Yesno')\n\nlocal p = {}\n\nfunction p.main(frame)\n\tlocal origArgs = frame:getParent().args\n\tlocal args = {}\n\tfor k, v in\
@@ -3629,13 +3498,13 @@ interactions:
       else\n\t\tbodyRow:tag('td'):css('width', '1px')\n\tend\n\tlocal textCell = bodyRow:newline():tag('td')\n\ttextCell:addClass('mbox-text plainlist')\n\tif data.textstyle then\n\t\ttextCell:cssText(data.textstyle)\n\tend\n\ttextCell:wikitext(data.text)\n\t\
       if data.imageright then\n\t\tbodyRow:newline():tag('td')\n\t\t\t:addClass('mbox-imageright')\n\t\t\t:wikitext(data.imageright)\n\tend\n\n\t-- The below row\n\tif data.below then\n\t\tlocal belowCell = root:newline():tag('tr'):tag('td')\n\t\tbelowCell\n\
       \t\t\t:attr('colspan', data.imageright and 3 or 2)\n\t\t\t:addClass('mbox-text')\n\t\tif data.textstyle then\n\t\t\tbelowCell:cssText(data.textstyle)\n\t\tend\n\t\tbelowCell:wikitext(data.below)\n\tend\n\n\treturn tostring(root)\nend\n\nreturn p</rev></revisions></page></pages></query></api>"
-- recorded: 2014-11-07T00:59:09.645Z
+- recorded: 2014-11-11T01:39:52.309Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=File%3ASmokeycover.jpg&prop=imageinfo&iiprop=url&iiurlwidth=220
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -3647,23 +3516,23 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:09 GMT
+      Date: Tue, 11 Nov 2014 01:39:51 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1053 miss (0), amssq49 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1053 miss (0), amssq49 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 3364012304, 481270873, 1573710142
+      X-Varnish: 3802717573, 635853654, 2134317354
     body: <?xml version="1.0"?><api batchcomplete=""><query><pages><page pageid="32234496" ns="6" title="File:Smokeycover.jpg" imagerepository="local"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/en/thumb/7/73/Smokeycover.jpg/220px-Smokeycover.jpg" thumbwidth="220" thumbheight="307" url="http://upload.wikimedia.org/wikipedia/en/7/73/Smokeycover.jpg" descriptionurl="http://en.wikipedia.org/wiki/File:Smokeycover.jpg" /></imageinfo></page></pages></query></api>
-- recorded: 2014-11-07T00:59:10.305Z
+- recorded: 2014-11-11T01:39:52.855Z
   request:
     method: GET
     uri: http://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=File%3A8bit-dynamiclist.gif&prop=imageinfo&iiprop=url&iiurlwidth=32
     headers:
       Content-Length: '0'
-      Cookie: GeoIP=PT:Lisbon:38.7167:-9.1333:v4
+      Cookie: GeoIP=PT:Le_a_Do_Balio:41.2146:-8.6135:v4
       Cookie2: $Version=1
       Host: en.wikipedia.org
       Proxy-Connection: Keep-Alive
@@ -3675,13 +3544,13 @@ interactions:
       Cache-control: private
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Fri, 07 Nov 2014 00:59:10 GMT
+      Date: Tue, 11 Nov 2014 01:39:52 GMT
       Server: Apache
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,X-Use-HHVM
       X-Analytics: php=zend
-      X-Cache: cp1054 miss (0), amssq32 miss (0), amssq46 frontend miss (0)
+      X-Cache: cp1054 miss (0), amssq32 miss (0), amssq60 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
-      X-Varnish: 1644210374, 570551497, 1573710267
+      X-Varnish: 2053043372, 729713653, 2134317506
     body: <?xml version="1.0"?><api batchcomplete=""><query><pages><page ns="6" title="File:8bit-dynamiclist.gif" missing="" imagerepository="shared"><imageinfo><ii thumburl="http://upload.wikimedia.org/wikipedia/commons/1/1d/8bit-dynamiclist.gif" thumbwidth="32" thumbheight="32" url="http://upload.wikimedia.org/wikipedia/commons/1/1d/8bit-dynamiclist.gif" descriptionurl="http://commons.wikimedia.org/wiki/File:8bit-dynamiclist.gif" /></imageinfo></page></pages></query></api>

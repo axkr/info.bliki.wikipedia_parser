@@ -72,4 +72,20 @@ public class TemplateSubstParserTest extends FilterTestSupport {
         assertThat(wikiModel
                 .parseTemplates("{{subst:#expr:2*{{{p|3}}}}}")).isEqualTo("6");
     }
+
+    @Test public void testSafesubstWithTrailingWhitespace() throws Exception {
+        assertThat(wikiModel.render(new PlainTextConverter(), "{{safesubst:#expr:1+1  }}").trim()).isEqualTo("2");
+    }
+
+    @Test public void testSafesubstWithLeadingWhitespace() throws Exception {
+        assertThat(wikiModel.render(new PlainTextConverter(), "SomeText {{ safesubst:#expr:1+1}}").trim()).isEqualTo("SomeText 2");
+    }
+
+    @Test public void testSafesubstNormal() throws Exception {
+        assertThat(wikiModel.render(new PlainTextConverter(), "SomeText {{safesubst:#expr:1+1}}").trim()).isEqualTo("SomeText 2");
+    }
+
+    @Test public void testEmptySafeSubst() throws Exception {
+        assertThat(wikiModel.render(new PlainTextConverter(), "{{safesubst:}}").trim()).isEmpty();
+    }
 }
