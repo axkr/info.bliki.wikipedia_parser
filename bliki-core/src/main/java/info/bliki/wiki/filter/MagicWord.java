@@ -38,160 +38,88 @@ public class MagicWord {
 
         // current date values
         MAGIC_CURRENT_DAY("CURRENTDAY"),
-
         MAGIC_CURRENT_DAY2("CURRENTDAY2"),
-
         MAGIC_CURRENT_DAY_NAME("CURRENTDAYNAME"),
-
         MAGIC_CURRENT_DAY_OF_WEEK("CURRENTDOW"),
-
         MAGIC_CURRENT_MONTH("CURRENTMONTH"),
-
         MAGIC_CURRENT_MONTH_ABBR("CURRENTMONTHABBREV"),
-
         MAGIC_CURRENT_MONTH_NAME("CURRENTMONTHNAME"),
-
         MAGIC_CURRENT_TIME("CURRENTTIME"),
-
         MAGIC_CURRENT_HOUR("CURRENTHOUR"),
-
         MAGIC_CURRENT_WEEK("CURRENTWEEK"),
-
         MAGIC_CURRENT_YEAR("CURRENTYEAR"),
-
         MAGIC_CURRENT_TIMESTAMP("CURRENTTIMESTAMP"),
 
         // local date values
         MAGIC_LOCAL_DAY("LOCALDAY"),
-
         MAGIC_LOCAL_DAY2("LOCALDAY2"),
-
         MAGIC_LOCAL_DAY_NAME("LOCALDAYNAME"),
-
         MAGIC_LOCAL_DAY_OF_WEEK("LOCALDOW"),
-
         MAGIC_LOCAL_MONTH("LOCALMONTH"),
-
         MAGIC_LOCAL_MONTH_ABBR("LOCALMONTHABBREV"),
-
         MAGIC_LOCAL_MONTH_NAME("LOCALMONTHNAME"),
-
         MAGIC_LOCAL_TIME("LOCALTIME"),
-
         MAGIC_LOCAL_HOUR("LOCALHOUR"),
-
         MAGIC_LOCAL_WEEK("LOCALWEEK"),
-
         MAGIC_LOCAL_YEAR("LOCALYEAR"),
-
         MAGIC_LOCAL_TIMESTAMP("LOCALTIMESTAMP"),
 
         // statistics
         MAGIC_CURRENT_VERSION("CURRENTVERSION"),
-
         MAGIC_NUMBER_ARTICLES("NUMBEROFARTICLES"),
-
         MAGIC_NUMBER_PAGES("NUMBEROFPAGES"),
-
         MAGIC_NUMBER_FILES("NUMBEROFFILES"),
-
         MAGIC_NUMBER_USERS("NUMBEROFUSERS"),
-
         MAGIC_NUMBER_ADMINS("NUMBEROFADMINS"),
-
         MAGIC_PAGES_IN_CATEGORY("PAGESINCATEGORY"),
-
         MAGIC_PAGES_IN_CAT("PAGESINCAT"),
-
         MAGIC_PAGES_IN_NAMESPACE("PAGESINNAMESPACE"),
-
         MAGIC_PAGES_IN_NAMESPACE_NS("PAGESINNS"),
-
         MAGIC_PAGE_SIZE("PAGESIZE"),
 
         // page values
         MAGIC_PAGE_NAME("PAGENAME"),
-
         MAGIC_PAGE_NAME_E("PAGENAMEE"),
-
         MAGIC_SUB_PAGE_NAME("SUBPAGENAME"),
-
         MAGIC_SUB_PAGE_NAME_E("SUBPAGENAMEE"),
-
         MAGIC_BASE_PAGE_NAME("BASEPAGENAME"),
-
         MAGIC_BASE_PAGE_NAME_E("BASEPAGENAMEE"),
-
         MAGIC_NAMESPACE("NAMESPACE"),
-
         MAGIC_NAMESPACE_E("NAMESPACEE"),
-
+        MAGIC_NAMESPACENUMBER("NAMESPACENUMBER"),
         MAGIC_FULL_PAGE_NAME("FULLPAGENAME"),
-
         MAGIC_FULL_PAGE_NAME_E("FULLPAGENAMEE"),
-
         MAGIC_TALK_SPACE("TALKSPACE"),
-
         MAGIC_TALK_SPACE_E("TALKSPACEE"),
-
         MAGIC_SUBJECT_SPACE("SUBJECTSPACE"),
-
         MAGIC_SUBJECT_SPACE_E("SUBJECTSPACEE"),
-
         MAGIC_ARTICLE_SPACE("ARTICLESPACE"),
-
         MAGIC_ARTICLE_SPACE_E("ARTICLESPACEE"),
-
         MAGIC_TALK_PAGE_NAME("TALKPAGENAME"),
-
         MAGIC_TALK_PAGE_NAME_E("TALKPAGENAMEE"),
-
         MAGIC_SUBJECT_PAGE_NAME("SUBJECTPAGENAME"),
-
         MAGIC_SUBJECT_PAGE_NAME_E("SUBJECTPAGENAMEE"),
-
         MAGIC_ARTICLE_PAGE_NAME("ARTICLEPAGENAME"),
-
         MAGIC_ARTICLE_PAGE_NAME_E("ARTICLEPAGENAMEE"),
-
         MAGIC_REVISION_ID("REVISIONID"),
-
         MAGIC_REVISION_DAY("REVISIONDAY"),
-
         MAGIC_REVISION_DAY2("REVISIONDAY2"),
-
         MAGIC_REVISION_MONTH("REVISIONMONTH"),
-
         MAGIC_REVISION_MONTH1("REVISIONMONTH1"),
-
         MAGIC_REVISION_YEAR("REVISIONYEAR"),
-
         MAGIC_REVISION_TIMESTAMP("REVISIONTIMESTAMP"),
-
         MAGIC_REVISION_USER("REVISIONUSER"),
-
         MAGIC_PROTECTION_LEVEL("PROTECTIONLEVEL"),
-
         MAGIC_DISPLAY_TITLE("DISPLAYTITLE"),
-
         MAGIC_DEFAULT_SORT("DEFAULTSORT"),
-
         MAGIC_DEFAULT_SORT_KEY("DEFAULTSORTKEY"),
-
         MAGIC_DEFAULT_CATEGORY_SORT("DEFAULTCATEGORYSORT"),
-
         MAGIC_SITE_NAME("SITENAME"),
-
         MAGIC_SERVER("SERVER"),
-
         MAGIC_SCRIPT_PATH("SCRIPTPATH"),
-
         MAGIC_SERVER_NAME("SERVERNAME"),
-
         MAGIC_STYLE_PATH("STYLEPATH"),
-
         MAGIC_CONTENT_LANGUAGE("CONTENTLANGUAGE"),
-
         MAGIC_CONTENT_LANG("CONTENTLANG");
 
         private final String text;
@@ -237,8 +165,6 @@ public class MagicWord {
      * Therefore, tolerate any case here and use lower-case in this hashmap.
      */
     protected final static HashMap<String, MagicWordE> MAGIC_WORDS = new HashMap<>(100);
-
-    protected static final String TEMPLATE_INCLUSION = "template-inclusion";
 
     /**
      * Determine if a template name corresponds to a magic word requiring special
@@ -370,9 +296,7 @@ public class MagicWord {
             case MAGIC_CURRENT_TIMESTAMP:
                 formatter.applyPattern("yyyyMMddHHmmss");
                 return formatter.format(current);
-
-            case MAGIC_PAGE_NAME:
-                if (true) { // block to hide local variables from other cases
+            case MAGIC_PAGE_NAME: {
                     String pagename = getPagenameHelper(parameter, model);
                     if (pagename != null) {
                         return pagename;
@@ -380,8 +304,7 @@ public class MagicWord {
                         return "";
                     }
                 }
-            case MAGIC_PAGE_NAME_E:
-                if (true) { // block to hide local variables from other cases
+            case MAGIC_PAGE_NAME_E: {
                     String pagename = getPagenameHelper(parameter, model);
                     if (pagename != null) {
                         return model.encodeTitleToUrl(pagename, true);
@@ -393,6 +316,14 @@ public class MagicWord {
                 return getNamespace(parameter, model);
             case MAGIC_NAMESPACE_E:
                 return model.encodeTitleToUrl(getNamespace(parameter, model), true);
+            case MAGIC_NAMESPACENUMBER: {
+                final INamespaceValue namespaceHelper = getNamespaceHelper(parameter, model);
+                if (namespaceHelper != null) {
+                  return namespaceHelper.getCode().code.toString();
+                } else {
+                    return null;
+                }
+            }
             case MAGIC_TALK_SPACE:
                 return getTalkspace(parameter, model);
             case MAGIC_TALK_SPACE_E:
