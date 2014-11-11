@@ -76,7 +76,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
             new MwUri(),
             new MwMessage(),
             new MwHtml(),
-            new MwLanguage(),
+            new MwLanguage(model),
         };
 
         try {
