@@ -2,6 +2,7 @@ package info.bliki.extensions.scribunto.template;
 
 import info.bliki.extensions.scribunto.engine.ScribuntoEngine;
 import info.bliki.extensions.scribunto.engine.ScribuntoModule;
+import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.namespaces.Namespace;
 import org.junit.Before;
@@ -29,7 +30,7 @@ public class InvokeTest {
         when(model.createScribuntoEngine()).thenReturn(scribuntoEngine);
         when(model.getNamespace()).thenReturn(new Namespace());
         when(model.getFrame()).thenReturn(new Frame(null, null));
-        when(scribuntoEngine.fetchModuleFromParser(any(Title.class))).thenReturn(scribuntoModule);
+        when(scribuntoEngine.fetchModuleFromParser(any(ParsedPageName.class))).thenReturn(scribuntoModule);
     }
 
     @Test public void testParseFunction() throws Exception {

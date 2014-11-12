@@ -4,14 +4,23 @@ import info.bliki.extensions.scribunto.ScribuntoException;
 import info.bliki.extensions.scribunto.engine.ScribuntoEngine;
 import info.bliki.extensions.scribunto.engine.ScribuntoModuleBase;
 import info.bliki.extensions.scribunto.template.Frame;
+import org.luaj.vm2.LuaClosure;
 import org.luaj.vm2.LuaError;
 import org.luaj.vm2.LuaValue;
+import org.luaj.vm2.Prototype;
+
+import java.io.StringReader;
 
 public class ScribuntoLuaModule extends ScribuntoModuleBase {
-    private LuaValue initChunk;
+    private Prototype initChunk;
 
     public ScribuntoLuaModule(ScribuntoEngine engine, String code, String chunkName) {
         super(engine, code, chunkName);
+    }
+
+    public ScribuntoLuaModule(ScribuntoLuaEngine engine, Prototype initChunk, String chunkName) {
+        super(engine, null, chunkName);
+        this.initChunk = initChunk;
     }
 
     @Override public String invoke(String functionName, Frame frame) throws ScribuntoException {
@@ -49,15 +58,15 @@ public class ScribuntoLuaModule extends ScribuntoModuleBase {
 
     private LuaValue loadExportTable() throws ScribuntoException {
         try {
-            return getInitChunk().checkfunction().call();
+            return new LuaClosure(getInitChunk(), getEngine().getGlobals()).checkfunction().call();
         } catch (LuaError e) {
             throw new ScribuntoException(e);
         }
     }
 
-    private LuaValue getInitChunk() throws ScribuntoException {
+    private Prototype getInitChunk() throws ScribuntoException {
         if (initChunk == null) {
-            initChunk = getEngine().load(getCode(), getChunkName());
+            initChunk = getEngine().load(new StringReader(getCode()), getChunkName());
         }
         return initChunk;
     }

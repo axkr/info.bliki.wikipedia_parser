@@ -35,7 +35,7 @@ public abstract class LuaTestBase {
     }
 
     public void setUp() throws IOException {
-        scribuntoLuaEngine = new ScribuntoLuaEngine(new WikiModel("${image}", "${title}"));
+        scribuntoLuaEngine = new ScribuntoLuaEngine(new WikiModel("${image}", "${title}"), CompiledScriptCache.DONT_CACHE);
         tests    = loadTests();
     }
 

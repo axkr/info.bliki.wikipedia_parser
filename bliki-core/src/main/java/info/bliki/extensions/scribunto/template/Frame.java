@@ -1,5 +1,6 @@
 package info.bliki.extensions.scribunto.template;
 
+import info.bliki.wiki.filter.ParsedPageName;
 import org.luaj.vm2.LuaValue;
 
 import java.util.Map;
@@ -13,7 +14,7 @@ public class Frame {
         this.parent = parent;
     }
 
-    public Frame newChild(Map<String, String> templateParameters, Title title) {
+    public Frame newChild(Map<String, String> templateParameters, ParsedPageName pageName) {
         return new Frame(templateParameters, this);
     }
 

@@ -18,10 +18,12 @@ import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.model.WikiModelContentException;
 import org.luaj.vm2.Globals;
+import org.luaj.vm2.LuaClosure;
 import org.luaj.vm2.LuaError;
 import org.luaj.vm2.LuaFunction;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
+import org.luaj.vm2.Prototype;
 import org.luaj.vm2.Varargs;
 import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.ThreeArgFunction;
@@ -30,11 +32,13 @@ import org.luaj.vm2.lib.VarArgFunction;
 import org.luaj.vm2.lib.ZeroArgFunction;
 import org.luaj.vm2.lib.jse.JsePlatform;
 
+import javax.annotation.Nonnull;
 import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.StringReader;
+import java.io.InputStreamReader;
+import java.io.Reader;
 
 /**
  * scribunto/engines/LuaCommon/LuaCommon.php
@@ -45,6 +49,8 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
     private final Globals globals;
     private Frame currentFrame;
     private int expensiveFunctionCount;
+
+    private final CompiledScriptCache compiledScriptCache;
 
     private static final String[] LIBRARY_PATH = new String[] {
         "",
@@ -59,12 +65,13 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
 
     private final MwInterface[] interfaces;
 
-    public ScribuntoLuaEngine(IWikiModel model) {
-        this(model, JsePlatform.standardGlobals());
+    public ScribuntoLuaEngine(IWikiModel model, CompiledScriptCache cache) {
+        this(model, cache, JsePlatform.standardGlobals());
     }
 
-    private ScribuntoLuaEngine(IWikiModel model, Globals globals) {
+    private ScribuntoLuaEngine(IWikiModel model, CompiledScriptCache compiledScriptCache, Globals globals) {
         super(model);
+        this.compiledScriptCache = compiledScriptCache;
         this.globals = globals;
         extendGlobals(globals);
 
@@ -86,6 +93,15 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         }
     }
 
+    @Override public ScribuntoModule fetchModuleFromParser(ParsedPageName parsedPageName) {
+        Prototype cached = compiledScriptCache.getPrototypeForChunkname(parsedPageName.fullPagename());
+        if (cached != null) {
+            return new ScribuntoLuaModule(this, cached, parsedPageName.fullPagename());
+        } else {
+            return super.fetchModuleFromParser(parsedPageName);
+        }
+    }
+
     @Override public ScribuntoModule newModule(String text, String chunkName) {
         return new ScribuntoLuaModule(this, text, chunkName);
     }
@@ -99,12 +115,18 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         return globals;
     }
 
-    protected LuaValue load(String code, String chunkName) throws ScribuntoException {
-        try {
-            return globals.load(new StringReader(code), chunkName);
-        } catch (LuaError e) {
-            throw new ScribuntoException(e);
+    protected Prototype load(Reader code, String chunkName) throws ScribuntoException {
+        Prototype prototype = compiledScriptCache.getPrototypeForChunkname(chunkName);
+        if (prototype == null) {
+            try {
+                logger.debug("compiling "+chunkName);
+                prototype = globals.compilePrototype(code, chunkName);
+                compiledScriptCache.cachePrototype(chunkName, prototype);
+            } catch (LuaError | IOException e) {
+                throw new ScribuntoException(e);
+            }
         }
+        return prototype;
     }
 
     protected String executeFunctionChunk(LuaValue luaFunction, Frame frame) {
@@ -326,20 +348,26 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
     private OneArgFunction loadPackage() {
         return new OneArgFunction() {
             @Override
-            public LuaValue call(LuaValue arg) {
-                final String name = arg.tojstring();
-                final InputStream is = findPackage(name);
-                if (is != null) {
-                    try {
-                        return globals.load(is, name, "t", globals);
-                    } finally {
-                        try { is.close(); } catch (IOException ignored) { }
-                    }
-                } else {
-                    return error("Could not load " + name);
-                }
+            public LuaValue call(LuaValue packageName) {
+                return loadModule(packageName.tojstring());
             }
         };
+    }
+
+    private LuaValue loadModule(String name) {
+        Prototype prototype = compiledScriptCache.getPrototypeForChunkname(name);
+        if (prototype != null) {
+            return new LuaClosure(prototype, globals);
+        } else {
+            try (InputStream is = findPackage(name)) {
+                return new LuaClosure(
+                        load(new InputStreamReader(is), name),
+                        globals);
+            } catch (ScribuntoException | IOException e) {
+                logger.error("error loading ", e);
+            }
+            return LuaValue.error("Could not load " + name);
+        }
     }
 
     private OneArgFunction loadPHPLibrary() {
@@ -350,16 +378,13 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         };
     }
 
-    private InputStream findPackage(String name) {
+    private @Nonnull InputStream findPackage(String name) throws IOException {
+        logger.debug("findPackage("+name+")");
         final InputStream is = loadLocally(name);
         if (is != null) {
             return is;
         } else {
-            try {
-                return findModule(name);
-            } catch (IOException ignored) {
-                return null;
-            }
+            return findModule(name);
         }
     }
 
@@ -370,7 +395,6 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
                 return is;
             }
         }
-
         final String moduleNS = model.getNamespace().getModule().getPrimaryText();
         if (name.startsWith(moduleNS)) {
             return loadLocally(name.substring(moduleNS.length()+1));
@@ -445,7 +469,6 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
             }
         });
     }
-
 
     private static class unpack extends VarArgFunction {
         public Varargs invoke(Varargs args) {

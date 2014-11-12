@@ -1,6 +1,6 @@
 package info.bliki.extensions.scribunto.engine;
 
-import info.bliki.extensions.scribunto.template.Title;
+import info.bliki.wiki.filter.ParsedPageName;
 
 import javax.annotation.Nullable;
 
@@ -12,8 +12,8 @@ public interface ScribuntoEngine {
      * Does not initialize the module, i.e. do not expect it to complain if the module
      * text is garbage or has syntax error.
      *
-     * @param title The title of the module
+     * @param pageName The name of the module
      * @return a module or null if it doesn't exist.
      */
-    @Nullable ScribuntoModule fetchModuleFromParser(Title title);
+    @Nullable ScribuntoModule fetchModuleFromParser(ParsedPageName pageName);
 }

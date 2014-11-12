@@ -2,6 +2,7 @@ package info.bliki.wiki.model;
 
 import info.bliki.Messages;
 import info.bliki.extensions.scribunto.engine.ScribuntoEngine;
+import info.bliki.extensions.scribunto.engine.lua.CompiledScriptCache;
 import info.bliki.extensions.scribunto.engine.lua.ScribuntoLuaEngine;
 import info.bliki.extensions.scribunto.template.Frame;
 import info.bliki.htmlcleaner.BaseToken;
@@ -79,6 +80,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
     protected boolean fNoToc;
 
     protected int fExternalLinksCounter;
+    private CompiledScriptCache compiledScriptCache = new CompiledScriptCache();
 
     /**
      * A tag that manages the &quot;table of content&quot;
@@ -1986,6 +1988,6 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 
     @Override
     public ScribuntoEngine createScribuntoEngine() {
-        return new ScribuntoLuaEngine(this);
+        return new ScribuntoLuaEngine(this, compiledScriptCache);
     }
 }
