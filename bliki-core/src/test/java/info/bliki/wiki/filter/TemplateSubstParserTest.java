@@ -8,7 +8,7 @@ public class TemplateSubstParserTest extends FilterTestSupport {
 
     @Test public void testSubst001() {
         assertThat(wikiModel.parseTemplates("{{subst:}}", false)).isEqualTo("");
-        assertThat(wikiModel.parseTemplates("{{subst:Nested}}", false)).isEqualTo("a nested template text");
+        assertThat(wikiModel.parseTemplates("{{subst:nested}}", false)).isEqualTo("a nested template text");
     }
 
     @Test public void testSubst002() {

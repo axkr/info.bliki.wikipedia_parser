@@ -1,4 +1,4 @@
-{{rellink|extraclasses=boilerplate seealso|{{{altphrase|See also}}}: {{#if:{{{1<includeonly>|</includeonly>}}} |<!--then:-->[[:{{{1}}}{{#if:{{{label 1|{{{l1|}}}}}}|{{!}}{{{label 1|{{{l1}}}}}}}}]] |<!--else:-->'''Error: [[Template:See also|Template must be given at least one article name]]'''
+{{Rellink|extraclasses=boilerplate seealso|{{{altphrase|See also}}}: {{#if:{{{1<includeonly>|</includeonly>}}} |<!--then:-->[[:{{{1}}}{{#if:{{{label 1|{{{l1|}}}}}}|{{!}}{{{label 1|{{{l1}}}}}}}}]] |<!--else:-->'''Error: [[Template:See also|Template must be given at least one article name]]'''
 }}{{#if:{{{2|}}}|{{#if:{{{3|}}}|, |&nbsp;and }} [[:{{{2}}}{{#if:{{{label 2|{{{l2|}}}}}}|{{!}}{{{label 2|{{{l2}}}}}}}}]]
 }}{{#if:{{{3|}}}|{{#if:{{{4|}}}|, |,&nbsp;and }} [[:{{{3}}}{{#if:{{{label 3|{{{l3|}}}}}}|{{!}}{{{label 3|{{{l3}}}}}}}}]]
 }}{{#if:{{{4|}}}|{{#if:{{{5|}}}|, |,&nbsp;and }} [[:{{{4}}}{{#if:{{{label 4|{{{l4|}}}}}}|{{!}}{{{label 4|{{{l4}}}}}}}}]]

@@ -44,25 +44,25 @@ public class WikiTestModel extends WikiModel {
         fNamespace.getImage().addAlias("Bild");
     }
 
-    @Override public String getRawWikiContent(ParsedPageName parsedPagename, Map<String, String> map) throws WikiModelContentException {
-        String result = super.getRawWikiContent(parsedPagename, map);
+    @Override public String getRawWikiContent(ParsedPageName page, Map<String, String> map) throws WikiModelContentException {
+        String result = super.getRawWikiContent(page, map);
         if (result != null) {
             return result;
         }
 
-        String name = encodeTitleToUrl(parsedPagename.pagename, true);
+        String name = encodeTitleToUrl(page.pagename, false);
 
         if (debug) {
-            logger.error("getRawWikiContent("+name+")");
+            logger.error("getRawWikiContent("+page+")");
         }
 
-        switch(parsedPagename.namespace.getCode()) {
+        switch(page.namespace.getCode()) {
             case TEMPLATE_NAMESPACE_KEY:
                 switch (name) {
                     case FOODATE: return "FOO" + System.currentTimeMillis();
-                    default     : return loadTemplateResource(parsedPagename.pagename);
+                    default     : return loadTemplateResource(name);
                 }
-            case MODULE_NAMESPACE_KEY:   return loadModuleResource(parsedPagename.pagename);
+            case MODULE_NAMESPACE_KEY:   return loadModuleResource(name);
             case MAIN_NAMESPACE_KEY:
                 switch (name) {
                     case "Include_Page": return "an include page";
@@ -70,7 +70,7 @@ public class WikiTestModel extends WikiModel {
                 }
 
             default: {
-                logger.error("resource not found:"+name);
+                logger.error("resource not found:"+page);
                 return null;
             }
         }

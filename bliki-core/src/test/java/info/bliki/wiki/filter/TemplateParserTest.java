@@ -489,7 +489,7 @@ public class TemplateParserTest extends FilterTestSupport {
     }
 
     @Test public void testNestedTemplate() {
-        assertThat(wikiModel.parseTemplates("{{nested tempplate test}}", false))
+        assertThat(wikiModel.parseTemplates("{{nested template test}}", false))
                 .isEqualTo("test a a nested template text template");
     }
 
