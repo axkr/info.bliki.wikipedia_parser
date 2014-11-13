@@ -24,7 +24,8 @@ import java.util.Map;
 public class WikiTestModel extends WikiModel {
     private static final String MAIN_FOO     = "BAR";
     private static final String FOODATE      = "FOODATE";
-    private boolean fSemanticWebActive;
+    private boolean semanticWebActive;
+    private final String resourceBase;
 
     static {
         TagNode.addAllowedAttribute("style");
@@ -35,19 +36,15 @@ public class WikiTestModel extends WikiModel {
         Configuration.DEFAULT_CONFIGURATION.addTokenTag("imagemap", new IgnoreTag("imagemap"));
     }
 
-    public WikiTestModel(Locale locale, String imageBaseURL, String linkBaseURL) {
+    public WikiTestModel(Locale locale, String imageBaseURL, String linkBaseURL, String resourceBase) {
         super(Configuration.DEFAULT_CONFIGURATION, locale, imageBaseURL, linkBaseURL);
-        // set up a simple cache mock-up for JUnit tests. HashMap is not usable for
-        // production!
         Configuration.DEFAULT_CONFIGURATION.setTemplateCallsCache(new HashMap<String, String>());
-
-        fSemanticWebActive = false;
-        // add the German image namespace as an alias
+        this.semanticWebActive = false;
+        this.resourceBase = resourceBase;
         fNamespace.getImage().addAlias("Bild");
     }
 
-    @Override
-    public String getRawWikiContent(ParsedPageName parsedPagename, Map<String, String> map) throws WikiModelContentException {
+    @Override public String getRawWikiContent(ParsedPageName parsedPagename, Map<String, String> map) throws WikiModelContentException {
         String result = super.getRawWikiContent(parsedPagename, map);
         if (result != null) {
             return result;
@@ -60,6 +57,8 @@ public class WikiTestModel extends WikiModel {
 //                    System.err.println("loading template "+name);
                     return loadTemplateResource(name);
             }
+        } if (parsedPagename.namespace.isType(NamespaceCode.MODULE_NAMESPACE_KEY)) {
+            return loadModuleResource(name);
         } else if (parsedPagename.namespace.isType(NamespaceCode.MAIN_NAMESPACE_KEY)) {
             if (name.equals("Include_Page")) {
                 return "an include page";
@@ -72,12 +71,12 @@ public class WikiTestModel extends WikiModel {
 
     @Override
     public boolean isSemanticWebActive() {
-        return fSemanticWebActive;
+        return semanticWebActive;
     }
 
     @Override
     public void setSemanticWebActive(boolean semanticWeb) {
-        this.fSemanticWebActive = semanticWeb;
+        this.semanticWebActive = semanticWeb;
     }
 
     @Override
@@ -111,11 +110,19 @@ public class WikiTestModel extends WikiModel {
     }
 
     private String loadTemplateResource(String name) {
+        return loadResource(resourceNameFromTemplateName(name));
+    }
+
+    private String loadModuleResource(String name) {
+        return loadResource(resourceNameFromModuleName(name));
+    }
+
+    private String loadResource(String name) {
         if (name.trim().length() == 0) {
             return null;
         }
 
-        try (InputStream is = getClass().getResourceAsStream(resourceNameFromTemplateName(name))) {
+        try (InputStream is = getClass().getResourceAsStream(name)) {
             return is == null ? null : IOUtils.toString(is);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -123,7 +130,15 @@ public class WikiTestModel extends WikiModel {
     }
 
     private String resourceNameFromTemplateName(String name) {
-        return "/templates/wikitestModel/" + name
+        return getResource("templates", name);
+    }
+
+    private String resourceNameFromModuleName(String name) {
+        return getResource("modules", name);
+    }
+
+    private String getResource(String type, String name) {
+        return "/"+resourceBase+"/"+type+"/" + name
                 .replace(" ", "_")
                 .replace("/", "_");
     }

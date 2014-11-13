@@ -1099,8 +1099,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
      * {@inheritDoc}
      */
     @Override
-    public String getRawWikiContent(ParsedPageName parsedPagename,
-            Map<String, String> templateParameters)
+    public String getRawWikiContent(ParsedPageName parsedPagename, Map<String, String> templateParameters)
             throws WikiModelContentException {
         INamespaceValue namespace = parsedPagename.namespace;
         String templateName = parsedPagename.pagename;
@@ -1112,6 +1111,9 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
             return MagicWord.processMagicWord(
                     (MagicWordE) parsedPagename.magicWord,
                     parsedPagename.magicWordParameter, this);
+        }
+        if (parsedPagename.namespace.isType(NamespaceCode.TEMPLATE_NAMESPACE_KEY)) {
+            setFrame(new Frame(templateParameters, getFrame()));
         }
         return null;
     }

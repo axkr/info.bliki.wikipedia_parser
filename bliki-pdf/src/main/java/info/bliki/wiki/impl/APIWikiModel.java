@@ -5,7 +5,6 @@ import info.bliki.api.User;
 import info.bliki.api.creator.ImageData;
 import info.bliki.api.creator.TopicData;
 import info.bliki.api.creator.WikiDB;
-import info.bliki.extensions.scribunto.template.Frame;
 import info.bliki.htmlcleaner.TagNode;
 import info.bliki.wiki.filter.Encoder;
 import info.bliki.wiki.filter.ParsedPageName;
@@ -135,35 +134,35 @@ public class APIWikiModel extends WikiModel {
             return result;
         }
 
-        boolean isTemplate = parsedPagename.namespace.isType(NamespaceCode.TEMPLATE_NAMESPACE_KEY);
-        boolean isModule   = parsedPagename.namespace.isType(NamespaceCode.MODULE_NAMESPACE_KEY);
+        final boolean isTemplate = parsedPagename.namespace.isType(NamespaceCode.TEMPLATE_NAMESPACE_KEY);
+        final boolean isModule   = parsedPagename.namespace.isType(NamespaceCode.MODULE_NAMESPACE_KEY);
 
         if (isTemplate || isModule) {
-            final String fullPageName = parsedPagename.fullPagename();
-            if (isTemplate) {
-                setFrame(new Frame(templateParameters, getFrame()));
-            }
-
-            try {
-                TopicData topicData = fWikiDB.selectTopic(fullPageName);
-                if (topicData != null) {
-                    final String content = getRedirectedWikiContent(topicData.getContent(), templateParameters);
-                    if (content != null && content.length() > 0) {
-                        logger.debug("retrieved '"+fullPageName+"' from cache");
-                        return content;
-                    } else {
-                        return null;
-                    }
-                } else {
-                    return fetchAndCacheContent(fullPageName, templateParameters);
-                }
-            } catch (SQLException e) {
-                logger.warn(null, e);
-                final String message = e.getMessage() == null ? e.getClass().getSimpleName() : e.getMessage();
-                throw new WikiModelContentException("<span class=\"error\">Exception: " + message + "</span>", e);
-            }
+            return getTemplateOrModule(parsedPagename.fullPagename(), templateParameters);
+        } else {
+            return null;
         }
-        return null;
+    }
+
+    private String getTemplateOrModule(String pageName, Map<String, String> templateParameters) throws WikiModelContentException {
+        try {
+            TopicData topicData = fWikiDB.selectTopic(pageName);
+            if (topicData != null) {
+                final String content = getRedirectedWikiContent(topicData.getContent(), templateParameters);
+                if (content != null && content.length() > 0) {
+                    logger.debug("retrieved '"+pageName+"' from cache");
+                    return content;
+                } else {
+                    return null;
+                }
+            } else {
+                return fetchAndCacheContent(pageName, templateParameters);
+            }
+        } catch (SQLException e) {
+            logger.warn(null, e);
+            final String message = e.getMessage() == null ? e.getClass().getSimpleName() : e.getMessage();
+            throw new WikiModelContentException("<span class=\"error\">Exception: " + message + "</span>", e);
+        }
     }
 
     private String fetchAndCacheContent(String fullPageName, Map<String, String> templateParameters) throws SQLException {
