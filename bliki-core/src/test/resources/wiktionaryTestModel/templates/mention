@@ -1,0 +1,5 @@
+{{#invoke:links/templates|l_term_t|face=term}}<!--
+
+-->{{#if:{{{lang|}}}|[[Category:m with lang]]}}<!--
+
+--><noinclude>{{documentation}}

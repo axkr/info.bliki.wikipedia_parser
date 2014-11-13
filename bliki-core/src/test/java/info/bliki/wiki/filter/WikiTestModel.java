@@ -26,6 +26,7 @@ public class WikiTestModel extends WikiModel {
     private static final String FOODATE      = "FOODATE";
     private boolean semanticWebActive;
     private final String resourceBase;
+    private boolean debug;
 
     static {
         TagNode.addAllowedAttribute("style");
@@ -122,6 +123,10 @@ public class WikiTestModel extends WikiModel {
             return null;
         }
 
+        if (debug) {
+            logger.error("loading "+name);
+        }
+
         try (InputStream is = getClass().getResourceAsStream(name)) {
             return is == null ? null : IOUtils.toString(is);
         } catch (IOException e) {
@@ -144,5 +149,9 @@ public class WikiTestModel extends WikiModel {
                     .replace(" ", "_")
                     .replace("/", "_") + (ext != null ? ("." + ext) : "");
         }
+    }
+
+    public void setDebug(boolean debug) {
+        this.debug = debug;
     }
 }

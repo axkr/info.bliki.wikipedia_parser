@@ -19,7 +19,8 @@ public class Frame {
     }
 
     public LuaValue getArgument(String name) {
-        String value = templateParameters.get(name);
+        String value = templateParameters != null ? templateParameters.get(name) : null;
+
         if (value != null) {
             return LuaValue.valueOf(value);
         } else {

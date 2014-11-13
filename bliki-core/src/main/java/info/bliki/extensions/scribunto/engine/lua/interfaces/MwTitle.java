@@ -10,6 +10,7 @@ import org.luaj.vm2.lib.TwoArgFunction;
 
 import static info.bliki.wiki.namespaces.INamespace.NamespaceCode.MAIN_NAMESPACE_KEY;
 import static info.bliki.wiki.namespaces.INamespace.NamespaceCode.MEDIA_NAMESPACE_KEY;
+import static org.luaj.vm2.LuaValue.EMPTYSTRING;
 
 // TitleLibrary.php
 public class MwTitle implements MwInterface {
@@ -41,7 +42,7 @@ public class MwTitle implements MwInterface {
     @Override
     public LuaValue getSetupOptions() {
         LuaTable table = new LuaTable();
-        table.set("thisTitle", title(wikiModel.getPageName()));
+        table.set("thisTitle", title(wikiModel.getNamespaceName(), wikiModel.getPageName()));
         table.set("NS_MEDIA", MEDIA_NAMESPACE_KEY.code);
         return table;
     }
@@ -144,9 +145,9 @@ public class MwTitle implements MwInterface {
     }
 
 
-    private LuaValue title(String pageName) {
+    private LuaValue title(String namespace, String pageName) {
         return title(
-            LuaValue.valueOf("default"),
+            LuaValue.valueOf(namespace != null ? namespace : ""),
             LuaValue.valueOf(pageName != null ? pageName : ""),
             LuaValue.valueOf("fragment"),
             LuaValue.valueOf("interwiki"));
@@ -154,17 +155,17 @@ public class MwTitle implements MwInterface {
 
     private LuaValue title(LuaValue ns, LuaValue title, LuaValue fragment, LuaValue interwiki) {
         LuaTable table = new LuaTable();
-        table.set("isLocal", "");
-        table.set("isRedirect", "");
-        table.set("subjectNsText", "");
-        table.set("interwiki", interwiki.isnil() ? LuaValue.EMPTYSTRING : interwiki);
+        table.set("isLocal", EMPTYSTRING);
+        table.set("isRedirect", EMPTYSTRING);
+        table.set("subjectNsText", EMPTYSTRING);
+        table.set("interwiki", interwiki.isnil() ? EMPTYSTRING : interwiki);
         table.set("namespace", LuaValue.valueOf(MAIN_NAMESPACE_KEY.code));
-        table.set("nsText", "");
+        table.set("nsText", ns.isnil() ? LuaValue.EMPTYSTRING : ns);
         table.set("text", title);
         table.set("id", title);
-        table.set("fragment", fragment.isnil() ? LuaValue.EMPTYSTRING : fragment);
-        table.set("contentModel", "");
-        table.set("thePartialUrl", "");
+        table.set("fragment", fragment.isnil() ? EMPTYSTRING : fragment);
+        table.set("contentModel", EMPTYSTRING);
+        table.set("thePartialUrl", EMPTYSTRING);
         return table;
     }
 }

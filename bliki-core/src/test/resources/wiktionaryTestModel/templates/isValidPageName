@@ -1,0 +1,1 @@
+{{#ifeq:{{{1}}}|-||{{#invoke:ugly hacks|is_valid_page_name|{{{1}}}}}}}<noinclude>{{documentation}}</noinclude>

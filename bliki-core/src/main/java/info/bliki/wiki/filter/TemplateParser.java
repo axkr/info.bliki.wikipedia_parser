@@ -125,7 +125,6 @@ public class TemplateParser extends AbstractParser {
                     sb = result;
                 }
             }
-
             writer.append(sb);
         } catch (Exception | Error e) {
             handleParserError(e, writer);
@@ -174,7 +173,7 @@ public class TemplateParser extends AbstractParser {
             if (!renderTemplate) {
                 String redirectedLink = WikipediaParser.parseRedirect(sb.toString(), wikiModel);
                 if (redirectedLink != null) {
-                    String redirectedContent = WikipediaParser.getRedirectedTemplateContent(wikiModel, redirectedLink, null);
+                    String redirectedContent = WikipediaParser.getRedirectedTemplateContent(wikiModel, redirectedLink, templateParameterMap);
                     if (redirectedContent != null) {
                         parseRecursive(redirectedContent, wikiModel, writer, parseOnlySignature, renderTemplate);
                         return;

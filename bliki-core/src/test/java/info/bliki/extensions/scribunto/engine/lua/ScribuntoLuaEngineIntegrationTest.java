@@ -3,7 +3,6 @@ package info.bliki.extensions.scribunto.engine.lua;
 import info.bliki.annotations.IntegrationTest;
 import info.bliki.wiki.filter.PlainTextConverter;
 import info.bliki.wiki.filter.WikiTestModel;
-import info.bliki.wiki.model.WikiModel;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -15,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @Category(IntegrationTest.class)
 public class ScribuntoLuaEngineIntegrationTest {
-    private WikiModel wikiModel;
+    private WikiTestModel wikiModel;
 
     @Before public void setUp() throws Exception {
         wikiModel = new WikiTestModel(Locale.ENGLISH,
@@ -23,6 +22,7 @@ public class ScribuntoLuaEngineIntegrationTest {
             "http://www.bliki.info/wiki/${title}",
             "wiktionaryTestModel");
         wikiModel.setUp();
+        wikiModel.setDebug(false);
     }
 
     @Ignore @Test public void test_pt_verb_form_of() throws Exception {
@@ -34,5 +34,10 @@ public class ScribuntoLuaEngineIntegrationTest {
                         "third-person singular (ele and ela, also used with você and others) present subjunctive of rapar\n" +
                         "third-person singular (você) affirmative imperative of rapar\n" +
                         "third-person singular (você) negative imperative of rapar");
+    }
+
+    @Test public void test_contraction_of() throws Exception {
+        assertThat(wikiModel.render(new PlainTextConverter(), "{{contraction of|[[de]] [[o]]||[[of]] [[the]]|lang=pt}}").trim())
+                .isEqualTo("contraction of de o (“of the”).");
     }
 }

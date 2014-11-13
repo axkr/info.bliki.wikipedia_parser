@@ -58,8 +58,7 @@ public abstract class AbstractWikipediaParser extends AbstractParser {
                                                          Map<String, String> templateParameters) {
         final INamespace namespace = wikiModel.getNamespace();
         ParsedPageName parsedPagename = parsePageName(wikiModel, redirectedLink, namespace.getMain(), false, false);
-        // note: don't just get redirect content if the namespace is the template
-        // namespace!
+        // note: don't just get redirect content if the namespace is the template namespace!
         if (!parsedPagename.valid) {
             return null;
         }

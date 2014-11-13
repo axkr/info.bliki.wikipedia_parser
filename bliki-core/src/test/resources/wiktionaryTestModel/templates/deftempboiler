@@ -1,0 +1,58 @@
+<includeonly><!--
+
+-->{{#switch:{{NAMESPACE}}{{{1|}}}<!--
+
+-->|Template=<!--
+
+  -->This template generates definitions for <!--
+  -->[[:Category:{{ucfirst:{{{formpl|{{{form}}}s}}}}} by language|{{{formpl|{{{form}}}s}}}]]<!--
+  -->{{#if:{{{form2|}}}|<nowiki/> and [[:Category:{{ucfirst:{{{form2}}}s}} by language|{{{form2}}}s]]}}<!--
+  -->.<!--
+
+-->|#default=<!--
+
+  --><span class='use-with-mention'><!--
+
+  -->{{#switch:{{{cap|}}}<!--
+  -->|{{lc:{{padright:|1|{{{def|{{{form|}}}}}}}}}}={{lcfirst:{{{def|{{{form}}} of}}}}}<!--
+  -->|{{uc:{{padright:|1|{{{def|{{{form|}}}}}}}}}}={{ucfirst:{{{def|{{{form}}} of}}}}}<!--
+  -->|={{#if:{{{nocap|}}}|{{lcfirst:{{{def|{{{form}}} of}}}}}|{{ucfirst:{{{def|{{{form}}} of}}}}}}}<!--
+  -->|#default={{{def|{{{form}}} of}}}[[Category:Template parameters needing attention]]<!--
+  -->}}<!--
+
+  --> <!--
+
+  -->{{m|{{#if:{{{lang|}}}|{{{lang}}}|en}}|{{{1|}}}|{{{2|}}}|{{{3|}}}|sc={{{sc|}}}|tr={{{tr|}}}}}<!--
+
+  -->{{#if:{{subst:isValidPageName|{{{1|}}}}}<!--
+  -->|<!--
+    do nothing
+  -->|<!--
+    -->{{#switch:{{{def|}}}<!--
+    -->|abbreviation of|acronym of|alternative form of|contraction of|initialism of|short for=[[Category:Template with raw link/{{{def}}}]]<!--
+    -->|#default=[[Category:Template with raw link/deftempboiler]]<!--
+    -->}}<!--
+  -->}}<!--
+
+  --></span><!--
+
+  -->{{#ifeq:{{{dot}}}|NONE|{{#if:{{{nodot|}}}||.}}|<nowiki/>{{{dot}}}}}<!--
+
+  -->{{#if:{{{nocat|}}}<!--
+  -->|<!--
+    do nothing
+  -->|<!--
+    -->{{catlangname|{{#if:{{{lang|}}}|{{{lang}}}|en}}|{{{formpl|{{{form}}}s}}}|sort={{{sort|}}}}}<!--
+    -->{{#if:{{{form2|}}}<!--
+    -->|<!--
+      -->{{catlangname|{{#if:{{{lang|}}}|{{{lang}}}|en}}|{{{form2}}}s|sort={{{sort|}}}}}<!--
+    -->}}<!--
+  -->}}<!--
+
+  -->{{#if:{{{lang|}}}||[[Category:Language code missing/deftempboiler]]}}<!--
+
+-->}}<!--
+
+--></includeonly><!--
+
+--><noinclude>{{documentation}}</noinclude>
