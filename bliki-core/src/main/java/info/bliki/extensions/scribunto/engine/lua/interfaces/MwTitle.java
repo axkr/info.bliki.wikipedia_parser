@@ -41,7 +41,7 @@ public class MwTitle implements MwInterface {
     @Override
     public LuaValue getSetupOptions() {
         LuaTable table = new LuaTable();
-        table.set("thisTitle", title());
+        table.set("thisTitle", title(wikiModel.getPageName()));
         table.set("NS_MEDIA", MEDIA_NAMESPACE_KEY.code);
         return table;
     }
@@ -144,10 +144,10 @@ public class MwTitle implements MwInterface {
     }
 
 
-    private LuaValue title() {
+    private LuaValue title(String pageName) {
         return title(
             LuaValue.valueOf("default"),
-            LuaValue.valueOf(wikiModel.getPageName()),
+            LuaValue.valueOf(pageName != null ? pageName : ""),
             LuaValue.valueOf("fragment"),
             LuaValue.valueOf("interwiki"));
     }
