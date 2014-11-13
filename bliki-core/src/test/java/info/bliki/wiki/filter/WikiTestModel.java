@@ -6,7 +6,6 @@ import info.bliki.htmlcleaner.Utils;
 import info.bliki.wiki.model.Configuration;
 import info.bliki.wiki.model.WikiModel;
 import info.bliki.wiki.model.WikiModelContentException;
-import info.bliki.wiki.namespaces.INamespace.NamespaceCode;
 import info.bliki.wiki.tags.IgnoreTag;
 import info.bliki.wiki.tags.extension.ChartTag;
 import org.apache.commons.io.IOUtils;
@@ -51,23 +50,24 @@ public class WikiTestModel extends WikiModel {
             return result;
         }
         String name = encodeTitleToUrl(parsedPagename.pagename, true);
-        if (parsedPagename.namespace.isType(NamespaceCode.TEMPLATE_NAMESPACE_KEY)) {
-            switch (name) {
-                case FOODATE: return "FOO" + System.currentTimeMillis();
-                default:
-//                    System.err.println("loading template "+name);
-                    return loadTemplateResource(name);
-            }
-        } if (parsedPagename.namespace.isType(NamespaceCode.MODULE_NAMESPACE_KEY)) {
-            return loadModuleResource(name);
-        } else if (parsedPagename.namespace.isType(NamespaceCode.MAIN_NAMESPACE_KEY)) {
-            if (name.equals("Include_Page")) {
-                return "an include page";
-            } else if (name.equals("FOO")) {
-                return MAIN_FOO;
+        switch(parsedPagename.namespace.getCode()) {
+            case TEMPLATE_NAMESPACE_KEY:
+                switch (name) {
+                    case FOODATE: return "FOO" + System.currentTimeMillis();
+                    default     : return loadTemplateResource(name);
+                }
+            case MODULE_NAMESPACE_KEY:   return loadModuleResource(name);
+            case MAIN_NAMESPACE_KEY:
+                switch (name) {
+                    case "Include_Page": return "an include page";
+                    case "FOO":          return MAIN_FOO;
+                }
+
+            default: {
+                logger.error("resource not found:"+name);
+                return null;
             }
         }
-        return null;
     }
 
     @Override
@@ -122,14 +122,13 @@ public class WikiTestModel extends WikiModel {
         if (name == null) {
             return null;
         }
-
         if (debug) {
             logger.error("loading "+name);
         }
-
         try (InputStream is = getClass().getResourceAsStream(name)) {
             return is == null ? null : IOUtils.toString(is);
         } catch (IOException e) {
+            logger.error("error loading "+name, e);
             throw new RuntimeException(e);
         }
     }
@@ -145,9 +144,11 @@ public class WikiTestModel extends WikiModel {
         if (name.trim().length() == 0) {
             return null;
         } else {
-            return "/" + resourceBase + "/" + type + "/" + name
-                    .replace(" ", "_")
-                    .replace("/", "_") + (ext != null ? ("." + ext) : "");
+            return String.format("/%s/%s/%s%s",
+                resourceBase,
+                type,
+                name.replaceAll("[ /]", "_"),
+                ext != null ? ("." + ext) : "");
         }
     }
 
