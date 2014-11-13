@@ -6,48 +6,23 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class TemplateSubstParserTest extends FilterTestSupport {
 
-    /**
-     * See <a
-     * href="http://en.wikipedia.org/wiki/Help:Substitution">Wikipedia-Help:
-     * Substitution</a>
-     */
     @Test public void testSubst001() {
         assertThat(wikiModel.parseTemplates("{{subst:}}", false)).isEqualTo("");
         assertThat(wikiModel.parseTemplates("{{subst:Nested}}", false)).isEqualTo("a nested template text");
     }
 
-    /**
-     * See <a
-     * href="http://en.wikipedia.org/wiki/Help:Substitution">Wikipedia-Help:
-     * Substitution</a>
-     */
     @Test public void testSubst002() {
         assertThat(wikiModel.parseTemplates("{{subst:ns:{{subst:#expr:2*3}}}}", false)).isEqualTo("File");
     }
 
-    /**
-     * See <a
-     * href="http://en.wikipedia.org/wiki/Help:Substitution">Wikipedia-Help:
-     * Substitution</a>
-     */
     @Test public void testSubst003() {
         assertThat(wikiModel.parseTemplates("{{ns:{{subst:#expr:2*3}}}}", false)).isEqualTo("File");
     }
 
-    /**
-     * See <a
-     * href="http://en.wikipedia.org/wiki/Help:Substitution">Wikipedia-Help:
-     * Substitution</a>
-     */
     @Test public void testSubst004() {
         assertThat(wikiModel.parseTemplates("{{subst:LC:{{subst:#expr:1/100000}}}}", false)).isEqualTo("1.0e-5");
     }
 
-    /**
-     * See <a
-     * href="http://en.wikipedia.org/wiki/Help:Substitution">Wikipedia-Help:
-     * Substitution</a>
-     */
     @Test public void testSubst005() {
         assertThat(wikiModel.parseTemplates("{{subst:UC:{{subst:tc}}}}", false)).isEqualTo("IN");
     }

@@ -118,7 +118,7 @@ public class WikiTestModel extends WikiModel {
     }
 
     private String loadResource(String name) {
-        if (name.trim().length() == 0) {
+        if (name == null) {
             return null;
         }
 
@@ -130,16 +130,19 @@ public class WikiTestModel extends WikiModel {
     }
 
     private String resourceNameFromTemplateName(String name) {
-        return getResource("templates", name);
+        return getResource("templates", name, null);
     }
-
     private String resourceNameFromModuleName(String name) {
-        return getResource("modules", name);
+        return getResource("modules", name, "lua");
     }
 
-    private String getResource(String type, String name) {
-        return "/"+resourceBase+"/"+type+"/" + name
-                .replace(" ", "_")
-                .replace("/", "_");
+    private String getResource(String type, String name, String ext) {
+        if (name.trim().length() == 0) {
+            return null;
+        } else {
+            return "/" + resourceBase + "/" + type + "/" + name
+                    .replace(" ", "_")
+                    .replace("/", "_") + (ext != null ? ("." + ext) : "");
+        }
     }
 }

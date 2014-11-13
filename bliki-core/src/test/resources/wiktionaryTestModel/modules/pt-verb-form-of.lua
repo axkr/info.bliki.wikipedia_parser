@@ -230,7 +230,9 @@ function export.show(frame)
 	if (args[2] == nil) then
 	    suf = get_suffix(l)
 	    --print(suf)
-	end
+    end
+
+    print("conj:"..conj)
 
 	if (args[3] == nil and args[2] ~= "g") then
 	    suf = suf or args[2]
@@ -341,10 +343,13 @@ end
 
 -- Returns the word’s inflectional suffix.
 function get_suffix(l)
+    print("suffix:" .. l)
     local suf4 = mw.ustring.sub(l, -4)
     local suf3 = mw.ustring.sub(l, -3)
     local wsuf
 
+    print("suf4:" .. suf4)
+    print("suf3:" .. suf3)
 
     if (suf4 == "guer" or suf4 == "guir" or suf4 == "quer" or suf4 == "quir") then
         wsuf = mw.ustring.sub(w, mw.ustring.len(l) - mw.ustring.len(w) - 3)
@@ -355,6 +360,7 @@ function get_suffix(l)
         wsuf = mw.ustring.sub(w, mw.ustring.len(l) - mw.ustring.len(w) - 2)
         local fl = mw.ustring.sub(wsuf, 1, 1) -- first letter
         local ftl = mw.ustring.sub(wsuf, 1, 2) -- first two letters
+
 
         if (suf3 == "car" or suf3 == "gar") then
             if (mw.ustring.sub(wsuf, 1, 1) == "u") then
