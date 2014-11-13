@@ -23,6 +23,7 @@ import java.util.regex.Pattern;
  * @see WikipediaParser for the second pass
  */
 public class TemplateParser extends AbstractParser {
+    public static final String TEMPLATE_PARSER_ERROR = "TemplateParserError";
 
     private static final Pattern HTML_COMMENT_PATTERN = Pattern.compile("<!--(.*?)-->");
     private static final String SUBST = "subst:";
@@ -32,7 +33,7 @@ public class TemplateParser extends AbstractParser {
 
     protected static Logger logger = LoggerFactory.getLogger(TemplateParser.class);
 
-    private  final boolean fParseOnlySignature;
+    private final boolean fParseOnlySignature;
     private final boolean fRenderTemplate;
     private boolean fOnlyIncludeFlag;
 
@@ -189,9 +190,11 @@ public class TemplateParser extends AbstractParser {
     }
 
     private static void handleParserError(Throwable e, Appendable writer) {
-        logger.error("TemplateParserError:", e);
+        logger.error(TEMPLATE_PARSER_ERROR, e);
         try {
-            writer.append("TemplateParserError:").append(e.getClass().getSimpleName());
+            writer.append(TEMPLATE_PARSER_ERROR)
+                    .append(':')
+                    .append(e.getClass().getSimpleName());
         } catch (IOException ignored) {
         }
     }
