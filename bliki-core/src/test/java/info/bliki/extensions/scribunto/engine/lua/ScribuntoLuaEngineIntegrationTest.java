@@ -4,7 +4,6 @@ import info.bliki.wiki.filter.PlainTextConverter;
 import info.bliki.wiki.filter.WikiTestModel;
 import info.bliki.wiki.model.WikiModel;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Locale;
@@ -22,7 +21,14 @@ public class ScribuntoLuaEngineIntegrationTest {
         wikiModel.setUp();
     }
 
-    @Ignore @Test public void test_pt_verb_form_of() throws Exception {
-        assertThat(wikiModel.render(new PlainTextConverter(), "{{pt-verb-form-of|rapar}}").trim()).isEqualTo("Foo");
+    @Test public void test_pt_verb_form_of() throws Exception {
+        wikiModel.setPageName("rape");
+
+        assertThat(wikiModel.render(new PlainTextConverter(), "{{pt-verb-form-of|rapar}}").trim())
+                .isEqualTo("first-person singular (eu) present subjunctive of rapar\n" +
+                        "\n" +
+                        "third-person singular (ele and ela, also used with você and others) present subjunctive of rapar\n" +
+                        "third-person singular (você) affirmative imperative of rapar\n" +
+                        "third-person singular (você) negative imperative of rapar");
     }
 }

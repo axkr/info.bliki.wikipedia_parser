@@ -40,6 +40,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 
+import static org.luaj.vm2.LuaValue.error;
+
 /**
  * scribunto/engines/LuaCommon/LuaCommon.php
  */
@@ -78,7 +80,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         this.interfaces = new MwInterface[] {
             new MwSite(model),
             new MwUstring(),
-            new MwTitle(),
+            new MwTitle(model),
             new MwText(),
             new MwUri(),
             new MwMessage(),
@@ -366,7 +368,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
             } catch (ScribuntoException | IOException e) {
                 logger.error("error loading ", e);
             }
-            return LuaValue.error("Could not load " + name);
+            return error("Could not load " + name);
         }
     }
 
@@ -466,6 +468,17 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
             @Override public LuaValue call(LuaValue arg) {
                 // TODO: is this correct?
                 return arg.checktable().len();
+            }
+        });
+
+        // table.getn got removed in 5.2
+        table.set("getn", new OneArgFunction() {
+            @Override public LuaValue call(LuaValue arg) {
+                if (arg.isnil()) {
+                    return LuaValue.error("bad argument #1 to 'getn' (table expected, got nil)");
+                } else {
+                    return arg.checktable().len();
+                }
             }
         });
     }

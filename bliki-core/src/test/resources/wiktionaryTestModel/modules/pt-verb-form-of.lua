@@ -208,66 +208,63 @@ function export.show(frame)
     local args = frame:getParent().args
     w = mw.title.getCurrentTitle().text
     local l = args[1] -- lemma
-	local vf = args[2] or ""
-	local tg = args["tg"] or ""
-	local tg2 = args["tg2"] or tg or ""
-	local ig = args["ig"] or ""
-	local ig2 = args["ig2"] or ig or ""
-	local obj = args["obj"] or ""
-	local objtr = args["objtr"] or ""
-	local c = args["cx"] or ""
-	local imp = false
-	if (args["imp"]) then imp = true end
-	local data
-	local suf
-	local conj
-	local s = ""
+    local vf = args[2] or ""
+    local tg = args["tg"] or ""
+    local tg2 = args["tg2"] or tg or ""
+    local ig = args["ig"] or ""
+    local ig2 = args["ig2"] or ig or ""
+    local obj = args["obj"] or ""
+    local objtr = args["objtr"] or ""
+    local c = args["cx"] or ""
+    local imp = false
+    if (args["imp"]) then imp = true end
+    local data
+    local suf
+    local conj
+    local s = ""
 
-	if (mw.ustring.sub(l, -2) == "ar") then conj = "1"
-	elseif (mw.ustring.sub(l, -2) == "ir") then conj = "3"
-	else conj = 2 end
+    if (mw.ustring.sub(l, -2) == "ar") then conj = "1"
+    elseif (mw.ustring.sub(l, -2) == "ir") then conj = "3"
+    else conj = 2 end
 
-	if (args[2] == nil) then
-	    suf = get_suffix(l)
-	    --print(suf)
+    if (args[2] == nil) then
+        suf = get_suffix(l)
+        --print(suf)
     end
 
-    print("conj:"..conj)
+    if (args[3] == nil and args[2] ~= "g") then
+        suf = suf or args[2]
+        data = suffixes[suf .. conj]
 
-	if (args[3] == nil and args[2] ~= "g") then
-	    suf = suf or args[2]
+        local correct_tg, correct_ig
 
-	    data = suffixes[suf .. conj]
+        for c1 = 1, table.getn(data) do
+            if (data[c1][4] == 2) then
+                correct_tg = tg2
+                correct_ig = ig2
+            else
+                correct_tg = tg
+                correct_ig = ig
+            end
 
-	    local correct_tg, correct_ig
+            local context = c
+            if (c ~= "" and data[c1][5] ~= nil) then
+                context = context .. ", "
+            end
+            context = context .. (data[c1][5] or "")
 
-	    for c1 = 1, table.getn(data) do
-	        if (data[c1][4] == 2) then
-	            correct_tg = tg2
-	            correct_ig = ig2
-	        else
-	            correct_tg = tg
-	            correct_ig = ig
-	        end
+            if (c1 > 1) then s = s .. "\n# " end
+            s = s .. def(l, context, data[c1][1], data[c1][2], data[c1][3], correct_tg, correct_ig, imp, obj, objtr)
+        end
+    else
+        local p = args[3] or ""
+        local n = args[4]
 
-	        local context = c
-	        if (c ~= "" and data[c1][5] ~= nil) then
-	            context = context .. ", "
-	        end
-	        context = context .. (data[c1][5] or "")
+        s = s .. def(l, c, args[2], p, n, tg, ig, imp, obj, objtr)
 
-	        if (c1 > 1) then s = s .. "\n# " end
-	        s = s .. def(l, context, data[c1][1], data[c1][2], data[c1][3], correct_tg, correct_ig, imp, obj, objtr)
-	    end
-	else
-	    local p = args[3] or ""
-	    local n = args[4]
+    end
 
-	    s = s .. def(l, c, args[2], p, n, tg, ig, imp, obj, objtr)
-
-	end
-
-	return s;
+    return s;
 
 end
 
@@ -313,7 +310,7 @@ function pronoun_notes(vf, p, n)
             end
             s = s .. "]]''' and [[Appendix:Portuguese pronouns|others]]"
         else
-         if (n == "s") then
+            if (n == "s") then
                 s = s .. "você]]'''"
             else
                 s = s .. "vocês]]'''"
@@ -343,13 +340,10 @@ end
 
 -- Returns the word’s inflectional suffix.
 function get_suffix(l)
-    print("suffix:" .. l)
     local suf4 = mw.ustring.sub(l, -4)
     local suf3 = mw.ustring.sub(l, -3)
     local wsuf
 
-    print("suf4:" .. suf4)
-    print("suf3:" .. suf3)
 
     if (suf4 == "guer" or suf4 == "guir" or suf4 == "quer" or suf4 == "quir") then
         wsuf = mw.ustring.sub(w, mw.ustring.len(l) - mw.ustring.len(w) - 3)
@@ -360,7 +354,6 @@ function get_suffix(l)
         wsuf = mw.ustring.sub(w, mw.ustring.len(l) - mw.ustring.len(w) - 2)
         local fl = mw.ustring.sub(wsuf, 1, 1) -- first letter
         local ftl = mw.ustring.sub(wsuf, 1, 2) -- first two letters
-
 
         if (suf3 == "car" or suf3 == "gar") then
             if (mw.ustring.sub(wsuf, 1, 1) == "u") then

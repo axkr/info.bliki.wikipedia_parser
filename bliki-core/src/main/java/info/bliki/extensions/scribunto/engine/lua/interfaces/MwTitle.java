@@ -1,5 +1,6 @@
 package info.bliki.extensions.scribunto.engine.lua.interfaces;
 
+import info.bliki.wiki.model.IWikiModel;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.Varargs;
@@ -10,7 +11,15 @@ import org.luaj.vm2.lib.TwoArgFunction;
 import static info.bliki.wiki.namespaces.INamespace.NamespaceCode.MAIN_NAMESPACE_KEY;
 import static info.bliki.wiki.namespaces.INamespace.NamespaceCode.MEDIA_NAMESPACE_KEY;
 
+// TitleLibrary.php
 public class MwTitle implements MwInterface {
+    private final IWikiModel wikiModel;
+
+    public MwTitle(IWikiModel wikiModel) {
+        assert(wikiModel != null);
+        this.wikiModel = wikiModel;
+    }
+
     @Override
     public String name() {
         return "mw.title";
@@ -26,6 +35,14 @@ public class MwTitle implements MwInterface {
         table.set("fileExists", fileExists());
         table.set("protectionLevels", protectionLevels());
         table.set("cascadingProtection", cascadingProtection());
+        return table;
+    }
+
+    @Override
+    public LuaValue getSetupOptions() {
+        LuaTable table = new LuaTable();
+        table.set("thisTitle", title());
+        table.set("NS_MEDIA", MEDIA_NAMESPACE_KEY.code);
         return table;
     }
 
@@ -95,7 +112,6 @@ public class MwTitle implements MwInterface {
              */
             @Override
             public LuaValue call(LuaValue text_or_id, LuaValue defaultNamespace) {
-
                 return title(defaultNamespace,
                         text_or_id,
                         LuaValue.valueOf("fragment"),
@@ -127,18 +143,11 @@ public class MwTitle implements MwInterface {
         };
     }
 
-    @Override
-    public LuaValue getSetupOptions() {
-        LuaTable table = new LuaTable();
-        table.set("thisTitle", title());
-        table.set("NS_MEDIA", MEDIA_NAMESPACE_KEY.code);
-        return table;
-    }
 
     private LuaValue title() {
         return title(
             LuaValue.valueOf("default"),
-            LuaValue.valueOf("title"),
+            LuaValue.valueOf(wikiModel.getPageName()),
             LuaValue.valueOf("fragment"),
             LuaValue.valueOf("interwiki"));
     }
@@ -151,7 +160,7 @@ public class MwTitle implements MwInterface {
         table.set("interwiki", interwiki.isnil() ? LuaValue.EMPTYSTRING : interwiki);
         table.set("namespace", LuaValue.valueOf(MAIN_NAMESPACE_KEY.code));
         table.set("nsText", "");
-        table.set("text", "");
+        table.set("text", title);
         table.set("id", title);
         table.set("fragment", fragment.isnil() ? LuaValue.EMPTYSTRING : fragment);
         table.set("contentModel", "");
