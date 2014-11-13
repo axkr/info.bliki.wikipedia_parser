@@ -1,3 +1,0 @@
-<div style="float:right;margin-left:0.5em;">
-[[File:{{{image}}}|{{{size}}}|{{yesno|{{{border|}}}|yes=border}}|{{{title}}}|alt={{#if:{{{alt|}}}|{{{alt}}}|{{{title}}}}}|link=File:{{{image}}}]]
-</div>
