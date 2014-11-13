@@ -4,6 +4,7 @@ import info.bliki.wiki.filter.PlainTextConverter;
 import info.bliki.wiki.filter.WikiTestModel;
 import info.bliki.wiki.model.WikiModel;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Locale;
@@ -21,7 +22,7 @@ public class ScribuntoLuaEngineIntegrationTest {
         wikiModel.setUp();
     }
 
-    @Test public void test_pt_verb_form_of() throws Exception {
+    @Ignore @Test public void test_pt_verb_form_of() throws Exception {
         assertThat(wikiModel.render(new PlainTextConverter(), "{{pt-verb-form-of|rapar}}").trim()).isEqualTo("Foo");
     }
 }
