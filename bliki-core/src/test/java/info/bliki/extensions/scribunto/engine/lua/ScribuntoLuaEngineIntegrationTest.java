@@ -4,7 +4,6 @@ import info.bliki.annotations.IntegrationTest;
 import info.bliki.wiki.filter.PlainTextConverter;
 import info.bliki.wiki.filter.WikiTestModel;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
@@ -25,7 +24,7 @@ public class ScribuntoLuaEngineIntegrationTest {
         wikiModel.setDebug(false);
     }
 
-    @Ignore @Test public void test_pt_verb_form_of() throws Exception {
+    @Test public void test_pt_verb_form_of() throws Exception {
         wikiModel.setPageName("rape");
 
         assertThat(wikiModel.render(new PlainTextConverter(), "{{pt-verb-form-of|rapar}}").trim())

@@ -49,14 +49,20 @@ public class WikiTestModel extends WikiModel {
         if (result != null) {
             return result;
         }
+
         String name = encodeTitleToUrl(parsedPagename.pagename, true);
+
+        if (debug) {
+            logger.error("getRawWikiContent("+name+")");
+        }
+
         switch(parsedPagename.namespace.getCode()) {
             case TEMPLATE_NAMESPACE_KEY:
                 switch (name) {
                     case FOODATE: return "FOO" + System.currentTimeMillis();
-                    default     : return loadTemplateResource(name);
+                    default     : return loadTemplateResource(parsedPagename.pagename);
                 }
-            case MODULE_NAMESPACE_KEY:   return loadModuleResource(name);
+            case MODULE_NAMESPACE_KEY:   return loadModuleResource(parsedPagename.pagename);
             case MAIN_NAMESPACE_KEY:
                 switch (name) {
                     case "Include_Page": return "an include page";
