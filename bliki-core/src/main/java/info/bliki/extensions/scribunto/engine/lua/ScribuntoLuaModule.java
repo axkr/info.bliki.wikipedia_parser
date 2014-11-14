@@ -12,6 +12,7 @@ import org.luaj.vm2.Prototype;
 import java.io.StringReader;
 
 public class ScribuntoLuaModule extends ScribuntoModuleBase {
+    private static final int SLOW_MODULE_THRESHOLD = 500;
     private Prototype initChunk;
 
     public ScribuntoLuaModule(ScribuntoEngine engine, String code, String chunkName) {
@@ -32,8 +33,8 @@ public class ScribuntoLuaModule extends ScribuntoModuleBase {
         final long execStart = System.currentTimeMillis();
         final String result = getEngine().executeFunctionChunk(function, frame);
         final long execDuration = System.currentTimeMillis() - execStart;
+        logExecution(functionName, execDuration);
 
-        logger.warn("execDuration("+toString()+" "+functionName+"):"+execDuration+ " ms");
         return result;
     }
 
@@ -69,5 +70,14 @@ public class ScribuntoLuaModule extends ScribuntoModuleBase {
             initChunk = getEngine().load(new StringReader(getCode()), getChunkName());
         }
         return initChunk;
+    }
+
+    private void logExecution(String functionName, long execDuration) {
+        final String message = String.format("execDuration(%s %s):%d ms", toString(), functionName, execDuration);
+        if (execDuration > SLOW_MODULE_THRESHOLD) {
+            logger.warn(message);
+        } else {
+            logger.debug(message);
+        }
     }
 }

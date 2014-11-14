@@ -45,17 +45,14 @@ public class WikiTestModel extends WikiModel {
     }
 
     @Override public String getRawWikiContent(ParsedPageName page, Map<String, String> map) throws WikiModelContentException {
+        if (debug) {
+            logger.error("getRawWikiContent("+page+")");
+        }
         String result = super.getRawWikiContent(page, map);
         if (result != null) {
             return result;
         }
-
-        String name = encodeTitleToUrl(page.pagename, false);
-
-        if (debug) {
-            logger.error("getRawWikiContent("+page+")");
-        }
-
+        final String name = encodeTitleToUrl(page.pagename, false);
         switch(page.namespace.getCode()) {
             case TEMPLATE_NAMESPACE_KEY:
                 switch (name) {
@@ -68,7 +65,6 @@ public class WikiTestModel extends WikiModel {
                     case "Include_Page": return "an include page";
                     case "FOO":          return MAIN_FOO;
                 }
-
             default: {
                 logger.error("resource not found:"+page);
                 return null;
