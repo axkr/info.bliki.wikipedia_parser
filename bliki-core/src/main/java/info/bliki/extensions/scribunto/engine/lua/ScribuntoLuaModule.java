@@ -73,11 +73,14 @@ public class ScribuntoLuaModule extends ScribuntoModuleBase {
     }
 
     private void logExecution(String functionName, long execDuration) {
-        final String message = String.format("execDuration(%s %s):%d ms", toString(), functionName, execDuration);
-        if (execDuration > SLOW_MODULE_THRESHOLD) {
-            logger.warn(message);
-        } else {
-            logger.debug(message);
+        final boolean slowExecution = execDuration > SLOW_MODULE_THRESHOLD;
+        if (slowExecution || logger.isDebugEnabled()) {
+            final String message = String.format("execDuration(%s %s):%d ms", toString(), functionName, execDuration);
+            if (slowExecution) {
+                logger.warn(message);
+            } else {
+                logger.debug(message);
+            }
         }
     }
 }
