@@ -1,0 +1,37 @@
+<includeonly>{{#ifexist:Template:pt-verb/{{{list|}}}|<div style="text-align: left">'''Notes''':<sup class="plainlinks"><nowiki>[</nowiki>[{{fullurl:Template:pt-verb/{{{list|}}}|action=edit}} edit]<nowiki>]</nowiki></sup></div><div style="white-space: normal; text-align: left">
+*This is {{#if:{{pt-verb/{{{list|}}}|label=OPTION|attribute=irregular}}|an irregular|a regular}} {{#if:{{pt-verb/{{{list|}}}|label=OPTION|attribute=abundant}}|abundant}} {{#if:{{pt-verb/{{{list|}}}|label=OPTION|attribute=defective}}|defective}} verb of the '''-{{pt-verb/{{{list|}}}|label=OPTION|attribute=suffix}}''' group.
+*{{pt-verb/{{{list|}}}|label=OPTION|attribute=comment1}}
+*{{pt-verb/{{{list|}}}|label=OPTION|attribute=comment2}}
+{{#if:{{pt-verb/{{{list|}}}|label=OPTION|attribute=example1}}|<!--
+-->*Verbs with this conjugation include: <!--
+   -->{{term|{{pt-verb/{{{list|}}}|label=OPTION|attribute=example1}}|lang=pt}}<!--
+   -->{{#if:{{pt-verb/{{{list|}}}|label=OPTION|attribute=example2}}<!--
+      -->|, {{term|{{pt-verb/{{{list|}}}|label=OPTION|attribute=example2}}|lang=pt}}<!--
+   -->{{#if:{{pt-verb/{{{list|}}}|label=OPTION|attribute=example3}}<!--
+      -->|, {{term|{{pt-verb/{{{list|}}}|label=OPTION|attribute=example3}}|lang=pt}}<!--
+   -->{{#if:{{pt-verb/{{{list|}}}|label=OPTION|attribute=example4}}<!--
+      -->|, {{term|{{pt-verb/{{{list|}}}|label=OPTION|attribute=example4}}|lang=pt}}<!--
+   -->{{#if:{{pt-verb/{{{list|}}}|label=OPTION|attribute=example5}}<!--
+      -->|, {{term|{{pt-verb/{{{list|}}}|label=OPTION|attribute=example5}}|lang=pt}}<!--
+   -->{{#if:{{pt-verb/{{{list|}}}|label=OPTION|attribute=example6}}<!--
+      -->|, {{term|{{pt-verb/{{{list|}}}|label=OPTION|attribute=example6}}|lang=pt}}<!--
+   -->{{#if:{{pt-verb/{{{list|}}}|label=OPTION|attribute=example7}}<!--
+      -->|, {{term|{{pt-verb/{{{list|}}}|label=OPTION|attribute=example7}}|lang=pt}}<!--
+   -->{{#if:{{pt-verb/{{{list|}}}|label=OPTION|attribute=example8}}<!--
+      -->|, {{term|{{pt-verb/{{{list|}}}|label=OPTION|attribute=example8}}|lang=pt}}<!--
+   -->{{#if:{{pt-verb/{{{list|}}}|label=OPTION|attribute=example9}}<!--
+      -->|, {{term|{{pt-verb/{{{list|}}}|label=OPTION|attribute=example9}}|lang=pt}}<!--
+   -->{{#if:{{pt-verb/{{{list|}}}|label=OPTION|attribute=example10}}<!--
+      -->|, {{term|{{pt-verb/{{{list|}}}|label=OPTION|attribute=example10}}|lang=pt}}<!--
+   -->{{#if:{{pt-verb/{{{list|}}}|label=OPTION|attribute=example11}}<!--
+      -->|, {{term|{{pt-verb/{{{list|}}}|label=OPTION|attribute=example11}}|lang=pt}}<!--
+   -->{{#if:{{pt-verb/{{{list|}}}|label=OPTION|attribute=example12}}<!--
+      -->|, {{term|{{pt-verb/{{{list|}}}|label=OPTION|attribute=example12}}|lang=pt}}<!--
+   -->{{#if:{{pt-verb/{{{list|}}}|label=OPTION|attribute=example13}}<!--
+      -->|, {{term|{{pt-verb/{{{list|}}}|label=OPTION|attribute=example13}}|lang=pt}}<!--
+   -->{{#if:{{pt-verb/{{{list|}}}|label=OPTION|attribute=example14}}<!--
+      -->|, {{term|{{pt-verb/{{{list|}}}|label=OPTION|attribute=example14}}|lang=pt}}<!--
+   -->{{#if:{{pt-verb/{{{list|}}}|label=OPTION|attribute=example15}}<!--
+      -->|, {{term|{{pt-verb/{{{list|}}}|label=OPTION|attribute=example15}}|lang=pt}}<!--
+   -->}}}}}}}}}}}}}}}}}}}}}}}}}}}}.}}</div>
+}}</includeonly>

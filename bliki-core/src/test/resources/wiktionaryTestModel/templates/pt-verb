@@ -1,0 +1,27 @@
+<includeonly><!--
+
+-->{{#ifexist:Template:pt-verb/{{{2|}}}<!--
+
+-->|<!--
+
+   -->{{head|pt|verb|head={{{head|{{pt-verb/generate|root={{{1|}}}|suffix={{pt-verb/{{{2|}}}|label=infn|attribute=form1}}|compound={{{3|}}}}}}}}}} <!--
+
+   -->(<!--
+   -->{{pt-verb/formsList|{{pt-verb/generate|root={{{1|}}}|suffix={{pt-verb/{{{2|}}}|label=indi_pres_sing_1st|attribute=form1}}|compound={{{3|}}}}}|''first-person singular present indicative''|{{pt-verb/generate|root={{{1|}}}|suffix={{pt-verb/{{{2|}}}|label=part_past_sing_masc|attribute=form1}}|compound={{{3|}}}}}| ''past participle''|{{pt-verb/generate|root={{{1|}}}|suffix={{pt-verb/{{{2|}}}|label=short_part_past_sing_masc|attribute=form1}}|compound={{{3|}}}}}|''short past participle''|{{pt-verb/generate|root={{{1|}}}|suffix={{pt-verb/{{{2|}}}|label=long_part_past_sing_masc|attribute=form1}}|compound={{{3|}}}}}|''long past participle''}}<!--
+   -->)<!--
+
+   -->{{#ifeq:{{NAMESPACE}}||<!--
+      -->{{#if:{{pt-verb/{{{2|}}}|label=OPTION|attribute=abundant}}|{{catlangname|pt|abundant verbs}}}}<!--
+      -->{{#if:{{pt-verb/{{{2|}}}|label=OPTION|attribute=defective}}|{{catlangname|pt|defective verbs}}}}<!--
+      -->{{#if:{{pt-verb/{{{2|}}}|label=OPTION|attribute=irregular}}|{{catlangname|pt|irregular verbs}}}}<!--
+   -->}}<!--
+
+-->|<!--
+
+   -->{{head|pt|verb|cat2=verbs needing inflection}}<!--
+
+-->}}<!--
+
+--></includeonly><!--
+
+--><noinclude>{{documentation}}[[Category:Portuguese headword-line templates|verb]]</noinclude>

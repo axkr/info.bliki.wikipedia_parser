@@ -1,0 +1,27 @@
+<includeonly><!--
+
+-->{{#if:{{pt-verb/{{{list|}}}|attribute=form1|label={{{label|}}}|root={{{root|}}}}} {{{compound|}}}|{{pt-conj/doWork/add/link|{{{root|}}}{{pt-verb/{{{list|}}}|attribute=form1|label={{{label|}}}}} {{{compound|}}}}}|-}}<!--
+
+-->{{#if:{{pt-verb/{{{list|}}}|attribute=form2|label={{{label|}}}}}|<!--
+--><br>{{pt-conj/doWork/add/link|{{{root|}}}{{pt-verb/{{{list|}}}|attribute=form2|label={{{label|}}}}} {{{compound|}}}}}<!--
+-->}}<!--
+
+-->{{#if:{{pt-verb/{{{list|}}}|attribute=defective1|label={{{label|}}}}}|<br><small>'''Normally defective''':</small><br><!--
+-->''{{pt-conj/doWork/add/link|{{{root|}}}{{pt-verb/{{{list|}}}|attribute=defective1|label={{{label|}}}}} {{{compound|}}}}}''<!--
+-->}}<!--
+
+-->{{#if:{{pt-verb/{{{list|}}}|attribute=obsolete1|label={{{label|}}}}}|<br><small>'''Obsolete''':</small><br><!--
+-->''{{pt-conj/doWork/add/link|{{{root|}}}{{pt-verb/{{{list|}}}|attribute=obsolete1|label={{{label|}}}}} {{{compound|}}}}}''<!--
+
+-->{{#if:{{pt-verb/{{{list|}}}|attribute=obsolete2|label={{{label|}}}}}|<!--
+--><br>''{{pt-conj/doWork/add/link|{{{root|}}}{{pt-verb/{{{list|}}}|attribute=obsolete2|label={{{label|}}}}} {{{compound|}}}}}''<!--
+-->}}<!--
+
+
+-->}}<!--
+
+-->{{#if:{{pt-verb/{{{list|}}}|attribute=informal1|label={{{label|}}}}}|<br><small>'''Informal''':</small><br><!--
+-->''{{pt-conj/doWork/add/link|{{{root|}}}{{pt-verb/{{{list|}}}|attribute=informal1|label={{{label|}}}}} {{{compound|}}}}}''<!--
+-->}}<!--
+
+--></includeonly>

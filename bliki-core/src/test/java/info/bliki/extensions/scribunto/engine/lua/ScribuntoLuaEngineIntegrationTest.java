@@ -39,4 +39,10 @@ public class ScribuntoLuaEngineIntegrationTest {
         assertThat(wikiModel.render(new PlainTextConverter(), "{{contraction of|[[de]] [[o]]||[[of]] [[the]]|lang=pt}}").trim())
                 .isEqualTo("contraction of de o (“of the”).");
     }
+
+    @Test public void test_pt_verb() throws Exception {
+        assertThat(wikiModel.render(new PlainTextConverter(), "{{pt-verb|cant|ar}}").trim())
+                .isEqualTo("cantar (first-person singular present indicative canto, past participle cantado)");
+    }
+
 }

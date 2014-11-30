@@ -1,0 +1,17 @@
+<includeonly><!--
+
+-->{{pt-conj/doWork<!--
+-->|root={{{1|}}}<!--
+-->|list={{{2}}}<!--
+-->|compound={{{3|}}}<!--
+-->|compoundpl={{{4|}}}<!--
+-->|ppgender={{{ppgender|}}}<!--
+-->|ppnumber={{{ppnumber|}}}<!--
+-->}}<!--
+
+-->{{#if:{{{ppgender|}}}|{{attention|pt|ppgender parameter specified in pt-conj|id=ptconjppgender}}}}<!--
+-->{{#if:{{{ppnumber|}}}|{{attention|pt|ppnumber parameter specified in pt-conj|id=ptconjppnumber}}}}<!--
+
+--></includeonly><!--
+
+--><noinclude>{{documentation}}</noinclude>

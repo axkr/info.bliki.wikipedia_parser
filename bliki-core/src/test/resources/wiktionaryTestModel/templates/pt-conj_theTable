@@ -1,0 +1,142 @@
+<div class="NavFrame" style="clear:both; white-space: nowrap">
+<div class="NavHead">{{{1}}}</div>
+<div class="NavContent">
+{| style="border: 1px solid #999999; background:#F6F6F6; text-align: left;" cellpadding="3" cellspacing="0"
+|-
+| style="border: 1px solid #999999;" colspan="7" | {{{2}}}
+|-
+! style="border: 1px solid #999999; background:#B0B0B0" rowspan="2" |
+! style="border: 1px solid #999999; background:#D0D0D0" colspan="3" | Singular
+! style="border: 1px solid #999999; background:#D0D0D0" colspan="3" | Plural
+|-
+! style="border: 1px solid #999999; background:#D0D0D0; width:12.5%" | First-person<br>({{m|pt|eu}})
+! style="border: 1px solid #999999; background:#D0D0D0; width:12.5%" | Second-person<br>({{m|pt|tu}})
+! style="border: 1px solid #999999; background:#D0D0D0; width:12.5%" | Third-person<br>({{m|pt|ele}}/{{m|pt|ela}}/{{m|pt|você}})
+! style="border: 1px solid #999999; background:#D0D0D0; width:12.5%" | First-person<br>({{m|pt|nós}})
+! style="border: 1px solid #999999; background:#D0D0D0; width:12.5%" | Second-person<br>({{m|pt|vós}})
+! style="border: 1px solid #999999; background:#D0D0D0; width:12.5%" | Third-person<br>({{m|pt|eles}}/{{m|pt|elas}}/{{m|pt|vocês}})
+|-
+! style="border: 1px solid #999999; background:#c498ff" colspan="7" | ''Infinitive''
+|-
+! style="border: 1px solid #999999; background:#a478df" | '''Impersonal'''
+| style="border: 1px solid #999999; vertical-align: top;" colspan="6" | {{{3}}}
+|-
+! style="border: 1px solid #999999; background:#a478df" | '''Personal'''
+| style="border: 1px solid #999999; vertical-align: top;" | {{{4}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{5}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{6}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{7}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{8}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{9}}}
+|-
+! style="border: 1px solid #999999; background:#98ffc4" colspan="7" | ''Gerund''
+|-
+| style="border: 1px solid #999999; background:#78dfa4" |
+| style="border: 1px solid #999999; vertical-align: top;" colspan="6" | {{{10}}}
+|-
+! style="border: 1px solid #999999; background:#ffc498" colspan="7" | ''Past participle''
+|-
+! style="border: 1px solid #999999; background:#dfa478" | Masculine
+| style="border: 1px solid #999999; vertical-align: top;" colspan="3" | {{{11}}}
+| style="border: 1px solid #999999; vertical-align: top;" colspan="3" | {{{12}}}
+|-
+! style="border: 1px solid #999999; background:#dfa478" | Feminine
+| style="border: 1px solid #999999; vertical-align: top;" colspan="3" | {{{13}}}
+| style="border: 1px solid #999999; vertical-align: top;" colspan="3" | {{{14}}}
+|-
+! style="border: 1px solid #999999; background:#d0dff4" colspan="7" | ''Indicative''
+|-
+! style="border: 1px solid #999999; background:#b0bfd4" | Present
+| style="border: 1px solid #999999; vertical-align: top;" | {{{15}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{16}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{17}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{18}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{19}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{20}}}
+|-
+! style="border: 1px solid #999999; background:#b0bfd4" | Imperfect
+| style="border: 1px solid #999999; vertical-align: top;" | {{{21}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{22}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{23}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{24}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{25}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{26}}}
+|-
+! style="border: 1px solid #999999; background:#b0bfd4" | Preterite
+| style="border: 1px solid #999999; vertical-align: top;" | {{{27}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{28}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{29}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{30}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{31}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{32}}}
+|-
+! style="border: 1px solid #999999; background:#b0bfd4" | Pluperfect
+| style="border: 1px solid #999999; vertical-align: top;" | {{{33}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{34}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{35}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{36}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{37}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{38}}}
+|-
+! style="border: 1px solid #999999; background:#b0bfd4" | Future
+| style="border: 1px solid #999999; vertical-align: top;" | {{{39}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{40}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{41}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{42}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{43}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{44}}}
+|-
+! style="border: 1px solid #999999; background:#b0bfd4" | Conditional
+| style="border: 1px solid #999999; vertical-align: top;" | {{{45}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{46}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{47}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{48}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{49}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{50}}}
+|-
+! style="border: 1px solid #999999; background:#d0f4d0" colspan="7" | ''Subjunctive''
+|-
+! style="border: 1px solid #999999; background:#b0d4b0" | Present
+| style="border: 1px solid #999999; vertical-align: top;" | {{{51}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{52}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{53}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{54}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{55}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{56}}}
+|-
+! style="border: 1px solid #999999; background:#b0d4b0" | Imperfect
+| style="border: 1px solid #999999; vertical-align: top;" | {{{57}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{58}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{59}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{60}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{61}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{62}}}
+|-
+! style="border: 1px solid #999999; background:#b0d4b0" | Future
+| style="border: 1px solid #999999; vertical-align: top;" | {{{63}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{64}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{65}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{66}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{67}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{68}}}
+|-
+! style="border: 1px solid #999999; background:#f4e4d0" colspan="7" | ''Imperative''
+|-
+! style="border: 1px solid #999999; background:#d4c4b0" | Affirmative
+| style="border: 1px solid #999999; vertical-align: top;" | {{{69}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{70}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{71}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{72}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{73}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{74}}}
+|-
+! style="border: 1px solid #999999; background:#d4c4b0" | Negative ({{m|pt|não}})
+| style="border: 1px solid #999999; vertical-align: top;" | {{{75}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{76}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{77}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{78}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{79}}}
+| style="border: 1px solid #999999; vertical-align: top;" | {{{80}}}
+|}</div></div><!--
+
+--><noinclude>{{documentation}}
