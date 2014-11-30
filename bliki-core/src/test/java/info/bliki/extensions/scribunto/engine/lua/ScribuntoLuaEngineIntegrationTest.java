@@ -1,12 +1,14 @@
 package info.bliki.extensions.scribunto.engine.lua;
 
 import info.bliki.annotations.IntegrationTest;
+import info.bliki.wiki.filter.HTMLConverter;
 import info.bliki.wiki.filter.PlainTextConverter;
 import info.bliki.wiki.filter.WikiTestModel;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
+import java.io.File;
 import java.util.Locale;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -43,6 +45,11 @@ public class ScribuntoLuaEngineIntegrationTest {
     @Test public void test_pt_verb() throws Exception {
         assertThat(wikiModel.render(new PlainTextConverter(), "{{pt-verb|cant|ar}}").trim())
                 .isEqualTo("cantar (first-person singular present indicative canto, past participle cantado)");
+    }
+
+    @Test public void test_pt_conj() throws Exception {
+        assertThat(wikiModel.render(new HTMLConverter(), "{{pt-conj|cant|ar}}").trim())
+                .isXmlEqualToContentOf(new File(getClass().getResource("/expected/pt-conj-cantar.html").getFile()));
     }
 
 }
