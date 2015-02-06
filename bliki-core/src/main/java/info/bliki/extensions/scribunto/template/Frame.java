@@ -3,6 +3,7 @@ package info.bliki.extensions.scribunto.template;
 import info.bliki.wiki.filter.ParsedPageName;
 import org.luaj.vm2.LuaValue;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Frame {
@@ -26,6 +27,10 @@ public class Frame {
         } else {
             return LuaValue.NIL;
         }
+    }
+
+    public Map<String, String> getTemplateParameters() {
+        return new HashMap<>(templateParameters);
     }
 
     public LuaValue getAllArguments() {

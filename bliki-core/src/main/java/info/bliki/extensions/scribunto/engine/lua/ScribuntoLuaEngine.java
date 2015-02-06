@@ -39,6 +39,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.io.StringWriter;
+import java.util.Map;
 
 import static org.luaj.vm2.LuaValue.error;
 
@@ -284,7 +286,25 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         return new ThreeArgFunction() {
             @Override
             public LuaValue call(LuaValue frameId, LuaValue title, LuaValue args) {
-                throw new UnsupportedOperationException("no implemented");
+                final Frame frame = getFrameById(frameId);
+                final Map<String, String> parameterMap = frame.getTemplateParameters();
+                final LuaTable table = args.checktable();
+                LuaValue key = LuaValue.NIL;
+                while (true) {
+                    Varargs next = table.next(key);
+                    if ((key = next.arg1()).isnil())
+                        break;
+
+                    LuaValue value = next.arg(2);
+                    parameterMap.put(key.checkjstring(), value.checkjstring());
+                }
+                StringWriter writer = new StringWriter();
+                try {
+                    model.substituteTemplateCall(title.tojstring(), parameterMap, writer);
+                    return LuaValue.valueOf(writer.toString());
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         };
     }
