@@ -22,18 +22,16 @@ public class PDFCreatorExample {
         User user = new User("", "", "http://en.wikipedia.org/w/api.php");
         user.login();
         WikiDB db = null;
-        String mainDirectory = "c:/temp/";
-        // the following subdirectory should not exist if you would like to create a
-        // new database
-        String databaseSubdirectory = "WikiDB";
-        // the following directory must exist for image downloads
-        String imageDirectory = "c:/temp/WikiImages";
+        File mainDirectory = new File(System.getProperty("java.io.tmpdir"));
+        File imageDirectory = new File(mainDirectory, "WikiImages");
+        imageDirectory.mkdirs();
+
         try {
-            db = new WikiDB(new File(mainDirectory, databaseSubdirectory));
-            APIWikiModel myWikiModel = new APIWikiModel(user, db, "${image}", "file:///c:/temp/${title}", imageDirectory);
+            db = new WikiDB(new File(mainDirectory,  "WikiDB"));
+            APIWikiModel myWikiModel = new APIWikiModel(user, db, "${image}", mainDirectory.toURI().toURL().toExternalForm() +"/${title}", imageDirectory.getAbsolutePath());
             DocumentCreator creator = new DocumentCreator(myWikiModel, user, listOfTitleStrings);
 
-            creator.renderPDFToFile(mainDirectory, titleURL + ".pdf", HTMLConstants.CSS_MAIN_STYLE);
+            creator.renderPDFToFile(mainDirectory.getAbsolutePath(), titleURL + ".pdf", HTMLConstants.CSS_MAIN_STYLE);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

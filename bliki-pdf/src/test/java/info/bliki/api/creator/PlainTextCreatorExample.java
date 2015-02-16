@@ -22,12 +22,10 @@ public class PlainTextCreatorExample {
         String titleURL = Encoder.encodeTitleLocalUrl(title);
         User user = new User("", "", "http://en.wikipedia.org/w/api.php");
         user.login();
-        String mainDirectory = "c:/temp/";
+        String mainDirectory = System.getProperty("java.io.tmpdir");
         // the following subdirectory should not exist if you would like to create a
         // new database
         String databaseSubdirectory = "WikiDB";
-        // the following directory must exist for image downloads
-        // String imageDirectory = "c:/temp/WikiImages";
         // the generated TXT will be stored in this file name:
          String generatedTXTFilename = mainDirectory + titleURL + ".txt";
 

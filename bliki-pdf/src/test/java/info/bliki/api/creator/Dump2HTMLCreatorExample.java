@@ -91,18 +91,12 @@ public class Dump2HTMLCreatorExample {
         }
     }
 
-    public static WikiDB prepareDB(String mainDirectory) {
+    public static WikiDB prepareDB(File mainDirectory) {
         // the following subdirectory should not exist if you would like to create a
         // new database
-        if (mainDirectory.charAt(mainDirectory.length() - 1) != '/') {
-            mainDirectory = mainDirectory + "/";
-        }
-        String databaseSubdirectory = "WikiDumpDB";
-
         WikiDB db;
-
         try {
-            db = new WikiDB(new File(mainDirectory, databaseSubdirectory));
+            db = new WikiDB(new File(mainDirectory, "WikiDumpDB"));
             return db;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -129,11 +123,12 @@ public class Dump2HTMLCreatorExample {
         WikiDB db = null;
 
         try {
-            String mainDirectory = "c:/temp";
-            String htmlDirectory = "c:/temp/dump/";
+            File mainDirectory = new File(System.getProperty("java.io.tmpdir"));
+            File htmlDirectory = new File(mainDirectory, "dump");
 
             // the following directory must exist for image references
-            String imageDirectory = "c:/temp/dump/WikiDumpImages";
+            File imageDirectory = new File(htmlDirectory, "WikiDumpImages");
+
             System.out.println("Prepare wiki database");
             db = prepareDB(mainDirectory);
             IArticleFilter handler;
@@ -146,7 +141,7 @@ public class Dump2HTMLCreatorExample {
                 System.out.println(' ');
             }
             System.out.println("Second pass - write HTML files to directory:");
-            handler = new DemoArticleFilter(db, htmlDirectory, imageDirectory);
+            handler = new DemoArticleFilter(db, htmlDirectory.getAbsolutePath(), imageDirectory.getAbsolutePath());
             wxp = new WikiXMLParser(bz2Filename, handler);
             wxp.parse();
             System.out.println(' ');
