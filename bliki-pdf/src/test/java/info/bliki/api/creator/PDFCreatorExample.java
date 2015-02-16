@@ -11,11 +11,6 @@ import java.io.File;
  *
  */
 public class PDFCreatorExample {
-
-    public PDFCreatorExample() {
-        super();
-    }
-
     private static void testWikipediaENAPI(String title) {
         String[] listOfTitleStrings = { title };
         String titleURL = Encoder.encodeTitleLocalUrl(title);
