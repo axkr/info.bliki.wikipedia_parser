@@ -3,7 +3,6 @@ package info.bliki.wiki.namespaces;
 import info.bliki.Messages;
 import info.bliki.wiki.filter.Encoder;
 
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -196,8 +195,7 @@ public class Namespace implements INamespace {
         } else if (numberCode >= 828 && numberCode <= 829) {
             return numberCode - 828 + 20;
         } else {
-            throw new InvalidParameterException("unknown number code: "
-                    + numberCode);
+            throw new IllegalArgumentException("unknown number code: " + numberCode);
         }
     }
 
@@ -218,8 +216,7 @@ public class Namespace implements INamespace {
         } else if (numberCode >= 20 && numberCode <= 21) {
             return numberCode + 828 - 20;
         } else {
-            throw new InvalidParameterException("unknown number code: "
-                    + numberCode);
+            throw new IllegalArgumentException("unknown number code: " + numberCode);
         }
     }
 
