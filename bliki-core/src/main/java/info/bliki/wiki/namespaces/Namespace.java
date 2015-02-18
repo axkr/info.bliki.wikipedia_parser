@@ -187,9 +187,7 @@ public class Namespace implements INamespace {
      * Converts an (external) namespace number code to the position in the
      * {@link #INT_TO_NAMESPACE} array.
      *
-     * @param numberCode
-     *            a code like {@link INamespace#MEDIA_NAMESPACE_KEY}
-     *
+     * @param numberCode a code like {@link INamespace.NamespaceCode#MEDIA_NAMESPACE_KEY}
      * @return an array index
      */
     protected static int numberCodeToInt(int numberCode) {
@@ -203,7 +201,6 @@ public class Namespace implements INamespace {
             return numberCode - 828 + 22;
         } else if (numberCode >= 2600) {
             return numberCode - 2600 + 24;
-
         } else {
             throw new IllegalArgumentException("unknown number code: " + numberCode);
         }

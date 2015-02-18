@@ -46,9 +46,9 @@ public class NamespaceTest {
     @Test public void testEnsureContentSpacesNotNull() {
         Namespace namespaceObj = new Namespace();
         for (NamespaceCode nsCode : NamespaceCode.values()) {
-            NamespaceValue namespace = namespaceObj.getNamespaceByNumber(nsCode.code);
-            if (!namespace.getPrimaryText().equals("Topic")) {
-                assertThat(namespace.getContentspace()).isNotNull();
+            NamespaceValue ns = namespaceObj.getNamespaceByNumber(nsCode.code);
+            if (!ns.getCanonicalName().equals(namespace.TOPIC.getCanonicalName())) {
+                assertThat(ns.getContentspace()).isNotNull();
             }
         }
     }
