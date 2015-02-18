@@ -33,7 +33,7 @@ public class Namespace implements INamespace {
      * @see Namespace#numberCodeToInt(int)
      * @see Namespace#intToNumberCode(int)
      */
-    protected final NamespaceValue[] INT_TO_NAMESPACE = new NamespaceValue[22];
+    protected final NamespaceValue[] INT_TO_NAMESPACE = new NamespaceValue[25];
 
     /**
      * The "Media" namespace for the current language.
@@ -126,6 +126,11 @@ public class Namespace implements INamespace {
      */
     public final NamespaceValue PORTAL = new NamespaceValue(PORTAL_NAMESPACE_KEY, PORTAL_TALK, "Portal");
 
+    public final NamespaceValue BOOK_TALK = new NamespaceValue(BOOK_TALK_NAMESPACE_KEY, "Book_talk");
+    public final NamespaceValue BOOK = new NamespaceValue(BOOK_NAMESPACE_KEY, BOOK_TALK, "Book");
+
+    public final NamespaceValue TOPIC = new NamespaceValue(TOPIC_NAMESPACE_KEY, "Topic");
+
     protected ResourceBundle fResourceBundle, fResourceBundleEn;
 
     public Namespace() {
@@ -192,8 +197,13 @@ public class Namespace implements INamespace {
             return numberCode + 2;
         } else if (numberCode >= 100 && numberCode <= 101) {
             return numberCode - 100 + 18;
+        } else if (numberCode >= 108 && numberCode <= 109) {
+            return numberCode - 108 + 20;
         } else if (numberCode >= 828 && numberCode <= 829) {
-            return numberCode - 828 + 20;
+            return numberCode - 828 + 22;
+        } else if (numberCode >= 2600) {
+            return numberCode - 2600 + 24;
+
         } else {
             throw new IllegalArgumentException("unknown number code: " + numberCode);
         }
@@ -214,7 +224,11 @@ public class Namespace implements INamespace {
         } else if (numberCode >= 18 && numberCode <= 19) {
             return numberCode + 100 - 18;
         } else if (numberCode >= 20 && numberCode <= 21) {
-            return numberCode + 828 - 20;
+            return numberCode + 108 - 20;
+        } else if (numberCode >= 22 && numberCode <= 23) {
+            return numberCode + 828 - 22;
+        } else if (numberCode >= 24) {
+            return numberCode + 2600 - 24;
         } else {
             throw new IllegalArgumentException("unknown number code: " + numberCode);
         }

@@ -47,8 +47,9 @@ public class NamespaceTest {
         Namespace namespaceObj = new Namespace();
         for (NamespaceCode nsCode : NamespaceCode.values()) {
             NamespaceValue namespace = namespaceObj.getNamespaceByNumber(nsCode.code);
-
-            assertThat(namespace.getContentspace()).isNotNull();
+            if (!namespace.getPrimaryText().equals("Topic")) {
+                assertThat(namespace.getContentspace()).isNotNull();
+            }
         }
     }
 
@@ -89,6 +90,16 @@ public class NamespaceTest {
         assertThat(namespace.getNamespace("Module")).isEqualTo(namespace.MODULE);
         assertThat(namespace.getContentspace("Module_talk")).isEqualTo(namespace.MODULE);
         assertThat(namespace.getNamespace("Module_talk")).isEqualTo(namespace.MODULE_TALK);
+    }
+
+    @Test public void testBookNamespace() {
+        assertThat(namespace.getNamespace("Book")).isEqualTo(namespace.BOOK);
+        assertThat(namespace.getContentspace("Book_talk")).isEqualTo(namespace.BOOK);
+        assertThat(namespace.getNamespace("Book_talk")).isEqualTo(namespace.BOOK_TALK);
+    }
+
+    @Test public void testTopicNamespace() {
+        assertThat(namespace.getNamespace("Topic")).isEqualTo(namespace.TOPIC);
     }
 
     @Test public void testCanonicalNamespace() throws Exception {

@@ -117,11 +117,19 @@ public interface INamespace {
          */
         PORTAL_TALK_NAMESPACE_KEY(101),
 
+        BOOK_NAMESPACE_KEY(108),
+        BOOK_TALK_NAMESPACE_KEY(109),
+
         /**
          * Scribunto
          */
         MODULE_NAMESPACE_KEY(828),      // NS_MODULE
-        MODULE_TALK_NAMESPACE_KEY(829); // NS_MODULE_TALK
+        MODULE_TALK_NAMESPACE_KEY(829), // NS_MODULE_TALK
+
+        /**
+         * TOPIC
+         */
+        TOPIC_NAMESPACE_KEY(2600);
 
         /**
          * The integer number code of this namespace.
