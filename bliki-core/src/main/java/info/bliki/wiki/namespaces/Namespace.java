@@ -36,15 +36,15 @@ public class Namespace implements INamespace {
     protected final NamespaceValue[] INT_TO_NAMESPACE = new NamespaceValue[22];
 
     /**
-     * The &quot;Media&quot; namespace for the current language.
+     * The "Media" namespace for the current language.
      */
     public final NamespaceValue MEDIA = new NamespaceValue(MEDIA_NAMESPACE_KEY, (NamespaceValue) null, "Media");
     /**
-     * The &quot;Special&quot; namespace for the current language.
+     * The "Special" namespace for the current language.
      */
     public final NamespaceValue SPECIAL = new NamespaceValue(SPECIAL_NAMESPACE_KEY, (NamespaceValue) null, "Special");
     /**
-     * The &quot;Talk&quot; namespace for the current language.
+     * The "Talk" namespace for the current language.
      */
     public final NamespaceValue TALK = new NamespaceValue(TALK_NAMESPACE_KEY, "Talk");
     /**
@@ -52,19 +52,19 @@ public class Namespace implements INamespace {
      */
     public final NamespaceValue MAIN = new NamespaceValue(MAIN_NAMESPACE_KEY, TALK, "");
     /**
-     * The &quot;User talk&quot; namespace for the current language.
+     * The "User talk" namespace for the current language.
      */
     public final NamespaceValue USER_TALK = new NamespaceValue(USER_TALK_NAMESPACE_KEY, "User_talk");
     /**
-     * The &quot;User&quot; namespace for the current language.
+     * The "User" namespace for the current language.
      */
     public final NamespaceValue USER = new NamespaceValue(USER_NAMESPACE_KEY, USER_TALK, "User");
     /**
-     * The &quot;Meta talk&quot; namespace for the current language.
+     * The "Meta talk" namespace for the current language.
      */
     public final NamespaceValue PROJECT_TALK = new NamespaceValue(PROJECT_TALK_NAMESPACE_KEY, "Project_talk", "Meta_talk");
     /**
-     * The &quot;Meta&quot; namespace for the current language.
+     * The "Meta" namespace for the current language.
      */
     public final NamespaceValue PROJECT = new NamespaceValue(PROJECT_NAMESPACE_KEY, PROJECT_TALK, "Project", "Meta");
 
@@ -75,54 +75,54 @@ public class Namespace implements INamespace {
     public final NamespaceValue IMAGE_TALK = new NamespaceValue(FILE_TALK_NAMESPACE_KEY,  "File_talk", "Image_talk");
     public final NamespaceValue IMAGE = new NamespaceValue(FILE_NAMESPACE_KEY, IMAGE_TALK, "File", "Image");
     /**
-     * The &quot;MediaWiki talk&quot; namespace for the current language.
+     * The "MediaWiki talk" namespace for the current language.
      */
     public final NamespaceValue MEDIAWIKI_TALK = new NamespaceValue(MEDIAWIKI_TALK_NAMESPACE_KEY,  "MediaWiki_talk");
     /**
-     * The &quot;MediaWiki&quot; namespace for the current language.
+     * The "MediaWiki" namespace for the current language.
      */
     public final NamespaceValue MEDIAWIKI = new NamespaceValue(MEDIAWIKI_NAMESPACE_KEY, MEDIAWIKI_TALK, "MediaWiki");
 
     /**
-     * The &quot;Module talk&quot; namespace for the current language.
+     * The "Module talk" namespace for the current language.
      */
     public final NamespaceValue MODULE_TALK = new NamespaceValue(MODULE_TALK_NAMESPACE_KEY, "Module_talk");
 
     /**
-     * The &quot;Module&quot; namespace for the current language.
+     * The "Module" namespace for the current language.
      */
     public final NamespaceValue MODULE = new NamespaceValue(MODULE_NAMESPACE_KEY, MODULE_TALK, "Module");
     /**
-     * The &quot;Template talk&quot; namespace for the current language.
+     * The "Template talk" namespace for the current language.
      */
     public final NamespaceValue TEMPLATE_TALK = new NamespaceValue(TEMPLATE_TALK_NAMESPACE_KEY, "Template_talk");
     /**
-     * The &quot;Template&quot; namespace for the current language.
+     * The "Template" namespace for the current language.
      */
     public final NamespaceValue TEMPLATE = new NamespaceValue(TEMPLATE_NAMESPACE_KEY, TEMPLATE_TALK, "Template");
 
     /**
-     * The &quot;Help talk&quot; namespace for the current language.
+     * The "Help talk" namespace for the current language.
      */
     public final NamespaceValue HELP_TALK = new NamespaceValue(HELP_TALK_NAMESPACE_KEY,  "Help_talk");
     /**
-     * The &quot;Help&quot; namespace for the current language.
+     * The "Help" namespace for the current language.
      */
     public final NamespaceValue HELP = new NamespaceValue(HELP_NAMESPACE_KEY, HELP_TALK, "Help");
     /**
-     * The &quot;Category talk&quot; namespace for the current language.
+     * The "Category talk" namespace for the current language.
      */
     public final NamespaceValue CATEGORY_TALK = new NamespaceValue(CATEGORY_TALK_NAMESPACE_KEY, "Category_talk");
     /**
-     * The &quot;Category&quot; namespace for the current language.
+     * The "Category" namespace for the current language.
      */
     public final NamespaceValue CATEGORY = new NamespaceValue(CATEGORY_NAMESPACE_KEY, CATEGORY_TALK, "Category");
     /**
-     * The &quot;Portal talk&quot; namespace for the current language.
+     * The "Portal talk" namespace for the current language.
      */
     public final NamespaceValue PORTAL_TALK = new NamespaceValue(PORTAL_TALK_NAMESPACE_KEY, "Portal_talk");
     /**
-     * The &quot;Portal&quot; namespace for the current language.
+     * The "Portal" namespace for the current language.
      */
     public final NamespaceValue PORTAL = new NamespaceValue(PORTAL_NAMESPACE_KEY, PORTAL_TALK, "Portal");
 
