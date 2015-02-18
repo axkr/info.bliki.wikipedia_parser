@@ -2,6 +2,8 @@ package info.bliki.wiki.dump;
 
 import org.xml.sax.SAXException;
 
+import java.io.IOException;
+
 /**
  * Demo application which reads a compressed or uncompressed Wikipedia XML dump
  * file (depending on the given file extension <i>.gz</i>, <i>.bz2</i> or
@@ -38,7 +40,6 @@ public class DumpExample {
                 System.out.println(page.getTitle());
             }
         }
-
     }
 
     /**
@@ -52,7 +53,6 @@ public class DumpExample {
                 System.out.println(page.getTitle());
             }
         }
-
     }
 
     /**
@@ -70,22 +70,17 @@ public class DumpExample {
     }
 
     /**
-     * @param args
+     * @param args filename, e.g. dewikiversity-20100401-pages-articles.xml.bz2
      */
-    public static void main(String[] args) {
-        if (args.length != 1) {
-            System.err.println("Usage: Parser <XML-FILE>");
+    public static void main(String[] args) throws IOException, SAXException {
+        if (args.length < 1) {
+            System.err.println("Usage: Parser <xml-file.[bz2|gz]>");
             System.exit(-1);
-        }
-        // String bz2Filename =
-        // "c:\\temp\\dewikiversity-20100401-pages-articles.xml.bz2";
-        String bz2Filename = args[0];
-        try {
+        } else {
+            String filename = args[0];
             IArticleFilter handler = new DemoArticleFilter();
-            WikiXMLParser wxp = new WikiXMLParser(bz2Filename, handler);
+            WikiXMLParser wxp = new WikiXMLParser(filename, handler);
             wxp.parse();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 }
