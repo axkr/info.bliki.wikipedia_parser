@@ -3,7 +3,9 @@ package info.bliki.wiki.namespaces;
 import info.bliki.Messages;
 import info.bliki.wiki.filter.Encoder;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -15,25 +17,15 @@ import static java.lang.String.CASE_INSENSITIVE_ORDER;
 
 /**
  * Mediawiki Namespaces.
- * See <a href="http://www.mediawiki.org/wiki/Manual:Namespace#Built-in_namespaces">
- *  Mediawiki - Manual:Namespace
- * </a>
+ * @see <a href="https://www.mediawiki.org/wiki/Manual:Namespace#Built-in_namespaces"> Mediawiki - Manual:Namespace</a>
  */
 public class Namespace implements INamespace {
     /**
      * Maps namespaces case-insensitively to their according
      * {@link NamespaceValue} objects.
      */
-    protected final Map<String, NamespaceValue> TEXT_TO_NAMESPACE_MAP = new TreeMap<>(CASE_INSENSITIVE_ORDER);
-
-    /**
-     * Fast access to each {@link NamespaceValue} via an integer index similar
-     * to its number code.
-     *
-     * @see Namespace#numberCodeToInt(int)
-     * @see Namespace#intToNumberCode(int)
-     */
-    protected final NamespaceValue[] INT_TO_NAMESPACE = new NamespaceValue[25];
+    private final Map<String, NamespaceValue> TEXT_TO_NAMESPACE_MAP = new TreeMap<>(CASE_INSENSITIVE_ORDER);
+    private final Map<Integer, NamespaceValue> namespaceMap = new HashMap<>(NamespaceCode.values().length);
 
     /**
      * The "Media" namespace for the current language.
@@ -129,6 +121,15 @@ public class Namespace implements INamespace {
     public final NamespaceValue BOOK_TALK = new NamespaceValue(BOOK_TALK_NAMESPACE_KEY, "Book_talk");
     public final NamespaceValue BOOK = new NamespaceValue(BOOK_NAMESPACE_KEY, BOOK_TALK, "Book");
 
+    public final NamespaceValue DRAFT_TALK = new NamespaceValue(DRAFT_TALK_NAMESPACE_KEY, "Draft_talk");
+    public final NamespaceValue DRAFT = new NamespaceValue(DRAFT_NAMESPACE_KEY, DRAFT_TALK, "Draft");
+
+    public final NamespaceValue EP_TALK = new NamespaceValue(EP_TALK_NAMESPACE_KEY, "Education_Program_talk");
+    public final NamespaceValue EP = new NamespaceValue(EP_NAMESPACE_KEY, EP_TALK, "Education_Program");
+
+    public final NamespaceValue TIMEDTEXT_TALK = new NamespaceValue(TIMEDTEXT_TALK_NAMESPACE_KEY, "TimedText_talk");
+    public final NamespaceValue TIMEDTEXT = new NamespaceValue(TIMEDTEXT_NAMESPACE_KEY, TIMEDTEXT_TALK, "TimedText");
+
     public final NamespaceValue TOPIC = new NamespaceValue(TOPIC_NAMESPACE_KEY, "Topic");
 
     protected ResourceBundle fResourceBundle, fResourceBundleEn;
@@ -164,7 +165,7 @@ public class Namespace implements INamespace {
         return namespace.getCode() == code;
     }
 
-    @Override
+    @Override @Nullable
     public NamespaceValue getNamespace(String namespace) {
         return TEXT_TO_NAMESPACE_MAP.get(namespace);
     }
@@ -174,61 +175,9 @@ public class Namespace implements INamespace {
         return getNamespaceByNumber(numberCode.code);
     }
 
-    @Override
+    @Override @Nullable
     public NamespaceValue getNamespaceByNumber(int numberCode) {
-        final int arrayPos = numberCodeToInt(numberCode);
-        if (arrayPos >= 0 && arrayPos < INT_TO_NAMESPACE.length) {
-            return INT_TO_NAMESPACE[arrayPos];
-        }
-        return null;
-    }
-
-    /**
-     * Converts an (external) namespace number code to the position in the
-     * {@link #INT_TO_NAMESPACE} array.
-     *
-     * @param numberCode a code like {@link INamespace.NamespaceCode#MEDIA_NAMESPACE_KEY}
-     * @return an array index
-     */
-    protected static int numberCodeToInt(int numberCode) {
-        if (numberCode >= -2 && numberCode <= 15) {
-            return numberCode + 2;
-        } else if (numberCode >= 100 && numberCode <= 101) {
-            return numberCode - 100 + 18;
-        } else if (numberCode >= 108 && numberCode <= 109) {
-            return numberCode - 108 + 20;
-        } else if (numberCode >= 828 && numberCode <= 829) {
-            return numberCode - 828 + 22;
-        } else if (numberCode >= 2600) {
-            return numberCode - 2600 + 24;
-        } else {
-            throw new IllegalArgumentException("unknown number code: " + numberCode);
-        }
-    }
-
-    /**
-     * Converts an (internal) namespace number code (the position in the
-     * {@link #INT_TO_NAMESPACE} array) to the external namespace number.
-     *
-     * @param numberCode
-     *            internal array index
-     *
-     * @return a number code like {@link INamespace#MEDIA_NAMESPACE_KEY}
-     */
-    protected static int intToNumberCode(int numberCode) {
-        if (numberCode >= 0 && numberCode <= 17) {
-            return numberCode - 2;
-        } else if (numberCode >= 18 && numberCode <= 19) {
-            return numberCode + 100 - 18;
-        } else if (numberCode >= 20 && numberCode <= 21) {
-            return numberCode + 108 - 20;
-        } else if (numberCode >= 22 && numberCode <= 23) {
-            return numberCode + 828 - 22;
-        } else if (numberCode >= 24) {
-            return numberCode + 2600 - 24;
-        } else {
-            throw new IllegalArgumentException("unknown number code: " + numberCode);
-        }
+        return namespaceMap.get(numberCode);
     }
 
     @Override
@@ -496,9 +445,7 @@ public class Namespace implements INamespace {
         private NamespaceValue(NamespaceCode code, String... aliases) {
             this.code = code;
             this.texts = new ArrayList<>(2);
-            int arrayPos = numberCodeToInt(code.code);
-            assert (INT_TO_NAMESPACE[arrayPos] == null);
-            INT_TO_NAMESPACE[arrayPos] = this;
+            namespaceMap.put(code.code, this);
             // contentspace is set by the content NamespaceValue
             this.talkspace = this;
             this.canonicalAliases = aliases;
@@ -557,7 +504,7 @@ public class Namespace implements INamespace {
 
         @Override
         public String getPrimaryText() {
-            return texts.get(0);
+            return texts.isEmpty() ? null : texts.get(0);
         }
 
         @Override

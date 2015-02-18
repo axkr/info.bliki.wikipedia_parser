@@ -25,24 +25,6 @@ public class NamespaceTest {
     /**
      * Checks whether all content spaces are set.
      */
-    @Test public void testNumberCodeConversion01() {
-        for (NamespaceCode nsCode : NamespaceCode.values()) {
-            assertThat(Namespace.intToNumberCode(Namespace.numberCodeToInt(nsCode.code))).isEqualTo((int) nsCode.code);
-        }
-    }
-
-    /**
-     * Checks whether all content spaces are set.
-     */
-    @Test public void testNumberCodeConversion02() {
-        for (int i = 0; i <= NamespaceCode.values().length-1; ++i) {
-            assertThat(Namespace.numberCodeToInt(Namespace.intToNumberCode(i))).isEqualTo(i);
-        }
-    }
-
-    /**
-     * Checks whether all content spaces are set.
-     */
     @Test public void testEnsureContentSpacesNotNull() {
         Namespace namespaceObj = new Namespace();
         for (NamespaceCode nsCode : NamespaceCode.values()) {
@@ -96,6 +78,24 @@ public class NamespaceTest {
         assertThat(namespace.getNamespace("Book")).isEqualTo(namespace.BOOK);
         assertThat(namespace.getContentspace("Book_talk")).isEqualTo(namespace.BOOK);
         assertThat(namespace.getNamespace("Book_talk")).isEqualTo(namespace.BOOK_TALK);
+    }
+
+    @Test public void testDraftNamespace() {
+        assertThat(namespace.getNamespace("Draft")).isEqualTo(namespace.DRAFT);
+        assertThat(namespace.getContentspace("Draft_talk")).isEqualTo(namespace.DRAFT);
+        assertThat(namespace.getNamespace("Draft_talk")).isEqualTo(namespace.DRAFT_TALK);
+    }
+
+    @Test public void testEducationProgramNamespace() {
+        assertThat(namespace.getNamespace("Education_Program")).isEqualTo(namespace.EP);
+        assertThat(namespace.getContentspace("Education_Program_talk")).isEqualTo(namespace.EP);
+        assertThat(namespace.getNamespace("Education_Program_talk")).isEqualTo(namespace.EP_TALK);
+    }
+
+    @Test public void testTimedTextNamespace() {
+        assertThat(namespace.getNamespace("TimedText")).isEqualTo(namespace.TIMEDTEXT);
+        assertThat(namespace.getContentspace("TimedText_talk")).isEqualTo(namespace.TIMEDTEXT);
+        assertThat(namespace.getNamespace("TimedText_talk")).isEqualTo(namespace.TIMEDTEXT_TALK);
     }
 
     @Test public void testTopicNamespace() {

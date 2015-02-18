@@ -8,10 +8,10 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 /**
- * Mediawiki namespace for a specific language. See <a
- * href="http://www.mediawiki.org/wiki/Manual:Namespace#Built-in_namespaces"
- * >Mediawiki - Manual:Namespace</a>
+ * Mediawiki namespace for a specific language.
  *
+ * @see <a href="https://www.mediawiki.org/wiki/Manual:Namespace#Built-in_namespaces">Mediawiki - Manual:Namespace</a>
+ * @see <a href="https://www.mediawiki.org/wiki/Extension_default_namespaces">Extension default namespaces</a>
  * @see <a href="https://github.com/wikimedia/mediawiki-core/blob/master/includes/Defines.php">Defines.php</a>
  *
  */
@@ -119,6 +119,15 @@ public interface INamespace {
 
         BOOK_NAMESPACE_KEY(108),
         BOOK_TALK_NAMESPACE_KEY(109),
+
+        DRAFT_NAMESPACE_KEY(118),
+        DRAFT_TALK_NAMESPACE_KEY(119),
+
+        EP_NAMESPACE_KEY(446),         // EP_NS
+        EP_TALK_NAMESPACE_KEY(447),    // EP_NS_TALK
+
+        TIMEDTEXT_NAMESPACE_KEY(710),      // NS_TIMEDTEXT
+        TIMEDTEXT_TALK_NAMESPACE_KEY(711), // NS_TIMEDTEXT_TALK
 
         /**
          * Scribunto
