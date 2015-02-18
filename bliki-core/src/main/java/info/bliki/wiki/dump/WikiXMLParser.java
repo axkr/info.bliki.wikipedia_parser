@@ -10,7 +10,6 @@ import org.xml.sax.helpers.XMLReaderFactory;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -28,48 +27,32 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  * >http://schmidt.devlib.org/software/lucene-wikipedia.html</a>
  *
  * @author Marco Schmidt
- *
  */
 public class WikiXMLParser extends DefaultHandler {
     private static final String WIKIPEDIA_SITEINFO = "siteinfo";
-
     private static final String WIKIPEDIA_TITLE = "title";
-
     private static final String WIKIPEDIA_TEXT = "text";
-
     private static final String WIKIPEDIA_PAGE = "page";
-
     private static final String WIKIPEDIA_REVISION = "revision";
-
     private static final String WIKIPEDIA_NAMESPACE = "namespace";
-
     private static final String WIKIPEDIA_TIMESTAMP = "timestamp";
-
     private static final String WIKIPEDIA_ID = "id";
 
     private Siteinfo fSiteinfo = null;
-
     private String fNamespaceKey = null;
-
     private WikiArticle fArticle;
-
     private boolean fRevision;
-
     private StringBuilder fData;
-
     private XMLReader fXMLReader;
-
     private Reader fReader;
 
     private IArticleFilter fArticleFilter;
 
-    public WikiXMLParser(String filename, IArticleFilter filter) throws UnsupportedEncodingException, IOException, SAXException,
-            FileNotFoundException {
+    public WikiXMLParser(String filename, IArticleFilter filter) throws IOException, SAXException {
         this(getBufferedReader(filename), filter);
     }
 
     public WikiXMLParser(InputStream inputStream, IArticleFilter filter) throws SAXException {
-        super();
         fArticleFilter = filter;
         fXMLReader = XMLReaderFactory.createXMLReader();
         fXMLReader.setContentHandler(this);
@@ -78,7 +61,6 @@ public class WikiXMLParser extends DefaultHandler {
     }
 
     public WikiXMLParser(Reader reader, IArticleFilter filter) throws SAXException {
-        super();
         fArticleFilter = filter;
         fXMLReader = XMLReaderFactory.createXMLReader();
         fXMLReader.setContentHandler(this);
@@ -90,23 +72,17 @@ public class WikiXMLParser extends DefaultHandler {
      *
      * @return a BufferedReader created from wikiDumpFilename
      * @throws UnsupportedEncodingException
-     *
      */
-    public static BufferedReader getBufferedReader(String wikiDumpFilename) throws UnsupportedEncodingException,
-            FileNotFoundException, IOException {
-        BufferedReader br = null;
-
+    public static BufferedReader getBufferedReader(String wikiDumpFilename) throws IOException {
+        BufferedReader br;
         if (wikiDumpFilename.endsWith(".gz")) {
-
             br = new BufferedReader(new InputStreamReader(new GZIPInputStream(new FileInputStream(wikiDumpFilename)), "UTF-8"));
-
         } else if (wikiDumpFilename.endsWith(".bz2")) {
             FileInputStream fis = new FileInputStream(wikiDumpFilename);
             br = new BufferedReader(new InputStreamReader(new BZip2CompressorInputStream(fis, true), "UTF-8"));
         } else {
             br = new BufferedReader(new InputStreamReader(new FileInputStream(wikiDumpFilename), "UTF-8"));
         }
-
         return br;
     }
 
@@ -176,6 +152,7 @@ public class WikiXMLParser extends DefaultHandler {
                 }
             } else {
                 if (WIKIPEDIA_PAGE.equals(qName)) {
+                    // ignore
                 } else if (WIKIPEDIA_TEXT.equals(qName)) {
                     fArticle.setText(getString());
                     fArticleFilter.process(fArticle, fSiteinfo);
@@ -216,5 +193,4 @@ public class WikiXMLParser extends DefaultHandler {
     public void parse() throws IOException, SAXException {
         fXMLReader.parse(new InputSource(fReader));
     }
-
 }
