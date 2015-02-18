@@ -137,8 +137,10 @@ public class MwSite implements MwInterface {
         ns.set("aliases", LuaValue.listOf(aliases));
 
         if (namespaceValue.getCode().code >= INamespace.NamespaceCode.MAIN_NAMESPACE_KEY.code) {
-            ns.set("subject",    namespaceValue.getContentspace().getCode().code);
-            ns.set("talk",       namespaceValue.getTalkspace().getCode().code);
+            if (namespaceValue.getContentspace() != null) {
+                ns.set("subject", namespaceValue.getContentspace().getCode().code);
+            }
+            ns.set("talk", namespaceValue.getTalkspace().getCode().code);
             Namespace.NamespaceValue associated = namespaceValue.getAssociatedspace();
             if (associated != null) {
                 ns.set("associated", associated.getCode().code);
