@@ -1,29 +1,37 @@
 package info.bliki.wiki.dump;
 
 import info.bliki.wiki.namespaces.Namespace;
+import info.bliki.wiki.namespaces.Namespace.NamespaceValue;
+
+import javax.annotation.Nullable;
 
 /**
  * The site and namespace information found in the header of a Mediawiki dump
- *
- * TODO: use the {@link info.bliki.wiki.namespaces.Namespace} class for mapping namespaces
  */
 public class Siteinfo {
     private String sitename;
     private String base;
     private String generator;
     private String characterCase;
-    private final Namespace fnamespace;
+    private final Namespace namespace;
 
     public Siteinfo() {
-        fnamespace = new Namespace();
+        namespace = new Namespace();
     }
 
-    public void addNamespace(String integerKey, String namespace) {
+    public void addNamespace(String integerKey, String namespaceText) {
+        Integer key;
         try {
-            Integer key = Integer.parseInt(integerKey);
-            fnamespace.getNamespaceByNumber(key).setTexts(namespace);
+            key = Integer.parseInt(integerKey);
         } catch (NumberFormatException nfe) {
-            nfe.printStackTrace();
+            throw new IllegalArgumentException("invalid key "+integerKey);
+        }
+        final NamespaceValue nsValue = namespace.getNamespaceByNumber(key);
+        if (nsValue != null) {
+            nsValue.setTexts(namespaceText == null ? "" : namespaceText);
+        } else {
+            // TODO: should this really throw here?
+            throw new IllegalArgumentException("unknown namespace code:" + key);
         }
     }
 
@@ -37,7 +45,7 @@ public class Siteinfo {
      * @return <code>null</code> if no namespace is defined for the given key.
      */
     public String getNamespace(Integer key) {
-        return fnamespace.getNamespaceByNumber(key).getPrimaryText();
+        return namespace.getNamespaceByNumber(key).getPrimaryText();
     }
 
     /**
@@ -46,7 +54,7 @@ public class Siteinfo {
      * @return the namespace object
      */
     public Namespace getNamespace() {
-        return fnamespace;
+        return namespace;
     }
 
     /**
@@ -59,8 +67,9 @@ public class Siteinfo {
      * @return <code>null</code> if no integer value is defined for the given
      *         namespace.
      */
-    public Integer getIntegerNamespace(String namespace) {
-        return fnamespace.getNamespace(namespace).getCode().code;
+    @Nullable public Integer getIntegerNamespace(String namespace) {
+        final Namespace.NamespaceValue ns = this.namespace.getNamespace(namespace);
+        return ns == null ? null : ns.getCode().code;
     }
 
     /**
