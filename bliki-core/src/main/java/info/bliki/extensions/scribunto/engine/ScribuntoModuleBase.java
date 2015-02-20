@@ -11,6 +11,8 @@ public abstract class ScribuntoModuleBase implements ScribuntoModule {
     private final String chunkName;
 
     public ScribuntoModuleBase(ScribuntoEngine engine, String code, String chunkName) {
+        if (code == null) throw new IllegalArgumentException("code is null");
+        if (engine == null) throw new IllegalArgumentException("engine is null");
         this.engine = engine;
         this.code = code;
         this.chunkName = chunkName;

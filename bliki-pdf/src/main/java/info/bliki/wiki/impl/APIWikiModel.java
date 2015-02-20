@@ -140,6 +140,7 @@ public class APIWikiModel extends WikiModel {
         if (isTemplate || isModule) {
             return getTemplateOrModule(parsedPagename.fullPagename(), templateParameters);
         } else {
+            logger.warn("not a template or module - returning null");
             return null;
         }
     }
@@ -178,9 +179,12 @@ public class APIWikiModel extends WikiModel {
                 return content != null && content.length() > 0 ?  content : null;
             } else {
                 logger.warn("no content for page "+page);
+                return null;
             }
+        } else {
+            logger.warn("no content for page "+fullPageName);
+            return null;
         }
-        return null;
     }
 
     private String getRedirectedWikiContent(String rawWikitext, Map<String, String> templateParameters) {

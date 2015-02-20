@@ -14,6 +14,7 @@ import info.bliki.wiki.namespaces.INamespace.INamespaceValue;
 import info.bliki.wiki.tags.util.TagStack;
 import info.bliki.wiki.template.ITemplateFunction;
 
+import javax.annotation.Nullable;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -496,7 +497,7 @@ public interface IWikiModel extends IConfiguration {
      * @see AbstractParser#parsePageName(IWikiModel, String, INamespaceValue,
      *      boolean)
      */
-    public String getRawWikiContent(ParsedPageName templateName,
+    public @Nullable String getRawWikiContent(ParsedPageName templateName,
             Map<String, String> templateParameters)
             throws WikiModelContentException;
 

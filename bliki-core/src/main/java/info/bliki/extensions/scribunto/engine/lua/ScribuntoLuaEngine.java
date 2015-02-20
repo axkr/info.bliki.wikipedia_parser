@@ -106,7 +106,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         }
     }
 
-    @Override public ScribuntoModule newModule(String text, String chunkName) {
+    @Override public ScribuntoModule newModule(@Nonnull String text, String chunkName) {
         return new ScribuntoLuaModule(this, text, chunkName);
     }
 
