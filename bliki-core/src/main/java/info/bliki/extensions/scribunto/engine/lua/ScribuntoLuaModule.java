@@ -22,6 +22,8 @@ public class ScribuntoLuaModule implements ScribuntoModule {
     private Prototype initChunk;
 
     public ScribuntoLuaModule(ScribuntoLuaEngine engine, String code, String chunkName) {
+        if (engine == null) throw new IllegalArgumentException("engine is null");
+        if (code == null) throw new IllegalArgumentException("code is null");
         this.engine = engine;
         this.code = code;
         this.chunkName = chunkName;
@@ -29,6 +31,7 @@ public class ScribuntoLuaModule implements ScribuntoModule {
 
     public ScribuntoLuaModule(ScribuntoLuaEngine engine, Prototype initChunk, String chunkName) {
         if (engine == null) throw new IllegalArgumentException("engine is null");
+        if (initChunk == null) throw new IllegalArgumentException("initChunk is null");
         this.engine = engine;
         this.code = "<unused>";
         this.chunkName = chunkName;
