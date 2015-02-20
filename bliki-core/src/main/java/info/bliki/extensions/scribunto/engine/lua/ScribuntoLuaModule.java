@@ -1,26 +1,37 @@
 package info.bliki.extensions.scribunto.engine.lua;
 
 import info.bliki.extensions.scribunto.ScribuntoException;
-import info.bliki.extensions.scribunto.engine.ScribuntoEngine;
-import info.bliki.extensions.scribunto.engine.ScribuntoModuleBase;
+import info.bliki.extensions.scribunto.engine.ScribuntoModule;
 import info.bliki.extensions.scribunto.template.Frame;
 import org.luaj.vm2.LuaClosure;
 import org.luaj.vm2.LuaError;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.Prototype;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.StringReader;
 
-public class ScribuntoLuaModule extends ScribuntoModuleBase {
+public class ScribuntoLuaModule implements ScribuntoModule {
     private static final int SLOW_MODULE_THRESHOLD = 500;
+    protected Logger logger = LoggerFactory.getLogger(getClass());
+
+    private final ScribuntoLuaEngine engine;
+    private final String code;
+    private final String chunkName;
     private Prototype initChunk;
 
-    public ScribuntoLuaModule(ScribuntoEngine engine, String code, String chunkName) {
-        super(engine, code, chunkName);
+    public ScribuntoLuaModule(ScribuntoLuaEngine engine, String code, String chunkName) {
+        this.engine = engine;
+        this.code = code;
+        this.chunkName = chunkName;
     }
 
     public ScribuntoLuaModule(ScribuntoLuaEngine engine, Prototype initChunk, String chunkName) {
-        super(engine, null, chunkName);
+        if (engine == null) throw new IllegalArgumentException("engine is null");
+        this.engine = engine;
+        this.code = "<unused>";
+        this.chunkName = chunkName;
         this.initChunk = initChunk;
     }
 
@@ -53,8 +64,16 @@ public class ScribuntoLuaModule extends ScribuntoModuleBase {
         }
     }
 
-    @Override protected ScribuntoLuaEngine getEngine() {
-        return (ScribuntoLuaEngine) super.getEngine();
+    protected ScribuntoLuaEngine getEngine() {
+        return engine;
+    }
+
+    protected String getCode() {
+        return code;
+    }
+
+    protected String getChunkName() {
+        return chunkName;
     }
 
     private LuaValue loadExportTable() throws ScribuntoException {
