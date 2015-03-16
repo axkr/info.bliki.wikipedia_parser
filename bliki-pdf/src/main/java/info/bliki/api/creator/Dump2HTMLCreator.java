@@ -20,8 +20,8 @@ import static info.bliki.api.creator.Dump2HTMLCreator.DumpMode.WRITE_HTML;
  * Create static HTML files from a given Mediawiki dump
  */
 public class Dump2HTMLCreator {
-    private static final String WIKI_DB = "WikiDB";
-    private static final String WIKI_DUMP_IMAGES = "WikiDumpImages";
+    private static final String WIKI_DB = "wiki-db";
+    private static final String WIKI_DUMP_IMAGES = "wiki-images";
     private static final String HTML_DIR = "html";
 
     private final File dumpFile;
