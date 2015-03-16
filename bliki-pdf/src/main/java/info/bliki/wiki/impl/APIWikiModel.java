@@ -140,7 +140,7 @@ public class APIWikiModel extends WikiModel {
         if (isTemplate || isModule) {
             return getTemplateOrModule(parsedPagename.fullPagename(), templateParameters);
         } else {
-            logger.warn("not a template or module - returning null");
+            logger.warn("'"+parsedPagename+"' is not a template or module - returning null");
             return null;
         }
     }
