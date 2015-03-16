@@ -15,7 +15,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.io.UnsupportedEncodingException;
 import java.util.zip.GZIPInputStream;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
@@ -50,7 +49,7 @@ public class WikiXMLParser extends DefaultHandler {
     private IArticleFilter fArticleFilter;
 
     public WikiXMLParser(File filename, IArticleFilter filter) throws IOException, SAXException {
-        this(getBufferedReader(filename), filter);
+        this(getReader(filename), filter);
     }
 
     public WikiXMLParser(InputStream inputStream, IArticleFilter filter) throws SAXException {
@@ -70,21 +69,17 @@ public class WikiXMLParser extends DefaultHandler {
     }
 
     /**
-     *
-     * @return a BufferedReader created from wikiDumpFilename
-     * @throws UnsupportedEncodingException
+     * @return a Reader created from wikiDumpFilename
+     * @throws java.io.IOException
      */
-    public static BufferedReader getBufferedReader(File wikiDumpFilename) throws IOException {
-        BufferedReader br;
+    public static Reader getReader(File wikiDumpFilename) throws IOException {
+        InputStream inputStream = new FileInputStream(wikiDumpFilename);
         if (wikiDumpFilename.getName().endsWith(".gz")) {
-            br = new BufferedReader(new InputStreamReader(new GZIPInputStream(new FileInputStream(wikiDumpFilename)), "UTF-8"));
+            inputStream = new GZIPInputStream(inputStream);
         } else if (wikiDumpFilename.getName().endsWith(".bz2")) {
-            FileInputStream fis = new FileInputStream(wikiDumpFilename);
-            br = new BufferedReader(new InputStreamReader(new BZip2CompressorInputStream(fis, true), "UTF-8"));
-        } else {
-            br = new BufferedReader(new InputStreamReader(new FileInputStream(wikiDumpFilename), "UTF-8"));
+            inputStream = new BZip2CompressorInputStream(inputStream, true);
         }
-        return br;
+        return new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
     }
 
     private String getString() {

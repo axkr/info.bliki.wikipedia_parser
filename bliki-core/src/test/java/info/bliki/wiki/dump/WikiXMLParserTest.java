@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.xml.sax.SAXException;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class WikiXMLParserTest {
     @Test
     public void testParseWikipediaDump() throws Exception {
-        URL dump = getClass().getResource("/dump/enwiki-20150112-pages-articles1.xml");
+        parse(getClass().getResource("/dump/enwiki-20150112-pages-articles1.xml"));
+    }
+
+    @Test
+    public void testParseWikipediaDumpBZ2Compressed() throws Exception {
+        parse(getClass().getResource("/dump/enwiki-20150112-pages-articles1.xml.bz2"));
+    }
+
+    private void parse(URL dump) throws IOException, SAXException {
         assertThat(dump).isNotNull();
 
         final List<WikiArticle> articles = new ArrayList<>();
