@@ -147,6 +147,13 @@ public class WikiDB implements Closeable {
         fUpdateTopicContent.execute();
     }
 
+    @Override
+    public String toString() {
+        return "WikiDB{" +
+            "connection=" + fConnection +
+        '}';
+    }
+
     private void createTableIfItDoesntExist() throws SQLException {
         ResultSet resultSet = fConnection.getMetaData().getTables("%", "%", "%", new String[] { "TABLE" });
         boolean shouldCreateTableTopic = true;
