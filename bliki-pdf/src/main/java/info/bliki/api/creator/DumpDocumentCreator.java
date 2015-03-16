@@ -93,8 +93,7 @@ public class DumpDocumentCreator {
      * Render the given Wikipedia texts into an HTML file for the given converter.
      *
      */
-    public void renderToFile(ITextConverter converter, String filename) throws IOException {
-        File file = new File(filename);
+    public void renderToFile(ITextConverter converter, File file) throws IOException {
         File parent = file.getParentFile();
         if (parent != null && !parent.exists()) {
             parent.mkdirs();
@@ -111,8 +110,8 @@ public class DumpDocumentCreator {
      * Render the given Wikipedia texts into an HTML file.
      *
      */
-    public void renderToFile(String filename) throws IOException {
-        renderToFile(new HTMLConverter(), filename);
+    public void renderToFile(File file) throws IOException {
+        renderToFile(new HTMLConverter(), file);
     }
 
     /**

@@ -29,9 +29,6 @@ public class Siteinfo {
         final NamespaceValue nsValue = namespace.getNamespaceByNumber(key);
         if (nsValue != null) {
             nsValue.setTexts(namespaceText == null ? "" : namespaceText);
-        } else {
-            // TODO: should this really throw here?
-            throw new IllegalArgumentException("unknown namespace code:" + key);
         }
     }
 

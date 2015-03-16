@@ -4,7 +4,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.Nullable;
+import java.io.Closeable;
 import java.io.File;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -16,7 +18,7 @@ import java.util.Properties;
 /**
  * A simple Apache Derby Database to store the retrieved Wiki contents
  */
-public class WikiDB {
+public class WikiDB implements Closeable {
     private final PreparedStatement fSelectContent;
     private final PreparedStatement fInsertTopic;
     private final PreparedStatement fUpdateTopicContent;
@@ -67,6 +69,15 @@ public class WikiDB {
         fInsertImage.close();
         fUpdateImage.close();
         fConnection.close();
+    }
+
+    @Override
+    public void close() throws IOException {
+        try {
+            tearDown();
+        } catch (SQLException e) {
+            throw new IOException(e);
+        }
     }
 
     /**

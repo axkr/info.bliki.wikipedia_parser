@@ -4,6 +4,7 @@ import info.bliki.wiki.namespaces.Namespace;
 import org.junit.Test;
 import org.xml.sax.SAXException;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ public class WikiXMLParserTest {
 
         final List<WikiArticle> articles = new ArrayList<>();
         final Siteinfo[] parsedSiteInfo = new Siteinfo[1];
-        WikiXMLParser parser = new WikiXMLParser(dump.getFile(), new IArticleFilter() {
+        WikiXMLParser parser = new WikiXMLParser(new File(dump.getFile()), new IArticleFilter() {
             @Override
             public void process(WikiArticle article, Siteinfo siteinfo) throws SAXException {
                 articles.add(article);

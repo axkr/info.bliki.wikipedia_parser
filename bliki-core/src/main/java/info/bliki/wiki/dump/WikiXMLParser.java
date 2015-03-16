@@ -9,6 +9,7 @@ import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.helpers.XMLReaderFactory;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -48,7 +49,7 @@ public class WikiXMLParser extends DefaultHandler {
 
     private IArticleFilter fArticleFilter;
 
-    public WikiXMLParser(String filename, IArticleFilter filter) throws IOException, SAXException {
+    public WikiXMLParser(File filename, IArticleFilter filter) throws IOException, SAXException {
         this(getBufferedReader(filename), filter);
     }
 
@@ -73,11 +74,11 @@ public class WikiXMLParser extends DefaultHandler {
      * @return a BufferedReader created from wikiDumpFilename
      * @throws UnsupportedEncodingException
      */
-    public static BufferedReader getBufferedReader(String wikiDumpFilename) throws IOException {
+    public static BufferedReader getBufferedReader(File wikiDumpFilename) throws IOException {
         BufferedReader br;
-        if (wikiDumpFilename.endsWith(".gz")) {
+        if (wikiDumpFilename.getName().endsWith(".gz")) {
             br = new BufferedReader(new InputStreamReader(new GZIPInputStream(new FileInputStream(wikiDumpFilename)), "UTF-8"));
-        } else if (wikiDumpFilename.endsWith(".bz2")) {
+        } else if (wikiDumpFilename.getName().endsWith(".bz2")) {
             FileInputStream fis = new FileInputStream(wikiDumpFilename);
             br = new BufferedReader(new InputStreamReader(new BZip2CompressorInputStream(fis, true), "UTF-8"));
         } else {

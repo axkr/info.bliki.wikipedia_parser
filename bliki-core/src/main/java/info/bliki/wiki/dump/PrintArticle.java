@@ -4,6 +4,8 @@ import info.bliki.wiki.model.WikiModel;
 
 import org.xml.sax.SAXException;
 
+import java.io.File;
+
 /**
  * Example filter which prints the rendered HTML articles to System.out
  *
@@ -11,9 +13,7 @@ import org.xml.sax.SAXException;
  *
  */
 public class PrintArticle implements IArticleFilter {
-
     private int counter;
-
     private int max_counter;
 
     /**
@@ -50,13 +50,13 @@ public class PrintArticle implements IArticleFilter {
     }
 
     public static void main(String args[]) throws Exception {
-        // OutputStream fout = new FileOutputStream("data.txt");
-        // OutputStream bout = new BufferedOutputStream(fout);
-        // Writer out = new OutputStreamWriter(bout, Connector.UTF8_CHARSET);
-
-        // test for Wikipedia input
-        IArticleFilter filter = new PrintArticle(999999);
-        WikiXMLParser parser = new WikiXMLParser("C:/temp/v1.xml", filter);
-        parser.parse();
+        if (args.length > 0) {
+            File file = new File(args[0]);
+            WikiXMLParser parser = new WikiXMLParser(file, new PrintArticle(999999));
+            parser.parse();
+        } else {
+            System.err.println("PrintArticle <dump.xml>");
+            System.exit(1);
+        }
     }
 }

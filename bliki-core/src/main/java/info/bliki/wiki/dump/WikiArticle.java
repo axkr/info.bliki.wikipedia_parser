@@ -100,6 +100,10 @@ public class WikiArticle {
         return integerNamespace.equals(NamespaceCode.TEMPLATE_NAMESPACE_KEY.code);
     }
 
+    public boolean isModule() {
+        return integerNamespace.equals(NamespaceCode.MODULE_NAMESPACE_KEY.code);
+    }
+
     /**
      * The ID of the wiki article to set.
      *

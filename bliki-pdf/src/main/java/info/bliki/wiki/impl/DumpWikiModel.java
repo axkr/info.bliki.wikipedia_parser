@@ -26,7 +26,7 @@ public class DumpWikiModel extends WikiModel {
     private WikiDB fWikiDB;
     private final String fTemplateNamespace;
 
-    private final String fImageDirectoryName;
+    private final File fImageDirectory;
     static {
         TagNode.addAllowedAttribute("style");
     }
@@ -48,7 +48,7 @@ public class DumpWikiModel extends WikiModel {
      *          a directory for storing downloaded Wikipedia images. The directory
      *          must already exist.
      */
-    public DumpWikiModel(WikiDB wikiDB, Siteinfo siteinfo, String imageBaseURL, String linkBaseURL, String imageDirectoryName) {
+    public DumpWikiModel(WikiDB wikiDB, Siteinfo siteinfo, String imageBaseURL, String linkBaseURL, File imageDirectoryName) {
         this(wikiDB, siteinfo, Locale.ENGLISH, imageBaseURL, linkBaseURL, imageDirectoryName);
     }
 
@@ -66,30 +66,23 @@ public class DumpWikiModel extends WikiModel {
      *          a url string which must contains a &quot;${title}&quot; variable
      *          which will be replaced by the topic title, to create links to
      *          other wiki topics.
-     * @param imageDirectoryName
+     * @param imageDirectory
      *          a directory for storing downloaded Wikipedia images. The directory
      *          must already exist.
      */
     public DumpWikiModel(WikiDB wikiDB, Siteinfo siteinfo, Locale locale, String imageBaseURL, String linkBaseURL,
-            String imageDirectoryName) {
+            File imageDirectory) {
         super(Configuration.DEFAULT_CONFIGURATION, locale, Messages.getResourceBundle(locale), siteinfo.getNamespace(), imageBaseURL,
                 linkBaseURL);
         fWikiDB = wikiDB;
         fSiteinfo = siteinfo;
         fTemplateNamespace = fSiteinfo.getNamespace(INamespace.NamespaceCode.TEMPLATE_NAMESPACE_KEY.code);
-        if (imageDirectoryName != null) {
-            if (imageDirectoryName.charAt(imageDirectoryName.length() - 1) == '/') {
-                fImageDirectoryName = imageDirectoryName;
-            } else {
-                fImageDirectoryName = imageDirectoryName + "/";
+        if (imageDirectory != null) {
+            if (!imageDirectory.exists()) {
+                assert imageDirectory.mkdirs();
             }
-            File file = new File(fImageDirectoryName);
-            if (!file.exists()) {
-                file.mkdir();
-            }
-        } else {
-            fImageDirectoryName = null;
         }
+        fImageDirectory = imageDirectory;
     }
 
     /**
@@ -174,7 +167,7 @@ public class DumpWikiModel extends WikiModel {
                 }
             }
             String imageNameURL = Encoder.encodeTitleLocalUrl(imageName);
-            super.appendInternalImageLink(hrefImageLink, "file:///" + fImageDirectoryName + imageNameURL, imageFormat);
+            super.appendInternalImageLink(hrefImageLink, "file:///" + fImageDirectory + imageNameURL, imageFormat);
         } catch (Exception e) {
             e.printStackTrace();
         }

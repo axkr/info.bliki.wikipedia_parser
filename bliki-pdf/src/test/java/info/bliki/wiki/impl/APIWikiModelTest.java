@@ -5,6 +5,7 @@ import info.bliki.api.Revision;
 import info.bliki.api.User;
 import info.bliki.api.creator.TopicData;
 import info.bliki.api.creator.WikiDB;
+import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.model.WikiModelContentException;
 import info.bliki.wiki.namespaces.INamespace;
 import info.bliki.wiki.namespaces.Namespace;
@@ -16,7 +17,6 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.Locale;
 
-import info.bliki.wiki.filter.ParsedPageName;
 import static info.bliki.wiki.filter.MagicWord.MagicWordE;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
@@ -36,7 +36,7 @@ public class APIWikiModelTest {
         modulePageName = new ParsedPageName(ns.getModule(), "moduleTestPage", true);
         templatePageName = new ParsedPageName(ns.getTemplate(), "templateTestPage", true);
 
-        subject = new APIWikiModel(user, wikiDB, Locale.getDefault(), null, null, null);
+        subject = new APIWikiModel(user, wikiDB, Locale.ENGLISH, null, null, null);
     }
 
     @Test public void getRawWikiContentWithMagicWordReturnsContent() throws Exception {

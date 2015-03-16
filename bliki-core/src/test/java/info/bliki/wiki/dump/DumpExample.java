@@ -2,6 +2,7 @@ package info.bliki.wiki.dump;
 
 import org.xml.sax.SAXException;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -77,10 +78,7 @@ public class DumpExample {
             System.err.println("Usage: Parser <xml-file.[bz2|gz]>");
             System.exit(-1);
         } else {
-            String filename = args[0];
-            IArticleFilter handler = new DemoArticleFilter();
-            WikiXMLParser wxp = new WikiXMLParser(filename, handler);
-            wxp.parse();
+            new WikiXMLParser(new File(args[0]), new DemoArticleFilter()).parse();
         }
     }
 }
