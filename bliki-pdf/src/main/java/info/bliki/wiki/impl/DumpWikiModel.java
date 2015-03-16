@@ -160,9 +160,9 @@ public class DumpWikiModel extends WikiModel {
             String imageName = imageFormat.getFilename();
             ImageData imageData = fWikiDB.selectImage(imageName);
             if (imageData != null) {
-                File file = new File(imageData.getFilename());
+                File file = imageData.getFile();
                 if (file.exists()) {
-                    super.appendInternalImageLink(hrefImageLink, "file:///" + imageData.getFilename(), imageFormat);
+                    super.appendInternalImageLink(hrefImageLink, file.toURI().toString(), imageFormat);
                     return;
                 }
             }

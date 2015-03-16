@@ -8,6 +8,7 @@ import org.junit.experimental.categories.Category;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -21,14 +22,10 @@ public class Dump2HTMLCreatorTest {
     public void before() throws IOException {
         URL dump = getClass().getResource("/dump/enwiki-20150112-pages-articles1.xml");
         assertThat(dump).isNotNull();
-        File testFile = new File(dump.getFile());
-        File file = File.createTempFile("Dump2HTMLCreator", "test");
-        file.delete();
-        file.mkdirs();
-
-        dbDir = new File(file, "db");
-        htmlDir = new File(file, "html");
-        creator = new Dump2HTMLCreator(testFile);
+        File dir = Files.createTempDirectory(getClass().getName()).toFile();
+        dbDir = new File(dir, "db");
+        htmlDir = new File(dir, "html");
+        creator = new Dump2HTMLCreator(new File(dump.getFile()));
     }
 
     @Test

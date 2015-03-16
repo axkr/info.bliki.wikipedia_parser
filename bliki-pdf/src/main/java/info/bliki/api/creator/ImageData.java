@@ -1,22 +1,24 @@
 package info.bliki.api.creator;
 
+import java.io.File;
+
 public class ImageData {
     private String fImageName;
     private String fImageUrl;
-    private String fImageFilename;
+    private File fImageFile;
 
     public ImageData(String name) {
-        this(name, "", "");
+        this(name, "", null);
     }
 
     public ImageData(String name, String url) {
-        this(name, url, "");
+        this(name, url, null);
     }
 
-    public ImageData(String name, String url, String filename) {
+    public ImageData(String name, String url, File filename) {
         fImageName = name;
         fImageUrl = url;
-        fImageFilename = filename;
+        fImageFile = filename;
     }
 
     public String getName() {
@@ -35,12 +37,12 @@ public class ImageData {
         this.fImageUrl = imageUrl;
     }
 
-    public String getFilename() {
-        return fImageFilename;
+    public File getFile() {
+        return fImageFile;
     }
 
-    public void setFilename(String imageFilename) {
-        this.fImageFilename = imageFilename;
+    public void setFile(File imageFilename) {
+        this.fImageFile = imageFilename;
     }
 
     @Override
@@ -50,8 +52,7 @@ public class ImageData {
 
         ImageData imageData = (ImageData) o;
 
-        if (fImageFilename != null ? !fImageFilename.equals(imageData.fImageFilename) : imageData.fImageFilename != null)
-            return false;
+        if (fImageFile != null ? !fImageFile.equals(imageData.fImageFile) : imageData.fImageFile != null) return false;
         if (fImageName != null ? !fImageName.equals(imageData.fImageName) : imageData.fImageName != null) return false;
         if (fImageUrl != null ? !fImageUrl.equals(imageData.fImageUrl) : imageData.fImageUrl != null) return false;
 
@@ -62,7 +63,7 @@ public class ImageData {
     public int hashCode() {
         int result = fImageName != null ? fImageName.hashCode() : 0;
         result = 31 * result + (fImageUrl != null ? fImageUrl.hashCode() : 0);
-        result = 31 * result + (fImageFilename != null ? fImageFilename.hashCode() : 0);
+        result = 31 * result + (fImageFile != null ? fImageFile.hashCode() : 0);
         return result;
     }
 }

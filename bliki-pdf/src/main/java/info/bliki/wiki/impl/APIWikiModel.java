@@ -198,9 +198,9 @@ public class APIWikiModel extends WikiModel {
             String imageName = imageFormat.getFilename();
             ImageData imageData = fWikiDB.selectImage(imageName);
             if (imageData != null) {
-                File file = new File(imageData.getFilename());
+                File file = imageData.getFile();
                 if (file.exists()) {
-                    super.appendInternalImageLink(hrefImageLink, "file:///" + imageData.getFilename(), imageFormat);
+                    super.appendInternalImageLink(hrefImageLink, file.toURI().toString(), imageFormat);
                     return;
                 }
             }
@@ -234,19 +234,18 @@ public class APIWikiModel extends WikiModel {
                     }
                 }
                 if (fImageDirectory != null) {
-                    String filename = fImageDirectory + urlImageName;
-                    File file = new File(filename);
+                    File file = new File(fImageDirectory, urlImageName);
                     if (!file.exists()) {
-                        try (OutputStream os = new FileOutputStream(filename)) {
+                        try (OutputStream os = new FileOutputStream(file)) {
                             page.downloadImageUrl(os, imageUrl);
                         } catch (IOException e) {
                             logger.warn(null, e);
                         }
                     }
                     imageData.setUrl(imageUrl);
-                    imageData.setFilename(filename);
+                    imageData.setFile(file);
                     fWikiDB.insertImage(imageData);
-                    super.appendInternalImageLink(hrefImageLink, "file:///" + filename, imageFormat);
+                    super.appendInternalImageLink(hrefImageLink, file.toURI().toString(), imageFormat);
                 }
             }
         } catch (SQLException e) {

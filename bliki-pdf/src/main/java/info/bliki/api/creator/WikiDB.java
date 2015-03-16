@@ -126,7 +126,7 @@ public class WikiDB implements Closeable {
         try (ResultSet resultSet = fSelectImage.executeQuery()) {
             if (resultSet.next()) {
                 imageData.setUrl(resultSet.getString(1));
-                imageData.setFilename(resultSet.getString(2));
+                imageData.setFile(new File(resultSet.getString(2)));
                 return imageData;
             }
         }
@@ -136,13 +136,13 @@ public class WikiDB implements Closeable {
     public void insertImage(ImageData imageData) throws SQLException {
         fInsertImage.setString(1, imageData.getName());
         fInsertImage.setString(2, imageData.getUrl() != null ? imageData.getUrl() : "");
-        fInsertImage.setString(3, imageData.getFilename());
+        fInsertImage.setString(3, imageData.getFile().getAbsolutePath());
         fInsertImage.execute();
     }
 
     public void updateImage(ImageData imageData) throws SQLException {
         fUpdateTopicContent.setString(1, imageData.getUrl());
-        fUpdateTopicContent.setString(2, imageData.getFilename());
+        fUpdateTopicContent.setString(2, imageData.getFile().getAbsolutePath());
         fUpdateTopicContent.setString(3, imageData.getName());
         fUpdateTopicContent.execute();
     }

@@ -34,7 +34,7 @@ public class WikiDBTest {
 
     @Test public void shouldInsertNewImage() throws Exception {
         WikiDB db = new WikiDB(tempDir);
-        ImageData imageData = new ImageData("name", "http://foo.com", "filename");
+        ImageData imageData = new ImageData("name", "http://foo.com", new File("/foo"));
         db.insertImage(imageData);
         ImageData selected = db.selectImage("name");
 

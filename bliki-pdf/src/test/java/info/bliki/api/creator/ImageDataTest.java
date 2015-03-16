@@ -2,6 +2,8 @@ package info.bliki.api.creator;
 
 import org.junit.Test;
 
+import java.io.File;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ImageDataTest {
@@ -17,7 +19,7 @@ public class ImageDataTest {
     }
 
     @Test public void shouldImplementEqualsByFilename() throws Exception {
-        assertThat(new ImageData("foo", "url", "file")).isEqualTo(new ImageData("foo", "url", "file"));
-        assertThat(new ImageData("foo", "url", "file")).isNotEqualTo(new ImageData("foo", "url", "otherFile"));
+        assertThat(new ImageData("foo", "url", new File("file"))).isEqualTo(new ImageData("foo", "url", new File("file")));
+        assertThat(new ImageData("foo", "url", new File("file"))).isNotEqualTo(new ImageData("foo", "url", new File("otherfile")));
     }
 }
