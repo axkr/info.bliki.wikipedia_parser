@@ -23,7 +23,7 @@ public class PDFCreatorExample {
 
         try {
             db = new WikiDB(new File(mainDirectory,  "WikiDB"));
-            APIWikiModel myWikiModel = new APIWikiModel(user, db, "${image}", mainDirectory.toURI().toURL().toExternalForm() +"/${title}", imageDirectory.getAbsolutePath());
+            APIWikiModel myWikiModel = new APIWikiModel(user, db, "${image}", mainDirectory.toURI().toURL().toExternalForm() +"/${title}", imageDirectory);
             DocumentCreator creator = new DocumentCreator(myWikiModel, user, listOfTitleStrings);
 
             creator.renderPDFToFile(mainDirectory.getAbsolutePath(), titleURL + ".pdf", HTMLConstants.CSS_MAIN_STYLE);

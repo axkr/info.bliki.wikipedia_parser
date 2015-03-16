@@ -33,7 +33,7 @@ import java.util.Map;
 public class APIWikiModel extends WikiModel {
     private WikiDB fWikiDB;
 
-    private final String fImageDirectoryName;
+    private final File fImageDirectory;
     static {
         TagNode.addAllowedAttribute("style");
     }
@@ -58,12 +58,12 @@ public class APIWikiModel extends WikiModel {
      *          a url string which must contains a &quot;${title}&quot; variable
      *          which will be replaced by the topic title, to create links to
      *          other wiki topics.
-     * @param imageDirectoryName
+     * @param imageDirectory
      *          a directory for storing downloaded Wikipedia images. The directory
      *          must already exist.
      */
-    public APIWikiModel(User user, WikiDB wikiDB, String imageBaseURL, String linkBaseURL, String imageDirectoryName) {
-        this(user, wikiDB, Locale.ENGLISH, imageBaseURL, linkBaseURL, imageDirectoryName);
+    public APIWikiModel(User user, WikiDB wikiDB, String imageBaseURL, String linkBaseURL, File imageDirectory) {
+        this(user, wikiDB, Locale.ENGLISH, imageBaseURL, linkBaseURL, imageDirectory);
     }
 
     /**
@@ -86,28 +86,21 @@ public class APIWikiModel extends WikiModel {
      *          a url string which must contains a &quot;${title}&quot; variable
      *          which will be replaced by the topic title, to create links to
      *          other wiki topics.
-     * @param imageDirectoryName
+     * @param imageDirectory
      *          a directory for storing downloaded Wikipedia images. The directory
      *          must already exist.
      */
-    public APIWikiModel(User user, WikiDB wikiDB, Locale locale, String imageBaseURL, String linkBaseURL, String imageDirectoryName) {
+    public APIWikiModel(User user, WikiDB wikiDB, Locale locale, String imageBaseURL, String linkBaseURL, File imageDirectory) {
         super(Configuration.DEFAULT_CONFIGURATION, locale, imageBaseURL, linkBaseURL);
 
         fUser = user;
         fWikiDB = wikiDB;
-        if (imageDirectoryName != null) {
-            if (imageDirectoryName.charAt(imageDirectoryName.length() - 1) == '/') {
-                fImageDirectoryName = imageDirectoryName;
-            } else {
-                fImageDirectoryName = imageDirectoryName + "/";
+        if (imageDirectory != null) {
+            if (!imageDirectory.exists()) {
+                assert(imageDirectory.mkdir());
             }
-            File file = new File(fImageDirectoryName);
-            if (!file.exists()) {
-                assert(file.mkdir());
-            }
-        } else {
-            fImageDirectoryName = null;
         }
+        fImageDirectory = imageDirectory;
     }
 
     /**
@@ -225,7 +218,7 @@ public class APIWikiModel extends WikiModel {
                 Page page = listOfPages.get(0);
                 imageData = new ImageData(imageName);
 
-                // download the image to fImageDirectoryName directory
+                // download the image to fImageDirectory directory
                 String imageUrl;
                 if (imageFormat.getWidth() > 0) {
                     imageUrl = page.getImageThumbUrl();
@@ -240,8 +233,8 @@ public class APIWikiModel extends WikiModel {
                         urlImageName = Encoder.encodeTitleLocalUrl(imageUrl.substring(index + 1));
                     }
                 }
-                if (fImageDirectoryName != null) {
-                    String filename = fImageDirectoryName + urlImageName;
+                if (fImageDirectory != null) {
+                    String filename = fImageDirectory + urlImageName;
                     File file = new File(filename);
                     if (!file.exists()) {
                         try (OutputStream os = new FileOutputStream(filename)) {

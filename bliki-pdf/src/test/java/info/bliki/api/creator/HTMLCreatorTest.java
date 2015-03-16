@@ -170,7 +170,7 @@ public class HTMLCreatorTest {
                 locale,
                 "${image}",
                 "${title}",
-                imageDirectory.toString());
+                imageDirectory.toFile());
 
         DocumentCreator creator = new DocumentCreator(wikiModel, user, new String[]{title});
         @SuppressWarnings("StringBufferReplaceableByString")
