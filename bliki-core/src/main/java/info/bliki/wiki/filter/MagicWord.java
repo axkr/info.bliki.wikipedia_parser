@@ -26,7 +26,7 @@ import java.util.Date;
 import java.util.HashMap;
 
 /**
- * See <a href="http://www.mediawiki.org/wiki/Help:Magic_words">Help:Magic
+ * See <a href="https://www.mediawiki.org/wiki/Help:Magic_words">Help:Magic
  * words</a> for a list of Mediawiki magic words.
  */
 public class MagicWord {

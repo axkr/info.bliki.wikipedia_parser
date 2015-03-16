@@ -12,7 +12,7 @@ import java.util.Set;
  * href="http://www.mediawiki.org/wiki/Manual:Tag_extensions">HTML styled tag
  * extension</a>, <a
  * href="http://www.mediawiki.org/wiki/Manual:Parser_functions">template parser
- * functions</a> and <a href="http://www.mediawiki.org/wiki/Interwiki">interwiki
+ * functions</a> and <a href="https://www.mediawiki.org/wiki/Interwiki">interwiki
  * links</a>
  *
  * @see info.bliki.wiki.model.Configuration
@@ -44,7 +44,7 @@ public interface IConfiguration {
     public String addInterwikiLink(String key, String value);
 
     /**
-     * Add a new <a href="http://www.mediawiki.org/wiki/Interwiki">interwiki
+     * Add a new <a href="https://www.mediawiki.org/wiki/Interwiki">interwiki
      * link</a> to the configuration
      *
      * @param key
@@ -74,7 +74,7 @@ public interface IConfiguration {
     public Map<String, SourceCodeFormatter> getCodeFormatterMap();
 
     /**
-     * Get the <a href="http://www.mediawiki.org/wiki/Interwiki">interwiki
+     * Get the <a href="https://www.mediawiki.org/wiki/Interwiki">interwiki
      * links</a> map for converting interwiki links into external URLs.
      *
      * Example: maps the interwiki shortcut &quot;de&quot; to
@@ -102,7 +102,7 @@ public interface IConfiguration {
     public Map<String, ITemplateFunction> getTemplateMap();
 
     /**
-     * Get the <a href="http://www.mediawiki.org/wiki/Manual:Tag_extensions">HTML
+     * Get the <a href="https://www.mediawiki.org/wiki/Manual:Tag_extensions">HTML
      * styled tag</a> map for built-in tags
      *
      * @return

@@ -8,7 +8,7 @@ import java.util.List;
  * Manages user data from the <a
  * href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>.
  *
- * See also <a href="http://www.mediawiki.org/wiki/API:Login">Mediawiki
+ * See also <a href="https://www.mediawiki.org/wiki/API:Login">Mediawiki
  * API:Login</a>
  */
 public class User {

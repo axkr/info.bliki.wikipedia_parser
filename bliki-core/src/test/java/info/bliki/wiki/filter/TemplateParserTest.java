@@ -571,7 +571,7 @@ public class TemplateParserTest extends FilterTestSupport {
     }
 
     /**
-     * See <a href="http://www.mediawiki.org/wiki/Help:Extension:ParserFunctions#Comparison_behaviour"
+     * See <a href="https://www.mediawiki.org/wiki/Help:Extension:ParserFunctions#Comparison_behaviour"
      * >Help:Extension:ParserFunctions - Comparison behaviour</a>
      */
     @Test public void testSwitch010() {

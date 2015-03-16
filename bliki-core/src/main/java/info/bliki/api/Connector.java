@@ -54,7 +54,7 @@ public class Connector {
     private final static String PARAM_TITLES   = "titles";
 
     /**
-     * See <a href="http://www.mediawiki.org/wiki/API:Query#Generators_and_continuation">Generators and continuation</a>.
+     * See <a href="https://www.mediawiki.org/wiki/API:Query#Generators_and_continuation">Generators and continuation</a>.
      */
     private final static String PARAM_CONTINUE = "continue";
 
