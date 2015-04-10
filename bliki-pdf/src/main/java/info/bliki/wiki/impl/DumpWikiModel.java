@@ -17,6 +17,7 @@ import info.bliki.wiki.namespaces.INamespace;
 import info.bliki.wiki.namespaces.INamespace.NamespaceCode;
 import info.bliki.wiki.tags.WPATag;
 
+import javax.annotation.Nullable;
 import java.io.File;
 import java.util.Locale;
 import java.util.Map;
@@ -44,12 +45,12 @@ public class DumpWikiModel extends WikiModel {
      *          a url string which must contains a &quot;${title}&quot; variable
      *          which will be replaced by the topic title, to create links to
      *          other wiki topics.
-     * @param imageDirectoryName
+     * @param imageDirectory
      *          a directory for storing downloaded Wikipedia images. The directory
      *          must already exist.
      */
-    public DumpWikiModel(WikiDB wikiDB, Siteinfo siteinfo, String imageBaseURL, String linkBaseURL, File imageDirectoryName) {
-        this(wikiDB, siteinfo, Locale.ENGLISH, imageBaseURL, linkBaseURL, imageDirectoryName);
+    public DumpWikiModel(WikiDB wikiDB, Siteinfo siteinfo, String imageBaseURL, String linkBaseURL, @Nullable File imageDirectory) {
+        this(wikiDB, siteinfo, Locale.ENGLISH, imageBaseURL, linkBaseURL, imageDirectory);
     }
 
     /**
@@ -71,7 +72,7 @@ public class DumpWikiModel extends WikiModel {
      *          must already exist.
      */
     public DumpWikiModel(WikiDB wikiDB, Siteinfo siteinfo, Locale locale, String imageBaseURL, String linkBaseURL,
-            File imageDirectory) {
+            @Nullable File imageDirectory) {
         super(Configuration.DEFAULT_CONFIGURATION, locale, Messages.getResourceBundle(locale), siteinfo.getNamespace(), imageBaseURL,
                 linkBaseURL);
         fWikiDB = wikiDB;

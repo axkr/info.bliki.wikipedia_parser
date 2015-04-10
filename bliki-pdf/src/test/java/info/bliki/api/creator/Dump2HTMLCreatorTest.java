@@ -30,14 +30,14 @@ public class Dump2HTMLCreatorTest {
 
     @Test
     public void importTemplatesAndModules() throws Exception {
-        creator.dump(Dump2HTMLCreator.DumpMode.WRITE_TEMPLATES_AND_MODULES, dbDir, null, htmlDir);
+        creator.dump(Dump2HTMLCreator.DumpMode.WRITE_TEMPLATES_AND_MODULES, dbDir, htmlDir, null);
         assertThat(dbDir).isDirectory();
         assertThat(htmlDir).doesNotExist();
     }
 
     @Test
     public void importAndRenderHTML() throws Exception {
-        creator.dump(Dump2HTMLCreator.DumpMode.BOTH, dbDir, null, htmlDir);
+        creator.dump(Dump2HTMLCreator.DumpMode.BOTH, dbDir, htmlDir, null);
         assertThat(dbDir).isDirectory();
         assertThat(htmlDir).isDirectory();
         assertThat(htmlDir.listFiles()).hasSize(3);

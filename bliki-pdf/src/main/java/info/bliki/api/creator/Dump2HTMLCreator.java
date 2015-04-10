@@ -8,6 +8,8 @@ import info.bliki.wiki.filter.Encoder;
 import info.bliki.wiki.impl.DumpWikiModel;
 import org.xml.sax.SAXException;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -36,9 +38,8 @@ public class Dump2HTMLCreator {
         this.dumpFile = dumpFile;
     }
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         DumpMode mode = DumpMode.BOTH;
-
         if (args.length < 2) {
             System.err.println("Usage: "+Dump2HTMLCreator.class.getSimpleName()+" <dump.xml> <dump-dir> [WRITE_TEMPLATES_AND_MODULES|WRITE_HTML|BOTH]");
             System.exit(-1);
@@ -51,27 +52,26 @@ public class Dump2HTMLCreator {
             }
 
             System.err.println("importing into "+baseDir);
-            new Dump2HTMLCreator(dumpFile).dump(mode, baseDir);
+            final File htmlDirectory = new File(baseDir, HTML_DIR);
+            final File dbDirectory = new File(baseDir, WIKI_DB);
+            final File imageDirectory = new File(htmlDirectory, WIKI_DUMP_IMAGES);
+
+            new Dump2HTMLCreator(dumpFile).dump(mode, dbDirectory, htmlDirectory, imageDirectory);
             System.out.println("done!");
         }
     }
 
-    protected void dump(DumpMode mode, File baseDir) throws SAXException, IOException, SQLException {
-        final File htmlDirectory = new File(baseDir, HTML_DIR);
-        final File dbDirectory = new File(baseDir, WIKI_DB);
-        // the following directory must exist for image references
-        final File imageDirectory = new File(htmlDirectory, WIKI_DUMP_IMAGES);
-
-        dump(mode, dbDirectory, imageDirectory, htmlDirectory);
-    }
-
-
-    protected void dump(DumpMode mode,
-                        File dbDirectory,
-                        File imageDirectory,
-                        File htmlDirectory)
-            throws IOException, SAXException, SQLException {
-
+    /**
+     * Parses and processes the MediaWiki dump.
+     *
+     * @param mode what to extract
+     * @param dbDirectory the directory where templates and modules should be cached to
+     * @param htmlDirectory directory to store generated HTML content
+     * @param imageDirectory  directory to store images or null
+     * @throws IOException
+     */
+    public void dump(DumpMode mode, File dbDirectory, File htmlDirectory, @Nullable File imageDirectory)
+            throws IOException {
         try (WikiDB db = new WikiDB(dbDirectory)) {
             if (mode == BOTH || mode == WRITE_TEMPLATES_AND_MODULES) {
                 firstPass(db);
@@ -80,15 +80,18 @@ public class Dump2HTMLCreator {
             if (mode == BOTH || mode == WRITE_HTML) {
                 secondPass(db, htmlDirectory, imageDirectory);
             }
+        } catch (SQLException | SAXException e) {
+            throw new IOException(e);
         }
     }
+
     private void firstPass(WikiDB db) throws IOException, SAXException {
         System.out.println("First pass - write templates to database "+db);
         new WikiXMLParser(dumpFile, new InsertTemplateAndModuleFilter(db)).parse();
         System.out.println(' ');
     }
 
-    private void secondPass(WikiDB db, File htmlDirectory, File imageDirectory) throws IOException, SAXException {
+    private void secondPass(WikiDB db, File htmlDirectory, @Nullable File imageDirectory) throws IOException, SAXException {
         System.out.println("Second pass - write HTML files to directory "+htmlDirectory);
         new WikiXMLParser(dumpFile, new RenderArticleFilter(db, htmlDirectory, imageDirectory)).parse();
         System.out.println(' ');
@@ -124,7 +127,7 @@ public class Dump2HTMLCreator {
         private final File htmlDirectory;
         private final File imageDirectory;
 
-        public RenderArticleFilter(WikiDB db, File htmlDirectory, File imageDirectory) {
+        public RenderArticleFilter(WikiDB db, @Nonnull File htmlDirectory, @Nullable File imageDirectory) {
             this.wikiDB = db;
             this.htmlDirectory = htmlDirectory;
             this.imageDirectory = imageDirectory;
