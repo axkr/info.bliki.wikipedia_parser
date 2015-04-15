@@ -16,7 +16,7 @@ public interface HTMLTag {
      *
      * @see HTMLTag#open(TagNode, StringBuilder)
      */
-    public void close(TagNode node, StringBuilder resultBuffer);
+    void close(TagNode node, StringBuilder resultBuffer);
 
     /**
      * Convert the current HTML node, which has no children nodes into wiki text.
@@ -32,7 +32,7 @@ public interface HTMLTag {
      *          if <code>true</code> don't call the open() and close() method for
      *          this tag
      */
-    public void emptyContent(AbstractHTMLToWiki html2WikiConverter, TagNode node, StringBuilder resultBuffer, boolean showWithoutTag);
+    void emptyContent(AbstractHTMLToWiki html2WikiConverter, TagNode node, StringBuilder resultBuffer, boolean showWithoutTag);
 
     /**
      * Convert the current HTML node into wiki text.
@@ -48,7 +48,7 @@ public interface HTMLTag {
      *          if <code>true</code> don't call the open() and close() method for
      *          this tag
      */
-    public void content(AbstractHTMLToWiki html2WikiConverter, TagNode node, StringBuilder resultBuffer, boolean showWithoutTag);
+    void content(AbstractHTMLToWiki html2WikiConverter, TagNode node, StringBuilder resultBuffer, boolean showWithoutTag);
 
     /**
      * Write the opening wiki syntax for this tag to the result buffer
@@ -58,6 +58,6 @@ public interface HTMLTag {
      *
      * @see HTMLTag#close(TagNode, StringBuilder)
      */
-    public void open(TagNode node, StringBuilder resultBuffer);
+    void open(TagNode node, StringBuilder resultBuffer);
 
 }

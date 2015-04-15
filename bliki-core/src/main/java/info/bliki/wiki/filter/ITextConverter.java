@@ -24,7 +24,7 @@ public interface ITextConverter {
      * @param model
      *          the current wiki model
      */
-    public abstract void nodesToText(List<? extends Object> nodes, Appendable resultBuffer, IWikiModel model) throws IOException;
+    void nodesToText(List<?> nodes, Appendable resultBuffer, IWikiModel model) throws IOException;
 
     /**
      * Convert the imageTagNode into a given HTML string buffer
@@ -38,7 +38,7 @@ public interface ITextConverter {
      * @param model
      *          the current wiki model
      */
-    public abstract void imageNodeToText(TagNode imageTagNode, ImageFormat imageFormat, Appendable resultBuffer, IWikiModel model) throws IOException;
+    void imageNodeToText(TagNode imageTagNode, ImageFormat imageFormat, Appendable resultBuffer, IWikiModel model) throws IOException;
 
     /**
      * If this method returns true, then the &lt;a&gt; tag should only render the
@@ -47,5 +47,5 @@ public interface ITextConverter {
      *
      * @return
      */
-    public abstract boolean noLinks();
+    boolean noLinks();
 }
