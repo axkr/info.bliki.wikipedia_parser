@@ -65,9 +65,6 @@ public class WPTableFilterTest extends FilterTestSupport {
             + "|-\n" + "| TABLE\n" + "|}\n" + "| valign=\"bottom\" | the original table again\n" + "|}\n" + "</blockquote>\n" + "\n" + "";
 
 
-    // @Test public void testNestedTable0() {
-    // assertEquals("", wikiModel.render(TEST2));
-    // }
     @Test public void testNestedTable1() {
         assertThat(wikiModel
                 .render(TEST, false)).isEqualTo("\n" +
@@ -253,10 +250,6 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "");
     }
 
-    // @Test public void testBlockquoteTable07() {
-    // assertEquals("", wikiModel.render(TEST6));
-    // }
-
     @Test public void testMathTable1() {
         assertThat(wikiModel.render("{| border=1\n" + "|-\n" + "|<math>\\frac{1}{|a|} G \\left( \\frac{\\omega}{a} \\right)\\,</math>\n"
                 + "|}", false)).isEqualTo("\n" + "<div style=\"page-break-inside: avoid;\">\n" + "<table border=\"1\">\n" + "<tr>\n"
@@ -418,61 +411,4 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "";
         assertThat(wikiModel.render(raw, false)).isEqualTo(expected);
     }
-
-    // @Test public void testWPTable02() {
-    // String WIKIPEDIA =
-    // "<table border=\"1\" cellspacing=\"0\" cellpadding=\"5\" align=\"center\">\n"
-    // +
-    // "<tr>\n" +
-    // "<th>Year</th>\n" +
-    // "<th>Make</th>\n" +
-    // "<th>Model</th>\n" +
-    // "<th>Description</th>\n" +
-    // "</tr>\n" +
-    // "<tr>\n" +
-    // "\n" +
-    // "<td>69</td>\n" +
-    // "<td>Plymouth</td>\n" +
-    // "<td>Road Runner</td>\n" +
-    // "<td>very fast</td>\n" +
-    // "</tr>\n" +
-    // "<tr>\n" +
-    // "<td>98</td>\n" +
-    // "<td>Honda</td>\n" +
-    // "<td>Accord</td>\n" +
-    // "<td>Very efficient\n" +
-    // "\n" +
-    // "<p><b>This text should be on a new line</b></p>\n" +
-    // "</td>\n" +
-    // "</tr>\n" +
-    // "</table>\n" +
-    // "";
-    // String test =
-    // "{| border=\"1\" cellspacing=\"0\" cellpadding=\"5\" align=\"center\"\n" +
-    // "!Year\n" +
-    // "!Make\n" +
-    // "!Model\n" +
-    // "!Description\n" +
-    // "|-\n" +
-    // "|69\n" +
-    // "|Plymouth\n" +
-    // "|Road Runner\n" +
-    // "|very fast\n" +
-    // "|-\n" +
-    // "|98\n" +
-    // "|Honda\n" +
-    // "|Accord\n" +
-    // "|Very efficient\n" +
-    // "'''This text should be on a new line'''\n" +
-    // "|}";
-    // assertEquals(WIKIPEDIA, wikiModel.render(test));
-    // }
-    //
-    // @Test public void testWPTable03() {
-    // String WIKIPEDIA = "";
-    // String test =
-    // "Very efficient\n\n" +
-    // "'''This text should be on a new line'''\n";
-    // assertEquals(WIKIPEDIA, wikiModel.render(test));
-    // }
 }

@@ -17,14 +17,6 @@ public class WPATag extends HTMLTag {
         return false;
     }
 
-    // public boolean isAllowedAttribute(String attributeName) {
-    // if (attributeName.equals("href") || attributeName.equals("title") ||
-    // attributeName.equals("rel")) {
-    // return true;
-    // }
-    // return false;
-    // }
-
     public String getCloseTag() {
         return "</a>";
     }
