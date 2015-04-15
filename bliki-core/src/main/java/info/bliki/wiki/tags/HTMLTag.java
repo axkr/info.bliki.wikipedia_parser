@@ -38,19 +38,6 @@ public class HTMLTag extends TagNode {
         }
     }
 
-    public static void appendUnescapedAttributes(Appendable buf, Map<String, String> tagAtttributes) throws IOException {
-        if (tagAtttributes != null) {
-            for (Map.Entry<String, String> currEntry : tagAtttributes.entrySet()) {
-                String attName = currEntry.getKey();
-                if (attName.length() >= 1 && Character.isLetter(attName.charAt(0))) {
-                    String attValue = currEntry.getValue();
-
-                    buf.append(" " + attName + "=\"" + attValue + "\"");
-                }
-            }
-        }
-    }
-
     public HTMLTag(String name) {
         super(name);
     }
