@@ -16,6 +16,10 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import static info.bliki.wiki.tags.WPATag.CLASS;
+import static info.bliki.wiki.tags.WPATag.HREF;
+import static info.bliki.wiki.tags.WPATag.WIKILINK;
+
 public class APIWikiModelInMemory extends WikiModel {
     private final User user;
     private final Map<String, String> contentCache;
@@ -70,11 +74,11 @@ public class APIWikiModelInMemory extends WikiModel {
         if (hashSection != null) {
             href = href + '#' + hashSection;
         }
-        tagNode.addAttribute("href", href, true);
+        tagNode.addAttribute(HREF, href, true);
         if (cssClass != null) {
-            tagNode.addAttribute("class", cssClass, true);
+            tagNode.addAttribute(CLASS, cssClass, true);
         }
-        tagNode.addObjectAttribute("wikilink", topic);
+        tagNode.addObjectAttribute(WIKILINK, topic);
 
         pushNode(tagNode);
         WikipediaParser.parseRecursive(topicDescription.trim(), this, false,

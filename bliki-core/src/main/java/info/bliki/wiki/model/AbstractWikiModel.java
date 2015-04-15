@@ -52,6 +52,10 @@ import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.TimeZone;
 
+import static info.bliki.wiki.tags.WPATag.CLASS;
+import static info.bliki.wiki.tags.WPATag.HREF;
+import static info.bliki.wiki.tags.WPATag.WIKILINK;
+
 /**
  * Standard model implementation for the Wikipedia syntax
  *
@@ -355,7 +359,6 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
         aTagNode.addAttribute("rel", "nofollow", true);
         if (withoutSquareBrackets) {
             aTagNode.addAttribute("class", "external free", true);
-            // aTagNode.addAttribute("title", link, true);
             append(aTagNode);
             aTagNode.addChild(new ContentToken(linkName));
         } else {
@@ -374,7 +377,6 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
                             + (++fExternalLinksCounter) + "]"));
                 } else {
                     aTagNode.addAttribute("class", "external text", true);
-                    // aTagNode.addAttribute("title", link, true);
                     WikipediaParser.parseRecursive(trimmedText, this, false,
                             true);
                 }
@@ -512,11 +514,11 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
         if (hashSection != null) {
             href = href + '#' + encodeTitleDotUrl(hashSection, false);
         }
-        aTagNode.addAttribute("href", href, true);
+        aTagNode.addAttribute(HREF, href, true);
         if (cssClass != null) {
-            aTagNode.addAttribute("class", cssClass, true);
+            aTagNode.addAttribute(CLASS, cssClass, true);
         }
-        aTagNode.addObjectAttribute("wikilink", topic);
+        aTagNode.addObjectAttribute(WIKILINK, topic);
 
         pushNode(aTagNode);
         if (parseRecursive) {

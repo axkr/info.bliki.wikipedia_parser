@@ -22,6 +22,11 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
 
+import static info.bliki.wiki.tags.WPATag.CLASS;
+import static info.bliki.wiki.tags.WPATag.HREF;
+import static info.bliki.wiki.tags.WPATag.TITLE;
+import static info.bliki.wiki.tags.WPATag.WIKILINK;
+
 /**
  * Standard model implementation
  *
@@ -186,7 +191,7 @@ public class WikiModel extends AbstractWikiModel {
                         "${title} (page does not exist)");
                 title = redlinkString.replace("${title}", title);
             }
-            aTagNode.addAttribute("title", title, true);
+            aTagNode.addAttribute(TITLE, title, true);
         } else {
             // assume, the own topic exists
             if (hashSection != null) {
@@ -203,11 +208,11 @@ public class WikiModel extends AbstractWikiModel {
         if (topicExists && hashSection != null) {
             href = href + '#' + encodeTitleDotUrl(hashSection, false);
         }
-        aTagNode.addAttribute("href", href, true);
+        aTagNode.addAttribute(HREF, href, true);
         if (cssClass != null) {
-            aTagNode.addAttribute("class", cssClass, true);
+            aTagNode.addAttribute(CLASS, cssClass, true);
         }
-        aTagNode.addObjectAttribute("wikilink", topic);
+        aTagNode.addObjectAttribute(WIKILINK, topic);
 
         pushNode(aTagNode);
         if (parseRecursive) {

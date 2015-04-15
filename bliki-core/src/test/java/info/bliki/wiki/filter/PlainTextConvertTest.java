@@ -9,6 +9,9 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
+import static info.bliki.wiki.tags.WPATag.HREF;
+import static info.bliki.wiki.tags.WPATag.TITLE;
+import static info.bliki.wiki.tags.WPATag.WIKILINK;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class PlainTextConvertTest extends FilterTestSupport {
@@ -36,9 +39,9 @@ public class PlainTextConvertTest extends FilterTestSupport {
 
     @Test public void testConvertLinkNode() throws Exception {
         WPATag aTag = new WPATag();
-        aTag.addAttribute("href", "some-href", false);
-        aTag.addAttribute("title", "title", false);
-        aTag.addObjectAttribute("wikilink", "foo");
+        aTag.addAttribute(HREF, "some-href", false);
+        aTag.addAttribute(TITLE, "title", false);
+        aTag.addObjectAttribute(WIKILINK, "foo");
         aTag.addChild(new ContentToken("foo"));
 
         assertThat(convert(Collections.singletonList(aTag))).isEqualTo("foo");

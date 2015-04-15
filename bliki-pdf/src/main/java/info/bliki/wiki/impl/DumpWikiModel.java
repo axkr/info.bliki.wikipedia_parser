@@ -22,6 +22,10 @@ import java.io.File;
 import java.util.Locale;
 import java.util.Map;
 
+import static info.bliki.wiki.tags.WPATag.CLASS;
+import static info.bliki.wiki.tags.WPATag.HREF;
+import static info.bliki.wiki.tags.WPATag.WIKILINK;
+
 public class DumpWikiModel extends WikiModel {
     private Siteinfo fSiteinfo;
     private WikiDB fWikiDB;
@@ -183,11 +187,11 @@ public class DumpWikiModel extends WikiModel {
         if (hashSection != null) {
             href = href + '#' + hashSection;
         }
-        aTagNode.addAttribute("href", href, true);
+        aTagNode.addAttribute(HREF, href, true);
         if (cssClass != null) {
-            aTagNode.addAttribute("class", cssClass, true);
+            aTagNode.addAttribute(CLASS, cssClass, true);
         }
-        aTagNode.addObjectAttribute("wikilink", topic);
+        aTagNode.addObjectAttribute(WIKILINK, topic);
         pushNode(aTagNode);
         WikipediaParser.parseRecursive(topicDescription.trim(), this, false, true);
         popNode();

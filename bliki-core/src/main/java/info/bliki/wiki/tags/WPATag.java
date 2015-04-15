@@ -8,6 +8,11 @@ import java.util.List;
 
 
 public class WPATag extends HTMLTag {
+    public static final String HREF = "href";
+    public static final String WIKILINK = "wikilink";
+    public static final String CLASS = "class";
+    public static final String TITLE = "title";
+
     public WPATag() {
         super("a");
     }
@@ -16,7 +21,7 @@ public class WPATag extends HTMLTag {
     public boolean isReduceTokenStack() {
         return false;
     }
-
+    
     @Override
     public void renderHTML(ITextConverter converter, Appendable buf, IWikiModel model) throws IOException {
         if (!converter.noLinks()) {
