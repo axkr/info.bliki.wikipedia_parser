@@ -211,8 +211,7 @@ public class WikiModel extends AbstractWikiModel {
 
         pushNode(aTagNode);
         if (parseRecursive) {
-            WikipediaPreTagParser
-                    .parseRecursive(description, this, false, true);
+            WikipediaPreTagParser.parseRecursive(description, this, false, true);
         } else {
             aTagNode.addChild(new ContentToken(description));
         }
