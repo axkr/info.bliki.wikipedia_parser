@@ -5,11 +5,8 @@ package info.bliki.wiki.filter;
  *
  */
 public class SectionHeader extends StringPair {
-
     private final int fLevel;
-
     private final int fStartPosition;
-
     private final int fEndPosition;
 
     public SectionHeader(int level, int startPosition, int endPosition, String one, String two) {
