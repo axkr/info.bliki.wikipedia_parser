@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * @see info.bliki.wiki.filter.WPListElement
  *
  */
-public class WPList extends WPTag {
+public class WPList extends WPTag implements PlainTextConvertable {
     public final static char DL_DD_CHAR = ':';
     public final static char DL_DT_CHAR = ';';
     public final static char OL_CHAR = '#';
@@ -59,11 +59,6 @@ public class WPList extends WPTag {
         return fNestedElements == null;
     }
 
-    /**
-     *
-     * @param listElement
-     * @return <tt>true</tt>
-     */
     public boolean add(WPListElement listElement) {
         char[] sequence = listElement.getSequence();
         int s1Length = 0;
@@ -75,8 +70,8 @@ public class WPList extends WPTag {
             fInternalListStack.add(fNestedElements);
         }
         InternalList list;
-        int min = 0;
-        int level = 0;
+        int min;
+        int level;
         if (s1Length > s2Length) {
             min = s2Length;
         } else {
@@ -123,8 +118,7 @@ public class WPList extends WPTag {
         if (!isEmpty()) {
             fInternalListStack = null;
 
-            for (int i = 0; i < fNestedElements.size(); i++) {
-                Object element = fNestedElements.get(i);
+            for (Object element : fNestedElements) {
                 if (element instanceof InternalList) {
                     InternalList subList = (InternalList) element;
                     beginHTMLTag(buf, subList);
@@ -191,7 +185,7 @@ public class WPList extends WPTag {
         }
 
         char currentChar = list.fChar;
-        char lastChar = ' ';
+        char lastChar;
         if (currentChar == DL_DD_CHAR) {
             buf.append("\n<dd>");
         } else if (currentChar == DL_DT_CHAR) {
@@ -311,28 +305,22 @@ public class WPList extends WPTag {
                 if (stack != null) {
                     converter.nodesToText(stack.getNodeList(), buf, wikiModel);
                 }
-                // wikiModel.appendStack(((WPListElement)
-                // element).getTagStack());
             }
 
             if ((i < list.size() - 1) && list.get(i + 1) instanceof WPListElement) {
                 if (NEW_LINES) {
                     buf.append("\n");
-                    // buf.append("</li>\n<li>");
-                } else {
-                    // buf.append("</li><lSi>");
                 }
             }
 
         }
     }
 
+    @Override
     public void renderPlainText(ITextConverter converter, Appendable buf, IWikiModel wikiModel) throws IOException {
         if (!isEmpty()) {
             fInternalListStack = null;
-
-            for (int i = 0; i < fNestedElements.size(); i++) {
-                Object element = fNestedElements.get(i);
+            for (Object element : fNestedElements) {
                 if (element instanceof InternalList) {
                     InternalList subList = (InternalList) element;
                     renderSubListPlainText(subList, converter, buf, wikiModel);
@@ -351,9 +339,7 @@ public class WPList extends WPTag {
     }
 
     private void toStringSubList(InternalList list, Appendable buf) throws IOException {
-        for (int i = 0; i < list.size(); i++) {
-            Object element = list.get(i);
-
+        for (Object element : list) {
             if (element instanceof InternalList) {
                 InternalList subList = (InternalList) element;
                 buf.append(subList.fChar);
@@ -372,8 +358,7 @@ public class WPList extends WPTag {
         if (!isEmpty()) {
             try {
                 StringBuilder buf = new StringBuilder(fNestedElements.size() * 32);
-                for (int i = 0; i < fNestedElements.size(); i++) {
-                    Object element = fNestedElements.get(i);
+                for (Object element : fNestedElements) {
                     if (element instanceof InternalList) {
                         InternalList subList = (InternalList) element;
                         buf.append(subList.fChar);

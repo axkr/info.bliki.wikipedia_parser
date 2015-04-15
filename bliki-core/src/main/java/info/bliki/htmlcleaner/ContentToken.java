@@ -37,6 +37,10 @@
 
 package info.bliki.htmlcleaner;
 
+import info.bliki.wiki.filter.ITextConverter;
+import info.bliki.wiki.filter.PlainTextConvertable;
+import info.bliki.wiki.model.IWikiModel;
+
 import java.io.IOException;
 
 /**
@@ -47,7 +51,7 @@ import java.io.IOException;
  * Created by: Vladimir Nikic<br/>
  * Date: November, 2006.
  */
-public class ContentToken implements BaseToken {
+public class ContentToken implements BaseToken, PlainTextConvertable {
 
     private final String content;
 
@@ -69,7 +73,8 @@ public class ContentToken implements BaseToken {
         xmlSerializer.getWriter().write(getContent());
     }
 
-    public void appendPlainText(Appendable buf) throws IOException {
+    @Override
+    public void renderPlainText(ITextConverter converter, Appendable buf, IWikiModel wikiModel) throws IOException {
         if (content.length() > 0) {
             Utils.escapeXmlToBuffer(content, buf, false, true, true, true);
             char ch = content.charAt(content.length() - 1);

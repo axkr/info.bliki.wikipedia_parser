@@ -354,6 +354,7 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "Both of these generate the same output.  Choose a style based on the number of cells in each row and the total text inside each cell. \n" +
                 "Wiki markup\n" +
                 "\n" +
+                "\n" +
                 "<nowiki>\n" +
                 "{| \n" +
                 "| A \n" +
@@ -363,6 +364,7 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "| D\n" +
                 "|}\n" +
                 "</nowiki>\n" +
+                "\n" +
                 "\n" +
                 "\n" +
                 "<nowiki>\n" +
@@ -377,10 +379,12 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "\n" +
                 "\n" +
                 "\n" +
-                "");
+                "A B \n" +
+                "C D \n" +
+                "\n");
     }
 
-    @Test public void testWPTableText01() {
+        @Test public void testWPTableText01() {
         assertThat(wikiModel.render(new PlainTextConverter(), TEST, false)).isEqualTo("\n" + "\n" + "\n" + "\n" + "Plog4u.org is dedicated to developing a Wikipedia Eclipse Plugin\n" + "     \n"
                 + "\n" + "\n" + " \n" + "\n" + " ");
     }

@@ -7,7 +7,7 @@ import info.bliki.wiki.tags.WPTag;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,7 +17,7 @@ import java.util.Map;
  * href="http://meta.wikimedia.org/wiki/Help:Table">Help - Table</a>
  *
  */
-public class WPTable extends WPTag {
+public class WPTable extends WPTag implements PlainTextConvertable {
 
     private String fParams;
 
@@ -90,16 +90,14 @@ public class WPTable extends WPTag {
             }
             HTMLTag.appendEscapedAttributes(buf, fAttributes);
             buf.append(">");
-            WPRow row;
-            for (int i = 0; i < fRows.size(); i++) {
-                row = fRows.get(i);
+            for (WPRow row : fRows) {
                 if (row.getType() != WPCell.CAPTION) {
                     hasContentRow = true;
                 }
                 row.renderHTML(converter, buf, wikiModel);
             }
             if (!hasContentRow) {
-                row = new WPRow(Arrays.asList(new WPCell(0)));
+                WPRow row = new WPRow(Collections.singletonList(new WPCell(0)));
                 row.renderHTML(converter, buf, wikiModel);
             }
             buf.append("</table>");
@@ -112,8 +110,8 @@ public class WPTable extends WPTag {
     public int getNumColumns() {
         int maxCols = 0;
         WPRow row;
-        for (int i = 0; i < fRows.size(); i++) {
-            row = fRows.get(i);
+        for (WPRow fRow : fRows) {
+            row = fRow;
             if (maxCols < row.getNumColumns()) {
                 maxCols = row.getNumColumns();
             }
@@ -150,13 +148,10 @@ public class WPTable extends WPTag {
         return Configuration.SPECIAL_BLOCK_TAGS;
     }
 
+    @Override
     public void renderPlainText(ITextConverter converter, Appendable buf, IWikiModel wikiModel) throws IOException {
-        if (fRows.size() > 0) {
-            WPRow row;
-            for (int i = 0; i < fRows.size(); i++) {
-                row = fRows.get(i);
-                row.renderPlainText(converter, buf, wikiModel);
-            }
+        for (WPRow row : fRows) {
+            row.renderPlainText(converter, buf, wikiModel);
         }
     }
 }

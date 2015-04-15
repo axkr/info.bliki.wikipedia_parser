@@ -1,6 +1,11 @@
 package info.bliki.wiki.tags;
 
 
+import info.bliki.wiki.filter.ITextConverter;
+import info.bliki.wiki.model.IWikiModel;
+
+import java.io.IOException;
+
 /**
  * A wiki tag that's partitioning the HTML document
  *
@@ -18,6 +23,12 @@ public class HTMLBlockTag extends HTMLTag {
 
     public HTMLBlockTag(String name, String allowedParents) {
         this(name, allowedParents, null);
+    }
+
+    @Override
+    public void renderPlainText(ITextConverter converter, Appendable buf, IWikiModel wikiModel) throws IOException {
+        buf.append("\n");
+        super.renderPlainText(converter, buf, wikiModel);
     }
 
     @Override

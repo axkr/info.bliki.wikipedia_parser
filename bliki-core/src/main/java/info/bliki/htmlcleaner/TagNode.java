@@ -37,10 +37,13 @@
 
 package info.bliki.htmlcleaner;
 
-import info.bliki.wiki.tags.HTMLTag;
+import info.bliki.wiki.filter.ITextConverter;
+import info.bliki.wiki.filter.PlainTextConvertable;
+import info.bliki.wiki.model.IWikiModel;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -59,7 +62,7 @@ import java.util.TreeMap;
  *
  * Modified by: Axel Kramer<br/>
  */
-public class TagNode extends TagToken {
+public class TagNode extends TagToken implements PlainTextConvertable {
     /**
      * Allowed attributes
      *
@@ -75,17 +78,11 @@ public class TagNode extends TagToken {
     protected static final HashSet<String> ALLOWED_ATTRIBUTES_SET = new HashSet<>();
 
     static {
-        for (int i = 0; i < ALLOWED_ATTRIBUTES.length; i++) {
-            ALLOWED_ATTRIBUTES_SET.add(ALLOWED_ATTRIBUTES[i]);
-        }
+        Collections.addAll(ALLOWED_ATTRIBUTES_SET, ALLOWED_ATTRIBUTES);
     }
 
     public static Set<String> getAllowedAttributes() {
         return ALLOWED_ATTRIBUTES_SET;
-    }
-
-    public static boolean removeAllowedAttribute(String key) {
-        return ALLOWED_ATTRIBUTES_SET.remove(key);
     }
 
     /**
@@ -99,17 +96,12 @@ public class TagNode extends TagToken {
         return ALLOWED_ATTRIBUTES_SET.add(key);
     }
 
-    private TagNode parent = null;
-
+    private TagNode parent;
     private Map<String, String> attributes = new TreeMap<>();
-
-    private HashMap<String, Object> objectAttributes = null;
-
+    private HashMap<String, Object> objectAttributes;
     private List<Object> children = new ArrayList<>();
-
-    private List<BaseToken> itemsToMove = null;
-
-    private transient boolean isFormed = false;
+    private List<BaseToken> itemsToMove;
+    private transient boolean isFormed;
 
     public TagNode() {
     }
@@ -117,7 +109,6 @@ public class TagNode extends TagToken {
     public TagNode(String name) {
         super(name.toLowerCase());
     }
-
     public Map<String, String> getAttributes() {
         return attributes;
     }
@@ -219,7 +210,7 @@ public class TagNode extends TagToken {
         }
     }
 
-    public void addChildren(List<? extends Object> children) {
+    public void addChildren(List<?> children) {
         if (children != null) {
             for (Object child : children) {
                 addChild(child);
@@ -284,34 +275,12 @@ public class TagNode extends TagToken {
         return null;
     }
 
-    /**
-     * Get the pure content text without the tags from this HTMLTag
-     */
-    public void getBodyString(Appendable buf) throws IOException {
+    @Override
+    public void renderPlainText(ITextConverter converter, Appendable buf, IWikiModel wikiModel) throws IOException {
         List<Object> children = getChildren();
-        if (children.size() == 1 && children.get(0) instanceof ContentToken) {
-            ((ContentToken) children.get(0)).appendPlainText(buf);
-            // buf.append(Utils.escapeXml(((ContentToken)
-            // children.get(0)).getContent(),
-            // true, true, true));
-        } else {
-            if (children.size() > 0) {
-                for (int i = 0; i < children.size(); i++) {
-                    if (children.get(i) instanceof ContentToken) {
-                        ((ContentToken) children.get(i)).appendPlainText(buf);
-                        // buf.append(Utils.escapeXml(((ContentToken) children.get(i))
-                        // .getContent(), true, true, true));
-                    } else if (children.get(i) instanceof HTMLTag) {
-                        ((HTMLTag) children.get(i)).getBodyString(buf);
-                    } else if (children.get(i) instanceof TagNode) {
-                        TagNode node = (TagNode) children.get(i);
-                        Map<String, Object> map = node.getObjectAttributes();
-                        if (map != null && map.size() > 0) {
-                        } else {
-                            node.getBodyString(buf);
-                        }
-                    }
-                }
+        for (Object child : children) {
+            if (child instanceof PlainTextConvertable) {
+                ((PlainTextConvertable) child).renderPlainText(converter, buf, wikiModel);
             }
         }
     }
@@ -321,28 +290,18 @@ public class TagNode extends TagToken {
      */
     public String getBodyString() {
         List<Object> children = getChildren();
-        if (children.size() == 1 && children.get(0) instanceof ContentToken) {
-            return ((ContentToken) children.get(0)).getContent();
-        } else {
-            if (children.size() > 0) {
-                StringBuilder buf = new StringBuilder(children.size() * 16);
-                for (int i = 0; i < children.size(); i++) {
-                    if (children.get(i) instanceof ContentToken) {
-                        buf.append(((ContentToken) children.get(i)).getContent());
-                    } else if (children.get(i) instanceof HTMLTag) {
-                        buf.append(((HTMLTag) children.get(i)).getBodyString());
-                    } else if (children.get(i) instanceof TagNode) {
-                        TagNode node = (TagNode) children.get(i);
-                        Map<String, Object> map = node.getObjectAttributes();
-                        if (map != null && map.size() > 0) {
-                        } else {
-                            buf.append(node.getBodyString());
-                        }
-                    }
+        if (children.size() > 0) {
+            StringBuilder buf = new StringBuilder(children.size() * 16);
+            for (Object child : children) {
+                if (child instanceof ContentToken) {
+                    buf.append(((ContentToken) child).getContent());
+                } else if (child instanceof TagNode) {
+                    buf.append(((TagNode) child).getBodyString());
                 }
-                return buf.toString();
             }
+            return buf.toString();
+        } else {
+            return "";
         }
-        return "";
     }
 }
