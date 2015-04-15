@@ -14,13 +14,13 @@ import java.util.List;
  *
  */
 public class PlainTextConverter implements ITextConverter {
-    private boolean fNoLinks;
+    private boolean renderLinks;
 
-    public PlainTextConverter(boolean noLinks) {
-        this.fNoLinks = noLinks;
+    public PlainTextConverter(boolean renderLinks) {
+        this.renderLinks = renderLinks;
     }
     public PlainTextConverter() {
-        this(true);
+        this(false);
     }
 
     @Override
@@ -48,8 +48,8 @@ public class PlainTextConverter implements ITextConverter {
     }
 
     @Override
-    public boolean noLinks() {
-        return fNoLinks;
+    public boolean renderLinks() {
+        return renderLinks;
     }
 
     @Override

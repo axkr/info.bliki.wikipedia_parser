@@ -447,7 +447,7 @@ public class LaTeXConverter implements ITextConverter {
         }
     }
 
-    public boolean noLinks() {
-        return true;
+    public boolean renderLinks() {
+        return false;
     }
 }

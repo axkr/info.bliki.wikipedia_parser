@@ -14,7 +14,7 @@ import static info.bliki.wiki.tags.WPATag.TITLE;
 import static info.bliki.wiki.tags.WPATag.WIKILINK;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class PlainTextConvertTest extends FilterTestSupport {
+public class PlainTextConverterTest extends FilterTestSupport {
     private PlainTextConverter plainTextConverter;
 
     @Override

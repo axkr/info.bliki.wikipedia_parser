@@ -7,6 +7,6 @@ package info.bliki.wiki.filter;
  */
 public class PDFConverter extends HTMLConverter {
     public PDFConverter() {
-        super(true);
+        super(false);
     }
 }

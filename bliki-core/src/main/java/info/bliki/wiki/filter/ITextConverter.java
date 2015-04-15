@@ -41,11 +41,9 @@ public interface ITextConverter {
     void imageNodeToText(TagNode imageTagNode, ImageFormat imageFormat, Appendable resultBuffer, IWikiModel model) throws IOException;
 
     /**
-     * If this method returns true, then the &lt;a&gt; tag should only render the
+     * @return If this method returns false, then the &lt;a&gt; tag should only render the
      * title of the link and not a link to another HTML document, but only the
      * link text.
-     *
-     * @return
      */
-    boolean noLinks();
+    boolean renderLinks();
 }

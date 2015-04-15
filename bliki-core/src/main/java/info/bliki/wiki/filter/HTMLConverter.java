@@ -19,14 +19,14 @@ import java.util.Map;
  *
  */
 public class HTMLConverter implements ITextConverter {
-    private boolean fNoLinks;
+    private boolean renderLinks;
 
-    public HTMLConverter(boolean noLinks) {
-        this.fNoLinks = noLinks;
+    public HTMLConverter(boolean renderLinks) {
+        this.renderLinks = renderLinks;
     }
 
     public HTMLConverter() {
-        this(false);
+        this(true);
     }
 
     @Override
@@ -292,7 +292,7 @@ public class HTMLConverter implements ITextConverter {
     }
 
     @Override
-    public boolean noLinks() {
-        return fNoLinks;
+    public boolean renderLinks() {
+        return renderLinks;
     }
 }

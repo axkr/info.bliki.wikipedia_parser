@@ -19,7 +19,7 @@ public class ATag extends HTMLTag {
 
     @Override
     public void renderHTML(ITextConverter converter, Appendable buf, IWikiModel model) throws IOException {
-        if (!converter.noLinks()) {
+        if (converter.renderLinks()) {
             super.renderHTML(converter, buf, model);
         } else {
             List<Object> children = getChildren();
