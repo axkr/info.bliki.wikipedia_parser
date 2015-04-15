@@ -170,31 +170,6 @@ public class WikipediaPreTagParser extends AbstractWikipediaParser {
                     }
                     break;
                 default:
-                    // if (Character.isLetter(fCurrentCharacter)) {
-                    // if (fCurrentPosition < 2 ||
-                    // !Character.isLetterOrDigit(fSource[fCurrentPosition - 2])) {
-                    // if (fCurrentCharacter == 'i' || fCurrentCharacter == 'I') {
-                    // // ISBN ?
-                    // if (parseISBNLinks()) {
-                    // continue;
-                    // }
-                    // }
-                    //
-                    // if (parseURIScheme()) {
-                    // // a URI scheme registered in the wiki model (ftp, http,
-                    // // https,...)
-                    // continue;
-                    // }
-                    //
-                    // if (fWikiModel.isCamelCaseEnabled() &&
-                    // Character.isUpperCase(fCurrentCharacter)
-                    // && fWikiModel.getRecursionLevel() <= 1) {
-                    // if (parseCamelCaseLink()) {
-                    // continue;
-                    // }
-                    // }
-                    // }
-                    // }
                 }
 
                 if (!fWhiteStart) {
@@ -460,17 +435,6 @@ public class WikipediaPreTagParser extends AbstractWikipediaParser {
         // global wiki model stack
         TagStack globalWikiModelStack = wikiModel.swapStack(localStack);
         try {
-            // fix for infinite recursion
-            // if (wikiModel.incrementParserRecursionLevel() >
-            // Configuration.PARSER_RECURSION_LIMIT) {
-            // TagNode error = new TagNode("span");
-            // error.addAttribute("class", "error", true);
-            // error.addChild(new
-            // ContentToken("Error - total recursion count limit exceeded parsing wiki tags."));
-            // localStack.append(error);
-            // return localStack;
-            // }
-
             int level = wikiModel.incrementRecursionLevel();
 
             if (level > Configuration.PARSER_RECURSION_LIMIT) {
@@ -480,8 +444,6 @@ public class WikipediaPreTagParser extends AbstractWikipediaParser {
                 localStack.append(error);
                 return localStack;
             }
-            // WikipediaParser parser = new WikipediaParser(rawWikitext,
-            // wikiModel.isTemplateTopic(), wikiModel.getWikiListener());
             setModel(wikiModel);
             runParser();
             return localStack;
@@ -497,9 +459,7 @@ public class WikipediaPreTagParser extends AbstractWikipediaParser {
         } finally {
             wikiModel.decrementRecursionLevel();
             if (!createOnlyLocalStack) {
-                // append the resursively parsed local stack to the global wiki
-                // model
-                // stack
+                // append the resursively parsed local stack to the global wiki model stack
                 globalWikiModelStack.append(localStack);
             }
             wikiModel.swapStack(globalWikiModelStack);
