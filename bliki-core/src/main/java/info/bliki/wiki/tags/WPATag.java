@@ -17,10 +17,6 @@ public class WPATag extends HTMLTag {
         return false;
     }
 
-    public String getCloseTag() {
-        return "</a>";
-    }
-
     @Override
     public void renderHTML(ITextConverter converter, Appendable buf, IWikiModel model) throws IOException {
         if (!converter.noLinks()) {
@@ -32,5 +28,4 @@ public class WPATag extends HTMLTag {
             }
         }
     }
-
 }

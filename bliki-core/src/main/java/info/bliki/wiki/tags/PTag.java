@@ -13,11 +13,6 @@ public class PTag extends HTMLBlockTag {
     }
 
     @Override
-    public String getCloseTag() {
-        return "\n</p>";
-    }
-
-    @Override
     public void renderHTML(ITextConverter converter, Appendable buf, IWikiModel model) throws IOException {
         // super.renderHTML(converter, buf, model);
         // use this to avoid empty <p /> tags in the html

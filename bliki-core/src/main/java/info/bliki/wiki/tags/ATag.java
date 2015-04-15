@@ -17,18 +17,6 @@ public class ATag extends HTMLTag {
         return false;
     }
 
-    // public boolean isAllowedAttribute(String attributeName) {
-    // if (attributeName.equals("href") || attributeName.equals("title") ||
-    // attributeName.equals("rel")) {
-    // return true;
-    // }
-    // return false;
-    // }
-
-    public String getCloseTag() {
-        return "</a>";
-    }
-
     @Override
     public void renderHTML(ITextConverter converter, Appendable buf, IWikiModel model) throws IOException {
         if (!converter.noLinks()) {

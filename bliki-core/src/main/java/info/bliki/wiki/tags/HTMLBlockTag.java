@@ -47,10 +47,6 @@ public class HTMLBlockTag extends HTMLTag {
         return true;
     }
 
-    public String getCloseTag() {
-        return "\n</" + name + ">";
-    }
-
     /**
      * Use this tag if no parent tag was found on the wiki model's tag stack.
      *
