@@ -7,16 +7,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Frame {
+    private final ParsedPageName page;
     private final Map<String, String> templateParameters;
     private final Frame parent;
 
-    public Frame(Map<String, String> templateParameters, Frame parent) {
+    public Frame(ParsedPageName page, Map<String, String> templateParameters, Frame parent) {
         this.templateParameters = templateParameters;
+        this.page = page;
         this.parent = parent;
     }
 
-    public Frame newChild(Map<String, String> templateParameters, ParsedPageName pageName) {
-        return new Frame(templateParameters, this);
+    public Frame newChild(ParsedPageName pageName, Map<String, String> templateParameters) {
+        return new Frame(pageName, templateParameters, this);
     }
 
     public LuaValue getArgument(String name) {
@@ -44,5 +46,9 @@ public class Frame {
 
     public Frame getParent() {
         return parent;
+    }
+
+    public String getTitle() {
+        return page.pagename;
     }
 }

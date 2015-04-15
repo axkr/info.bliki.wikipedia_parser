@@ -47,7 +47,7 @@ public class ScribuntoLuaEngineTest {
         ScribuntoModule module =
                 subject.fetchModuleFromParser(new ParsedPageName(namespace.getModule(), "string", true));
 
-        String result = module.invoke("test_function", new Frame(null, null));
+        String result = module.invoke("test_function", new Frame(null, null, null));
         assertThat(result).isEqualTo("result");
     }
 
@@ -62,10 +62,10 @@ public class ScribuntoLuaEngineTest {
                 .thenThrow(new RuntimeException("should not be called"));
 
         ScribuntoModule module = subject.fetchModuleFromParser(pageName);
-        assertThat(module.invoke("test_function", new Frame(null, null))).isEqualTo("result");
+        assertThat(module.invoke("test_function", new Frame(null, null, null))).isEqualTo("result");
 
         ScribuntoModule cachedModule = subject.fetchModuleFromParser(pageName);
-        assertThat(cachedModule.invoke("test_function", new Frame(null, null))).isEqualTo("result");
+        assertThat(cachedModule.invoke("test_function", new Frame(null, null, null))).isEqualTo("result");
         assertThat(cachedModule).isNotSameAs(module);
     }
 }

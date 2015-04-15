@@ -29,7 +29,7 @@ public class InvokeTest {
         initMocks(this);
         when(model.createScribuntoEngine()).thenReturn(scribuntoEngine);
         when(model.getNamespace()).thenReturn(new Namespace());
-        when(model.getFrame()).thenReturn(new Frame(null, null));
+        when(model.getFrame()).thenReturn(new Frame(null, null, null));
         when(scribuntoEngine.fetchModuleFromParser(any(ParsedPageName.class))).thenReturn(scribuntoModule);
     }
 

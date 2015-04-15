@@ -336,7 +336,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         return new OneArgFunction() {
             @Override
             public LuaValue call(LuaValue arg) {
-                return valueOf("getFrameTitleNotImplemented");
+                return LuaValue.valueOf(getFrameById(arg).getTitle());
             }
         };
     }

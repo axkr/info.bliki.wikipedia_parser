@@ -50,7 +50,7 @@ public class Invoke extends AbstractTemplateFunction {
 
         Frame parent = model.getFrame();
         try {
-            return module.invoke(functionName, parent.newChild(getParameters(parts, model), parsedPageName));
+            return module.invoke(functionName, parent.newChild(parsedPageName, getParameters(parts, model)));
         } catch (ScribuntoException e) {
             // TODO handle
             logger.error("error invoking function", e);

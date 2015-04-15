@@ -16,7 +16,7 @@ public class FrameTest {
         Map<String, String> params = new LinkedHashMap<>();
         params.put("a", "a_value");
         params.put("b", "b_value");
-        subject = new Frame(params, null);
+        subject = new Frame(null, params, null);
     }
 
     @Test public void testGetAllArguments() {
