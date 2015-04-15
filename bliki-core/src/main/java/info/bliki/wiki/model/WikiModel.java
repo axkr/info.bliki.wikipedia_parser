@@ -22,6 +22,7 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
 
+import static info.bliki.wiki.tags.WPATag.ANCHOR;
 import static info.bliki.wiki.tags.WPATag.CLASS;
 import static info.bliki.wiki.tags.WPATag.HREF;
 import static info.bliki.wiki.tags.WPATag.TITLE;
@@ -158,8 +159,7 @@ public class WikiModel extends AbstractWikiModel {
         if (topic.length() > 0) {
             String title = Encoder.normaliseTitle(topic, true, ' ', true);
             if (hashSection == null) {
-                String pageName = Encoder.normaliseTitle(fPageTitle, true, ' ',
-                        true);
+                String pageName = Encoder.normaliseTitle(fPageTitle, true, ' ', true);
                 // self link?
                 if (title.equals(pageName)) {
                     HTMLTag selfLink = new HTMLTag("strong");
@@ -206,6 +206,7 @@ public class WikiModel extends AbstractWikiModel {
 
         String href = hrefLink;
         if (topicExists && hashSection != null) {
+            aTagNode.addObjectAttribute(ANCHOR, hashSection);
             href = href + '#' + encodeTitleDotUrl(hashSection, false);
         }
         aTagNode.addAttribute(HREF, href, true);
