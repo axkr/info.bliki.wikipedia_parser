@@ -54,7 +54,7 @@ public class HTMLCreatorTest {
         testWikipediaENAPI("Pakistan");
     }
 
-    @Betamax(tape="Tom_Hanks", mode = WRITE_ONLY)
+    @Betamax(tape="Tom_Hanks", mode = READ_ONLY)
     @Test public void testWikipediaTomHanks() throws Exception {
         testWikipediaENAPI("Tom Hanks");
     }
