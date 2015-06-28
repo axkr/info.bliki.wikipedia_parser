@@ -3,6 +3,7 @@ package info.bliki.extensions.scribunto.engine.lua.interfaces;
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.namespaces.INamespace;
 import info.bliki.wiki.namespaces.Namespace;
+import org.luaj.vm2.LuaError;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.OneArgFunction;
@@ -31,7 +32,21 @@ public class MwSite implements MwInterface {
         table.set("pagesInCategory", pagesInCategory());
         table.set("pagesInNamespace", pagesInNamespace());
         table.set("usersInGroup", usersInGroup());
+        table.set("interwikiMap", interwikiMap());
         return table;
+    }
+
+    private LuaValue interwikiMap() {
+        return new OneArgFunction() {
+            @Override
+            public LuaValue call(LuaValue luaValue) {
+                if (luaValue.isnil() || "string".equals(luaValue.typename())) {
+                    return new LuaTable();
+                } else {
+                    throw new LuaError("bad argument #1 to 'interwikiMap' (string expected, got " + luaValue.typename() + ")");
+                }
+            }
+        };
     }
 
     private LuaValue usersInGroup() {

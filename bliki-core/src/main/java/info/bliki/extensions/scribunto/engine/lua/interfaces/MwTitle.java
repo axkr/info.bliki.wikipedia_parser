@@ -31,9 +31,11 @@ public class MwTitle implements MwInterface {
         LuaTable table = new LuaTable();
         table.set("newTitle", newTitle());
         table.set("makeTitle", makeTitle());
+        table.set("getExpensiveData", getExpensiveData());
         table.set("getUrl", getUrl());
         table.set("getContent", getContent());
         table.set("fileExists", fileExists());
+        table.set("getFileInfo", getFileInfo());
         table.set("protectionLevels", protectionLevels());
         table.set("cascadingProtection", cascadingProtection());
         return table;
@@ -45,6 +47,24 @@ public class MwTitle implements MwInterface {
         table.set("thisTitle", title(wikiModel.getNamespaceName(), wikiModel.getPageName()));
         table.set("NS_MEDIA", MEDIA_NAMESPACE_KEY.code);
         return table;
+    }
+
+    private LuaValue getFileInfo() {
+        return new OneArgFunction() {
+            @Override
+            public LuaValue call(LuaValue arg) {
+                return LuaValue.NIL;
+            }
+        };
+    }
+
+    private LuaValue getExpensiveData() {
+        return new OneArgFunction() {
+            @Override
+            public LuaValue call(LuaValue arg) {
+                return new LuaTable();
+            }
+        };
     }
 
     private LuaValue getUrl() {

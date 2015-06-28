@@ -14,7 +14,9 @@ public class MwSiteTest extends LuaTestBase {
 
     @Override public Set<String> ignoredTests() {
         return new HashSet<>(Arrays.asList(
-                "Project talk namespace by name (extraneous spaces and underscores)"
+            "Project talk namespace by name (extraneous spaces and underscores)",
+            "interwikiMap (unknown filter 1)",
+            "interwikiMap (unknown filter 2)"
         ));
     }
 }

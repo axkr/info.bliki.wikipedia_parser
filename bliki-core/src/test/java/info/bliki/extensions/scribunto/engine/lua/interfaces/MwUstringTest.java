@@ -21,6 +21,7 @@ public class MwUstringTest extends LuaTestBase {
             "find: (%f 7)",
             "find: (%f 8)",
             "find: (%f 9)",
+            "find: empty character set",
             "gsub: invalid replacement string",
             "string length limit",
             "pattern length limit"

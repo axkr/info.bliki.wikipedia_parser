@@ -59,8 +59,8 @@ public abstract class LuaTestBase {
             notifier.fireTestStarted(testDescription);
             try {
                 final String actual = runFunc.call(valueOf(i))
-                        .checkjstring()
-                        .replaceAll("@?[\\w\\.]+\\.lua:\\d+\\s*", "");
+                    .checkjstring()
+                    .replaceAll("ERROR: @?[\\w\\.:]+:\\d+\\s*", "ERROR: ");
 
                 assertThat(actual).isEqualTo(expected);
                 notifier.fireTestFinished(testDescription);
