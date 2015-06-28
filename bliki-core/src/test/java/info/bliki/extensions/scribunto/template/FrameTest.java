@@ -14,15 +14,18 @@ public class FrameTest {
 
     @Before public void before() {
         Map<String, String> params = new LinkedHashMap<>();
-        params.put("a", "a_value");
-        params.put("b", "b_value");
+        params.put("a", "a value");
+        params.put("b", "b value");
+        params.put("1", "numbered param");
         subject = new Frame(null, params, null);
     }
 
     @Test public void testGetAllArguments() {
         LuaValue arguments = subject.getAllArguments();
-        assertThat(arguments.length()).isEqualTo(2);
-        assertThat(arguments.get(1).toString()).isEqualTo("a_value");
-        assertThat(arguments.get(2).toString()).isEqualTo("b_value");
+        assertThat(arguments.length()).isEqualTo(1);
+
+        assertThat(arguments.get("a").toString()).isEqualTo("a value");
+        assertThat(arguments.get("b").toString()).isEqualTo("b value");
+        assertThat(arguments.get(LuaValue.valueOf(1)).toString()).isEqualTo("numbered param");
     }
 }

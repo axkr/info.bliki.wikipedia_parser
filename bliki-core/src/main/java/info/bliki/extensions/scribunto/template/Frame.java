@@ -1,6 +1,7 @@
 package info.bliki.extensions.scribunto.template;
 
 import info.bliki.wiki.filter.ParsedPageName;
+import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 
 import java.util.HashMap;
@@ -23,7 +24,6 @@ public class Frame {
 
     public LuaValue getArgument(String name) {
         String value = templateParameters != null ? templateParameters.get(name) : null;
-
         if (value != null) {
             return LuaValue.valueOf(value);
         } else {
@@ -36,12 +36,16 @@ public class Frame {
     }
 
     public LuaValue getAllArguments() {
-        LuaValue[] values = new LuaValue[templateParameters.size()];
-        String[]   templateValues = templateParameters.values().toArray(new String[templateParameters.size()]);
-        for (int i = 0; i<values.length; i++) {
-            values[i] = LuaValue.valueOf(templateValues[i]);
+        LuaTable table = new LuaTable();
+        for (Map.Entry<String, String> entry: templateParameters.entrySet()) {
+            try {
+                final int numberedParam = Integer.parseInt(entry.getKey());
+                table.set(LuaValue.valueOf(numberedParam), LuaValue.valueOf(entry.getValue()));
+            } catch (NumberFormatException e) {
+                table.set(LuaValue.valueOf(entry.getKey()), LuaValue.valueOf(entry.getValue()));
+            }
         }
-        return LuaValue.listOf(values);
+        return table;
     }
 
     public Frame getParent() {

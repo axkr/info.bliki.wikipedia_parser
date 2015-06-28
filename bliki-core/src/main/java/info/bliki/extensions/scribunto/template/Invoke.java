@@ -46,7 +46,9 @@ public class Invoke extends AbstractTemplateFunction {
         Frame parent = model.getFrame();
         try {
             ScribuntoModule module = engine.fetchModuleFromParser(moduleName);
-            return module.invoke(functionName, parent.newChild(module.pageName(), getParameters(parts, model)));
+            final Frame frame = parent.newChild(module.pageName(), getParameters(parts, model));
+
+            return module.invoke(functionName, frame);
         } catch (ScribuntoException e) {
             // TODO handle
             logger.error("error invoking function", e);
@@ -61,8 +63,7 @@ public class Invoke extends AbstractTemplateFunction {
         if (parts.size() > 2) {
             List<String> unnamedParameters = new ArrayList<>();
             for (int i = 2; i < parts.size(); i++) {
-                createSingleParameter(parts.get(i), model, parameterMap,
-                        unnamedParameters);
+                createSingleParameter(parts.get(i), model, parameterMap, unnamedParameters);
             }
             mergeParameters(parameterMap, unnamedParameters);
         }

@@ -808,7 +808,7 @@ public class TemplateParser extends AbstractParser {
 
     /**
      * Create a single parameter, defined in a template call, and add it to the
-     * <b>named parmeters map</b> or <b>unnamed parameter list</b>
+     * <b>named parameters map</b> or <b>unnamed parameter list</b>
      *
      * <p>
      * See <a href="http://en.wikipedia.org/wiki/Help:Template">Help:Template</a>:

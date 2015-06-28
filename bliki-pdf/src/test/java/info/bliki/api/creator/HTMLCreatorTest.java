@@ -54,7 +54,7 @@ public class HTMLCreatorTest {
         testWikipediaENAPI("Pakistan");
     }
 
-    @Betamax(tape="Tom_Hanks", mode = READ_ONLY)
+    @Betamax(tape="Tom_Hanks", mode = WRITE_ONLY)
     @Test public void testWikipediaTomHanks() throws Exception {
         testWikipediaENAPI("Tom Hanks");
     }
@@ -67,6 +67,11 @@ public class HTMLCreatorTest {
     @Betamax(tape = "backplane", mode = READ_ONLY)
     @Test public void testWiktionaryBackplane() throws Exception {
         testWiktionaryENAPI("backplane");
+    }
+
+    @Betamax(tape = "Vadimas", mode = READ_ONLY)
+    @Test public void testWiktionaryVadimas() throws Exception {
+        testWiktionaryENAPI("Vadimas");
     }
 
     @Betamax(tape="Political_party_strength_in_California", mode = WRITE_ONLY)

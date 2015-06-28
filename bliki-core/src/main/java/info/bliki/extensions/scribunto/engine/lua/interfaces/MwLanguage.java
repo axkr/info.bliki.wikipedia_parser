@@ -110,13 +110,9 @@ public class MwLanguage implements MwInterface {
 
     private LuaValue fetchLanguageName() {
         return new TwoArgFunction() {
-            /**
-             * @param code string: The code of the language for which to get the name
-             * @param inLanguage null|string: Code of language in which to return the name (null for autonyms)
-             * @return string: Language name or empty
-             */
             @Override public LuaValue call(LuaValue code, LuaValue inLanguage) {
-                return valueOf(languages.getName(code.checkjstring(), inLanguage.optjstring(null)));
+                final String name = languages.getName(code.checkjstring(), inLanguage.optjstring(null));
+                return name == null ? LuaValue.NIL : valueOf(name);
             }
         };
     }
