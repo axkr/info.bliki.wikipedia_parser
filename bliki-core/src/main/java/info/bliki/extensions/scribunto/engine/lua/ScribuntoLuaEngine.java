@@ -146,7 +146,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
 
         stubTitleBlacklist();
         stubExecuteModule();
-        fakeWikiBase();
+        stubWikiBase();
     }
 
     private void stubTitleBlacklist() {
@@ -166,6 +166,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         });
         ext.set("TitleBlacklist", blacklist);
     }
+
 
     private void stubExecuteModule() {
         // don't need module isolation
@@ -190,12 +191,18 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         });
     }
 
-    private void fakeWikiBase() {
+    private void stubWikiBase() {
         // fake http://www.mediawiki.org/wiki/Extension:Wikibase
         final LuaValue mw = globals.get("mw");
         final LuaTable wikibase = new LuaTable();
         wikibase.set("getEntity", new ZeroArgFunction() {
             @Override public LuaValue call() {
+                return NIL;
+            }
+        });
+        wikibase.set("getEntityObject", new ZeroArgFunction() {
+            @Override
+            public LuaValue call() {
                 return NIL;
             }
         });

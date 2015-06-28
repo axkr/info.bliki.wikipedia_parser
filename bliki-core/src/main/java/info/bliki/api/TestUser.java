@@ -9,10 +9,6 @@ import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 
 public class TestUser extends User {
-    public TestUser(String mediawikiApiUrl) {
-        this(null, null, mediawikiApiUrl);
-    }
-
     public TestUser(String username, String password, String mediawikiApiUrl) {
         super(username, password, mediawikiApiUrl, "");
         connector = new TestConnector();

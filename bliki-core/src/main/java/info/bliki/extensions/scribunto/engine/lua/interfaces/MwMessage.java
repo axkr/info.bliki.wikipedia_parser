@@ -62,7 +62,7 @@ public class MwMessage implements MwInterface {
             lang   = data.get("lang").optjstring("en");
             keys   = data.get("keys").opttable(new LuaTable());
             params = data.get("params").opttable(new LuaTable());
-            rawMessage = data.get("rawMessage").checkstring();
+            rawMessage = data.get("rawMessage").optstring(LuaString.valueOf(""));
         }
 
         public LuaValue plain() {

@@ -78,9 +78,9 @@ public class Connector {
     private Logger logger = LoggerFactory.getLogger(getClass());
 
     protected static HttpClientBuilder DEFAULT_HTTPCLIENT_BUILDER = HttpClientBuilder
-            .create()
-            .disableRedirectHandling()
-            .setRoutePlanner(new SystemDefaultRoutePlanner(ProxySelector.getDefault()));
+        .create()
+        .disableRedirectHandling()
+        .setRoutePlanner(new SystemDefaultRoutePlanner(ProxySelector.getDefault()));
 
     public Connector() {
         this(DEFAULT_HTTPCLIENT_BUILDER);
