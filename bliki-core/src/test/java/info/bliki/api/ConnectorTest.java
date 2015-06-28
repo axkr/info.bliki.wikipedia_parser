@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static co.freeside.betamax.TapeMode.READ_ONLY;
@@ -18,13 +18,12 @@ import static org.mockito.MockitoAnnotations.initMocks;
 public class ConnectorTest {
     private Connector subject;
 
-    @Rule public RecorderRule recorder = new RecorderRule(ProxyConfiguration.builder().build());
+    @Rule public RecorderRule recorder = new RecorderRule(ProxyConfiguration.builder().sslEnabled(true).build());
     private User anonUser;
 
     @Before public void before() {
-        subject = new Connector();
-        anonUser = new User(null, null, "http://en.wiktionary.org/w/api.php");
-        anonUser.disableContentCompression();
+        subject = new TestUser.TestConnector();
+        anonUser = new User(null, null, "https://en.wiktionary.org/w/api.php");
         initMocks(this);
     }
 
@@ -36,16 +35,14 @@ public class ConnectorTest {
 
     @Betamax(tape="loginWithUsernameFailed", mode = READ_SEQUENTIAL)
     @Test public void testLoginWithUsernameFailure() throws Exception {
-        User user = new User("someUser", "somePassword", "http://meta.wikimedia.org/w/api.php");
-        user.disableContentCompression();
+        User user = new User("someUser", "somePassword", "https://meta.wikimedia.org/w/api.php");
         User result = subject.login(user);
         assertThat(result).isNull();
     }
 
     @Betamax(tape = "loginWithUsernameSuccess", mode = READ_SEQUENTIAL)
     @Test public void testLoginWithUsernameSuccess() throws Exception {
-        User user = new User("jberkel", "testing", "http://en.wiktionary.org/w/api.php");
-        user.disableContentCompression();
+        User user = new User("jberkel", "testing", "https://en.wiktionary.org/w/api.php");
         User result = subject.login(user);
 
         assertThat(result).isNotNull();
@@ -56,7 +53,7 @@ public class ConnectorTest {
 
     @Betamax(tape = "queryContentFoo", mode = READ_ONLY)
     @Test public void testQueryContent() throws Exception {
-        List<Page> pages = subject.queryContent(anonUser, Arrays.asList("foo"));
+        List<Page> pages = subject.queryContent(anonUser, Collections.singletonList("foo"));
         assertThat(pages).hasSize(1);
 
         Page page = pages.get(0);

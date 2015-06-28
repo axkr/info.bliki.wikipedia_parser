@@ -4,6 +4,7 @@ import co.freeside.betamax.ProxyConfiguration;
 import co.freeside.betamax.junit.Betamax;
 import co.freeside.betamax.junit.RecorderRule;
 import info.bliki.annotations.IntegrationTest;
+import info.bliki.api.TestUser;
 import info.bliki.api.User;
 import info.bliki.wiki.impl.APIWikiModel;
 import info.bliki.wiki.model.Configuration;
@@ -46,7 +47,7 @@ public class HTMLCreatorTest {
         return new TestWikiDB(directory);
     }
 
-    @Rule public RecorderRule recorder = new RecorderRule(ProxyConfiguration.builder().build());
+    @Rule public RecorderRule recorder = new RecorderRule(ProxyConfiguration.builder().sslEnabled(true).build());
 
     @Betamax(tape="Pakistan", mode = READ_ONLY)
     @Ignore @Test public void testWikipediaPakistan() throws Exception {
@@ -147,20 +148,19 @@ public class HTMLCreatorTest {
     }
 
     private Result testWiktionaryENAPI(String title) throws Exception {
-        return testAPI(title, "http://en.wiktionary.org/w/api.php", wiktionaryEn, ENGLISH).assertNoErrors();
+        return testAPI(title, "https://en.wiktionary.org/w/api.php", wiktionaryEn, ENGLISH).assertNoErrors();
     }
 
     private Result testWikipediaENAPI(String title) throws Exception {
-        return testAPI(title, "http://en.wikipedia.org/w/api.php", wikipediaEn, ENGLISH).assertNoErrors();
+        return testAPI(title, "https://en.wikipedia.org/w/api.php", wikipediaEn, ENGLISH).assertNoErrors();
     }
 
     private Result testWikipediaDEAPI(String title) throws Exception {
-        return testAPI(title, "http://de.wikipedia.org/w/api.php", wikipediaDe, GERMAN).assertNoErrors();
+        return testAPI(title, "https://de.wikipedia.org/w/api.php", wikipediaDe, GERMAN).assertNoErrors();
     }
 
     private Result testAPI(String title, String apiLink, WikiDB db, Locale locale) throws IOException {
-        User user = new User(null, null, apiLink);
-        user.disableContentCompression();
+        User user = new TestUser(null, null, apiLink);
         user.login();
 
         Path mainDirectory = Files.createTempDirectory("bliki-" + encodeTitleLocalUrl(title).replace("/", "_"));

@@ -21,7 +21,9 @@ public abstract class ScribuntoEngineBase implements ScribuntoEngine {
     protected ParsedPageName pageNameForModule(String moduleName) {
         return ParsedPageName.parsePageName(model,
                 moduleName,
-                model.getNamespace().getModule(), false, false);
+                model.getNamespace().getModule(),
+                false,
+                false);
     }
 
     protected InputStream findModuleContentAsStream(ParsedPageName pageName) throws FileNotFoundException {
@@ -30,7 +32,11 @@ public abstract class ScribuntoEngineBase implements ScribuntoEngine {
 
     protected String findModuleContent(ParsedPageName pageName) throws FileNotFoundException {
         try {
-            return model.getRawWikiContent(pageName, null);
+            final String content =  model.getRawWikiContent(pageName, null);
+            if (content == null) {
+                throw new FileNotFoundException("getRawWikiContent returned null");
+            }
+            return content;
         } catch (WikiModelContentException ignored) {
         }
         throw new FileNotFoundException("could not find module " + pageName);

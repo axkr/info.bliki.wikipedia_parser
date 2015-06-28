@@ -77,18 +77,16 @@ public class Connector {
     private HttpClient client;
     private Logger logger = LoggerFactory.getLogger(getClass());
 
-    public Connector() {
-        this(false);
-    }
-
-    public Connector(boolean disableContentCompression) {
-        HttpClientBuilder builder = HttpClientBuilder
+    protected static HttpClientBuilder DEFAULT_HTTPCLIENT_BUILDER = HttpClientBuilder
             .create()
             .disableRedirectHandling()
             .setRoutePlanner(new SystemDefaultRoutePlanner(ProxySelector.getDefault()));
-        if (disableContentCompression) {
-            builder.disableContentCompression();
-        }
+
+    public Connector() {
+        this(DEFAULT_HTTPCLIENT_BUILDER);
+    }
+
+    public Connector(HttpClientBuilder builder) {
         client = builder.build();
     }
 
@@ -300,7 +298,7 @@ public class Connector {
             }
         }
         return executeHttpMethod(
-            createAuthenticatedRequest(user, parameters.toArray(new NameValuePair[parameters.size()])));
+                createAuthenticatedRequest(user, parameters.toArray(new NameValuePair[parameters.size()])));
     }
 
     private String formatTitleString(List<String> titles) {

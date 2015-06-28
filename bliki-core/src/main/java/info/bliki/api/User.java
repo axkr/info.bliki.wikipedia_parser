@@ -3,6 +3,7 @@ package info.bliki.api;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Manages user data from the <a
@@ -28,7 +29,7 @@ public class User {
     private final String actionUrl;
     private final String domain;
 
-    private Connector connector;
+    protected Connector connector;
 
     /**
      * Create a User for a Mediawiki wiki
@@ -66,16 +67,16 @@ public class User {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof User) {
-            return normalizedUsername.length() > 0 && normalizedUsername.equals(((User) obj).normalizedUsername);
-        }
-        return false;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(normalizedUsername, user.normalizedUsername);
     }
 
     @Override
     public int hashCode() {
-        return normalizedUsername.hashCode();
+        return Objects.hash(normalizedUsername);
     }
 
     /**
@@ -205,10 +206,6 @@ public class User {
     public String toString() {
         return "Result: " + result + "; UserID: " + userId + "; UserName: " + username + "; NormalizedUsername: "
                 + normalizedUsername + "; Token: " + token + "; ActionURL: " + actionUrl;
-    }
-
-    public void disableContentCompression() {
-        this.connector = new Connector(true);
     }
 
     public String getNormalizedUsername() {

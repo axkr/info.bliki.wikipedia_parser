@@ -170,7 +170,6 @@ public class WikiDB implements Closeable {
         resultSet.close();
 
         if (shouldCreateTableTopic) {
-            logger.debug("Creating Table topic...");
             Statement statement = fConnection.createStatement();
             statement.execute("CREATE TABLE topic "
                     + "(topic_id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),"
@@ -180,7 +179,6 @@ public class WikiDB implements Closeable {
             statement.close();
         }
         if (shouldCreateTableImage) {
-            logger.debug("Creating Table image...");
             Statement statement = fConnection.createStatement();
             statement.execute("CREATE TABLE image "
                     + "(image_id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),"

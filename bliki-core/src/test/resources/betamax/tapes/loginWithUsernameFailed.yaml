@@ -1,66 +1,37 @@
 !tape
 name: loginWithUsernameFailed
 interactions:
-- recorded: 2014-04-06T13:41:12.233Z
+- recorded: 2015-06-28T17:21:25.690Z
   request:
     method: POST
-    uri: http://meta.wikimedia.org/w/api.php
+    uri: https://meta.wikimedia.org/w/api.php
     headers:
-      Content-Length: '63'
-      Content-Type: application/x-www-form-urlencoded
-      Host: meta.wikimedia.org
-      Proxy-Connection: Keep-Alive
-      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
-    body: action=login&format=xml&lgname=someUser&lgpassword=somePassword
-  response:
-    status: 200
-    headers:
-      Accept-Ranges: bytes
-      Age: '0'
-      Cache-control: private
-      Connection: keep-alive
-      Content-Length: '170'
-      Content-Type: text/xml; charset=utf-8
-      Date: Sun, 06 Apr 2014 13:41:12 GMT
-      Server: Apache
-      Set-Cookie: metawikiSession=123bf9f4ac210c54f2777d1ed3f37562; path=/; HttpOnly, GeoIP=DE:Berlin:52.5167:13.4000:v4; path=/
-      Vary: Accept-Encoding
-      X-Cache: cp1065 miss (0), amssq51 miss (0), amssq52 frontend miss (0)
-      X-Content-Type-Options: nosniff
-      X-Frame-Options: DENY
-      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
-      X-Varnish: 1582820277, 3968045502, 3676248891
-      X-Vary-Options: Accept-Encoding;list-contains=gzip
-    body: <?xml version="1.0"?><api><login result="NeedToken" token="65c5524e05f9197542e9b87792468765" cookieprefix="metawiki" sessionid="123bf9f4ac210c54f2777d1ed3f37562" /></api>
-- recorded: 2014-04-06T13:41:12.603Z
-  request:
-    method: POST
-    uri: http://meta.wikimedia.org/w/api.php
-    headers:
+      Connection: Keep-Alive
       Content-Length: '104'
       Content-Type: application/x-www-form-urlencoded
-      Cookie: GeoIP=DE:Berlin:52.5167:13.4000:v4; metawikiSession=123bf9f4ac210c54f2777d1ed3f37562
+      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015; metawikiSession=484fd8b55a53cc25b7feb0aada96b30b
       Cookie2: $Version=1
       Host: meta.wikimedia.org
-      Proxy-Connection: Keep-Alive
-      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/
-    body: action=login&format=xml&lgname=someUser&lgpassword=somePassword&lgtoken=65c5524e05f9197542e9b87792468765
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+    body: action=login&format=xml&lgname=someUser&lgpassword=somePassword&lgtoken=72403c43f13bdffe6a65cae741cb366c
   response:
     status: 200
     headers:
       Accept-Ranges: bytes
       Age: '0'
-      Cache-control: private
+      Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
-      Content-Length: '60'
+      Content-Length: '66'
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 06 Apr 2014 13:41:12 GMT
-      Server: Apache
+      Date: Sun, 28 Jun 2015 17:21:25 GMT
+      Server: nginx/1.9.2
+      Set-Cookie: WMF-Last-Access=28-Jun-2015;Path=/;HttpOnly;Expires=Thu, 30 Jul 2015 12:00:00 GMT
+      Strict-Transport-Security: max-age=15768000
       Vary: Accept-Encoding
-      X-Cache: cp1065 miss (0), amssq51 miss (0), amssq52 frontend miss (0)
+      X-Analytics: https=1
+      X-Cache: cp1065 miss (0), cp3041 miss (0), cp3041 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
-      X-Powered-By: PHP/5.3.10-1ubuntu3.10+wmf1
-      X-Varnish: 1582821244, 3968046199, 3676250074
-      X-Vary-Options: Accept-Encoding;list-contains=gzip
-    body: <?xml version="1.0"?><api><login result="NotExists" /></api>
+      X-Powered-By: HHVM/3.6.1
+      X-Varnish: 1866609035, 2114683380, 1024283385
+    body: <?xml version="1.0"?><api><login result="WrongPluginPass" /></api>
