@@ -3,6 +3,7 @@ package info.bliki.extensions.scribunto.engine.lua;
 import info.bliki.extensions.scribunto.ScribuntoException;
 import info.bliki.extensions.scribunto.engine.ScribuntoModule;
 import info.bliki.extensions.scribunto.template.Frame;
+import info.bliki.wiki.filter.ParsedPageName;
 import org.luaj.vm2.LuaClosure;
 import org.luaj.vm2.LuaError;
 import org.luaj.vm2.LuaValue;
@@ -10,32 +11,20 @@ import org.luaj.vm2.Prototype;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.StringReader;
-
 public class ScribuntoLuaModule implements ScribuntoModule {
     private static final int SLOW_MODULE_THRESHOLD = 500;
     protected Logger logger = LoggerFactory.getLogger(getClass());
 
     private final ScribuntoLuaEngine engine;
-    private final String code;
-    private final String chunkName;
-    private Prototype initChunk;
+    private Prototype prototype;
+    private final ParsedPageName pageName;
 
-    public ScribuntoLuaModule(ScribuntoLuaEngine engine, String code, String chunkName) {
+    public ScribuntoLuaModule(ScribuntoLuaEngine engine, Prototype prototype, ParsedPageName pageName) {
         if (engine == null) throw new IllegalArgumentException("engine is null");
-        if (code == null) throw new IllegalArgumentException("code is null");
+        if (prototype == null) throw new IllegalArgumentException("prototype is null");
         this.engine = engine;
-        this.code = code;
-        this.chunkName = chunkName;
-    }
-
-    public ScribuntoLuaModule(ScribuntoLuaEngine engine, Prototype initChunk, String chunkName) {
-        if (engine == null) throw new IllegalArgumentException("engine is null");
-        if (initChunk == null) throw new IllegalArgumentException("initChunk is null");
-        this.engine = engine;
-        this.code = "<unused>";
-        this.chunkName = chunkName;
-        this.initChunk = initChunk;
+        this.prototype = prototype;
+        this.pageName = pageName;
     }
 
     @Override public String invoke(String functionName, Frame frame) throws ScribuntoException {
@@ -53,45 +42,23 @@ public class ScribuntoLuaModule implements ScribuntoModule {
     }
 
     @Override public String toString() {
-        return "ScribuntoLuaModule{" +
-                getChunkName() +
-                '}';
-    }
-
-    @Override public Status validate() {
-        try {
-            getInitChunk();
-            return Status.OK;
-        } catch (ScribuntoException e) {
-            return Status.ERROR;
-        }
+        return "ScribuntoLuaModule{" + pageName() + '}';
     }
 
     protected ScribuntoLuaEngine getEngine() {
         return engine;
     }
 
-    protected String getCode() {
-        return code;
-    }
-
-    protected String getChunkName() {
-        return chunkName;
+    public ParsedPageName pageName() {
+        return pageName;
     }
 
     private LuaValue loadExportTable() throws ScribuntoException {
         try {
-            return new LuaClosure(getInitChunk(), getEngine().getGlobals()).checkfunction().call();
+            return new LuaClosure(prototype, getEngine().getGlobals()).checkfunction().call();
         } catch (LuaError e) {
             throw new ScribuntoException(e);
         }
-    }
-
-    private Prototype getInitChunk() throws ScribuntoException {
-        if (initChunk == null) {
-            initChunk = getEngine().load(new StringReader(getCode()), getChunkName());
-        }
-        return initChunk;
     }
 
     private void logExecution(String functionName, long execDuration) {

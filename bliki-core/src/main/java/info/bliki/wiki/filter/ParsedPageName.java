@@ -5,6 +5,7 @@ import info.bliki.wiki.namespaces.INamespace;
 import info.bliki.wiki.template.AbstractTemplateFunction;
 
 import javax.annotation.Nonnull;
+import java.util.Objects;
 
 /**
  * Represents the result of parsing a (potential) page name.
@@ -28,9 +29,9 @@ public class ParsedPageName {
      * Whether this pagename was successfully parsed or not.
      */
     public final boolean valid;
+
     /**
-     * If the pagename was a magic word it will be this, otherwise <tt>null</tt>
-     * .
+     * If the pagename was a magic word it will be this, otherwise <tt>null</tt>.
      *
      * The object type depends on the concrete
      * {@link MagicWord} implementation used by the
@@ -39,6 +40,7 @@ public class ParsedPageName {
      * {@link MagicWord} is used.
      */
     public final Object magicWord;
+
     /**
      * Parameters of the magic word (<tt>null</tt> if not supplied).
      */
@@ -161,5 +163,22 @@ public class ParsedPageName {
 
     public String fullPagename() {
         return namespace.makeFullPagename(pagename);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ParsedPageName pageName = (ParsedPageName) o;
+        return Objects.equals(valid, pageName.valid) &&
+                Objects.equals(namespace, pageName.namespace) &&
+                Objects.equals(pagename, pageName.pagename) &&
+                Objects.equals(magicWord, pageName.magicWord) &&
+                Objects.equals(magicWordParameter, pageName.magicWordParameter);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(namespace, pagename, valid, magicWord, magicWordParameter);
     }
 }

@@ -1,8 +1,6 @@
 package info.bliki.extensions.scribunto.engine;
 
-import info.bliki.wiki.filter.ParsedPageName;
-
-import javax.annotation.Nullable;
+import info.bliki.extensions.scribunto.ScribuntoException;
 
 public interface ScribuntoEngine {
     /**
@@ -12,8 +10,9 @@ public interface ScribuntoEngine {
      * Does not initialize the module, i.e. do not expect it to complain if the module
      * text is garbage or has syntax error.
      *
-     * @param pageName The name of the module
-     * @return a module or null if it doesn't exist.
+     * @param moduleName The name of the module
+     * @return the module
+     * @throws ScribuntoException if the module could not be loaded
      */
-    @Nullable ScribuntoModule fetchModuleFromParser(ParsedPageName pageName);
+    ScribuntoModule fetchModuleFromParser(String moduleName) throws ScribuntoException;
 }

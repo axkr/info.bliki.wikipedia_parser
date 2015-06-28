@@ -3,7 +3,6 @@ package info.bliki.extensions.scribunto.template;
 import info.bliki.extensions.scribunto.ScribuntoException;
 import info.bliki.extensions.scribunto.engine.ScribuntoEngine;
 import info.bliki.extensions.scribunto.engine.ScribuntoModule;
-import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.template.AbstractTemplateFunction;
 import info.bliki.wiki.template.ITemplateFunction;
@@ -40,33 +39,20 @@ public class Invoke extends AbstractTemplateFunction {
         if (engine == null) {
             throw new AssertionError("no scribuntoEngine defined");
         }
+
         final String moduleName   = parts.get(0).trim();  // TODO trim( $frame->expand( $args[0] ) );
         final String functionName = parts.get(1).trim();  // TODO trim( $frame->expand( $args[1] ) );
 
-
-        final ParsedPageName parsedPageName = new ParsedPageName(model.getNamespace().getModule(), moduleName, true);
-        ScribuntoModule module = getScribuntoModule(engine, parsedPageName);
-        if (module == null) return null;
-
         Frame parent = model.getFrame();
         try {
-            return module.invoke(functionName, parent.newChild(parsedPageName, getParameters(parts, model)));
+            ScribuntoModule module = engine.fetchModuleFromParser(moduleName);
+            return module.invoke(functionName, parent.newChild(module.pageName(), getParameters(parts, model)));
         } catch (ScribuntoException e) {
             // TODO handle
             logger.error("error invoking function", e);
             return null;
         } finally {
             model.setFrame(parent);
-        }
-    }
-
-    private ScribuntoModule getScribuntoModule(ScribuntoEngine engine, ParsedPageName pageName) {
-        ScribuntoModule module = engine.fetchModuleFromParser(pageName);
-        if (module != null) {
-            return module;
-        } else {
-            logger.warn("module " + pageName + " not found");
-            return null;
         }
     }
 

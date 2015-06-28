@@ -16,7 +16,6 @@ import info.bliki.extensions.scribunto.engine.lua.interfaces.MwUstring;
 import info.bliki.extensions.scribunto.template.Frame;
 import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.model.IWikiModel;
-import info.bliki.wiki.model.WikiModelContentException;
 import org.luaj.vm2.Globals;
 import org.luaj.vm2.LuaClosure;
 import org.luaj.vm2.LuaError;
@@ -33,12 +32,12 @@ import org.luaj.vm2.lib.ZeroArgFunction;
 import org.luaj.vm2.lib.jse.JsePlatform;
 
 import javax.annotation.Nonnull;
-import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.Map;
 
@@ -97,17 +96,18 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         }
     }
 
-    @Override public ScribuntoModule fetchModuleFromParser(ParsedPageName parsedPageName) {
-        Prototype cached = compiledScriptCache.getPrototypeForChunkname(parsedPageName.fullPagename());
-        if (cached != null) {
-            return new ScribuntoLuaModule(this, cached, parsedPageName.fullPagename());
-        } else {
-            return super.fetchModuleFromParser(parsedPageName);
-        }
-    }
+    @Override public ScribuntoModule fetchModuleFromParser(String moduleName) throws ScribuntoException {
+        ParsedPageName pageName = pageNameForModule(moduleName);
 
-    @Override public ScribuntoModule newModule(@Nonnull String text, String chunkName) {
-        return new ScribuntoLuaModule(this, text, chunkName);
+        Prototype prototype = compiledScriptCache.getPrototypeForChunkname(pageName);
+        if (prototype == null) {
+            try {
+                prototype = loadAndCache(new StringReader(findModuleContent(pageName)), pageName);
+            } catch (FileNotFoundException e) {
+                throw new ScribuntoException(e);
+            }
+        }
+        return new ScribuntoLuaModule(this, prototype, pageName);
     }
 
     @Override
@@ -119,25 +119,12 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         return globals;
     }
 
-    protected Prototype load(Reader code, String chunkName) throws ScribuntoException {
-        Prototype prototype = compiledScriptCache.getPrototypeForChunkname(chunkName);
-        if (prototype == null) {
-            try {
-                logger.debug("compiling "+chunkName);
-                prototype = globals.compilePrototype(code, chunkName);
-                compiledScriptCache.cachePrototype(chunkName, prototype);
-            } catch (LuaError | IOException e) {
-                throw new ScribuntoException(e);
-            }
-        }
-        return prototype;
-    }
-
     protected String executeFunctionChunk(LuaValue luaFunction, Frame frame) {
         assertFunction(luaFunction);
         try {
             currentFrame = frame;
             LuaValue executeFunction = globals.get("mw").get("executeFunction");
+            logger.trace("executing "+luaFunction);
             return executeFunction.call(luaFunction).tojstring();
         } finally {
             currentFrame = null;
@@ -172,7 +159,8 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         }
         LuaTable blacklist = new LuaTable();
         blacklist.set("test", new TwoArgFunction() {
-            @Override public LuaValue call(LuaValue action, LuaValue title) {
+            @Override
+            public LuaValue call(LuaValue action, LuaValue title) {
                 return NIL;
             }
         });
@@ -371,24 +359,36 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         return new OneArgFunction() {
             @Override
             public LuaValue call(LuaValue packageName) {
-                return loadModule(packageName.tojstring());
+                return loadModule(pageNameForModule(packageName.tojstring()));
             }
         };
     }
 
-    private LuaValue loadModule(String name) {
-        Prototype prototype = compiledScriptCache.getPrototypeForChunkname(name);
+    private LuaValue loadModule(ParsedPageName chunkName) {
+        Prototype prototype = compiledScriptCache.getPrototypeForChunkname(chunkName);
         if (prototype != null) {
             return new LuaClosure(prototype, globals);
         } else {
-            try (InputStream is = findPackage(name)) {
+            try (InputStream is = findPackage(chunkName)) {
                 return new LuaClosure(
-                        load(new InputStreamReader(is), name),
-                        globals);
+                    loadAndCache(new InputStreamReader(is), chunkName),
+                    globals);
             } catch (ScribuntoException | IOException e) {
                 logger.error("error loading ", e);
             }
-            return error("Could not load " + name);
+            return error("Could not load " + chunkName);
+        }
+    }
+
+    private Prototype loadAndCache(Reader code, ParsedPageName chunkName) throws ScribuntoException {
+        try {
+            logger.debug("compiling " + chunkName);
+            Prototype prototype = globals.compilePrototype(code, chunkName.fullPagename());
+            compiledScriptCache.cachePrototype(chunkName, prototype);
+
+            return prototype;
+        } catch (LuaError | IOException e) {
+            throw new ScribuntoException(e);
         }
     }
 
@@ -400,7 +400,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         };
     }
 
-    private @Nonnull InputStream findPackage(String name) throws IOException {
+    private @Nonnull InputStream findPackage(ParsedPageName name) throws IOException {
         logger.debug("findPackage("+name+")");
         final InputStream is = loadLocally(name);
         if (is != null) {
@@ -410,48 +410,25 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         }
     }
 
-    private InputStream loadLocally(String name) {
+    private InputStream loadLocally(ParsedPageName name) {
         for (String path : LIBRARY_PATH) {
-            InputStream is = globals.finder.findResource(path+"/"+name+".lua");
+            InputStream is = globals.finder.findResource(path + "/" + name.pagename + ".lua");
             if (is != null) {
                 return is;
             }
         }
-        final String moduleNS = model.getNamespace().getModule().getPrimaryText();
-        if (name.startsWith(moduleNS)) {
-            return loadLocally(name.substring(moduleNS.length()+1));
-        } else {
-            return null;
-        }
+        return null;
     }
 
-    private InputStream findModule(final String moduleName) throws IOException {
-        final String name = moduleName.replaceAll("[/:]", "_");
-        InputStream is = null;
-
+    private InputStream findModule(final ParsedPageName moduleName) throws IOException {
+        final String name = moduleName.pagename.replaceAll("[/:]", "_");
         for (String path : MODULE_PATH) {
-            is = globals.finder.findResource(path+"/"+name);
+            InputStream is = globals.finder.findResource(path+"/"+name);
             if (is != null) {
-                break;
+                return is;
             }
         }
-
-        if (is != null) {
-            return is;
-        } else if (model != null) {
-            try {
-                ParsedPageName pageName = ParsedPageName.parsePageName(model,
-                        moduleName,
-                        model.getNamespace().getModule(), false, false);
-
-                String content = model.getRawWikiContent(pageName, null);
-                if (content != null) {
-                    return new ByteArrayInputStream(content.getBytes());
-                }
-            } catch (WikiModelContentException ignored) {
-            }
-        }
-        throw new FileNotFoundException("could not find module " + moduleName);
+        return findModuleContentAsStream(moduleName);
     }
 
     @Override

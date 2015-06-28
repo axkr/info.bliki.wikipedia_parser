@@ -6,7 +6,9 @@ import info.bliki.wiki.model.WikiModelContentException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.annotation.Nonnull;
+import java.io.ByteArrayInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 
 public abstract class ScribuntoEngineBase implements ScribuntoEngine {
     protected Logger logger = LoggerFactory.getLogger(getClass());
@@ -16,23 +18,21 @@ public abstract class ScribuntoEngineBase implements ScribuntoEngine {
         this.model = model;
     }
 
-    public ScribuntoModule fetchModuleFromParser(ParsedPageName parsedPageName) {
-        try {
-            String content = model.getRawWikiContent(parsedPageName, null);
-            if (content == null) {
-                logger.warn("no content for "+parsedPageName);
-                return null;
-            } else {
-                return newModule(content, parsedPageName.fullPagename());
-            }
-        } catch (WikiModelContentException e) {
-            logger.warn("error fetching content for "+parsedPageName);
-            return null;
-        }
+    protected ParsedPageName pageNameForModule(String moduleName) {
+        return ParsedPageName.parsePageName(model,
+                moduleName,
+                model.getNamespace().getModule(), false, false);
     }
 
-    /**
-     * Creates a new module object within this engine
-     */
-    protected abstract ScribuntoModule newModule(@Nonnull String text, String chunkName);
+    protected InputStream findModuleContentAsStream(ParsedPageName pageName) throws FileNotFoundException {
+        return new ByteArrayInputStream(findModuleContent(pageName).getBytes());
+    }
+
+    protected String findModuleContent(ParsedPageName pageName) throws FileNotFoundException {
+        try {
+            return model.getRawWikiContent(pageName, null);
+        } catch (WikiModelContentException ignored) {
+        }
+        throw new FileNotFoundException("could not find module " + pageName);
+    }
 }

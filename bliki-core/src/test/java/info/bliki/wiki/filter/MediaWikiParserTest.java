@@ -5,6 +5,7 @@ import junit.framework.Test;
 import junit.framework.TestSuite;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -23,6 +24,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assume.assumeTrue;
 
 // TODO: make this work with junit4
+@Ignore
 public class MediaWikiParserTest {
 
     private final static String testFileName = "parserTests.txt";

@@ -66,7 +66,6 @@ public class WikiTestModel extends WikiModel {
                     case "FOO":          return MAIN_FOO;
                 }
             default: {
-                logger.error("resource not found:"+page);
                 return null;
             }
         }

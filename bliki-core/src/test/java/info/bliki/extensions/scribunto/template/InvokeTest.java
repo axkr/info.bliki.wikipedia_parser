@@ -2,7 +2,6 @@ package info.bliki.extensions.scribunto.template;
 
 import info.bliki.extensions.scribunto.engine.ScribuntoEngine;
 import info.bliki.extensions.scribunto.engine.ScribuntoModule;
-import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.namespaces.Namespace;
 import org.junit.Before;
@@ -14,6 +13,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.anyString;
 import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
@@ -24,13 +24,13 @@ public class InvokeTest {
     private @Mock ScribuntoEngine scribuntoEngine;
     private @Mock ScribuntoModule scribuntoModule;
 
-    @Before public void before() {
+    @Before public void before() throws Exception {
         subject = new Invoke();
         initMocks(this);
         when(model.createScribuntoEngine()).thenReturn(scribuntoEngine);
         when(model.getNamespace()).thenReturn(new Namespace());
         when(model.getFrame()).thenReturn(new Frame(null, null, null));
-        when(scribuntoEngine.fetchModuleFromParser(any(ParsedPageName.class))).thenReturn(scribuntoModule);
+        when(scribuntoEngine.fetchModuleFromParser(anyString())).thenReturn(scribuntoModule);
     }
 
     @Test public void testParseFunction() throws Exception {
