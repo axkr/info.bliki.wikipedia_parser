@@ -314,6 +314,9 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
     }
 
     private Frame getFrameById(LuaValue frameId) {
+        if (currentFrame == null) {
+            throw new AssertionError("No current frame set: "+ frameId);
+        }
         Frame frame;
         if (frameId.tojstring().equals("parent")) {
             frame = currentFrame.getParent();
