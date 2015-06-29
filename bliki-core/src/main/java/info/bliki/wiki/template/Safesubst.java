@@ -47,7 +47,7 @@ public class Safesubst extends AbstractTemplateFunction {
                     if (plainContent != null) {
                         return plainContent;
                     }
-                } catch (IOException e) {
+                } catch (IOException ignored) {
                 }
             }
             return "";
