@@ -175,7 +175,7 @@ public class TemplateParser extends AbstractParser {
                 if (redirectedLink != null) {
                     String redirectedContent = WikipediaParser.getRedirectedTemplateContent(wikiModel, redirectedLink, templateParameterMap);
                     if (redirectedContent != null) {
-                        parseRecursive(redirectedContent, wikiModel, writer, parseOnlySignature, renderTemplate);
+                        parseRecursive(redirectedContent, wikiModel, writer, parseOnlySignature, renderTemplate, templateParameterMap);
                         return;
                     }
                 }
