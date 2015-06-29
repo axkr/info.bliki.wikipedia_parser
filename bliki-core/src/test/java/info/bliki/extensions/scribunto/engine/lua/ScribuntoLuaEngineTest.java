@@ -48,7 +48,7 @@ public class ScribuntoLuaEngineTest {
 
         ScribuntoModule module = subject.fetchModuleFromParser("testModule");
 
-        String result = module.invoke("test_function", new Frame(null, null, null));
+        String result = module.invoke("test_function", new Frame(null, null, null, false));
         assertThat(result).isEqualTo("result");
     }
 
@@ -67,9 +67,9 @@ public class ScribuntoLuaEngineTest {
             .thenThrow(new RuntimeException("should only be called once"));
 
         ScribuntoModule module = subject.fetchModuleFromParser("testModule");
-        assertThat(module.invoke("test_function", new Frame(null, null, null))).isEqualTo("result");
+        assertThat(module.invoke("test_function", new Frame(null, null, null, false))).isEqualTo("result");
         ScribuntoModule cachedModule = subject.fetchModuleFromParser("testModule");
-        assertThat(cachedModule.invoke("test_function", new Frame(null, null, null))).isEqualTo("result");
+        assertThat(cachedModule.invoke("test_function", new Frame(null, null, null, false))).isEqualTo("result");
 
         assertThat(cachedModule).isNotSameAs(module);
     }
@@ -83,7 +83,7 @@ public class ScribuntoLuaEngineTest {
         ScribuntoModule module = subject.fetchModuleFromParser("testModuleWithError");
 
         try {
-            module.invoke("test_function", new Frame(null, null, null));
+            module.invoke("test_function", new Frame(null, null, null, false));
             fail("expected LuaError");
         } catch (LuaError e) {
             // expected

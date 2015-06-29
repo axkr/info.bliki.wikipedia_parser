@@ -15,16 +15,13 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * A template parser function for <code>{{safesubst: ... }}</code>. See <a
- * href="http://en.wikipedia.org/wiki/en:Help:Substitution#safesubst:"
- * >Wikipedia-Help:Substitution</a>
- *
+ * A template parser function for <code>{{safesubst: ... }}</code>. See
+ * <a href="http://en.wikipedia.org/wiki/en:Help:Substitution#safesubst:">Wikipedia-Help:Substitution</a>
  */
 public class Safesubst extends AbstractTemplateFunction {
     public final static ITemplateFunction CONST = new Safesubst();
 
     public Safesubst() {
-
     }
 
     @Override
@@ -43,12 +40,10 @@ public class Safesubst extends AbstractTemplateFunction {
             String function = substituted.substring(0, currOffset - 1).trim();
             ITemplateFunction templateFunction = model.getTemplateFunction(function);
             if (templateFunction != null) {
-                // if (function.charAt(0) == '#') {
-                // #if:, #ifeq:,...
                 parts.set(0, templateName.substring(currOffset));
                 String plainContent;
                 try {
-                    plainContent = templateFunction.parseFunction(parts, model, src2, currOffset, src2.length, true);
+                    plainContent = templateFunction.parseFunction(parts, model, src2, currOffset, src2.length, isSubst);
                     if (plainContent != null) {
                         return plainContent;
                     }

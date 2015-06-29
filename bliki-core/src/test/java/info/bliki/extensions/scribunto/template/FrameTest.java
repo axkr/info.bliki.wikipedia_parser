@@ -17,7 +17,7 @@ public class FrameTest {
         params.put("a", "a value");
         params.put("b", "b value");
         params.put("1", "numbered param");
-        subject = new Frame(null, params, null);
+        subject = new Frame(null, params, null, false);
     }
 
     @Test public void testGetAllArguments() {

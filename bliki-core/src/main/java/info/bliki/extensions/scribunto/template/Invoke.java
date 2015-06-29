@@ -46,7 +46,7 @@ public class Invoke extends AbstractTemplateFunction {
         Frame parent = model.getFrame();
         try {
             ScribuntoModule module = engine.fetchModuleFromParser(moduleName);
-            final Frame frame = parent.newChild(module.pageName(), getParameters(parts, model));
+            final Frame frame = parent.newChild(module.pageName(), getParameters(parts, model), isSubst);
 
             return module.invoke(functionName, frame);
         } catch (ScribuntoException e) {

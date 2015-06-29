@@ -38,13 +38,13 @@ public interface ITemplateFunction {
      * @throws IOException
      * @see TemplateParser#parseTemplate(StringBuffer)
      */
-    public abstract String parseFunction(List<String> parts, IWikiModel model, char[] src, int beginIndex, int endIndex,
-            boolean isSubst) throws IOException;
+    String parseFunction(List<String> parts, IWikiModel model, char[] src, int beginIndex, int endIndex,
+                         boolean isSubst) throws IOException;
 
     /**
      * Return a short description of the implemented template function
      *
      * @return
      */
-    public String getFunctionDoc();
+    String getFunctionDoc();
 }

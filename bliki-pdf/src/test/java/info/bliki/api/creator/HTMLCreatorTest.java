@@ -79,6 +79,12 @@ public class HTMLCreatorTest {
         testWiktionaryENAPI("AB");
     }
 
+    @Betamax(tape = "titeln", mode = READ_ONLY)
+    @Test public void testWiktionary_titeln() throws Exception {
+        final Result result = testWiktionaryENAPI("titeln");
+        result.assertContains("Template:rfdef");
+    }
+
     @Betamax(tape="Political_party_strength_in_California", mode = WRITE_ONLY)
     @Ignore @Test public void testPoliticalPartyStrengthInCalifornia() throws Exception {
         testWikipediaENAPI("Political party strength in California");
@@ -212,9 +218,14 @@ public class HTMLCreatorTest {
             this.content = content;
         }
 
+        public void assertContains(CharSequence ...values) {
+            assertThat(contentOf(content)).contains(values);
+        }
+
         public Result assertNoErrors() {
             assertNoSubstLeft();
             assertNoTemplateError();
+            assertNoInclude();
             return this;
         }
 
@@ -226,5 +237,8 @@ public class HTMLCreatorTest {
             assertThat(contentOf(content)).doesNotContain("safesubst:");
         }
 
+        private void assertNoInclude() {
+            assertThat(contentOf(content)).doesNotContain("noinclude");
+        }
     }
 }

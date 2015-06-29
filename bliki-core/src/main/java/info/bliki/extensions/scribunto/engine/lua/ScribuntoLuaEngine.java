@@ -265,8 +265,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
     private LuaValue isSubsting() {
         return new ZeroArgFunction() {
             @Override public LuaValue call() {
-                // TODO
-                return TRUE;
+                return LuaValue.valueOf(getFrameById(LuaValue.valueOf("current")).isSubsting());
             }
         };
     }
@@ -286,7 +285,6 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         return new TwoArgFunction() {
             @Override public LuaValue call(LuaValue frameId, LuaValue text) {
                 Frame frame = getFrameById(frameId);
-
                 return valueOf(model.render(text.checkjstring()));
             }
         };

@@ -474,45 +474,6 @@ public class WikiTagNode extends AbstractNode {
     }
 
     /**
-     * Print the contents of the tag.
-     *
-     * @return An string describing the tag. For text that looks like HTML use
-     *         #toHtml().
-     */
-    // public String toString ()
-    // {
-    // String text;
-    // String type;
-    // Cursor start;
-    // Cursor end;
-    // StringBuffer ret;
-    //
-    // text = getText ();
-    // ret = new StringBuffer (20 + text.length ());
-    // if (isEndTag ())
-    // type = "End";
-    // else
-    // type = "Tag";
-    // start = new Cursor (getPage (), getStartPosition ());
-    // end = new Cursor (getPage (), getEndPosition ());
-    // ret.append (type);
-    // ret.append (" (");
-    // ret.append (start);
-    // ret.append (",");
-    // ret.append (end);
-    // ret.append ("): ");
-    // if (80 < ret.length () + text.length ())
-    // {
-    // text = text.substring (0, 77 - ret.length ());
-    // ret.append (text);
-    // ret.append ("...");
-    // }
-    // else
-    // ret.append (text);
-    //
-    // return (ret.toString ());
-    // }
-    /**
      * Is this an empty xml tag of the form &lt;tag/&gt;.
      *
      * @return true if the last character of the last attribute is a '/'.

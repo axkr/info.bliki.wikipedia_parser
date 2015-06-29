@@ -11,15 +11,17 @@ public class Frame {
     private final ParsedPageName page;
     private final Map<String, String> templateParameters;
     private final Frame parent;
+    private boolean isSubst;
 
-    public Frame(ParsedPageName page, Map<String, String> templateParameters, Frame parent) {
+    public Frame(ParsedPageName page, Map<String, String> templateParameters, Frame parent, boolean isSubst) {
         this.templateParameters = templateParameters;
         this.page = page;
         this.parent = parent;
+        this.isSubst = isSubst;
     }
 
-    public Frame newChild(ParsedPageName pageName, Map<String, String> templateParameters) {
-        return new Frame(pageName, templateParameters, this);
+    public Frame newChild(ParsedPageName pageName, Map<String, String> templateParameters, boolean isSubst) {
+        return new Frame(pageName, templateParameters, this, isSubst);
     }
 
     public LuaValue getArgument(String name) {
@@ -54,5 +56,9 @@ public class Frame {
 
     public String getTitle() {
         return page.pagename;
+    }
+
+    public boolean isSubsting() {
+        return isSubst;
     }
 }

@@ -1,5 +1,7 @@
 package info.bliki.wiki.filter;
 
+import info.bliki.wiki.tags.util.WikiTagNode;
+
 public abstract class AbstractParser extends WikipediaScanner {
     protected char fCurrentCharacter;
     protected int fCurrentPosition;
@@ -53,19 +55,18 @@ public abstract class AbstractParser extends WikipediaScanner {
         return 0;
     }
 
-    /**
-     * Read the characters until the <code>&lt;</code> character with following
-     * <i>end</i> string is found. The end string is matched ignoring case
-     * considerations.
-     *
-     * @param endString
-     *          the end string which should be searched in ignore case mode
-     * @return
-     */
+    protected int readUntilNestedIgnoreCase(WikiTagNode node) {
+        if (node.isEmptyXmlTag()) {
+            fCurrentPosition = node.getEndPosition();
+            return node.getEndPosition() - node.getStartPosition();
+        } else {
+            return readUntilNestedIgnoreCase(node.getTagName()+">");
+        }
+    }
 
-    protected final int readUntilNestedIgnoreCase(String endString) {
+    private int readUntilNestedIgnoreCase(String endString) {
         int index = Util.indexOfNestedIgnoreCase(fStringSource, endString, fCurrentPosition);
-        if (index != (-1)) {
+        if (index != -1) {
             fCurrentPosition = index + 2 + endString.length();
             return 2 + endString.length();
         }

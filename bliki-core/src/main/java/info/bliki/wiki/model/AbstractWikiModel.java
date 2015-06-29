@@ -127,7 +127,6 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
      */
     private Map<Class<?>, Object> attributeRenderers;
     private Frame fFrame;
-    private ScribuntoEngine fScribuntoEngine;
 
     public AbstractWikiModel() {
         this(Configuration.DEFAULT_CONFIGURATION);
@@ -1115,7 +1114,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
                     parsedPagename.magicWordParameter, this);
         }
         if (parsedPagename.namespace.isType(NamespaceCode.TEMPLATE_NAMESPACE_KEY)) {
-            setFrame(new Frame(parsedPagename, templateParameters, getFrame()));
+            setFrame(new Frame(parsedPagename, templateParameters, getFrame(), false));
         }
         return null;
     }
