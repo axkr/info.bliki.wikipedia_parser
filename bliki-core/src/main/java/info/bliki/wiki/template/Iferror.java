@@ -16,7 +16,6 @@ public class Iferror extends AbstractTemplateFunction {
     public final static ITemplateFunction CONST = new Iferror();
 
     public Iferror() {
-
     }
 
     @Override
