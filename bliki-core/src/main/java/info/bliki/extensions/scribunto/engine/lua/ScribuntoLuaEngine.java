@@ -119,6 +119,21 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         return globals;
     }
 
+    protected LuaValue loadFunction(String functionName, Prototype prototype, Frame frame) throws ScribuntoException {
+        try {
+            currentFrame = frame;
+            LuaValue function =  new LuaClosure(prototype, globals).checkfunction().call().get(functionName);
+            if (function.isnil()) {
+                throw new ScribuntoException("no such function '"+functionName+"'");
+            }
+            return function;
+        } catch (LuaError e) {
+            throw new ScribuntoException(e);
+        } finally {
+            currentFrame = null;
+        }
+    }
+
     protected String executeFunctionChunk(LuaValue luaFunction, Frame frame) {
         assertFunction(luaFunction);
         try {

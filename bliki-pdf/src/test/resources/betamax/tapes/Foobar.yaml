@@ -1,7 +1,7 @@
 !tape
 name: Foobar
 interactions:
-- recorded: 2015-06-28T17:40:50.022Z
+- recorded: 2015-06-29T09:43:33.535Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Foobar&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -17,20 +17,20 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:49 GMT
+      Date: Mon, 29 Jun 2015 09:43:33 GMT
       Server: nginx/1.9.2
-      Set-Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; Path=/; Domain=.wikipedia.org, WMF-Last-Access=28-Jun-2015;Path=/;HttpOnly;Expires=Thu, 30 Jul 2015 12:00:00 GMT
+      Set-Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; Path=/; Domain=.wikipedia.org, WMF-Last-Access=29-Jun-2015;Path=/;HttpOnly;Expires=Fri, 31 Jul 2015 00:00:00 GMT
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
       X-Analytics: https=1
-      X-Cache: cp1055 miss (0), cp3006 miss (0), cp3041 frontend miss (0)
+      X-Cache: cp1055 miss (0), cp3006 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 1017466815, 417981577, 1029489159
+      X-Varnish: 1081182539, 457719943, 2131787369
     body: |-
-      <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="11178" pageid="11178" ns="0" title="Foobar"><revisions><rev user="F.macroo" timestamp="2015-06-06T09:44:59Z" comment="" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{Distinguish}}
+      <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="11178" pageid="11178" ns="0" title="Foobar"><revisions><rev user="173.76.253.168" anon="" timestamp="2015-06-29T00:37:57Z" comment="/* Usage in culture */ Fixed tense" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{Distinguish}}
       {{Redirect|Foo|other uses|Foo (disambiguation)}}
       The terms '''foobar''' ({{IPAc-en|ˈ|f|uː|b|ɑr}}), '''fubar''', or '''foo''', '''bar''', '''baz''' and '''qux''' (alternatively, '''quux''') and sometimes '''norf'''&lt;ref&gt;http://www.vidyokarma.com/article.php?c=R-programming-language&amp;page=1&lt;/ref&gt;&lt;ref&gt;http://rstudio-pubs-static.s3.amazonaws.com/43080_1d7db6d9f7044c8bae0e6a7f90c563cc.html&lt;/ref&gt;&lt;ref&gt;http://mathalope.co.uk/2015/03/08/swirl-r-programming-lesson-6-subsetting-vectors/&lt;/ref&gt;&lt;ref&gt;http://www.perlmonks.org/?node_id=1116433&lt;/ref&gt; and many others&lt;ref name=&quot;hackerdict&quot;&gt;http://www.dourish.com/goodies/jargon.html&lt;/ref&gt;&lt;ref&gt;http://www.catb.org/jargon/html/M/metasyntactic-variable.html&lt;/ref&gt; are sometimes used as [[placeholder name]]s (also referred to as [[metasyntactic variable]]s) in [[computer programming]] or computer-related documentation.&lt;ref name=&quot;rfc3092&quot; /&gt; They have been used to name entities such as [[Variable (computer science)|variable]]s, [[Function (computer science)|functions]], and [[command (computing)|command]]s whose exact identity is unimportant and serve only to demonstrate a concept.  The words themselves have no meaning in this usage.  ''Foobar'' is sometimes used alone; ''foo'', ''bar'', and ''baz'' are sometimes used, when multiple entities are needed.
 
@@ -82,7 +82,7 @@ interactions:
 
       There is a character named &quot;Master Foo&quot; in ''Rootless Root'', a collection of [[hacker koans]].
 
-      Google releases https://google.com/foobar in November 2014.
+      Google released https://google.com/foobar in November 2014.
 
       == See also ==
       {{Portal|Computer programming}}
@@ -106,14 +106,14 @@ interactions:
 
       [[Category:Placeholder names]]
       [[Category:Variable (computer programming)]]</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:40:50.658Z
+- recorded: 2015-06-29T09:43:33.765Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3ADistinguish&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -124,17 +124,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:50 GMT
+      Date: Mon, 29 Jun 2015 09:43:33 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1053 miss (0), cp3013 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1053 miss (0), cp3013 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2791335822, 1492447542, 1029490838
+      X-Varnish: 2864563921, 1534678827, 2131788339
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="3406012" pageid="3406012" ns="10" title="Template:Distinguish"><revisions><rev user="Technical 13" timestamp="2015-04-15T12:19:37Z" comment="Undid revision 656592368 by [[Special:Contributions/Wbm1058|Wbm1058]] ([[User talk:Wbm1058|talk]]) --- Fixed problem" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{#if:{{{1|}}}
        |{{Hatnote|Not to be confused with [[:{{trim|{{{1}}}}}]]{{
@@ -154,14 +154,14 @@ interactions:
       {{Documentation}}
       &lt;!-- Add categories to the /doc subpage and interwikis to Wikidata, not here! --&gt;
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:40:50.949Z
+- recorded: 2015-06-29T09:43:34.011Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3ARedirect&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -172,30 +172,30 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:50 GMT
+      Date: Mon, 29 Jun 2015 09:43:34 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1065 miss (0), cp3013 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1065 miss (0), cp3013 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 1868440686, 1492448032, 1029493669
+      X-Varnish: 1951928215, 1534679250, 2131788954
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="1649987" pageid="1649987" ns="10" title="Template:Redirect"><revisions><rev user="Mr. Stradivarius" timestamp="2014-08-05T21:42:33Z" comment="convert this to use [[Module:Redirect hatnote]]" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;includeonly&gt;{{#invoke:redirect hatnote|redirect}}&lt;/includeonly&gt;&lt;noinclude&gt;
       {{documentation}}
       &lt;!-- Categories go on the /doc subpage, and interwikis go on Wikidata. --&gt;
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:40:51.442Z
+- recorded: 2015-06-29T09:43:34.690Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Aredirect+hatnote&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -206,17 +206,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:51 GMT
+      Date: Mon, 29 Jun 2015 09:43:34 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1052 miss (0), cp3031 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1052 miss (0), cp3031 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 3165586735, 1371656628, 1029495643
+      X-Varnish: 3239105948, 1406309362, 2131790304
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><normalized><n from=\"Module:redirect hatnote\" to=\"Module:Redirect hatnote\" /></normalized><pages><page _idx=\"42680232\" pageid=\"42680232\" ns=\"828\" title=\"Module:Redirect hatnote\"><revisions><rev\
       \ user=\"Fayenatic london\" timestamp=\"2015-03-02T11:20:27Z\" comment=\"update category, see [[Wikipedia:Categories for discussion/Log/2015 February 21]]\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">--[[\n-- This module\
       \ produces a &quot;redirect&quot; hatnote. It looks like this:\n-- '&quot;X&quot; redirects here. For other uses, see Y.'\n-- It implements the {{redirect}} template.\n--]]\n\nlocal mHatnote = require('Module:Hatnote')\nlocal libraryUtil = require('libraryUtil')\n\
@@ -241,14 +241,14 @@ interactions:
       end\n\t\tend\n\tend\n\tcategory = category and string.format('[[Category:%s]]', category) or ''\n\n\t-- Generate the options to pass to [[Module:Hatnote]].\n\tlocal mhOptions = {}\n\tif currentTitle.namespace == 0\n\t\tand redirectTitle and redirectTitle.namespace\
       \ ~= 0\n\tthen\n\t\t-- We are on a mainspace page, and the hatnote starts with something\n\t\t-- like &quot;Wikipedia:Foo redirects here&quot;, so automatically label it as a\n\t\t-- self-reference.\n\t\tmhOptions.selfref = true\n\telse\n\t\tmhOptions.selfref\
       \ = options.selfref\n\tend\n\n\treturn mHatnote._hatnote(text, mhOptions) .. category\nend\n \nreturn p</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:40:51.891Z
+- recorded: 2015-06-29T09:43:34.931Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3AHatnote&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -259,17 +259,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:51 GMT
+      Date: Mon, 29 Jun 2015 09:43:35 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1054 miss (0), cp3012 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1054 miss (0), cp3012 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2550961526, 4019092970, 1029497155
+      X-Varnish: 2642283724, 4051425985, 2131791364
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"42498502\" pageid=\"42498502\" ns=\"828\" title=\"Module:Hatnote\"><revisions><rev user=\"Codename Lisa\" timestamp=\"2015-01-16T18:15:24Z\" comment=\"Minor comment change\"\
       \ contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">--------------------------------------------------------------------------------\n--                              Module:Hatnote                                --\n--    \
       \                                                                        --\n-- This module produces hatnote links and links to related articles. It       --\n-- implements the {{hatnote}} and {{format link}} meta-templates and includes --\n-- helper functions\
@@ -299,14 +299,14 @@ interactions:
       \ p._hatnote(s, options)\nend\n\nfunction p._hatnote(s, options)\n\tcheckType('_hatnote', 1, s, 'string')\n\tcheckType('_hatnote', 2, options, 'table', true)\n\tlocal classes = {'hatnote'}\n\tlocal extraclasses = options.extraclasses\n\tlocal selfref =\
       \ options.selfref\n\tif type(extraclasses) == 'string' then\n\t\tclasses[#classes + 1] = extraclasses\n\tend\n\tif selfref then\n\t\tclasses[#classes + 1] = 'selfref'\n\tend\n\treturn string.format(\n\t\t'&lt;div class=&quot;%s&quot;&gt;%s&lt;/div&gt;',\n\
       \t\ttable.concat(classes, ' '),\n\t\ts\n\t)\nend\n\nreturn p</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:40:52.224Z
+- recorded: 2015-06-29T09:43:35.157Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AIPAc-en&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -317,29 +317,29 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:52 GMT
+      Date: Mon, 29 Jun 2015 09:43:35 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1068 miss (0), cp3010 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1068 miss (0), cp3010 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 3464549687, 123539657, 1029499158
+      X-Varnish: 3538930555, 163703884, 2131792159
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="24747137" pageid="24747137" ns="10" title="Template:IPAc-en"><revisions><rev user="Mr. Stradivarius" timestamp="2015-06-19T01:47:04Z" comment="convert to Lua version at [[Module:IPAc-en]]" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{#invoke:IPAc-en|main}}&lt;noinclude&gt;
       {{documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:40:52.563Z
+- recorded: 2015-06-29T09:43:35.422Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3AIPAc-en&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -350,17 +350,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:52 GMT
+      Date: Mon, 29 Jun 2015 09:43:35 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1053 miss (0), cp3008 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1053 miss (0), cp3008 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2791338523, 3578334807, 1029501110
+      X-Varnish: 2864567657, 3617968383, 2131792947
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"47001391\" pageid=\"47001391\" ns=\"828\" title=\"Module:IPAc-en\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2015-06-19T01:47:43Z\" comment=\"Protected Module:IPAc-en:\
       \ [[WP:High-risk templates|High-risk Lua module]] ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">--\
       \ This module implements [[Template:IPAc-en]].\n\nlocal data = mw.loadData('Module:IPAc-en/data')\nlocal p = {}\n\n-- Global container for tracking categories\nlocal categories = {}\n\n-- Trims whitespace from a string\nlocal function trim(s)\n\treturn\
@@ -384,14 +384,14 @@ interactions:
       \t\tend\n\t\tuntil not id\n\t\twords[#words + 1] = '/' -- Closing slash\n\n\t\t-- Wrap the words in a link to IPA help.\n\t\tlocal span = mw.html.create('span')\n\t\t\t:addClass('IPA nopopups')\n\t\t\t:wikitext(string.format(\n\t\t\t\t'[[Help:IPA for English|%s]]',\n\
       \t\t\t\ttable.concat(words)\n\t\t\t))\n\n\t\tret[#ret + 1] = tostring(span)\n\tend\n\n\t-- Nowrap and categories\n\tret = makeNowrapSpan(table.concat(ret)) .. renderCategories()\n\n\t-- Reset the categories table in case we are run again.\n\tcategories\
       \ = {}\n\n\treturn ret\nend\n\nfunction p.main(frame)\n\treturn p._main(frame:getParent().args)\nend\n\nreturn p</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:40:52.843Z
+- recorded: 2015-06-29T09:43:35.722Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3AIPAc-en%2Fdata&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -402,17 +402,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:52 GMT
+      Date: Mon, 29 Jun 2015 09:43:35 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1055 miss (0), cp3040 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1055 miss (0), cp3040 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 1017469574, 2605860153, 1029502032
+      X-Varnish: 1081187599, 2642567713, 2131793690
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"47002254\" pageid=\"47002254\" ns=\"828\" title=\"Module:IPAc-en/data\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2015-06-19T11:38:13Z\" comment=\"switch to main\
       \ data modules\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">-- This module processes data for [[Module:IPAc-en]]. It is intended to be\n-- loaded with mw.loadData.\n\nlocal PRONUNCIATION_MODULE = 'Module:IPAc-en/pronunciation'\n\
       local PHONEME_MODULE = 'Module:IPAc-en/phonemes'\n\nlocal function makeData(oldData)\n\tlocal newData = {}\n\tfor i, old in ipairs(oldData) do\n\t\tlocal new = {}\n\t\tfor k, v in pairs(old) do\n\t\t\tif k ~= 'aliases' and k ~= 'code' then\n\t\t\t\tnew[k]\
@@ -420,14 +420,14 @@ interactions:
       \ = makeData(require(PRONUNCIATION_MODULE))\n\tlocal phonemes = makeData(require(PHONEME_MODULE))\n\n\t-- Check that no pronunciation keys are also contained in the phonemes\n\t-- data. This would cause silent, hard-to-debug errors if it went\n\t-- unchecked,\
       \ so  make it cause a big red error message instead.\n\tfor id in pairs(pronunciation) do\n\t\tif phonemes[id] then\n\t\t\terror(string.format(\n\t\t\t\t&quot;duplicate ID '%s' found in %s and %s&quot;,\n\t\t\t\tid,\n\t\t\t\tPRONUNCIATION_MODULE,\n\t\t\
       \t\tPHONEME_MODULE\n\t\t\t))\n\t\tend\n\tend\n\n\treturn {\n\t\tpronunciation = pronunciation,\n\t\tphonemes = phonemes,\n\t}\nend\n\nreturn main()</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:40:53.032Z
+- recorded: 2015-06-29T09:43:35.944Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3AIPAc-en%2Fpronunciation&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -438,30 +438,30 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:52 GMT
+      Date: Mon, 29 Jun 2015 09:43:36 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1054 miss (0), cp3040 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1054 miss (0), cp3040 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2550963236, 2605860286, 1029503235
+      X-Varnish: 2642286112, 2642568086, 2131794310
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"47002555\" pageid=\"47002555\" ns=\"828\" title=\"Module:IPAc-en/pronunciation\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2015-06-19T11:37:37Z\" comment=\"use ordered\
       \ data for easier doc generation\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">-- This module contains pronunciation-key data for [[Module:IPAc-en]].\n\nreturn {\n\t{\n\t\tcode = 'lang',\n\t\taliases = {'english'},\n\t\
       \ttext = 'English'\n\t},\n\t{\n\t\tcode = 'pron',\n\t\taliases = {'pronunciation'},\n\t\ttext = 'pronunciation:'\n\t},\n\t{\n\t\tcode = 'local',\n\t\ttext = 'local'\n\t},\n\t{\n\t\tcode = 'ipa',\n\t\ttext = '[[International Phonetic Alphabet|IPA]]'\n\t\
       },\n\t{\n\t\tcode = 'aus',\n\t\ttext = '[[Australian English|AU]]'\n\t},\n\t{\n\t\tcode = 'ca',\n\t\ttext = '[[Canadian English|CA]]'\n\t},\n\t{\n\t\tcode = 'ie',\n\t\ttext = '[[Irish English|IE]]'\n\t},\n\t{\n\t\tcode = 'nz',\n\t\ttext = '[[New Zealand\
       \ English|NZ]]'\n\t},\n\t{\n\t\tcode = 'uk',\n\t\ttext = '[[British English|UK]]'\n\t},\n\t{\n\t\tcode = 'us',\n\t\ttext = '[[American English|US]]'\n\t},\n\t{\n\t\tcode = 'za',\n\t\ttext = '[[South African English|ZA]]'\n\t},\n}</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:40:53.343Z
+- recorded: 2015-06-29T09:43:36.165Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3AIPAc-en%2Fphonemes&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -472,17 +472,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:53 GMT
+      Date: Mon, 29 Jun 2015 09:43:36 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1052 miss (0), cp3014 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1052 miss (0), cp3014 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 3165590004, 1778185844, 1029504012
+      X-Varnish: 3239109403, 1812171721, 2131794726
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"47001902\" pageid=\"47001902\" ns=\"828\" title=\"Module:IPAc-en/phonemes\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2015-06-19T11:37:48Z\" comment=\"use ordered\
       \ data for easier doc generation\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">-- This module contains phoneme data for [[Module:IPAc-en]].\n\nreturn {\n\t{\n\t\tcode = &quot;b&quot;,\n\t\tlabel = &quot;b&quot;,\n\t\t\
       tooltip = &quot;'b' in 'buy'&quot;,\n\t},\n\t{\n\t\tcode = &quot;d&quot;,\n\t\tlabel = &quot;d&quot;,\n\t\ttooltip = &quot;'d' in 'dye'&quot;,\n\t},\n\t{\n\t\tcode = &quot;ᵈ&quot;,\n\t\taliases = {&quot;(d)&quot;},\n\t\tlabel = &quot;ᵈ&quot;,\n\t\ttooltip\
@@ -553,14 +553,14 @@ interactions:
       \ any tooltip text in the template output, they are not\n\t-- underlined.\n\t{\n\t\tcode = &quot;,_&quot;,\n\t\tlabel = &quot;, &quot;,\n\t},\n\t{\n\t\tcode = &quot;_&quot;,\n\t\tlabel = &quot; &quot;,\n\t},\n\t-- this is useful for &quot;and&quot; in\
       \ place names, which is highly variable and not important to transcribe\n\t{\n\t\tcode = &quot;and&quot;,\n\t\tlabel = &quot;/ &amp; /&quot;,\n\t},\n\t-- this is useful for other highly variable words in place names, which are not important to transcribe\n\
       \t{\n\t\tcode = &quot;...&quot;,\n\t\tlabel = &quot;...&quot;,\n\t},\n}</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:40:53.767Z
+- recorded: 2015-06-29T09:43:36.434Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Acite+book&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -571,31 +571,31 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:53 GMT
+      Date: Mon, 29 Jun 2015 09:43:36 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1066 miss (0), cp3004 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1066 miss (0), cp3004 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2421594914, 3878580725, 1029506069
+      X-Varnish: 2488802733, 3921212166, 2131795506
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:cite book" to="Template:Cite book" /></normalized><pages><page _idx="4086375" pageid="4086375" ns="10" title="Template:Cite book"><revisions><rev user="Fuhghettaboutit" timestamp="2013-11-02T04:57:54Z" comment="Changed protection level of Template:Cite book: Enable access by template editors ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;includeonly&gt;{{#invoke:citation/CS1|citation
       |CitationClass=book
       }}&lt;/includeonly&gt;&lt;noinclude&gt;
       {{documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:40:54.682Z
+- recorded: 2015-06-29T09:43:36.865Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Acitation%2FCS1&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -606,17 +606,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:54 GMT
+      Date: Mon, 29 Jun 2015 09:43:36 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1053 miss (0), cp3012 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1053 miss (0), cp3012 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2791340201, 4019094193, 1029507412
+      X-Varnish: 2864570373, 4051429031, 2131796123
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><normalized><n from=\"Module:citation/CS1\" to=\"Module:Citation/CS1\" /></normalized><pages><page _idx=\"38573037\" pageid=\"38573037\" ns=\"828\" title=\"Module:Citation/CS1\"><revisions><rev\
       \ user=\"Trappist the monk\" timestamp=\"2015-04-18T10:10:25Z\" comment=\"script-title bug fix;\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">\nlocal z = {\n\terror_categories = {};\t\t-- for categorizing citations that\
       \ contain errors\n\terror_ids = {};\n\tmessage_tail = {};\n\tmaintenance_cats = {};\t\t-- for categorizing citations that aren't erroneous per se, but could use a little work\n\tproperties_cats = {};\t\t-- for categorizing citations based on certain properties,\
@@ -1202,14 +1202,14 @@ interactions:
       \ );\n\t\t\t\t\tend\n\t\t\t\t\tif suggestions[ k:lower() ] ~= nil then\n\t\t\t\t\t\terror_text, error_state = set_error( 'parameter_ignored_suggest', {k, suggestions[ k:lower() ]}, true );\n\t\t\t\t\telse\n\t\t\t\t\t\terror_text, error_state = set_error(\
       \ 'parameter_ignored', {k}, true );\n\t\t\t\t\tend\n\t\t\t\tend\t\t\t\t  \n\t\t\t\tif error_text ~= '' then\n\t\t\t\t\ttable.insert( z.message_tail, {error_text, error_state} );\n\t\t\t\tend\t\t\t\t\n\t\t\tend\n\t\t\targs[k] = v;\n\t\telseif args[k] ~=\
       \ nil or (k == 'postscript') then\n\t\t\targs[k] = v;\n\t\tend\t\t\n\tend\t\n\t\n\treturn citation0( config, args)\nend\n\nreturn z</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:40:55.327Z
+- recorded: 2015-06-29T09:43:37.167Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ACitation%2FCS1%2FConfiguration&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -1220,17 +1220,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:55 GMT
+      Date: Mon, 29 Jun 2015 09:43:37 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1065 miss (0), cp3010 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1065 miss (0), cp3010 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 1868448940, 123541666, 1029511572
+      X-Varnish: 1951935267, 163707652, 2131797073
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"39043527\" pageid=\"39043527\" ns=\"828\" title=\"Module:Citation/CS1/Configuration\"><revisions><rev user=\"Trappist the monk\" timestamp=\"2015-04-18T09:53:32Z\" comment=\"\
       Synch from sandbox;\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">\nlocal citation_config = {};\n\n-- override &lt;code&gt;...&lt;/code&gt; styling to remove color, border, and padding.  &lt;code&gt; css is specified\
       \ here:\n-- https://git.wikimedia.org/blob/mediawiki%2Fcore.git/69cd73811f7aadd093050dbf20ed70ef0b42a713/skins%2Fcommon%2FcommonElements.css#L199\nlocal code_style=&quot;color:inherit; border:inherit; padding:inherit;&quot;;\n\n--[[--------------------------&lt;\
@@ -1362,14 +1362,14 @@ interactions:
       \ = 'news:',\n\t\tencode = false,\n\t\tCOinS = 'info:usenet',\n\t\tseparator = '&amp;nbsp;',\n\t},\n\t['ZBL'] = {\n\t\tparameters = {'ZBL', 'zbl'}, \n\t\tlink = 'Zentralblatt MATH',\n\t\tlabel = 'Zbl',\n\t\tmode = 'external',\n\t\tprefix = '//zbmath.org/?format=complete&amp;q=an:',\n\
       \t\tCOinS = 'info:zbl',\n\t\tencode = true,\n\t\tseparator = '&amp;nbsp;',\n\t},\n}\n\nreturn \t{\n\taliases = aliases,\n\tdefaults = defaults,\n\terror_conditions = error_conditions,\n\tid_handlers = id_handlers,\n\tmaint_cats = maint_cats,\n\tmessages\
       \ = messages,\n\tpresentation = presentation,\n\tprop_cats = prop_cats,\n\ttitle_types = title_types,\n\tuncategorized_namespaces = uncategorized_namespaces,\n\tuncategorized_subpages = uncategorized_subpages,\n\t}</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:40:55.538Z
+- recorded: 2015-06-29T09:43:37.402Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ACitation%2FCS1%2FWhitelist&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -1380,17 +1380,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:55 GMT
+      Date: Mon, 29 Jun 2015 09:43:37 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1054 miss (0), cp3014 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1054 miss (0), cp3014 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2550966570, 1778187090, 1029514367
+      X-Varnish: 2642288826, 1812173803, 2131797697
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"39013723\" pageid=\"39013723\" ns=\"828\" title=\"Module:Citation/CS1/Whitelist\"><revisions><rev user=\"Trappist the monk\" timestamp=\"2015-04-18T09:53:28Z\" comment=\"Synch\
       \ from sandbox;\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">\n--[[--------------------------&lt; P A R A M E T E R S   N O T   S U P P O R T E D &gt;------------------------------\n\nThis is a list of parameters that\
       \ once were but now are no longer supported:\n\n\t['albumlink'] = nil,\t\t\t-- unique alias of titlelink used by old cite AV media notes\n\t['albumtype'] = nil,\t\t\t-- controled inappropriate functionality in the old cite AV media notes\n\t['artist']\
@@ -1442,14 +1442,14 @@ interactions:
       \ = true,\n\t['editor-link#'] = true,\n\t['editor#link'] = true,\n\t['editor#-link'] = true,\n\t['editorlink#'] = true,\n\t['editor-mask#'] = true,\n\t['editor#mask'] = true,\n\t['editor#-mask'] = true,\n\t['editormask#'] = true,\n\t['EditorSurname#']\
       \ = false,\t\t\t\t\t\t\t\t\t\t\t\t\t-- deprecated; non-standard capitalization\n\t['editor#-surname'] = true,\n\t['editor-surname#'] = true,\n\t['first#'] = true,\n\t['given#'] = true,\n\t['last#'] = true,\n\t['subject#'] = true,\n\t['subject-link#'] =\
       \ true,\n\t['subject#link'] = true,\n\t['subject#-link'] = true,\n\t['subjectlink#'] = true,\n\t['surname#'] = true,\n}\n--};\n\n--return whitelist;\nreturn {basic_arguments = basic_arguments, numbered_arguments = numbered_arguments};</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:40:55.791Z
+- recorded: 2015-06-29T09:43:37.709Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ACitation%2FCS1%2FDate_validation&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -1460,17 +1460,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:55 GMT
+      Date: Mon, 29 Jun 2015 09:43:37 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1054 miss (0), cp3030 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1054 miss (0), cp3030 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2550966839, 2610614526, 1029515320
+      X-Varnish: 2642289444, 2646887904, 2131798263
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><normalized><n from=\"Module:Citation/CS1/Date_validation\" to=\"Module:Citation/CS1/Date validation\" /></normalized><pages><page _idx=\"42164542\" pageid=\"42164542\" ns=\"828\" title=\"Module:Citation/CS1/Date\
       \ validation\"><revisions><rev user=\"Trappist the monk\" timestamp=\"2015-04-18T09:53:26Z\" comment=\"Synch from sandbox;\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">\nlocal p = {}\n\n--[[--------------------------&lt;\
       \ I S _ V A L I D _ A C C E S S D A T E &gt;----------------------------------------\n\nreturns true if:\n\tWikipedia start date &lt;= accessdate &lt; today + 2 days\n\nWikipedia start date is 2001-01-15T00:00:00 UTC which is 979516800 seconds after 1970-01-01T00:00:00\
@@ -1587,14 +1587,14 @@ interactions:
       \ then\t\t\t\t\t\t-- YYYY-YY date ranges\n\t\tlocal century;\n\t\tdate1, century, date2 = date_string:match (&quot;((%d%d)%d%d)[%s%-–]+(%d%d)&quot;);\n\t\tdate2 = century..date2;\t\t\t\t\t\t\t\t\t\t\t\t\t-- convert YY to YYYY\n\t\tif year ~= date1 and\
       \ year ~= date2 then\n\t\t\tresult = 0;\n\t\tend\n\n\telseif date_string:match (&quot;%d%d%d%d?&quot;) then\t\t\t\t\t\t\t\t\t-- any of the standard formats of date with one year\n\t\tdate1 = date_string:match (&quot;(%d%d%d%d?)&quot;);\n\t\tif year ~=\
       \ date1 then\n\t\t\tresult = 0;\n\t\tend\n\tend\n\treturn result;\nend\n\nreturn {dates = dates, year_date_check = year_date_check}\t\t\t\t\t\t-- return exported functions</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:40:56.007Z
+- recorded: 2015-06-29T09:43:37.980Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Acite+web&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -1605,31 +1605,31 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:55 GMT
+      Date: Mon, 29 Jun 2015 09:43:38 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1055 miss (0), cp3010 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1055 miss (0), cp3010 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 1017473054, 123542347, 1029516497
+      X-Varnish: 1081191867, 163708851, 2131798861
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:cite web" to="Template:Cite web" /></normalized><pages><page _idx="4148498" pageid="4148498" ns="10" title="Template:Cite web"><revisions><rev user="Fuhghettaboutit" timestamp="2013-11-02T04:56:36Z" comment="Changed protection level of Template:Cite web: Enable access by template editors ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;includeonly&gt;{{#invoke:citation/CS1|citation
       |CitationClass=web
       }}&lt;/includeonly&gt;&lt;noinclude&gt;
       {{documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:40:56.405Z
+- recorded: 2015-06-29T09:43:38.395Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Awhich&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -1640,17 +1640,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:56 GMT
+      Date: Mon, 29 Jun 2015 09:43:38 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1055 miss (0), cp3007 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1055 miss (0), cp3007 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 1017473430, 266580132, 1029518249
+      X-Varnish: 1081192703, 301861304, 2131800330
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:which" to="Template:Which" /></normalized><pages><page _idx="11572404" pageid="11572404" ns="10" title="Template:Which"><revisions><rev user="AnomieBOT II" timestamp="2013-11-17T18:10:10Z" comment="[[Module:Unsubst|Unsubstifying]] template, so {{subst:Which}} results in {{Which|date=...}}" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{ {{{|safesubst:}}}#invoke:Unsubst||$N=Which |date=__DATE__ |$B=
       &lt;!-- {{Which?}} begin --&gt;{{Fix
@@ -1665,14 +1665,14 @@ interactions:
       }}&lt;noinclude&gt;
       {{Documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:40:56.597Z
+- recorded: 2015-06-29T09:43:38.613Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Asubstcheck&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -1683,26 +1683,26 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:56 GMT
+      Date: Mon, 29 Jun 2015 09:43:38 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1066 miss (0), cp3010 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1066 miss (0), cp3010 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2421598109, 123542710, 1029519027
+      X-Varnish: 2488806845, 163710137, 2131800602
     body: <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:substcheck" to="Template:Substcheck" /></normalized><pages><page _idx="22465489" pageid="22465489" ns="10" title="Template:Substcheck"><revisions><rev user="Thumperward" timestamp="2010-09-07T17:05:47Z" comment="add docs" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">SUBST&lt;noinclude&gt;{{documentation}}&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:40:56.811Z
+- recorded: 2015-06-29T09:43:38.847Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3AUnsubst&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -1713,17 +1713,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:56 GMT
+      Date: Mon, 29 Jun 2015 09:43:39 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1053 miss (0), cp3010 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1053 miss (0), cp3010 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2791343145, 123542836, 1029519889
+      X-Varnish: 2864574765, 163710949, 2131801599
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"40945493\" pageid=\"40945493\" ns=\"828\" title=\"Module:Unsubst\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2014-08-22T15:48:46Z\" comment=\"add tracking category\
       \ per protected edit request by [[User:Jackmcbarn]]\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">local p = {}\n\nlocal specialParams = {\n\t['$N'] = 'template name', -- Deprecated, but keeping until it is removed from\
       \ transcluding templates\n\t['$B'] = 'template content',\n}\n\np[''] = function ( frame )\n\tif not frame:getParent() then\n\t\terror( '{{#invoke:Unsubst|}} makes no sense without a parent frame' )\n\tend\n\tif not frame.args['$B'] then\n\t\terror( '{{#invoke:Unsubst|}}\
@@ -1734,14 +1734,14 @@ interactions:
       \t\t\tif string.find( v, '=', 1, true ) then\n\t\t\t\t-- likely something like 1=foo=bar, we need to do it as a named arg\n\t\t\t\tbreak\n\t\t\tend\n\t\t\tret = ret .. '|' .. v\n\t\t\targs[k] = nil\n\t\tend\n\t\tfor k, v in pairs( args ) do\n\t\t\tret\
       \ = ret .. '|' .. k .. '=' .. v\n\t\tend\n\t\t\n\t\treturn ret .. '}}'\n\telse\n\t\t---- Not substing\n\t\t-- Just return the &quot;body&quot;\n\t\treturn frame.args['$B'] .. (frame.args['$N'] and frame:getParent():getTitle() == mw.title.getCurrentTitle().prefixedText\
       \ and '[[Category:Calls to Module:Unsubst that use $N]]' or '')\n\tend\nend\n\nreturn p</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:40:57.006Z
+- recorded: 2015-06-29T09:43:39.057Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AFix&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -1752,17 +1752,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:56 GMT
+      Date: Mon, 29 Jun 2015 09:43:39 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1054 miss (0), cp3007 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1054 miss (0), cp3007 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2550968374, 266580427, 1029520683
+      X-Varnish: 2642292437, 301862375, 2131801985
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"5632010\" pageid=\"5632010\" ns=\"10\" title=\"Template:Fix\"><revisions><rev user=\"Waldir\" timestamp=\"2014-05-11T01:03:11Z\" comment=\"if the noprint and inline-template\
       \ classes need to be preserved, according to the docs, then why not enforcing in the code rather than asking people to do it (and relying on them reading the docs attentively enough not to miss that)?\" contentformat=\"text/x-wiki\" contentmodel=\"wikitext\"\
       \ xml:space=\"preserve\">{{#switch:{{{subst|¬}}}\n |¬={{category handler\n  |template=[[Category:Templates needing substitution checking]]\n  |nocat={{{nocat|&lt;noinclude&gt;true&lt;/noinclude&gt;}}}\n }}\n |SUBST=[[Category:Pages with incorrectly substituted\
@@ -1770,14 +1770,14 @@ interactions:
       \ including undated clean-up tags]]}}}}}} \n |subpage=no\n}}{{#if:{{{text|}}}\n |&lt;sup class=&quot;noprint Inline-Template {{{class|}}}&quot; style=&quot;white-space:nowrap;&quot;&gt;&amp;#91;&lt;i&gt;{{#if:{{{pre-text|}}}\n  |{{{pre-text}}}&amp;#32;\n\
       \ }}[[{{{link|Wikipedia:Cleanup}}}|&lt;span title=&quot;{{{title|{{{link|Wikipedia:Cleanup}}}}}}{{#if:{{{date|}}}|&lt;nowiki/&gt; ({{{date}}})}}&quot;&gt;{{{text|}}}&lt;/span&gt;]]{{#if:{{{post-text|}}}\n  |&amp;#32;{{{post-text}}}\n }}&lt;/i&gt;&amp;#93;&lt;/sup&gt;|{{{special|}}}\n\
       }}&lt;noinclude&gt;\n{{Documentation}}\n&lt;!-- Add cats and interwikis to the /doc subpage, not here! --&gt;\n&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:40:57.206Z
+- recorded: 2015-06-29T09:43:39.266Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AFix%2Fcategory&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -1788,17 +1788,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:57 GMT
+      Date: Mon, 29 Jun 2015 09:43:39 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1052 miss (0), cp3014 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1052 miss (0), cp3014 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 3165596671, 1778187838, 1029521493
+      X-Varnish: 3239116221, 1812177092, 2131802601
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="34017846" pageid="34017846" ns="10" title="Template:Fix/category"><revisions><rev user="TheDJ" timestamp="2012-01-17T21:00:05Z" comment="Adding {{pp-template}} ([[WP:TW|TW]])" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;noinclude&gt;{{pp-template|small=yes}}&lt;/noinclude&gt;{{{cat|[[Category:All pages needing cleanup]]}}}{{#if:{{{cat-date|}}}
         |[[{{{cat-date}}} {{#if:{{{date|}}}
@@ -1825,14 +1825,14 @@ interactions:
          }}
         }}
        }}</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:40:57.392Z
+- recorded: 2015-06-29T09:43:39.600Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3ACategory+handler&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -1843,30 +1843,30 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:57 GMT
+      Date: Mon, 29 Jun 2015 09:43:39 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1066 miss (0), cp3006 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1066 miss (0), cp3006 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2421599018, 417986437, 1029522333
+      X-Varnish: 2488808992, 457731423, 2131803089
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="25084818" pageid="25084818" ns="10" title="Template:Category handler"><revisions><rev user="Mr. Stradivarius" timestamp="2013-10-20T10:48:53Z" comment="Changed protection level of Template:Category handler: [[WP:High-risk templates|Highly visible template]]: allow template editors to edit ([Edit=Protected template] (indefinite) [Move=Protected template] (indefinite))" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{#invoke:Category handler|main}}&lt;noinclude&gt;
       {{documentation}}
       &lt;!-- Add categories to the /doc subpage, and interwikis to Wikidata. --&gt;
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:40:57.605Z
+- recorded: 2015-06-29T09:43:39.839Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ACategory+handler&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -1877,17 +1877,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:57 GMT
+      Date: Mon, 29 Jun 2015 09:43:40 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1068 miss (0), cp3010 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1068 miss (0), cp3010 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 3464557868, 123543349, 1029523219
+      X-Varnish: 3538940637, 163712885, 2131804140
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"39772274\" pageid=\"39772274\" ns=\"828\" title=\"Module:Category handler\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2014-07-22T05:08:26Z\" comment=\"allow invocations\
       \ specifying the page parameter to use the mw.loadData optimisations, and don&#039;t call mw.title.new every time\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">--------------------------------------------------------------------------------\n\
       --                                                                            --\n--                              CATEGORY HANDLER                              --\n--                                                                            --\n--   \
@@ -1923,14 +1923,14 @@ interactions:
       \ data)\n\tdata = data or mw.loadData('Module:Category handler/data')\n\tlocal handler = CategoryHandler.new(data, args)\n\tif handler:isSuppressed() then\n\t\treturn nil\n\tend\n\treturn handler:getCategories()\nend\n\nfunction p.main(frame, data)\n\t\
       data = data or mw.loadData('Module:Category handler/data')\n\tlocal args = require('Module:Arguments').getArgs(frame, {\n\t\twrappers = data.wrappers,\n\t\tvalueFunc = function (k, v)\n\t\t\tv = trimWhitespace(v)\n\t\t\tif type(k) == 'number' then\n\t\t\
       \t\tif v ~= '' then\n\t\t\t\t\treturn v\n\t\t\t\telse\n\t\t\t\t\treturn nil\n\t\t\t\tend\n\t\t\telse\n\t\t\t\treturn v\n\t\t\tend\n\t\tend\n\t})\n\treturn p._main(args, data)\nend\n\nreturn p</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:40:58.038Z
+- recorded: 2015-06-29T09:43:40.045Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3AYesno&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -1941,30 +1941,30 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:57 GMT
+      Date: Mon, 29 Jun 2015 09:43:40 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1052 miss (0), cp3031 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1052 miss (0), cp3031 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 3165597803, 1371660141, 1029524092
+      X-Varnish: 3239118172, 1406318656, 2131804589
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"38665046\" pageid=\"38665046\" ns=\"828\" title=\"Module:Yesno\"><revisions><rev user=\"MSGJ\" timestamp=\"2015-04-27T10:43:30Z\" comment=\"recognise &quot;t&quot; for true\
       \ and &quot;f&quot; for false, per request\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">-- Function allowing for consistent treatment of boolean-like wikitext input.\n-- It works similarly to the template {{yesno}}.\n\
       \nreturn function (val, default)\n\t-- If your wiki uses non-ascii characters for any of &quot;yes&quot;, &quot;no&quot;, etc., you\n\t-- should replace &quot;val:lower()&quot; with &quot;mw.ustring.lower(val)&quot; in the\n\t-- following line.\n\tval\
       \ = type(val) == 'string' and val:lower() or val\n\tif val == nil then\n\t\treturn nil\n\telseif val == true \n\t\tor val == 'yes'\n\t\tor val == 'y'\n\t\tor val == 'true'\n\t\tor val == 't'\n\t\tor tonumber(val) == 1\n\tthen\n\t\treturn true\n\telseif\
       \ val == false\n\t\tor val == 'no'\n\t\tor val == 'n'\n\t\tor val == 'false'\n\t\tor val == 'f'\n\t\tor tonumber(val) == 0\n\tthen\n\t\treturn false\n\telse\n\t\treturn default\n\tend\nend</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:40:58.211Z
+- recorded: 2015-06-29T09:43:40.248Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ACategory+handler%2Fdata&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -1975,30 +1975,30 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:58 GMT
+      Date: Mon, 29 Jun 2015 09:43:40 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1054 miss (0), cp3012 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1054 miss (0), cp3012 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2550969937, 4019096336, 1029525919
+      X-Varnish: 2642295848, 4051434816, 2131805617
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"43233647\" pageid=\"43233647\" ns=\"828\" title=\"Module:Category handler/data\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2014-07-13T09:05:55Z\" comment=\"Protected\
       \ Module:Category handler/data: [[WP:High-risk templates|High-risk Lua module]] ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))\" contentformat=\"text/plain\" contentmodel=\"Scribunto\"\
       \ xml:space=\"preserve\">-- This module assembles data to be passed to [[Module:Category handler]] using\n-- mw.loadData. This includes the configuration data and whether the current\n-- page matches the title blacklist.\n\nlocal data = require('Module:Category\
       \ handler/config')\nlocal mShared = require('Module:Category handler/shared')\nlocal blacklist = require('Module:Category handler/blacklist')\nlocal title = mw.title.getCurrentTitle()\n\ndata.currentTitleMatchesBlacklist = mShared.matchesBlacklist(\n\t\
       title.prefixedText,\n\tblacklist\n)\n\ndata.currentTitleNamespaceParameters = mShared.getNamespaceParameters(\n\ttitle,\n\tmShared.getParamMappings()\n)\n\nreturn data</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:40:58.413Z
+- recorded: 2015-06-29T09:43:40.549Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ACategory+handler%2Fconfig&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -2009,17 +2009,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:58 GMT
+      Date: Mon, 29 Jun 2015 09:43:40 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1068 miss (0), cp3014 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1068 miss (0), cp3014 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 3464558994, 1778188391, 1029526684
+      X-Varnish: 3538942513, 1812179596, 2131806155
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"42291997\" pageid=\"42291997\" ns=\"828\" title=\"Module:Category handler/config\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2014-07-13T09:05:36Z\" comment=\"Protected\
       \ Module:Category handler/config: [[WP:High-risk templates|High-risk Lua module]] ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))\" contentformat=\"text/plain\" contentmodel=\"Scribunto\"\
       \ xml:space=\"preserve\">--------------------------------------------------------------------------------\n--            [[Module:Category handler]] configuration data                  --\n--       Language-specific parameter names and values can be set\
@@ -2045,14 +2045,14 @@ interactions:
       --                                Wrappers                                    --\n-- This is a wrapper template or a list of wrapper templates to be passed to  --\n-- [[Module:Arguments]].                                                      --\n--------------------------------------------------------------------------------\n\
       \ncfg.wrappers = 'Template:Category handler'\n\n--------------------------------------------------------------------------------\n--                           End configuration data                           --\n--------------------------------------------------------------------------------\n\
       \nreturn cfg -- Don't edit this line.</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:40:58.705Z
+- recorded: 2015-06-29T09:43:40.786Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ACategory+handler%2Fshared&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -2063,31 +2063,31 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:58 GMT
+      Date: Mon, 29 Jun 2015 09:43:40 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1065 miss (0), cp3012 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1065 miss (0), cp3012 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 1868456284, 4019096514, 1029527643
+      X-Varnish: 1951944155, 4051435547, 2131806975
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"43232937\" pageid=\"43232937\" ns=\"828\" title=\"Module:Category handler/shared\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2014-07-13T09:06:15Z\" comment=\"Protected\
       \ Module:Category handler/shared: [[WP:High-risk templates|High-risk Lua module]] ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))\" contentformat=\"text/plain\" contentmodel=\"Scribunto\"\
       \ xml:space=\"preserve\">-- This module contains shared functions used by [[Module:Category handler]]\n-- and its submodules.\n\nlocal p = {}\n\nfunction p.matchesBlacklist(page, blacklist)\n\tfor i, pattern in ipairs(blacklist) do\n\t\tlocal match = mw.ustring.match(page,\
       \ pattern)\n\t\tif match then\n\t\t\treturn true\n\t\tend\n\tend\n\treturn false\nend\n\nfunction p.getParamMappings(useLoadData)\n\tlocal dataPage = 'Module:Namespace detect/data'\n\tif useLoadData then\n\t\treturn mw.loadData(dataPage).mappings\n\telse\n\
       \t\treturn require(dataPage).mappings\n\tend\nend\n\nfunction p.getNamespaceParameters(titleObj, mappings)\n\t-- We don't use title.nsText for the namespace name because it adds\n\t-- underscores.\n\tlocal mappingsKey\n\tif titleObj.isTalkPage then\n\t\
       \tmappingsKey = 'talk'\n\telse\n\t\tmappingsKey = mw.site.namespaces[titleObj.namespace].name\n\tend\n\tmappingsKey = mw.ustring.lower(mappingsKey)\n\treturn mappings[mappingsKey] or {}\nend\n\nreturn p</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:40:58.900Z
+- recorded: 2015-06-29T09:43:40.999Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ACategory+handler%2Fblacklist&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -2098,31 +2098,31 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:58 GMT
+      Date: Mon, 29 Jun 2015 09:43:41 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1054 miss (0), cp3007 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1054 miss (0), cp3007 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2550970767, 266581366, 1029528900
+      X-Varnish: 2642297334, 301866077, 2131807678
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"43232926\" pageid=\"43232926\" ns=\"828\" title=\"Module:Category handler/blacklist\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2014-07-13T09:07:09Z\" comment=\"\
       Protected Module:Category handler/blacklist: [[WP:High-risk templates|High-risk Lua module]] ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))\" contentformat=\"text/plain\" contentmodel=\"\
       Scribunto\" xml:space=\"preserve\">-- This module contains the blacklist used by [[Module:Category handler]].\n-- Pages that match Lua patterns in this list will not be categorised unless\n-- categorisation is explicitly requested.\n\nreturn {\n    '^Main\
       \ Page$', -- don't categorise the main page.\n \n    -- Don't categorise the following pages or their subpages.\n    -- &quot;%f[/\\0]&quot; matches if the next character is &quot;/&quot; or the end of the string.\n    '^Wikipedia:Cascade%-protected items%f[/\\\
       0]',\n    '^User:UBX%f[/\\0]', -- The userbox &quot;template&quot; space.\n    '^User talk:UBX%f[/\\0]',\n \n    -- Don't categorise subpages of these pages, but allow\n    -- categorisation of the base page.\n    '^Wikipedia:Template messages/.*$',\n\
       \ \n    '/[aA]rchive' -- Don't categorise archives.\n}</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:40:59.099Z
+- recorded: 2015-06-29T09:43:41.205Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ANamespace+detect%2Fdata&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -2133,17 +2133,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:59 GMT
+      Date: Mon, 29 Jun 2015 09:43:41 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1066 miss (0), cp3031 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1066 miss (0), cp3031 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2421600894, 1371660738, 1029529828
+      X-Varnish: 2488813117, 1406321190, 2131808423
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"42257476\" pageid=\"42257476\" ns=\"828\" title=\"Module:Namespace detect/data\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2014-04-05T17:02:16Z\" comment=\"bug fix\
       \ - use the demospace parameter as both key and value in the argKeys table\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">--------------------------------------------------------------------------------\n--           \
       \               Namespace detect data                             --\n-- This module holds data for [[Module:Namespace detect]] to be loaded per    --\n-- page, rather than per #invoke, for performance reasons.                    --\n--------------------------------------------------------------------------------\n\
@@ -2157,14 +2157,14 @@ interactions:
       \ do\n\t\tif nsid ~= 0 then -- Exclude main namespace.\n\t\t\tlocal nsname = mw.ustring.lower(ns.name)\n\t\t\tlocal canonicalName = mw.ustring.lower(ns.canonicalName)\n\t\t\tmappings[nsname] = {nsname}\n\t\t\tif canonicalName ~= nsname then\n\t\t\t\ttable.insert(mappings[nsname],\
       \ canonicalName)\n\t\t\tend\n\t\t\tfor _, alias in ipairs(ns.aliases) do\n\t\t\t\ttable.insert(mappings[nsname], mw.ustring.lower(alias))\n\t\t\tend\n\t\tend\n\tend\n\treturn mappings\nend\n\nreturn {\n\targKeys = argKeys,\n\tcfg = cfg,\n\tmappings = getParamMappings()\n\
       }</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:40:59.301Z
+- recorded: 2015-06-29T09:43:41.429Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ANamespace+detect%2Fconfig&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -2175,17 +2175,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:59 GMT
+      Date: Mon, 29 Jun 2015 09:43:41 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1052 miss (0), cp3012 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1052 miss (0), cp3012 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 3165600071, 4019096802, 1029530701
+      X-Varnish: 3239121739, 4051437043, 2131809275
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="42256703" pageid="42256703" ns="828" title="Module:Namespace detect/config"><revisions><rev user="Mr. Stradivarius" timestamp="2014-04-05T17:03:49Z" comment="use cfg.demopage rather than cfg.page now that the default parameter has been changed on the /data page" contentformat="text/plain" contentmodel="Scribunto" xml:space="preserve">--------------------------------------------------------------------------------
       --                    Namespace detect configuration data                     --
@@ -2253,14 +2253,14 @@ interactions:
       --------------------------------------------------------------------------------
 
       return cfg -- Don't edit this line.</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:40:59.511Z
+- recorded: 2015-06-29T09:43:41.640Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3AArguments&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -2271,17 +2271,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:59 GMT
+      Date: Mon, 29 Jun 2015 09:43:41 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1065 miss (0), cp3012 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1065 miss (0), cp3012 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 1868457853, 4019096888, 1029531625
+      X-Varnish: 1951946584, 4051437454, 2131809927
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"41298065\" pageid=\"41298065\" ns=\"828\" title=\"Module:Arguments\"><revisions><rev user=\"Jackmcbarn\" timestamp=\"2015-06-26T22:53:15Z\" comment=\"add argument translation\
       \ from sandbox - all tests pass\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">-- This module provides easy processing of arguments passed to Scribunto from\n-- #invoke. It is intended for use by other Lua modules, and\
       \ should not be\n-- called from #invoke directly.\n\nlocal libraryUtil = require('libraryUtil')\nlocal checkType = libraryUtil.checkType\n\nlocal arguments = {}\n\n-- Generate four different tidyVal functions, so that we don't have to check the\n-- options\
@@ -2328,14 +2328,14 @@ interactions:
       \ = function ()\n\t\t-- Called when pairs is run on the args table.\n\t\tif not metatable.donePairs then\n\t\t\tmergeArgs(argTables)\n\t\t\tmetatable.donePairs = true\n\t\tend\n\t\treturn translatenext, { t = metaArgs }\n\tend\n\n\tlocal function inext(t,\
       \ i)\n\t\t-- This uses our __index metamethod\n\t\tlocal v = t[i + 1]\n\t\tif v ~= nil then\n\t\t\treturn i + 1, v\n\t\tend\n\tend\n\n\tmetatable.__ipairs = function (t)\n\t\t-- Called when ipairs is run on the args table.\n\t\treturn inext, t, 0\n\tend\n\
       \n\treturn args\nend\n\nreturn arguments</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:40:59.763Z
+- recorded: 2015-06-29T09:43:41.967Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AQuote&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -2346,17 +2346,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:59 GMT
+      Date: Mon, 29 Jun 2015 09:43:42 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1068 miss (0), cp3014 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1068 miss (0), cp3014 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 3464560827, 1778188900, 1029532711
+      X-Varnish: 3538945826, 1812182332, 2131810304
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="994397" pageid="994397" ns="10" title="Template:Quote"><revisions><rev user="Dinoguy1000" timestamp="2015-06-18T20:25:51Z" comment="that&#039;s one of the reasons I don&#039;t like nested parameters in the conditional part of #if statements" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;blockquote class=&quot;templatequote&quot; {{#if:{{{style|}}}|style=&quot;{{{style}}}&quot;}}&gt;{{{text|{{{quote|{{{1|&lt;noinclude&gt;{{lorem ipsum}}&lt;/noinclude&gt;&lt;includeonly&gt;{{error|Error: No text given for quotation (or equals sign used in the actual argument to an unnamed parameter)}}&lt;/includeonly&gt;}}}}}}}}}{{#if:{{{sign|&lt;noinclude&gt;1&lt;/noinclude&gt;}}}{{{cite|}}}{{{author|}}}{{{by|}}}{{{2|}}}{{{source|}}}{{{ts|}}}{{{3|}}}|&lt;div class=&quot;templatequotecite&quot;&gt;—{{Comma separated entries
        | {{{sign|{{{cite|{{{author|{{{by|{{{2|&lt;noinclude&gt;Author&lt;/noinclude&gt;}}}}}}}}}}}}}}}
@@ -2366,14 +2366,14 @@ interactions:
       &lt;/blockquote&gt;{{#if:{{{class|}}}{{{id|}}}{{{title|}}}{{{diff|}}}{{{4|}}}{{{5|}}}|[[Category:Pages incorrectly using the quote template]]}}&lt;noinclude&gt;
       {{documentation}}&lt;!-- Add categories to the /doc subpage, not here! --&gt;
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:40:59.939Z
+- recorded: 2015-06-29T09:43:42.187Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Acitation+needed&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -2384,17 +2384,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:40:59 GMT
+      Date: Mon, 29 Jun 2015 09:43:42 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1053 miss (0), cp3010 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1053 miss (0), cp3010 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2791346289, 123544793, 1029533636
+      X-Varnish: 2864582333, 163717888, 2131810923
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:citation needed" to="Template:Citation needed" /></normalized><pages><page _idx="2048472" pageid="2048472" ns="10" title="Template:Citation needed"><revisions><rev user="MSGJ" timestamp="2015-04-02T12:03:07Z" comment="try again" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{ {{{|safesubst:}}}#invoke:Unsubst||date=__DATE__ |$B=
       {{Fix
@@ -2412,14 +2412,14 @@ interactions:
       {{Documentation}}
 
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:41:00.137Z
+- recorded: 2015-06-29T09:43:42.423Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Acategory+handler&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -2430,30 +2430,30 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:41:00 GMT
+      Date: Mon, 29 Jun 2015 09:43:42 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1066 miss (0), cp3013 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1066 miss (0), cp3013 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2421602032, 1492454519, 1029534478
+      X-Varnish: 2488815764, 1534693820, 2131811418
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:category handler" to="Template:Category handler" /></normalized><pages><page _idx="25084818" pageid="25084818" ns="10" title="Template:Category handler"><revisions><rev user="Mr. Stradivarius" timestamp="2013-10-20T10:48:53Z" comment="Changed protection level of Template:Category handler: [[WP:High-risk templates|Highly visible template]]: allow template editors to edit ([Edit=Protected template] (indefinite) [Move=Protected template] (indefinite))" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{#invoke:Category handler|main}}&lt;noinclude&gt;
       {{documentation}}
       &lt;!-- Add categories to the /doc subpage, and interwikis to Wikidata. --&gt;
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:41:00.444Z
+- recorded: 2015-06-29T09:43:42.675Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AROOTPAGENAME&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -2464,30 +2464,30 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:41:00 GMT
+      Date: Mon, 29 Jun 2015 09:43:42 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1053 miss (0), cp3007 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1053 miss (0), cp3007 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2791346790, 266582088, 1029535411
+      X-Varnish: 2864583355, 301868888, 2131812046
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="22351615" pageid="22351615" ns="10" title="Template:ROOTPAGENAME"><revisions><rev user="Amalthea" timestamp="2010-05-03T11:31:08Z" comment="Allow substitution using safesubst: ([[meta:Help:Safesubst]])" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{ {{{|safesubst:}}}PAGENAME:{{ {{{|safesubst:}}}FULLROOTPAGENAME|{{{1|}}}}}}}&lt;noinclude&gt;
 
       {{documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:41:00.722Z
+- recorded: 2015-06-29T09:43:43.067Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AFULLROOTPAGENAME&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -2498,29 +2498,29 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:41:00 GMT
+      Date: Mon, 29 Jun 2015 09:43:43 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1067 miss (0), cp3040 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1067 miss (0), cp3040 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2850767884, 2605864030, 1029536477
+      X-Varnish: 2926520832, 2642580557, 2131812582
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"34701984\" pageid=\"34701984\" ns=\"10\" title=\"Template:FULLROOTPAGENAME\"><revisions><rev user=\"PrimeHunter\" timestamp=\"2012-02-12T12:42:22Z\" comment=\"Protected Template:FULLROOTPAGENAME:\
       \ [[WP:High-risk templates|Highly visible template]] ([edit=sysop] (indefinite) [move=sysop] (indefinite))\" contentformat=\"text/x-wiki\" contentmodel=\"wikitext\" xml:space=\"preserve\">{{ {{{|safesubst:}}}#if: {{ {{{|safesubst:}}}Ns has subpages | {{\
       \ {{{|safesubst:}}}#if:{{{1|}}}|{{ {{{|safesubst:}}}NAMESPACE:{{{1}}}}}|{{ {{{|safesubst:}}}NAMESPACE}}}} }} \n  | {{ {{{|safesubst:}}}#titleparts:{{ {{{|safesubst:}}}#if:{{{1|}}}|{{{1}}}|{{ {{{|safesubst:}}}FULLPAGENAME}}}}|1}}\n  | {{ {{{|safesubst:}}}#if:{{{1|}}}|{{{1}}}|{{\
       \ {{{|safesubst:}}}FULLPAGENAME}}}}\n}}&lt;noinclude&gt;\n\n{{documentation}}\n\n&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:41:00.948Z
+- recorded: 2015-06-29T09:43:43.291Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Ade+icon&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -2531,29 +2531,29 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:41:00 GMT
+      Date: Mon, 29 Jun 2015 09:43:43 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1068 miss (0), cp3004 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1068 miss (0), cp3004 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 3464562519, 3878586021, 1029537813
+      X-Varnish: 3538948613, 3921224883, 2131813433
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:de icon" to="Template:De icon" /></normalized><pages><page _idx="20845104" pageid="20845104" ns="10" title="Template:De icon"><revisions><rev user="Plastikspork" timestamp="2013-10-19T16:50:22Z" comment="Fix" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{Language icon|de|German}}&lt;noinclude&gt;
       {{Documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:41:01.218Z
+- recorded: 2015-06-29T09:43:43.498Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3ALanguage+icon&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -2564,27 +2564,27 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:41:01 GMT
+      Date: Mon, 29 Jun 2015 09:43:43 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1065 miss (0), cp3030 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1065 miss (0), cp3030 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 1868461277, 2610618149, 1029538756
+      X-Varnish: 1951950359, 2646898421, 2131813917
     body: '<?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="40797933" pageid="40797933" ns="10" title="Template:Language icon"><revisions><rev user="Anthony Appleyard" timestamp="2013-10-15T08:22:12Z" comment="Anthony Appleyard moved page
       [[Template:Language icon]] to [[Template:Link language]]: Requested at [[WP:RM]] as uncontroversial ([[Special:Permalink/577248632|permalink]])" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">#REDIRECT [[Template:Link language]]</rev></revisions></page></pages></query></api>'
-- recorded: 2015-06-28T17:41:01.423Z
+- recorded: 2015-06-29T09:43:43.719Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3ALink+language&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -2595,17 +2595,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:41:01 GMT
+      Date: Mon, 29 Jun 2015 09:43:43 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1053 miss (0), cp3006 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1053 miss (0), cp3006 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2791347787, 417988797, 1029539932
+      X-Varnish: 2864585647, 457739768, 2131814513
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="3483283" pageid="3483283" ns="10" title="Template:Link language"><revisions><rev user="Anthony Appleyard" timestamp="2013-10-15T08:22:10Z" comment="Anthony Appleyard moved page [[Template:Language icon]] to [[Template:Link language]]: Requested at [[WP:RM]] as uncontroversial ([[Special:Permalink/577248632|permalink]])" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{#ifexist:Template:ISO 639 name {{{1&lt;noinclude&gt;|&lt;/noinclude&gt;}}}
        |&lt;span class=&quot;languageicon&quot; style=&quot;font-size:0.95em; font-weight:bold; color:#555;&quot;&gt;({{ISO 639 name {{{1}}}}})&lt;/span&gt;{{category handler
@@ -2615,14 +2615,14 @@ interactions:
       }}&lt;noinclude&gt;
       {{documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:41:01.614Z
+- recorded: 2015-06-29T09:43:44.007Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AISO+639+name+de&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -2633,30 +2633,30 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:41:01 GMT
+      Date: Mon, 29 Jun 2015 09:43:44 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1052 miss (0), cp3010 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1052 miss (0), cp3010 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 3165603725, 123545815, 1029540814
+      X-Varnish: 3239126789, 163720995, 2131815036
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="19086232" pageid="19086232" ns="10" title="Template:ISO 639 name de"><revisions><rev user="Closedmouth" timestamp="2011-06-18T06:16:17Z" comment="Protected Template:ISO 639 name de: [[WP:High-risk templates|Highly visible template]] ([edit=sysop] (indefinite) [move=sysop] (indefinite))" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">German&lt;noinclude&gt;
       {{ISO 639 name conversion template doc|{{ISO 639 name de}}|de}}
       [[id:Templat:ISO 639 name de]]
       [[pt:Predefinição:ISO 639 nome de]]&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:41:01.816Z
+- recorded: 2015-06-29T09:43:44.248Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3APortal&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -2667,30 +2667,30 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:41:01 GMT
+      Date: Mon, 29 Jun 2015 09:43:44 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1067 miss (0), cp3014 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1067 miss (0), cp3014 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2850769243, 1778189804, 1029541687
+      X-Varnish: 2926523371, 1812186030, 2131815807
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="1780010" pageid="1780010" ns="10" title="Template:Portal"><revisions><rev user="Mr. Stradivarius" timestamp="2013-11-24T05:37:16Z" comment="Changed protection level of Template:Portal: [[WP:High-risk templates|Highly visible template]]: allow template editors ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;includeonly&gt;{{#invoke:Portal|portal}}&lt;/includeonly&gt;&lt;noinclude&gt;
       {{documentation}}
       &lt;!-- Categories go on the /doc subpage, and interwikis go on Wikidata --&gt;
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:41:02.032Z
+- recorded: 2015-06-29T09:43:44.471Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3APortal&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -2701,17 +2701,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:41:01 GMT
+      Date: Mon, 29 Jun 2015 09:43:44 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1066 miss (0), cp3004 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1066 miss (0), cp3004 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2421604067, 3878586820, 1029542550
+      X-Varnish: 2488819780, 3921226957, 2131816404
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"38965350\" pageid=\"38965350\" ns=\"828\" title=\"Module:Portal\"><revisions><rev user=\"Jackmcbarn\" timestamp=\"2014-12-01T02:19:07Z\" comment=\"use mw.html and other fixes\
       \ from sandbox\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">--[==[ This module is a Lua implementation of the old {{Portal}} template. As of August 2013 it is used on nearly 5,000,000 articles.\n-- Please take care when\
       \ updating it! It outputs two functions: p.portal, which generates a table of portals, and p.image, which\n-- produces the image name for an individual portal.\n\n-- The portal image data is kept in submodules of [[Module:Portal/images]], listed below:\n\
@@ -2756,14 +2756,14 @@ interactions:
       \torigArgs = frame.args\n\t\t\t\tbreak\n\t\t\tend\n\t\telse\n\t\t\torigArgs = frame\n\t\tend\n\t\t-- Trim whitespace and remove blank arguments.\n\t\tlocal args = {}\n\t\tfor k, v in pairs(origArgs) do\n\t\t\tif type(v) == 'string' then\n\t\t\t\tv = mw.text.trim(v)\n\
       \t\t\tend\n\t\t\tif v ~= '' then\n\t\t\t\targs[k] = v\n\t\t\tend\n\t\tend\n\t\treturn p[funcName](processPortalArgs(args)) -- passes two tables to func: an array of portal names, and a table of named arguments.\n\tend\nend\n\nfor _, funcName in ipairs{'portal',\
       \ 'image', 'imageDupes', 'displayAll'} do\n\tp[funcName] = makeWrapper('_' .. funcName)\nend\n\nreturn p</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:41:02.353Z
+- recorded: 2015-06-29T09:43:44.825Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3APortal%2Fimages%2Fc&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -2774,17 +2774,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:41:02 GMT
+      Date: Mon, 29 Jun 2015 09:43:44 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1067 miss (0), cp3005 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1067 miss (0), cp3005 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2850769816, 4208155839, 1029543402
+      X-Varnish: 2926524608, 4245707905, 2131817058
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"40416122\" pageid=\"40416122\" ns=\"828\" title=\"Module:Portal/images/c\"><revisions><rev user=\"John of Reading\" timestamp=\"2015-06-03T05:51:41Z\" comment=\"Updated capitalism\
       \ to avoid a clash with numismatics\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">--[==[ This is the &quot;C&quot; list of portal image names. It contains a list of portal images for use with [[Module:Portal]]\n-- for\
       \ portal names that start with the letter &quot;C&quot;. For aliases to existing portal names, and for portal names that\n-- start with other letters, please use the appropriate page from the following list:\n \n-- [[Module:Portal/images/a]]       - for\
@@ -2833,14 +2833,14 @@ interactions:
       [&quot;cryptozoology&quot;] = &quot;Okapi2.jpg&quot;,\n\t[&quot;cuba&quot;] = &quot;Flag of Cuba.svg|border&quot;,\n\t[&quot;cultural heritage of serbia&quot;] = &quot;Spomenik Kulture.svg&quot;,\n\t[&quot;culture&quot;] = &quot;P culture.svg&quot;,\n\t\
       [&quot;cumbria&quot;] = &quot;Herdwick sheep crop.jpg&quot;,\n\t[&quot;current events&quot;] = &quot;Ambox globe.svg&quot;,\n\t[&quot;current events/turkey&quot;] = &quot;Wikinews-logo.png&quot;,\n\t[&quot;cycling&quot;] = &quot;Cycling pictogram.svg&quot;,\n\
       \t[&quot;cyprus&quot;] = &quot;Satellite image of Cyprus, cropped.jpg|border&quot;,\n\t[&quot;czech republic&quot;] = &quot;Flag of the Czech Republic.svg|border&quot;,\n}</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:41:02.546Z
+- recorded: 2015-06-29T09:43:45.058Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AClear&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -2851,29 +2851,29 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:41:02 GMT
+      Date: Mon, 29 Jun 2015 09:43:45 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1052 miss (0), cp3030 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1052 miss (0), cp3030 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 3165605207, 2610619053, 1029544712
+      X-Varnish: 3239128969, 2646901155, 2131818128
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="1239772" pageid="1239772" ns="10" title="Template:Clear"><revisions><rev user="Fuhghettaboutit" timestamp="2013-11-02T04:54:10Z" comment="Changed protection level of Template:Clear: Enable access by template editors ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;div style=&quot;clear:{{{1|both}}};&quot;&gt;&lt;/div&gt;&lt;noinclude&gt;
       {{documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:41:02.727Z
+- recorded: 2015-06-29T09:43:45.259Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AReflist&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -2884,31 +2884,31 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:41:02 GMT
+      Date: Mon, 29 Jun 2015 09:43:45 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1054 miss (0), cp3008 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1054 miss (0), cp3008 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2550975485, 3578342132, 1029545511
+      X-Varnish: 2642306757, 3617986616, 2131818804
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"7585648\" pageid=\"7585648\" ns=\"10\" title=\"Template:Reflist\"><revisions><rev user=\"Edokter\" timestamp=\"2014-07-19T16:16:30Z\" comment=\"Undid revision 617584734 by [[Special:Contributions/Nikkimaria|Nikkimaria]]\
       \ ([[User talk:Nikkimaria|talk]]) Undo; we know the number (&gt;250,000)\" contentformat=\"text/x-wiki\" contentmodel=\"wikitext\" xml:space=\"preserve\">&lt;div class=&quot;reflist &lt;!--\n --&gt;{{#if: {{{1|}}}\n    | columns {{#iferror: {{#ifexpr:\
       \ {{{1|1}}} &gt; 1 }}\n      | references-column-width \n      | references-column-count references-column-count-{{#if:1|{{{1}}}}} }}\n    | {{#if: {{{colwidth|}}}\n      | references-column-width }} }}&quot; style=&quot;&lt;!--\n --&gt;{{#if: {{{1|}}}\n\
       \    | {{#iferror: {{#ifexpr: {{{1|1}}} &gt; 1 }}\n      | {{column-width|{{#if:1|{{{1}}}}}}}\n      | {{column-count|{{#if:1|{{{1}}}}}}} }}\n    | {{#if: {{{colwidth|}}}\n      | {{column-width|{{{colwidth}}}}} }} }} list-style-type: &lt;!--\n --&gt;{{{liststyle|{{#switch:\
       \ {{{group|}}}\n    | upper-alpha\n    | upper-roman\n    | lower-alpha\n    | lower-greek\n    | lower-roman = {{{group}}}\n    | #default = decimal}}}}};&quot;&gt;\n{{#tag:references|{{{refs|}}}|group={{{group|}}}}}&lt;/div&gt;&lt;noinclude&gt;\n{{Documentation}}\n\
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:41:02.958Z
+- recorded: 2015-06-29T09:43:45.481Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Acolumn-count&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -2919,29 +2919,29 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:41:02 GMT
+      Date: Mon, 29 Jun 2015 09:43:45 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1068 miss (0), cp3010 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1068 miss (0), cp3010 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 3464565243, 123546632, 1029546334
+      X-Varnish: 3538953808, 163724130, 2131819312
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:column-count" to="Template:Column-count" /></normalized><pages><page _idx="29216387" pageid="29216387" ns="10" title="Template:Column-count"><revisions><rev user="Edokter" timestamp="2014-12-17T20:09:11Z" comment="redundant" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;includeonly&gt;-moz-column-count: {{{1|2}}}; -webkit-column-count: {{{1|2}}}; column-count: {{{1|2}}};&lt;/includeonly&gt;&lt;noinclude&gt;
       {{documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:41:03.138Z
+- recorded: 2015-06-29T09:43:45.688Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Awiktionary&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -2952,17 +2952,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:41:03 GMT
+      Date: Mon, 29 Jun 2015 09:43:45 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1054 miss (0), cp3041 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1054 miss (0), cp3041 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2550975995, 2115714442, 1029547295
+      X-Varnish: 2642307768, 2158067068, 2131820127
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><normalized><n from="Template:wiktionary" to="Template:Wiktionary" /></normalized><pages><page _idx="960068" pageid="960068" ns="10" title="Template:Wiktionary"><revisions><rev user="Ianblair23" timestamp="2015-05-22T08:49:38Z" comment="sister → sister project" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{Sister project
       |position={{{position|}}}
@@ -2988,14 +2988,14 @@ interactions:
       }}&lt;noinclude&gt;
       {{documentation}}
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:41:03.339Z
+- recorded: 2015-06-29T09:43:45.909Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3ASister+project&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -3006,17 +3006,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:41:03 GMT
+      Date: Mon, 29 Jun 2015 09:43:46 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1054 miss (0), cp3005 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1054 miss (0), cp3005 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2550976230, 4208156518, 1029548096
+      X-Varnish: 2642308410, 4245710613, 2131820983
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"20505184\" pageid=\"20505184\" ns=\"10\" title=\"Template:Sister project\"><revisions><rev user=\"Redrose64\" timestamp=\"2015-03-31T19:15:16Z\" comment=\"add sistersitebox\
       \ to |class= per [[Template talk:Sister project#Template-protected edit request on 31 March 2015]]\" contentformat=\"text/x-wiki\" contentmodel=\"wikitext\" xml:space=\"preserve\">{{Side box\n| metadata=no\n| position = {{{position|}}}\n| image    = \n\
       \  {{#switch: {{{image|}}}\n  | none =    &lt;!-- &quot;image=none&quot;, do nothing --&gt;\n  |      =    &lt;!-- No image fed, select an image --&gt;\n    [[Image:{{#switch: {{lc: {{{project|}}} }}\n    | commons                = Commons-logo.svg\n \
@@ -3025,14 +3025,14 @@ interactions:
       \      = Wikiversity-logo.svg\n    | wikivoyage|voyage|voy  = Wikivoyage-Logo-v3-icon.svg\n    | mediawiki|mw           = Mediawiki.png\n    | outreachwiki|outreach  = Wikimedia Outreach.png\n    | incubator              = Incubator-notext.svg\n    | #default\
       \               = Wikimedia-logo.svg\n    }}|40x40px|link=|alt=\n    ]]\n  | #default = {{{image|}}}\n  }}\n| text       = {{{text}}}\n| below      = {{{below|}}}\n| imageright = {{{imageright|}}}\n| class      = plainlinks sistersitebox\n}}&lt;noinclude&gt;{{Documentation}}&lt;!--\
       \ Add categories and interwikis to the /doc subpage, not here! --&gt;&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:41:03.517Z
+- recorded: 2015-06-29T09:43:46.115Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Template%3ASide+box&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -3043,30 +3043,30 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:41:03 GMT
+      Date: Mon, 29 Jun 2015 09:43:46 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1053 miss (0), cp3012 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1053 miss (0), cp3012 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2791349985, 4019098700, 1029548950
+      X-Varnish: 2864590862, 4051444204, 2131821312
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="20504849" pageid="20504849" ns="10" title="Template:Side box"><revisions><rev user="Mr. Stradivarius" timestamp="2014-06-03T04:58:23Z" comment="convert to [[Module:Side box]]" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{#invoke:Side box|main}}&lt;noinclude&gt;
       {{documentation}}
       &lt;!-- Categories go on the /doc subpage, and interwikis go on Wikidata. --&gt;
       &lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2015-06-28T17:41:03.824Z
+- recorded: 2015-06-29T09:43:46.338Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=Module%3ASide+box&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -3077,17 +3077,17 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:41:03 GMT
+      Date: Mon, 29 Jun 2015 09:43:46 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1066 miss (0), cp3030 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1066 miss (0), cp3030 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2421605949, 2610619861, 1029549763
+      X-Varnish: 2488823571, 2646903423, 2131821621
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"42926982\" pageid=\"42926982\" ns=\"828\" title=\"Module:Side box\"><revisions><rev user=\"Mr. Stradivarius\" timestamp=\"2014-06-03T04:58:46Z\" comment=\"Protected Module:Side\
       \ box: [[WP:High-risk templates|High-risk Lua module]] ([Edit=Allow only template editors and admins] (indefinite) [Move=Allow only template editors and admins] (indefinite))\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\"\
       >-- This module implements {{side box}}.\n\nlocal yesno = require('Module:Yesno')\n\nlocal p = {}\n\nfunction p.main(frame)\n\tlocal origArgs = frame:getParent().args\n\tlocal args = {}\n\tfor k, v in pairs(origArgs) do\n\t\tv = v:match('%s*(.-)%s*$')\n\
@@ -3102,14 +3102,14 @@ interactions:
       \ '1px')\n\tend\n\tlocal textCell = bodyRow:newline():tag('td')\n\ttextCell:addClass('mbox-text plainlist')\n\tif data.textstyle then\n\t\ttextCell:cssText(data.textstyle)\n\tend\n\ttextCell:wikitext(data.text)\n\tif data.imageright then\n\t\tbodyRow:newline():tag('td')\n\
       \t\t\t:addClass('mbox-imageright')\n\t\t\t:wikitext(data.imageright)\n\tend\n\n\t-- The below row\n\tif data.below then\n\t\tlocal belowCell = root:newline():tag('tr'):tag('td')\n\t\tbelowCell\n\t\t\t:attr('colspan', data.imageright and 3 or 2)\n\t\t\t\
       :addClass('mbox-text')\n\t\tif data.textstyle then\n\t\t\tbelowCell:cssText(data.textstyle)\n\t\tend\n\t\tbelowCell:wikitext(data.below)\n\tend\n\n\treturn tostring(root)\nend\n\nreturn p</rev></revisions></page></pages></query></api>"
-- recorded: 2015-06-28T17:41:04.131Z
+- recorded: 2015-06-29T09:43:46.553Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=File%3ASmokeycover.jpg&prop=imageinfo&iiprop=url&iiurlwidth=220
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -3120,26 +3120,26 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:41:04 GMT
+      Date: Mon, 29 Jun 2015 09:43:46 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1053 miss (0), cp3013 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1053 miss (0), cp3013 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2791350572, 1492457105, 1029551041
+      X-Varnish: 2864591535, 1534700372, 2131822098
     body: <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="32234496" pageid="32234496" ns="6" title="File:Smokeycover.jpg" imagerepository="local"><imageinfo><ii thumburl="https://upload.wikimedia.org/wikipedia/en/thumb/7/73/Smokeycover.jpg/220px-Smokeycover.jpg" thumbwidth="220" thumbheight="307" url="https://upload.wikimedia.org/wikipedia/en/7/73/Smokeycover.jpg" descriptionurl="https://en.wikipedia.org/wiki/File:Smokeycover.jpg" /></imageinfo></page></pages></query></api>
-- recorded: 2015-06-28T17:41:05.697Z
+- recorded: 2015-06-29T09:43:47.587Z
   request:
     method: GET
     uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=File%3A8bit-dynamiclist.gif&prop=imageinfo&iiprop=url&iiurlwidth=32
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:17:Maia:41.2357:-8.6199:v4; WMF-Last-Access=28-Jun-2015
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
       Cookie2: $Version=1
       Host: en.wikipedia.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -3150,15 +3150,45 @@ interactions:
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Sun, 28 Jun 2015 17:41:05 GMT
+      Date: Mon, 29 Jun 2015 09:43:47 GMT
       Server: nginx/1.9.2
       Strict-Transport-Security: max-age=15768000
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=28-Jun-2015
-      X-Cache: cp1054 miss (0), cp3003 miss (0), cp3041 frontend miss (0)
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1054 miss (0), cp3003 miss (0), cp3013 frontend miss (0)
       X-Content-Type-Options: nosniff
       X-Frame-Options: SAMEORIGIN
       X-Powered-By: HHVM/3.6.1
-      X-Varnish: 2550979122, 3098055201, 1029558392
+      X-Varnish: 2642311119, 3136470072, 2131824285
     body: <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="-1" ns="6" title="File:8bit-dynamiclist.gif" missing="" imagerepository="shared"><imageinfo><ii thumburl="https://upload.wikimedia.org/wikipedia/commons/1/1d/8bit-dynamiclist.gif" thumbwidth="32" thumbheight="32" url="https://upload.wikimedia.org/wikipedia/commons/1/1d/8bit-dynamiclist.gif" descriptionurl="https://commons.wikimedia.org/wiki/File:8bit-dynamiclist.gif" /></imageinfo></page></pages></query></api>
+- recorded: 2015-06-29T09:43:48.177Z
+  request:
+    method: GET
+    uri: https://en.wikipedia.org/w/api.php?format=xml&action=query&continue=&titles=File%3AWiktionary-logo-en.svg&prop=imageinfo&iiprop=url&iiurlwidth=40
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: GeoIP=PT:17:Porto:41.1496:-8.6110:v4; WMF-Last-Access=29-Jun-2015
+      Cookie2: $Version=1
+      Host: en.wikipedia.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Age: '0'
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Type: text/xml; charset=utf-8
+      Date: Mon, 29 Jun 2015 09:43:48 GMT
+      Server: nginx/1.9.2
+      Strict-Transport-Security: max-age=15768000
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Analytics: https=1;WMF-Last-Access=29-Jun-2015
+      X-Cache: cp1068 miss (0), cp3006 miss (0), cp3013 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: HHVM/3.6.1
+      X-Varnish: 3538959106, 457747784, 2131826338
+    body: <?xml version="1.0"?><api><continue iistart="2008-02-26T13:12:15Z" continue="||" /><query><pages><page _idx="-1" ns="6" title="File:Wiktionary-logo-en.svg" missing="" imagerepository="shared"><imageinfo><ii thumburl="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Wiktionary-logo-en.svg/40px-Wiktionary-logo-en.svg.png" thumbwidth="40" thumbheight="44" url="https://upload.wikimedia.org/wikipedia/commons/f/f8/Wiktionary-logo-en.svg" descriptionurl="https://commons.wikimedia.org/wiki/File:Wiktionary-logo-en.svg" /></imageinfo></page></pages></query></api>

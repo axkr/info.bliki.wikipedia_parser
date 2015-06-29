@@ -74,6 +74,11 @@ public class HTMLCreatorTest {
         testWiktionaryENAPI("Vadimas");
     }
 
+    @Betamax(tape = "AB", mode = READ_ONLY)
+    @Test public void testWiktionaryAB() throws Exception {
+        testWiktionaryENAPI("AB");
+    }
+
     @Betamax(tape="Political_party_strength_in_California", mode = WRITE_ONLY)
     @Ignore @Test public void testPoliticalPartyStrengthInCalifornia() throws Exception {
         testWikipediaENAPI("Political party strength in California");

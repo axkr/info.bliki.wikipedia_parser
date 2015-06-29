@@ -4,8 +4,6 @@ import info.bliki.extensions.scribunto.ScribuntoException;
 import info.bliki.extensions.scribunto.engine.ScribuntoModule;
 import info.bliki.extensions.scribunto.template.Frame;
 import info.bliki.wiki.filter.ParsedPageName;
-import org.luaj.vm2.LuaClosure;
-import org.luaj.vm2.LuaError;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.Prototype;
 import org.slf4j.Logger;
@@ -28,10 +26,7 @@ public class ScribuntoLuaModule implements ScribuntoModule {
     }
 
     @Override public String invoke(String functionName, Frame frame) throws ScribuntoException {
-        final LuaValue function = loadExportTable().get(functionName);
-        if (function.isnil()) {
-            throw new ScribuntoException("no such function '"+functionName+"'");
-        }
+        final LuaValue function = getEngine().loadFunction(functionName, prototype, frame);
 
         final long execStart = System.currentTimeMillis();
         final String result = getEngine().executeFunctionChunk(function, frame);
@@ -51,14 +46,6 @@ public class ScribuntoLuaModule implements ScribuntoModule {
 
     public ParsedPageName pageName() {
         return pageName;
-    }
-
-    private LuaValue loadExportTable() throws ScribuntoException {
-        try {
-            return new LuaClosure(prototype, getEngine().getGlobals()).checkfunction().call();
-        } catch (LuaError e) {
-            throw new ScribuntoException(e);
-        }
     }
 
     private void logExecution(String functionName, long execDuration) {
