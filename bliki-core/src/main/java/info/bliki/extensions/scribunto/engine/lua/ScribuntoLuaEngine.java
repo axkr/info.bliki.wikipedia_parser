@@ -225,14 +225,16 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
     }
 
     private void load(MwInterface luaInterface) throws IOException {
-        LuaValue pkg = globals.loadfile(luaInterface.name()+
-                (luaInterface.name().endsWith(".lua") ? "" : ".lua")).call();
+        final String filename = fileNameForInterface(luaInterface);
 
-        LuaValue setupInterface = pkg.get("setupInterface");
+        try (InputStream is = globals.finder.findResource(filename)) {
+            final LuaValue pkg = globals.load(is, "@"+filename, "bt", globals).call();
+            final LuaValue setupInterface = pkg.get("setupInterface");
 
-        if (!setupInterface.isnil()) {
-            globals.set("mw_interface", luaInterface.getInterface());
-            setupInterface.call(luaInterface.getSetupOptions());
+            if (!setupInterface.isnil()) {
+                globals.set("mw_interface", luaInterface.getInterface());
+                setupInterface.call(luaInterface.getSetupOptions());
+            }
         }
     }
 
@@ -252,6 +254,10 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         table.set("incrementExpensiveFunctionCount", incrementExpensiveFunctionCount());
         table.set("isSubsting", isSubsting());
         return table;
+    }
+
+    private String fileNameForInterface(MwInterface luaInterface) {
+        return luaInterface.name() + (luaInterface.name().endsWith(".lua") ? "" : ".lua");
     }
 
     private LuaValue callParserFunction() {
