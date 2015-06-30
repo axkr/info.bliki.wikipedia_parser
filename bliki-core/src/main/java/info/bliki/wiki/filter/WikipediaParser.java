@@ -117,7 +117,7 @@ public class WikipediaParser extends AbstractWikipediaParser {
                     fWhiteStart = false;
                 }
                 return true;
-            } catch (InvalidPreWikiTag ipwt) {
+            } catch (InvalidPreWikiTag ignored) {
             }
         }
         return false;
@@ -141,8 +141,7 @@ public class WikipediaParser extends AbstractWikipediaParser {
                     break;
                 case '{':
                     // dummy parsing of wikipedia templates for event listeners
-                    if (parseTemplate()) {
-                    } else {
+                    if (!parseTemplate()) {
                         // wikipedia table handling
                         if (parseTable()) {
                             continue;
@@ -221,7 +220,7 @@ public class WikipediaParser extends AbstractWikipediaParser {
                                 String allowedParents = Configuration.HTML_PARAGRAPH_OPEN
                                         .getParents();
                                 if (allowedParents != null) {
-                                    int index = -1;
+                                    int index;
                                     index = allowedParents.indexOf("|"
                                             + tag.getName() + "|");
                                     if (index >= 0) {
@@ -352,7 +351,6 @@ public class WikipediaParser extends AbstractWikipediaParser {
                                                         reduceStackUntilToken(tag);
                                                     }
                                                 }
-                                            } else {
                                             }
                                             return TokenIgnore;
                                         }
@@ -495,7 +493,7 @@ public class WikipediaParser extends AbstractWikipediaParser {
                     ch = fSource[fCurrentPosition++];
                 }
             }
-        } catch (IndexOutOfBoundsException e) {
+        } catch (IndexOutOfBoundsException ignored) {
         }
         if (foundISBN) {
             String urlString = fStringSource.substring(urlStartPosition - 1,
@@ -528,7 +526,7 @@ public class WikipediaParser extends AbstractWikipediaParser {
                 while (!Character.isWhitespace(fSource[tempPosition++])) {
                 }
             }
-        } catch (IndexOutOfBoundsException e) {
+        } catch (IndexOutOfBoundsException ignored) {
         }
         if (foundUrl) {
             String urlString = fStringSource.substring(urlStartPosition - 1,
@@ -584,8 +582,9 @@ public class WikipediaParser extends AbstractWikipediaParser {
                     }
                 }
             }
-        } catch (IndexOutOfBoundsException e) {
+        } catch (IndexOutOfBoundsException ignored) {
         }
+
         if (foundUrl) {
             // separators at the end must be removed - maybe more chars?
             final String separators = ".!;?:,";
@@ -626,7 +625,7 @@ public class WikipediaParser extends AbstractWikipediaParser {
                 }
                 ch = fSource[temp++];
             }
-        } catch (IndexOutOfBoundsException iobe) {
+        } catch (IndexOutOfBoundsException ignored) {
         }
 
         if (isCamelCase) {
@@ -815,7 +814,7 @@ public class WikipediaParser extends AbstractWikipediaParser {
                         return true;
                     }
                 }
-            } catch (IndexOutOfBoundsException e) {
+            } catch (IndexOutOfBoundsException ignored) {
 
             }
             fCurrentPosition = tempCurrPosition;
@@ -956,15 +955,13 @@ public class WikipediaParser extends AbstractWikipediaParser {
                     }
                 }
             }
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
         return false;
     }
 
     /**
      * Parse special identifiers like __TOC__, __NOTOC__, __FORCETOC__
-     *
-     * @return
      */
     private boolean parseSpecialIdentifiers() {
         if (fSource.length > fCurrentPosition
@@ -1060,8 +1057,7 @@ public class WikipediaParser extends AbstractWikipediaParser {
                     return -1;
                 }
             }
-        } catch (IndexOutOfBoundsException e) {
-
+        } catch (IndexOutOfBoundsException ignored) {
         }
         return -1;
     }
@@ -1069,7 +1065,7 @@ public class WikipediaParser extends AbstractWikipediaParser {
     private void createTag(TagToken tag, WikiTagNode tagNode,
             int startMacroPosition) {
         String endTag;
-        String macroBodyString = "";
+        String macroBodyString;
         int index0;
         String command = tagNode.getTagName();
         if ((tag != null) && (tag instanceof IBodyTag)
@@ -1093,22 +1089,6 @@ public class WikipediaParser extends AbstractWikipediaParser {
         }
 
         handleTag(tag, tagNode, macroBodyString);
-    }
-
-    private void skipUntilEndOfTag(WikiTagNode tagNode, int startMacroPosition) {
-        String endTag;
-        int index0;
-        String command = tagNode.getTagName();
-        if (!tagNode.isEmptyXmlTag()) {
-            endTag = command + '>';
-            index0 = Util.indexOfIgnoreCase(fStringSource, "</", endTag,
-                    startMacroPosition);
-            if (index0 >= 0) {
-                fCurrentPosition = index0 + endTag.length() + 2;
-            } else {
-                fCurrentPosition = fSource.length;
-            }
-        }
     }
 
     private boolean handleHTTPLink(String name) {
@@ -1142,22 +1122,19 @@ public class WikipediaParser extends AbstractWikipediaParser {
                             }
                         }
                     }
-                } catch (IndexOutOfBoundsException e) {
+                } catch (IndexOutOfBoundsException ignored) {
                 }
             }
 
             if (foundUrl) {
-                // Wikipedia link style: name separated by invalid URL
-                // character?
-                // see test:
-                // "open square bracket forbidden in URL (named) (bug 4377)"
+                // Wikipedia link style: name separated by invalid URL character?
+                // see test: "open square bracket forbidden in URL (named) (bug 4377)"
                 int pipeIndex = 0;
                 while (pipeIndex < urlString.length()
-                        && Encoder.isUrlIdentifierPart(urlString
-                                .charAt(pipeIndex))) {
+                        && Encoder.isUrlIdentifierPart(urlString.charAt(pipeIndex))) {
                     ++pipeIndex;
                 }
-                String alias = "";
+                String alias;
                 if (pipeIndex < urlString.length()) {
                     if (urlString.charAt(pipeIndex) == ' ') {
                         alias = urlString.substring(pipeIndex + 1);
@@ -1245,7 +1222,7 @@ public class WikipediaParser extends AbstractWikipediaParser {
     }
 
     public void runParser() {
-        int token = TokenSTART;
+        int token;
         while ((token = getNextToken()) != TokenEOF) {
             switch (token) {
             case TokenBOLDITALIC:
@@ -1392,26 +1369,6 @@ public class WikipediaParser extends AbstractWikipediaParser {
      * <code>tearDown()</code> methods for the subsequent recursive parser
      * steps.
      *
-     * @param rawWikitext
-     * @param wikiModel
-     */
-    public static void parseRecursive(String rawWikitext, IWikiModel wikiModel) {
-        parseRecursive(rawWikitext, wikiModel, false, true);
-    }
-
-    /**
-     * Call the parser on the subsequent recursion levels, where the subtexts
-     * (of templates, table cells, list items or image captions) don't contain a
-     * table of contents (TOC)
-     *
-     * <b>Note:</b> the wiki model doesn't call the <code>setUp()</code> or
-     * <code>tearDown()</code> methods for the subsequent recursive parser
-     * steps.
-     *
-     * @param rawWikitext
-     * @param wikiModel
-     * @param noTOC
-     * @param createOnlyLocalStack
      * @return HTML tags from the parsing process
      */
     public static TagStack parseRecursive(String rawWikitext,
