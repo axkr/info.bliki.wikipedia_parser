@@ -1,6 +1,7 @@
 package info.bliki.api.creator;
 
 import java.io.File;
+import java.util.Objects;
 
 public class ImageData {
     private String fImageName;
@@ -49,21 +50,14 @@ public class ImageData {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         ImageData imageData = (ImageData) o;
-
-        if (fImageFile != null ? !fImageFile.equals(imageData.fImageFile) : imageData.fImageFile != null) return false;
-        if (fImageName != null ? !fImageName.equals(imageData.fImageName) : imageData.fImageName != null) return false;
-        if (fImageUrl != null ? !fImageUrl.equals(imageData.fImageUrl) : imageData.fImageUrl != null) return false;
-
-        return true;
+        return Objects.equals(fImageName, imageData.fImageName) &&
+                Objects.equals(fImageUrl, imageData.fImageUrl) &&
+                Objects.equals(fImageFile, imageData.fImageFile);
     }
 
     @Override
     public int hashCode() {
-        int result = fImageName != null ? fImageName.hashCode() : 0;
-        result = 31 * result + (fImageUrl != null ? fImageUrl.hashCode() : 0);
-        result = 31 * result + (fImageFile != null ? fImageFile.hashCode() : 0);
-        return result;
+        return Objects.hash(fImageName, fImageUrl, fImageFile);
     }
 }
