@@ -1,14 +1,15 @@
 package info.bliki.extensions.scribunto.engine.lua.interfaces;
 
 import info.bliki.wiki.model.IWikiModel;
+import info.bliki.wiki.template.dates.StringToTime;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.OneArgFunction;
+import org.luaj.vm2.lib.ThreeArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
 import org.luaj.vm2.lib.ZeroArgFunction;
 
-import java.text.SimpleDateFormat;
-import java.util.Locale;
+import java.util.Date;
 
 import static info.bliki.extensions.scribunto.engine.lua.interfaces.MwInterface.DefaultFunction.defaultFunction;
 import static java.util.Locale.forLanguageTag;
@@ -57,10 +58,18 @@ public class MwLanguage implements MwInterface {
     }
 
     private LuaValue formatDate() {
-        return new TwoArgFunction() {
-            @Override public LuaValue call(LuaValue locale, LuaValue format) {
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format.checkjstring(), Locale.forLanguageTag(locale.checkjstring()));
-                return LuaValue.valueOf(simpleDateFormat.format(wikiModel.getCurrentTimeStamp()));
+        return new ThreeArgFunction() {
+            @Override public LuaValue call(LuaValue lang, LuaValue format, LuaValue date) {
+                // http://php.net/manual/en/function.date.php
+                final String formatString = format.checkjstring();
+                final String dateString = date.checkjstring();
+                final Date time = dateString.isEmpty() ? wikiModel.getCurrentTimeStamp() : (Date) StringToTime.date(dateString);
+
+                if ("U".equals(formatString)) {
+                    // seconds since epoch
+                    return LuaValue.valueOf(String.valueOf(time.getTime() / 1000));
+                }
+                throw new UnsupportedOperationException();
             }
         };
     }
