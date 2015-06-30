@@ -248,6 +248,8 @@ public class Namespace implements INamespace {
         extractFromResource(resource, Messages.WIKI_API_CATEGORYTALK1,  Messages.WIKI_API_CATEGORYTALK2, CATEGORY_TALK_NAMESPACE_KEY, cmd);
         extractFromResource(resource, Messages.WIKI_API_PORTAL1,        Messages.WIKI_API_PORTAL2, PORTAL_NAMESPACE_KEY, cmd);
         extractFromResource(resource, Messages.WIKI_API_PORTALTALK1,    Messages.WIKI_API_PORTALTALK2, PORTAL_TALK_NAMESPACE_KEY, cmd);
+        extractFromResource(resource, Messages.WIKI_API_MODULE1,        Messages.WIKI_API_MODULE2, MODULE_NAMESPACE_KEY, cmd);
+        extractFromResource(resource, Messages.WIKI_API_MODULETALK1,    Messages.WIKI_API_MODULETALK2, MODULE_TALK_NAMESPACE_KEY, cmd);
     }
 
     private void initializeNamespaces() {

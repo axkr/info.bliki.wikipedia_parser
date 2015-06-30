@@ -75,6 +75,12 @@ public class Messages {
     public final static String WIKI_API_PORTALTALK1 = "wiki.api.portaltalk1";
     public final static String WIKI_API_PORTALTALK2 = "wiki.api.portaltalk2";
 
+    public final static String WIKI_API_MODULE1 = "wiki.api.module1";
+    public final static String WIKI_API_MODULE2 = "wiki.api.module2";
+
+    public final static String WIKI_API_MODULETALK1 = "wiki.api.moduletalk1";
+    public final static String WIKI_API_MODULETALK2 = "wiki.api.moduletalk2";
+
     public Messages() {
     }
 
