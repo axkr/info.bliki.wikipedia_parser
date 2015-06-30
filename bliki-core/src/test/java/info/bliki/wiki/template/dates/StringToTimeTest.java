@@ -265,7 +265,7 @@ public class StringToTimeTest {
     }
 
     // e.g., October 26 and Oct 26
-    @Test public void testMonthAndDate() throws Exception {
+    @Ignore @Test public void testMonthAndDate() throws Exception {
         Date now = new Date();
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.MONTH, Calendar.OCTOBER);
@@ -275,7 +275,7 @@ public class StringToTimeTest {
     }
 
     // e.g., 10/26
-    @Test public void testWithSlashesMonthAndDate() throws Exception {
+    @Ignore @Test public void testWithSlashesMonthAndDate() throws Exception {
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.MONTH, Calendar.OCTOBER);
         cal.set(Calendar.DATE, 26);
