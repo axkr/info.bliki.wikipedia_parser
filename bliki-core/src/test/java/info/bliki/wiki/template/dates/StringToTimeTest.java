@@ -7,11 +7,21 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class StringToTimeTest {
+    @Test public void testNowPlus2Days() throws Exception {
+        final Date date = (Date) StringToTime.date("now +2 days");
+        assertThat(date).isAfter(new Date());
+    }
+
+    @Test public void testNowPlus2DaysWithSpace() throws Exception {
+        final Date date = (Date) StringToTime.date("now + 2 days");
+        assertThat(date).isAfter(new Date());
+    }
 
     @Test public void testMySqlDateFormat() {
         Date now = new Date();

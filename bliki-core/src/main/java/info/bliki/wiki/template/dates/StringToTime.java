@@ -105,7 +105,7 @@ public class StringToTime extends Date {
 
     // An expression of time (hour)(:(minute))?((:(second))(.(millisecond))?)?(
     // *(am?|pm?))?(RFC 822 time zone|general time zone)?
-    private static final String timeExpr = "(\\d{1,2})(:(\\d{1,2}))?(:(\\d{1,2})(\\.(\\d{1,3}))?)?( *(am?|pm?))?( *\\-\\d{4}|[a-z]{3}|[a-z ]+)?";
+    private static final String timeExpr = "(\\d{1,2})(:(\\d{1,2}))?(:(\\d{1,2})(\\.(\\d{1,3}))?)?( *(am?|pm?))?( *\\-\\d{4})?";
 
     /**
      * Patterns and formats recognized by the algorithm; first match wins, so
