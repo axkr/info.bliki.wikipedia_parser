@@ -22,7 +22,7 @@ public interface MwInterface {
      */
     LuaValue getSetupOptions();
 
-    public static class DefaultFunction {
+    class DefaultFunction {
         public static OneArgFunction defaultFunction() {
             return defaultFunction(null);
         }
