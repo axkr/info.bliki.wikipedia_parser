@@ -1271,6 +1271,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
             fSectionCounter = 0;
             fExternalLinksCounter = 0;
             fInitialized = true;
+            fFrame = null;
             fTemplates = new HashMap<>();
         }
     }
