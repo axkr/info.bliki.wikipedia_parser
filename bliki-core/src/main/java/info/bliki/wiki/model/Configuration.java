@@ -1,11 +1,10 @@
 package info.bliki.wiki.model;
 
+import info.bliki.extensions.scribunto.template.Invoke;
 import info.bliki.htmlcleaner.TagToken;
+import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.tags.ATag;
 import info.bliki.wiki.tags.BrTag;
-import info.bliki.wiki.tags.DdTag;
-import info.bliki.wiki.tags.DlTag;
-import info.bliki.wiki.tags.DtTag;
 import info.bliki.wiki.tags.HTMLBlockTag;
 import info.bliki.wiki.tags.HTMLTag;
 import info.bliki.wiki.tags.HrTag;
@@ -36,7 +35,6 @@ import info.bliki.wiki.template.Ifeq;
 import info.bliki.wiki.template.Iferror;
 import info.bliki.wiki.template.Ifexist;
 import info.bliki.wiki.template.Ifexpr;
-import info.bliki.extensions.scribunto.template.Invoke;
 import info.bliki.wiki.template.LC;
 import info.bliki.wiki.template.LCFirst;
 import info.bliki.wiki.template.Localurl;
@@ -53,7 +51,6 @@ import info.bliki.wiki.template.UC;
 import info.bliki.wiki.template.UCFirst;
 import info.bliki.wiki.template.URLEncode;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Enumeration;
@@ -67,10 +64,8 @@ import java.util.regex.Pattern;
 
 /**
  * Common Configuration settings
- *
  */
 public class Configuration implements IConfiguration {
-
     /**
      * Get the current <code>Bliki.info Engine</code> version
      */
@@ -101,7 +96,7 @@ public class Configuration implements IConfiguration {
     /**
      * Print raw content calls
      *
-     * @see IWikiModel#getRawWikiContent(String, String, Map)
+     * @see IWikiModel#getRawWikiContent(ParsedPageName, Map)
      */
     public final static boolean RAW_CONTENT = false;
 
@@ -109,84 +104,41 @@ public class Configuration implements IConfiguration {
 
     public static Properties interwikiMapping;
 
-    final public static String BLOCK_TAGS = "|address|blockquote|center|del|dir|div|dl|fieldset|form|h1|h2|h3|h4|h5|h6|hr|ins|isindex|menu|noframes|noscript|ol|p|pre|table|ul|";
-
-    final public static String INLINE_TAGS = "|a|abbr|acronym|applet|snippet|b|basefont|bdo|big|br|button|cite|code|del|dfn|em|font|i|img|ins|input|iframe|kbd|label|map|object|q|samp|script|select|small|span|strong|sub|sup|textarea|tt|var|";
-
     final public static String SPECIAL_BLOCK_TAGS = "|applet|snippet|blockquote|body|button|center|dd|del|div|fieldset|form|iframe|ins|li|map|noframes|noscript|object|td|th|";
-
     final static HTMLTag HTML_A_OPEN = new ATag();
 
     final public static HTMLTag HTML_ABBR_OPEN = new HTMLTag("abbr");
-
     final public static HTMLTag HTML_EM_OPEN = new HTMLTag("em");
-
     final public static HTMLTag HTML_H1_OPEN = new HTMLBlockTag("h1", SPECIAL_BLOCK_TAGS);
-
     final public static HTMLTag HTML_H2_OPEN = new HTMLBlockTag("h2", SPECIAL_BLOCK_TAGS);
-
     final public static HTMLTag HTML_H3_OPEN = new HTMLBlockTag("h3", SPECIAL_BLOCK_TAGS);
-
     final public static HTMLTag HTML_H4_OPEN = new HTMLBlockTag("h4", SPECIAL_BLOCK_TAGS);
-
     final public static HTMLTag HTML_H5_OPEN = new HTMLBlockTag("h5", SPECIAL_BLOCK_TAGS);
-
     final public static HTMLTag HTML_H6_OPEN = new HTMLBlockTag("h6", SPECIAL_BLOCK_TAGS);
-
     final public static HTMLTag HTML_ITALIC_OPEN = new HTMLTag("i");
-
     final public static HTMLTag HTML_BOLD_OPEN = new HTMLTag("b");
-
     final public static HTMLTag HTML_PARAGRAPH_OPEN = new PTag();
-
     final public static HTMLTag HTML_BLOCKQUOTE_OPEN = new HTMLBlockTag("blockquote", SPECIAL_BLOCK_TAGS);
-
     final public static HTMLTag HTML_STRIKE_OPEN = new HTMLTag("strike");
-
     final public static HTMLTag HTML_STRONG_OPEN = new HTMLTag("strong");
-
     final public static HTMLTag HTML_UNDERLINE_OPEN = new HTMLTag("u");
-
     final public static HTMLTag HTML_SUB_OPEN = new HTMLTag("sub");
-
     final public static HTMLTag HTML_SUP_OPEN = new HTMLTag("sup");
-
     final public static HTMLTag HTML_CENTER_OPEN = new HTMLTag("center");
-
     final public static HTMLTag HTML_TT_OPEN = new HTMLTag("tt");
-
     final public static HTMLTag HTML_TABLE_OPEN = new HTMLBlockTag("table", SPECIAL_BLOCK_TAGS);
-
     final public static HTMLTag HTML_CAPTION_OPEN = new HTMLBlockTag("caption", "|table|");
-
     final public static HTMLTag HTML_TH_OPEN = new HTMLBlockTag("th", "|tr|");
-
     final public static HTMLTag HTML_TR_OPEN = new HTMLBlockTag("tr", "|table|tbody|tfoot|thead|");
-
     final public static HTMLTag HTML_TD_OPEN = new HTMLBlockTag("td", "|tr|");
-
     final public static HTMLTag HTML_UL_OPEN = new HTMLBlockTag("ul", SPECIAL_BLOCK_TAGS);
-
     final public static HTMLTag HTML_OL_OPEN = new HTMLBlockTag("ol", SPECIAL_BLOCK_TAGS);
-
     final public static HTMLTag HTML_LI_OPEN = new HTMLBlockTag("li", "|dir|menu|ol|ul|", HTML_UL_OPEN);
-
     final public static HTMLTag HTML_FONT_OPEN = new HTMLTag("font");
-
     final public static HTMLTag HTML_CITE_OPEN = new HTMLTag("cite");
-
     final public static HTMLTag HTML_DIV_OPEN = new HTMLBlockTag("div", SPECIAL_BLOCK_TAGS);
-
-    final public static HTMLTag HTML_DD_OPEN = new DdTag();
-
-    final public static HTMLTag HTML_DL_OPEN = new DlTag();
-
-    final public static HTMLTag HTML_DT_OPEN = new DtTag();
-
     final public static HTMLTag HTML_SPAN_OPEN = new HTMLTag("span");
-
     final public static HTMLTag HTML_VAR_OPEN = new HTMLTag("var");
-
     final public static HTMLTag HTML_CODE_OPEN = new HTMLTag("code");
 
     // strike-through
@@ -194,16 +146,11 @@ public class Configuration implements IConfiguration {
 
     // small
     final public static HTMLTag HTML_SMALL_OPEN = new HTMLTag("small");
-
     final public static HTMLTag HTML_BIG_OPEN = new HTMLTag("big");
-
-    final public static HTMLTag HTML_U_OPEN = new HTMLTag("u");
-
     final public static HTMLTag HTML_DEL_OPEN = new HTMLTag("del");
-
     final public static HTMLTag HTML_PRE_OPEN = new PreTag();
 
-    public static Map<String, String> TEMPLATE_CALLS_CACHE = null;
+    private static Map<String, String> TEMPLATE_CALLS_CACHE = null;
 
     /**
      * Map from the interwiki shortcut to the real Interwiki-URL
@@ -230,9 +177,7 @@ public class Configuration implements IConfiguration {
      * Allowed URI schemes
      */
     protected static final Set<String> URI_SCHEME_MAP = new TreeSet<>(String.CASE_INSENSITIVE_ORDER);
-
     public final static Pattern NOWIKI_OPEN_PATTERN = Pattern.compile("\\<nowiki\\>", Pattern.CASE_INSENSITIVE);
-
     public final static Pattern NOWIKI_CLOSE_PATTERN = Pattern.compile("\\<\\/nowiki\\>", Pattern.CASE_INSENSITIVE);
 
     static {
@@ -438,17 +383,6 @@ public class Configuration implements IConfiguration {
         return URI_SCHEME_MAP.add(uriKey);
     }
 
-    /**
-     * Check if the URI scheme is allowed.
-     *
-     * See <a href="http://en.wikipedia.org/wiki/URI_scheme">URI scheme</a>
-     *
-     * @return <code>true</code> if the set contains the specified URI key.
-     */
-    public boolean containsUriScheme(String uriKey) {
-        return URI_SCHEME_MAP.contains(uriKey);
-    }
-
     @Override
     public Map<String, ITemplateFunction> getTemplateMap() {
         return TEMPLATE_FUNCTION_MAP;
@@ -501,25 +435,21 @@ public class Configuration implements IConfiguration {
      *
      * @param propertyFile
      *          The name of the property file to load.
-     * @param def
-     *          Default property values, or <code>null</code> if there are no
-     *          defaults.
      * @return The loaded SortedProperties object.
      */
     public static Properties loadProperties(String propertyFile) {
         Properties properties = new Properties();
 
         InputStream in = null;
-        FileInputStream fis = null;
         try {
             in = Configuration.class.getResourceAsStream(propertyFile);
             properties.load(in);
         } catch (Exception e) {
             System.err.println("Configuration.java - Properties file:" + propertyFile + " not found.");
         } finally {
-            if (fis != null) {
+            if (in != null) {
                 try {
-                    fis.close();
+                    in.close();
                 } catch (IOException e) {
                     // NOPMD
                 }
