@@ -1130,8 +1130,9 @@ public class WikipediaParser extends AbstractWikipediaParser {
                 // Wikipedia link style: name separated by invalid URL character?
                 // see test: "open square bracket forbidden in URL (named) (bug 4377)"
                 int pipeIndex = 0;
-                while (pipeIndex < urlString.length()
-                        && Encoder.isUrlIdentifierPart(urlString.charAt(pipeIndex))) {
+                while (pipeIndex < urlString.length() &&
+                        (Encoder.isUrlIdentifierPart(urlString.charAt(pipeIndex)) ||
+                        urlString.charAt(pipeIndex) == '\'')) {
                     ++pipeIndex;
                 }
                 String alias;

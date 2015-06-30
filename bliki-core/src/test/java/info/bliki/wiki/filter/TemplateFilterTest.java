@@ -1195,4 +1195,10 @@ public class TemplateFilterTest extends FilterTestSupport {
         }
         assertThat(wikiModel.render("{{FOODATE}}", false)).isEqualTo(foodate);
     }
+
+    @Test public void testRenderURLWithSingleQuote() throws Exception {
+        assertThat(wikiModel.render("[http://url.com/with'singlequotes foo]").trim())
+            .isEqualTo(
+                "<p><a class=\"external text\" href=\"http://url.com/with&#39;singlequotes\" rel=\"nofollow\">foo</a></p>");
+    }
 }
