@@ -256,8 +256,13 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
 
     private LuaValue callParserFunction() {
         return new ThreeArgFunction() {
-            @Override public LuaValue call(LuaValue frameId, LuaValue function, LuaValue args) {
-                return null;
+            @Override
+            public LuaValue call(LuaValue frameId, LuaValue function, LuaValue args) {
+                if ("filepath".equals(function.checkjstring())) {
+                    String path = args.get(1).checkjstring();
+                    return LuaValue.valueOf(path);
+                }
+                return LuaValue.NIL;
             }
         };
     }
