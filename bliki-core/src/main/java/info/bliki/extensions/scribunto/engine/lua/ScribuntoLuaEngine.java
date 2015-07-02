@@ -228,6 +228,9 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         final String filename = fileNameForInterface(luaInterface);
 
         try (InputStream is = globals.finder.findResource(filename)) {
+            if (is == null) {
+                throw new FileNotFoundException("could not find '"+filename+"'. Make sure it is on the classpath.");
+            }
             final LuaValue pkg = globals.load(is, "@"+filename, "bt", globals).call();
             final LuaValue setupInterface = pkg.get("setupInterface");
 
