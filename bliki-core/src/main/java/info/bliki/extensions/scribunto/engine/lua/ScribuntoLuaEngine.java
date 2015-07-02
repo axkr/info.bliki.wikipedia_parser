@@ -25,6 +25,7 @@ import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.Prototype;
 import org.luaj.vm2.Varargs;
 import org.luaj.vm2.lib.OneArgFunction;
+import org.luaj.vm2.lib.ResourceFinder;
 import org.luaj.vm2.lib.ThreeArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
 import org.luaj.vm2.lib.VarArgFunction;
@@ -41,30 +42,16 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.Map;
 
-import static org.luaj.vm2.LuaValue.error;
-
 /**
  * scribunto/engines/LuaCommon/LuaCommon.php
  */
 public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterface {
     private static final int MAX_EXPENSIVE_CALLS = 10;
-
     private final Globals globals;
     private Frame currentFrame;
     private int expensiveFunctionCount;
 
     private final CompiledScriptCache compiledScriptCache;
-
-    private static final String[] LIBRARY_PATH = new String[] {
-        "",
-        "luabit",
-        "ustring",
-    };
-
-    private static final String[] MODULE_PATH = new String[] {
-        "",
-        "modules"
-    };
 
     private final MwInterface[] interfaces;
 
@@ -76,6 +63,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         super(model);
         this.compiledScriptCache = compiledScriptCache;
         this.globals = globals;
+        this.globals.finder = new LuaResourceFinder(globals.finder);
         extendGlobals(globals);
 
         this.interfaces = new MwInterface[] {
@@ -101,9 +89,9 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
 
         Prototype prototype = compiledScriptCache.getPrototypeForChunkname(pageName);
         if (prototype == null) {
-            try {
-                prototype = loadAndCache(new StringReader(findModuleContent(pageName)), pageName);
-            } catch (FileNotFoundException e) {
+            try (Reader reader = new StringReader(getRawWikiContent(pageName))) {
+                prototype = loadAndCache(reader, pageName);
+            } catch (IOException e) {
                 throw new ScribuntoException(e);
             }
         }
@@ -401,7 +389,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         };
     }
 
-    private LuaValue loadModule(ParsedPageName chunkName) {
+    private LuaValue loadModule(ParsedPageName chunkName) throws LuaError {
         Prototype prototype = compiledScriptCache.getPrototypeForChunkname(chunkName);
         if (prototype != null) {
             return new LuaClosure(prototype, globals);
@@ -411,9 +399,9 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
                     loadAndCache(new InputStreamReader(is), chunkName),
                     globals);
             } catch (ScribuntoException | IOException e) {
-                logger.error("error loading ", e);
+                logger.error("error loading '"+chunkName+"'", e);
+                throw new LuaError(e);
             }
-            return error("Could not load " + chunkName);
         }
     }
 
@@ -439,7 +427,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
 
     private @Nonnull InputStream findPackage(ParsedPageName name) throws IOException {
         logger.debug("findPackage("+name+")");
-        final InputStream is = loadLocally(name);
+        final InputStream is = globals.finder.findResource(name.pagename+".lua");
         if (is != null) {
             return is;
         } else {
@@ -447,25 +435,14 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         }
     }
 
-    private InputStream loadLocally(ParsedPageName name) {
-        for (String path : LIBRARY_PATH) {
-            InputStream is = globals.finder.findResource(path + "/" + name.pagename + ".lua");
-            if (is != null) {
-                return is;
-            }
-        }
-        return null;
-    }
-
     private InputStream findModule(final ParsedPageName moduleName) throws IOException {
         final String name = moduleName.pagename.replaceAll("[/:]", "_");
-        for (String path : MODULE_PATH) {
-            InputStream is = globals.finder.findResource(path+"/"+name);
-            if (is != null) {
-                return is;
-            }
+        InputStream is = globals.finder.findResource(name);
+        if (is != null) {
+            return is;
+        } else {
+            return getRawWikiContentStream(moduleName);
         }
-        return findModuleContentAsStream(moduleName);
     }
 
     @Override
@@ -525,6 +502,31 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
                 case 2: return t.unpack(args.checkint(2));
                 default: return t.unpack(args.checkint(2), args.checkint(3));
             }
+        }
+    }
+
+    static class LuaResourceFinder implements ResourceFinder {
+        private static final String[] LIBRARY_PATH = new String[] {
+            "",
+            "luabit",
+            "ustring",
+        };
+
+        private final ResourceFinder delegate;
+
+        LuaResourceFinder(ResourceFinder delegate) {
+            this.delegate = delegate;
+        }
+
+        @Override
+        public InputStream findResource(String filename) {
+            for (String path : LIBRARY_PATH) {
+                InputStream is = delegate.findResource(path + "/" + filename);
+                if (is != null) {
+                    return is;
+                }
+            }
+            return null;
         }
     }
 }

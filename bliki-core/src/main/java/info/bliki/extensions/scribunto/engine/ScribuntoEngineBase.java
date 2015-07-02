@@ -26,11 +26,11 @@ public abstract class ScribuntoEngineBase implements ScribuntoEngine {
                 false);
     }
 
-    protected InputStream findModuleContentAsStream(ParsedPageName pageName) throws FileNotFoundException {
-        return new ByteArrayInputStream(findModuleContent(pageName).getBytes());
+    protected InputStream getRawWikiContentStream(ParsedPageName pageName) throws FileNotFoundException {
+        return new ByteArrayInputStream(getRawWikiContent(pageName).getBytes());
     }
 
-    protected String findModuleContent(ParsedPageName pageName) throws FileNotFoundException {
+    protected String getRawWikiContent(ParsedPageName pageName) throws FileNotFoundException {
         try {
             final String content =  model.getRawWikiContent(pageName, null);
             if (content == null) {
