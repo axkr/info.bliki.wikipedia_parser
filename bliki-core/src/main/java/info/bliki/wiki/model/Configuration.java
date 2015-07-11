@@ -69,7 +69,7 @@ public class Configuration implements IConfiguration {
     /**
      * Get the current <code>Bliki.info Engine</code> version
      */
-    public final static String BLIKI_VERSION = "3.1.01";
+    public final static String BLIKI_VERSION = "3.1.0-SNAPSHOT";
 
     /**
      * Print additional debug information to System.out
