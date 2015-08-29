@@ -79,6 +79,11 @@ public class HTMLCreatorTest {
         testWiktionaryENAPI("AB");
     }
 
+    @Betamax(tape = "Veja", mode = READ_ONLY)
+    @Test public void testWiktionaryVeja() throws Exception {
+        testWiktionaryENAPI("veja");
+    }
+
     @Betamax(tape = "titeln", mode = READ_ONLY)
     @Test public void testWiktionary_titeln() throws Exception {
         final Result result = testWiktionaryENAPI("titeln");
@@ -225,12 +230,17 @@ public class HTMLCreatorTest {
         public Result assertNoErrors() {
             assertNoSubstLeft();
             assertNoTemplateError();
+            assertNoExpressionError();
             assertNoInclude();
             return this;
         }
 
         private void assertNoTemplateError() {
             assertThat(contentOf(content)).doesNotContain("TemplateParserError:");
+        }
+
+        private void assertNoExpressionError() {
+            assertThat(contentOf(content)).doesNotContain("Expression error");
         }
 
         private void assertNoSubstLeft() {

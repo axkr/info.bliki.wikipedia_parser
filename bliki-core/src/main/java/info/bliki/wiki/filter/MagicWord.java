@@ -101,14 +101,24 @@ public class MagicWord {
         MAGIC_SUBJECT_PAGE_NAME_E("SUBJECTPAGENAMEE"),
         MAGIC_ARTICLE_PAGE_NAME("ARTICLEPAGENAME"),
         MAGIC_ARTICLE_PAGE_NAME_E("ARTICLEPAGENAMEE"),
+
+        // revision data
         MAGIC_REVISION_ID("REVISIONID"),
+        /** Day edit was made (unpadded number). (1-31) */
         MAGIC_REVISION_DAY("REVISIONDAY"),
+        /** Day edit was made (zero-padded number) (01-31) */
         MAGIC_REVISION_DAY2("REVISIONDAY2"),
+        /** Month edit was made (zero-padded number as of 1.17+, unpadded number in prior versions). */
         MAGIC_REVISION_MONTH("REVISIONMONTH"),
+        /** Month edit was made (unpadded number).  */
         MAGIC_REVISION_MONTH1("REVISIONMONTH1"),
+        /** Year edit was made: 2013 */
         MAGIC_REVISION_YEAR("REVISIONYEAR"),
+        /** Timestamp of the last edit made: 20130314092713 */
         MAGIC_REVISION_TIMESTAMP("REVISIONTIMESTAMP"),
+        /** The username of the user who made the most recent edit to the page, or the current user when previewing an edit. */
         MAGIC_REVISION_USER("REVISIONUSER"),
+
         MAGIC_PROTECTION_LEVEL("PROTECTIONLEVEL"),
         MAGIC_DISPLAY_TITLE("DISPLAYTITLE"),
         MAGIC_DEFAULT_SORT("DEFAULTSORT"),
@@ -220,6 +230,7 @@ public class MagicWord {
             // set a default value
             current = new Date(System.currentTimeMillis());
         }
+        final Date revision = current;
         // local date values
         switch (magicWord) {
             case MAGIC_LOCAL_DAY:
@@ -296,6 +307,26 @@ public class MagicWord {
             case MAGIC_CURRENT_TIMESTAMP:
                 formatter.applyPattern("yyyyMMddHHmmss");
                 return formatter.format(current);
+            case MAGIC_REVISION_YEAR:
+                formatter.applyPattern("yyyy");
+                return formatter.format(revision);
+            case MAGIC_REVISION_DAY:
+                formatter.applyPattern("d");
+                return formatter.format(revision);
+            case MAGIC_REVISION_DAY2:
+                formatter.applyPattern("dd");
+                return formatter.format(revision);
+            case MAGIC_REVISION_MONTH:
+                formatter.applyPattern("MM");
+                return formatter.format(revision);
+            case MAGIC_REVISION_MONTH1:
+                formatter.applyPattern("M");
+                return formatter.format(revision);
+            case MAGIC_REVISION_TIMESTAMP:
+                formatter.applyPattern("yyyyMMddHHmmss");
+                return formatter.format(revision);
+            case MAGIC_REVISION_USER:
+                return "";
             case MAGIC_PAGE_NAME: {
                     String pagename = getPagenameHelper(parameter, model);
                     if (pagename != null) {
