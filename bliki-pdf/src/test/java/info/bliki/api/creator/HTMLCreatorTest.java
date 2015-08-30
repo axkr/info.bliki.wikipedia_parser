@@ -84,6 +84,11 @@ public class HTMLCreatorTest {
         testWiktionaryENAPI("veja");
     }
 
+    @Betamax(tape = "quine", mode = READ_ONLY)
+    @Test public void testWiktionaryQuine() throws Exception {
+        testWiktionaryENAPI("quine");
+    }
+
     @Betamax(tape = "titeln", mode = READ_ONLY)
     @Test public void testWiktionary_titeln() throws Exception {
         final Result result = testWiktionaryENAPI("titeln");
@@ -232,7 +237,13 @@ public class HTMLCreatorTest {
             assertNoTemplateError();
             assertNoExpressionError();
             assertNoInclude();
+            assertNoUnexpandTemplate();
             return this;
+        }
+
+        private void assertNoUnexpandTemplate() {
+            assertThat(contentOf(content)).doesNotContain("[[");
+            assertThat(contentOf(content)).doesNotContain("]]");
         }
 
         private void assertNoTemplateError() {

@@ -15,4 +15,9 @@ public class MagicWordTest extends FilterTestSupport {
         final String number = MagicWord.processMagicWord(MagicWord.MagicWordE.MAGIC_NAMESPACENUMBER, "User:Foo", wikiModel);
         assertThat(number).isEqualTo("2");
     }
+
+    @Test public void testProcessMagicWordBANG() throws Exception {
+        final String result = MagicWord.processMagicWord(MagicWord.MagicWordE.MAGIC_BANG, null, wikiModel);
+        assertThat(result).isEqualTo("|");
+    }
 }

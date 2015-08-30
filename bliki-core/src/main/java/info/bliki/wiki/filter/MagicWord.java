@@ -130,7 +130,10 @@ public class MagicWord {
         MAGIC_SERVER_NAME("SERVERNAME"),
         MAGIC_STYLE_PATH("STYLEPATH"),
         MAGIC_CONTENT_LANGUAGE("CONTENTLANGUAGE"),
-        MAGIC_CONTENT_LANG("CONTENTLANG");
+        MAGIC_CONTENT_LANG("CONTENTLANG"),
+
+        /** Used to include a pipe character as part of a template argument or table cell contents. */
+        MAGIC_BANG("!");
 
         private final String text;
 
@@ -387,6 +390,8 @@ public class MagicWord {
                 return getSubPageName(parameter, model);
             case MAGIC_SUB_PAGE_NAME_E:
                 return model.encodeTitleToUrl(getSubPageName(parameter, model), false);
+            case MAGIC_BANG:
+                return "|";
             default:
                 break;
         }
