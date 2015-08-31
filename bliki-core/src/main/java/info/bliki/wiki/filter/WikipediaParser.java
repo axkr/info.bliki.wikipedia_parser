@@ -815,9 +815,7 @@ public class WikipediaParser extends AbstractWikipediaParser {
                     }
                 }
             } catch (IndexOutOfBoundsException ignored) {
-
             }
-            fCurrentPosition = tempCurrPosition;
         }
         return false;
     }

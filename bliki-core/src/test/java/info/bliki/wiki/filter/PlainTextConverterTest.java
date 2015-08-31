@@ -59,6 +59,16 @@ public class PlainTextConverterTest extends FilterTestSupport {
         assertThat(wikiModel.render(plainTextConverter, "[[foo#anchor]]", false)).isEqualTo("\n[foo](foo#anchor)");
     }
 
+    @Test public void testConvertLinkWithPrecedingDashThroughModelWithRenderLinks() throws Exception {
+        plainTextConverter = new PlainTextConverter(true);
+        assertThat(wikiModel.render(plainTextConverter, "-[[foo]]", false)).isEqualTo("\n-[foo][]");
+    }
+
+    @Test public void testConvertHorizontalRule() throws Exception {
+        plainTextConverter = new PlainTextConverter(true);
+        assertThat(wikiModel.render(plainTextConverter, "----\n", false)).isEqualTo("");
+    }
+
     @Test public void testConvertLinkNode() throws Exception {
         WPATag aTag = new WPATag();
         aTag.addAttribute(HREF, "some-href", false);
