@@ -1122,8 +1122,7 @@ public class TemplateParserTest extends FilterTestSupport {
     }
 
     @Test public void testURLEncode001() {
-        assertThat(wikiModel.parseTemplates(
-                "{{urlencode: \"#$%&'()*,;?[]^`{}}}", false)).isEqualTo("%22%23%24%25%26%27%28%29*%2C%3B%3F%5B%5D%5E%60%7B%7D");
+        assertThat(wikiModel.parseTemplates("{{urlencode: \"#$%&'()*,;?[]^`}}", false)).isEqualTo("%22%23%24%25%26%27%28%29*%2C%3B%3F%5B%5D%5E%60");
         assertThat(wikiModel.parseTemplates("{{urlencode:<}}", false)).isEqualTo("%3C");
         assertThat(wikiModel.parseTemplates("{{urlencode:>}}", false)).isEqualTo("%3E");
         assertThat(wikiModel.parseTemplates("{{urlencode:{{!}}}}", false)).isEqualTo("%7C");

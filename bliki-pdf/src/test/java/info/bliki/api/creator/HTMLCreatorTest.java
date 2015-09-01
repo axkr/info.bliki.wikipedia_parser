@@ -89,6 +89,12 @@ public class HTMLCreatorTest {
         testWiktionaryENAPI("quine");
     }
 
+    @Betamax(tape = "colon", mode = READ_ONLY)
+    @Test public void testWiktionaryColon() throws Exception {
+        final Result result = testWiktionaryENAPI("colon");
+        result.assertNoTemplatesLeft();
+    }
+
     @Betamax(tape = "titeln", mode = READ_ONLY)
     @Test public void testWiktionary_titeln() throws Exception {
         final Result result = testWiktionaryENAPI("titeln");
@@ -256,6 +262,10 @@ public class HTMLCreatorTest {
 
         private void assertNoSubstLeft() {
             assertThat(contentOf(content)).doesNotContain("safesubst:");
+        }
+
+        private void assertNoTemplatesLeft() {
+            assertThat(contentOf(content)).doesNotContain("{{");
         }
 
         private void assertNoInclude() {

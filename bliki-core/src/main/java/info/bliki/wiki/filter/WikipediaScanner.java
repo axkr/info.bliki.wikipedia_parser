@@ -729,29 +729,34 @@ public class WikipediaScanner {
         }
     }
 
-
     /**
-     * @return the template end position or -1 if there is no end
+     * @return the template end position or -1 if there is no end.
+     * TODO: This logic needs to be improved, there are very likely cases where this does not work as
+     * intended. Template parameters can take {} as well, e.g. <code>{{foo:bar|{|}|{}|baz}}</code>.
      */
     public static int findNestedTemplateEnd(final char[] sourceArray, int startPosition) {
         char ch;
-        int countSingleOpenBraces = 0;
+        int countOpenBraces = 0;
         int position = startPosition;
         try {
             while (position < sourceArray.length) {
                 ch = sourceArray[position++];
-                if (ch == '{') {
-                    countSingleOpenBraces++;
-                } else if (ch == '}') {
-                    if (countSingleOpenBraces > 0) {
-                        countSingleOpenBraces--;
-                    } else {
-                        if (sourceArray[position] == '}') {
-                            // template ending
-                            position++;
-                            return position;
+                switch (ch) {
+                    case '{':
+                        if (sourceArray[position - 2] == '{' || sourceArray[position] == '{') {
+                            countOpenBraces++;
                         }
-                    }
+                        break;
+                    case '}':
+                        if (sourceArray[position - 2] != '}' &&  sourceArray[position] != '}')
+                            break;
+
+                        if (countOpenBraces > 0) {
+                            countOpenBraces--;
+                        } else {
+                            return position + 1;
+                        }
+                        break;
                 }
             }
             return -1;
