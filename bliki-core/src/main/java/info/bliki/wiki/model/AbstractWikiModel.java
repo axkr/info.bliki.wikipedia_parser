@@ -1825,8 +1825,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
                 templateCallsCache = null;
             }
 
-            String plainContent = null;
-            ;
+            String plainContent;
             try {
                 plainContent = getRawWikiContent(parsedPagename, parameterMap);
             } catch (WikiModelContentException wme) {

@@ -16,10 +16,6 @@ import java.util.List;
 public class Ifexpr extends AbstractTemplateFunction {
     public final static ITemplateFunction CONST = new Ifexpr();
 
-    public Ifexpr() {
-
-    }
-
     @Override
     public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
         if (list.size() > 1) {

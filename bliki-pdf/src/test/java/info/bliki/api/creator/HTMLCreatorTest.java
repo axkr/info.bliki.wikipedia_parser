@@ -89,9 +89,15 @@ public class HTMLCreatorTest {
         testWiktionaryENAPI("quine");
     }
 
-    @Betamax(tape = "colon", mode = READ_ONLY)
+    @Betamax(tape = "colon", mode = WRITE_ONLY)
     @Test public void testWiktionaryColon() throws Exception {
         final Result result = testWiktionaryENAPI("colon");
+        result.assertNoTemplatesLeft();
+    }
+
+    @Betamax(tape = "t2i", mode = READ_ONLY)
+    @Test public void testT2i() throws Exception {
+        final Result result = testWiktionaryENAPI("User:Jberkel/bliki-testcases/t2i");
         result.assertNoTemplatesLeft();
     }
 
@@ -238,18 +244,23 @@ public class HTMLCreatorTest {
             assertThat(contentOf(content)).contains(values);
         }
 
+        private void assertNoUnexpandedTemplates() {
+            assertThat(contentOf(content)).doesNotMatch("Template:^(?!rfdef).*");
+        }
+
+        private void assertNoUnexpandedLinks() {
+            assertThat(contentOf(content)).doesNotContain("[[");
+            assertThat(contentOf(content)).doesNotContain("]]");
+        }
+
         public Result assertNoErrors() {
             assertNoSubstLeft();
             assertNoTemplateError();
             assertNoExpressionError();
             assertNoInclude();
-            assertNoUnexpandTemplate();
+            assertNoUnexpandedLinks();
+            assertNoUnexpandedTemplates();
             return this;
-        }
-
-        private void assertNoUnexpandTemplate() {
-            assertThat(contentOf(content)).doesNotContain("[[");
-            assertThat(contentOf(content)).doesNotContain("]]");
         }
 
         private void assertNoTemplateError() {
