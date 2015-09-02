@@ -89,7 +89,7 @@ public class HTMLCreatorTest {
         testWiktionaryENAPI("quine");
     }
 
-    @Betamax(tape = "colon", mode = WRITE_ONLY)
+    @Betamax(tape = "colon", mode = READ_ONLY)
     @Test public void testWiktionaryColon() throws Exception {
         final Result result = testWiktionaryENAPI("colon");
         result.assertNoTemplatesLeft();
