@@ -15,9 +15,6 @@ public class Iferror extends AbstractTemplateFunction {
 
     public final static ITemplateFunction CONST = new Iferror();
 
-    public Iferror() {
-    }
-
     @Override
     public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
         if (list.size() > 0) {

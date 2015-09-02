@@ -14,10 +14,6 @@ import java.util.List;
 public class Ifeq extends AbstractTemplateFunction {
     public final static ITemplateFunction CONST = new Ifeq();
 
-    public Ifeq() {
-
-    }
-
     @Override
     public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
         if (list.size() > 2) {

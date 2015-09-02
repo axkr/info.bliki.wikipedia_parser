@@ -13,10 +13,6 @@ import java.util.List;
 public class Subst extends Safesubst {
     public final static ITemplateFunction CONST = new Subst();
 
-    public Subst() {
-
-    }
-
     @Override
     public String parseFunction(List<String> parts1, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
         if (!model.isTemplateTopic()) {

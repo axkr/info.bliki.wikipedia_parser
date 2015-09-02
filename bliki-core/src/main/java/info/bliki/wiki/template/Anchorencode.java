@@ -12,10 +12,6 @@ import java.util.List;
 public class Anchorencode extends AbstractTemplateFunction {
     public final static ITemplateFunction CONST = new Anchorencode();
 
-    public Anchorencode() {
-
-    }
-
     @Override
     public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
         if (list.size() > 0) {

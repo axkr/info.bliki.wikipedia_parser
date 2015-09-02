@@ -23,10 +23,6 @@ import java.util.List;
 public class NSE extends NS {
     public final static ITemplateFunction CONST = new NSE();
 
-    public NSE() {
-
-    }
-
     @Override
     public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
         String namespace = super.parseFunction(list, model, src, beginIndex, endIndex, isSubst);

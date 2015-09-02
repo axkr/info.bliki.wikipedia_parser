@@ -21,9 +21,6 @@ import java.util.Map;
 public class Safesubst extends AbstractTemplateFunction {
     public final static ITemplateFunction CONST = new Safesubst();
 
-    public Safesubst() {
-    }
-
     @Override
     public String parseFunction(List<String> parts1, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
         String substArg = new String(src, beginIndex, endIndex - beginIndex);

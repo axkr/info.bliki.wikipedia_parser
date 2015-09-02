@@ -14,10 +14,6 @@ import java.util.List;
 public class Tag extends AbstractTemplateFunction {
     public final static ITemplateFunction CONST = new Tag();
 
-    public Tag() {
-
-    }
-
     @Override
     public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
         if (list.size() > 0) {

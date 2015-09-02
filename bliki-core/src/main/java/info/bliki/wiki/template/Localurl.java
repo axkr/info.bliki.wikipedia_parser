@@ -15,10 +15,6 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 public class Localurl extends AbstractTemplateFunction {
     public final static ITemplateFunction CONST = new Localurl();
 
-    public Localurl() {
-
-    }
-
     @Override
     public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst)
             throws UnsupportedEncodingException {

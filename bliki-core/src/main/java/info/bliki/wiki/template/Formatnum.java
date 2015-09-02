@@ -17,10 +17,6 @@ import java.util.List;
 public class Formatnum extends AbstractTemplateFunction {
     public final static ITemplateFunction CONST = new Formatnum();
 
-    public Formatnum() {
-
-    }
-
     @Override
     public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
         if (list.size() > 0) {

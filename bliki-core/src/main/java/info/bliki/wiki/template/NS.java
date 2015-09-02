@@ -23,10 +23,6 @@ import java.util.List;
 public class NS extends AbstractTemplateFunction {
     public final static ITemplateFunction CONST = new NS();
 
-    public NS() {
-
-    }
-
     @Override
     public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
         if (list.size() > 0) {

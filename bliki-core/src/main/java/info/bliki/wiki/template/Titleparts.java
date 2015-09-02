@@ -15,9 +15,6 @@ import java.util.List;
 public class Titleparts extends AbstractTemplateFunction {
     public final static ITemplateFunction CONST = new Titleparts();
 
-    public Titleparts() {
-
-    }
 
     @Override
     public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {

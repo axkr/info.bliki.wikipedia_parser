@@ -14,10 +14,6 @@ import java.util.List;
 public class UCFirst extends AbstractTemplateFunction {
     public final static ITemplateFunction CONST = new UCFirst();
 
-    public UCFirst() {
-
-    }
-
     @Override
     public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) {
         if (list.size() > 0) {

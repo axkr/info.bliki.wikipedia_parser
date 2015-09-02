@@ -37,10 +37,6 @@ import java.util.List;
 public class DollarContext extends AbstractTemplateFunction {
     public final static ITemplateFunction CONST = new DollarContext();
 
-    public DollarContext() {
-
-    }
-
     @Override
     public String parseFunction(List<String> list, IWikiModel model, char[] src, int beginIndex, int endIndex, boolean isSubst) throws IOException {
         if (model instanceof IContext) {

@@ -12,10 +12,6 @@ import java.util.List;
  */
 public abstract class AbstractTemplateFunction implements ITemplateFunction {
 
-    public AbstractTemplateFunction() {
-
-    }
-
     @Override
     public String getFunctionDoc() {
         return null;
