@@ -90,7 +90,7 @@ public class MagicWord {
         MAGIC_FULL_PAGE_NAME("FULLPAGENAME"),
         MAGIC_FULL_PAGE_NAME_E("FULLPAGENAMEE"),
 
-        // A protocol-relative path to the title. This will also resolve interwiki prefixes. )
+        // A protocol-relative path to the title. This will also resolve interwiki prefixes.
         // {{fullurl:Category:Top level}} -> //www.mediawiki.org/wiki/Category:Top_level
         // {{fullurl:Category:Top level|action=edit}} -> //www.mediawiki.org/w/index.php?title=Category:Top_level&action=edit
         MAGIC_FULL_URL("FULLURL"),
