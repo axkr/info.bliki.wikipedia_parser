@@ -20,4 +20,14 @@ public class MagicWordTest extends FilterTestSupport {
         final String result = MagicWord.processMagicWord(MagicWord.MagicWordE.MAGIC_BANG, null, wikiModel);
         assertThat(result).isEqualTo("|");
     }
+
+    @Test public void testFullUrl() throws Exception {
+        final String result = MagicWord.processMagicWord(MagicWord.MagicWordE.MAGIC_FULL_URL, "Category:Name With Space", wikiModel);
+        assertThat(result).isEqualTo("//www.bliki.info/wiki/Category:Name With Space");
+    }
+
+    @Test public void testFullUrlE() throws Exception {
+        final String result = MagicWord.processMagicWord(MagicWord.MagicWordE.MAGIC_FULL_URL_E, "Category:Name With Space", wikiModel);
+        assertThat(result).isEqualTo("//www.bliki.info/wiki/Category:Name_With_Space");
+    }
 }

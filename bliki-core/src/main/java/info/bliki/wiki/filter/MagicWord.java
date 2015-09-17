@@ -89,6 +89,13 @@ public class MagicWord {
         MAGIC_NAMESPACENUMBER("NAMESPACENUMBER"),
         MAGIC_FULL_PAGE_NAME("FULLPAGENAME"),
         MAGIC_FULL_PAGE_NAME_E("FULLPAGENAMEE"),
+
+        // A protocol-relative path to the title. This will also resolve interwiki prefixes. )
+        // {{fullurl:Category:Top level}} -> //www.mediawiki.org/wiki/Category:Top_level
+        // {{fullurl:Category:Top level|action=edit}} -> //www.mediawiki.org/w/index.php?title=Category:Top_level&action=edit
+        MAGIC_FULL_URL("FULLURL"),
+        MAGIC_FULL_URL_E("FULLURLE"),
+
         MAGIC_TALK_SPACE("TALKSPACE"),
         MAGIC_TALK_SPACE_E("TALKSPACEE"),
         MAGIC_SUBJECT_SPACE("SUBJECTSPACE"),
@@ -372,6 +379,10 @@ public class MagicWord {
                 return getFullpagename(parameter, model);
             case MAGIC_FULL_PAGE_NAME_E:
                 return model.encodeTitleToUrl(getFullpagename(parameter, model), true);
+            case MAGIC_FULL_URL:
+                return fullUrl(model, parameter, false);
+            case MAGIC_FULL_URL_E:
+                return fullUrl(model, parameter, true);
             case MAGIC_TALK_PAGE_NAME:
                 return getTalkpage(parameter, model);
             case MAGIC_TALK_PAGE_NAME_E:
@@ -469,6 +480,13 @@ public class MagicWord {
         } else {
             return "";
         }
+    }
+
+    private static String fullUrl(IWikiModel model, String parameter, boolean encode) {
+        final String name = getFullpagename(parameter, model);
+        return model.getWikiBaseURL()
+                .replace("${title}", encode ? model.encodeTitleToUrl(name, true) : name)
+                .replaceAll("^https?:", "");
     }
 
     /**
