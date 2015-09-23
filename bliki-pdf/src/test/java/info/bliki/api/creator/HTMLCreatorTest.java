@@ -89,6 +89,11 @@ public class HTMLCreatorTest {
         testWiktionaryENAPI("quine");
     }
 
+    @Betamax(tape = "gagauseueo", mode = READ_ONLY)
+    @Test public void testWiktionaryHangul() throws Exception {
+        testWiktionaryENAPI("가가우스어");
+    }
+
     @Betamax(tape = "colon", mode = READ_ONLY)
     @Test public void testWiktionaryColon() throws Exception {
         final Result result = testWiktionaryENAPI("colon");
