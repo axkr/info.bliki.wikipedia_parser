@@ -94,6 +94,12 @@ public class HTMLCreatorTest {
         testWiktionaryENAPI("가가우스어");
     }
 
+    @Ignore @Betamax(tape = "teo", mode = READ_ONLY)
+    @Test public void testWiktionaryHangul2() throws Exception {
+        // {{ko-usex|[[ ]] {{=}} | ... => TemplateParserError
+        testWiktionaryENAPI("터");
+    }
+
     @Betamax(tape = "colon", mode = READ_ONLY)
     @Test public void testWiktionaryColon() throws Exception {
         final Result result = testWiktionaryENAPI("colon");
