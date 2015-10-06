@@ -106,6 +106,12 @@ public class HTMLCreatorTest {
         result.assertNoTemplatesLeft();
     }
 
+    @Betamax(tape = "ar-translit", mode = READ_ONLY)
+    @Test public void testWiktionaryArTranslit() throws Exception {
+        final Result result = testWiktionaryENAPI("User:Jberkel/bliki-testcases/ar-translit");
+        result.assertContains("ʾaʿdād");
+    }
+
     @Betamax(tape = "t2i", mode = READ_ONLY)
     @Test public void testT2i() throws Exception {
         final Result result = testWiktionaryENAPI("User:Jberkel/bliki-testcases/t2i");

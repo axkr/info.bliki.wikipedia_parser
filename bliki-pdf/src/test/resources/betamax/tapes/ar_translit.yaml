@@ -1,0 +1,880 @@
+!tape
+name: ar-translit
+interactions:
+- recorded: 2015-10-05T22:43:57.267Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=User%3AJberkel%2Fbliki-testcases%2Far-translit&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Age: '0'
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Type: text/xml; charset=utf-8
+      Date: Mon, 05 Oct 2015 22:43:57 GMT
+      Server: nginx/1.9.4
+      Set-Cookie: GeoIP=PT:17:Vila_Nova_De_Gaia:41.13:-8.62:v4; Path=/; Domain=.wiktionary.org, WMF-Last-Access=05-Oct-2015;Path=/;HttpOnly;Expires=Fri, 06 Nov 2015 12:00:00 GMT
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Analytics: https=1
+      X-Cache: cp1054 miss (0), cp3007 miss (0), cp3004 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.6.5
+      X-Varnish: 2449136580, 2136002201, 2478665753
+    body: <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="5008084" pageid="5008084" ns="2" title="User:Jberkel/bliki-testcases/ar-translit"><revisions><rev user="Jberkel" timestamp="2015-10-05T22:43:23Z" comment="Created page with &quot;{{m|ar|أَعْدَاد||numbers}}&quot;" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{m|ar|أَعْدَاد||numbers}}</rev></revisions></page></pages></query></api>
+- recorded: 2015-10-05T22:43:57.514Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Am&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: GeoIP=PT:17:Vila_Nova_De_Gaia:41.13:-8.62:v4; WMF-Last-Access=05-Oct-2015
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Age: '0'
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Type: text/xml; charset=utf-8
+      Date: Mon, 05 Oct 2015 22:43:57 GMT
+      Server: nginx/1.9.4
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Analytics: https=1;WMF-Last-Access=05-Oct-2015
+      X-Cache: cp1054 miss (0), cp3004 miss (0), cp3004 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.6.5
+      X-Varnish: 2449136916, 1930412420, 2478665913
+    body: <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="4580450" pageid="4580450" ns="10" title="Template:m"><revisions><rev user="CodeCat" timestamp="2014-10-30T23:32:44Z" comment="Redirected page to [[Template:mention]]" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">#REDIRECT [[Template:mention]]</rev></revisions></page></pages></query></api>
+- recorded: 2015-10-05T22:43:57.730Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Amention&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: GeoIP=PT:17:Vila_Nova_De_Gaia:41.13:-8.62:v4; WMF-Last-Access=05-Oct-2015
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Age: '0'
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Type: text/xml; charset=utf-8
+      Date: Mon, 05 Oct 2015 22:43:57 GMT
+      Server: nginx/1.9.4
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Analytics: https=1;WMF-Last-Access=05-Oct-2015
+      X-Cache: cp1068 miss (0), cp3010 miss (0), cp3004 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.6.5
+      X-Varnish: 2233963997, 1924265837, 2478666019
+    body: |-
+      <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="4064248" pageid="4064248" ns="10" title="Template:mention"><revisions><rev user="CodeCat" timestamp="2014-10-30T23:32:40Z" comment="CodeCat moved page [[Template:m]] to [[Template:mention]] without leaving a redirect: Use full name and &quot;m&quot; as a shortcut, to alleviate concerns that the single-letter name is not clear enough." contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{#invoke:links/templates|l_term_t|face=term}}&lt;!--
+
+      --&gt;{{#if:{{{lang|}}}|[[Category:m with lang]]}}&lt;!--
+
+      --&gt;&lt;noinclude&gt;{{documentation}}</rev></revisions></page></pages></query></api>
+- recorded: 2015-10-05T22:43:58.469Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Alinks%2Ftemplates&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: GeoIP=PT:17:Vila_Nova_De_Gaia:41.13:-8.62:v4; WMF-Last-Access=05-Oct-2015
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Age: '0'
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Type: text/xml; charset=utf-8
+      Date: Mon, 05 Oct 2015 22:43:58 GMT
+      Server: nginx/1.9.4
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Analytics: https=1;WMF-Last-Access=05-Oct-2015
+      X-Cache: cp1055 miss (0), cp3010 miss (0), cp3004 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.6.5
+      X-Varnish: 2193003200, 1924266083, 2478666410
+    body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4282542\" pageid=\"4282542\" ns=\"828\" title=\"Module:links/templates\"><revisions><rev user=\"CodeCat\" timestamp=\"2015-06-21T20:57:22Z\" comment=\"\" contentformat=\"text/plain\"\
+      \ contentmodel=\"Scribunto\" xml:space=\"preserve\">local m_links = require(&quot;Module:links&quot;)\n\nlocal export = {}\n\nlocal params = {\n\t[1] = {required = true},\n\t[2] = {},\n\t[3] = {},\n\t[4] = {alias_of = &quot;gloss&quot;},\n\t[&quot;g&quot;]\
+      \ = {list = true},\n\t[&quot;gloss&quot;] = {},\n\t[&quot;id&quot;] = {},\n\t[&quot;lit&quot;] = {},\n\t[&quot;pos&quot;] = {},\n\t[&quot;tr&quot;] = {},\n\t[&quot;sc&quot;] = {},\n}\n\n-- Used in [[Template:l]] and [[Template:m]]\nfunction export.l_term_t(frame)\n\
+      \tlocal face = frame.args[&quot;face&quot;]\n\tlocal allowSelfLink = frame.args[&quot;notself&quot;]; allowSelfLink = not allowSelfLink or allowSelfLink == &quot;&quot;\n\t\n\tlocal params = mw.clone(params)\n\t\n\t-- Compatibility mode for {{term}}.\n\
+      \t-- If given a nonempty value, the function uses lang= to specify the\n\t-- language, and all the positional parameters shift one number lower.\n\tlocal compat = (frame.args[&quot;compat&quot;] or &quot;&quot;) ~= &quot;&quot;\n\t\n\tif compat then\n\t\
+      \tparams[&quot;lang&quot;] = {},\n\t\ttable.remove(params, 1)\n\tend\n\t\n\tlocal args = require(&quot;Module:parameters&quot;).process(frame:getParent().args, params)\n\t\n\tlocal lang = args[compat and &quot;lang&quot; or 1]\n\t\n\t-- Tracking for missing\
+      \ language or und\n\tif not lang then\n\t\trequire(&quot;Module:debug&quot;).track(&quot;link/no lang&quot;)\n\telseif lang == &quot;und&quot; then\n\t\trequire(&quot;Module:debug&quot;).track(&quot;link/und&quot;)\n\tend\n\t\n\tlang = lang or &quot;und&quot;\n\
+      \tlocal sc = args[&quot;sc&quot;]\n\t\n\tlocal term = args[(compat and 1 or 2)]\n\tlocal alt = args[(compat and 2 or 3)]\n\tlocal id = args[&quot;id&quot;]\n\t\n\tlocal tr = args[&quot;tr&quot;]\n\tlocal gloss = args[&quot;gloss&quot;]\n\tlocal pos = args[&quot;pos&quot;]\n\
+      \tlocal lit = args[&quot;lit&quot;]\n\tlocal genders = args[&quot;g&quot;]\n\t\n\t-- Check parameters\n\tlang = require(&quot;Module:languages&quot;).getByCode(lang) or error(&quot;The language code \\&quot;&quot; .. lang .. &quot;\\&quot; is not valid.&quot;)\n\
+      \tsc = (sc and (require(&quot;Module:scripts&quot;).getByCode(sc) or error(&quot;The script code \\&quot;&quot; .. sc .. &quot;\\&quot; is not valid.&quot;)) or nil)\n\t\n\tif not term and not alt and mw.title.getCurrentTitle().nsText == &quot;Template&quot;\
+      \ then\n\t\tterm = &quot;term&quot;\n\tend\n\t\n\t-- Forward the information to full_link\n\treturn m_links.full_link(term, alt, lang, sc, face, id, {tr = tr, genders = genders, gloss = gloss, pos = pos, lit = lit}, allowSelfLink)\nend\n\nfunction export.ll(frame)\n\
+      \tlocal args = frame:getParent().args\n\t\n\tlocal text = args[2]\n\tlocal alt = args[3]\n\tif text == &quot;&quot; then return alt or &quot;&quot; end\n\tif alt == &quot;&quot; then alt = nil end\n\t\n\tlocal lang = args[1]\n\tlang = require(&quot;Module:languages&quot;).getByCode(lang)\
+      \ or error(&quot;The language code \\&quot;&quot; .. lang .. &quot;\\&quot; is not valid.&quot;)\n\t\n\tlocal id = args[&quot;id&quot;]; if id == &quot;&quot; then id = nil end\n\tlocal allowSelfLink = args[&quot;allowSelfLink&quot;]; allowSelfLink = not\
+      \ not (allowSelfLink and allowSelfLink ~= &quot;&quot;)\n\t\n\treturn m_links.language_link(text, alt, lang, id, allowSelfLink)\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
+- recorded: 2015-10-05T22:43:58.747Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Alinks&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: GeoIP=PT:17:Vila_Nova_De_Gaia:41.13:-8.62:v4; WMF-Last-Access=05-Oct-2015
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Age: '0'
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Type: text/xml; charset=utf-8
+      Date: Mon, 05 Oct 2015 22:43:58 GMT
+      Server: nginx/1.9.4
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Analytics: https=1;WMF-Last-Access=05-Oct-2015
+      X-Cache: cp1052 miss (0), cp3008 miss (0), cp3004 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.6.5
+      X-Varnish: 1817215535, 2161647994, 2478666542
+    body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"3935515\" pageid=\"3935515\" ns=\"828\" title=\"Module:links\"><revisions><rev user=\"CodeCat\" timestamp=\"2015-09-26T23:18:35Z\" comment=\"Added dontLinkRecons parameter to\
+      \ suppress creating a link to reconstructed terms\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">local export = {}\n\n--TODO: move to [[Module:languages]]\nlocal override_translit = {\n\t[&quot;ab&quot;] = true,\n\t[&quot;abq&quot;]\
+      \ = true,\n\t[&quot;ady&quot;] = true,\n\t[&quot;av&quot;] = true,\n\t[&quot;axm&quot;] = true,\n\t[&quot;ba&quot;] = true,\n\t[&quot;bo&quot;] = true,\n\t[&quot;bua&quot;] = true,\n\t[&quot;ce&quot;] = true,\n\t[&quot;chm&quot;] = true,\n\t[&quot;cv&quot;]\
+      \ = true,\t\n\t[&quot;dar&quot;] = true,\n\t[&quot;dv&quot;] = true,\n\t[&quot;dz&quot;] = true,\n\t[&quot;el&quot;] = true,\n\t[&quot;gmy&quot;] = true,\n\t[&quot;grc&quot;] = true,\n\t[&quot;hy&quot;] = true,\n\t[&quot;inh&quot;] = true,\n\t[&quot;iu&quot;]\
+      \ = true,\n\t[&quot;ka&quot;] = true,\n\t[&quot;kk&quot;] = true,\n\t--[&quot;ko&quot;] = true,\n\t[&quot;kbd&quot;] = true,\n\t[&quot;kca&quot;] = true,\n\t[&quot;kjh&quot;] = true,\n\t[&quot;kn&quot;] = true,\n\t[&quot;koi&quot;] = true,\n\t[&quot;kpv&quot;]\
+      \ = true,\n\t[&quot;ky&quot;] = true,\n\t[&quot;kv&quot;] = true,\n\t[&quot;lo&quot;] = true,\n\t[&quot;lbe&quot;] = true,\n\t[&quot;lez&quot;] = true,\n\t[&quot;lzz&quot;] = true,\n\t[&quot;mdf&quot;] = true,\n\t[&quot;ml&quot;] = true,\n\t[&quot;mn&quot;]\
+      \ = true,\n\t[&quot;my&quot;] = true,\n\t[&quot;myv&quot;] = true,\n\t[&quot;oge&quot;] = true,\n\t[&quot;os&quot;] = true,\n\t[&quot;sah&quot;] = true,\n\t[&quot;si&quot;] = true,\n\t[&quot;sva&quot;] = true,\n\t[&quot;ta&quot;] = true,\n\t[&quot;tab&quot;]\
+      \ = true,\n\t[&quot;te&quot;] = true,\n\t[&quot;tg&quot;] = true,\n\t[&quot;tt&quot;] = true,\n\t[&quot;tyv&quot;] = true,\n\t[&quot;ug&quot;] = true,\n\t[&quot;udi&quot;] = true,\n\t[&quot;udm&quot;] = true,\n\t[&quot;xal&quot;] = true,\n\t[&quot;xcl&quot;]\
+      \ = true,\n\t[&quot;xmf&quot;] = true,\n}\n\nlocal ignore_cap = {\n\t[&quot;ko&quot;] = true,\n}\n\n\n-- Make a language-specific link from given link's parts\nlocal function makeLangLink(link, lang, id, allowSelfLink)\n\t-- If there is no display form,\
+      \ then create a default one\n\tif not link.display then\n\t\tlink.display = link.target\n\t\t\n\t\t-- Strip the prefix from the displayed form\n\t\t-- TODO: other interwiki links?\n\t\tif link.display:find(&quot;^:&quot;) then\n\t\t\tlink.display = link.display:gsub(&quot;^:&quot;,\
+      \ &quot;&quot;)\n\t\telseif link.display:find(&quot;^w:&quot;) then\n\t\t\tlink.display = link.display:gsub(&quot;^w:&quot;, &quot;&quot;)\n\t\tend\n\tend\n\t\n\t-- If dontLinkRecons is given, or the link contains unexpanded\n\t-- template parameters,\
+      \ then don't create a link.\n\tif link.target:find(&quot;{{{&quot;, nil, true) then\n\t\treturn link.display\n\tend\n\t\n\t-- Process the target\n\tif not (link.target:find(&quot;^:&quot;) or link.target:find(&quot;^w:&quot;)) then\n\t\t-- Remove diacritics\
+      \ from the page name\n\t\tlink.target = lang:makeEntryName(link.target)\n\t\t\n\t\t-- Link to appendix for reconstructed terms and terms in appendix-only languages\n\t\tif link.target:find(&quot;^*.&quot;) then\n\t\t\tif dontLinkRecons or lang:getCode()\
+      \ == &quot;und&quot; then\n\t\t\t\treturn link.display\n\t\t\telse\n\t\t\t\tlink.target = &quot;Appendix:&quot; .. lang:getCanonicalName() .. &quot;/&quot; .. mw.ustring.sub(link.target, 2)\n\t\t\tend\n\t\telseif lang:getType() == &quot;reconstructed&quot;\
+      \ then\n\t\t\terror(&quot;The specified language &quot; .. lang:getCanonicalName() .. &quot; is unattested, while the given word is not marked with '*' to indicate that it is reconstructed&quot;)\n\t\telseif lang:getType() == &quot;appendix-constructed&quot;\
+      \ then\n\t\t\tlink.target = &quot;Appendix:&quot; .. lang:getCanonicalName() .. &quot;/&quot; .. link.target\n\t\tend\n\tend\n\t\n\t-- If the target is the same as the current page, then return a &quot;self-link&quot; like the software does\n\tif not allowSelfLink\
+      \ and (link.target == mw.title.getCurrentTitle().prefixedText or link.target == &quot;:&quot; .. mw.title.getCurrentTitle().prefixedText) then\n\t\treturn &quot;&lt;strong class=\\&quot;selflink\\&quot;&gt;&quot; .. link.display .. &quot;&lt;/strong&gt;&quot;\n\
+      \tend\n\t\n\t-- Add fragment\n\t-- Do not add a section link to &quot;Undetermined&quot;, as such sections do not exist and are invalid.\n\t-- TabbedLanguages handles links without a section by linking to the &quot;last visited&quot; section,\n\t-- but\
+      \ adding &quot;Undetermined&quot; would break that feature.\n\tif not link.fragment and lang:getCode() ~= &quot;und&quot; and not link.target:find(&quot;^w:&quot;) then\n\t\tif id then\n\t\t\tlink.fragment = lang:getCanonicalName() .. &quot;-&quot; ..\
+      \ id\n\t\telseif not link.target:find(&quot;^Appendix:&quot;) then\n\t\t\tlink.fragment = lang:getCanonicalName()\n\t\tend\n\tend\n\t\n\treturn &quot;[[&quot; .. link.target .. (link.fragment and &quot;#&quot; .. link.fragment or &quot;&quot;) .. &quot;|&quot;\
+      \ .. link.display .. &quot;]]&quot;\nend\n\n\n-- Split a link into its parts\nlocal function parseLink(linktext)\n\tlocal link = {target = linktext}\n\tlocal found, _, first, second\n\t\n\tfound, _, first, second = mw.ustring.find(link.target, &quot;^([^|]+)|(.+)$&quot;)\n\
+      \t\n\tif found then\n\t\tlink.target = first\n\t\tlink.display = second\n\telse\n\t\tlink.display = link.target\n\tend\n\t\n\tfound, _, first, second = mw.ustring.find(link.target, &quot;^(.+)#(.+)$&quot;)\n\t\n\tif found then\n\t\tlink.target = first\n\
+      \t\tlink.fragment = second\n\tend\n\t\n\treturn link\nend\n\n\n-- Creates a basic wikilink to the given term. If the text already contains\n-- links, these are replaced with links to the correct section.\nlocal function language_link2(text, alt, lang,\
+      \ id, allowSelfLink, dontLinkRecons)\n\tlocal sectFix = false\n\tlocal tracking = &quot;&quot;\n\t\n\tif text and text:gsub(&quot;&amp;#[Xx]?[0-9A-Fa-f]+;&quot;, &quot;&quot;):find(&quot;#&quot;, nil, true) then\n\t\tsectFix = true\n\tend\n\t\n\tif ignore_cap[lang:getCode()]\
+      \ and text then\n\t\ttext = mw.ustring.gsub(text, &quot;%^&quot;, &quot;&quot;)\n\tend\n\t\n\t-- If the text begins with * and another character,\n\t-- then act as if each link begins with *\n\tlocal allReconstructed = false\n\t\n\tif text:find(&quot;^*.&quot;)\
+      \ then\n\t\tallReconstructed = true\n\tend\n\t\n\t-- Do we have embedded wikilinks?\n\tif text:find(&quot;[[&quot;, nil, true) then\n\t\tif id then\n\t\t\trequire(&quot;Module:debug&quot;).track(&quot;language link/bad id&quot;)\n\t\tend\n\t\t\n\t\tlocal\
+      \ function repl(linktext)\n\t\t\tlocal link = parseLink(linktext)\n\t\t\t\n\t\t\tif allReconstructed then\n\t\t\t\tlink.target = &quot;*&quot; .. link.target\n\t\t\tend\n\t\t\t\n\t\t\treturn makeLangLink(link, lang, id, allowSelfLink, dontLinkRecons)\n\
+      \t\tend\n\t\t\n\t\ttext = mw.ustring.gsub(text, &quot;%[%[([^%]]+)%]%]&quot;, repl)\n\t\t\n\t\t-- Remove the extra * at the beginning if it's immediately followed\n\t\t-- by a link whose display begins with * too\n\t\tif allReconstructed then\n\t\t\ttext\
+      \ = mw.ustring.gsub(text, &quot;^%*%[%[([^|%]]+)|%*&quot;, &quot;[[%1|*&quot;)\n\t\tend\n\telse\n\t\t-- There is no embedded wikilink, make a link using the parameters.\n\t\ttext = makeLangLink({target = text, display = alt}, lang, id, allowSelfLink, dontLinkRecons)\n\
+      \tend\n\t\n\treturn text .. (sectFix and &quot;[[Category:Link with section]]&quot; or &quot;&quot;) .. tracking\nend\n\n\n-- Format the annotations (things following the linked term)\nlocal function format_link_annotations(lang, annotations, face)\n\t\
+      local ret = &quot;&quot;\n\t\n\t-- Interwiki link\n\tif annotations[&quot;interwiki&quot;] then\n\t\tret = ret .. annotations[&quot;interwiki&quot;]\n\tend\n\t\n\t-- Genders\n\tif annotations[&quot;genders&quot;] and #annotations[&quot;genders&quot;] &gt;\
+      \ 0 then\n\t\tlocal gen = require(&quot;Module:gender and number&quot;)\n\t\tret = ret .. &quot;&amp;nbsp;&quot; .. gen.format_list(annotations[&quot;genders&quot;], lang)\n\tend\n\t\n\tlocal glosses = {}\n\t\n\t-- Transliteration\n\tif annotations[&quot;tr&quot;]\
+      \ then\n\t\tif face == &quot;term&quot; then\n\t\t\ttable.insert(glosses, &quot;&lt;span lang=\\&quot;\\&quot; class=\\&quot;tr mention-tr\\&quot;&gt;&quot; .. annotations[&quot;tr&quot;] .. &quot;&lt;/span&gt;&quot;)\n\t\telse\n\t\t\ttable.insert(glosses,\
+      \ &quot;&lt;span lang=\\&quot;\\&quot; class=\\&quot;tr\\&quot;&gt;&quot; .. annotations[&quot;tr&quot;] .. &quot;&lt;/span&gt;&quot;)\n\t\tend\n\tend\n\t\n\t-- Gloss/translation\n\tif annotations[&quot;gloss&quot;] then\n\t\ttable.insert(glosses, &quot;&lt;span\
+      \ class=\\&quot;mention-gloss-double-quote\\&quot;&gt;“&lt;/span&gt;&lt;span class=\\&quot;mention-gloss\\&quot;&gt;&quot; .. annotations[&quot;gloss&quot;] .. &quot;&lt;/span&gt;&lt;span class=\\&quot;mention-gloss-double-quote\\&quot;&gt;”&lt;/span&gt;&quot;)\n\
+      \tend\n\t\n\t-- Part of speech\n\t-- TODO: remove\n\tif annotations[&quot;pos&quot;] then\n\t\tlocal pos_template = mw.title.makeTitle(&quot;Template&quot;, &quot;pos &quot; .. annotations[&quot;pos&quot;])\n\n\t\tif pos_template and pos_template.exists\
+      \ then\n\t\t\ttable.insert(glosses, mw.getCurrentFrame():expandTemplate{title = &quot;pos &quot; .. annotations[&quot;pos&quot;]})\n\t\telse\n\t\t\ttable.insert(glosses, annotations[&quot;pos&quot;])\n\t\tend\n\tend\n\t\n\t-- Literal/sum-of-parts meaning\n\
+      \tif annotations[&quot;lit&quot;] then\n\t\ttable.insert(glosses, &quot;literally &lt;span class=\\&quot;mention-gloss-double-quote\\&quot;&gt;“&lt;/span&gt;&lt;span class=\\&quot;mention-gloss\\&quot;&gt;&quot; .. annotations[&quot;lit&quot;] .. &quot;&lt;/span&gt;&lt;span\
+      \ class=\\&quot;mention-gloss-double-quote\\&quot;&gt;”&lt;/span&gt;&quot;)\n\tend\n\t\n\tif #glosses &gt; 0 then\n\t\tret = ret .. &quot; &amp;lrm;(&quot; .. table.concat(glosses, &quot;, &quot;) .. &quot;)&quot;\n\tend\n\t\n\treturn ret\nend\n\n\n--\
+      \ A version of {{l}} or {{m}} that can be called from other modules too\nfunction export.full_link(term, alt, lang, sc, face, id, annotations, allowSelfLink, dontLinkRecons)\n\tannotations = annotations or {}\n\t\n\t-- Create the link\n\tlocal link = &quot;&quot;\n\
+      \t\n\tlocal m_utilities = require(&quot;Module:utilities&quot;)\n\tlocal m_scriptutils = require(&quot;Module:script utilities&quot;)\n\t\n\t-- Is there any text to show?\n\tif (term or alt) then\n\t\t-- Try to detect the script if it was not provided\n\
+      \t\tif not sc then\n\t\t\tsc = require(&quot;Module:scripts&quot;).findBestScript(alt or term, lang)\n\t\tend\n\t\t\n\t\t-- Only make a link if the term has been given, otherwise just show the alt text without a link\n\t\tlink = m_scriptutils.tag_text(term\
+      \ and language_link2(term, alt, lang, id, allowSelfLink, dontLinkRecons) or alt, lang, sc, face)\n\telse\n\t\t-- No term to show.\n\t\t-- Is there at least a transliteration we can work from?\n\t\tlink = m_scriptutils.request_script(lang, sc)\n\t\t\n\t\
+      \tif link == &quot;&quot; or not annotations[&quot;tr&quot;] or annotations[&quot;tr&quot;] == &quot;-&quot; then\n\t\t\t-- No link to show, and no transliteration either. Show a term request.\n\t\t\tlocal category = &quot;&quot;\n\t\t\tif mw.title.getCurrentTitle().nsText\
+      \ ~= &quot;Template&quot; then\n\t\t\t\tcategory = &quot;[[Category:&quot; .. lang:getCanonicalName() .. &quot; term requests]]&quot;\n\t\t\tend\n\t\t\tlink = &quot;&lt;small&gt;[Term?]&lt;/small&gt;&quot; .. category\n\t\tend\n\tend\n\t\n\tlocal mantrFix,\
+      \ redtrFix\n\tlocal manual_tr = &quot;&quot;\n\t\n\tif annotations[&quot;tr&quot;] == &quot;&quot; or annotations[&quot;tr&quot;] == &quot;-&quot; then\n\t\tannotations[&quot;tr&quot;] = nil\n\telseif (term or alt) and not ((sc:getCode():find(&quot;Latn&quot;,\
+      \ nil, true)) or sc:getCode() == &quot;Latinx&quot;) and (not annotations[&quot;tr&quot;] or override_translit[lang:getCode()]) then\n\t\t-- Try to generate a transliteration if necessary\n\t\tlocal automated_tr\n\t\tautomated_tr = lang:transliterate(export.remove_links(alt\
+      \ or term), sc)\n\t\tif automated_tr then\n\t\t\tif annotations[&quot;tr&quot;] ~= automated_tr then\n\t\t\t\tif annotations[&quot;tr&quot;] then\n\t\t\t\t\tmanual_tr = annotations[&quot;tr&quot;]\n\t\t\t\t\tmantrFix = true\n\t\t\t\tend\n\t\t\t\tannotations[&quot;tr&quot;]\
+      \ = automated_tr\n\t\t\telse\n\t\t\t\tredtrFix = true\n\t\t\tend\n\t\tend\n\tend\n\t\n\treturn link .. format_link_annotations(lang, annotations, face)\n\t\t\t\t.. (mantrFix and &quot;[[Category:Terms with manual transliterations different from the automated\
+      \ ones]][[Category:Terms with manual transliterations different from the automated ones/&quot; .. lang:getCode() .. &quot;]]&quot; or &quot;&quot;)\n\t\t\t\t.. (redtrFix and &quot;[[Category:Terms with redundant transliterations]][[Category:Terms with\
+      \ redundant transliterations/&quot; .. lang:getCode() .. &quot;]]&quot; or &quot;&quot;)\nend\n\n\nfunction export.language_link(text, alt, lang, id, allowSelfLink)\n\tif allowSelfLink == false then\n\t\trequire(&quot;Module:debug&quot;).track(&quot;curtitle/false&quot;)\n\
+      \telseif allowSelfLink == true then\n\t\trequire(&quot;Module:debug&quot;).track(&quot;curtitle/true&quot;)\n\telseif allowSelfLink == nil then\n\t\tallowSelfLink = true\n\t\trequire(&quot;Module:debug&quot;).track(&quot;curtitle/nil&quot;)\n\telse\n\t\
+      \tif allowSelfLink ~= mw.title.getCurrentTitle().prefixedText then\n\t\t\trequire(&quot;Module:debug&quot;).track(&quot;curtitle/string/not pagename&quot;)\n\t\tend\n\t\t\n\t\tallowSelfLink = false\n\t\trequire(&quot;Module:debug&quot;).track(&quot;curtitle/string&quot;)\n\
+      \tend\n\t\n\trequire(&quot;Module:debug&quot;).track(&quot;language_link&quot;)\n\treturn language_link2(text, alt, lang, id, allowSelfLink)\nend\n\n\n-- Strips all square brackets out or replaces them.\nfunction export.remove_links(text)\n\tif type(text)\
+      \ == &quot;table&quot; then text = text.args[1] end; if not text then text = &quot;&quot; end\n\t\n\ttext = text:gsub(&quot;%[%[Category:[^|%]]-|?[^|%]]-%]%]&quot;, &quot;&quot;)\n\ttext = text:gsub(&quot;%[%[[^|%]]-|&quot;, &quot;&quot;)\n\ttext = text:gsub(&quot;%[%[&quot;,\
+      \ &quot;&quot;)\n\ttext = text:gsub(&quot;%]%]&quot;, &quot;&quot;)\n\n\treturn text\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
+- recorded: 2015-10-05T22:43:58.996Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Aparameters&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: GeoIP=PT:17:Vila_Nova_De_Gaia:41.13:-8.62:v4; WMF-Last-Access=05-Oct-2015
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Age: '0'
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Type: text/xml; charset=utf-8
+      Date: Mon, 05 Oct 2015 22:43:58 GMT
+      Server: nginx/1.9.4
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Analytics: https=1;WMF-Last-Access=05-Oct-2015
+      X-Cache: cp1054 miss (0), cp3006 miss (0), cp3004 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.6.5
+      X-Varnish: 2449138603, 2401891740, 2478666696
+    body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4797340\" pageid=\"4797340\" ns=\"828\" title=\"Module:parameters\"><revisions><rev user=\"CodeCat\" timestamp=\"2015-07-05T22:28:32Z\" comment=\"\" contentformat=\"text/plain\"\
+      \ contentmodel=\"Scribunto\" xml:space=\"preserve\">local export = {}\n\n-- A helper function that removes empty numeric indexes in a table,\n-- so that the values are tightly packed like in a normal Lua table.\nfunction export.remove_holes(list)\n\tlocal\
+      \ new_list = {}\n\t\n\tfor i = 1, list.maxindex do\n\t\ttable.insert(new_list, list[i])\n\tend\n\t\n\treturn new_list\nend\n\nfunction export.process(args, params)\n\tlocal args_new = {}\n\t\n\t-- Process parameters for specific properties\n\tlocal required\
+      \ = {}\n\tlocal patterns = {}\n\tlocal list_from_index = nil\n\t\n\tfor name, param in pairs(params) do\n\t\tif param.required then\n\t\t\trequired[name] = true\n\t\tend\n\t\t\n\t\tif param.list then\n\t\t\tif param.default ~= nil then\n\t\t\t\targs_new[name]\
+      \ = {param.default, maxindex = 1}\n\t\t\telse\n\t\t\t\targs_new[name] = {maxindex = 0}\n\t\t\tend\n\t\t\t\n\t\t\tif type(param.list) == &quot;string&quot; then\n\t\t\t\t-- If the list property is a string, then it represents the name\n\t\t\t\t-- to be\
+      \ used as the prefix for list items. This is for use with lists\n\t\t\t\t-- where the first item is a numbered parameter and the\n\t\t\t\t-- subsequent ones are named, such as 1, pl2, pl3.\n\t\t\t\tpatterns[&quot;^&quot; .. param.list .. &quot;(%d+)$&quot;]\
+      \ = name\n\t\t\telseif type(name) == &quot;number&quot; then\n\t\t\t\t-- If the name is a number, then all indexed parameters from\n\t\t\t\t-- this number onwards go in the list.\n\t\t\t\tlist_from_index = name\n\t\t\telse\n\t\t\t\tpatterns[&quot;^&quot;\
+      \ .. name .. &quot;(%d+)$&quot;] = name\n\t\t\tend\n\t\telseif param.default ~= nil then\n\t\t\targs_new[name] = param.default\n\t\tend\n\tend\n\t\n\t-- Process the arguments\n\tfor name, val in pairs(args) do\n\t\tlocal index = nil\n\t\t\n\t\tif type(name)\
+      \ == &quot;number&quot; then\n\t\t\tif list_from_index ~= nil and name &gt;= list_from_index then\n\t\t\t\tindex = name - list_from_index + 1\n\t\t\t\tname = list_from_index\n\t\t\tend\n\t\telse\n\t\t\t-- Does this argument name match a pattern?\n\t\t\t\
+      for pattern, pname in pairs(patterns) do\n\t\t\t\tindex = mw.ustring.match(name, pattern)\n\t\t\t\t\n\t\t\t\t-- It matches, so store the parameter name and the\n\t\t\t\t-- numeric index extracted from the argument name.\n\t\t\t\tif index then\n\t\t\t\t\
+      \tindex = tonumber(index)\n\t\t\t\t\tname = pname\n\t\t\t\t\tbreak\n\t\t\t\tend\n\t\t\tend\n\t\tend\n\t\t\n\t\t-- If no index was found, use 1 as the default index.\n\t\t-- This makes list parameters like g, g2, g3 put g at index 1.\n\t\tindex = index\
+      \ or 1\n\t\t\n\t\tlocal param = params[name]\n\t\t\n\t\t-- If the argument is not in the list of parameters, trigger an error.\n\t\tif not params[name] then\n\t\t\terror(&quot;The parameter \\&quot;&quot; .. name .. &quot;\\&quot; is not used by this template.&quot;)\n\
+      \t\tend\n\t\t\n\t\t-- Empty string is equivalent to nil unless allow_empty is true.\n\t\tif val == &quot;&quot; and not param.allow_empty then\n\t\t\tval = nil\n\t\tend\n\t\t\n\t\t-- Convert to proper type if necessary.\n\t\tif param.type == &quot;boolean&quot;\
+      \ then\n\t\t\tval = not (not val or val == &quot;&quot; or val == &quot;0&quot; or val == &quot;no&quot; or val == &quot;n&quot; or val == &quot;false&quot;)\n\t\telseif param.type == &quot;number&quot; and val ~= nil then\n\t\t\tval = tonumber(val)\n\t\
+      \tend\n\t\t\n\t\t-- Can't use &quot;if val&quot; alone, because val may be a boolean false.\n\t\tif val ~= nil then\n\t\t\t-- Mark it as no longer required, as it is present.\n\t\t\trequired[name] = nil\n\t\t\t\n\t\t\t-- Store the argument value.\n\t\t\
+      \tif param.list then\n\t\t\t\targs_new[name][index] = val\n\t\t\t\t\n\t\t\t\t-- Store the highest index we find.\n\t\t\t\targs_new[name].maxindex = math.max(index, args_new[name].maxindex)\n\t\t\telse\n\t\t\t\t-- If the parameter is an alias of another,\
+      \ store it as the original,\n\t\t\t\t-- but avoid overwriting it; the original takes precedence.\n\t\t\t\tif not param.alias_of then\n\t\t\t\t\targs_new[name] = val\n\t\t\t\telseif args[param.alias_of] == nil then\n\t\t\t\t\targs_new[param.alias_of] =\
+      \ val\n\t\t\t\tend\n\t\t\tend\n\t\tend\n\tend\n\t\n\t-- The required table should now be empty.\n\t-- If any entry remains, trigger an error, unless we're in the template namespace.\n\tif mw.title.getCurrentTitle().nsText ~= &quot;Template&quot; then\n\
+      \t\tfor name, param in pairs(required) do\n\t\t\terror(&quot;The parameter \\&quot;&quot; .. name .. &quot;\\&quot; is required.&quot;)\n\t\tend\n\tend\n\t\n\t-- Remove holes in any list parameters if needed.\n\tfor name, val in pairs(args_new) do\n\t\t\
+      if type(val) == &quot;table&quot; and not params[name].allow_holes then\n\t\t\targs_new[name] = export.remove_holes(val)\n\t\tend\n\tend\n\t\n\treturn args_new\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
+- recorded: 2015-10-05T22:43:59.206Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Alanguages&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: GeoIP=PT:17:Vila_Nova_De_Gaia:41.13:-8.62:v4; WMF-Last-Access=05-Oct-2015
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Age: '0'
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Type: text/xml; charset=utf-8
+      Date: Mon, 05 Oct 2015 22:43:59 GMT
+      Server: nginx/1.9.4
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Analytics: https=1;WMF-Last-Access=05-Oct-2015
+      X-Cache: cp1067 miss (0), cp3031 miss (0), cp3004 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.6.5
+      X-Varnish: 1553930364, 1674128997, 2478666837
+    body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4453474\" pageid=\"4453474\" ns=\"828\" title=\"Module:languages\"><revisions><rev user=\"CodeCat\" timestamp=\"2015-09-27T17:27:52Z\" comment=\"\" contentformat=\"text/plain\"\
+      \ contentmodel=\"Scribunto\" xml:space=\"preserve\">local export = {}\n\nlocal Language = {}\n\n\nfunction Language:getCode()\n\treturn self._code\nend\n\n\nfunction Language:getCanonicalName()\n\treturn self._rawData.canonicalName\nend\n\n\n-- Commented\
+      \ out; I don't think anything uses this, the presence/absence of script errors should confirm\n--function Language:getAllNames()\n--\treturn self._rawData.names\n--end\n\n\nfunction Language:getOtherNames()\n\treturn self._rawData.otherNames or {}\nend\n\
+      \n\nfunction Language:getType()\n\treturn self._rawData.type\nend\n\n\nfunction Language:getWikimediaLanguages()\n\tif not self._wikimediaLanguageObjects then\n\t\tlocal m_wikimedia_languages = require(&quot;Module:wikimedia languages&quot;)\n\t\tself._wikimediaLanguageObjects\
+      \ = {}\n\t\tlocal wikimedia_codes = self._rawData.wikimedia_codes or {self._code}\n\t\t\n\t\tfor _, wlangcode in ipairs(wikimedia_codes) do\n\t\t\ttable.insert(self._wikimediaLanguageObjects, m_wikimedia_languages.getByCode(wlangcode))\n\t\tend\n\tend\n\
+      \t\n\treturn self._wikimediaLanguageObjects\nend\n\n\nfunction Language:getWikipediaArticle()\n\treturn self._rawData.wikipedia_article or self:getCategoryName()\nend\n\n\nfunction Language:getScripts()\n\tif not self._scriptObjects then\n\t\tlocal m_scripts\
+      \ = require(&quot;Module:scripts&quot;)\n\t\tself._scriptObjects = {}\n\t\t\n\t\tfor _, sc in ipairs(self._rawData.scripts) do\n\t\t\ttable.insert(self._scriptObjects, m_scripts.getByCode(sc))\n\t\tend\n\tend\n\t\n\treturn self._scriptObjects\nend\n\n\n\
+      function Language:getFamily()\n\tif not self._familyObject then\n\t\tself._familyObject = require(&quot;Module:families&quot;).getByCode(self._rawData.family)\n\tend\n\t\n\treturn self._familyObject\nend\n\n\nfunction Language:getAncestors()\n\tif not\
+      \ self._ancestorObjects then\n\t\tself._ancestorObjects = {}\n\t\t\n\t\tfor _, ancestor in ipairs(self._rawData.ancestors or {}) do\n\t\t\ttable.insert(self._ancestorObjects, export.getByCode(ancestor))\n\t\tend\n\tend\n\t\n\treturn self._ancestorObjects\n\
+      end\n\n\nfunction Language:getAncestorChain()\n\tif not self._ancestorChain then\n\t\tself._ancestorChain = {}\n\t\tlocal step = #self:getAncestors() == 1 and self:getAncestors()[1] or nil\n\t\t\n\t\twhile step do\n\t\t\ttable.insert(self._ancestorChain,\
+      \ 1, step)\n\t\t\tstep = #step:getAncestors() == 1 and step:getAncestors()[1] or nil\n\t\tend\n\tend\n\t\n\treturn self._ancestorChain\nend\n\n\nfunction Language:hasAncestor(otherlang)\n\tlocal ancestors = self:getAncestorChain()\n\t\n\tfor _, ancestor\
+      \ in ipairs(ancestors) do\n\t\tif ancestor:getCode() == otherlang:getCode() then\n\t\t\treturn true\n\t\tend\n\tend\n\t\n\treturn false\nend\n\n\nfunction Language:getCategoryName()\n\tlocal name = self._rawData.canonicalName\n\t\n\t-- If the name already\
+      \ has &quot;language&quot; in it, don't add it.\n\tif name:find(&quot;[Ll]anguage$&quot;) then\n\t\treturn name\n\telse\n\t\treturn name .. &quot; language&quot;\n\tend\nend\n\n\nfunction Language:makeEntryName(text)\n\ttext = mw.ustring.gsub(text, &quot;^[¿\
+      ¡]&quot;, &quot;&quot;)\n\ttext = mw.ustring.gsub(text, &quot;(.)[؟?!;՛՜ ՞ ՟？！।॥။၊་།]$&quot;, &quot;%1&quot;)\n\t\n\tif self._rawData.entry_name then\n\t\tfor i, from in ipairs(self._rawData.entry_name.from) do\n\t\t\tlocal to = self._rawData.entry_name.to[i]\
+      \ or &quot;&quot;\n\t\t\ttext = mw.ustring.gsub(text, from, to)\n\t\tend\n\tend\n\t\n\treturn text\nend\n\n\nfunction Language:makeSortKey(name)\n\tname = mw.ustring.lower(name)\n\t\n\t-- Remove initial hyphens and *\n\tname = mw.ustring.gsub(name, &quot;^[-־\
+      ـ*]+(.)&quot;,\n\t\t&quot;%1&quot;)\n\t-- Remove parentheses, as long as they are either preceded or followed by something\n\tname = mw.ustring.gsub(name, &quot;(.)[()]+&quot;, &quot;%1&quot;)\n\tname = mw.ustring.gsub(name, &quot;[()]+(.)&quot;, &quot;%1&quot;)\n\
+      \t\n\t-- If there are language-specific rules to generate the key, use those\n\tif self._rawData.sort_key then\n\t\tfor i, from in ipairs(self._rawData.sort_key.from) do\n\t\t\tlocal to = self._rawData.sort_key.to[i] or &quot;&quot;\n\t\t\tname = mw.ustring.gsub(name,\
+      \ from, to)\n\t\tend\n\tend\n\t\n\treturn mw.ustring.upper(name)\nend\n\n\nfunction Language:transliterate(text, sc, module_override)\n\tif not ((module_override or self._rawData.translit_module) and text) then\n\t\treturn nil\n\tend\n\t\n\tif module_override\
+      \ then\n\t\trequire(&quot;Module:debug&quot;).track(&quot;module_override&quot;)\n\tend\n\t\n\treturn require(&quot;Module:&quot; .. (module_override or self._rawData.translit_module)).tr(text, self:getCode(), sc and sc:getCode() or nil)\nend\n\n\nfunction\
+      \ Language:toJSON()\n\tlocal entryNamePatterns = nil\n\t\n\tif self._rawData.entry_name then\n\t\tentryNamePatterns = {}\n\t\t\n\t\tfor i, from in ipairs(self._rawData.entry_name.from) do\n\t\t\tlocal to = self._rawData.entry_name.to[i] or &quot;&quot;\n\
+      \t\t\ttable.insert(entryNamePatterns, {from = from, to = to})\n\t\tend\n\tend\n\t\n\tlocal ret = {\n\t\tancestors = self._rawData.ancestors,\n\t\tcanonicalName = self:getCanonicalName(),\n\t\tcategoryName = self:getCategoryName(),\n\t\tcode = self._code,\n\
+      \t\tentryNamePatterns = entryNamePatterns,\n\t\tfamily = self._rawData.family,\n\t\totherNames = self:getOtherNames(),\n\t\tscripts = self._rawData.scripts,\n\t\ttype = self:getType(),\n\t\twikimediaLanguages = self._rawData.wikimedia_codes,\n\t\t}\n\t\
+      \n\treturn require(&quot;Module:JSON&quot;).toJSON(ret)\nend\n\n\n-- Do NOT use this method!\n-- All uses should be pre-approved on the talk page!\nfunction Language:getRawData()\n\treturn self._rawData\nend\n\nLanguage.__index = Language\n\n\nlocal function\
+      \ getDataModuleName(code)\n\tif code:find(&quot;^[a-z][a-z]$&quot;) then\n\t\treturn &quot;languages/data2&quot;\n\telseif code:find(&quot;^[a-z][a-z][a-z]$&quot;) then\n\t\tlocal prefix = code:sub(1, 1)\n\t\treturn &quot;languages/data3/&quot; .. prefix\n\
+      \telseif code:find(&quot;^[a-z-]+$&quot;) then\n\t\treturn &quot;languages/datax&quot;\n\telse\n\t\treturn nil\n\tend\nend\n\n\nlocal function getRawLanguageData(code)\n\tlocal modulename = getDataModuleName(code)\n\treturn modulename and mw.loadData(&quot;Module:&quot;\
+      \ .. modulename)[code] or nil\nend\n\n\nfunction export.makeObject(code, data)\n\treturn data and setmetatable({ _rawData = data, _code = code }, Language) or nil\nend\n\n\nfunction export.getByCode(code)\n\treturn export.makeObject(code, getRawLanguageData(code))\n\
+      end\n\n\nfunction export.getByCanonicalName(name)\n\tlocal code = mw.loadData(&quot;Module:languages/by name&quot;)[name]\n\t\n\tif not code then\n\t\treturn nil\n\tend\n\t\n\treturn export.makeObject(code, getRawLanguageData(code))\nend\n\n\nfunction\
+      \ export.iterateAll()\n\tmw.incrementExpensiveFunctionCount()\n\tlocal m_data = mw.loadData(&quot;Module:languages/alldata&quot;)\n\tlocal func, t, var = pairs(m_data)\n\t\n\treturn function()\n\t\tlocal code, data = func(t, var)\n\t\treturn export.makeObject(code,\
+      \ data)\n\tend\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
+- recorded: 2015-10-05T22:43:59.539Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Alanguages%2Fdata2&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: GeoIP=PT:17:Vila_Nova_De_Gaia:41.13:-8.62:v4; WMF-Last-Access=05-Oct-2015
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Age: '0'
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Type: text/xml; charset=utf-8
+      Date: Mon, 05 Oct 2015 22:43:59 GMT
+      Server: nginx/1.9.4
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Analytics: https=1;WMF-Last-Access=05-Oct-2015
+      X-Cache: cp1068 miss (0), cp3041 miss (0), cp3004 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.6.5
+      X-Varnish: 2233965846, 2041452629, 2478666965
+    body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4206184\" pageid=\"4206184\" ns=\"828\" title=\"Module:languages/data2\"><revisions><rev user=\"Chuck Entz\" timestamp=\"2015-10-03T17:18:10Z\" comment=\"\" contentformat=\"\
+      text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">local u = mw.ustring.char\n\n-- UTF-8 encoded strings for some commonly-used diacritics\nlocal GRAVE     = u(0x0300)\nlocal ACUTE     = u(0x0301)\nlocal CIRC      = u(0x0302)\nlocal TILDE \
+      \    = u(0x0303)\nlocal MACRON    = u(0x0304)\nlocal BREVE     = u(0x0306)\nlocal DOTABOVE  = u(0x0307)\nlocal DIAER     = u(0x0308)\nlocal CARON     = u(0x030C)\nlocal DGRAVE    = u(0x030F)\nlocal INVBREVE  = u(0x0311)\nlocal DOTBELOW  = u(0x0323)\nlocal\
+      \ RINGBELOW = u(0x0325)\nlocal CEDILLA   = u(0x0327)\n\nlocal m = {}\n\nm[&quot;aa&quot;] = {\n\tcanonicalName = &quot;Afar&quot;,\n\totherNames = {&quot;Qafar&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;cus&quot;,\n\
+      }\n\nm[&quot;ab&quot;] = {\n\tcanonicalName = &quot;Abkhaz&quot;,\n\totherNames = {&quot;Abkhazian&quot;, &quot;Abxazo&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Cyrl&quot;, &quot;Geor&quot;, &quot;Latn&quot;},\n\tfamily = &quot;cau-abz&quot;,\n\
+      \tancestors = {&quot;cau-abz-pro&quot;},\n\ttranslit_module = &quot;ab-translit&quot;,\n\tentry_name = {\n\t\tfrom = {GRAVE, ACUTE},\n\t\tto   = {}} ,\n}\n\nm[&quot;ae&quot;] = {\n\tcanonicalName = &quot;Avestan&quot;,\n\totherNames = {&quot;Zend&quot;,\
+      \ &quot;Old Bactrian&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Avst&quot;, &quot;Gujr&quot;},\n\tfamily = &quot;ira&quot;,\n\tancestors = {&quot;ira-pro&quot;},\n\ttranslit_module = &quot;Avst-translit&quot;,\n}\n\nm[&quot;af&quot;] =\
+      \ {\n\tcanonicalName = &quot;Afrikaans&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;, &quot;Arab&quot;},\n\tfamily = &quot;gmw&quot;,\n\tancestors = {&quot;nl&quot;},\n\tsort_key = {\n\t\tfrom = {&quot;[äáâà]&quot;, &quot;[ëéêè]&quot;,\
+      \ &quot;[ïíîì]&quot;, &quot;[öóôò]&quot;, &quot;[üúûù]&quot;, &quot;[ÿýŷỳ]&quot;, &quot;^-&quot;, &quot;'&quot;},\n\t\tto   = {&quot;a&quot;\t , &quot;e&quot;\t, &quot;i&quot;\t, &quot;o&quot;\t, &quot;u&quot;  , &quot;y&quot; }} ,\n}\n\nm[&quot;ak&quot;]\
+      \ = {\n\tcanonicalName = &quot;Akan&quot;,\n\totherNames = {&quot;Twi-Fante&quot;, &quot;Twi&quot;, &quot;Fante&quot;, &quot;Fanti&quot;, &quot;Asante&quot;, &quot;Akuapem&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily\
+      \ = &quot;alv-kwa&quot;,\n}\n\nm[&quot;am&quot;] = {\n\tcanonicalName = &quot;Amharic&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Ethi&quot;},\n\tfamily = &quot;sem-eth&quot;,\n\ttranslit_module = &quot;Ethi-translit&quot;,\n}\n\nm[&quot;an&quot;]\
+      \ = {\n\tcanonicalName = &quot;Aragonese&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tancestors = {&quot;roa-oan&quot;},\n\tfamily = &quot;roa&quot;,\n}\n\nm[&quot;ar&quot;] = {\n\tcanonicalName = &quot;Arabic&quot;,\n\totherNames\
+      \ = {&quot;Modern Standard Arabic&quot;, &quot;Standard Arabic&quot;, &quot;Literary Arabic&quot;, &quot;Classical Arabic&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Arab&quot;},\n\tfamily = &quot;sem-arb&quot;,\n\tancestors = {&quot;sem-pro&quot;},\n\
+      \tentry_name = {\n\t\tfrom = {u(0x0671), u(0x064B), u(0x064C), u(0x064D), u(0x064E), u(0x064F), u(0x0650), u(0x0651), u(0x0652), u(0x0670), u(0x0640)},\n\t\tto   = {u(0x0627)}},\n\ttranslit_module = &quot;ar-translit&quot;,\n}\n\nm[&quot;as&quot;] = {\n\
+      \tcanonicalName = &quot;Assamese&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Beng&quot;},\n\tfamily = &quot;inc&quot;,\n\tancestors = {&quot;pka&quot;},\n}\n\nm[&quot;av&quot;] = {\n\tcanonicalName = &quot;Avar&quot;,\n\totherNames = {&quot;Avaric&quot;},\n\
+      \ttype = &quot;regular&quot;,\n\tscripts = {&quot;Cyrl&quot;},\n\tfamily = &quot;cau-nec&quot;,\n\tancestors = {&quot;oav&quot;},\n\ttranslit_module = &quot;av-translit&quot;,\n}\n\nm[&quot;ay&quot;] = {\n\tcanonicalName = &quot;Aymara&quot;,\n\totherNames\
+      \ = {&quot;Southern Aymara&quot;, &quot;Central Aymara&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;sai-aym&quot;,\n}\n\nm[&quot;az&quot;] = {\n\tcanonicalName = &quot;Azeri&quot;,\n\totherNames = {&quot;Azerbaijani&quot;,\
+      \ &quot;Azari&quot;, &quot;Azeri Turkic&quot;, &quot;Azerbaijani Turkic&quot;, &quot;North Azerbaijani&quot;, &quot;South Azerbaijani&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;, &quot;Cyrl&quot;, &quot;fa-Arab&quot;},\n\tfamily\
+      \ = &quot;trk&quot;,\n\tancestors = {&quot;trk-pro&quot;},\n}\n\nm[&quot;ba&quot;] = {\n\tcanonicalName = &quot;Bashkir&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Cyrl&quot;},\n\tfamily = &quot;trk&quot;,\n\tancestors = {&quot;qwm&quot;},\n\
+      \ttranslit_module = &quot;ba-translit&quot;,\n}\n\nm[&quot;be&quot;] = {\n\tcanonicalName = &quot;Belarusian&quot;,\n\totherNames = {&quot;Belorussian&quot;, &quot;Belarusan&quot;, &quot;Bielorussian&quot;, &quot;Byelorussian&quot;, &quot;Belarussian&quot;,\
+      \ &quot;White Russian&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Cyrl&quot;},\n\tfamily = &quot;zle&quot;,\n\tancestors = {&quot;orv&quot;},\n\ttranslit_module = &quot;be-translit&quot;,\n\tsort_key = {\n\t\tfrom = {&quot;Ё&quot;, &quot;ё\
+      &quot;},\n\t\tto   = {&quot;Е&quot; , &quot;е&quot;}},\n\tentry_name = {\n\t\tfrom = {&quot;Ѐ&quot;, &quot;ѐ&quot;, GRAVE, ACUTE},\n\t\tto   = {&quot;Е&quot;, &quot;е&quot;}},\n}\n\nm[&quot;bg&quot;] = {\n\tcanonicalName = &quot;Bulgarian&quot;,\n\ttype\
+      \ = &quot;regular&quot;,\n\tscripts = {&quot;Cyrl&quot;},\n\tfamily = &quot;zls&quot;,\n\tancestors = {&quot;sla-pro&quot;},\n\ttranslit_module = &quot;bg-translit&quot;,\n\tentry_name = {\n\t\tfrom = {&quot;Ѐ&quot;, &quot;ѐ&quot;, &quot;Ѝ&quot;, &quot;ѝ\
+      &quot;, GRAVE, ACUTE},\n\t\tto   = {&quot;Е&quot;, &quot;е&quot;, &quot;И&quot;, &quot;и&quot;}},\n}\n\nm[&quot;bh&quot;] = {\n\tcanonicalName = &quot;Bihari&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Deva&quot;},\n\tfamily = &quot;inc&quot;,\n\
+      }\n\nm[&quot;bi&quot;] = {\n\tcanonicalName = &quot;Bislama&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;crp&quot;,\n\tancestors = {&quot;en&quot;},\n}\n\nm[&quot;bm&quot;] = {\n\tcanonicalName = &quot;Bambara&quot;,\n\
+      \totherNames = {&quot;Bamanankan&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;dmn&quot;,\n}\n\nm[&quot;bn&quot;] = {\n\tcanonicalName = &quot;Bengali&quot;,\n\totherNames = {&quot;Bangla&quot;},\n\ttype = &quot;regular&quot;,\n\
+      \tscripts = {&quot;Beng&quot;},\n\tfamily = &quot;inc&quot;,\n\tancestors = {&quot;pka&quot;},\n}\n\nm[&quot;bo&quot;] = {\n\tcanonicalName = &quot;Tibetan&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Tibt&quot;},\n\tfamily = &quot;tbq&quot;,\n\
+      \tancestors = {&quot;xct&quot;},\n\ttranslit_module = &quot;bo-translit&quot;,\n}\n\nm[&quot;br&quot;] = {\n\tcanonicalName = &quot;Breton&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;cel-bry&quot;,\n\tancestors\
+      \ = {&quot;xbm&quot;},\n}\n\nm[&quot;ca&quot;] = {\n\tcanonicalName = &quot;Catalan&quot;,\n\totherNames = {&quot;Valencian&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;roa&quot;,\n\tancestors = {&quot;roa-oca&quot;},\n\
+      \tsort_key = {\n\t\tfrom = {&quot;à&quot;, &quot;[èé]&quot;, &quot;[íï]&quot;, &quot;[òó]&quot;, &quot;[úü]&quot;, &quot;ç&quot;, &quot;l·l&quot;},\n\t\tto   = {&quot;a&quot;, &quot;e&quot;   , &quot;i&quot;   , &quot;o&quot;   , &quot;u&quot;   , &quot;c&quot;,\
+      \ &quot;ll&quot; }} ,\n}\n\nm[&quot;ce&quot;] = {\n\tcanonicalName = &quot;Chechen&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Cyrl&quot;},\n\tfamily = &quot;cau-nkh&quot;,\n\tancestors = {&quot;cau-nkh-pro&quot;},\n\ttranslit_module = &quot;ce-translit&quot;,\n\
+      \tentry_name = {\n\t\tfrom = {MACRON},\n\t\tto   = {}},\n}\n\nm[&quot;ch&quot;] = {\n\tcanonicalName = &quot;Chamorro&quot;,\n\totherNames = {&quot;Chamoru&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;poz-sus&quot;,\n\
+      \tancestors = {&quot;poz-sus-pro&quot;},\n}\n\nm[&quot;co&quot;] = {\n\tcanonicalName = &quot;Corsican&quot;,\n\totherNames = {&quot;Corsu&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;roa&quot;,\n\tancestors\
+      \ = {&quot;la&quot;},\n}\n\nm[&quot;cr&quot;] = {\n\tcanonicalName = &quot;Cree&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Cans&quot;, &quot;Latn&quot;},\n\tfamily = &quot;alg&quot;,\n\tancestors = {&quot;alg-pro&quot;},\n}\n\nm[&quot;cs&quot;]\
+      \ = {\n\tcanonicalName = &quot;Czech&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;zlw&quot;,\n\tancestors = {&quot;sla-pro&quot;},\n\tsort_key = {\n\t\tfrom = {&quot;á&quot;, &quot;é&quot;, &quot;í&quot;, &quot;ó\
+      &quot;, &quot;[úů]&quot;, &quot;ý&quot;},\n\t\tto   = {&quot;a&quot;, &quot;e&quot;, &quot;i&quot;, &quot;o&quot;, &quot;u&quot;   , &quot;y&quot;}} ,\n}\n\nm[&quot;cu&quot;] = {\n\tcanonicalName = &quot;Old Church Slavonic&quot;,\n\totherNames = {&quot;Old\
+      \ Church Slavic&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Cyrs&quot;, &quot;Glag&quot;},\n\tfamily = &quot;zls&quot;,\n\tancestors = {&quot;sla-pro&quot;},\n\ttranslit_module = &quot;Cyrs-Glag-translit&quot;,\n\tentry_name = {\n\t\tfrom\
+      \ = {u(0x0484)}, -- kamora\n\t\tto   = {}},\n\tsort_key = {\n\t\tfrom = {&quot;оу&quot;, &quot;є&quot;},\n\t\tto   = {&quot;у&quot; , &quot;е&quot;}} ,\n}\n\nm[&quot;cv&quot;] = {\n\tcanonicalName = &quot;Chuvash&quot;,\n\ttype = &quot;regular&quot;,\n\
+      \tscripts = {&quot;Cyrl&quot;},\n\tfamily = &quot;trk&quot;,\n\tancestors = {&quot;trk-pro&quot;},\n\ttranslit_module = &quot;cv-translit&quot;,\n}\n\nm[&quot;cy&quot;] = {\n\tcanonicalName = &quot;Welsh&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts\
+      \ = {&quot;Latn&quot;},\n\tfamily = &quot;cel-bry&quot;,\n\tancestors = {&quot;wlm&quot;},\n\tsort_key = {\n\t\tfrom = {&quot;[âáàä]&quot;, &quot;[êéèë]&quot;, &quot;[îíìï]&quot;, &quot;[ôóòö]&quot;, &quot;[ûúùü]&quot;, &quot;[ŵẃẁẅ]&quot;, &quot;[ŷýỳÿ\
+      ]&quot;, &quot;'&quot;},\n\t\tto   = {&quot;a&quot;\t , &quot;e&quot;\t , &quot;i&quot;\t , &quot;o&quot;\t , &quot;u&quot;\t , &quot;w&quot;\t , &quot;y&quot;\t }} ,\n}\n\nm[&quot;da&quot;] = {\n\tcanonicalName = &quot;Danish&quot;,\n\ttype = &quot;regular&quot;,\n\
+      \tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;gmq&quot;,\n\tancestors = {&quot;gmq-oda&quot;},\n}\n\nm[&quot;de&quot;] = {\n\tcanonicalName = &quot;German&quot;,\n\totherNames = {&quot;High German&quot;, &quot;New High German&quot;, &quot;Deutsch&quot;},\
+      \ -- the last name is indeed also used in English\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;, &quot;Latf&quot;},\n\tfamily = &quot;gmw&quot;,\n\tancestors = {&quot;gmh&quot;},\n\tsort_key = {\n\t\tfrom = {&quot;[äàáâå]&quot;, &quot;[ë\
+      èéê]&quot;, &quot;[ïìíî]&quot;, &quot;[öòóô]&quot;, &quot;[üùúû]&quot;, &quot;ß&quot; },\n\t\tto   = {&quot;a&quot;\t  , &quot;e&quot;\t , &quot;i&quot;\t , &quot;o&quot;\t , &quot;u&quot;\t , &quot;ss&quot;}} ,\n}\n\nm[&quot;dv&quot;] = {\n\tcanonicalName\
+      \ = &quot;Dhivehi&quot;,\n\totherNames = {&quot;Divehi&quot;, &quot;Mahal&quot;, &quot;Mahl&quot;, &quot;Maldivian&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Thaa&quot;},\n\tfamily = &quot;inc&quot;,\n\tancestors = {&quot;pmh&quot;},\n\t\
+      translit_module = &quot;dv-translit&quot;,\n}\n\nm[&quot;dz&quot;] = {\n\tcanonicalName = &quot;Dzongkha&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Tibt&quot;},\n\tfamily = &quot;tbq&quot;,\n\tancestors = {&quot;xct&quot;},\n\ttranslit_module\
+      \ = &quot;bo-translit&quot;,\n}\n\nm[&quot;ee&quot;] = {\n\tcanonicalName = &quot;Ewe&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;alv&quot;,\n}\n\nm[&quot;el&quot;] = {\n\tcanonicalName = &quot;Greek&quot;,\n\
+      \totherNames = {&quot;Modern Greek&quot;, &quot;Neo-Hellenic&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Grek&quot;},\n\tfamily = &quot;grk&quot;,\n\tancestors = {&quot;gkm&quot;},\n\ttranslit_module = &quot;el-translit&quot;,\n\tsort_key\
+      \ = {  -- Keep this synchronized with grc, cpg, pnt\n\t\tfrom = {&quot;[ᾳάᾴὰᾲᾶᾷἀᾀἄᾄἂᾂἆᾆἁᾁἅᾅἃᾃἇᾇ]&quot;, &quot;[έὲἐἔἒἑἕἓ]&quot;, &quot;[ῃήῄὴῂῆῇἠᾐἤᾔἢᾒἦᾖἡᾑἥᾕἣᾓἧᾗ]&quot;, &quot;[ίὶῖἰἴἲἶἱἵἳἷϊΐῒῗ]&quot;, &quot;[όὸὀὄὂὁὅὃ]&quot;, &quot;[ύὺῦὐὔὒὖὑὕὓὗϋΰῢῧ]&quot;,\
+      \ &quot;[ῳώῴὼῲῶῷὠᾠὤᾤὢᾢὦᾦὡᾡὥᾥὣᾣὧᾧ]&quot;, &quot;ῥ&quot;, &quot;ς&quot;},\n\t\tto   = {&quot;α&quot;\t\t\t\t\t\t, &quot;ε&quot;\t\t , &quot;η&quot;\t\t\t\t\t\t, &quot;ι&quot;\t\t\t\t, &quot;ο&quot;\t\t , &quot;υ&quot;\t\t\t\t, &quot;ω&quot;\t\t\t\t\t\t,\
+      \ &quot;ρ&quot;, &quot;σ&quot;}} ,\n}\n\nm[&quot;en&quot;] = {\n\tcanonicalName = &quot;English&quot;,\n\totherNames = {&quot;Modern English&quot;, &quot;New English&quot;, &quot;Hawaiian Creole English&quot;, &quot;Hawai'ian Creole English&quot;, &quot;Hawaiian\
+      \ Creole&quot;, &quot;Hawai'ian Creole&quot;, &quot;Polari&quot;, &quot;Yinglish&quot;}, -- all but the first three are names and alt names of subsumed dialects which once had ISO codes\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;, &quot;Shaw&quot;,\
+      \ &quot;Dsrt&quot;}, -- last two are rare but probably attested; entries in them might require community approval, but it's good for the script codes not to be orphans\n\tfamily = &quot;gmw&quot;,\n\tancestors = {&quot;enm&quot;},\n\tsort_key = {\n\t\t\
+      from = {&quot;[äàáâåā]&quot;, &quot;[ëèéêē]&quot;, &quot;[ïìíîī]&quot;, &quot;[öòóôō]&quot;, &quot;[üùúûū]&quot;, &quot;æ&quot; , &quot;œ&quot; , &quot;[çč]&quot;, &quot;ñ&quot;, &quot;'&quot;},\n\t\tto   = {&quot;a&quot;       , &quot;e&quot;      , &quot;i&quot;\
+      \      , &quot;o&quot;      , &quot;u&quot;      , &quot;ae&quot;, &quot;oe&quot;, &quot;c&quot;   , &quot;n&quot;}},\n\twikimedia_codes = {&quot;en&quot;, &quot;simple&quot;},\n}\n\nm[&quot;eo&quot;] = {\n\tcanonicalName = &quot;Esperanto&quot;,\n\ttype\
+      \ = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;art&quot;,\n\tsort_key = {\n\t\tfrom = {&quot;[áà]&quot;, &quot;[éè]&quot;, &quot;[íì]&quot;, &quot;[óò]&quot;, &quot;[úù]&quot;, &quot;[ĉ]&quot;, &quot;[ĝ]&quot;, &quot;[ĥ]&quot;,\
+      \ &quot;[ĵ]&quot;, &quot;[ŝ]&quot;, &quot;[ŭ]&quot;},\n\t\tto   = {&quot;a&quot;\t   , &quot;e&quot;  , &quot;i&quot;  , &quot;o&quot;  , &quot;u&quot;, &quot;cĉ&quot;, &quot;gĉ&quot;, &quot;hĉ&quot;, &quot;jĉ&quot;, &quot;sĉ&quot;, &quot;uĉ&quot;}} ,\n\
+      }\n\nm[&quot;es&quot;] = {\n\tcanonicalName = &quot;Spanish&quot;,\n\totherNames = {&quot;Castilian&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;roa&quot;,\n\tancestors = {&quot;osp&quot;},\n\tsort_key = {\n\
+      \t\tfrom = {&quot;á&quot;, &quot;é&quot;, &quot;í&quot;, &quot;ó&quot;, &quot;[úü]&quot;, &quot;ç&quot;, &quot;ñ&quot;},\n\t\tto   = {&quot;a&quot;, &quot;e&quot;, &quot;i&quot;, &quot;o&quot;, &quot;u&quot;   , &quot;c&quot;, &quot;n&quot;}} ,\n}\n\n\
+      m[&quot;et&quot;] = {\n\tcanonicalName = &quot;Estonian&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;fiu-fin&quot;,\n\tancestors = {&quot;fiu-fin-pro&quot;},\n}\n\nm[&quot;eu&quot;] = {\n\tcanonicalName = &quot;Basque&quot;,\n\
+      \totherNames = {&quot;Euskara&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;euq&quot;,\n\tancestors = {&quot;euq-pro&quot;},\n}\n\nm[&quot;fa&quot;] = {\n\tcanonicalName = &quot;Persian&quot;,\n\totherNames =\
+      \ {&quot;Farsi&quot;, &quot;New Persian&quot;, &quot;Modern Persian&quot;, &quot;Western Persian&quot;, &quot;Iranian Persian&quot;, &quot;Eastern Persian&quot;, &quot;Dari&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;fa-Arab&quot;},\n\t\
+      family = &quot;ira&quot;,\n\tancestors = {&quot;pal&quot;},\n\tentry_name = {\n\t\tfrom = {u(0x064E), u(0x064F), u(0x0650), u(0x0651), u(0x0652)},\n\t\tto   = {}} ,\n}\n\nm[&quot;ff&quot;] = {\n\tcanonicalName = &quot;Fula&quot;,\n\totherNames = {&quot;Adamawa\
+      \ Fulfulde&quot;, &quot;Bagirmi Fulfulde&quot;, &quot;Borgu Fulfulde&quot;, &quot;Central-Eastern Niger Fulfulde&quot;, &quot;Fulani&quot;, &quot;Fulfulde&quot;, &quot;Maasina Fulfulde&quot;, &quot;Nigerian Fulfulde&quot;, &quot;Pular&quot;, &quot;Pulaar&quot;,\
+      \ &quot;Western Niger Fulfulde&quot;}, -- Maasina, etc are dialects, subsumed into this code\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;alv-sng&quot;,\n}\n\nm[&quot;fi&quot;] = {\n\tcanonicalName = &quot;Finnish&quot;,\n\
+      \totherNames = {&quot;Suomi&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;fiu-fin&quot;,\n\tancestors = {&quot;fiu-fin-pro&quot;},\n\tentry_name = {\n\t\tfrom = {&quot;ˣ&quot;},  -- Used to indicate gemination\
+      \ of the next consonant\n\t\tto   = {}},\n\tsort_key = {\n\t\tfrom = {&quot;[áàâã]&quot;, &quot;[éèêẽ]&quot;, &quot;[íìîĩ]&quot;, &quot;[óòôõ]&quot;, &quot;[úùûũ]&quot;, &quot;[ýỳŷüű]&quot;, &quot;[øõő]&quot;, &quot;æ&quot; , &quot;œ&quot; , &quot;[čç\
+      ]&quot;, &quot;š&quot;, &quot;ž&quot;, &quot;ß&quot; , &quot;[':]&quot;},\n\t\tto   = {&quot;a&quot;\t , &quot;e&quot;\t , &quot;i&quot;\t , &quot;o&quot;\t , &quot;u&quot;\t ,  &quot;y&quot;\t , &quot;ö&quot;\t, &quot;ae&quot;, &quot;oe&quot;, &quot;c&quot;\
+      \   , &quot;s&quot;, &quot;z&quot;, &quot;ss&quot;}} ,\n}\n\nm[&quot;fj&quot;] = {\n\tcanonicalName = &quot;Fijian&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;poz-occ&quot;,\n\tancestors = {&quot;poz-oce-pro&quot;},\n\
+      }\n\nm[&quot;fo&quot;] = {\n\tcanonicalName = &quot;Faroese&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;gmq&quot;,\n\tancestors = {&quot;non&quot;},\n}\n\nm[&quot;fr&quot;] = {\n\tcanonicalName = &quot;French&quot;,\n\
+      \totherNames = {&quot;Modern French&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;roa&quot;,\n\tancestors = {&quot;frm&quot;},\n\tsort_key = {\n\t\tfrom = {&quot;[áàâä]&quot;, &quot;[éèêë]&quot;, &quot;[íìîï\
+      ]&quot;, &quot;[óòôö]&quot;, &quot;[úùûü]&quot;, &quot;[ýỳŷÿ]&quot;, &quot;ç&quot;, &quot;æ&quot; , &quot;œ&quot; , &quot;'&quot;},\n\t\tto   = {&quot;a&quot;\t , &quot;e&quot;\t , &quot;i&quot;\t , &quot;o&quot;\t , &quot;u&quot;\t , &quot;y&quot;\t ,\
+      \ &quot;c&quot;, &quot;ae&quot;, &quot;oe&quot;}} ,\n}\n\nm[&quot;fy&quot;] = {\n\tcanonicalName = &quot;West Frisian&quot;,\n\totherNames = {&quot;Western Frisian&quot;, &quot;Frisian&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\
+      \tfamily = &quot;gmw-fri&quot;,\n\tancestors = {&quot;ofs&quot;},\n}\n\nm[&quot;ga&quot;] = {\n\tcanonicalName = &quot;Irish&quot;,\n\totherNames = {&quot;Irish Gaelic&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily =\
+      \ &quot;cel-gae&quot;,\n\tancestors = {&quot;mga&quot;},\n\tsort_key = {\n\t\tfrom = {&quot;á&quot;, &quot;é&quot;, &quot;í&quot;, &quot;ó&quot;, &quot;ú&quot;, &quot;ý&quot;, &quot;ḃ&quot; , &quot;ċ&quot; , &quot;ḋ&quot; , &quot;ḟ&quot; , &quot;ġ&quot;\
+      \ , &quot;ṁ&quot; , &quot;ṗ&quot; , &quot;ṡ&quot; , &quot;ṫ&quot; },\n\t\tto   = {&quot;a&quot;, &quot;e&quot;, &quot;i&quot;, &quot;o&quot;, &quot;u&quot;, &quot;y&quot;, &quot;bh&quot;, &quot;ch&quot;, &quot;dh&quot;, &quot;fh&quot;, &quot;gh&quot;,\
+      \ &quot;mh&quot;, &quot;ph&quot;, &quot;sh&quot;, &quot;th&quot;}} ,\n}\n\nm[&quot;gd&quot;] = {\n\tcanonicalName = &quot;Scottish Gaelic&quot;,\n\totherNames = {&quot;Gàidhlig&quot;, &quot;Highland Gaelic&quot;, &quot;Scots Gaelic&quot;, &quot;Scottish&quot;},\n\
+      \ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;cel-gae&quot;,\n\tancestors = {&quot;mga&quot;},\n\tsort_key = {\n\t\tfrom = {&quot;[áà]&quot;, &quot;[éè]&quot;, &quot;[íì]&quot;, &quot;[óò]&quot;, &quot;[úù]&quot;, &quot;[ý\
+      ỳ]&quot;},\n\t\tto   = {&quot;a&quot;   , &quot;e&quot;   , &quot;i&quot;   , &quot;o&quot;   , &quot;u&quot;   , &quot;y&quot;   }} ,\n}\n\nm[&quot;gl&quot;] = {\n\tcanonicalName = &quot;Galician&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\
+      \tfamily = &quot;roa&quot;,\n\tancestors = {&quot;roa-opt&quot;},\n}\n\nm[&quot;gn&quot;] = {\n\tcanonicalName = &quot;Guaraní&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;tup&quot;,\n}\n\nm[&quot;gu&quot;] =\
+      \ {\n\tcanonicalName = &quot;Gujarati&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Gujr&quot;},\n\tfamily = &quot;inc&quot;,\n\tancestors = {&quot;psu&quot;},\n}\n\nm[&quot;gv&quot;] = {\n\tcanonicalName = &quot;Manx&quot;,\n\totherNames =\
+      \ {&quot;Manx Gaelic&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;cel-gae&quot;,\n\tancestors = {&quot;mga&quot;},\n\tsort_key = {\n\t\tfrom = {&quot;ç&quot;, &quot;-&quot;},\n\t\tto   = {&quot;c&quot;}} ,\n\
+      }\n\nm[&quot;ha&quot;] = {\n\tcanonicalName = &quot;Hausa&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;, &quot;Arab&quot;},\n\tfamily = &quot;cdc-wst&quot;,\n}\n\nm[&quot;he&quot;] = {\n\tcanonicalName = &quot;Hebrew&quot;,\n\totherNames\
+      \ = {&quot;Ivrit&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Hebr&quot;, &quot;Phnx&quot;},\n\tfamily = &quot;sem-can&quot;,\n\tancestors = {&quot;sem-pro&quot;},\n\tentry_name = {\n\t\tfrom = {&quot;[&quot; .. u(0x0591) .. &quot;-&quot;\
+      \ .. u(0x05BD) .. u(0x05BF) .. &quot;-&quot; .. u(0x05C5) .. u(0x05C7) .. &quot;]&quot;},\n\t\tto   = {}} ,\n}\n\nm[&quot;hi&quot;] = {\n\tcanonicalName = &quot;Hindi&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Deva&quot;},\n\tfamily = &quot;inc&quot;,\n\
+      \tancestors = {&quot;psu&quot;},\n\ttranslit_module = &quot;hi-translit&quot;,\n}\n\nm[&quot;ho&quot;] = {\n\tcanonicalName = &quot;Hiri Motu&quot;,\n\totherNames = {&quot;Pidgin Motu&quot;, &quot;Police Motu&quot;},\n\ttype = &quot;regular&quot;,\n\t\
+      scripts = {&quot;Latn&quot;},\n\tfamily = &quot;crp&quot;,\n\tancestors = {&quot;meu&quot;},\n}\n\nm[&quot;ht&quot;] = {\n\tcanonicalName = &quot;Haitian Creole&quot;,\n\totherNames = {&quot;Creole&quot;, &quot;Haitian&quot;, &quot;Kreyòl&quot;},\n\ttype\
+      \ = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;crp&quot;,\n}\n\nm[&quot;hu&quot;] = {\n\tcanonicalName = &quot;Hungarian&quot;,\n\totherNames = {&quot;Magyar&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\
+      \tfamily = &quot;fiu-ugr&quot;,\n\tancestors = {&quot;ohu&quot;},\n\tsort_key = {\n\t\tfrom = {&quot;á&quot;, &quot;é&quot;, &quot;í&quot;, &quot;ó&quot;, &quot;ú&quot;, &quot;ő&quot;, &quot;ű&quot;},\n\t\tto   = {&quot;a&quot;, &quot;e&quot;, &quot;i&quot;,\
+      \ &quot;o&quot;, &quot;u&quot;, &quot;ö&quot;, &quot;ü&quot;}} ,\n}\n\nm[&quot;hy&quot;] = {\n\tcanonicalName = &quot;Armenian&quot;,\n\totherNames = {&quot;Modern Armenian&quot;, &quot;Eastern Armenian&quot;, &quot;Western Armenian&quot;},\n\ttype = &quot;regular&quot;,\n\
+      \tscripts = {&quot;Armn&quot;},\n\tfamily = &quot;hyx&quot;,\n\tancestors = {&quot;axm&quot;},\n\ttranslit_module = &quot;Armn-translit&quot;,\n\tsort_key = {\n\t\tfrom = {&quot;ու&quot;, &quot;և&quot;, &quot;եւ&quot;},\n\t\tto   = {&quot;ւ&quot;, &quot;ե\
+      վ&quot;, &quot;եվ&quot;}},\n\tentry_name = {\n\t\tfrom = {&quot;՞&quot;, &quot;՜&quot;, &quot;՛&quot;, &quot;՟&quot;, &quot;և&quot;, &quot;&lt;sup&gt;յ&lt;/sup&gt;&quot;, &quot;&lt;sup&gt;ի&lt;/sup&gt;&quot;},\n\t\tto   = {&quot;&quot;, &quot;&quot;, &quot;&quot;,\
+      \ &quot;&quot;, &quot;եւ&quot;, &quot;յ&quot;, &quot;ի&quot;}} ,\n}\n\nm[&quot;hz&quot;] = {\n\tcanonicalName = &quot;Herero&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bnt&quot;,\n}\n\nm[&quot;ia&quot;] = {\n\
+      \tcanonicalName = &quot;Interlingua&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;art&quot;,\n}\n\nm[&quot;id&quot;] = {\n\tcanonicalName = &quot;Indonesian&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\
+      \tfamily = &quot;poz-mly&quot;,\n\tancestors = {&quot;ms&quot;},\n}\n\nm[&quot;ie&quot;] = {\n\tcanonicalName = &quot;Interlingue&quot;,\n\totherNames = {&quot;Occidental&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily\
+      \ = &quot;art&quot;,\n}\n\nm[&quot;ig&quot;] = {\n\tcanonicalName = &quot;Igbo&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;nic-bco&quot;,\n}\n\nm[&quot;ii&quot;] = {\n\tcanonicalName = &quot;Sichuan Yi&quot;,\n\
+      \ttype = &quot;regular&quot;,\n\tscripts = {&quot;Yiii&quot;},\n\tfamily = &quot;tbq&quot;,\n}\n\nm[&quot;ik&quot;] = {\n\tcanonicalName = &quot;Inupiak&quot;,\n\totherNames = {&quot;Inupiaq&quot;, &quot;Iñupiaq&quot;, &quot;Inupiatun&quot;},\n\ttype =\
+      \ &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;esx-inu&quot;,\n\tancestors = {&quot;esx-inu-pro&quot;},\n}\n\nm[&quot;io&quot;] = {\n\tcanonicalName = &quot;Ido&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\
+      \tfamily = &quot;art&quot;,\n}\n\nm[&quot;is&quot;] = {\n\tcanonicalName = &quot;Icelandic&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;gmq&quot;,\n\tancestors = {&quot;non&quot;},\n}\n\nm[&quot;it&quot;] = {\n\
+      \tcanonicalName = &quot;Italian&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;roa&quot;,\n\tsort_key = {\n\t\tfrom = {&quot;[àáâäå]&quot;, &quot;[èéêë]&quot;, &quot;[ìíîï]&quot;, &quot;[òóôö]&quot;, &quot;[ùúû\
+      ü]&quot;},\n\t\tto   = {&quot;a&quot;\t  , &quot;e&quot;\t , &quot;i&quot;\t , &quot;o&quot;\t , &quot;u&quot;\t }} ,\n}\n\nm[&quot;iu&quot;] = {\n\tcanonicalName = &quot;Inuktitut&quot;,\n\totherNames = {&quot;Eastern Canadian Inuktitut&quot;, &quot;Eastern\
+      \ Canadian Inuit&quot;, &quot;Western Canadian Inuktitut&quot;, &quot;Western Canadian Inuit&quot;, &quot;Western Canadian Inuktun&quot;, &quot;Inuinnaq&quot;, &quot;Inuinnaqtun&quot;, &quot;Inuvialuk&quot;, &quot;Inuvialuktun&quot;, &quot;Nunavimmiutit&quot;,\
+      \ &quot;Nunatsiavummiut&quot;, &quot;Aivilimmiut&quot;, &quot;Natsilingmiut&quot;, &quot;Kivallirmiut&quot;, &quot;Siglit&quot;, &quot;Siglitun&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Cans&quot;, &quot;Latn&quot;},\n\tfamily = &quot;esx-inu&quot;,\n\
+      \tancestors = {&quot;esx-inu-pro&quot;},\n\ttranslit_module = &quot;iu-translit&quot;,\n}\n\nm[&quot;ja&quot;] = {\n\tcanonicalName = &quot;Japanese&quot;,\n\totherNames = {&quot;Modern Japanese&quot;, &quot;Nipponese&quot;, &quot;Nihongo&quot;},\n\ttype\
+      \ = &quot;regular&quot;,\n\tscripts = {&quot;Jpan&quot;, &quot;Latn&quot;, &quot;Hira&quot;},\n\tfamily = &quot;jpx&quot;,\n\tancestors = {&quot;ojp&quot;},\n}\n\nm[&quot;jv&quot;] = {\n\tcanonicalName = &quot;Javanese&quot;,\n\ttype = &quot;regular&quot;,\n\
+      \tscripts = {&quot;Latn&quot;, &quot;Java&quot;},\n\tfamily = &quot;poz-sus&quot;,\n\tancestors = {&quot;kaw&quot;},\n}\n\nm[&quot;ka&quot;] = {\n\tcanonicalName = &quot;Georgian&quot;,\n\totherNames = {&quot;Kartvelian&quot;},\n\ttype = &quot;regular&quot;,\n\
+      \tscripts = {&quot;Geor&quot;, &quot;Geok&quot;},\n\tfamily = &quot;ccs-gzn&quot;,\n\tancestors = {&quot;oge&quot;},\n\ttranslit_module = &quot;Geor-translit&quot;,\n\tentry_name = {\n\t\tfrom = {&quot;̂&quot;},\n\t\tto   = {&quot;&quot;}},\n}\n\nm[&quot;kg&quot;]\
+      \ = {\n\tcanonicalName = &quot;Kongo&quot;,\n\totherNames = {&quot;Kikongo&quot;, &quot;Koongo&quot;, &quot;Laari&quot;, &quot;San Salvador Kongo&quot;, &quot;Yombe&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bnt&quot;,\n\
+      }\n\nm[&quot;ki&quot;] = {\n\tcanonicalName = &quot;Kikuyu&quot;,\n\totherNames = {&quot;Gikuyu&quot;, &quot;Gĩkũyũ&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bnt&quot;,\n}\n\nm[&quot;kj&quot;] = {\n\tcanonicalName\
+      \ = &quot;Kwanyama&quot;,\n\totherNames = {&quot;Kuanyama&quot;, &quot;Oshikwanyama&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bnt&quot;,\n}\n\nm[&quot;kk&quot;] = {\n\tcanonicalName = &quot;Kazakh&quot;,\n\
+      \ttype = &quot;regular&quot;,\n\tscripts = {&quot;Cyrl&quot;, &quot;Latn&quot;, &quot;Arab&quot;, &quot;kk-Arab&quot;},\n\tfamily = &quot;trk&quot;,\n\tancestors = {&quot;qwm&quot;},\n\ttranslit_module = &quot;kk-translit&quot;,\n}\n\nm[&quot;kl&quot;]\
+      \ = {\n\tcanonicalName = &quot;Greenlandic&quot;,\n\totherNames = {&quot;Kalaallisut&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;esx-inu&quot;,\n\tancestors = {&quot;esx-inu-pro&quot;},\n}\n\nm[&quot;km&quot;]\
+      \ = {\n\tcanonicalName = &quot;Khmer&quot;,\n\totherNames = {&quot;Cambodian&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Khmr&quot;},\n\tfamily = &quot;mkh&quot;,\n\tancestors = {&quot;mkh-pro&quot;},\n\ttranslit_module = &quot;km-translit&quot;,\n\
+      }\n\nm[&quot;kn&quot;] = {\n\tcanonicalName = &quot;Kannada&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Knda&quot;},\n\tfamily = &quot;dra&quot;,\n\tancestors = {&quot;dra-pro&quot;},\n\ttranslit_module = &quot;kn-translit&quot;,\n}\n\nm[&quot;ko&quot;]\
+      \ = {\n\tcanonicalName = &quot;Korean&quot;,\n\totherNames = {&quot;Modern Korean&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Kore&quot;},\n\tfamily = &quot;qfa-kor&quot;,\n\tancestors = {&quot;okm&quot;},\n\ttranslit_module = &quot;ko-translit&quot;,\n\
+      }\n\nm[&quot;kr&quot;] = {\n\tcanonicalName = &quot;Kanuri&quot;,\n\totherNames = {&quot;Kanembu&quot;, &quot;Bilma Kanuri&quot;, &quot;Central Kanuri&quot;, &quot;Manga Kanuri&quot;, &quot;Tumari Kanuri&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts\
+      \ = {&quot;Latn&quot;},\n\tfamily = &quot;ssa&quot;,\n}\n\nm[&quot;ks&quot;] = {\n\tcanonicalName = &quot;Kashmiri&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;ks-Arab&quot;, &quot;Deva&quot;},\n\tfamily = &quot;iir-dar&quot;,\n\tancestors\
+      \ = {&quot;sa&quot;},\n}\n\nm[&quot;ku&quot;] = {\n\tcanonicalName = &quot;Kurdish&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;, &quot;ku-Arab&quot;, &quot;Armn&quot;, &quot;Cyrl&quot;},\n\tfamily = &quot;ira&quot;,\n\tancestors\
+      \ = {&quot;ira-pro&quot;},\n}\n\nm[&quot;kw&quot;] = {\n\tcanonicalName = &quot;Cornish&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;cel-bry&quot;,\n\tancestors = {&quot;cnx&quot;},\n}\n\nm[&quot;ky&quot;] =\
+      \ {\n\tcanonicalName = &quot;Kyrgyz&quot;,\n\totherNames = {&quot;Kirghiz&quot;, &quot;Kirgiz&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Cyrl&quot;, &quot;Latn&quot;, &quot;Arab&quot;},\n\tfamily = &quot;trk&quot;,\n\tancestors = {&quot;qwm&quot;},\n\
+      \ttranslit_module = &quot;ky-translit&quot;,\n}\n\nm[&quot;la&quot;] = {\n\tcanonicalName = &quot;Latin&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;itc&quot;,\n\tancestors = {&quot;itc-ola&quot;},\n\tentry_name\
+      \ = {\n\t\tfrom = {&quot;[ĀĂ]&quot;, &quot;[āă]&quot;, &quot;[ĒĔ]&quot;, &quot;[ēĕë]&quot;, &quot;[ĪĬÏ]&quot;, &quot;[īĭï]&quot;, &quot;[ŌŎ]&quot;, &quot;[ōŏ]&quot;, &quot;[ŪŬÜ]&quot;, &quot;[ūŭü]&quot;, &quot;Ȳ&quot;, &quot;ȳ&quot;, MACRON, BREVE, DIAER},\n\
+      \t\tto   = {&quot;A&quot;, &quot;a&quot;, &quot;E&quot;, &quot;e&quot;, &quot;I&quot;, &quot;i&quot;, &quot;O&quot;, &quot;o&quot;, &quot;U&quot;, &quot;u&quot;, &quot;Y&quot;, &quot;y&quot;}},\n}\n\nm[&quot;lb&quot;] = {\n\tcanonicalName = &quot;Luxembourgish&quot;,\n\
+      \ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;gmw&quot;,\n\tancestors = {&quot;gmh&quot;},\n}\n\nm[&quot;lg&quot;] = {\n\tcanonicalName = &quot;Luganda&quot;,\n\totherNames = {&quot;Ganda&quot;},\n\ttype = &quot;regular&quot;,\n\
+      \tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bnt&quot;,\n}\n\nm[&quot;li&quot;] = {\n\tcanonicalName = &quot;Limburgish&quot;,\n\totherNames = {&quot;Limburgan&quot;, &quot;Limburgian&quot;, &quot;Limburgic&quot;},\n\ttype = &quot;regular&quot;,\n\
+      \tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;gmw&quot;,\n\tancestors = {&quot;dum&quot;},\n}\n\nm[&quot;ln&quot;] = {\n\tcanonicalName = &quot;Lingala&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bnt&quot;,\n\
+      }\n\nm[&quot;lo&quot;] = {\n\tcanonicalName = &quot;Lao&quot;,\n\totherNames = {&quot;Laotian&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Laoo&quot;},\n\tfamily = &quot;tai-swe&quot;,\n\tancestors = {&quot;tai-swe-pro&quot;},\n\ttranslit_module\
+      \ = &quot;lo-translit&quot;,\n}\n\nm[&quot;lt&quot;] = {\n\tcanonicalName = &quot;Lithuanian&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bat&quot;,\n\tancestors = {&quot;ine-bsl-pro&quot;},\n\tentry_name = {\n\
+      \t\tfrom = {&quot;[áãà]&quot;, &quot;[éẽè]&quot;, &quot;[íĩì]&quot;, &quot;[ýỹ]&quot;, &quot;ñ&quot;, &quot;[óõò]&quot;, &quot;[úũù]&quot;, ACUTE, GRAVE, TILDE},\n\t\tto   = {&quot;a&quot;,     &quot;e&quot;,     &quot;i&quot;,     &quot;y&quot;,    &quot;n&quot;,\
+      \ &quot;o&quot;,     &quot;u&quot;   }} ,\n}\n\nm[&quot;lu&quot;] = {\n\tcanonicalName = &quot;Luba-Katanga&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bnt&quot;,\n}\n\nm[&quot;lv&quot;] = {\n\tcanonicalName\
+      \ = &quot;Latvian&quot;,\n\totherNames = {&quot;Lettish&quot;, &quot;Lett&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bat&quot;,\n\tancestors = {&quot;ine-bsl-pro&quot;},\n}\n\nm[&quot;mg&quot;] = {\n\tcanonicalName\
+      \ = &quot;Malagasy&quot;,\n\totherNames = {&quot;Betsimisaraka Malagasy&quot;, &quot;Betsimisaraka&quot;, &quot;Northern Betsimisaraka Malagasy&quot;, &quot;Northern Betsimisaraka&quot;, &quot;Southern Betsimisaraka Malagasy&quot;, &quot;Southern Betsimisaraka&quot;,\
+      \ &quot;Bara Malagasy&quot;, &quot;Bara&quot;, &quot;Masikoro Malagasy&quot;, &quot;Masikoro&quot;, &quot;Antankarana&quot;, &quot;Antankarana Malagasy&quot;, &quot;Plateau Malagasy&quot;, &quot;Sakalava&quot;, &quot;Tandroy Malagasy&quot;, &quot;Tandroy&quot;,\
+      \ &quot;Tanosy&quot;, &quot;Tanosy Malagasy&quot;, &quot;Tesaka&quot;, &quot;Tsimihety&quot;, &quot;Tsimihety Malagasy&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;poz-bre&quot;,\n\tancestors = {&quot;poz-pro&quot;},\n\
+      }\n\nm[&quot;mh&quot;] = {\n\tcanonicalName = &quot;Marshallese&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;poz-mic&quot;,\n\tancestors = {&quot;poz-oce-pro&quot;},\n\tsort_key = {\n\t\tfrom = {&quot;ā&quot;\
+      \ , &quot;ļ&quot; , &quot;m̧&quot; , &quot;ņ&quot; , &quot;n̄&quot;  , &quot;o̧&quot; , &quot;ō&quot;  , &quot;ū&quot; },\n\t\tto   = {&quot;a~&quot;, &quot;l~&quot;, &quot;m~&quot;, &quot;n~&quot;, &quot;n~~&quot;, &quot;o~&quot;, &quot;o~~&quot;, &quot;u~&quot;}}\
+      \ ,\n}\n\nm[&quot;mi&quot;] = {\n\tcanonicalName = &quot;Maori&quot;,\n\totherNames = {&quot;Māori&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;poz-pol&quot;,\n\tancestors = {&quot;poz-pol-pro&quot;},\n}\n\n\
+      m[&quot;mk&quot;] = {\n\tcanonicalName = &quot;Macedonian&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Cyrl&quot;},\n\tfamily = &quot;zls&quot;,\n\tancestors = {&quot;sla-pro&quot;},\n\ttranslit_module = &quot;mk-translit&quot;,\n\tentry_name\
+      \ = {\n\t\tfrom = {ACUTE},\n\t\tto   = {}},\n}\n\nm[&quot;ml&quot;] = {\n\tcanonicalName = &quot;Malayalam&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Mlym&quot;},\n\tfamily = &quot;dra&quot;,\n\tancestors = {&quot;dra-pro&quot;},\n\ttranslit_module\
+      \ = &quot;ml-translit&quot;,\n}\n\nm[&quot;mn&quot;] = {\n\tcanonicalName = &quot;Mongolian&quot;,\n\totherNames = {&quot;Khalkha Mongolian&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Cyrl&quot;, &quot;Mong&quot;},\n\tfamily = &quot;xgn&quot;,\n\
+      \tancestors = {&quot;xng&quot;},\n\ttranslit_module = &quot;mn-translit&quot;,\n}\n\nm[&quot;mr&quot;] = {\n\tcanonicalName = &quot;Marathi&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Deva&quot;},\n\tfamily = &quot;inc&quot;,\n\tancestors\
+      \ = {&quot;pmh&quot;},\n\ttranslit_module = &quot;hi-translit&quot;,\n}\n\nm[&quot;ms&quot;] = {\n\tcanonicalName = &quot;Malay&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;, &quot;Arab&quot;},\n\tfamily = &quot;poz-mly&quot;,\n\t\
+      ancestors = {&quot;poz-mly-pro&quot;},\n}\n\nm[&quot;mt&quot;] = {\n\tcanonicalName = &quot;Maltese&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;sem-arb&quot;,\n\tancestors = {&quot;sqr&quot;},\n}\n\nm[&quot;my&quot;]\
+      \ = {\n\tcanonicalName = &quot;Burmese&quot;,\n\totherNames = {&quot;Myanmar&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Mymr&quot;},\n\tfamily = &quot;tbq-brm&quot;,\n\tancestors = {&quot;obr&quot;},\n\ttranslit_module = &quot;my-translit&quot;,\n\
+      }\n\nm[&quot;na&quot;] = {\n\tcanonicalName = &quot;Nauruan&quot;,\n\totherNames = {&quot;Nauru&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;poz-mic&quot;,\n\tancestors = {&quot;poz-oce-pro&quot;},\n}\n\nm[&quot;nb&quot;]\
+      \ = {\n\tcanonicalName = &quot;Norwegian Bokmål&quot;,\n\totherNames = {&quot;Bokmål&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;gmq&quot;,\n\tancestors = {&quot;gmq-mno&quot;},\n\twikimedia_codes = {&quot;no&quot;},\n\
+      }\n\nm[&quot;nd&quot;] = {\n\tcanonicalName = &quot;Northern Ndebele&quot;,\n\totherNames = {&quot;North Ndebele&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bnt&quot;,\n}\n\nm[&quot;ne&quot;] = {\n\tcanonicalName\
+      \ = &quot;Nepali&quot;,\n\totherNames = {&quot;Nepalese&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Deva&quot;},\n\tfamily = &quot;inc&quot;,\n\ttranslit_module = &quot;sa-translit&quot;,\n}\n\nm[&quot;ng&quot;] = {\n\tcanonicalName = &quot;Ndonga&quot;,\n\
+      \ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bnt&quot;,\n}\n\nm[&quot;nl&quot;] = {\n\tcanonicalName = &quot;Dutch&quot;,\n\totherNames = {&quot;Netherlandic&quot;, &quot;Flemish&quot;},\n\ttype = &quot;regular&quot;,\n\
+      \tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;gmw&quot;,\n\tancestors = {&quot;dum&quot;},\n\tsort_key = {\n\t\tfrom = {&quot;[äáâå]&quot;, &quot;[ëéê]&quot;, &quot;[ïíî]&quot;, &quot;[öóô]&quot;, &quot;[üúû]&quot;, &quot;ç&quot;, &quot;ñ&quot;, &quot;^-&quot;},\n\
+      \t\tto   = {&quot;a&quot;\t , &quot;e&quot;\t, &quot;i&quot;\t, &quot;o&quot;\t, &quot;u&quot;\t, &quot;c&quot;, &quot;n&quot;}} ,\n}\n\nm[&quot;nn&quot;] = {\n\tcanonicalName = &quot;Norwegian Nynorsk&quot;,\n\totherNames = {&quot;New Norwegian&quot;,\
+      \ &quot;Nynorsk&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;gmq&quot;,\n\tancestors = {&quot;gmq-mno&quot;},\n}\n\nm[&quot;no&quot;] = {\n\tcanonicalName = &quot;Norwegian&quot;,\n\ttype = &quot;regular&quot;,\n\
+      \tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;gmq&quot;,\n\tancestors = {&quot;gmq-mno&quot;},\n}\n\nm[&quot;nr&quot;] = {\n\tcanonicalName = &quot;Southern Ndebele&quot;,\n\totherNames = {&quot;South Ndebele&quot;},\n\ttype = &quot;regular&quot;,\n\
+      \tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bnt&quot;,\n}\n\nm[&quot;nv&quot;] = {\n\tcanonicalName = &quot;Navajo&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;nv-Latn&quot;},\n\tfamily = &quot;apa&quot;,\n\tancestors = {&quot;ath-pro&quot;},\n\
+      \tsort_key = {\n\t\tfrom = {&quot;[áą]&quot;, &quot;[éę]&quot;, &quot;[íį]&quot;, &quot;[óǫ]&quot;, &quot;ń&quot;, &quot;^n([djlt])&quot;, &quot;ł&quot; , &quot;[ʼ’']&quot;, ACUTE},\n\t\tto   = {&quot;a&quot;   , &quot;e&quot;   , &quot;i&quot;   , &quot;o&quot;\
+      \   , &quot;n&quot;, &quot;ni%1&quot;\t  , &quot;l&quot;}} }  -- the copyright sign is used to guarantee that ł will always be sorted after all other words with l\nm[&quot;ny&quot;] = {\n\tcanonicalName = &quot;Chichewa&quot;,\n\totherNames = {&quot;Chicheŵ\
+      a&quot;, &quot;Chinyanja&quot;, &quot;Nyanja&quot;, &quot;Chewa&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bnt&quot;,\n}\n\nm[&quot;oc&quot;] = {\n\tcanonicalName = &quot;Occitan&quot;,\n\totherNames = {&quot;Provenç\
+      al&quot;, &quot;Auvergnat&quot;, &quot;Auvernhat&quot;, &quot;Gascon&quot;, &quot;Languedocien&quot;, &quot;Lengadocian&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;roa&quot;,\n\tancestors = {&quot;pro&quot;},\n\
+      \tsort_key = {\n\t\tfrom = {&quot;[àá]&quot;, &quot;[èé]&quot;, &quot;[íï]&quot;, &quot;[òó]&quot;, &quot;[úü]&quot;, &quot;ç&quot;, &quot;([lns])·h&quot;},\n\t\tto   = {&quot;a&quot;   , &quot;e&quot;   , &quot;i&quot;   , &quot;o&quot;   , &quot;u&quot;\
+      \   , &quot;c&quot;, &quot;%1h&quot;\t  }} ,\n}\n\nm[&quot;oj&quot;] = {\n\tcanonicalName = &quot;Ojibwe&quot;,\n\totherNames = {&quot;Chippewa&quot;, &quot;Ojibway&quot;, &quot;Ojibwemowin&quot;, &quot;Southwestern Ojibwa&quot;},\n\ttype = &quot;regular&quot;,\n\
+      \tscripts = {&quot;Cans&quot;, &quot;Latn&quot;},\n\tfamily = &quot;alg&quot;,\n\tancestors = {&quot;alg-pro&quot;},\n}\n\nm[&quot;om&quot;] = {\n\tcanonicalName = &quot;Oromo&quot;,\n\totherNames = {&quot;Orma&quot;, &quot;Borana-Arsi-Guji Oromo&quot;,\
+      \ &quot;West Central Oromo&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;, &quot;Ethi&quot;},\n\tfamily = &quot;cus&quot;,\n}\n\nm[&quot;or&quot;] = {\n\tcanonicalName = &quot;Oriya&quot;,\n\totherNames = {&quot;Odia&quot;, &quot;Oorya&quot;},\n\
+      \ttype = &quot;regular&quot;,\n\tscripts = {&quot;Orya&quot;},\n\tfamily = &quot;inc&quot;,\n\tancestors = {&quot;pka&quot;},\n}\n\nm[&quot;os&quot;] = {\n\tcanonicalName = &quot;Ossetian&quot;,\n\totherNames = {&quot;Ossete&quot;, &quot;Ossetic&quot;,\
+      \ &quot;Digor&quot;, &quot;Iron&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Cyrl&quot;, &quot;Geor&quot;, &quot;Latn&quot;},\n\tfamily = &quot;ira&quot;,\n\ttranslit_module = &quot;os-translit&quot;,\n\tancestors = {&quot;oos&quot;},\n\t\
+      entry_name = {\n\t\tfrom = {GRAVE, ACUTE},\n\t\tto   = {}} ,\n}\n\nm[&quot;pa&quot;] = {\n\tcanonicalName = &quot;Punjabi&quot;,\n\totherNames = {&quot;Panjabi&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Guru&quot;, &quot;Arab&quot;, &quot;Deva&quot;},\n\
+      \tfamily = &quot;inc&quot;,\n\tancestors = {&quot;psu&quot;},\n}\n\nm[&quot;pi&quot;] = {\n\tcanonicalName = &quot;Pali&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;, &quot;Deva&quot;, &quot;Sinh&quot;, &quot;Mymr&quot;, &quot;Khmr&quot;,\
+      \ &quot;Thai&quot;},\n\tfamily = &quot;inc&quot;,\n\tancestors = {&quot;sa&quot;},\n\tsort_key = {\n\t\tfrom = {&quot;ā&quot;, &quot;ī&quot;, &quot;ū&quot;, &quot;ḍ&quot;, &quot;ḷ&quot;, &quot;[ṁṃ]&quot;, &quot;[ṇñṅ]&quot;, &quot;ṭ&quot;},\n\t\tto   =\
+      \ {&quot;a&quot;, &quot;i&quot;, &quot;u&quot;, &quot;d&quot;, &quot;l&quot;, &quot;m&quot;   , &quot;n&quot;\t, &quot;t&quot;}} ,\n}\n\nm[&quot;pl&quot;] = {\n\tcanonicalName = &quot;Polish&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\
+      \tfamily = &quot;zlw&quot;,\n\tancestors = {&quot;zlw-opl&quot;},\n\tsort_key = {\n\tfrom = {&quot;[Ąą]&quot;, &quot;[Ćć]&quot;, &quot;[Ęę]&quot;, &quot;[Łł]&quot;, &quot;[Ńń]&quot;, &quot;[Óó]&quot;, &quot;[Śś]&quot;, &quot;[Żż]&quot;, &quot;[Źź]&quot;},\n\
+      \tto   = {\n\t\t&quot;a&quot; .. u(0x10FFFF),\n\t\t&quot;c&quot; .. u(0x10FFFF),\n\t\t&quot;e&quot; .. u(0x10FFFF),\n\t\t&quot;l&quot; .. u(0x10FFFF),\n\t\t&quot;n&quot; .. u(0x10FFFF),\n\t\t&quot;o&quot; .. u(0x10FFFF),\n\t\t&quot;s&quot; .. u(0x10FFFF),\n\
+      \t\t&quot;z&quot; .. u(0x10FFFF),\n\t\t&quot;z&quot; .. u(0x10FFFE)}} ,\n}\n\nm[&quot;ps&quot;] = {\n\tcanonicalName = &quot;Pashto&quot;,\n\totherNames = {&quot;Pashtun&quot;, &quot;Pushto&quot;, &quot;Pashtu&quot;, &quot;Central Pashto&quot;, &quot;Northern\
+      \ Pashto&quot;, &quot;Southern Pashto&quot;, &quot;Pukhto&quot;, &quot;Pakhto&quot;, &quot;Pakkhto&quot;, &quot;Afghani&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;ps-Arab&quot;},\n\tfamily = &quot;ira&quot;,\n\tancestors = {&quot;ira-pro&quot;},\n\
+      }\n\nm[&quot;pt&quot;] = {\n\tcanonicalName = &quot;Portuguese&quot;,\n\totherNames = {&quot;Modern Portuguese&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;roa&quot;,\n\tancestors = {&quot;roa-opt&quot;},\n\t\
+      sort_key = {\n\t\tfrom = {&quot;[àãáâä]&quot;, &quot;[èẽéêë]&quot;, &quot;[ìĩíï]&quot;, &quot;[òóôõö]&quot;, &quot;[üúùũ]&quot;, &quot;ç&quot;, &quot;ñ&quot;},\n\t\tto   = {&quot;a&quot;\t  , &quot;e&quot;\t  , &quot;i&quot;\t , &quot;o&quot;\t  , &quot;u&quot;\t\
+      \ , &quot;c&quot;, &quot;n&quot;}} ,\n}\n\nm[&quot;qu&quot;] = {\n\tcanonicalName = &quot;Quechua&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;qwe&quot;,\n}\n\nm[&quot;rm&quot;] = {\n\tcanonicalName = &quot;Romansch&quot;,\n\
+      \totherNames = {&quot;Romansh&quot;, &quot;Rumantsch&quot;, &quot;Romanche&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;roa&quot;,\n\tancestors = {&quot;la&quot;},\n}\n\nm[&quot;rn&quot;] = {\n\tcanonicalName\
+      \ = &quot;Kirundi&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bnt&quot;,\n}\n\nm[&quot;ro&quot;] = {\n\tcanonicalName = &quot;Romanian&quot;,\n\totherNames = {&quot;Daco-Romanian&quot;, &quot;Roumanian&quot;,\
+      \ &quot;Rumanian&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;, &quot;Cyrl&quot;},\n\tfamily = &quot;roa&quot;,\n\tancestors = {&quot;la&quot;},\n}\n\nm[&quot;ru&quot;] = {\n\tcanonicalName = &quot;Russian&quot;,\n\ttype = &quot;regular&quot;,\n\
+      \tscripts = {&quot;Cyrl&quot;},\n\tfamily = &quot;zle&quot;,\n\tancestors = {&quot;orv&quot;},\n\ttranslit_module = &quot;ru-translit&quot;,\n\tsort_key = {\n\t\tfrom = {&quot;ё&quot;},\n\t\tto   = {&quot;е&quot; .. mw.ustring.char(0x10FFFF)}},\n\tentry_name\
+      \ = {\n\t\tfrom = {&quot;Ѐ&quot;, &quot;ѐ&quot;, &quot;Ѝ&quot;, &quot;ѝ&quot;, GRAVE, ACUTE},\n\t\tto   = {&quot;Е&quot;, &quot;е&quot;, &quot;И&quot;, &quot;и&quot;}},\n}\n\nm[&quot;rw&quot;] = {\n\tcanonicalName = &quot;Kinyarwanda&quot;,\n\ttype = &quot;regular&quot;,\n\
+      \tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bnt&quot;,\n}\n\nm[&quot;sa&quot;] = {\n\tcanonicalName = &quot;Sanskrit&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Deva&quot;, &quot;Beng&quot;, &quot;Brah&quot;, &quot;Gran&quot;, &quot;Gujr&quot;,\
+      \ &quot;Guru&quot;, &quot;Khar&quot;, &quot;Knda&quot;, &quot;Mlym&quot;, &quot;Mymr&quot;, &quot;Orya&quot;, &quot;Shrd&quot;, &quot;Sinh&quot;, &quot;Taml&quot;, &quot;Telu&quot;, &quot;Thai&quot;, &quot;Tibt&quot;},\n\tfamily = &quot;inc&quot;,\n\t\
+      ancestors = {&quot;inc-pro&quot;},\n\ttranslit_module = &quot;sa-translit&quot;,\n}\n\nm[&quot;sc&quot;] = {\n\tcanonicalName = &quot;Sardinian&quot;,\n\totherNames = {&quot;Campidanese&quot;, &quot;Campidanese Sardinian&quot;, &quot;Logudorese&quot;,\
+      \ &quot;Logudorese Sardinian&quot;, &quot;Nuorese&quot;, &quot;Nuorese Sardinian&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;roa&quot;,\n\tancestors = {&quot;la&quot;},\n}\n\nm[&quot;sd&quot;] = {\n\tcanonicalName\
+      \ = &quot;Sindhi&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;sd-Arab&quot;},\n\tfamily = &quot;inc&quot;,\n\tancestors = {&quot;sa&quot;},\n}\n\nm[&quot;se&quot;] = {\n\tcanonicalName = &quot;Northern Sami&quot;,\n\totherNames = {&quot;North\
+      \ Sami&quot;, &quot;Northern Saami&quot;, &quot;North Saami&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;smi&quot;,\n\tancestors = {&quot;smi-pro&quot;},\n\tentry_name = {\n\t\tfrom = {&quot;([đflmnŋrsšŧv])'%1&quot;},\n\
+      \t\tto   = {&quot;%1%1&quot;} },\n}\n\nm[&quot;sg&quot;] = {\n\tcanonicalName = &quot;Sango&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;crp&quot;,\n}\n\nm[&quot;sh&quot;] = {\n\tcanonicalName = &quot;Serbo-Croatian&quot;,\n\
+      \totherNames = {&quot;BCS&quot;, &quot;Croato-Serbian&quot;, &quot;Serbocroatian&quot;, &quot;Bosnian&quot;, &quot;Croatian&quot;, &quot;Montenegrin&quot;, &quot;Serbian&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;, &quot;Cyrl&quot;},\n\
+      \tfamily = &quot;zls&quot;,\n\tancestors = {&quot;sla-pro&quot;},\n\tentry_name = {\n\t\tfrom = {&quot;[ȀÀȂÁĀ]&quot;, &quot;[ȁàȃáā]&quot;, &quot;[ȄÈȆÉĒ]&quot;, &quot;[ȅèȇéē]&quot;, &quot;[ȈÌȊÍĪ]&quot;, &quot;[ȉìȋíī]&quot;, &quot;[ȌÒȎÓŌ]&quot;, &quot;[ȍ\
+      òȏóō]&quot;, &quot;[ȐȒŔ]&quot;, &quot;[ȑȓŕ]&quot;, &quot;[ȔÙȖÚŪ]&quot;, &quot;[ȕùȗúū]&quot;, &quot;Ѐ&quot;, &quot;ѐ&quot;, &quot;[ӢЍ]&quot;, &quot;[ӣѝ]&quot;, &quot;[Ӯ]&quot;, &quot;[ӯ]&quot;, GRAVE, ACUTE, DGRAVE, INVBREVE, MACRON},\n\t\tto   = {&quot;A&quot;\t\
+      \  , &quot;a&quot;\t  , &quot;E&quot;\t  , &quot;e&quot;\t  , &quot;I&quot;\t  , &quot;i&quot;\t  , &quot;O&quot;\t  , &quot;o&quot;\t  , &quot;R&quot;\t, &quot;r&quot;\t, &quot;U&quot;\t  , &quot;u&quot;\t  , &quot;Е&quot;, &quot;е&quot;, &quot;И&quot;\
+      \   , &quot;и&quot;, &quot;У&quot;, &quot;у&quot;   }},\n\twikimedia_codes = {&quot;sh&quot;, &quot;bs&quot;, &quot;hr&quot;, &quot;sr&quot;},\n}\n\nm[&quot;si&quot;] = {\n\tcanonicalName = &quot;Sinhalese&quot;,\n\totherNames = {&quot;Singhalese&quot;,\
+      \ &quot;Sinhala&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Sinh&quot;},\n\tfamily = &quot;inc&quot;,\n\tancestors = {&quot;sa&quot;},\n\ttranslit_module = &quot;si-translit&quot;,\n}\n\nm[&quot;sk&quot;] = {\n\tcanonicalName = &quot;Slovak&quot;,\n\
+      \ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;zlw&quot;,\n\tancestors = {&quot;sla-pro&quot;},\n\tsort_key = {\n\t\tfrom = {&quot;[áä]&quot;, &quot;é&quot;, &quot;í&quot;, &quot;[óô]&quot;, &quot;ú&quot;, &quot;ý&quot;,\
+      \ &quot;ŕ&quot;, &quot;ĺ&quot;},\n\t\tto   = {&quot;a&quot;   , &quot;e&quot;, &quot;i&quot;, &quot;o&quot;   , &quot;u&quot;, &quot;y&quot;, &quot;r&quot;, &quot;l&quot;}} ,\n}\n\nm[&quot;sl&quot;] = {\n\tcanonicalName = &quot;Slovene&quot;,\n\totherNames\
+      \ = {&quot;Slovenian&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;zls&quot;,\n\tancestors = {&quot;sla-pro&quot;},\n\tentry_name = {\n\t\tfrom = {&quot;[ÁÀÂȂȀ]&quot;, &quot;[áàâȃȁ]&quot;, &quot;[ÉÈÊȆȄỆẸ]&quot;,\
+      \ &quot;[éèêȇȅệẹə]&quot;, &quot;[ÍÌÎȊȈ]&quot;, &quot;[íìîȋȉ]&quot;, &quot;[ÓÒÔȎȌỘỌ]&quot;, &quot;[óòôȏȍộọ]&quot;, &quot;[ŔȒȐ]&quot;, &quot;[ŕȓȑ]&quot;, &quot;[ÚÙÛȖȔ]&quot;, &quot;[úùûȗȕ]&quot;, &quot;ł&quot;, GRAVE, ACUTE, DGRAVE, INVBREVE, CIRC, DOTBELOW},\n\
+      \t\tto   = {&quot;A&quot;\t  , &quot;a&quot;\t  , &quot;E&quot;\t\t, &quot;e&quot;\t\t , &quot;I&quot;\t  , &quot;i&quot;\t  , &quot;O&quot;\t\t, &quot;o&quot;\t\t, &quot;R&quot;\t, &quot;r&quot;\t, &quot;U&quot;\t  , &quot;u&quot;\t  , &quot;l&quot;}}\
+      \ ,\n}\n\nm[&quot;sm&quot;] = {\n\tcanonicalName = &quot;Samoan&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;poz-pol&quot;,\n\tancestors = {&quot;poz-pol-pro&quot;},\n}\n\nm[&quot;sn&quot;] = {\n\tcanonicalName\
+      \ = &quot;Shona&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bnt&quot;,\n}\n\nm[&quot;so&quot;] = {\n\tcanonicalName = &quot;Somali&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;, &quot;Arab&quot;,\
+      \ &quot;Osma&quot;},\n\tfamily = &quot;cus&quot;,\n\tentry_name = {\n\t\tfrom = {&quot;[ÁÀÂ]&quot;, &quot;[áàâ]&quot;, &quot;[ÉÈÊ]&quot;, &quot;[éèê]&quot;, &quot;[ÍÌÎ]&quot;, &quot;[íìî]&quot;, &quot;[ÓÒÔ]&quot;, &quot;[óòô]&quot;, &quot;[ÚÙÛ]&quot;,\
+      \ &quot;[úùû]&quot;, &quot;[ÝỲ]&quot;, &quot;[ýỳ]&quot;},\n\t\tto   = {&quot;A&quot;\t  , &quot;a&quot;\t  , &quot;E&quot;\t, &quot;e&quot; , &quot;I&quot;\t  , &quot;i&quot;\t  , &quot;O&quot;\t, &quot;o&quot;\t, &quot;U&quot;  , &quot;u&quot;, &quot;Y&quot;,\
+      \ &quot;y&quot;}} ,\n}\n\nm[&quot;sq&quot;] = {\n\tcanonicalName = &quot;Albanian&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;, &quot;Elba&quot;},\n\tfamily = &quot;sqj&quot;,\n\tancestors = {&quot;sqj-pro&quot;},\n\tsort_key =\
+      \ {\n\t\tfrom = { '[âãä]', '[ÂÃÄ]', '[êẽë]', '[ÊẼË]', 'ĩ', 'Ĩ', 'õ', 'Õ', 'ũ', 'Ũ', 'ỹ', 'Ỹ', 'ç', 'Ç' },\n\t\tto   = {     'a',     'A',     'e',     'E', 'i', 'I', 'o', 'O', 'u', 'U', 'y', 'Y', 'c', 'C' } } ,\n}\n\nm[&quot;ss&quot;] = {\n\tcanonicalName\
+      \ = &quot;Swazi&quot;,\n\totherNames = {&quot;Swati&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bnt&quot;,\n}\n\nm[&quot;st&quot;] = {\n\tcanonicalName = &quot;Sotho&quot;,\n\totherNames = {&quot;Sesotho&quot;,\
+      \ &quot;Southern Sesotho&quot;, &quot;Southern Sotho&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bnt&quot;,\n}\n\nm[&quot;su&quot;] = {\n\tcanonicalName = &quot;Sundanese&quot;,\n\ttype = &quot;regular&quot;,\n\
+      \tscripts = {&quot;Latn&quot;, &quot;Sund&quot;},\n\tfamily = &quot;poz-msa&quot;,\n\tancestors = {&quot;poz-msa-pro&quot;},\n\ttranslit_module = &quot;su-translit&quot;,\n}\n\nm[&quot;sv&quot;] = {\n\tcanonicalName = &quot;Swedish&quot;,\n\ttype = &quot;regular&quot;,\n\
+      \tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;gmq&quot;,\n\tancestors = {&quot;gmq-osw&quot;},\n}\n\nm[&quot;sw&quot;] = {\n\tcanonicalName = &quot;Swahili&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;, &quot;Arab&quot;},\n\t\
+      family = &quot;bnt&quot;,\n\tsort_key = {\n\t\tfrom = {&quot;ng'&quot;, &quot;^-&quot;},\n\t\tto   = {&quot;ngz&quot;}} ,\n}\n\nm[&quot;ta&quot;] = {\n\tcanonicalName = &quot;Tamil&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Taml&quot;},\n\
+      \tfamily = &quot;dra&quot;,\n\tancestors = {&quot;oty&quot;},\n\ttranslit_module = &quot;ta-translit&quot;,\n}\n\nm[&quot;te&quot;] = {\n\tcanonicalName = &quot;Telugu&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Telu&quot;},\n\tfamily = &quot;dra&quot;,\n\
+      \tancestors = {&quot;dra-pro&quot;},\n\ttranslit_module = &quot;te-translit&quot;,\n}\n\nm[&quot;tg&quot;] = {\n\tcanonicalName = &quot;Tajik&quot;,\n\totherNames = {&quot;Tadjik&quot;, &quot;Tadzhik&quot;, &quot;Tajiki&quot;, &quot;Tajik Persian&quot;},\n\
+      \ttype = &quot;regular&quot;,\n\tscripts = {&quot;Cyrl&quot;, &quot;fa-Arab&quot;, &quot;Latn&quot;},\n\tfamily = &quot;ira&quot;,\n\ttranslit_module = &quot;tg-translit&quot;,\n\t\tsort_key = {\n\t\tfrom = {&quot;Ё&quot;, &quot;ё&quot;},\n\t\tto   = {&quot;Е\
+      &quot; , &quot;е&quot;}} ,\n\tentry_name = {\n\t\tfrom = {ACUTE},\n\t\tto   = {}} ,\n}\n\nm[&quot;th&quot;] = {\n\tcanonicalName = &quot;Thai&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Thai&quot;},\n\tfamily = &quot;tai-swe&quot;,\n\tancestors\
+      \ = {&quot;tai-swe-pro&quot;},\n}\n\nm[&quot;ti&quot;] = {\n\tcanonicalName = &quot;Tigrinya&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Ethi&quot;},\n\tfamily = &quot;sem-eth&quot;,\n\ttranslit_module = &quot;Ethi-translit&quot;,\n}\n\n\
+      m[&quot;tk&quot;] = {\n\tcanonicalName = &quot;Turkmen&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;, &quot;Cyrl&quot;},\n\tfamily = &quot;trk&quot;,\n\tancestors = {&quot;trk-pro&quot;},\n}\n\nm[&quot;tl&quot;] = {\n\tcanonicalName\
+      \ = &quot;Tagalog&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;, &quot;Tglg&quot;},\n\tfamily = &quot;phi&quot;,\n\tancestors = {&quot;phi-pro&quot;},\n}\n\nm[&quot;tn&quot;] = {\n\tcanonicalName = &quot;Tswana&quot;,\n\totherNames\
+      \ = {&quot;Setswana&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bnt&quot;,\n}\n\nm[&quot;to&quot;] = {\n\tcanonicalName = &quot;Tongan&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\
+      \tfamily = &quot;poz-pol&quot;,\n\tancestors = {&quot;poz-pol-pro&quot;},\n}\n\nm[&quot;tr&quot;] = {\n\tcanonicalName = &quot;Turkish&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;trk&quot;,\n\tancestors = {&quot;ota&quot;},\n\
+      }\n\nm[&quot;ts&quot;] = {\n\tcanonicalName = &quot;Tsonga&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bnt&quot;,\n}\n\nm[&quot;tt&quot;] = {\n\tcanonicalName = &quot;Tatar&quot;,\n\ttype = &quot;regular&quot;,\n\
+      \tscripts = {&quot;Cyrl&quot;, &quot;Latn&quot;, &quot;Arab&quot;, &quot;tt-Arab&quot;},\n\tfamily = &quot;trk&quot;,\n\tancestors = {&quot;qwm&quot;},\n\ttranslit_module = &quot;tt-translit&quot;,\n}\n\nm[&quot;ty&quot;] = {\n\tcanonicalName = &quot;Tahitian&quot;,\n\
+      \ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;poz-pol&quot;,\n\tancestors = {&quot;poz-pol-pro&quot;},\n}\n\nm[&quot;ug&quot;] = {\n\tcanonicalName = &quot;Uyghur&quot;,\n\totherNames = {&quot;Uigur&quot;, &quot;Uighur&quot;,\
+      \ &quot;Uygur&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;ug-Arab&quot;, &quot;Latn&quot;, &quot;Cyrl&quot;},\n\tfamily = &quot;trk&quot;,\n\tancestors = {&quot;trk-pro&quot;},\n\ttranslit_module = &quot;ug-translit&quot;,\n}\n\nm[&quot;uk&quot;]\
+      \ = {\n\tcanonicalName = &quot;Ukrainian&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Cyrl&quot;},\n\tfamily = &quot;zle&quot;,\n\tancestors = {&quot;orv&quot;},\n\ttranslit_module = &quot;uk-translit&quot;,\n\tentry_name = {\n\t\tfrom = {&quot;Ѐ\
+      &quot;, &quot;ѐ&quot;, &quot;Ѝ&quot;, &quot;ѝ&quot;, GRAVE, ACUTE},\n\t\tto   = {&quot;Е&quot;, &quot;е&quot;, &quot;И&quot;, &quot;и&quot;}},\n} \nm[&quot;ur&quot;] = {\n\tcanonicalName = &quot;Urdu&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;ur-Arab&quot;},\n\
+      \tfamily = &quot;inc&quot;,\n\tancestors = {&quot;psu&quot;},\n\tentry_name = {\n\t\tfrom = {u(0x064B), u(0x064C), u(0x064D), u(0x064E), u(0x064F), u(0x0650), u(0x0651), u(0x0652)},\n\t\tto   = {}} ,\n}\n\nm[&quot;uz&quot;] = {\n\tcanonicalName = &quot;Uzbek&quot;,\n\
+      \totherNames = {&quot;Northern Uzbek&quot;, &quot;Southern Uzbek&quot;},\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;, &quot;Cyrl&quot;, &quot;fa-Arab&quot;},\n\tfamily = &quot;trk&quot;,\n\tancestors = {&quot;trk-pro&quot;},\n}\n\nm[&quot;ve&quot;]\
+      \ = {\n\tcanonicalName = &quot;Venda&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bnt&quot;,\n}\n\nm[&quot;vi&quot;] = {\n\tcanonicalName = &quot;Vietnamese&quot;,\n\totherNames = {&quot;Annamese&quot;, &quot;Annamite&quot;},\n\
+      \ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;, &quot;Hani&quot;},\n\tfamily = &quot;mkh-vie&quot;,\n\tancestors = {&quot;mkh-mvi&quot;},\n}\n\nm[&quot;vo&quot;] = {\n\tcanonicalName = &quot;Volapük&quot;,\n\ttype = &quot;regular&quot;,\n\
+      \tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;art&quot;,\n}\n\nm[&quot;wa&quot;] = {\n\tcanonicalName = &quot;Walloon&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;roa&quot;,\n\tancestors = {&quot;fro&quot;},\n\
+      \tsort_key = {\n\t\tfrom = {&quot;[áàâäå]&quot;, &quot;[éèêë]&quot;, &quot;[íìîï]&quot;, &quot;[óòôö]&quot;, &quot;[úùûü]&quot;, &quot;[ýỳŷÿ]&quot;, &quot;ç&quot;, &quot;'&quot;},\n\t\tto   = {&quot;a&quot;\t  , &quot;e&quot;\t , &quot;i&quot;\t , &quot;o&quot;\t\
+      \ , &quot;u&quot;\t , &quot;y&quot;\t , &quot;c&quot;}} ,\n}\n\nm[&quot;wo&quot;] = {\n\tcanonicalName = &quot;Wolof&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;, &quot;Arab&quot;},\n\tfamily = &quot;alv-sng&quot;,\n}\n\nm[&quot;xh&quot;]\
+      \ = {\n\tcanonicalName = &quot;Xhosa&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bnt&quot;,\n}\n\nm[&quot;yi&quot;] = {\n\tcanonicalName = &quot;Yiddish&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Hebr&quot;},\n\
+      \tfamily = &quot;gmw&quot;,\n\tancestors = {&quot;gmh&quot;},\n\ttranslit_module = &quot;yi-translit&quot;,\n}\n\nm[&quot;yo&quot;] = {\n\tcanonicalName = &quot;Yoruba&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;alv-von&quot;,\n\
+      }\n\nm[&quot;za&quot;] = {\n\tcanonicalName = &quot;Zhuang&quot;,\n\ttype = &quot;regular&quot;,\n\tscripts = {&quot;Latn&quot;, &quot;Hani&quot;},\n\tfamily = &quot;tai&quot;,\n}\n\nm[&quot;zh&quot;] = {\n\tcanonicalName = &quot;Chinese&quot;,\n\ttype\
+      \ = &quot;regular&quot;,\n\tscripts = {&quot;Hani&quot;},\n\tfamily = &quot;sit&quot;,\n\tancestors = {&quot;ltc&quot;},\n}\n\nm[&quot;zu&quot;] = {\n\tcanonicalName = &quot;Zulu&quot;,\n\totherNames = {&quot;isiZulu&quot;},\n\ttype = &quot;regular&quot;,\n\
+      \tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bnt&quot;,\n}\n\nreturn m</rev></revisions></page></pages></query></api>"
+- recorded: 2015-10-05T22:43:59.839Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Autilities&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: GeoIP=PT:17:Vila_Nova_De_Gaia:41.13:-8.62:v4; WMF-Last-Access=05-Oct-2015
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Age: '0'
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Type: text/xml; charset=utf-8
+      Date: Mon, 05 Oct 2015 22:43:59 GMT
+      Server: nginx/1.9.4
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Analytics: https=1;WMF-Last-Access=05-Oct-2015
+      X-Cache: cp1052 miss (0), cp3031 miss (0), cp3004 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.6.5
+      X-Varnish: 1817216691, 1674129220, 2478667241
+    body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4073440\" pageid=\"4073440\" ns=\"828\" title=\"Module:utilities\"><revisions><rev user=\"Wikitiki89\" timestamp=\"2015-06-10T20:26:21Z\" comment=\"remove silly strings of ands\
+      \ and ors with redundant lang:getCode() calls\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">local export = {}\n\nlocal notneeded = {\n\t[&quot;und&quot;] = true,\n\t[&quot;cmn&quot;] = true,\n\t[&quot;ja&quot;] = true,\n\
+      \t[&quot;zu&quot;] = true,\n\t[&quot;nan&quot;] = true,\n\t[&quot;yue&quot;] = true,\n\t[&quot;ko&quot;] = true,\n}\n\nlocal neededhassubpage = {\n\t[&quot;ga&quot;] = true,\n\t[&quot;gv&quot;] = true,\n\t[&quot;nv&quot;] = true,\n\t[&quot;roa-jer&quot;]\
+      \ = true,\n\t[&quot;fr&quot;] = true,\n\t[&quot;rm&quot;] = true,\n\t[&quot;prg&quot;] = true,\n\t[&quot;gd&quot;] = true,\n\t[&quot;twf&quot;] = true,\n\t[&quot;en&quot;] = true,\n\t[&quot;ro&quot;] = true,\n\t[&quot;egl&quot;] = true,\n\t[&quot;roa-tar&quot;]\
+      \ = true,\n\t[&quot;gl&quot;] = true,\n\t[&quot;ast&quot;] = true,\n\t[&quot;br&quot;] = true,\n}\n\n-- Format the categories with the appropriate sort key\nfunction export.format_categories(categories, lang, sort_key, sort_base)\n\tNAMESPACE = NAMESPACE\
+      \ or mw.title.getCurrentTitle().nsText\n\t\n\tif NAMESPACE == &quot;&quot; or NAMESPACE == &quot;Appendix&quot; then\n\t\tPAGENAME = PAGENAME or mw.title.getCurrentTitle().text\n\t\tSUBPAGENAME = SUBPAGENAME or mw.title.getCurrentTitle().subpageText\n\t\
+      \t\n\t\tif not lang then\n\t\t\tlang = require(&quot;Module:languages&quot;).getByCode(&quot;und&quot;)\n\t\tend\n\t\t\n\t\t-- Generate a default sort key\n\t\tsort_base = lang:makeSortKey(sort_base or SUBPAGENAME)\n\t\t\n\t\tif sort_key then\n\t\t\t--\
+      \ Gather some statistics regarding sort keys\n\t\t\tif mw.ustring.lower(sort_key) == sort_base then\n\t\t\t\ttable.insert(categories, &quot;Sort key tracking/redundant&quot;)\n\t\t\telseif not notneeded[lang:getCode()] then\n\t\t\t\tif neededhassubpage[lang:getCode()]\
+      \ then\n\t\t\t\t\ttable.insert(categories, &quot;Sort key tracking/needed/&quot; .. lang:getCode())\n\t\t\t\telse\n\t\t\t\t\ttable.insert(categories, &quot;Sort key tracking/needed&quot;)\n\t\t\t\tend\n\t\t\tend\n\t\telse\n\t\t\tsort_key = sort_base\n\t\
+      \tend\n\t\t\n\t\t-- If the resulting key is the same as the wiki software's default, remove it\n\t\tif sort_key == PAGENAME then\n\t\t\tsort_key = nil\n\t\tend\n\t\t\n\t\tfor key, cat in ipairs(categories) do\n\t\t\tcategories[key] = &quot;[[Category:&quot;\
+      \ .. cat .. (sort_key and &quot;|&quot; .. sort_key or &quot;&quot;) .. &quot;]]&quot;\n\t\tend\n\t\t\n\t\treturn table.concat(categories, &quot;&quot;)\n\telse\n\t\treturn &quot;&quot;\n\tend\nend\n\n-- Used by {{categorize}}\nfunction export.template_categorize(frame)\n\
+      \tNAMESPACE = NAMESPACE or mw.title.getCurrentTitle().nsText\n\tlocal format = frame.args[&quot;format&quot;]\n\tlocal args = frame:getParent().args\n\t\n\tlocal langcode = args[1]; if langcode == &quot;&quot; then langcode = nil end\n\tlocal sort_key\
+      \ = args[&quot;sort&quot;]; if sort_key == &quot;&quot; then sort_key = nil end\n\tlocal categories = {}\n\t\n\tif not langcode then\n\t\tif NAMESPACE == &quot;Template&quot; then return &quot;&quot; end\n\t\terror(&quot;Language code has not been specified.\
+      \ Please pass parameter 1 to the template.&quot;)\n\tend\n\t\n\tlocal lang = require(&quot;Module:languages&quot;).getByCode(langcode)\n\t\n\tif not lang then\n\t\tif NAMESPACE == &quot;Template&quot; then return &quot;&quot; end\n\t\terror(&quot;The language\
+      \ code \\&quot;&quot; .. langcode .. &quot;\\&quot; is not valid.&quot;)\n\tend\n\t\n\tlocal prefix = &quot;&quot;\n\t\n\tif format == &quot;pos&quot; then\n\t\tprefix = lang:getCanonicalName() .. &quot; &quot;\n\telseif format == &quot;topic&quot; then\n\
+      \t\tprefix = lang:getCode() .. &quot;:&quot;\n\tend\n\t\n\tlocal i = 2\n\tlocal cat = args[i]\n\t\n\twhile cat do\n\t\tif cat ~= &quot;&quot; then\n\t\t\ttable.insert(categories, prefix .. cat)\n\t\tend\n\t\t\n\t\ti = i + 1\n\t\tcat = args[i]\n\tend\n\t\
+      \n\treturn export.format_categories(categories, lang, sort_key)\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
+- recorded: 2015-10-05T22:44:00.067Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Ascript+utilities&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: GeoIP=PT:17:Vila_Nova_De_Gaia:41.13:-8.62:v4; WMF-Last-Access=05-Oct-2015
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Age: '0'
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Type: text/xml; charset=utf-8
+      Date: Mon, 05 Oct 2015 22:44:00 GMT
+      Server: nginx/1.9.4
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Analytics: https=1;WMF-Last-Access=05-Oct-2015
+      X-Cache: cp1068 miss (0), cp3004 miss (0), cp3004 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.6.5
+      X-Varnish: 2233966517, 1930413700, 2478667370
+    body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4099100\" pageid=\"4099100\" ns=\"828\" title=\"Module:script utilities\"><revisions><rev user=\"Vahagn Petrosyan\" timestamp=\"2014-11-16T19:12:49Z\" comment=\"&quot;script?&quot;\
+      \ to &quot;script needed&quot; to match &quot;transliteration needed&quot; and to avoid confusion\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">local export = {}\n\n-- Implements [[Template:lang]]\nfunction export.lang_t(frame)\n\
+      \tlocal args = frame:getParent().args\n\tNAMESPACE = mw.title.getCurrentTitle().nsText\n\t\n\tlocal lang = args[1]; if lang == &quot;&quot; then lang = nil end\n\tlocal text = args[2] or &quot;&quot;\n\tlocal sc = args[&quot;sc&quot;]; if sc == &quot;&quot;\
+      \ then sc = nil end\n\tlocal face = args[&quot;face&quot;]; if face == &quot;&quot; then face = nil end\n\t\n\tlang = lang or (NAMESPACE == &quot;Template&quot; and &quot;und&quot;) or error(&quot;Language code has not been specified. Please pass parameter\
+      \ 1 to the template.&quot;)\n\tlang = require(&quot;Module:languages&quot;).getByCode(lang) or error(&quot;The language code \\&quot;&quot; .. lang .. &quot;\\&quot; is not valid.&quot;)\n\tsc = (sc and (require(&quot;Module:scripts&quot;).getByCode(sc)\
+      \ or error(&quot;The script code \\&quot;&quot; .. sc .. &quot;\\&quot; is not valid.&quot;)) or nil)\n\t\n\tif not sc then\n\t\tsc = require(&quot;Module:scripts&quot;).findBestScript(text, lang)\n\tend\n\t\n\treturn export.tag_text(text, lang, sc, face)\n\
+      end\n\n-- Wrap text in the appropriate HTML tags with language and script class.\nfunction export.tag_text(text, lang, sc, face)\n\t-- Add a script wrapper\n\tif face == &quot;term&quot; then\n\t\treturn '&lt;i class=&quot;' .. sc:getCode() .. ' mention&quot;\
+      \ lang=&quot;' .. lang:getCode() .. '&quot;&gt;' .. text .. '&lt;/i&gt;'\n\telseif face == &quot;head&quot; then\n\t\treturn '&lt;strong class=&quot;' .. sc:getCode() .. ' headword&quot; lang=&quot;' .. lang:getCode() .. '&quot;&gt;' .. text .. '&lt;/strong&gt;'\n\
+      \telseif face == &quot;bold&quot; then\n\t\treturn '&lt;b class=&quot;' .. sc:getCode() .. '&quot; lang=&quot;' .. lang:getCode() .. '&quot;&gt;' .. text .. '&lt;/b&gt;'\n\telseif face == nil then\n\t\treturn '&lt;span class=&quot;' .. sc:getCode() ..\
+      \ '&quot; lang=&quot;' .. lang:getCode() .. '&quot;&gt;' .. text .. '&lt;/span&gt;'\n\telse\n\t\terror(&quot;Invalid script face \\&quot;&quot; .. face .. &quot;\\&quot;.&quot;)\n\tend\nend\n\n-- Add a notice to request the native script of a word\nfunction\
+      \ export.request_script(lang, sc)\n\tlocal scripts = lang:getScripts()\n\t\n\t-- By default, request for &quot;native&quot; script\n\tlocal cat_script = &quot;native&quot;\n\tlocal disp_script = &quot;script&quot;\n\t\n\t-- If the script was not specified,\
+      \ and the language has only one script, use that.\n\tif not sc and #scripts == 1 then\n\t\tsc = scripts[1]\n\tend\n\t\n\t-- Is the script known?\n\tif sc then\n\t\t-- If the script is Latin, return nothing.\n\t\tif is_Latin_script(sc) then\n\t\t\treturn\
+      \ &quot;&quot;\n\t\tend\n\t\t\n\t\tif sc:getCode() ~= scripts[1]:getCode() then\n\t\t\tdisp_script = sc:getCanonicalName()\n\t\tend\n\t\t\n\t\t-- The category needs to be specific to script only if there is chance\n\t\t-- of ambiguity. This occurs when\
+      \ lang=und, or when the language has\n\t\t-- multiple scripts.\n\t\tif lang:getCode() == &quot;und&quot; or scripts[2] then\n\t\t\tcat_script = sc:getCanonicalName()\n\t\tend\n\telse\n\t\t-- The script is not known.\n\t\t-- Does the language have at least\
+      \ one non-Latin script in its list?\n\t\tlocal has_nonlatin = false\n\t\t\n\t\tfor i, val in ipairs(scripts) do\n\t\t\tif not is_Latin_script(val) then\n\t\t\t\thas_nonlatin = true\n\t\t\t\tbreak\n\t\t\tend\n\t\tend\n\t\t\n\t\t-- If there are non-Latin\
+      \ scripts, return nothing.\n\t\tif not has_nonlatin then\n\t\t\treturn &quot;&quot;\n\t\tend\n\tend\n\t\n\tlocal category = &quot;&quot;\n\t\n\tif mw.title.getCurrentTitle().nsText ~= &quot;Template&quot; then\n\t\tcategory = &quot;[[Category:&quot; ..\
+      \ lang:getCanonicalName() .. &quot; terms needing &quot; .. cat_script .. &quot; script]]&quot;\n\tend\n\t\n\treturn &quot;&lt;small&gt;[&quot; .. disp_script .. &quot; needed]&lt;/small&gt;&quot; .. category\nend\n\nfunction export.template_rfscript(frame)\n\
+      \tlocal args = frame.args\n\tlocal lang = args[1] or error(&quot;The first parameter (language code) has not been given&quot;)\n\tlocal sc = args[&quot;sc&quot;]; if sc == &quot;&quot; then sc = nil end\n\tlang = require(&quot;Module:languages&quot;).getByCode(lang)\
+      \ or error(&quot;The language code \\&quot;&quot; .. lang .. &quot;\\&quot; is not valid.&quot;)\n\tsc = (sc and (require(&quot;Module:scripts&quot;).getByCode(sc) or error(&quot;The script code \\&quot;&quot; .. sc .. &quot;\\&quot; is not valid.&quot;))\
+      \ or nil)\n\t\n\tlocal ret = export.request_script(lang, sc)\n\t\n\tif ret == &quot;&quot; then\n\t\terror(&quot;This language is written in the Latin alphabet. It does not need a native script.&quot;)\n\telse\n\t\treturn ret\n\tend\nend\n\nfunction is_Latin_script(sc)\n\
+      \treturn (sc:getCode():find(&quot;Latn&quot;, nil, true)) or sc:getCode() == &quot;Latinx&quot;\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
+- recorded: 2015-10-05T22:44:00.277Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Ascripts&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: GeoIP=PT:17:Vila_Nova_De_Gaia:41.13:-8.62:v4; WMF-Last-Access=05-Oct-2015
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Age: '0'
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Type: text/xml; charset=utf-8
+      Date: Mon, 05 Oct 2015 22:44:00 GMT
+      Server: nginx/1.9.4
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Analytics: https=1;WMF-Last-Access=05-Oct-2015
+      X-Cache: cp1068 miss (0), cp3014 miss (0), cp3004 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.6.5
+      X-Varnish: 2233966775, 2089776950, 2478667489
+    body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4216643\" pageid=\"4216643\" ns=\"828\" title=\"Module:scripts\"><revisions><rev user=\"CodeCat\" timestamp=\"2015-01-26T18:53:07Z\" comment=\"\" contentformat=\"text/plain\"\
+      \ contentmodel=\"Scribunto\" xml:space=\"preserve\">local export = {}\n\nlocal Script = {}\n\n\nfunction Script:getCode()\n\treturn self._code\nend\n\n\nfunction Script:getCanonicalName()\n\treturn self._rawData.canonicalName\nend\n\n\nfunction Script:getOtherNames()\n\
+      \treturn self._rawData.otherNames or {}\nend\n\n\n--function Script:getAllNames()\n--\treturn self._rawData.names\n--end\n\n\nfunction Script:getType()\n\treturn &quot;script&quot;\nend\n\n\nfunction Script:getCategoryName()\n\tlocal name = self._rawData.canonicalName\n\
+      \t\n\t-- If the name already has &quot;script&quot; in it, don't add it.\n\tif name:find(&quot;[Ss]script$&quot;) then\n\t\treturn name\n\telse\n\t\treturn name .. &quot; script&quot;\n\tend\nend\n\n\nfunction Script:countCharacters(text)\n\tif not self._rawData.characters\
+      \ then\n\t\treturn 0\n\telse\n\t\tlocal _, num = mw.ustring.gsub(text, &quot;[&quot; .. self._rawData.characters .. &quot;]&quot;, &quot;&quot;)\n\t\treturn num\n\tend\nend\n\n\nfunction Script:getRawData()\n\treturn self._rawData\nend\n\n\nfunction Script:toJSON()\n\
+      \tlocal ret = {\n\t\tcanonicalName = self:getCanonicalName(),\n\t\tcategoryName = self:getCategoryName(),\n\t\tcode = self._code,\n\t\totherNames = self:getOtherNames(),\n\t\ttype = self:getType(),\n\t\t}\n\t\n\treturn require(&quot;Module:JSON&quot;).toJSON(ret)\n\
+      end\n\n\nScript.__index = Script\n\n\nfunction export.makeObject(code, data)\n\treturn data and setmetatable({ _rawData = data, _code = code }, Script) or nil\nend\n\n\nfunction export.getByCode(code)\n\tif code == &quot;IPAchar&quot; then\n\t\trequire(&quot;Module:debug&quot;).track(&quot;IPAchar&quot;)\n\
+      \tend\n\treturn export.makeObject(code, mw.loadData(&quot;Module:scripts/data&quot;)[code])\nend\n\n\n-- Find the best script to use, based on the characters of a string.\nfunction export.findBestScript(text, lang)\n\tif not text or not lang then\n\t\t\
+      return export.getByCode(&quot;None&quot;)\n\tend\n\t\n\tlocal scripts = lang:getScripts()\n\t\n\t-- Try to match every script against the text,\n\t-- and return the one with the most matching characters.\n\tlocal bestcount = 0\n\tlocal bestscript = nil\n\
+      \t\n\tfor i, script in ipairs(scripts) do\n\t\tlocal count = script:countCharacters(text)\n\t\t\n\t\tif count &gt; bestcount then\n\t\t\tbestcount = count\n\t\t\tbestscript = script\n\t\tend\n\tend\n\t\n\tif bestscript then\n\t\treturn bestscript\n\tend\n\
+      \t\n\t-- No matching script was found. Return &quot;None&quot;.\n\treturn export.getByCode(&quot;None&quot;)\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
+- recorded: 2015-10-05T22:44:00.492Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Ascripts%2Fdata&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: GeoIP=PT:17:Vila_Nova_De_Gaia:41.13:-8.62:v4; WMF-Last-Access=05-Oct-2015
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Age: '0'
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Type: text/xml; charset=utf-8
+      Date: Mon, 05 Oct 2015 22:44:00 GMT
+      Server: nginx/1.9.4
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Analytics: https=1;WMF-Last-Access=05-Oct-2015
+      X-Cache: cp1067 miss (0), cp3006 miss (0), cp3004 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.6.5
+      X-Varnish: 1553931493, 2401892340, 2478667582
+    body: !!binary |-
+      PD94bWwgdmVyc2lvbj0iMS4wIj8+PGFwaSBiYXRjaGNvbXBsZXRlPSIiPjxxdWVyeT48cGFnZXM+PHBhZ2UgX2lkeD0iNDA3MzYwMiIgcGFnZWlkPSI0MDczNjAyIiBucz0iODI4IiB0aXRsZT0iTW9kdWxlOnNjcmlwdHMvZGF0YSI+PHJldmlzaW9ucz48cmV2IHVzZXI9IkxpbGlhbmEtNjAiIHRpbWVzdGFtcD0iMjAxNS0wOS0yOVQyMzo1NjoyNloiIGNvbW1lbnQ9ImRvZXMgYW55b25lIGV2ZW4ga2VlcCB0aGlzIHVwIHRvIGRhdGU/IiBjb250ZW50Zm9ybWF0PSJ0ZXh0L3BsYWluIiBjb250ZW50bW9kZWw9IlNjcmlidW50byIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+LS0gV2hlbiBhZGRpbmcgbmV3IHNjcmlwdHMgdG8gdGhpcyBmaWxlLCBwbGVhc2UgZG9uJ3QgZm9yZ2V0IHRvIGFkZAotLSBzdHlsZSBkZWZpbml0b25zIGZvciB0aGUgc2NyaXB0IGluIFtbTWVkaWFXaWtpOkNvbW1vbi5jc3NdXS4KCmxvY2FsIHUgPSBtdy51c3RyaW5nLmNoYXIKbG9jYWwgbSA9IHt9CgptWyZxdW90O0FkbG0mcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0FkbGFtJnF1b3Q7LAp9CgptWyZxdW90O0FmYWsmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0FmYWthJnF1b3Q7LAp9CgptWyZxdW90O0FnaGImcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0NhdWNhc2lhbiBBbGJhbmlhbiZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkJSwLfCQlaPwkJWvJnF1b3Q7LAp9CgptWyZxdW90O0Fob20mcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0Fob20mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JGcgC3wkZy/JnF1b3Q7LAp9CgptWyZxdW90O0FyYWImcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0FyYWJpYyZxdW90OywKCW90aGVyTmFtZXMgPSB7JnF1b3Q7SmF3aSZxdW90O30sCgljaGFyYWN0ZXJzID0gJnF1b3Q72IAt27/dkC3dv+CioC3go7/vrZAt77e977mwLe+7vCZxdW90OywKfQoKbVsmcXVvdDtmYS1BcmFiJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtBcmFiaWMmcXVvdDssCglvdGhlck5hbWVzID0geyZxdW90O1BlcnNvLUFyYWJpYyZxdW90O30sCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtBcmFiJnF1b3Q7XS5jaGFyYWN0ZXJzLAp9CgptWyZxdW90O2trLUFyYWImcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0FyYWJpYyZxdW90OywKCWNoYXJhY3RlcnMgPSBtWyZxdW90O0FyYWImcXVvdDtdLmNoYXJhY3RlcnMsCn0KCm1bJnF1b3Q7a3MtQXJhYiZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7QXJhYmljJnF1b3Q7LAoJY2hhcmFjdGVycyA9IG1bJnF1b3Q7QXJhYiZxdW90O10uY2hhcmFjdGVycywKfQoKbVsmcXVvdDtrdS1BcmFiJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtBcmFiaWMmcXVvdDssCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtBcmFiJnF1b3Q7XS5jaGFyYWN0ZXJzLAp9CgptWyZxdW90O216bi1BcmFiJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtBcmFiaWMmcXVvdDssCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtBcmFiJnF1b3Q7XS5jaGFyYWN0ZXJzLAp9CgptWyZxdW90O290YS1BcmFiJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtBcmFiaWMmcXVvdDssCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtBcmFiJnF1b3Q7XS5jaGFyYWN0ZXJzLAp9CgptWyZxdW90O3BhLUFyYWImcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0FyYWJpYyZxdW90OywKCW90aGVyTmFtZXMgPSB7JnF1b3Q7U2hhaG11a2hpJnF1b3Q7fSwKCWNoYXJhY3RlcnMgPSBtWyZxdW90O0FyYWImcXVvdDtdLmNoYXJhY3RlcnMsCn0KCm1bJnF1b3Q7cHMtQXJhYiZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7QXJhYmljJnF1b3Q7LAoJY2hhcmFjdGVycyA9IG1bJnF1b3Q7QXJhYiZxdW90O10uY2hhcmFjdGVycywKfQoKbVsmcXVvdDtzZC1BcmFiJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtBcmFiaWMmcXVvdDssCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtBcmFiJnF1b3Q7XS5jaGFyYWN0ZXJzLAp9CgptWyZxdW90O3R0LUFyYWImcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0FyYWJpYyZxdW90OywKCWNoYXJhY3RlcnMgPSBtWyZxdW90O0FyYWImcXVvdDtdLmNoYXJhY3RlcnMsCn0KCm1bJnF1b3Q7dWctQXJhYiZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7QXJhYmljJnF1b3Q7LAoJY2hhcmFjdGVycyA9IG1bJnF1b3Q7QXJhYiZxdW90O10uY2hhcmFjdGVycywKfQoKbVsmcXVvdDt1ci1BcmFiJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtBcmFiaWMmcXVvdDssCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtBcmFiJnF1b3Q7XS5jaGFyYWN0ZXJzLAp9CgptWyZxdW90O0FyYW4mcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O05hc3RhbGVlcSZxdW90OywKCWNoYXJhY3RlcnMgPSBtWyZxdW90O0FyYWImcXVvdDtdLmNoYXJhY3RlcnMsCn0KCm1bJnF1b3Q7QXJtaSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7SW1wZXJpYWwgQXJhbWFpYyZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkKGALfCQoZ8mcXVvdDssCn0KCm1bJnF1b3Q7QXJtbiZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7QXJtZW5pYW4mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q71LEt1o/vrJMt76yXJnF1b3Q7LAp9CgptWyZxdW90O0F2c3QmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0F2ZXN0YW4mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCsgC3wkKy/JnF1b3Q7LAp9CgptWyZxdW90O0JhbGkmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0JhbGluZXNlJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+GsgC3hrbwmcXVvdDssCn0KCm1bJnF1b3Q7QmFtdSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7QmFtdW0mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q76pqgLeqbt/CWoIAt8JaouCZxdW90OywKfQoKbVsmcXVvdDtCYXNzJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtCYXNzYSZxdW90OywKCW90aGVyTmFtZXMgPSB7JnF1b3Q7QmFzc2EgVmFoJnF1b3Q7LCAmcXVvdDtWYWgmcXVvdDt9LAoJY2hhcmFjdGVycyA9ICZxdW90O/CWq5At8JartSZxdW90OywKfQoKbVsmcXVvdDtCYXRrJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtCYXRhayZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvhr4At4a+/JnF1b3Q7LAp9CgptWyZxdW90O0JlbmcmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0JlbmdhbGkmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74KaBLeCnuiZxdW90OywKfQoKbVsmcXVvdDtCaGtzJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtCaGFpa3N1a2kmcXVvdDssCn0KCm1bJnF1b3Q7Qm9wbyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7Wmh1eWluJnF1b3Q7LAoJb3RoZXJOYW1lcyA9IHsmcXVvdDtaaHV5aW4gRnVoYW8mcXVvdDssICZxdW90O0JvcG9tb2ZvJnF1b3Q7fSwKCWNoYXJhY3RlcnMgPSAmcXVvdDvjhIUt44St44agLeOGuiZxdW90OywKfQoKbVsmcXVvdDtCcmFoJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtCcmFobWkmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JGAgC3wkYGvJnF1b3Q7LAp9CgptWyZxdW90O0JyYWkmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0JyYWlsbGUmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74qCALeKjvyZxdW90OywKfQoKbVsmcXVvdDtCdWdpJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtCdWdpbmVzZSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvhqIAt4aifJnF1b3Q7LAp9CgptWyZxdW90O0J1aGQmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0J1aGlkJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+GdgC3hnZMmcXVvdDssCn0KCm1bJnF1b3Q7Q2FrbSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7Q2hha21hJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CRhIAt8JGFgyZxdW90OywKfQoKbVsmcXVvdDtDYW5zJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtDYW5hZGlhbiBzeWxsYWJpY3MmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74ZCALeGZvyZxdW90OywKfQoKbVsmcXVvdDtDYXJpJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtDYXJpYW4mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCKoC3wkIuQJnF1b3Q7LAp9CgptWyZxdW90O0NoYW0mcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0NoYW0mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q76qiALeqpnyZxdW90Owp9CgptWyZxdW90O0NoZXImcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0NoZXJva2VlJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+GOoC3hj7TqrbAt6q6/JnF1b3Q7LAp9CgptWyZxdW90O0NvcHQmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0NvcHRpYyZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvisoAt4rO/JnF1b3Q7LCAtLSBUaGlzIGlzIHRoZSBzZXBhcmF0ZSAmcXVvdDtDb3B0aWMmcXVvdDsgYmxvY2ssIG5vdCB0aGUgdW5pZmllZCAmcXVvdDtHcmVlayBhbmQgQ29wdGljJnF1b3Q7Cn0KCm1bJnF1b3Q7Q3BydCZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7Q3lwcmlvdCZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkKCALfCQoL8mcXVvdDssCn0KCm1bJnF1b3Q7Q3lybCZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7Q3lyaWxsaWMmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q70IAt0Z/Sii3Up+qagC3qmpcmcXVvdDssCn0KCm1bJnF1b3Q7Q3lycyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7T2xkIEN5cmlsbGljJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O9CALdSn6pmALeqalyZxdW90OywKfQoKbVsmcXVvdDtEZXZhJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtEZXZhbmFnYXJpJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+CkgC3gpb/qo6At6qO7JnF1b3Q7LAp9CgptWyZxdW90O0RzcnQmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0Rlc2VyZXQmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCQgC3wkJGPJnF1b3Q7LAp9CgptWyZxdW90O0R1cGwmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0R1cGxveWFuJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CbsIAt8JuynyZxdW90OywKfQoKbVsmcXVvdDtFZ3lkJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtEZW1vdGljJnF1b3Q7LAp9CgptWyZxdW90O0VneXAmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0VneXB0aWFuIGhpZXJvZ2x5cGhpYyZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwk4CALfCTkK4mcXVvdDssCn0KCm1bJnF1b3Q7RWxiYSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7RWxiYXNhbiZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkJSALfCQlKcmcXVvdDssCn0KCm1bJnF1b3Q7RXRoaSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7RXRoaW9waWMmcXVvdDssCglvdGhlck5hbWVzID0geyZxdW90O0dlJ2V6JnF1b3Q7fSwKCWNoYXJhY3RlcnMgPSAmcXVvdDvhiIAt4Y6Z4raALeK3nuqsgS3qrK4mcXVvdDssCn0KCm1bJnF1b3Q7R2VvayZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7S2h1dHN1cmkmcXVvdDssCglvdGhlck5hbWVzID0geyZxdW90O051c2todXJpJnF1b3Q7LCAmcXVvdDtBc29tdGF2cnVsaSZxdW90O30sCgljaGFyYWN0ZXJzID0gJnF1b3Q74YKgLeGDjeK0gC3itK0mcXVvdDssIC0tIOGCoC3hg40gaXMgQXNvbXRhdnJ1bGksIOK0gC3itK0gaXMgTnVza2h1cmkKfQoKbVsmcXVvdDtHZW9yJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtHZW9yZ2lhbiZxdW90OywKCW90aGVyTmFtZXMgPSB7JnF1b3Q7TWtoZWRydWxpJnF1b3Q7fSwKCWNoYXJhY3RlcnMgPSAmcXVvdDvhgqAt4YO8JnF1b3Q7LCAtLSB0ZWNobmljYWxseSBvbmx5IHRoZSByYW5nZSBb4YOQLeGDv10gaXMgTWtoZWRydWxpCn0KCm1bJnF1b3Q7R2xhZyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7R2xhZ29saXRpYyZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvisIAt4rGeJnF1b3Q7LAp9CgptWyZxdW90O0dvdGgmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0dvdGhpYyZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkIywLfCQjYomcXVvdDssCn0KCm1bJnF1b3Q7R3JhbiZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7R3JhbnRoYSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkYyBLfCRjbQmcXVvdDssCn0KCm1bJnF1b3Q7R3JlayZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7R3JlZWsmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q7zbAtz78mcXVvdDssCn0KCm1bJnF1b3Q7cG9seXRvbmljJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtHcmVlayZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvhvIAt4b++JnF1b3Q7IC4uIG1bJnF1b3Q7R3JlayZxdW90O10uY2hhcmFjdGVycywKfQoKbVsmcXVvdDtHdWpyJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtHdWphcmF0aSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvgqoEt4KuxJnF1b3Q7LAp9CgptWyZxdW90O0d1cnUmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0d1cm11a2hpJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+CogS3gqbUmcXVvdDssCn0KCm1bJnF1b3Q7SGFuZyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7SGFuZ3VsJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+GEgC3hh7/qsIAt7Z6j44SxLeOGjiZxdW90OywKfQoKbVsmcXVvdDtIYW5pJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtIYW4mcXVvdDssCglvdGhlck5hbWVzID0geyZxdW90O0hhbnppJnF1b3Q7LCAmcXVvdDtDaHUgTm9tJnF1b3Q7fSwKCWNoYXJhY3RlcnMgPSAmcXVvdDvkuIAt6b+M45CALeS2teOAgC3jgL/woICALfCsuq/vvIEt77+uJnF1b3Q7LAp9CgptWyZxdW90O0hhbnMmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1NpbXBsaWZpZWQgSGFuJnF1b3Q7LAoJY2hhcmFjdGVycyA9IG1bJnF1b3Q7SGFuaSZxdW90O10uY2hhcmFjdGVycywKfQoKbVsmcXVvdDtIYW50JnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtUcmFkaXRpb25hbCBIYW4mcXVvdDssCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtIYW5pJnF1b3Q7XS5jaGFyYWN0ZXJzLAp9CgptWyZxdW90O0hhdHImcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0hhdHJhbiZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkKOgLfCQo78mcXVvdDssCn0KCm1bJnF1b3Q7SGlyYSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7SGlyYWdhbmEmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q744GBLeOCnyZxdW90OywKfQoKbVsmcXVvdDtIbHV3JnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtBbmF0b2xpYW4gSGllcm9nbHlwaHMmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JSQgC3wlJmGJnF1b3Q7LAp9CgptWyZxdW90O0h1bmcmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0h1bmdhcmlhbiBSdW5lcyZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkLKALfCQsrImcXVvdDssCn0KCm1bJnF1b3Q7S2FuYSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7S2F0YWthbmEmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q744KgLeODv+OHsC3jh78mcXVvdDssCn0KCi0tIFRoZXNlIHNob3VsZCBiZSBkZWZpbmVkIGFmdGVyIHRoZSBzY3JpcHRzIHRoZXkgYXJlIGNvbXBvc2VkIG9mCgptWyZxdW90O0pwYW4mcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0phcGFuZXNlJnF1b3Q7LAoJY2hhcmFjdGVycyA9IG1bJnF1b3Q7SGlyYSZxdW90O10uY2hhcmFjdGVycyAuLiBtWyZxdW90O0thbmEmcXVvdDtdLmNoYXJhY3RlcnMgLi4gbVsmcXVvdDtIYW5pJnF1b3Q7XS5jaGFyYWN0ZXJzLCAKfQoKbVsmcXVvdDtLb3JlJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtLb3JlYW4mcXVvdDssCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtIYW5nJnF1b3Q7XS5jaGFyYWN0ZXJzIC4uIG1bJnF1b3Q7SGFuaSZxdW90O10uY2hhcmFjdGVycyAuLiAmcXVvdDvvvIEt77+uJnF1b3Q7LCAKfQoKbVsmcXVvdDtDR0smcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0tvcmVhbiZxdW90OywKfQoKbVsmcXVvdDtIYW5vJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtIYW51bm9vJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+GcoC3hnLQmcXVvdDssCn0KCm1bJnF1b3Q7SGViciZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7SGVicmV3JnF1b3Q7LAoJY2hhcmFjdGVycyA9IHUoMHgwNTkwKSAuLiAmcXVvdDstJnF1b3Q7IC4uIHUoMHgwNUZGKSAuLiB1KDB4RkIxRCkgLi4gJnF1b3Q7LSZxdW90OyAuLiB1KDB4RkI0RiksCn0KCm1bJnF1b3Q7SG1uZyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7SG1vbmcmcXVvdDssCglvdGhlck5hbWVzID0geyZxdW90O1BhaGF3aCBIbW9uZyZxdW90O30sCgljaGFyYWN0ZXJzID0gJnF1b3Q78JasgC3wlq6PJnF1b3Q7LAp9CgptWyZxdW90O0licm4mcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0liZXJpYW4mcXVvdDssCn0KCm1bJnF1b3Q7SW5kcyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7SW5kdXMmcXVvdDssCglvdGhlck5hbWVzID0geyZxdW90O0hhcmFwcGFuJnF1b3Q7LCAmcXVvdDtJbmR1cyBWYWxsZXkmcXVvdDt9LAp9CgptWyZxdW90O0lQQWNoYXImcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0ludGVybmF0aW9uYWwgUGhvbmV0aWMgQWxwaGFiZXQmcXVvdDssCn0KCm1bJnF1b3Q7SXRhbCZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7T2xkIEl0YWxpYyZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkIyALfCQjKMmcXVvdDssCn0KCm1bJnF1b3Q7SmF2YSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7SmF2YW5lc2UmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q76qaALeqnnyZxdW90OywKfQoKbVsmcXVvdDtKdXJjJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtKdXJjaGVuJnF1b3Q7LAp9CgptWyZxdW90O0thbGkmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0theWFoIExpJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+qkgC3qpK8mcXVvdDssCn0KCm1bJnF1b3Q7S2hhciZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7S2hhcm9zaHRoaSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkKiALfCQqZgmcXVvdDssCn0KCm1bJnF1b3Q7S2htciZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7S2htZXImcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74Z6ALeGfuSZxdW90OywKfQoKbVsmcXVvdDtLaG9qJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtLaG9qa2kmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JGIgC3wkYi9JnF1b3Q7LAp9CgptWyZxdW90O0tpdGwmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0toaXRhbiBMYXJnZSZxdW90OywKfQoKbVsmcXVvdDtLaXRzJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtLaGl0YW4gU21hbGwmcXVvdDssCn0KCm1bJnF1b3Q7S25kYSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7S2FubmFkYSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvgsoIt4LOyJnF1b3Q7LAp9CgptWyZxdW90O0t0aGkmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0thaXRoaSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkYKALfCRg4EmcXVvdDssCn0KCm1bJnF1b3Q7TGFuYSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7TGFubmEmcXVvdDssCn0KCm1bJnF1b3Q7TGFvbyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7TGFvJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+C6gS3gu50mcXVvdDssCn0KCm1bJnF1b3Q7TGF0biZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7TGF0aW4mcXVvdDssCglvdGhlck5hbWVzID0geyZxdW90O1JvbWFuJnF1b3Q7LCAmcXVvdDtSdW1pJnF1b3Q7LCAmcXVvdDtSb21hamkmcXVvdDssICZxdW90O1LFjW1hamkmcXVvdDt9LAoJY2hhcmFjdGVycyA9ICZxdW90OzAtOUEtWmEtesKhLcmP4biALeG7vyZxdW90OywKfQoKbVsmcXVvdDtMYXRmJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtGcmFrdHVyJnF1b3Q7LAoJb3RoZXJOYW1lcyA9IHsmcXVvdDtCbGFja2xldHRlciZxdW90O30sCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtMYXRuJnF1b3Q7XS5jaGFyYWN0ZXJzLAp9CgptWyZxdW90O0xhdGlueCZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7TGF0aW4mcXVvdDssCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtMYXRuJnF1b3Q7XS5jaGFyYWN0ZXJzIC4uICZxdW90O+KxoC3isb/qnKAt6p+/6qywLeqtpSZxdW90OywKfQoKbVsmcXVvdDtudi1MYXRuJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtMYXRpbiZxdW90OywKCWNoYXJhY3RlcnMgPSBtWyZxdW90O0xhdG4mcXVvdDtdLmNoYXJhY3RlcnMsCn0KCm1bJnF1b3Q7cGp0LUxhdG4mcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0xhdGluJnF1b3Q7LAoJY2hhcmFjdGVycyA9IG1bJnF1b3Q7TGF0biZxdW90O10uY2hhcmFjdGVycywKfQoKbVsmcXVvdDtMZWtlJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtMZWtlJnF1b3Q7LAp9CgptWyZxdW90O0xlcGMmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0xlcGNoYSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvhsIAt4bGPJnF1b3Q7LAp9CgptWyZxdW90O0xpbWImcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0xpbWJ1JnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+GkgC3hpY8mcXVvdDssCn0KCm1bJnF1b3Q7TGluYSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7TGluZWFyIEEmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCYgC3wkJ2nJnF1b3Q7LAp9CgptWyZxdW90O0xpbmImcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0xpbmVhciBCJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CQgIAt8JCDuiZxdW90OywKfQoKbVsmcXVvdDtMaXN1JnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtMaXN1JnF1b3Q7LAoJb3RoZXJOYW1lcyA9IHsmcXVvdDtGcmFzZXImcXVvdDt9LAoJY2hhcmFjdGVycyA9ICZxdW90O+qTkC3qk78mcXVvdDssCn0KCm1bJnF1b3Q7THljaSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7THljaWFuJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CQioAt8JCKnCZxdW90OywKfQoKbVsmcXVvdDtMeWRpJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtMeWRpYW4mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCkoC3wkKS/JnF1b3Q7LAp9CgptWyZxdW90O01haGomcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O01haGFqYW5pJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CRhbYt8JGFkCZxdW90OywKfQoKbVsmcXVvdDtNYW5kJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtNYW5kYWljJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+ChgC3goZ4mcXVvdDssCn0KCm1bJnF1b3Q7TWFuaSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7TWFuaWNoYWVhbiZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkKuALfCQq7YmcXVvdDssCn0KCm1bJnF1b3Q7TWF5YSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7TWF5YSZxdW90OywKCW90aGVyTmFtZXMgPSB7JnF1b3Q7TWF5YSBoaWVyb2dseXBoaWMmcXVvdDssICZxdW90O01heWFuJnF1b3Q7LCAmcXVvdDtNYXlhbiBoaWVyb2dseXBoaWMmcXVvdDt9LAp9CgptWyZxdW90O01lbmQmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O01lbmRlJnF1b3Q7LAoJb3RoZXJOYW1lcyA9IHsmcXVvdDtNZW5kZSBLaWtha3VpJnF1b3Q7fSwKCWNoYXJhY3RlcnMgPSAmcXVvdDvwnqCALfCeo5YmcXVvdDssCn0KCm1bJnF1b3Q7TWVyYyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7TWVyb2l0aWMgY3Vyc2l2ZSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkKagLfCQpr8mcXVvdDssCn0KCm1bJnF1b3Q7TWVybyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7TWVyb2l0aWMgaGllcm9nbHlwaGljJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CQpoAt8JCmnyZxdW90OywKfQoKbVsmcXVvdDtNbHltJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtNYWxheWFsYW0mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74LSCLeC1vyZxdW90OywKfQoKbVsmcXVvdDtNb2RpJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtNb2RpJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CRmIAt8JGZmSZxdW90OywKfQoKbVsmcXVvdDtNb25nJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtNb25nb2xpYW4mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74aCALeGiqiZxdW90OywKfQoKbVsmcXVvdDtNcm9vJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtNcm8mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JapgC3wlqmvJnF1b3Q7LAp9CgptWyZxdW90O010ZWkmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O01laXRlaSBNYXllayZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvqr4At6q+/6qugLeqrvyZxdW90OywKfQoKbVsmcXVvdDtNdWx0JnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtNdWx0YW5pJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CRioAt8JGKqSZxdW90OywKfQoKbVsmcXVvdDttdXNpY2FsJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDttdXNpY2FsIG5vdGF0aW9uJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CdhIAt8J2HnSZxdW90OywKfQoKbVsmcXVvdDtNeW1yJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtCdXJtZXNlJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+GAgC3hgZkmcXVvdDssCn0KCm1bJnF1b3Q7TmFyYiZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7T2xkIE5vcnRoIEFyYWJpYW4mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCqgC3wkKqfJnF1b3Q7LAp9CgptWyZxdW90O05iYXQmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O05hYmF0YWVhbiZxdW90OywKCW90aGVyTmFtZXMgPSB7JnF1b3Q7TmFiYXRlYW4mcXVvdDt9LAoJY2hhcmFjdGVycyA9ICZxdW90O/CQooAt8JCiryZxdW90OywKfQoKbVsmcXVvdDtOa29vJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtOJ0tvJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O9+ALd+6JnF1b3Q7LAp9CgptWyZxdW90O05vbmUmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O05vIHNjcmlwdCBzcGVjaWZpZWQmcXVvdDssCgktLSBUaGlzIHNob3VsZCBub3QgaGF2ZSBhbnkgY2hhcmFjdGVycyBsaXN0ZWQKCWNoYXJhY3Rlcl9jYXRlZ29yeSA9IGZhbHNlLCAtLSBub25lCn0KCm1bJnF1b3Q7T2dhbSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7T2doYW0mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74ZqALeGanCZxdW90OywKfQoKbVsmcXVvdDtPbGNrJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtPbCBDaGlraSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvhsZAt4bG/JnF1b3Q7LAp9CgptWyZxdW90O09ya2gmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O09ya2hvbiBydW5lcyZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkLCALfCQsYgmcXVvdDssCn0KCm1bJnF1b3Q7T3J5YSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7T3JpeWEmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74KyBLeCttyZxdW90OywKfQoKbVsmcXVvdDtPc2dlJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtPc2FnZSZxdW90OywKfQoKbVsmcXVvdDtPc21hJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtPc21hbnlhJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CQkoAt8JCSqSZxdW90OywKfQoKbVsmcXVvdDtQYWxtJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtQYWxteXJlbmUmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JChoC3wkKG/JnF1b3Q7LAp9CgptWyZxdW90O1BhdWMmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1BhdSBDaW4gSGF1JnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CRq4At8JGruCZxdW90OywKfQoKbVsmcXVvdDtQZXJtJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtPbGQgUGVybWljJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CQjZAt8JCNuiZxdW90OywKfQoKbVsmcXVvdDtQaGFnJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtQaGFncy1wYSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvqoYAt6qG3JnF1b3Q7LAp9CgptWyZxdW90O01hcmMmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O01hcmNoZW4mcXVvdDssCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtQaGFnJnF1b3Q7XS5jaGFyYWN0ZXJzLAp9CgptWyZxdW90O1BobGkmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0luc2NyaXB0aW9uYWwgUGFobGF2aSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkK2gLfCQrb8mcXVvdDssCn0KCm1bJnF1b3Q7UGhscCZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7UHNhbHRlciBQYWhsYXZpJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CQroAt8JCuryZxdW90OywKfQoKbVsmcXVvdDtQaGx2JnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtCb29rIFBhaGxhdmkmcXVvdDssCgktLSBOb3QgaW4gVW5pY29kZQp9CgptWyZxdW90O1BobngmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1Bob2VuaWNpYW4mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCkgC3wkKSfJnF1b3Q7LAp9CgptWyZxdW90O1BscmQmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1BvbGxhcmQmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78Ja8gC3wlr6fJnF1b3Q7LAp9CgptWyZxdW90O1BydGkmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1BhcnRoaWFuJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CQrYAt8JCtnyZxdW90OywKfQoKbVsmcXVvdDtSam5nJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtSZWphbmcmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q76qSwLeqlnyZxdW90OywKfQoKbVsmcXVvdDtSdW1pbnVtZXJhbHMmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1J1bWkgbnVtZXJhbHMmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JC5oC3wkLm+JnF1b3Q7LAoJY2hhcmFjdGVyX2NhdGVnb3J5ID0gJnF1b3Q7UnVtaSBudW1lcmFscyZxdW90OywKfQoKbVsmcXVvdDtSdW5yJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtSdW5pYyZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvhmqAt4ZuwJnF1b3Q7LAp9CgptWyZxdW90O1NhbXImcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1NhbWFyaXRhbiZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvgoIAt4KC+JnF1b3Q7LAp9CgptWyZxdW90O1NhcmImcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O09sZCBTb3V0aCBBcmFiaWFuJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CQqaAt8JCpvyZxdW90OywKfQoKbVsmcXVvdDtTYXVyJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtTYXVyYXNodHJhJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+qigC3qo5kmcXVvdDssCn0KCm1bJnF1b3Q7U2dudyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7U2lnbldyaXRpbmcmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78J2ggC3wnaqvJnF1b3Q7LAp9CgptWyZxdW90O1NoYXcmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1NoYXZpYW4mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCRkC3wkJG/JnF1b3Q7LAp9CgptWyZxdW90O1NocmQmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1NoYXJhZGEmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JGGgC3wkYeZJnF1b3Q7LAp9CgptWyZxdW90O1NpZGQmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1NpZGRoYW0mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JGWgC3wkZedJnF1b3Q7LAp9CgptWyZxdW90O1NpbmQmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0todWRhd2FkaSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkYqwLfCRi7kmcXVvdDssCn0KCm1bJnF1b3Q7U2luaCZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7U2luaGFsZXNlJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+C2gi3gt7QmcXVvdDssCn0KCm1bJnF1b3Q7U29yYSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7U29yYW5nIFNvbXBlbmcmcXVvdDssCglvdGhlck5hbWVzID0geyZxdW90O1NvcmEgU29tcGVuZyZxdW90O30sCgljaGFyYWN0ZXJzID0gJnF1b3Q78JGDkC3wkYO5JnF1b3Q7Cn0KCm1bJnF1b3Q7U3VuZCZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7U3VuZGFuZXNlJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+GugC3hrr8mcXVvdDssCn0KCm1bJnF1b3Q7U3lsbyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7U3lsb3RpIE5hZ3JpJnF1b3Q7LAoJb3RoZXJOYW1lcyA9IHsmcXVvdDtTeWxoZXRpIE5hZ2FyaSZxdW90O30sCn0KCm1bJnF1b3Q7U3lyYyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7U3lyaWFjJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O9yALd2PJnF1b3Q7LAp9CgptWyZxdW90O1RhZ2ImcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1RhZ2JhbndhJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+GdoC3hnbMmcXVvdDssCn0KCm1bJnF1b3Q7VGFrciZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7VGFrcmkmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JGagC3wkZuJJnF1b3Q7LAp9CgptWyZxdW90O1RhbGUmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1RhaSBMZSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvhpZAt4aW0JnF1b3Q7LAp9CgptWyZxdW90O1RhbHUmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O05ldyBUYWkgTHVlJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+GmgC3hp58mcXVvdDssCn0KCm1bJnF1b3Q7VGFtbCZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7VGFtaWwmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74K6CLeCvuiZxdW90OywKfQoKbVsmcXVvdDtUYW5nJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtUYW5ndXQmcXVvdDssCn0KCm1bJnF1b3Q7VGF2dCZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7VGFpIFZpZXQmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q76qqALeqrnyZxdW90OywKfQoKbVsmcXVvdDtUZWx1JnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtUZWx1Z3UmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74LCBLeCxvyZxdW90OywKfQoKbVsmcXVvdDtUZW5nJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtUZW5nd2FyJnF1b3Q7LAp9CgptWyZxdW90O1RmbmcmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1RpZmluYWdoJnF1b3Q7LAoJb3RoZXJOYW1lcyA9IHsmcXVvdDtMaWJ5Y28tQmVyYmVyJnF1b3Q7LCAmcXVvdDtCZXJiZXImcXVvdDt9LAoJY2hhcmFjdGVycyA9ICZxdW90O+K0sC3itb8mcXVvdDssCn0KCm1bJnF1b3Q7VGdsZyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7VGFnYWxvZyZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvhnIAt4ZyUJnF1b3Q7LAp9CgptWyZxdW90O1RoYWEmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1RoYWFuYSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvegC3esSZxdW90OywKfQoKbVsmcXVvdDtUaGFpJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtUaGFpJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+C4gS3guLomcXVvdDssCn0KCm1bJnF1b3Q7VGlidCZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7VGliZXRhbiZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvgvIAt4L+aJnF1b3Q7LAp9CgptWyZxdW90O1RpcmgmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1Rpcmh1dGEmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JGSgC3wkZOZJnF1b3Q7LAp9CgptWyZxdW90O3h6aC1UaWJ0JnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtaaGFuZy1aaHVuZyZxdW90OywKfQoKbVsmcXVvdDtVZ2FyJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtVZ2FyaXRpYyZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkI6ALfCQjp8mcXVvdDssCn0KCm1bJnF1b3Q7VmFpaSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7VmFpJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+qUgC3qmKsmcXVvdDssCn0KCm1bJnF1b3Q7V2FyYSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7VmFyYW5nIEtzaGl0aSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkaKgLfCRo78mcXVvdDssCn0KCm1bJnF1b3Q7WHBlbyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7T2xkIFBlcnNpYW4mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCOoC3wkI+VJnF1b3Q7LAp9CgptWyZxdW90O1hzdXgmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0N1bmVpZm9ybSZxdW90OywKCW90aGVyTmFtZXMgPSB7JnF1b3Q7U3VtZXJvLUFra2FkaWFuIEN1bmVpZm9ybSZxdW90O30sCgljaGFyYWN0ZXJzID0gJnF1b3Q78JKAgC3wko2u8JKQgC3wkpGzJnF1b3Q7LAp9CgptWyZxdW90O1lpaWkmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1lpJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+qAgC3qk4YmcXVvdDssCn0KCm1bJnF1b3Q7Wm10aCZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7bWF0aGVtYXRpY2FsIG5vdGF0aW9uJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+KEteKIgC3ii7/in4At4p+v4qaALeKnv+KogC3iq7/wnZCALfCdn78mcXVvdDssCgljaGFyYWN0ZXJfY2F0ZWdvcnkgPSAmcXVvdDtNYXRoZW1hdGljYWwgbm90YXRpb24gc3ltYm9scyZxdW90OyAtLSA/Cn0KCm1bJnF1b3Q7WnN5bSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7c3ltYm9sJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+KUgC3inr/ihpDih7/ijIAt4o+z8J+MgC3wn5uFJnF1b3Q7LAoJY2hhcmFjdGVyX2NhdGVnb3J5ID0gZmFsc2UsIC0tIG5vbmUKfQoKbVsmcXVvdDtaeXl5JnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDt1bmRldGVybWluZWQmcXVvdDssCgktLSBUaGlzIHNob3VsZCBub3QgaGF2ZSBhbnkgY2hhcmFjdGVycyBsaXN0ZWQsIHByb2JhYmx5CgljaGFyYWN0ZXJfY2F0ZWdvcnkgPSBmYWxzZSwgLS0gbm9uZQp9CgptWyZxdW90O1p6enomcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O3VuY29kZWQmcXVvdDssCgktLSBUaGlzIHNob3VsZCBub3QgaGF2ZSBhbnkgY2hhcmFjdGVycyBsaXN0ZWQKCWNoYXJhY3Rlcl9jYXRlZ29yeSA9IGZhbHNlLCAtLSBub25lCn0KCnJldHVybiBtPC9yZXY+PC9yZXZpc2lvbnM+PC9wYWdlPjwvcGFnZXM+PC9xdWVyeT48L2FwaT4=
+- recorded: 2015-10-05T22:44:00.808Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Aar-translit&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: GeoIP=PT:17:Vila_Nova_De_Gaia:41.13:-8.62:v4; WMF-Last-Access=05-Oct-2015
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Age: '0'
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Type: text/xml; charset=utf-8
+      Date: Mon, 05 Oct 2015 22:44:00 GMT
+      Server: nginx/1.9.4
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Analytics: https=1;WMF-Last-Access=05-Oct-2015
+      X-Cache: cp1067 miss (0), cp3010 miss (0), cp3004 frontend miss (0)
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.6.5
+      X-Varnish: 1553931819, 1924266967, 2478667784
+    body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"3920342\" pageid=\"3920342\" ns=\"828\" title=\"Module:ar-translit\"><revisions><rev user=\"Benwing\" timestamp=\"2015-08-11T10:25:13Z\" comment=\"irregular_translit() return\
+      \ false on blank Arabic\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">-- Authors: Benwing, ZxxZxxZ, Atitarev\n\nlocal export = {}\n\nlocal u = mw.ustring.char\nlocal rfind = mw.ustring.find\nlocal rsubn = mw.ustring.gsub\n\
+      local rmatch = mw.ustring.match\nlocal rsplit = mw.text.split\nlocal gcodepoint = mw.ustring.gcodepoint\n\n-- version of rsubn() that discards all but the first return value\nfunction rsub(term, foo, bar)\n\tlocal retval = rsubn(term, foo, bar)\n\treturn\
+      \ retval\nend\n\nlocal zwnj = u(0x200c) -- zero-width non-joiner\n--local zwj = u(0x200d) -- zero-width joiner\n--local lrm = u(0x200e) -- left-to-right mark\n--local rlm = u(0x200f) -- right-to-left mark\n\n-- A comment about notation like \\216\\169:\
+      \ We use this in place of directly\n-- encoding diacritics to avoid difficulties with display in the editing window.\n-- These are decimal (NOT octal) encodings of the UTF-8 equivalent of the\n-- characters, e.g. \\216\\169 = D8 A9 in UTF-8 = U+0629 =\
+      \ ة = tāʾ marbūṭa.\nlocal tt = {\n\t-- consonants\n\t[&quot;ب&quot;]=&quot;b&quot;, [&quot;ت&quot;]=&quot;t&quot;, [&quot;ث&quot;]=&quot;ṯ&quot;, [&quot;ج&quot;]=&quot;j&quot;, [&quot;ح&quot;]=&quot;ḥ&quot;, [&quot;خ&quot;]=&quot;ḵ&quot;,\n\t[&quot;د&quot;]=&quot;d&quot;,\
+      \ [&quot;ذ&quot;]=&quot;ḏ&quot;, [&quot;ر&quot;]=&quot;r&quot;, [&quot;ز&quot;]=&quot;z&quot;, [&quot;س&quot;]=&quot;s&quot;, [&quot;ش&quot;]=&quot;š&quot;,\n\t[&quot;ص&quot;]=&quot;ṣ&quot;, [&quot;ض&quot;]=&quot;ḍ&quot;, [&quot;ط&quot;]=&quot;ṭ&quot;,\
+      \ [&quot;ظ&quot;]=&quot;ẓ&quot;, [&quot;ع&quot;]=&quot;ʿ&quot;, [&quot;غ&quot;]=&quot;ḡ&quot;,\n\t[&quot;ف&quot;]=&quot;f&quot;, [&quot;ق&quot;]=&quot;q&quot;, [&quot;ك&quot;]=&quot;k&quot;, [&quot;ل&quot;]=&quot;l&quot;, [&quot;م&quot;]=&quot;m&quot;,\
+      \ [&quot;ن&quot;]=&quot;n&quot;,\n\t[&quot;ه&quot;]=&quot;h&quot;,\n\t-- tāʾ marbūṭa (special) - always after a fátḥa (a), silent at the end of\n\t-- an utterance, &quot;t&quot; in ʾiḍāfa or with pronounced tanwīn. We catch\n\t-- most instances of tāʾ\
+      \ marbūṭa before we get to this stage.\n\t[&quot;\\216\\169&quot;]=&quot;t&quot;, -- tāʾ marbūṭa = ة\n\t-- control characters\n\t[zwnj]=&quot;-&quot;, -- ZWNJ (zero-width non-joiner)\n\t-- [zwj]=&quot;&quot;, -- ZWJ (zero-width joiner)\n\t-- rare letters\n\
+      \t[&quot;پ&quot;]=&quot;p&quot;, [&quot;چ&quot;]=&quot;č&quot;, [&quot;ڤ&quot;]=&quot;v&quot;, [&quot;ڥ&quot;]=&quot;v&quot;, [&quot;گ&quot;]=&quot;g&quot;, [&quot;ڨ&quot;]=&quot;g&quot;, [&quot;ڧ&quot;]=&quot;q&quot;,\n\t-- semivowels or long vowels,\
+      \ alif, hamza, special letters\n\t[&quot;ا&quot;]=&quot;ā&quot;, -- ʾalif = \\216\\167\n\t-- hamzated letters\n\t[&quot;أ&quot;]=&quot;ʾ&quot;, -- hamza over alif = \\216\\163\n\t[&quot;إ&quot;]=&quot;ʾ&quot;, -- hamza under alif = \\216\\165\n\t[&quot;ؤ\
+      &quot;]=&quot;ʾ&quot;, -- hamza over wāw = \\216\\164\n\t[&quot;ئ&quot;]=&quot;ʾ&quot;, -- hamza over yā = \\216\\166\n\t[&quot;ء&quot;]=&quot;ʾ&quot;, -- hamza on the line = \\216\\161\n\t-- long vowels\n\t[&quot;و&quot;]=&quot;w&quot;, --&quot;ū&quot;\
+      \ after ḍamma (u) and not before diacritic = \\217\\136\n\t[&quot;ي&quot;]=&quot;y&quot;, --&quot;ī&quot; after kasra (i) and not before diacritic = \\217\\138\n\t[&quot;ى&quot;]=&quot;ā&quot;, -- ʾalif maqṣūra = \\217\\137\n\t[&quot;آ&quot;]=&quot;ʾā\
+      &quot;, -- ʾalif madda = \\216\\162\n\t[&quot;ٱ&quot;]= &quot;&quot;, -- hamzatu l-waṣl = \\217\\177\n\t[&quot;\\217\\176&quot;] = &quot;ā&quot;, -- ʾalif xanjariyya = dagger ʾalif (Koranic diacritic)\n\t-- short vowels, šádda and sukūn\n\t[&quot;\\217\\\
+      139&quot;]=&quot;an&quot;, -- fatḥatan\n\t[&quot;\\217\\140&quot;]=&quot;un&quot;, -- ḍammatan\n\t[&quot;\\217\\141&quot;]=&quot;in&quot;, -- kasratan\n\t[&quot;\\217\\142&quot;]=&quot;a&quot;, -- fatḥa\n\t[&quot;\\217\\143&quot;]=&quot;u&quot;, -- ḍamma\n\
+      \t[&quot;\\217\\144&quot;]=&quot;i&quot;, -- kasra\n\t-- \\217\\145 = šadda - doubled consonant\n\t[&quot;\\217\\146&quot;]=&quot;&quot;, --sukūn - no vowel\n\t-- ligatures\n\t[&quot;ﻻ&quot;]=&quot;lā&quot;,\n\t[&quot;ﷲ&quot;]=&quot;llāh&quot;,\n\t-- taṭ\
+      wīl\n\t[&quot;ـ&quot;]=&quot;&quot;, -- taṭwīl, no sound\n\t-- numerals\n\t[&quot;١&quot;]=&quot;1&quot;, [&quot;٢&quot;]=&quot;2&quot;, [&quot;٣&quot;]=&quot;3&quot;, [&quot;٤&quot;]=&quot;4&quot;, [&quot;٥&quot;]=&quot;5&quot;,\n\t[&quot;٦&quot;]=&quot;6&quot;,\
+      \ [&quot;٧&quot;]=&quot;7&quot;, [&quot;٨&quot;]=&quot;8&quot;, [&quot;٩&quot;]=&quot;9&quot;, [&quot;٠&quot;]=&quot;0&quot;,\n\t-- punctuation (leave on separate lines)\n\t[&quot;؟&quot;]=&quot;?&quot;, -- question mark\n\t[&quot;«&quot;]='&quot;', --\
+      \ quotation mark\n\t[&quot;»&quot;]='&quot;', -- quotation mark\n\t[&quot;٫&quot;]=&quot;.&quot;, -- decimal point\n\t[&quot;٬&quot;]=&quot;,&quot;, -- thousands separator\n\t[&quot;٪&quot;]=&quot;%&quot;, -- percent sign\n\t[&quot;،&quot;]=&quot;,&quot;,\
+      \ -- comma\n\t[&quot;؛&quot;]=&quot;;&quot; -- semicolon\n}\n\nlocal sun_letters = &quot;تثدذرزسشصضطظلن&quot;\n-- For use in implementing sun-letter assimilation of ال (al-)\nlocal ttsun1 = {}\nlocal ttsun2 = {}\nlocal ttsun3 = {}\nfor cp in gcodepoint(sun_letters)\
+      \ do\n\tlocal ch = u(cp)\n\tttsun1[ch] = tt[ch]\n\tttsun2[&quot;l-&quot; .. ch] = tt[ch] .. &quot;-&quot; .. ch\n\ttable.insert(ttsun3, tt[ch])\nend\n-- For use in implementing elision of al-\nlocal sun_letters_tr = table.concat(ttsun3, &quot;&quot;)\n\
+      \nlocal consonants_needing_vowels = &quot;بتثجحخدذرزسشصضطظعغفقكلمنهپچڤگڨڧأإؤئءةﷲ&quot;\n-- consonants on the right side; includes alif madda\nlocal rconsonants = consonants_needing_vowels .. &quot;ويآ&quot;\n-- consonants on the left side; does not include\
+      \ alif madda\nlocal lconsonants = consonants_needing_vowels .. &quot;وي&quot;\n-- Arabic semicolon, comma, question mark; taṭwīl; period, exclamation point,\n-- single quote for bold/italic\nlocal punctuation = &quot;؟،؛&quot; .. &quot;ـ&quot; .. &quot;.!'&quot;\n\
+      local numbers = &quot;١٢٣٤٥٦٧٨٩٠&quot;\n\nlocal before_diacritic_checking_subs = {\n\t------------ transformations prior to checking for diacritics --------------\n\t-- convert llh for allāh into ll+shadda+dagger-alif+h\n\t{&quot;لله&quot;, &quot;للّٰه\
+      &quot;},\n\t-- shadda+short-vowel (including tanwīn vowels, i.e. -an -in -un) gets\n\t-- replaced with short-vowel+shadda during NFC normalisation, which\n\t-- MediaWiki does for all Unicode strings; however, it makes the\n\t-- transliteration process\
+      \ inconvenient, so undo it.\n\t{&quot;([\\217\\139\\217\\140\\217\\141\\217\\142\\217\\143\\217\\144\\217\\176])\\217\\145&quot;, &quot;\\217\\145%1&quot;},\n\t-- ignore alif jamīla (otiose alif in 3pl verb forms)\n\t--     #1: handle ḍamma + wāw + alif\
+      \ (final -ū)\n\t{&quot;\\217\\143\\217\\136\\216\\167&quot;, &quot;\\217\\143\\217\\136&quot;},\n\t--     #2: handle wāw + sukūn + alif (final -w in -aw in defective verbs)\n\t--     this must go before the generation of w, which removes the waw here.\n\
+      \t{&quot;\\217\\136\\217\\146\\216\\167&quot;, &quot;\\217\\136\\217\\146&quot;},\n\t-- ignore final alif or alif maqṣūra following fatḥatan (e.g. in accusative\n\t-- singular or words like عَصًا &quot;stick&quot; or هُذًى &quot;guidance&quot;; this is\
+      \ called\n\t-- tanwin nasb)\n\t{&quot;\\217\\139[\\216\\167\\217\\137]&quot;, &quot;\\217\\139&quot;},\n\t-- same but with the fatḥatan placed over the alif or alif maqṣūra\n\t-- instead of over the previous letter (considered a misspelling but\n\t-- common)\n\
+      \t{&quot;[\\216\\167\\217\\137]\\217\\139&quot;, &quot;\\217\\139&quot;},\n\t-- tāʾ marbūṭa should always be preceded by fatḥa, alif, alif madda or\n\t-- dagger alif; infer fatḥa if not\n\t{&quot;([^\\217\\142\\216\\167\\216\\162\\217\\176])\\216\\169&quot;,\
+      \ &quot;%1\\217\\142\\216\\169&quot;},\n\t-- similarly for alif between consonants, possibly marked with shadda\n\t-- (does not apply to initial alif, which is silent when not marked with\n\t-- hamza, or final alif, which might be pronounced as -an)\n\t\
+      {&quot;([&quot; .. lconsonants .. &quot;]\\217\\145?)\\216\\167([&quot; .. rconsonants .. &quot;])&quot;,\n\t\t&quot;%1\\217\\142\\216\\167%2&quot;},\n\t-- infer fatḥa in case of non-fatḥa + alif/alif-maqṣūra + dagger alif\n\t{&quot;([^\\217\\142])([\\\
+      216\\167\\217\\137]\\217\\176)&quot;, &quot;%1\\217\\142%2&quot;},\n\t-- infer kasra in case of hamza-under-alif not + kasra\n\t{&quot;\\216\\165([^\\217\\144])&quot;, &quot;\\216\\165\\217\\144%1&quot;},\n\t-- ignore dagger alif placed over regular alif\
+      \ or alif maqṣūra\n\t{&quot;([\\216\\167\\217\\137])\\217\\176&quot;, &quot;%1&quot;},\n\n\t----------- rest of these concern definite article alif-lām ----------\n\t-- NOTE: \\217\\132 = lām = ل\n\t-- in kasra/ḍamma + alif + lam, make alif into hamzatu\
+      \ l-waṣl, so we\n\t-- handle cases like بِالتَّوْفِيق (bi-t-tawfīq) correctly\n\t{&quot;([\\217\\143\\217\\144])\\216\\167\\217\\132&quot;, &quot;%1\\217\\177\\217\\132&quot;},\n\t-- al + consonant + shadda (only recognize word-initially if regular alif):\
+      \ remove shadda\n\t{&quot;^(\\216\\167\\217\\142?\\217\\132[&quot; .. lconsonants .. &quot;])\\217\\145&quot;, &quot;%1&quot;},\n\t{&quot;%s(\\216\\167\\217\\142?\\217\\132[&quot; .. lconsonants .. &quot;])\\217\\145&quot;, &quot; %1&quot;},\n\t{&quot;(\\\
+      217\\177\\217\\142?\\217\\132[&quot; .. lconsonants .. &quot;])\\217\\145&quot;, &quot;%1&quot;},\n\t-- handle l- hamzatu l-waṣl or word-initial al-\n\t{&quot;^\\216\\167\\217\\142?\\217\\132&quot;, &quot;al-&quot;},\n\t{&quot;%s\\216\\167\\217\\142?\\\
+      217\\132&quot;, &quot; al-&quot;},\n\t-- next one for bi-t-tawfīq\n\t{&quot;([\\217\\143\\217\\144])\\217\\177\\217\\142?\\217\\132&quot;, &quot;%1-l-&quot;},\n\t-- next one for remaining hamzatu l-waṣl (at beginning of word)\n\t{&quot;\\217\\177\\217\\\
+      142?\\217\\132&quot;, &quot;l-&quot;},\n\t-- special casing if the l in al- has a shadda on it (as in الَّذِي &quot;that&quot;),\n\t-- so we don't mistakenly double the dash\n\t{&quot;l%-\\217\\145&quot;, &quot;ll&quot;},\n\t-- implement assimilation of\
+      \ sun letters\n\t{&quot;l%-[&quot; .. sun_letters .. &quot;]&quot;, ttsun2},\n}\n\n-- Transliterate the word(s) in TEXT. LANG (the language) and SC (the script)\n-- are ignored. OMIT_I3RAAB means leave out final short vowels (ʾiʿrāb).\n-- GRAY_I3RAAB means\
+      \ render transliterate short vowels (ʾiʿrāb) in gray.\n-- FORCE_TRANSLATE causes even non-vocalized text to be transliterated\n-- (normally the function checks for non-vocalized text and returns nil,\n-- since such text is ambiguous in transliteration).\n\
+      function export.tr(text, lang, sc, omit_i3raab, gray_i3raab, force_translate)\n\t-- make it possible to call this function from a template\n\tif type(text) == &quot;table&quot; then\n\t\tlocal function f(x) return (x ~= &quot;&quot;) and x or nil end\n\
+      \t\ttext, lang, sc, omit_i3raab, force_translate =\n\t\t\tf(text.args[1]), f(text.args[2]), f(text.args[3]), f(text.args[4]), f(text.args[5])\n\tend\n\n\tfor _, sub in ipairs(before_diacritic_checking_subs) do\n\t\ttext = rsub(text, sub[1], sub[2])\n\t\
+      end\n\n\tif not force_translate and not has_diacritics(text) then\n\t\treturn nil\n\tend\n\t\n\t------------ transformations after checking for diacritics --------------\n\t-- Replace plain alif with hamzatu l-waṣl when followed by fatḥa/ḍamma/kasra.\n\
+      \t-- Must go after handling of initial al-, which distinguishes alif-fatḥa\n\t-- from alif w/hamzatu l-waṣl. Must go before generation of ū and ī, which\n\t-- eliminate the ḍamma/kasra.\n\ttext = rsub(text, &quot;\\216\\167([\\217\\142\\217\\143\\217\\\
+      144])&quot;, &quot;\\217\\177%1&quot;)\n\t-- ḍamma + waw not followed by a diacritic is ū, otherwise w\n\ttext = rsub(text, &quot;\\217\\143\\217\\136([^\\217\\139\\217\\140\\217\\141\\217\\142\\217\\143\\217\\144\\217\\145\\217\\146\\217\\176])&quot;,\
+      \ &quot;ū%1&quot;)\n\ttext = rsub(text, &quot;\\217\\143\\217\\136$&quot;, &quot;ū&quot;)\n\t-- kasra + yaa not followed by a diacritic (or ū from prev step) is ī, otherwise y\n\ttext = rsub(text, &quot;\\217\\144\\217\\138([^\\217\\139\\217\\140\\217\\\
+      141\\217\\142\\217\\143\\217\\144\\217\\145\\217\\146\\217\\176ū])&quot;, &quot;ī%1&quot;)\n\ttext = rsub(text, &quot;\\217\\144\\217\\138$&quot;, &quot;ī&quot;)\n\t-- convert shadda to double letter.\n\ttext = rsub(text, &quot;(.)\\217\\145&quot;, &quot;%1%1&quot;)\n\
+      \tif not omit_i3raab and gray_i3raab then -- show ʾiʿrāb grayed in transliteration\n\t\t-- decide whether to gray out the t in ﺓ. If word begins with al- or l-, yes.\n\t\t-- Otherwise, no if word ends in a/i/u, yes if ends in an/in/un.\n\t\ttext = rsub(text,\
+      \ &quot;^(a?l%-[^%s]+)\\216\\169([\\217\\139\\217\\140\\217\\141\\217\\142\\217\\143\\217\\144])&quot;,\n\t\t\t'%1&lt;span style=&quot;color: #888888&quot;&gt;t&lt;/span&gt;%2')\n\t\ttext = rsub(text, &quot;(%sa?l%-[^%s]+)\\216\\169([\\217\\139\\217\\\
+      140\\217\\141\\217\\142\\217\\143\\217\\144])&quot;,\n\t\t\t'%1&lt;span style=&quot;color: #888888&quot;&gt;t&lt;/span&gt;%2')\n\t\ttext = rsub(text, &quot;\\216\\169([\\217\\142\\217\\143\\217\\144])&quot;, &quot;t%1&quot;)\n\t\ttext = rsub(text, &quot;\\\
+      216\\169([\\217\\139\\217\\140\\217\\141])&quot;,\n\t\t\t'&lt;span style=&quot;color: #888888&quot;&gt;t&lt;/span&gt;%1')\n\t\ttext = rsub(text, &quot;.&quot;, {\n\t\t\t[&quot;\\217\\139&quot;] = '&lt;span style=&quot;color: #888888&quot;&gt;an&lt;/span&gt;',\n\
+      \t\t\t[&quot;\\217\\141&quot;] = '&lt;span style=&quot;color: #888888&quot;&gt;in&lt;/span&gt;',\n\t\t\t[&quot;\\217\\140&quot;] = '&lt;span style=&quot;color: #888888&quot;&gt;un&lt;/span&gt;'\n\t\t})\n\t\ttext = rsub(text, &quot;([\\217\\142\\217\\143\\\
+      217\\144])%s&quot;, {\n\t\t\t[&quot;\\217\\142&quot;] = '&lt;span style=&quot;color: #888888&quot;&gt;a&lt;/span&gt; ',\n\t\t\t[&quot;\\217\\144&quot;] = '&lt;span style=&quot;color: #888888&quot;&gt;i&lt;/span&gt; ',\n\t\t\t[&quot;\\217\\143&quot;] =\
+      \ '&lt;span style=&quot;color: #888888&quot;&gt;u&lt;/span&gt; '\n\t\t})\n\t\ttext = rsub(text, &quot;[\\217\\142\\217\\143\\217\\144]$&quot;, {\n\t\t\t[&quot;\\217\\142&quot;] = '&lt;span style=&quot;color: #888888&quot;&gt;a&lt;/span&gt;',\n\t\t\t[&quot;\\\
+      217\\144&quot;] = '&lt;span style=&quot;color: #888888&quot;&gt;i&lt;/span&gt;',\n\t\t\t[&quot;\\217\\143&quot;] = '&lt;span style=&quot;color: #888888&quot;&gt;u&lt;/span&gt;'\n\t\t})\n\t\ttext = rsub(text, '&lt;/span&gt;&lt;span style=&quot;color: #888888&quot;&gt;',\
+      \ &quot;&quot;)\n\telseif omit_i3raab then -- omit ʾiʿrāb in transliteration\n\t\ttext = rsub(text, &quot;[\\217\\139\\217\\140\\217\\141]&quot;, &quot;&quot;)\n\t\ttext = rsub(text, &quot;[\\217\\142\\217\\143\\217\\144]%s&quot;, &quot; &quot;)\n\t\t\
+      text = rsub(text, &quot;[\\217\\142\\217\\143\\217\\144]$&quot;, &quot;&quot;)\n\tend\n\t-- tāʾ marbūṭa should not be rendered by -t if word-final even when\n\t-- ʾiʿrāb (desinential inflection) is shown; instead, use (t) before\n\t-- whitespace, nothing\
+      \ when final; but render final -ﺍﺓ and -ﺁﺓ as -āh,\n\t-- consistent with Wehr's dictionary\n\ttext = rsub(text, &quot;([\\216\\167\\216\\162])\\216\\169$&quot;, &quot;%1h&quot;)\n\t-- Ignore final tāʾ marbūṭa (it appears as &quot;a&quot; due to the preceding\n\
+      \t-- short vowel). Need to do this after graying or omitting word-final\n\t-- ʾiʿrāb.\n\ttext = rsub(text, &quot;\\216\\169$&quot;, &quot;&quot;)\n\tif not omit_i3raab then -- show ʾiʿrāb in transliteration\n\t\ttext = rsub(text, &quot;\\216\\169%s&quot;,\
+      \ &quot;(t) &quot;)\n\telse\n\t\t-- When omitting ʾiʿrāb, show all non-absolutely-final instances of\n\t\t-- tāʾ marbūṭa as (t), with trailing ʾiʿrāb omitted.\n\t\ttext = rsub(text, &quot;\\216\\169&quot;, &quot;(t)&quot;)\n\tend\n\t-- tatwīl should be\
+      \ rendered as - at beginning or end of word. It will\n\t-- be rendered as nothing in the middle of a word (FIXME, do we want\n\t-- this?)\n\ttext = rsub(text, &quot;^ـ&quot;, &quot;-&quot;)\n\ttext = rsub(text, &quot;%sـ&quot;, &quot; -&quot;)\n\ttext\
+      \ = rsub(text, &quot;ـ$&quot;, &quot;-&quot;)\n\ttext = rsub(text, &quot;ـ%s&quot;, &quot;- &quot;)\n\t-- Now convert remaining Arabic chars according to table.\n\ttext = rsub(text, &quot;.&quot;, tt)\n\ttext = rsub(text, &quot;aā&quot;, &quot;ā&quot;)\n\
+      \t-- Implement elision of al- after a final vowel. We do this\n\t-- conservatively, only handling elision of the definite article rather\n\t-- than elision in other cases of hamzat al-waṣl (e.g. form-I imperatives\n\t-- or form-VII and above verbal nouns)\
+      \ partly because elision in\n\t-- these cases isn't so common in MSA and partly to avoid excessive\n\t-- elision in case of words written with initial bare alif instead of\n\t-- properly with hamzated alif. Possibly we should reconsider.\n\t-- At the very\
+      \ least we currently don't handle elision of الَّذِي (allaḏi)\n\t-- correctly because we special-case it to appear without the hyphen;\n\t-- perhaps we should reconsider that.\n\ttext = rsub(text, &quot;([aiuāīū]) a([&quot; .. sun_letters_tr .. &quot;]%-)&quot;,\n\
+      \t\t&quot;%1 %2&quot;)\n\tif gray_i3raab then\n\t\ttext = rsub(text, &quot;([aiuāīū]&lt;/span&gt;) a([&quot; .. sun_letters_tr .. &quot;]%-)&quot;,\n\t\t\t&quot;%1 %2&quot;)\n\tend\n\t-- Special-case the transliteration of allāh, without the hyphen\n\t\
+      text = rsub(text, &quot;^(a?)l%-lāh&quot;, &quot;%1llāh&quot;)\n\ttext = rsub(text, &quot;(%sa?)l%-lāh&quot;, &quot;%1llāh&quot;)\n\n\treturn text\nend\n\nlocal has_diacritics_subs = {\n\t-- FIXME! What about lam-alif ligature?\n\t-- remove punctuation\
+      \ and shadda\n\t-- must go before removing final consonants\n\t{&quot;[&quot; .. punctuation .. &quot;\\217\\145]&quot;, &quot;&quot;},\n\t-- Remove consonants at end of word or utterance, so that we're OK with\n\t-- words lacking iʿrāb (must go before\
+      \ removing other consonants).\n\t-- If you want to catch places without iʿrāb, comment out the next two lines.\n\t{&quot;[&quot; .. lconsonants .. &quot;]$&quot;, &quot;&quot;},\n\t{&quot;[&quot; .. lconsonants .. &quot;]%s&quot;, &quot; &quot;},\n\t--\
+      \ remove consonants (or alif) when followed by diacritics\n\t-- must go after removing shadda\n\t-- do not remove the diacritics yet because we need them to handle\n\t-- long-vowel sequences of diacritic + pseudo-consonant\n\t{&quot;[&quot; .. lconsonants\
+      \ .. &quot;\\216\\167]([\\217\\139\\217\\140\\217\\141\\217\\142\\217\\143\\217\\144\\217\\146\\217\\176])&quot;, &quot;%1&quot;},\n\t-- the following two must go after removing consonants w/diacritics because\n\t-- we only want to treat vocalic wāw/yā\
+      ' in them (we want to have removed\n\t-- wāw/yā' followed by a diacritic)\n\t-- remove ḍamma + wāw\n\t{&quot;\\217\\143\\217\\136&quot;, &quot;&quot;},\n\t-- remove kasra + yā'\n\t{&quot;\\217\\144\\217\\138&quot;, &quot;&quot;},\n\t-- remove fatḥa/fatḥ\
+      atan + alif/alif-maqṣūra\n\t{&quot;[\\217\\139\\217\\142][\\216\\167\\217\\137]&quot;, &quot;&quot;},\n\t-- remove diacritics\n\t{&quot;[\\217\\139\\217\\140\\217\\141\\217\\142\\217\\143\\217\\144\\217\\146\\217\\176]&quot;, &quot;&quot;},\n\t-- remove\
+      \ numbers, hamzatu l-waṣl, alif madda\n\t{&quot;[&quot; .. numbers .. &quot;ٱ&quot; .. &quot;آ&quot; .. &quot;]&quot;, &quot;&quot;},\n\t-- remove non-Arabic characters\n\t{&quot;[^&quot; .. u(0x0600) .. &quot;-&quot; .. u(0x06FF) .. u(0x0750) .. &quot;-&quot;\
+      \ .. u(0x077F) ..\n\t\t\t u(0x08A0) .. &quot;-&quot; .. u(0x08FF) .. u(0xFB50) .. &quot;-&quot; .. u(0xFDFF) ..\n\t\t\t u(0xFE70) .. &quot;-&quot; .. u(0xFEFF) .. &quot;]&quot;, &quot;&quot;}\n}\n\nfunction has_diacritics(text)\n\tfor _, sub in ipairs(has_diacritics_subs)\
+      \ do\n\t\ttext = rsub(text, sub[1], sub[2])\n\tend\n\treturn #text == 0\nend\n\n-- Return true if transliteration TR is an irregular transliteration of\n-- ARABIC. Return false if ARABIC can't be transliterated. For purposes of\n-- establishing regularity,\
+      \ hyphens are ignored and word-final tāʾ marbūṭa\n-- can be transliterated as &quot;(t)&quot;, &quot;&quot; or &quot;t&quot;.\nfunction export.irregular_translit(arabic, tr)\n\tif not arabic or arabic == &quot;&quot; or not tr or tr == &quot;&quot; then\n\
+      \t\treturn false\n\tend\n\tlocal regtr = export.tr(arabic)\n\tif not regtr or regtr == tr then\n\t\treturn false\n\tend\n\tlocal arwords = rsplit(arabic, &quot; &quot;)\n\tlocal regwords = rsplit(regtr, &quot; &quot;)\n\tlocal words = rsplit(tr, &quot;\
+      \ &quot;)\n\tif #regwords ~= #words or #regwords ~= #arwords then\n\t\treturn true\n\tend\n\tfor i=1,#regwords do\n\t\tlocal regword = regwords[i]\n\t\tlocal word = words[i]\n\t\tlocal arword = arwords[i]\n\t\t-- Resolve final (t) in auto-translit to t,\
+      \ h or nothing\n\t\tif rfind(regword, &quot;%(t%)$&quot;) then\n\t\t\tregword = rfind(word, &quot;āh$&quot;) and rsub(regword, &quot;%(t%)$&quot;, &quot;h&quot;) or\n\t\t\t\trfind(word, &quot;t$&quot;) and rsub(regword, &quot;%(t%)$&quot;, &quot;t&quot;)\
+      \ or\n\t\t\t\trsub(regword, &quot;%(t%)$&quot;, &quot;&quot;)\n\t\tend\n\t\t-- Resolve clitics + short a + alif-lām, which may get auto-translated\n\t\t-- to contain long ā, to short a if the manual translit has it; note\n\t\t-- that currently in cases\
+      \ with assimilated l, the auto-translit will\n\t\t-- fail, so we won't ever get here and don't have to worry about\n\t\t-- auto-translit l against manual-translit assimilated char.\n\t\tlocal clitic_chars = &quot;^[وفكل]&quot; -- separate line to avoid\
+      \ L2R display weirdness\n\t\tif rfind(arword, clitic_chars .. &quot;\\217\\142?[\\216\\167\\217\\177]\\217\\132&quot;) and rfind(word, &quot;^[wfkl]a%-&quot;) then\n\t\t\tregword = rsub(regword, &quot;^([wfkl])ā&quot;, &quot;%1a&quot;)\n\t\tend\n\t\t--\
+      \ Ignore hyphens when comparing\n\t\tif rsub(regword, &quot;%-&quot;, &quot;&quot;) ~= rsub(word, &quot;%-&quot;, &quot;&quot;) then\n\t\t\treturn true\n\t\tend\n\tend\n\treturn false\nend\n\nreturn export\n\n-- For Vim, so we get 4-space tabs\n-- vim:\
+      \ set ts=4 sw=4 noet:</rev></revisions></page></pages></query></api>"

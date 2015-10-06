@@ -54,6 +54,6 @@ public class ScribuntoLuaEngineIntegrationTest {
 
     @Test public void test_ja_r() throws Exception {
         assertThat(wikiModel.render(new HTMLConverter(), "{{ja-r|屏風|びょうぶ|gloss=folding screen}}").trim())
-                .isEqualTo("<p><span class=\"Jpan\" lang=\"ja\"><a href=\"http://www.bliki.info/wiki/%E5%B1%8F%E9%A2%A8#Japanese\" title=\"屏風\"><span style=\"font-size: 1.2em\">&#60;ruby&#62;屏風&#60;rp&#62; (&#60;/rp&#62;&#60;rt&#62;びょうぶ&#60;/rt&#62;&#60;rp&#62;)&#60;/rp&#62;&#60;/ruby&#62;</span></a></span> (<span class=\"tr\"><i>びょうぶ</i></span>, <span class=\"mention-gloss-double-quote\">“</span><span class=\"mention-gloss\">folding screen</span><span class=\"mention-gloss-double-quote\">”</span>)</p>");
+                .isEqualTo("<p><span class=\"Jpan\" lang=\"ja\"><a href=\"http://www.bliki.info/wiki/%E5%B1%8F%E9%A2%A8#Japanese\" title=\"屏風\"><span style=\"font-size: 1.2em\">&#60;ruby&#62;屏風&#60;rp&#62; (&#60;/rp&#62;&#60;rt&#62;びょうぶ&#60;/rt&#62;&#60;rp&#62;)&#60;/rp&#62;&#60;/ruby&#62;</span></a></span> (<span class=\"tr\"><i>byōbu</i></span>, <span class=\"mention-gloss-double-quote\">“</span><span class=\"mention-gloss\">folding screen</span><span class=\"mention-gloss-double-quote\">”</span>)</p>");
     }
 }
