@@ -1,6 +1,6 @@
 package info.bliki.wiki.tags;
 
-import info.bliki.wiki.MarkdownConverter;
+import info.bliki.wiki.filter.MarkdownConverter;
 import info.bliki.wiki.filter.ITextConverter;
 import info.bliki.wiki.model.IWikiModel;
 

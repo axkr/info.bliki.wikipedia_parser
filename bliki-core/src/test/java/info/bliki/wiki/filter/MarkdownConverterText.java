@@ -1,7 +1,6 @@
 package info.bliki.wiki.filter;
 
 import info.bliki.htmlcleaner.ContentToken;
-import info.bliki.wiki.MarkdownConverter;
 import info.bliki.wiki.tags.WPATag;
 import org.junit.Test;
 

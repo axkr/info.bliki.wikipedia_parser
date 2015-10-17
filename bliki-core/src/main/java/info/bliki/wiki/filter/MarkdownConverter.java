@@ -1,6 +1,4 @@
-package info.bliki.wiki;
-
-import info.bliki.wiki.filter.PlainTextConverter;
+package info.bliki.wiki.filter;
 
 public class MarkdownConverter extends PlainTextConverter {
 

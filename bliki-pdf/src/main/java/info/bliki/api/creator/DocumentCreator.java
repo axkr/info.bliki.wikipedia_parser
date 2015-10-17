@@ -3,7 +3,7 @@ package info.bliki.api.creator;
 import info.bliki.api.Page;
 import info.bliki.api.User;
 import info.bliki.pdf.PDFGenerator;
-import info.bliki.wiki.MarkdownConverter;
+import info.bliki.wiki.filter.MarkdownConverter;
 import info.bliki.wiki.filter.HTMLConverter;
 import info.bliki.wiki.filter.ITextConverter;
 import info.bliki.wiki.filter.PDFConverter;
