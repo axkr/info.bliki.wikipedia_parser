@@ -3,6 +3,7 @@ package info.bliki.api.creator;
 import info.bliki.api.Page;
 import info.bliki.api.User;
 import info.bliki.pdf.PDFGenerator;
+import info.bliki.wiki.MarkdownConverter;
 import info.bliki.wiki.filter.HTMLConverter;
 import info.bliki.wiki.filter.ITextConverter;
 import info.bliki.wiki.filter.PDFConverter;
@@ -18,13 +19,7 @@ import java.net.URL;
 import java.util.List;
 
 /**
- * <p>
- * Create an HTML or PDF file from a Mediawiki wiki which supports the
- * <code>api.php</code> interface from <a
- * href="http://en.wikipedia.org/w/api.php"
- * >http://en.wikipedia.org/w/api.php</a>.
- * </p>
- *
+ * Create a HTML, Markdown or PDF file from a Mediawiki wiki.
  */
 public class DocumentCreator {
     private final String[] fListOfTitleStrings;
@@ -76,7 +71,6 @@ public class DocumentCreator {
                 // print page information
                 String rawWikiText = page.getCurrentContent();
                 fModel.setPageName(page.getTitle());
-                // System.out.println(rawWikiText);
                 appendable.append(fModel.render(converter, rawWikiText, false));
             }
             if (fFooter != null) {
@@ -155,11 +149,15 @@ public class DocumentCreator {
     }
 
     /**
-     * Render the given Wikipedia texts into an HTML file.
+     * Render the given MediaWiki texts into an HTML file.
      *
      */
     public void renderToFile(String filename) throws IOException {
         renderToFile(new HTMLConverter(), filename);
+    }
+
+    public void renderMarkdownToFile(String filename) throws IOException {
+        renderToFile(new MarkdownConverter(), filename);
     }
 
     /**
@@ -177,7 +175,6 @@ public class DocumentCreator {
         StringBuffer buffer = new StringBuffer();
         renderPDF(buffer);
         String renderedXHTML = buffer.toString();
-        // System.out.println(renderedXHTML);
         File baseDirectory = new File(baseDirectoryName);
         try {
             URL url = baseDirectory.toURI().toURL();

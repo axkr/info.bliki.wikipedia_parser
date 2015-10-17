@@ -1,9 +1,10 @@
 package info.bliki.wiki.tags;
 
-import java.io.IOException;
-
+import info.bliki.wiki.MarkdownConverter;
 import info.bliki.wiki.filter.ITextConverter;
 import info.bliki.wiki.model.IWikiModel;
+
+import java.io.IOException;
 
 /**
  * A special Wikipedia tag (i.e. ==, ===, ''', '', ...)
@@ -35,6 +36,17 @@ public class WPBoldItalicTag extends WPTag {
         setName("bi");
         if (outerTag != null) {
             buf.append("</" + outerTag + ">");
+        }
+    }
+
+    @Override
+    public void renderPlainText(ITextConverter converter, Appendable buf, IWikiModel wikiModel) throws IOException {
+        if (converter instanceof MarkdownConverter) {
+            buf.append("**");
+            super.renderPlainText(converter, buf, wikiModel);
+            buf.append("**");
+        } else {
+            super.renderPlainText(converter, buf, wikiModel);
         }
     }
 

@@ -1,17 +1,17 @@
 package info.bliki.wiki.filter;
 
 import info.bliki.htmlcleaner.TagNode;
-import info.bliki.wiki.model.Configuration;
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.model.ImageFormat;
 
 import java.io.IOException;
 import java.util.List;
 
+import static info.bliki.wiki.model.Configuration.RENDERER_RECURSION_LIMIT;
+
 /**
  * A converter which renders the internal tree node representation as plain text
  * without HTML tags and images
- *
  */
 public class PlainTextConverter implements ITextConverter {
     private boolean renderLinks;
@@ -30,7 +30,7 @@ public class PlainTextConverter implements ITextConverter {
             try {
                 int level = model.incrementRecursionLevel();
 
-                if (level > Configuration.RENDERER_RECURSION_LIMIT) {
+                if (level > RENDERER_RECURSION_LIMIT) {
                     resultBuffer.append("Error - recursion limit exceeded rendering tags in PlainTextConverter#nodesToText().");
                     return;
                 }

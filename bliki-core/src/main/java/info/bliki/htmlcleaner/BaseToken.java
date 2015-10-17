@@ -49,6 +49,6 @@ import java.io.IOException;
  */
 public interface BaseToken {
 
-    public void serialize(XmlSerializer xmlSerializer) throws IOException;
+    void serialize(XmlSerializer xmlSerializer) throws IOException;
 
 }

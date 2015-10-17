@@ -40,28 +40,40 @@ public class PlainTextConverterTest extends FilterTestSupport {
         assertThat(wikiModel.render(plainTextConverter, "[[foo|other text]]", false)).isEqualTo("\nother text");
     }
 
+    @Test public void testConvertItalic() throws Exception {
+        assertThat(wikiModel.render(plainTextConverter, "This is ''italic''", false)).isEqualTo("\nThis is italic");
+    }
+
+    @Test public void testConvertBold() throws Exception {
+        assertThat(wikiModel.render(plainTextConverter, "This is '''bold'''", false)).isEqualTo("\nThis is bold");
+    }
+
+    @Test public void testConvertBoldItalic() throws Exception {
+        assertThat(wikiModel.render(plainTextConverter, "This is '''''bold italic'''''", false)).isEqualTo("\nThis is bold italic");
+    }
+
     @Test public void testConvertAnchoredLinkThroughModel() throws Exception {
         assertThat(wikiModel.render(plainTextConverter, "[[foo#anchored]]", false)).isEqualTo("\nfoo#anchored");
     }
 
     @Test public void testConvertLinkThroughModelWithRenderLinks() throws Exception {
         plainTextConverter = new PlainTextConverter(true);
-        assertThat(wikiModel.render(plainTextConverter, "[[foo]]", false)).isEqualTo("\n[foo][]");
+        assertThat(wikiModel.render(plainTextConverter, "[[foo]]", false)).isEqualTo("\nfoo");
     }
 
     @Test public void testConvertLinkWithTitleThroughModelWithRenderLinks() throws Exception {
         plainTextConverter = new PlainTextConverter(true);
-        assertThat(wikiModel.render(plainTextConverter, "[[foo|other text]]", false)).isEqualTo("\n[other text](foo)");
+        assertThat(wikiModel.render(plainTextConverter, "[[foo|other text]]", false)).isEqualTo("\nother text");
     }
 
     @Test public void testConvertLinkWithAnchorThroughModelWithRenderLinks() throws Exception {
         plainTextConverter = new PlainTextConverter(true);
-        assertThat(wikiModel.render(plainTextConverter, "[[foo#anchor]]", false)).isEqualTo("\n[foo](foo#anchor)");
+        assertThat(wikiModel.render(plainTextConverter, "[[foo#anchor]]", false)).isEqualTo("\nfoo#anchor");
     }
 
     @Test public void testConvertLinkWithPrecedingDashThroughModelWithRenderLinks() throws Exception {
         plainTextConverter = new PlainTextConverter(true);
-        assertThat(wikiModel.render(plainTextConverter, "-[[foo]]", false)).isEqualTo("\n-[foo][]");
+        assertThat(wikiModel.render(plainTextConverter, "-[[foo]]", false)).isEqualTo("\n-foo");
     }
 
     @Test public void testConvertHorizontalRule() throws Exception {
@@ -77,18 +89,6 @@ public class PlainTextConverterTest extends FilterTestSupport {
         aTag.addChild(new ContentToken("foo"));
 
         assertThat(convert(Collections.singletonList(aTag))).isEqualTo("foo");
-    }
-
-    @Test public void testConvertLinkNodeWithRenderLinks() throws Exception {
-        plainTextConverter = new PlainTextConverter(true);
-
-        WPATag aTag = new WPATag();
-        aTag.addAttribute(HREF, "some-href", false);
-        aTag.addAttribute(TITLE, "title", false);
-        aTag.addObjectAttribute(WIKILINK, "foo-link");
-        aTag.addChild(new ContentToken("foo"));
-
-        assertThat(convert(Collections.singletonList(aTag))).isEqualTo("[foo](foo-link)");
     }
 
     protected String convert(List<?> nodes) throws IOException {
