@@ -13,7 +13,7 @@ import static info.bliki.wiki.tags.WPATag.TITLE;
 import static info.bliki.wiki.tags.WPATag.WIKILINK;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class MarkdownConverterText extends FilterTestSupport  {
+public class MarkdownConverterTest extends FilterTestSupport  {
     private MarkdownConverter markdownConverter;
 
     @Override public void setUp() throws Exception {
