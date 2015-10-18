@@ -42,8 +42,11 @@ public class MarkdownConverter extends PlainTextConverter {
     }
 
     protected String quote(String link) {
-        return link.replace(" ", "_")
-                .replace("*", "\\*")
+        return markdownEscape(Encoder.encodeTitleToUrl(link, false));
+    }
+
+    protected String markdownEscape(String s) {
+        return s.replace("*", "\\*")
                 .replace("{", "\\{")
                 .replace("}", "\\}")
                 .replace("+", "\\+")

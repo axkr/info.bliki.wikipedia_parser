@@ -55,7 +55,7 @@ public class MarkdownConverterTest extends FilterTestSupport  {
     }
 
     @Test public void testConvertQuotedLink() throws Exception {
-        assertThat(wikiModel.render(markdownConverter, "[[*Foo#Baz Space|headword]]", false)).isEqualTo("\n[headword](\\*Foo#Baz_Space)");
+        assertThat(wikiModel.render(markdownConverter, "[[*Foo#Baz Space|headword]]", false)).isEqualTo("\n[headword](%2AFoo#Baz_Space)");
     }
 
     @Test public void testConvertLinkNodeWithRenderLinks() throws Exception {
