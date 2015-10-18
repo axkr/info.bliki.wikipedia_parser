@@ -35,7 +35,7 @@ public class MarkdownConverterTest extends FilterTestSupport  {
     }
 
     @Test public void testConvertLinkThroughModelWithRenderLinks() throws Exception {
-        assertThat(wikiModel.render(markdownConverter, "[[foo]]", false)).isEqualTo("\n[foo][]");
+        assertThat(wikiModel.render(markdownConverter, "[[foo]]", false)).isEqualTo("\n[foo](foo)");
     }
 
     @Test public void testConvertLinkWithTitleThroughModelWithRenderLinks() throws Exception {
@@ -47,7 +47,11 @@ public class MarkdownConverterTest extends FilterTestSupport  {
     }
 
     @Test public void testConvertLinkWithPrecedingDashThroughModelWithRenderLinks() throws Exception {
-        assertThat(wikiModel.render(markdownConverter, "-[[foo]]", false)).isEqualTo("\n-[foo][]");
+        assertThat(wikiModel.render(markdownConverter, "-[[foo]]", false)).isEqualTo("\n-[foo](foo)");
+    }
+
+    @Test public void testConvertPipeLink() throws Exception {
+        assertThat(wikiModel.render(markdownConverter, "[[#English|headword]]", false)).isEqualTo("\n[headword](headword#English)");
     }
 
     @Test public void testConvertLinkNodeWithRenderLinks() throws Exception {

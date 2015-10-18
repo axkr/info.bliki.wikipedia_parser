@@ -80,6 +80,10 @@ public class PlainTextConverterTest extends FilterTestSupport {
         assertThat(wikiModel.render(plainTextConverter, "-[[foo]]", false)).isEqualTo("\n-foo");
     }
 
+    @Test public void testConvertPipeLink() throws Exception {
+        assertThat(wikiModel.render(plainTextConverter, "[[#English|headword]]", false)).isEqualTo("\nheadword");
+    }
+
     @Test public void testConvertHorizontalRule() throws Exception {
         plainTextConverter = new PlainTextConverter(true);
         assertThat(wikiModel.render(plainTextConverter, "----\n", false)).isEqualTo("");

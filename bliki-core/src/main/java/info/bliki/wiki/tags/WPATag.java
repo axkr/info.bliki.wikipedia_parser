@@ -31,21 +31,17 @@ public class WPATag extends HTMLTag {
             getObjectAttributes().containsKey(WIKILINK) &&
             converter instanceof MarkdownConverter) {
 
-            String link;
+            String linkTitle;
             StringBuilder linkBuffer = new StringBuilder();
             super.renderPlainText(converter, linkBuffer, wikiModel);
 
-            link = linkBuffer.toString();
-            if (link.contains("#")) {
-                link = link.substring(0, link.indexOf("#"));
+            linkTitle = linkBuffer.toString();
+            if (linkTitle.contains("#")) {
+                linkTitle = linkTitle.substring(0, linkTitle.indexOf("#"));
             }
-            buf.append("[").append(link).append("]");
-            final String wikiLink = getWikiLink();
-            if (wikiLink.equals(link)) {
-                buf.append("[]");
-            } else {
-                buf.append("(").append(wikiLink).append(")");
-            }
+
+            buf.append("[").append(linkTitle).append("]");
+            buf.append("(").append(getWikiLink(linkTitle)).append(")");
         } else {
             super.renderPlainText(converter, buf, wikiModel);
         }
@@ -63,11 +59,15 @@ public class WPATag extends HTMLTag {
         }
     }
 
-    protected String getWikiLink() {
+    protected String getWikiLink(String linkContent) {
         Object link = getObjectAttributes().get(WIKILINK);
         if (link == null) {
             return null;
         } else {
+            if (link.toString().trim().isEmpty()) {
+                link = linkContent;
+            }
+
             if (getAnchor() != null) {
                 return link.toString() + "#" + getAnchor();
             } else {
