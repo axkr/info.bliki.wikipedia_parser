@@ -351,7 +351,7 @@ public class WPTableFilterTest extends FilterTestSupport {
     @Test public void testBlockquoteTableText01() {
         assertThat(wikiModel.render(new PlainTextConverter(), TEST3, false)).isEqualTo("\n" +
                 "Simple example\n" +
-                "Both of these generate the same output.  Choose a style based on the number of cells in each row and the total text inside each cell. \n" +
+                "Both of these generate the same output.  Choose a style based on the number of cells in each row and the total text inside each cell.\n" +
                 "Wiki markup\n" +
                 "\n" +
                 "\n" +

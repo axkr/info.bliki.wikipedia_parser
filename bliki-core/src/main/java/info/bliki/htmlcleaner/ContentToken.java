@@ -44,12 +44,7 @@ import info.bliki.wiki.model.IWikiModel;
 import java.io.IOException;
 
 /**
- * <p>
  * HTML text token.
- * </p>
- *
- * Created by: Vladimir Nikic<br/>
- * Date: November, 2006.
  */
 public class ContentToken implements BaseToken, PlainTextConvertable {
 
@@ -77,11 +72,6 @@ public class ContentToken implements BaseToken, PlainTextConvertable {
     public void renderPlainText(ITextConverter converter, Appendable buf, IWikiModel wikiModel) throws IOException {
         if (content.length() > 0) {
             Utils.escapeXmlToBuffer(content, buf, false, true, true, true);
-            char ch = content.charAt(content.length() - 1);
-            if (ch == '.' || ch == '!' || ch == '?') {
-                // issue117 add a SPACE behind the end of a sentence
-                buf.append(" ");
-            }
         }
     }
 }

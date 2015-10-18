@@ -36,6 +36,10 @@ public class PlainTextConverterTest extends FilterTestSupport {
         assertThat(wikiModel.render(plainTextConverter, "[[foo]]", false)).isEqualTo("\nfoo");
     }
 
+    @Test public void testConvertSentenceEndingWithPeriod() throws Exception {
+        assertThat(wikiModel.render(plainTextConverter, "Foo Bar.", false)).isEqualTo("\nFoo Bar.");
+    }
+
     @Test public void testConvertLinkWithTitleThroughModel() throws Exception {
         assertThat(wikiModel.render(plainTextConverter, "[[foo|other text]]", false)).isEqualTo("\nother text");
     }
