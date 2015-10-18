@@ -27,21 +27,9 @@ public class WPATag extends HTMLTag {
 
     @Override
     public void renderPlainText(ITextConverter converter, Appendable buf, IWikiModel wikiModel) throws IOException {
-        if (converter.renderLinks() &&
-            getObjectAttributes().containsKey(WIKILINK) &&
+        if (getObjectAttributes().containsKey(WIKILINK) &&
             converter instanceof MarkdownConverter) {
-
-            String linkTitle;
-            StringBuilder linkBuffer = new StringBuilder();
-            super.renderPlainText(converter, linkBuffer, wikiModel);
-
-            linkTitle = linkBuffer.toString();
-            if (linkTitle.contains("#")) {
-                linkTitle = linkTitle.substring(0, linkTitle.indexOf("#"));
-            }
-
-            buf.append("[").append(linkTitle).append("]");
-            buf.append("(").append(getWikiLink(linkTitle)).append(")");
+            ((MarkdownConverter)converter).renderLink(this, buf, wikiModel);
         } else {
             super.renderPlainText(converter, buf, wikiModel);
         }
@@ -59,28 +47,16 @@ public class WPATag extends HTMLTag {
         }
     }
 
-    protected String getWikiLink(String linkContent) {
+    public String getLink() {
         Object link = getObjectAttributes().get(WIKILINK);
-        if (link == null) {
-            return null;
-        } else {
-            if (link.toString().trim().isEmpty()) {
-                link = linkContent;
-            }
-
-            if (getAnchor() != null) {
-                return link.toString() + "#" + getAnchor();
-            } else {
-                return link.toString();
-            }
-        }
+        return link == null ? null : link.toString();
     }
 
-    protected String getTitle() {
+    public String getTitle() {
         return getAttributes().get(TITLE);
     }
 
-    protected String getAnchor() {
+    public String getAnchor() {
         Object anchor = getObjectAttributes().get(ANCHOR);
         return anchor == null ? null : anchor.toString();
     }

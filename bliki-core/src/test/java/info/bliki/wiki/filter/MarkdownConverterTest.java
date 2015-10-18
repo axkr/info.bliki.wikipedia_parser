@@ -34,15 +34,15 @@ public class MarkdownConverterTest extends FilterTestSupport  {
         assertThat(wikiModel.render(markdownConverter, "This is '''''bold italic'''''", false)).isEqualTo("\nThis is **bold italic**");
     }
 
-    @Test public void testConvertLinkThroughModelWithRenderLinks() throws Exception {
+    @Test public void testConvertLink() throws Exception {
         assertThat(wikiModel.render(markdownConverter, "[[foo]]", false)).isEqualTo("\n[foo](foo)");
     }
 
-    @Test public void testConvertLinkWithTitleThroughModelWithRenderLinks() throws Exception {
+    @Test public void testConvertLinkWithTitle() throws Exception {
         assertThat(wikiModel.render(markdownConverter, "[[foo|other text]]", false)).isEqualTo("\n[other text](foo)");
     }
 
-    @Test public void testConvertLinkWithAnchorThroughModelWithRenderLinks() throws Exception {
+    @Test public void testConvertLinkWithAnchor() throws Exception {
         assertThat(wikiModel.render(markdownConverter, "[[foo#anchor]]", false)).isEqualTo("\n[foo](foo#anchor)");
     }
 
@@ -54,6 +54,10 @@ public class MarkdownConverterTest extends FilterTestSupport  {
         assertThat(wikiModel.render(markdownConverter, "[[#English|headword]]", false)).isEqualTo("\n[headword](headword#English)");
     }
 
+    @Test public void testConvertQuotedLink() throws Exception {
+        assertThat(wikiModel.render(markdownConverter, "[[*Foo#Baz Space|headword]]", false)).isEqualTo("\n[headword](\\*Foo#Baz_Space)");
+    }
+
     @Test public void testConvertLinkNodeWithRenderLinks() throws Exception {
         WPATag aTag = new WPATag();
         aTag.addAttribute(HREF, "some-href", false);
@@ -61,7 +65,7 @@ public class MarkdownConverterTest extends FilterTestSupport  {
         aTag.addObjectAttribute(WIKILINK, "foo-link");
         aTag.addChild(new ContentToken("foo"));
 
-        assertThat(convert(Collections.singletonList(aTag))).isEqualTo("[foo](foo-link)");
+        assertThat(convert(Collections.singletonList(aTag))).isEqualTo("[foo](foo\\-link)");
     }
 
     protected String convert(List<?> nodes) throws IOException {
