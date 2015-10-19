@@ -157,7 +157,7 @@ public class DocumentCreator {
     }
 
     public void renderMarkdownToFile(String filename) throws IOException {
-        renderToFile(new MarkdownConverter(), filename);
+        renderToFile(new MarkdownConverter(true), filename);
     }
 
     /**

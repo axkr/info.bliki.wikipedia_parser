@@ -18,11 +18,10 @@ public class MarkdownConverterTest extends FilterTestSupport  {
 
     @Override public void setUp() throws Exception {
         super.setUp();
-        markdownConverter = new MarkdownConverter();
+        markdownConverter = new MarkdownConverter(true);
     }
 
-    @Test
-    public void testConvertItalic() throws Exception {
+    @Test public void testConvertItalic() throws Exception {
         assertThat(wikiModel.render(markdownConverter, "This is ''italic''", false)).isEqualTo("\nThis is *italic*");
     }
 
@@ -32,6 +31,21 @@ public class MarkdownConverterTest extends FilterTestSupport  {
 
     @Test public void testConvertBoldItalic() throws Exception {
         assertThat(wikiModel.render(markdownConverter, "This is '''''bold italic'''''", false)).isEqualTo("\nThis is **bold italic**");
+    }
+
+    @Test public void testConvertItalicWithoutEmphasis() throws Exception {
+        markdownConverter = new MarkdownConverter(false);
+        assertThat(wikiModel.render(markdownConverter, "This is ''italic''", false)).isEqualTo("\nThis is italic");
+    }
+
+    @Test public void testConvertBoldWithoutEmphasis() throws Exception {
+        markdownConverter = new MarkdownConverter(false);
+        assertThat(wikiModel.render(markdownConverter, "This is '''bold'''", false)).isEqualTo("\nThis is bold");
+    }
+
+    @Test public void testConvertBoldItalicWithoutEmphasis() throws Exception {
+        markdownConverter = new MarkdownConverter(false);
+        assertThat(wikiModel.render(markdownConverter, "This is '''''bold italic'''''", false)).isEqualTo("\nThis is bold italic");
     }
 
     @Test public void testConvertLink() throws Exception {

@@ -6,8 +6,18 @@ import info.bliki.wiki.tags.WPATag;
 import java.io.IOException;
 
 public class MarkdownConverter extends PlainTextConverter {
+    private boolean renderEmphasis;
+
+    public MarkdownConverter(boolean renderEmphasis) {
+        this.renderEmphasis = renderEmphasis;
+    }
+
     @Override public boolean renderLinks() {
         return true;
+    }
+
+    public boolean renderEmphasis() {
+        return renderEmphasis;
     }
 
     public void renderLink(WPATag tag, Appendable buf, IWikiModel wikiModel) throws IOException {

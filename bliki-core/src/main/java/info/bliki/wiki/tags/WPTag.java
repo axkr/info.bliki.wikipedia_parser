@@ -39,7 +39,7 @@ public class WPTag extends HTMLTag {
 
     @Override
     public void renderPlainText(ITextConverter converter, Appendable buf, IWikiModel wikiModel) throws IOException {
-        if (converter instanceof MarkdownConverter) {
+        if (converter instanceof MarkdownConverter && ((MarkdownConverter) converter).renderEmphasis()) {
             switch (name) {
                 case "b":
                     buf.append("**");

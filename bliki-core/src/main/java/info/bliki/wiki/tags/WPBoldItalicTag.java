@@ -41,7 +41,7 @@ public class WPBoldItalicTag extends WPTag {
 
     @Override
     public void renderPlainText(ITextConverter converter, Appendable buf, IWikiModel wikiModel) throws IOException {
-        if (converter instanceof MarkdownConverter) {
+        if (converter instanceof MarkdownConverter && ((MarkdownConverter) converter).renderEmphasis()) {
             buf.append("**");
             super.renderPlainText(converter, buf, wikiModel);
             buf.append("**");
@@ -56,22 +56,6 @@ public class WPBoldItalicTag extends WPTag {
         tag.outerTag = outerTag;
         tag.innerTag = innerTag;
         return tag;
-    }
-
-    public String getInnerTag() {
-        return innerTag;
-    }
-
-    public void setInnerTag(String innerTag) {
-        this.innerTag = innerTag;
-    }
-
-    public String getOuterTag() {
-        return outerTag;
-    }
-
-    public void setOuterTag(String outerTag) {
-        this.outerTag = outerTag;
     }
 
 }
