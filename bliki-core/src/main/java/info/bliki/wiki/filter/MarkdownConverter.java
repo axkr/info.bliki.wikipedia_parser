@@ -19,8 +19,8 @@ public class MarkdownConverter extends PlainTextConverter {
             linkTitle = linkTitle.substring(0, linkTitle.indexOf("#"));
         }
 
-        buf.append("[").append(linkTitle).append("]");
-        buf.append("(").append(getWikiLink(tag, linkTitle)).append(")");
+        buf.append("[").append(markdownEscape(linkTitle)).append("]");
+        buf.append("(").append(markdownEscapeLink(getWikiLink(tag, linkTitle))).append(")");
     }
 
     protected String getWikiLink(WPATag tag, String linkContent) {
@@ -34,18 +34,18 @@ public class MarkdownConverter extends PlainTextConverter {
             }
 
             if (tag.getAnchor() != null) {
-                return quote(link) + "#" + quote(tag.getAnchor());
+                return normalize(link) + "#" + normalize(tag.getAnchor());
             } else {
-                return quote(link);
+                return normalize(link);
             }
         }
     }
 
-    protected String quote(String link) {
-        return markdownEscape(Encoder.encodeTitleToUrl(link, false));
+    private String normalize(String link) {
+        return Encoder.normaliseTitle(link, true, '_', false, false);
     }
 
-    protected String markdownEscape(String s) {
+    private String markdownEscape(String s) {
         return s.replace("*", "\\*")
                 .replace("{", "\\{")
                 .replace("}", "\\}")
@@ -53,5 +53,10 @@ public class MarkdownConverter extends PlainTextConverter {
                 .replace("-", "\\-")
                 .replace(".", "\\.")
                 .replace("!", "\\!");
+    }
+
+    private String markdownEscapeLink(String s) {
+        return s.replace("(", "\\(")
+                .replace(")", "\\)");
     }
 }

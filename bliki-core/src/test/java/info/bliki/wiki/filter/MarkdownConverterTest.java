@@ -46,6 +46,10 @@ public class MarkdownConverterTest extends FilterTestSupport  {
         assertThat(wikiModel.render(markdownConverter, "[[foo#anchor]]", false)).isEqualTo("\n[foo](foo#anchor)");
     }
 
+    @Test public void testConvertLinkWithAnchorAndParens() throws Exception {
+        assertThat(wikiModel.render(markdownConverter, "[[foo (bar)#anchor]]", false)).isEqualTo("\n[foo (bar)](foo_\\(bar\\)#anchor)");
+    }
+
     @Test public void testConvertLinkWithPrecedingDashThroughModelWithRenderLinks() throws Exception {
         assertThat(wikiModel.render(markdownConverter, "-[[foo]]", false)).isEqualTo("\n-[foo](foo)");
     }
@@ -55,7 +59,11 @@ public class MarkdownConverterTest extends FilterTestSupport  {
     }
 
     @Test public void testConvertQuotedLink() throws Exception {
-        assertThat(wikiModel.render(markdownConverter, "[[*Foo#Baz Space|headword]]", false)).isEqualTo("\n[headword](%2AFoo#Baz_Space)");
+        assertThat(wikiModel.render(markdownConverter, "[[Foo#Baz Space|*headword]]", false)).isEqualTo("\n[\\*headword](Foo#Baz_Space)");
+    }
+
+    @Test public void testConvertQuotedLinkWithParens() throws Exception {
+        assertThat(wikiModel.render(markdownConverter, "[[bla (blub)|text]]", false)).isEqualTo("\n[text](bla_\\(blub\\))");
     }
 
     @Test public void testConvertLinkNodeWithRenderLinks() throws Exception {
@@ -65,7 +73,7 @@ public class MarkdownConverterTest extends FilterTestSupport  {
         aTag.addObjectAttribute(WIKILINK, "foo-link");
         aTag.addChild(new ContentToken("foo"));
 
-        assertThat(convert(Collections.singletonList(aTag))).isEqualTo("[foo](foo\\-link)");
+        assertThat(convert(Collections.singletonList(aTag))).isEqualTo("[foo](foo-link)");
     }
 
     protected String convert(List<?> nodes) throws IOException {
