@@ -1,6 +1,6 @@
 package info.bliki.wiki.tags;
 
-import info.bliki.wiki.filter.MarkdownConverter;
+import info.bliki.wiki.filter.CommonMarkConverter;
 import info.bliki.wiki.filter.ITextConverter;
 import info.bliki.wiki.model.IWikiModel;
 
@@ -39,7 +39,7 @@ public class WPTag extends HTMLTag {
 
     @Override
     public void renderPlainText(ITextConverter converter, Appendable buf, IWikiModel wikiModel) throws IOException {
-        if (converter instanceof MarkdownConverter && ((MarkdownConverter) converter).renderEmphasis()) {
+        if (converter instanceof CommonMarkConverter && ((CommonMarkConverter) converter).renderEmphasis()) {
             switch (name) {
                 case "b":
                     buf.append("**");

@@ -1,6 +1,6 @@
 package info.bliki.wiki.tags;
 
-import info.bliki.wiki.filter.MarkdownConverter;
+import info.bliki.wiki.filter.CommonMarkConverter;
 import info.bliki.wiki.filter.ITextConverter;
 import info.bliki.wiki.model.IWikiModel;
 
@@ -28,8 +28,8 @@ public class WPATag extends HTMLTag {
     @Override
     public void renderPlainText(ITextConverter converter, Appendable buf, IWikiModel wikiModel) throws IOException {
         if (getObjectAttributes().containsKey(WIKILINK) &&
-            converter instanceof MarkdownConverter) {
-            ((MarkdownConverter)converter).renderLink(this, buf, wikiModel);
+            converter instanceof CommonMarkConverter) {
+            ((CommonMarkConverter)converter).renderLink(this, buf, wikiModel);
         } else {
             super.renderPlainText(converter, buf, wikiModel);
         }
