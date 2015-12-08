@@ -20,6 +20,7 @@ import org.luaj.vm2.Globals;
 import org.luaj.vm2.LuaClosure;
 import org.luaj.vm2.LuaError;
 import org.luaj.vm2.LuaFunction;
+import org.luaj.vm2.LuaString;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.Prototype;
@@ -36,9 +37,6 @@ import javax.annotation.Nonnull;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.Map;
 
@@ -89,8 +87,8 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
 
         Prototype prototype = compiledScriptCache.getPrototypeForChunkname(pageName);
         if (prototype == null) {
-            try (Reader reader = new StringReader(getRawWikiContent(pageName))) {
-                prototype = loadAndCache(reader, pageName);
+            try (InputStream is = getRawWikiContentStream(pageName)) {
+                prototype = loadAndCache(is, pageName);
             } catch (IOException e) {
                 throw new ScribuntoException(e);
             }
@@ -128,7 +126,8 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
             currentFrame = frame;
             LuaValue executeFunction = globals.get("mw").get("executeFunction");
             logger.trace("executing "+luaFunction);
-            return executeFunction.call(luaFunction).tojstring();
+            final LuaString result = executeFunction.call(luaFunction).checkstring();
+            return new String(result.m_bytes, result.m_offset, result.m_length, UTF8);
         } finally {
             currentFrame = null;
         }
@@ -185,7 +184,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
                     return LuaValue.varargsOf(new LuaValue[]{LuaValue.TRUE, res});
                 } else {
                     if (!res.istable()) {
-                        return LuaValue.varargsOf(new LuaValue[]{LuaValue.FALSE, LuaValue.valueOf(res.typename())});
+                        return LuaValue.varargsOf(new LuaValue[]{FALSE, toLuaString(res.typename())});
                     } else {
                         return LuaValue.varargsOf(new LuaValue[]{LuaValue.TRUE, res.checktable().get(name)});
                     }
@@ -257,7 +256,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
             public LuaValue call(LuaValue frameId, LuaValue function, LuaValue args) {
                 if ("filepath".equals(function.checkjstring())) {
                     String path = args.get(1).checkjstring();
-                    return LuaValue.valueOf(path);
+                    return toLuaString(path);
                 }
                 return LuaValue.NIL;
             }
@@ -267,7 +266,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
     private LuaValue isSubsting() {
         return new ZeroArgFunction() {
             @Override public LuaValue call() {
-                return LuaValue.valueOf(getFrameById(LuaValue.valueOf("current")).isSubsting());
+                return LuaValue.valueOf(getFrameById(toLuaString("current")).isSubsting());
             }
         };
     }
@@ -287,7 +286,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         return new TwoArgFunction() {
             @Override public LuaValue call(LuaValue frameId, LuaValue text) {
                 Frame frame = getFrameById(frameId);
-                return valueOf(model.render(text.checkjstring()));
+                return toLuaString(model.render(text.checkjstring()));
             }
         };
     }
@@ -311,7 +310,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
                 StringWriter writer = new StringWriter();
                 try {
                     model.substituteTemplateCall(title.tojstring(), parameterMap, writer);
-                    return LuaValue.valueOf(writer.toString());
+                    return toLuaString(writer.toString());
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -349,7 +348,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         return new OneArgFunction() {
             @Override
             public LuaValue call(LuaValue arg) {
-                return LuaValue.valueOf(getFrameById(arg).getTitle());
+                return toLuaString(getFrameById(arg).getTitle());
             }
         };
     }
@@ -396,7 +395,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         } else {
             try (InputStream is = findPackage(chunkName)) {
                 return new LuaClosure(
-                    loadAndCache(new InputStreamReader(is), chunkName),
+                    loadAndCache(is, chunkName),
                     globals);
             } catch (ScribuntoException | IOException e) {
                 logger.error("error loading '"+chunkName+"'", e);
@@ -405,7 +404,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         }
     }
 
-    private Prototype loadAndCache(Reader code, ParsedPageName chunkName) throws ScribuntoException {
+    private Prototype loadAndCache(InputStream code, ParsedPageName chunkName) throws ScribuntoException {
         try {
             logger.debug("compiling " + chunkName);
             Prototype prototype = globals.compilePrototype(code, chunkName.fullPagename());
@@ -492,6 +491,14 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
                 }
             }
         });
+    }
+
+    /**
+     * Use Java's UTF-8 decoding instead of luaj's broken implementation,
+     * since it does not handle surrogates properly.
+     */
+    public static LuaString toLuaString(String string) {
+        return LuaString.valueOf(string.getBytes(UTF8));
     }
 
     private static class unpack extends VarArgFunction {

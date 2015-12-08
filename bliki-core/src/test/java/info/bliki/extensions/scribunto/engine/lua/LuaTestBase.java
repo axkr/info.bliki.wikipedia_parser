@@ -17,7 +17,7 @@ import java.util.Collections;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.luaj.vm2.LuaValue.valueOf;
+import static org.luaj.vm2.LuaInteger.valueOf;
 
 @RunWith(LuaTestRunner.class)
 public abstract class LuaTestBase {

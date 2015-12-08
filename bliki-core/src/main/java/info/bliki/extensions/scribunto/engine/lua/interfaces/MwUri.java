@@ -5,6 +5,8 @@ import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
 
+import static info.bliki.extensions.scribunto.engine.lua.ScribuntoLuaEngine.toLuaString;
+
 public class MwUri implements MwInterface {
     private String wgServer;
     private String wgCanonicalServer;
@@ -51,9 +53,9 @@ public class MwUri implements MwInterface {
             @Override
             public LuaValue call(LuaValue page, LuaValue query) {
                 if (query.isnil()) {
-                    return LuaValue.valueOf(wgCanonicalServer + pagePath(page));
+                    return toLuaString(wgCanonicalServer + pagePath(page));
                 } else {
-                    return LuaValue.valueOf(wgCanonicalServer + formatQuery(page, query));
+                    return toLuaString(wgCanonicalServer + formatQuery(page, query));
                 }
             }
         };
@@ -64,9 +66,9 @@ public class MwUri implements MwInterface {
             @Override
             public LuaValue call(LuaValue page, LuaValue query) {
                 if (query.isnil()) {
-                    return LuaValue.valueOf(wgServer + pagePath(page));
+                    return toLuaString(wgServer + pagePath(page));
                 } else {
-                    return LuaValue.valueOf(wgServer + formatQuery(page, query));
+                    return toLuaString(wgServer + formatQuery(page, query));
                 }
             }
         };
@@ -77,9 +79,9 @@ public class MwUri implements MwInterface {
             @Override
             public LuaValue call(LuaValue page, LuaValue query) {
                 if (query.isnil()) {
-                    return LuaValue.valueOf(pagePath(page));
+                    return toLuaString(pagePath(page));
                 } else {
-                    return LuaValue.valueOf(formatQuery(page, query));
+                    return toLuaString(formatQuery(page, query));
                 }
             }
         };

@@ -118,6 +118,13 @@ public class HTMLCreatorTest {
         result.assertNoTemplatesLeft();
     }
 
+    @Betamax(tape = "areia", mode = READ_ONLY)
+    @Test public void testWiktionarySurrogateHandling() throws Exception {
+        final Result result = testWiktionaryENAPI("User:Jberkel/bliki-testcases/areia");
+        result.assertContains("*\uD800\uDF07\uD800\uDF00\uD800\uDF14\uD800\uDF04\uD800\uDF0D\uD800\uDF00");
+        result.assertContains("*hasena");
+    }
+
     @Betamax(tape = "limpet", mode = READ_ONLY)
     @Test public void testWiktionaryLimpet() throws Exception {
         testWiktionaryENAPI("limpet");

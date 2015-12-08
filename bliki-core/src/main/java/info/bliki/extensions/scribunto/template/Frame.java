@@ -7,6 +7,9 @@ import org.luaj.vm2.LuaValue;
 import java.util.HashMap;
 import java.util.Map;
 
+import static info.bliki.extensions.scribunto.engine.lua.ScribuntoLuaEngine.toLuaString;
+
+
 public class Frame {
     private final ParsedPageName page;
     private final Map<String, String> templateParameters;
@@ -27,7 +30,7 @@ public class Frame {
     public LuaValue getArgument(String name) {
         String value = templateParameters != null ? templateParameters.get(name) : null;
         if (value != null) {
-            return LuaValue.valueOf(value);
+            return toLuaString(value);
         } else {
             return LuaValue.NIL;
         }
@@ -42,9 +45,9 @@ public class Frame {
         for (Map.Entry<String, String> entry: templateParameters.entrySet()) {
             try {
                 final int numberedParam = Integer.parseInt(entry.getKey());
-                table.set(LuaValue.valueOf(numberedParam), LuaValue.valueOf(entry.getValue()));
+                table.set(LuaValue.valueOf(numberedParam), toLuaString(entry.getValue()));
             } catch (NumberFormatException e) {
-                table.set(LuaValue.valueOf(entry.getKey()), LuaValue.valueOf(entry.getValue()));
+                table.set(toLuaString(entry.getKey()), toLuaString(entry.getValue()));
             }
         }
         return table;

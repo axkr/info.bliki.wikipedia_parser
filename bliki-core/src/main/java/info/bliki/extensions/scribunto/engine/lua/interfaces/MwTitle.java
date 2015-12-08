@@ -8,6 +8,7 @@ import org.luaj.vm2.lib.LibFunction;
 import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
 
+import static info.bliki.extensions.scribunto.engine.lua.ScribuntoLuaEngine.toLuaString;
 import static info.bliki.wiki.namespaces.INamespace.NamespaceCode.MAIN_NAMESPACE_KEY;
 import static info.bliki.wiki.namespaces.INamespace.NamespaceCode.MEDIA_NAMESPACE_KEY;
 import static org.luaj.vm2.LuaValue.EMPTYSTRING;
@@ -135,8 +136,8 @@ public class MwTitle implements MwInterface {
             public LuaValue call(LuaValue text_or_id, LuaValue defaultNamespace) {
                 return title(defaultNamespace,
                         text_or_id,
-                        LuaValue.valueOf("fragment"),
-                        LuaValue.valueOf("interwiki"));
+                        toLuaString("fragment"),
+                        toLuaString("interwiki"));
             }
         };
     }
@@ -167,10 +168,10 @@ public class MwTitle implements MwInterface {
 
     private LuaValue title(String namespace, String pageName) {
         return title(
-            LuaValue.valueOf(namespace != null ? namespace : ""),
-            LuaValue.valueOf(pageName != null ? pageName : ""),
-            LuaValue.valueOf("fragment"),
-            LuaValue.valueOf("interwiki"));
+                toLuaString(namespace != null ? namespace : ""),
+                toLuaString(pageName != null ? pageName : ""),
+                toLuaString("fragment"),
+                toLuaString("interwiki"));
     }
 
     private LuaValue title(LuaValue ns, LuaValue title, LuaValue fragment, LuaValue interwiki) {

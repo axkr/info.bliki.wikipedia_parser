@@ -10,6 +10,8 @@ import org.luaj.vm2.lib.TwoArgFunction;
 import java.text.NumberFormat;
 import java.util.Locale;
 
+import static info.bliki.extensions.scribunto.engine.lua.ScribuntoLuaEngine.toLuaString;
+
 public class MwMessage implements MwInterface {
     @Override
     public String name() {
@@ -67,7 +69,7 @@ public class MwMessage implements MwInterface {
 
         public LuaValue plain() {
             String msg = rawMessage.tojstring();
-            return LuaValue.valueOf(replace(msg, params));
+            return toLuaString(replace(msg, params));
         }
 
         private String replace(String msg, LuaTable params) {

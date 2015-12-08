@@ -9,8 +9,11 @@ import org.slf4j.LoggerFactory;
 import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.nio.charset.Charset;
 
 public abstract class ScribuntoEngineBase implements ScribuntoEngine {
+    protected static final Charset UTF8 = Charset.forName("UTF-8");
+
     protected Logger logger = LoggerFactory.getLogger(getClass());
     protected final IWikiModel model;
 
@@ -27,7 +30,7 @@ public abstract class ScribuntoEngineBase implements ScribuntoEngine {
     }
 
     protected InputStream getRawWikiContentStream(ParsedPageName pageName) throws FileNotFoundException {
-        return new ByteArrayInputStream(getRawWikiContent(pageName).getBytes());
+        return new ByteArrayInputStream(getRawWikiContent(pageName).getBytes(UTF8));
     }
 
     protected String getRawWikiContent(ParsedPageName pageName) throws FileNotFoundException {

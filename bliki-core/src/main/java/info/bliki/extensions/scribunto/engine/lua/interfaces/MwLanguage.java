@@ -11,6 +11,7 @@ import org.luaj.vm2.lib.ZeroArgFunction;
 
 import java.util.Date;
 
+import static info.bliki.extensions.scribunto.engine.lua.ScribuntoLuaEngine.toLuaString;
 import static info.bliki.extensions.scribunto.engine.lua.interfaces.MwInterface.DefaultFunction.defaultFunction;
 import static java.util.Locale.forLanguageTag;
 
@@ -67,7 +68,7 @@ public class MwLanguage implements MwInterface {
 
                 if ("U".equals(formatString)) {
                     // seconds since epoch
-                    return LuaValue.valueOf(String.valueOf(time.getTime() / 1000));
+                    return toLuaString(String.valueOf(time.getTime() / 1000));
                 }
                 throw new UnsupportedOperationException();
             }
@@ -77,7 +78,7 @@ public class MwLanguage implements MwInterface {
     private LuaValue lc() {
         return new TwoArgFunction() {
             @Override public LuaValue call(LuaValue code, LuaValue string) {
-                return valueOf(string.checkjstring().toLowerCase(forLanguageTag(code.checkjstring())));
+                return toLuaString(string.checkjstring().toLowerCase(forLanguageTag(code.checkjstring())));
             }
         };
     }
@@ -85,7 +86,7 @@ public class MwLanguage implements MwInterface {
     private LuaValue uc() {
         return new TwoArgFunction() {
             @Override public LuaValue call(LuaValue code, LuaValue string) {
-                return valueOf(string.checkjstring().toUpperCase(forLanguageTag(code.checkjstring())));
+                return toLuaString(string.checkjstring().toUpperCase(forLanguageTag(code.checkjstring())));
             }
         };
     }
@@ -121,7 +122,7 @@ public class MwLanguage implements MwInterface {
         return new TwoArgFunction() {
             @Override public LuaValue call(LuaValue code, LuaValue inLanguage) {
                 final String name = languages.getName(code.checkjstring(), inLanguage.optjstring(null));
-                return name == null ? LuaValue.NIL : valueOf(name);
+                return name == null ? NIL : toLuaString(name);
             }
         };
     }
@@ -130,7 +131,7 @@ public class MwLanguage implements MwInterface {
         return new ZeroArgFunction() {
             @Override
             public LuaValue call() {
-                return valueOf("en");
+                return toLuaString("en");
             }
         };
     }

@@ -9,6 +9,7 @@ import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
 
+import static info.bliki.extensions.scribunto.engine.lua.ScribuntoLuaEngine.toLuaString;
 import static info.bliki.wiki.namespaces.INamespace.INamespaceValue;
 import static org.luaj.vm2.LuaValue.NIL;
 
@@ -147,7 +148,7 @@ public class MwSite implements MwInterface {
 
         LuaValue[] aliases = new LuaValue[namespaceValue.getTexts().size()-1];
         for (int i=0; i<namespaceValue.getTexts().size()-1; i++) {
-            aliases[i] = LuaValue.valueOf(namespaceValue.getTexts().get(i+1));
+            aliases[i] = toLuaString(namespaceValue.getTexts().get(i + 1));
         }
         ns.set("aliases", LuaValue.listOf(aliases));
 
