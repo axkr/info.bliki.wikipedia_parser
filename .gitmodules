@@ -1,4 +1,4 @@
 [submodule "bliki-core/src/main/scribunto"]
 	path = bliki-core/src/main/scribunto
-	url = https://bitbucket.org/axelclk/scribunto.git
-	branch = bliki
+	url = https://gerrit.wikimedia.org/r/p/mediawiki/extensions/Scribunto
+	branch = master
