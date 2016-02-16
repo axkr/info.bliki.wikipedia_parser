@@ -1,6 +1,5 @@
 package info.bliki.wiki.tags;
 
-import info.bliki.wiki.filter.CommonMarkConverter;
 import info.bliki.wiki.filter.ITextConverter;
 import info.bliki.wiki.model.IWikiModel;
 
@@ -39,16 +38,6 @@ public class WPBoldItalicTag extends WPTag {
         }
     }
 
-    @Override
-    public void renderPlainText(ITextConverter converter, Appendable buf, IWikiModel wikiModel) throws IOException {
-        if (converter instanceof CommonMarkConverter && ((CommonMarkConverter) converter).renderEmphasis()) {
-            buf.append("**");
-            super.renderPlainText(converter, buf, wikiModel);
-            buf.append("**");
-        } else {
-            super.renderPlainText(converter, buf, wikiModel);
-        }
-    }
 
     @Override
     public Object clone() {

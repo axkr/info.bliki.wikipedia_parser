@@ -3,7 +3,6 @@ package info.bliki.api.creator;
 import info.bliki.api.Page;
 import info.bliki.api.User;
 import info.bliki.pdf.PDFGenerator;
-import info.bliki.wiki.filter.CommonMarkConverter;
 import info.bliki.wiki.filter.HTMLConverter;
 import info.bliki.wiki.filter.ITextConverter;
 import info.bliki.wiki.filter.PDFConverter;
@@ -19,7 +18,7 @@ import java.net.URL;
 import java.util.List;
 
 /**
- * Create a HTML, Markdown or PDF file from a Mediawiki wiki.
+ * Create a HTML or PDF file from a Mediawiki wiki.
  */
 public class DocumentCreator {
     private final String[] fListOfTitleStrings;
@@ -154,10 +153,6 @@ public class DocumentCreator {
      */
     public void renderToFile(String filename) throws IOException {
         renderToFile(new HTMLConverter(), filename);
-    }
-
-    public void renderMarkdownToFile(String filename) throws IOException {
-        renderToFile(new CommonMarkConverter(true), filename);
     }
 
     /**

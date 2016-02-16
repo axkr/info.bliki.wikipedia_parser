@@ -1,6 +1,5 @@
 package info.bliki.wiki.tags;
 
-import info.bliki.wiki.filter.CommonMarkConverter;
 import info.bliki.wiki.filter.ITextConverter;
 import info.bliki.wiki.model.IWikiModel;
 
@@ -34,27 +33,6 @@ public class WPTag extends HTMLTag {
     public void renderHTML(ITextConverter converter, Appendable buf, IWikiModel model) throws IOException {
         if (getChildren().size() != 0) {
             super.renderHTML(converter, buf, model);
-        }
-    }
-
-    @Override
-    public void renderPlainText(ITextConverter converter, Appendable buf, IWikiModel wikiModel) throws IOException {
-        if (converter instanceof CommonMarkConverter && ((CommonMarkConverter) converter).renderEmphasis()) {
-            switch (name) {
-                case "b":
-                    buf.append("**");
-                    super.renderPlainText(converter, buf, wikiModel);
-                    buf.append("**");
-                    break;
-                case "i":
-                    buf.append("*");
-                    super.renderPlainText(converter, buf, wikiModel);
-                    buf.append("*");
-                    break;
-                default: super.renderPlainText(converter, buf, wikiModel);
-            }
-        } else {
-            super.renderPlainText(converter, buf, wikiModel);
         }
     }
 }
