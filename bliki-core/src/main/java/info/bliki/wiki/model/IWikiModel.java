@@ -863,7 +863,7 @@ public interface IWikiModel extends IConfiguration {
      *         <code>converter==null</code>
      * @return
      */
-    String render(ITextConverter converter, String rawWikiText);
+    @Nullable String render(ITextConverter converter, String rawWikiText);
 
     /**
      * Render the raw Wikipedia text into a string for a given converter
@@ -907,7 +907,7 @@ public interface IWikiModel extends IConfiguration {
      *         <code>converter==null</code>
      * @return
      */
-    String render(ITextConverter converter, String rawWikiText,
+    @Nullable String render(ITextConverter converter, String rawWikiText,
                   boolean templateTopic);
 
     /**
@@ -917,7 +917,7 @@ public interface IWikiModel extends IConfiguration {
      * @param rawWikiText
      * @return <code>null</code> if an IOException occured
      */
-    String render(String rawWikiText);
+    @Nullable String render(String rawWikiText);
 
     /**
      * Render the raw Wikipedia text into an HTML string and use the default
@@ -930,7 +930,7 @@ public interface IWikiModel extends IConfiguration {
      *            if a common wiki topic will be displayed.
      * @return <code>null</code> if an IOException occurs
      */
-    String render(String rawWikiText, boolean templateTopic);
+    @Nullable String render(String rawWikiText, boolean templateTopic);
 
     /**
      * Render the raw Wikipedia text into an HTML string and use the default
@@ -940,7 +940,7 @@ public interface IWikiModel extends IConfiguration {
      * @param rawWikiText
      * @return <code>null</code> if an IOException occurs
      */
-    String renderPDF(String rawWikiText);
+    @Nullable String renderPDF(String rawWikiText);
 
     /**
      * Replace a colon ':' with a slash '/' in wiki names (i.e. links,
@@ -1050,7 +1050,7 @@ public interface IWikiModel extends IConfiguration {
      *         {@link info.bliki.wiki.filter.MagicWord} is used) or
      *         <tt>null</tt> if this is no valid magic word
      */
-    Object getMagicWord(String name);
+    @Nullable Object getMagicWord(String name);
 
     /**
      * Splits the given full title into its namespace and page title components
