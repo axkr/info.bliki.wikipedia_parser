@@ -21,6 +21,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
+import static info.bliki.wiki.model.IConfiguration.Casing.FirstLetter;
 import static info.bliki.wiki.tags.WPATag.ANCHOR;
 import static info.bliki.wiki.tags.WPATag.CLASS;
 import static info.bliki.wiki.tags.WPATag.HREF;
@@ -74,25 +75,16 @@ public class WikiModel extends AbstractWikiModel {
         fExternalWikiBaseURL = linkBaseURL;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void addCategory(String categoryName, String sortKey) {
         categories.put(categoryName, sortKey);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void addLink(String topicName) {
         links.add(topicName);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean addSemanticAttribute(String attribute, String attributeValue) {
         if (semanticAttributes == null) {
@@ -103,9 +95,6 @@ public class WikiModel extends AbstractWikiModel {
         return true;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean addSemanticRelation(String relation, String relationValue) {
         if (semanticRelations == null) {
@@ -115,40 +104,33 @@ public class WikiModel extends AbstractWikiModel {
         return true;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void addTemplate(String template) {
         templates.add(template);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void addInclude(String pageName) {
         includes.add(pageName);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void appendInternalLink(String topic, String hashSection,
-            String topicDescription, String cssClass, boolean parseRecursive) {
-        appendInternalLink(topic, hashSection, topicDescription, cssClass,
-                parseRecursive, true);
+                                   String topicDescription, String cssClass,
+                                   boolean parseRecursive) {
+        appendInternalLink(topic, hashSection, topicDescription, cssClass, parseRecursive, true);
     }
 
-    protected void appendInternalLink(String topic, String hashSection,
-            String topicDescription, String cssClass, boolean parseRecursive,
-            boolean topicExists) {
+    protected void appendInternalLink(final String topic,
+                                      final String hashSection,
+                                      final String topicDescription, String cssClass,
+                                      boolean parseRecursive, boolean topicExists) {
         String hrefLink;
         String description = topicDescription.trim();
         WPATag aTagNode = new WPATag();
+
         if (topic.length() > 0) {
-            String title = Encoder.normaliseTitle(topic, true, ' ', true);
+            String title = Encoder.normaliseTitle(topic, true, ' ', casing() == FirstLetter);
             if (hashSection == null) {
                 String pageName = Encoder.normaliseTitle(fPageTitle, true, ' ', true);
                 // self link?
@@ -162,11 +144,11 @@ public class WikiModel extends AbstractWikiModel {
                 }
             }
 
-            String encodedtopic = encodeTitleToUrl(topic, true);
+            String encodedTopic = encodeTitleToUrl(topic, casing() == FirstLetter);
             if (replaceColon()) {
-                encodedtopic = encodedtopic.replace(':', '/');
+                encodedTopic = encodedTopic.replace(':', '/');
             }
-            hrefLink = getWikiBaseURL().replace("${title}", encodedtopic);
+            hrefLink = getWikiBaseURL().replace("${title}", encodedTopic);
             if (!topicExists) {
                 if (cssClass == null) {
                     cssClass = "new";
@@ -234,17 +216,11 @@ public class WikiModel extends AbstractWikiModel {
         return links;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public List<SemanticAttribute> getSemanticAttributes() {
         return semanticAttributes;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public List<SemanticRelation> getSemanticRelations() {
         return semanticRelations;
@@ -358,17 +334,11 @@ public class WikiModel extends AbstractWikiModel {
         return imageName;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean replaceColon() {
         return false;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void setUp() {
         super.setUp();
@@ -381,7 +351,7 @@ public class WikiModel extends AbstractWikiModel {
     }
 
     /**
-     * {@inheritDoc}
+     *
      */
     @Override
     public INamespace getNamespace() {
@@ -477,17 +447,11 @@ public class WikiModel extends AbstractWikiModel {
         return null;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public String getImageBaseURL() {
         return fExternalImageBaseURL;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public String getWikiBaseURL() {
         return fExternalWikiBaseURL;

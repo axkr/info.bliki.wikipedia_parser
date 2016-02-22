@@ -8,26 +8,30 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class WikiModelTest {
     private WikiModel subject;
 
-    @Before
-    public void setUp() throws Exception {
+    @Before public void setUp() throws Exception {
         subject = new WikiModel("image", "link");
     }
 
-    @Test
-    public void testIsInterWiki() throws Exception {
+    @Test public void testIsInterWiki() throws Exception {
         assertThat(subject.isInterWiki("w")).isTrue();
         assertThat(subject.isInterWiki("s")).isTrue();
 
         assertThat(subject.isInterWiki("Talk")).isFalse();
     }
 
-    @Test
-    public void testAppendRawNamespaceLinksWithInterWikLink() throws Exception {
+    @Test public void testAppendRawNamespaceLinksWithInterWikLink() throws Exception {
         assertThat(subject.appendRawNamespaceLinks("s:foo", "foo", true)).isTrue();
     }
 
-    @Test
-    public void testAppendRawNamespaceLinksWithInterLanguageLink() throws Exception {
+    @Test public void testAppendRawNamespaceLinksWithInterLanguageLink() throws Exception {
         assertThat(subject.appendRawNamespaceLinks(":kk:", "foo", true)).isTrue();
+    }
+
+    @Test public void testEncodeTitleToUrlWithUpperCase() throws Exception {
+        assertThat(subject.encodeTitleToUrl("title Foo", true)).isEqualTo("Title_Foo");
+    }
+
+    @Test public void testEncodeTitleToUrlWithoutUpperCase() throws Exception {
+        assertThat(subject.encodeTitleToUrl("title Foo", false)).isEqualTo("title_Foo");
     }
 }

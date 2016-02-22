@@ -671,12 +671,8 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
                 if (rawTopicName.length() > 0 && rawTopicName.charAt(0) == ':') {
                     rawTopicName = rawTopicName.substring(1);
                 }
-                if (rawTopicName.length() > 0 && rawTopicName.charAt(0) == ':') {
-                    rawTopicName = rawTopicName.substring(1);
-                }
                 addLink(rawTopicName);
-                appendInternalLink(rawTopicName, hash, viewableLinkDescription,
-                        null, true);
+                appendInternalLink(rawTopicName, hash, viewableLinkDescription, null, true);
                 return true;
             }
         }
@@ -1016,6 +1012,11 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
     @Override
     public Set<String> getUriSchemeSet() {
         return fConfiguration.getUriSchemeSet();
+    }
+
+    @Override
+    public Casing casing() {
+        return fConfiguration.casing();
     }
 
     @Override

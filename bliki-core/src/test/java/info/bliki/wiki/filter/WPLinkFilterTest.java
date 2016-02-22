@@ -1,10 +1,14 @@
 package info.bliki.wiki.filter;
 
+import info.bliki.wiki.model.Configuration;
+import info.bliki.wiki.model.WikiModel;
 import org.junit.Test;
 
 import java.util.Map;
 import java.util.Set;
 
+import static info.bliki.wiki.model.Configuration.DEFAULT_WIKI_ID;
+import static info.bliki.wiki.model.IConfiguration.Casing.CaseSensitive;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class WPLinkFilterTest extends FilterTestSupport {
@@ -269,8 +273,11 @@ public class WPLinkFilterTest extends FilterTestSupport {
                 new PlainTextConverter(), wikitext, false)).isEqualTo("\n" +
                 "The Eiffel Tower,[tuʀ ɛfɛl]) is a 19th century ");
     }
-    // public static void main(String[] args) {
-    // String test = Encoder.encode("erreäöü öüä++", ".");
-    // System.out.println(test);
-    // }
+    @Test public void testCaseSensitiveLinking() throws Exception {
+        wikiModel = new WikiModel(
+                new Configuration(DEFAULT_WIKI_ID, CaseSensitive),
+                "${image}", "${title}");
+
+        assertThat(wikiModel.render("[[foo]]")).isEqualTo("\n<p><a href=\"foo\" title=\"foo\">foo</a></p>");
+    }
 }

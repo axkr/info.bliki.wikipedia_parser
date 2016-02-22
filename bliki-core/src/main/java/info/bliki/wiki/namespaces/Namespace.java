@@ -151,18 +151,12 @@ public class Namespace implements INamespace {
     @Override
     public boolean isNamespace(String namespace, NamespaceCode code) {
         NamespaceValue nsVal = getNamespace(namespace);
-        if (nsVal != null) {
-            return isNamespace(nsVal, code);
-        }
-        return false;
+        return nsVal != null && isNamespace(nsVal, code);
     }
 
     @Override
     public boolean isNamespace(INamespaceValue namespace, NamespaceCode code) {
-        if (namespace == null) {
-            return false;
-        }
-        return namespace.getCode() == code;
+        return namespace != null && namespace.getCode() == code;
     }
 
     @Override @Nullable
@@ -186,22 +180,9 @@ public class Namespace implements INamespace {
     }
 
     protected enum ExtractType {
-        REPLACE_TEXTS, APPEND_AS_ALIASES;
+        REPLACE_TEXTS, APPEND_AS_ALIASES
     }
 
-    /**
-     * Extracts the two namespace strings from the resource bundle into the
-     * {@link #fNamespaces1} and {@link #fNamespaces2} arrays.
-     *
-     * @param ns1Id
-     *            the first id in the bundle, e.g.
-     *            {@link Messages#WIKI_API_MEDIA1}
-     * @param ns2Id
-     *            the first id in the bundle, e.g.
-     *            {@link Messages#WIKI_API_MEDIA2}
-     * @param code
-     *            the namespace code
-     */
     private void extractFromResource(ResourceBundle resourceBundle,
             String ns1Id, String ns2Id, NamespaceCode code, ExtractType cmd) {
         NamespaceValue namespace = getNamespaceByNumber(code);
@@ -435,20 +416,14 @@ public class Namespace implements INamespace {
         /**
          * Constructor for talk namespaces.
          *
-         * @param code
-         *            the (internal) integer code of this namespace
-         * @param isTalkspace
-         *            must be <tt>true</tt> (needed to distinguish this
-         *            constructor from the other in case of <tt>null</tt> talk
-         *            spaces)
-         * @param aliases
-         *            all aliases identifying this namespace
+         * @param code    the (internal) integer code of this namespace
+         * @param aliases all aliases identifying this namespace
          */
         private NamespaceValue(NamespaceCode code, String... aliases) {
             this.code = code;
             this.texts = new ArrayList<>(2);
             namespaceMap.put(code.code, this);
-            // contentspace is set by the content NamespaceValue
+            // content space is set by the content NamespaceValue
             this.talkspace = this;
             this.canonicalAliases = aliases;
             setTexts(aliases);

@@ -61,18 +61,30 @@ public class HTMLTag extends TagNode {
         }
 
         if (NEW_LINES) {
-            if (name.equals("div") || name.equals("p") || name.equals("li") || name.equals("td")) {
-                buf.append('\n');
-            } else if (name.equals("table") || name.equals("ul") || name.equals("ol") || name.equals("th") || name.equals("tr")) {
-                buf.append('\n');
-                newLinesAfterTag = true;
-                newLinesAfterChildren = true;
-            } else if (name.equals("pre")) {
-                buf.append('\n');
-                newLinesAfterTag = false;
-                newLinesAfterChildren = true;
-            } else if (name.equals("blockquote")) {
-                newLinesAfterChildren = true;
+            switch (name) {
+                case "div":
+                case "p":
+                case "li":
+                case "td":
+                    buf.append('\n');
+                    break;
+                case "table":
+                case "ul":
+                case "ol":
+                case "th":
+                case "tr":
+                    buf.append('\n');
+                    newLinesAfterTag = true;
+                    newLinesAfterChildren = true;
+                    break;
+                case "pre":
+                    buf.append('\n');
+                    newLinesAfterTag = false;
+                    newLinesAfterChildren = true;
+                    break;
+                case "blockquote":
+                    newLinesAfterChildren = true;
+                    break;
             }
         }
         buf.append('<');

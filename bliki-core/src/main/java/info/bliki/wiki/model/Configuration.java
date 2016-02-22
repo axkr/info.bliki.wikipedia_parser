@@ -354,14 +354,16 @@ public class Configuration implements IConfiguration {
      * The wiki identifier.
      */
     private final String wikiId;
+    private final Casing casing;
 
     public Configuration() {
-        this(DEFAULT_WIKI_ID);
+        this(DEFAULT_WIKI_ID, Casing.FirstLetter);
     }
 
-    public Configuration(String wikiId) {
+    public Configuration(String wikiId, Casing casing) {
         interWikiMapping.putAll(INTERWIKI_MAPPING);
         this.wikiId = wikiId;
+        this.casing = casing;
     }
 
     @Override
@@ -413,20 +415,19 @@ public class Configuration implements IConfiguration {
         return TEMPLATE_FUNCTION_MAP.put(key, value);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public Map<String, String> getTemplateCallsCache() {
         return TEMPLATE_CALLS_CACHE;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void setTemplateCallsCache(Map<String, String> map) {
         TEMPLATE_CALLS_CACHE = map;
+    }
+
+    @Override
+    public Casing casing() {
+        return casing;
     }
 
     @Override

@@ -14,7 +14,7 @@ public class FilterTestSupport {
         wikiModel = newWikiTestModel();
     }
 
-    private WikiModel newWikiTestModel() {
+    protected WikiModel newWikiTestModel() {
         WikiTestModel model = new WikiTestModel(Locale.ENGLISH,
             "http://www.bliki.info/wiki/${image}",
             "http://www.bliki.info/wiki/${title}",
