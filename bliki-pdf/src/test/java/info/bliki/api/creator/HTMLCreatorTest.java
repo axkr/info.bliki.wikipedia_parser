@@ -7,6 +7,7 @@ import info.bliki.annotations.IntegrationTest;
 import info.bliki.api.TestUser;
 import info.bliki.api.User;
 import info.bliki.wiki.impl.APIWikiModel;
+import info.bliki.wiki.model.Configuration;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Rule;
@@ -233,10 +234,11 @@ public class HTMLCreatorTest {
         Path imageDirectory = mainDirectory.resolve("WikiImages");
 
         APIWikiModel wikiModel = new APIWikiModel(user, db,
-                locale,
-                "${image}",
-                "${title}",
-                imageDirectory.toFile());
+            new Configuration(),
+            locale,
+            "${image}",
+            "${title}",
+            imageDirectory.toFile());
 
         DocumentCreator creator = new DocumentCreator(wikiModel, user, new String[]{title});
         @SuppressWarnings("StringBufferReplaceableByString")

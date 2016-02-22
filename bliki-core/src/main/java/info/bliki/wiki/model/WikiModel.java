@@ -19,7 +19,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.ResourceBundle;
 import java.util.Set;
 
 import static info.bliki.wiki.tags.WPATag.ANCHOR;
@@ -29,8 +28,7 @@ import static info.bliki.wiki.tags.WPATag.TITLE;
 import static info.bliki.wiki.tags.WPATag.WIKILINK;
 
 /**
- * Standard model implementation
- *
+ * Standard model implementation.
  */
 public class WikiModel extends AbstractWikiModel {
     /**
@@ -47,37 +45,30 @@ public class WikiModel extends AbstractWikiModel {
     private String fExternalWikiBaseURL;
 
     /**
-     *
-     * @param imageBaseURL
-     *            a url string which must contains a &quot;${image}&quot;
-     *            variable which will be replaced by the image name, to create
-     *            links to images.
-     * @param linkBaseURL
-     *            a url string which must contains a &quot;${title}&quot;
-     *            variable which will be replaced by the topic title, to create
-     *            links to other wiki topics.
+     * @param imageBaseURL a url string which must contains a &quot;${image}&quot;
+     *                     variable which will be replaced by the image name, to create
+     *                     links to images.
+     * @param linkBaseURL  a url string which must contains a &quot;${title}&quot;
+     *                     variable which will be replaced by the topic title, to create
+     *                     links to other wiki topics.
      */
     public WikiModel(String imageBaseURL, String linkBaseURL) {
         this(new Configuration(), imageBaseURL, linkBaseURL);
     }
 
-    public WikiModel(Configuration configuration, String imageBaseURL,
-            String linkBaseURL) {
+    public WikiModel(Configuration configuration, String imageBaseURL, String linkBaseURL) {
         super(configuration);
         fExternalImageBaseURL = imageBaseURL;
         fExternalWikiBaseURL = linkBaseURL;
     }
 
-    public WikiModel(Configuration configuration, Locale locale,
-            String imageBaseURL, String linkBaseURL) {
+    public WikiModel(Configuration configuration, Locale locale, String imageBaseURL, String linkBaseURL) {
         super(configuration, locale);
         fExternalImageBaseURL = imageBaseURL;
         fExternalWikiBaseURL = linkBaseURL;
     }
 
-    public WikiModel(Configuration configuration, Locale locale,
-            ResourceBundle resourceBundle, INamespace namespace,
-            String imageBaseURL, String linkBaseURL) {
+    public WikiModel(Configuration configuration, Locale locale, INamespace namespace, String imageBaseURL, String linkBaseURL) {
         super(configuration, locale, namespace);
         fExternalImageBaseURL = imageBaseURL;
         fExternalWikiBaseURL = linkBaseURL;

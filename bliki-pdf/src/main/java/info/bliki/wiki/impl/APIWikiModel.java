@@ -31,67 +31,54 @@ import java.util.Map;
  *
  */
 public class APIWikiModel extends WikiModel {
-    private WikiDB fWikiDB;
-
-    private final File fImageDirectory;
     static {
         TagNode.addAllowedAttribute("style");
     }
 
+    private WikiDB fWikiDB;
     private final User fUser;
+    private final File fImageDirectory;
 
     /**
-     * WikiModel which loads the templates and images through the <a
-     * href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>
+     * WikiModel which loads the templates and images through the
+     * <a href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>
      *
-     * @param user
-     *          a user for the <a
-     *          href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>
-     * @param wikiDB
-     *          a wiki database to retrieve already downloaded topics and
-     *          templates
-     * @param imageBaseURL
-     *          a url string which must contains a &quot;${image}&quot; variable
-     *          which will be replaced by the image name, to create links to
-     *          images.
-     * @param linkBaseURL
-     *          a url string which must contains a &quot;${title}&quot; variable
-     *          which will be replaced by the topic title, to create links to
-     *          other wiki topics.
-     * @param imageDirectory
-     *          a directory for storing downloaded Wikipedia images. The directory
-     *          must already exist.
+     * @param user           a user for the <a href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>
+     * @param wikiDB         a wiki database to retrieve already downloaded topics and templates
+     * @param imageBaseURL   a url string which must contains a &quot;${image}&quot; variable
+     *                       which will be replaced by the image name, to create links to
+     *                       images.
+     * @param linkBaseURL    a url string which must contains a &quot;${title}&quot; variable
+     *                       which will be replaced by the topic title, to create links to
+     *                       other wiki topics.
+     * @param imageDirectory a directory for storing downloaded Wikipedia images. The directory
+     *                       must already exist.
      */
     public APIWikiModel(User user, WikiDB wikiDB, String imageBaseURL, String linkBaseURL, File imageDirectory) {
-        this(user, wikiDB, Locale.ENGLISH, imageBaseURL, linkBaseURL, imageDirectory);
+        this(user, wikiDB, new Configuration(), Locale.ENGLISH, imageBaseURL, linkBaseURL, imageDirectory);
     }
 
     /**
      * WikiModel which loads the templates and images through the <a
      * href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>
      *
-     * @param user
-     *          a user for the <a
-     *          href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>
-     * @param wikiDB
-     *          a wiki database to retrieve already downloaded topics and
-     *          templates
-     * @param locale
-     *          a locale for loading language specific resources
-     * @param imageBaseURL
-     *          a url string which must contains a &quot;${image}&quot; variable
-     *          which will be replaced by the image name, to create links to
-     *          images.
-     * @param linkBaseURL
-     *          a url string which must contains a &quot;${title}&quot; variable
-     *          which will be replaced by the topic title, to create links to
-     *          other wiki topics.
-     * @param imageDirectory
-     *          a directory for storing downloaded Wikipedia images. The directory
-     *          must already exist.
+     * @param user           a user for the <a
+     *                       href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>
+     * @param wikiDB         a wiki database to retrieve already downloaded topics and templates
+     * @param configuration  the wiki configuration to use
+     * @param locale         a locale for loading language specific resources
+     * @param imageBaseURL   a url string which must contains a &quot;${image}&quot; variable
+     *                       which will be replaced by the image name, to create links to
+     *                       images.
+     * @param linkBaseURL    a url string which must contains a &quot;${title}&quot; variable
+     *                       which will be replaced by the topic title, to create links to
+     *                       other wiki topics.
+     * @param imageDirectory a directory for storing downloaded Wikipedia images. The directory
+     *                       must already exist.
      */
-    public APIWikiModel(User user, WikiDB wikiDB, Locale locale, String imageBaseURL, String linkBaseURL, File imageDirectory) {
-        super(new Configuration(), locale, imageBaseURL, linkBaseURL);
+    public APIWikiModel(User user, WikiDB wikiDB, Configuration configuration, Locale locale, String imageBaseURL,
+                        String linkBaseURL, File imageDirectory) {
+        super(configuration, locale, imageBaseURL, linkBaseURL);
 
         fUser = user;
         fWikiDB = wikiDB;
@@ -108,14 +95,10 @@ public class APIWikiModel extends WikiModel {
      * implementation uses a Derby database to cache downloaded wiki template
      * texts.
      *
-     * @param parsedPagename
-     *          the parsed template name
-     * @param templateParameters
-     *          if the namespace is the <b>Template</b> namespace, the current
-     *          template parameters are stored as <code>String</code>s in this map
-     *
+     * @param parsedPagename     the parsed template name
+     * @param templateParameters if the namespace is the <b>Template</b> namespace, the current
+     *                           template parameters are stored as <code>String</code>s in this map
      * @return <code>null</code> if no content was found
-     *
      * @see info.bliki.api.User#queryContent(String[])
      */
     @Override @Nullable

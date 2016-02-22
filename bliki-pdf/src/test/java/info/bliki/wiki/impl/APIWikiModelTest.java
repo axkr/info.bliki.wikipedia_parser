@@ -6,6 +6,7 @@ import info.bliki.api.User;
 import info.bliki.api.creator.TopicData;
 import info.bliki.api.creator.WikiDB;
 import info.bliki.wiki.filter.ParsedPageName;
+import info.bliki.wiki.model.Configuration;
 import info.bliki.wiki.model.WikiModelContentException;
 import info.bliki.wiki.namespaces.INamespace;
 import info.bliki.wiki.namespaces.Namespace;
@@ -36,7 +37,7 @@ public class APIWikiModelTest {
         modulePageName = new ParsedPageName(ns.getModule(), "moduleTestPage", true);
         templatePageName = new ParsedPageName(ns.getTemplate(), "templateTestPage", true);
 
-        subject = new APIWikiModel(user, wikiDB, Locale.ENGLISH, null, null, null);
+        subject = new APIWikiModel(user, wikiDB, new Configuration(), Locale.ENGLISH, null, null, null);
     }
 
     @Test public void getRawWikiContentWithMagicWordReturnsContent() throws Exception {
