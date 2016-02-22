@@ -7,7 +7,6 @@ import info.bliki.annotations.IntegrationTest;
 import info.bliki.api.TestUser;
 import info.bliki.api.User;
 import info.bliki.wiki.impl.APIWikiModel;
-import info.bliki.wiki.model.Configuration;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Rule;
@@ -249,7 +248,7 @@ public class HTMLCreatorTest {
         creator.setHeader(builder.toString());
         creator.setFooter(HTMLConstants.HTML_FOOTER);
         wikiModel.setUp();
-        Configuration.DEFAULT_CONFIGURATION.setTemplateCallsCache(new HashMap<String, String>());
+        wikiModel.setTemplateCallsCache(new HashMap<String, String>());
         Path generatedHTMLFilename = mainDirectory.resolve(encodeTitleLocalUrl(title) + ".html");
         creator.renderToFile(generatedHTMLFilename.toString());
         System.out.println("Created file: " + generatedHTMLFilename);

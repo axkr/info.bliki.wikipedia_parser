@@ -58,7 +58,7 @@ public class WikiModel extends AbstractWikiModel {
      *            links to other wiki topics.
      */
     public WikiModel(String imageBaseURL, String linkBaseURL) {
-        this(Configuration.DEFAULT_CONFIGURATION, imageBaseURL, linkBaseURL);
+        this(new Configuration(), imageBaseURL, linkBaseURL);
     }
 
     public WikiModel(Configuration configuration, String imageBaseURL,
@@ -78,7 +78,7 @@ public class WikiModel extends AbstractWikiModel {
     public WikiModel(Configuration configuration, Locale locale,
             ResourceBundle resourceBundle, INamespace namespace,
             String imageBaseURL, String linkBaseURL) {
-        super(configuration, locale, resourceBundle, namespace);
+        super(configuration, locale, namespace);
         fExternalImageBaseURL = imageBaseURL;
         fExternalWikiBaseURL = linkBaseURL;
     }

@@ -26,15 +26,16 @@ public class MediaWikiTestModel extends WikiModel {
 
     static {
         TagNode.addAllowedAttribute("style");
-        Configuration.DEFAULT_CONFIGURATION.addUriScheme("tel");
-        Configuration.DEFAULT_CONFIGURATION.addInterwikiLink("intra", "/${title}");
-        Configuration.DEFAULT_CONFIGURATION.addTokenTag("chart", new ChartTag());
-        Configuration.DEFAULT_CONFIGURATION.addTokenTag("inputbox", new IgnoreTag("inputbox"));
-        Configuration.DEFAULT_CONFIGURATION.addTokenTag("imagemap", new IgnoreTag("imagemap"));
     }
 
-    public MediaWikiTestModel(String imageBaseURL, String linkBaseURL, Map<String, String> db) {
-        this(Locale.ENGLISH, imageBaseURL, linkBaseURL, db);
+    static Configuration getConfiguration() {
+        Configuration configuration = new Configuration();
+        configuration.addUriScheme("tel");
+        configuration.addInterwikiLink("intra", "/$1");
+        configuration.addTokenTag("chart", new ChartTag());
+        configuration.addTokenTag("inputbox", new IgnoreTag("inputbox"));
+        configuration.addTokenTag("imagemap", new IgnoreTag("imagemap"));
+        return configuration;
     }
 
     /**
@@ -44,17 +45,12 @@ public class MediaWikiTestModel extends WikiModel {
      * @param linkBaseURL
      */
     public MediaWikiTestModel(Locale locale, String imageBaseURL, String linkBaseURL, Map<String, String> db) {
-        super(Configuration.DEFAULT_CONFIGURATION, locale, imageBaseURL, linkBaseURL);
+        super(getConfiguration(), locale, imageBaseURL, linkBaseURL);
         this.db = db;
-        // add some basic pages assumed to always exist (at least in
-        // parserTests.txt):
+        // add some basic pages assumed to always exist (at least in parserTests.txt):
         db.put("Main_Page", "");
         db.put("Special:Version", "");
-
-        // set up a simple cache mock-up for JUnit tests. HashMap is not usable for
-        // production!
-        Configuration.DEFAULT_CONFIGURATION.setTemplateCallsCache(new HashMap<String, String>());
-
+        setTemplateCallsCache(new HashMap<String, String>());
         fSemanticWebActive = false;
     }
 

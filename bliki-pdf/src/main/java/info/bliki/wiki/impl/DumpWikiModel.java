@@ -77,7 +77,7 @@ public class DumpWikiModel extends WikiModel {
      */
     public DumpWikiModel(WikiDB wikiDB, Siteinfo siteinfo, Locale locale, String imageBaseURL, String linkBaseURL,
             @Nullable File imageDirectory) {
-        super(Configuration.DEFAULT_CONFIGURATION, locale, Messages.getResourceBundle(locale), siteinfo.getNamespace(), imageBaseURL,
+        super(new Configuration(), locale, Messages.getResourceBundle(locale), siteinfo.getNamespace(), imageBaseURL,
                 linkBaseURL);
         fWikiDB = wikiDB;
         fSiteinfo = siteinfo;

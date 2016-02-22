@@ -91,7 +91,7 @@ public class APIWikiModel extends WikiModel {
      *          must already exist.
      */
     public APIWikiModel(User user, WikiDB wikiDB, Locale locale, String imageBaseURL, String linkBaseURL, File imageDirectory) {
-        super(Configuration.DEFAULT_CONFIGURATION, locale, imageBaseURL, linkBaseURL);
+        super(new Configuration(), locale, imageBaseURL, linkBaseURL);
 
         fUser = user;
         fWikiDB = wikiDB;

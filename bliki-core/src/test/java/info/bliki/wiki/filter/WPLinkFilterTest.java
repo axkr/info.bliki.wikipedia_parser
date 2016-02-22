@@ -30,7 +30,7 @@ public class WPLinkFilterTest extends FilterTestSupport {
                 .render(
                         "You could open the [[Wikipedia:sandbox|sandbox]] in a separate window or tab to be able to see both this text and your tests in the sandbox.",
                         false)).isEqualTo("\n"
-                + "<p>You could open the <a href=\"http://www.bliki.info/wiki/Wikipedia:sandbox\" title=\"Wikipedia:sandbox\">sandbox</a> in a separate window or tab to be able to see both this text and your tests in the sandbox.</p>");
+                + "<p>You could open the <a href=\"//en.wikipedia.org/wiki/sandbox\">sandbox</a> in a separate window or tab to be able to see both this text and your tests in the sandbox.</p>");
     }
 
     @Test public void testLink0() {
@@ -39,7 +39,7 @@ public class WPLinkFilterTest extends FilterTestSupport {
 
     @Test public void testLink1() {
         assertThat(wikiModel
-                .render("[[en:Test|Test]]", false)).isEqualTo("\n" + "<p><a href=\"http://en.wikipedia.org/wiki/Test\">Test</a></p>");
+                .render("[[en:Test|Test]]", false)).isEqualTo("\n" + "<p><a href=\"//en.wikipedia.org/wiki/Test\">Test</a></p>");
     }
 
     @Test public void testLink2() {
@@ -47,14 +47,13 @@ public class WPLinkFilterTest extends FilterTestSupport {
                 "[[Test|Test]]", false)).isEqualTo("\n" + "<p><a href=\"http://www.bliki.info/wiki/Test\" title=\"Test\">Test</a></p>");
     }
 
-    @Test public void testLink3() {
+    @Test public void testLinkToCategoryPage() {
         assertThat(wikiModel.render("[[:Category:Test page]]", false)).isEqualTo("\n"
                 + "<p><a href=\"http://www.bliki.info/wiki/Category:Test_page\" title=\"Category:Test page\">Category:Test page</a></p>");
     }
 
     /**
      * Categories are not rendered
-     *
      */
     @Test public void testCategory01() {
         assertThat(wikiModel.render("[[Category:Tips and Tricks]]", false)).isEqualTo("");
@@ -71,7 +70,7 @@ public class WPLinkFilterTest extends FilterTestSupport {
 
     @Test public void testLink5() {
         assertThat(wikiModel.render(
-                "[[wikitravel:test]]", false)).isEqualTo("\n" + "<p><a href=\"http://wikitravel.org/en/test\">wikitravel:test</a></p>");
+                "[[wikivoyage:test]]", false)).isEqualTo("\n" + "<p><a href=\"//en.wikivoyage.org/wiki/test\">wikivoyage:test</a></p>");
     }
 
     @Test public void testLink6() {
@@ -113,7 +112,6 @@ public class WPLinkFilterTest extends FilterTestSupport {
                 "</ul>");
     }
 
-    //
     @Test public void testLink12() {
         assertThat(wikiModel.render("kellereien wie [[Henkell & Söhnlein|Henkell]], [[Söhnlein]]", false)).isEqualTo("\n"
                 + "<p>kellereien wie <a href=\"http://www.bliki.info/wiki/Henkell_%26_S%C3%B6hnlein\" title=\"Henkell &amp; Söhnlein\">Henkell</a>, <a href=\"http://www.bliki.info/wiki/S%C3%B6hnlein\" title=\"Söhnlein\">Söhnlein</a></p>");
@@ -152,12 +150,17 @@ public class WPLinkFilterTest extends FilterTestSupport {
 
     @Test public void testInterwiki1() {
         assertThat(wikiModel
-                .render("[[de:Johann Wolfgang von Goethe|Goethe]]s Faust", false)).isEqualTo("\n" + "<p><a href=\"http://de.wikipedia.org/wiki/Johann_Wolfgang_von_Goethe\">Goethes</a> Faust</p>");
+                .render("[[de:Johann Wolfgang von Goethe|Goethe]]s Faust", false)).isEqualTo("\n" + "<p><a href=\"//de.wikipedia.org/wiki/Johann_Wolfgang_von_Goethe\">Goethes</a> Faust</p>");
     }
 
     @Test public void testInterwiki2() {
         assertThat(wikiModel.render(
                 "[[intra:page/directory|Page directory]]", false)).isEqualTo("\n" + "<p><a href=\"/page/directory\">Page directory</a></p>");
+    }
+
+    @Test public void testInterwiki3() {
+        assertThat(wikiModel.render(
+                "[[:fr:]]", false)).isEqualTo("\n" + "<p><a href=\"//fr.wikipedia.org/wiki/\">fr:</a></p>");
     }
 
     @Test public void testSectionLink01() {

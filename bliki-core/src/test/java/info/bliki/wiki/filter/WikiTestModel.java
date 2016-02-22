@@ -21,24 +21,29 @@ import java.util.Map;
  * namespaces and predefined templates
  */
 public class WikiTestModel extends WikiModel {
-    private static final String MAIN_FOO     = "BAR";
-    private static final String FOODATE      = "FOODATE";
+    private static final String MAIN_FOO = "BAR";
+    private static final String FOODATE = "FOODATE";
     private boolean semanticWebActive;
     private final String resourceBase;
     private boolean debug;
 
     static {
         TagNode.addAllowedAttribute("style");
-        Configuration.DEFAULT_CONFIGURATION.addUriScheme("tel");
-        Configuration.DEFAULT_CONFIGURATION.addInterwikiLink("intra", "/${title}");
-        Configuration.DEFAULT_CONFIGURATION.addTokenTag("chart", new ChartTag());
-        Configuration.DEFAULT_CONFIGURATION.addTokenTag("inputbox", new IgnoreTag("inputbox"));
-        Configuration.DEFAULT_CONFIGURATION.addTokenTag("imagemap", new IgnoreTag("imagemap"));
+    }
+
+    private static Configuration getTestConfiguration() {
+        Configuration configuration = new Configuration();
+        configuration.addUriScheme("tel");
+        configuration.addInterwikiLink("intra", "/$1");
+        configuration.addTokenTag("chart", new ChartTag());
+        configuration.addTokenTag("inputbox", new IgnoreTag("inputbox"));
+        configuration.addTokenTag("imagemap", new IgnoreTag("imagemap"));
+        configuration.setTemplateCallsCache(new HashMap<String, String>());
+        return configuration;
     }
 
     public WikiTestModel(Locale locale, String imageBaseURL, String linkBaseURL, String resourceBase) {
-        super(Configuration.DEFAULT_CONFIGURATION, locale, imageBaseURL, linkBaseURL);
-        Configuration.DEFAULT_CONFIGURATION.setTemplateCallsCache(new HashMap<String, String>());
+        super(getTestConfiguration(), locale, imageBaseURL, linkBaseURL);
         this.semanticWebActive = false;
         this.resourceBase = resourceBase;
         fNamespace.getImage().addAlias("Bild");

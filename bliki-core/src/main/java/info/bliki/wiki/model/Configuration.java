@@ -50,9 +50,11 @@ import info.bliki.wiki.template.Titleparts;
 import info.bliki.wiki.template.UC;
 import info.bliki.wiki.template.UCFirst;
 import info.bliki.wiki.template.URLEncode;
+import info.bliki.wiki.template.extension.DollarContext;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Collections;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
@@ -102,60 +104,61 @@ public class Configuration implements IConfiguration {
 
     private static final String INTERWIKI_RESOURCE_NAME = "/interwiki.properties";
 
-    public static Properties interwikiMapping;
-
-    final public static String SPECIAL_BLOCK_TAGS = "|applet|snippet|blockquote|body|button|center|dd|del|div|fieldset|form|iframe|ins|li|map|noframes|noscript|object|td|th|";
+    public static final  String SPECIAL_BLOCK_TAGS = "|applet|snippet|blockquote|body|button|center|dd|del|div|fieldset|form|iframe|ins|li|map|noframes|noscript|object|td|th|";
     final static HTMLTag HTML_A_OPEN = new ATag();
 
-    final public static HTMLTag HTML_ABBR_OPEN = new HTMLTag("abbr");
-    final public static HTMLTag HTML_EM_OPEN = new HTMLTag("em");
-    final public static HTMLTag HTML_H1_OPEN = new HTMLBlockTag("h1", SPECIAL_BLOCK_TAGS);
-    final public static HTMLTag HTML_H2_OPEN = new HTMLBlockTag("h2", SPECIAL_BLOCK_TAGS);
-    final public static HTMLTag HTML_H3_OPEN = new HTMLBlockTag("h3", SPECIAL_BLOCK_TAGS);
-    final public static HTMLTag HTML_H4_OPEN = new HTMLBlockTag("h4", SPECIAL_BLOCK_TAGS);
-    final public static HTMLTag HTML_H5_OPEN = new HTMLBlockTag("h5", SPECIAL_BLOCK_TAGS);
-    final public static HTMLTag HTML_H6_OPEN = new HTMLBlockTag("h6", SPECIAL_BLOCK_TAGS);
-    final public static HTMLTag HTML_ITALIC_OPEN = new HTMLTag("i");
-    final public static HTMLTag HTML_BOLD_OPEN = new HTMLTag("b");
-    final public static HTMLTag HTML_PARAGRAPH_OPEN = new PTag();
-    final public static HTMLTag HTML_BLOCKQUOTE_OPEN = new HTMLBlockTag("blockquote", SPECIAL_BLOCK_TAGS);
-    final public static HTMLTag HTML_STRIKE_OPEN = new HTMLTag("strike");
-    final public static HTMLTag HTML_STRONG_OPEN = new HTMLTag("strong");
-    final public static HTMLTag HTML_UNDERLINE_OPEN = new HTMLTag("u");
-    final public static HTMLTag HTML_SUB_OPEN = new HTMLTag("sub");
-    final public static HTMLTag HTML_SUP_OPEN = new HTMLTag("sup");
-    final public static HTMLTag HTML_CENTER_OPEN = new HTMLTag("center");
-    final public static HTMLTag HTML_TT_OPEN = new HTMLTag("tt");
-    final public static HTMLTag HTML_TABLE_OPEN = new HTMLBlockTag("table", SPECIAL_BLOCK_TAGS);
-    final public static HTMLTag HTML_CAPTION_OPEN = new HTMLBlockTag("caption", "|table|");
-    final public static HTMLTag HTML_TH_OPEN = new HTMLBlockTag("th", "|tr|");
-    final public static HTMLTag HTML_TR_OPEN = new HTMLBlockTag("tr", "|table|tbody|tfoot|thead|");
-    final public static HTMLTag HTML_TD_OPEN = new HTMLBlockTag("td", "|tr|");
-    final public static HTMLTag HTML_UL_OPEN = new HTMLBlockTag("ul", SPECIAL_BLOCK_TAGS);
-    final public static HTMLTag HTML_OL_OPEN = new HTMLBlockTag("ol", SPECIAL_BLOCK_TAGS);
-    final public static HTMLTag HTML_LI_OPEN = new HTMLBlockTag("li", "|dir|menu|ol|ul|", HTML_UL_OPEN);
-    final public static HTMLTag HTML_FONT_OPEN = new HTMLTag("font");
-    final public static HTMLTag HTML_CITE_OPEN = new HTMLTag("cite");
-    final public static HTMLTag HTML_DIV_OPEN = new HTMLBlockTag("div", SPECIAL_BLOCK_TAGS);
-    final public static HTMLTag HTML_SPAN_OPEN = new HTMLTag("span");
-    final public static HTMLTag HTML_VAR_OPEN = new HTMLTag("var");
-    final public static HTMLTag HTML_CODE_OPEN = new HTMLTag("code");
+    public static final  HTMLTag HTML_ABBR_OPEN = new HTMLTag("abbr");
+    public static final  HTMLTag HTML_EM_OPEN = new HTMLTag("em");
+    public static final  HTMLTag HTML_H1_OPEN = new HTMLBlockTag("h1", SPECIAL_BLOCK_TAGS);
+    public static final  HTMLTag HTML_H2_OPEN = new HTMLBlockTag("h2", SPECIAL_BLOCK_TAGS);
+    public static final  HTMLTag HTML_H3_OPEN = new HTMLBlockTag("h3", SPECIAL_BLOCK_TAGS);
+    public static final  HTMLTag HTML_H4_OPEN = new HTMLBlockTag("h4", SPECIAL_BLOCK_TAGS);
+    public static final  HTMLTag HTML_H5_OPEN = new HTMLBlockTag("h5", SPECIAL_BLOCK_TAGS);
+    public static final  HTMLTag HTML_H6_OPEN = new HTMLBlockTag("h6", SPECIAL_BLOCK_TAGS);
+    public static final  HTMLTag HTML_ITALIC_OPEN = new HTMLTag("i");
+    public static final  HTMLTag HTML_BOLD_OPEN = new HTMLTag("b");
+    public static final  HTMLTag HTML_PARAGRAPH_OPEN = new PTag();
+    public static final  HTMLTag HTML_BLOCKQUOTE_OPEN = new HTMLBlockTag("blockquote", SPECIAL_BLOCK_TAGS);
+    public static final  HTMLTag HTML_STRIKE_OPEN = new HTMLTag("strike");
+    public static final  HTMLTag HTML_STRONG_OPEN = new HTMLTag("strong");
+    public static final  HTMLTag HTML_UNDERLINE_OPEN = new HTMLTag("u");
+    public static final  HTMLTag HTML_SUB_OPEN = new HTMLTag("sub");
+    public static final  HTMLTag HTML_SUP_OPEN = new HTMLTag("sup");
+    public static final  HTMLTag HTML_CENTER_OPEN = new HTMLTag("center");
+    public static final  HTMLTag HTML_TT_OPEN = new HTMLTag("tt");
+    public static final  HTMLTag HTML_TABLE_OPEN = new HTMLBlockTag("table", SPECIAL_BLOCK_TAGS);
+    public static final  HTMLTag HTML_CAPTION_OPEN = new HTMLBlockTag("caption", "|table|");
+    public static final  HTMLTag HTML_TH_OPEN = new HTMLBlockTag("th", "|tr|");
+    public static final  HTMLTag HTML_TR_OPEN = new HTMLBlockTag("tr", "|table|tbody|tfoot|thead|");
+    public static final  HTMLTag HTML_TD_OPEN = new HTMLBlockTag("td", "|tr|");
+    public static final  HTMLTag HTML_UL_OPEN = new HTMLBlockTag("ul", SPECIAL_BLOCK_TAGS);
+    public static final  HTMLTag HTML_OL_OPEN = new HTMLBlockTag("ol", SPECIAL_BLOCK_TAGS);
+    public static final  HTMLTag HTML_LI_OPEN = new HTMLBlockTag("li", "|dir|menu|ol|ul|", HTML_UL_OPEN);
+    public static final  HTMLTag HTML_FONT_OPEN = new HTMLTag("font");
+    public static final  HTMLTag HTML_CITE_OPEN = new HTMLTag("cite");
+    public static final  HTMLTag HTML_DIV_OPEN = new HTMLBlockTag("div", SPECIAL_BLOCK_TAGS);
+    public static final  HTMLTag HTML_SPAN_OPEN = new HTMLTag("span");
+    public static final  HTMLTag HTML_VAR_OPEN = new HTMLTag("var");
+    public static final  HTMLTag HTML_CODE_OPEN = new HTMLTag("code");
 
     // strike-through
-    final public static HTMLTag HTML_S_OPEN = new HTMLTag("s");
+    public static final  HTMLTag HTML_S_OPEN = new HTMLTag("s");
 
     // small
-    final public static HTMLTag HTML_SMALL_OPEN = new HTMLTag("small");
-    final public static HTMLTag HTML_BIG_OPEN = new HTMLTag("big");
-    final public static HTMLTag HTML_DEL_OPEN = new HTMLTag("del");
-    final public static HTMLTag HTML_PRE_OPEN = new PreTag();
+    public static final  HTMLTag HTML_SMALL_OPEN = new HTMLTag("small");
+    public static final  HTMLTag HTML_BIG_OPEN = new HTMLTag("big");
+    public static final  HTMLTag HTML_DEL_OPEN = new HTMLTag("del");
+    public static final  HTMLTag HTML_PRE_OPEN = new PreTag();
+
+    public static final String DEFAULT_WIKI_ID = "enwiki";
 
     private static Map<String, String> TEMPLATE_CALLS_CACHE = null;
 
     /**
      * Map from the interwiki shortcut to the real Interwiki-URL
      */
-    protected static final Map<String, String> INTERWIKI_MAP = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
+    private static final Map<String, String> INTERWIKI_MAPPING = new HashMap<>();
+    private final Map<String, String> interWikiMapping = new HashMap<>();
 
     /**
      * Map the HTML token string to the correspoding TagToken implementation
@@ -181,21 +184,22 @@ public class Configuration implements IConfiguration {
     public final static Pattern NOWIKI_CLOSE_PATTERN = Pattern.compile("\\<\\/nowiki\\>", Pattern.CASE_INSENSITIVE);
 
     static {
-        Configuration.interwikiMapping = Configuration.loadProperties(INTERWIKI_RESOURCE_NAME);
+        final Properties mapping = Configuration.loadProperties(INTERWIKI_RESOURCE_NAME);
 
         URI_SCHEME_MAP.add("http");
         URI_SCHEME_MAP.add("https");
         URI_SCHEME_MAP.add("ftp");
 
-        Enumeration<Object> eKeys = Configuration.interwikiMapping.keys();
+        Enumeration<Object> eKeys = mapping.keys();
 
         while (eKeys.hasMoreElements()) {
             String key = (String) eKeys.nextElement();
-            if (!INTERWIKI_MAP.containsKey(key)) {
-                INTERWIKI_MAP.put(key, Configuration.interwikiMapping.getProperty(key));
+            if (!INTERWIKI_MAPPING.containsKey(key)) {
+                INTERWIKI_MAPPING.put(key, mapping.getProperty(key));
             }
         }
 
+        TEMPLATE_FUNCTION_MAP.put("#$", DollarContext.CONST);
         TEMPLATE_FUNCTION_MAP.put("anchorencode", Anchorencode.CONST);
         TEMPLATE_FUNCTION_MAP.put("formatnum", Formatnum.CONST);
         TEMPLATE_FUNCTION_MAP.put("fullurl", Fullurl.CONST);
@@ -297,8 +301,6 @@ public class Configuration implements IConfiguration {
         TAG_TOKEN_MAP.put("cite", HTML_CITE_OPEN);
     }
 
-    public final static Configuration DEFAULT_CONFIGURATION = new Configuration();
-
     /**
      * Limits the length of the template cache key to this length.
      */
@@ -347,17 +349,35 @@ public class Configuration implements IConfiguration {
      */
     // public final static int GLOBAL_RECURSION_LIMIT = 100000;
 
+
+    /**
+     * The wiki identifier.
+     */
+    private final String wikiId;
+
     public Configuration() {
+        this(DEFAULT_WIKI_ID);
     }
 
-    @Override
-    public Map<String, String> getInterwikiMap() {
-        return INTERWIKI_MAP;
+    public Configuration(String wikiId) {
+        interWikiMapping.putAll(INTERWIKI_MAPPING);
+        this.wikiId = wikiId;
     }
 
     @Override
     public String addInterwikiLink(String key, String value) {
-        return INTERWIKI_MAP.put(key, value);
+        return interWikiMapping.put("__global:"+key, "0 " + value);
+    }
+
+    /**
+     * @return the wikiId, e.g. enwiki, frwiktionary etc.
+     */
+    public String getWikiId() {
+        return wikiId;
+    }
+
+    public Map<String, String> getInterWikiMapping() {
+        return Collections.unmodifiableMap(interWikiMapping);
     }
 
     /**
@@ -437,25 +457,13 @@ public class Configuration implements IConfiguration {
      *          The name of the property file to load.
      * @return The loaded SortedProperties object.
      */
-    public static Properties loadProperties(String propertyFile) {
+    private static Properties loadProperties(String propertyFile) {
         Properties properties = new Properties();
-
-        InputStream in = null;
-        try {
-            in = Configuration.class.getResourceAsStream(propertyFile);
+        try (InputStream in = Configuration.class.getResourceAsStream(propertyFile)){
             properties.load(in);
-        } catch (Exception e) {
-            System.err.println("Configuration.java - Properties file:" + propertyFile + " not found.");
-        } finally {
-            if (in != null) {
-                try {
-                    in.close();
-                } catch (IOException e) {
-                    // NOPMD
-                }
-            }
+        } catch (IOException e) {
+            throw new RuntimeException("Configuration.java - Properties file:" + propertyFile + " not found.");
         }
         return properties;
     }
-
 }

@@ -8,12 +8,10 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Configuration interface for extensions similar to the Mediawiki <a
- * href="http://www.mediawiki.org/wiki/Manual:Tag_extensions">HTML styled tag
- * extension</a>, <a
- * href="http://www.mediawiki.org/wiki/Manual:Parser_functions">template parser
- * functions</a> and <a href="https://www.mediawiki.org/wiki/Interwiki">interwiki
- * links</a>
+ * Configuration interface for extensions similar to the Mediawiki
+ * <a href="http://www.mediawiki.org/wiki/Manual:Tag_extensions">HTML styled tag extension</a>,
+ * <a href="http://www.mediawiki.org/wiki/Manual:Parser_functions">template parser functions</a>
+ * and <a href="https://www.mediawiki.org/wiki/Interwiki">interwiki links</a>
  *
  * @see info.bliki.wiki.model.Configuration
  */
@@ -27,11 +25,11 @@ public interface IConfiguration {
      * @param value
      * @return
      */
-    public SourceCodeFormatter addCodeFormatter(String key, SourceCodeFormatter value);
+    SourceCodeFormatter addCodeFormatter(String key, SourceCodeFormatter value);
 
     /**
      * Add another Interwiki link to the configuration. The value string must
-     * contain the <code>${title}</code> placeholder for the used wiki article
+     * contain the <code>$1</code> placeholder for the used wiki article
      * link.
      *
      * @param key
@@ -41,7 +39,7 @@ public interface IConfiguration {
      *          link
      * @return
      */
-    public String addInterwikiLink(String key, String value);
+    String addInterwikiLink(String key, String value);
 
     /**
      * Add a new <a href="https://www.mediawiki.org/wiki/Interwiki">interwiki
@@ -51,7 +49,7 @@ public interface IConfiguration {
      * @param value
      * @return
      */
-    public ITemplateFunction addTemplateFunction(String key, ITemplateFunction value);
+    ITemplateFunction addTemplateFunction(String key, ITemplateFunction value);
 
     /**
      * Add a new <a
@@ -62,7 +60,7 @@ public interface IConfiguration {
      * @param value
      * @return
      */
-    public TagToken addTokenTag(String key, TagToken value);
+    TagToken addTokenTag(String key, TagToken value);
 
     /**
      * Get the <a
@@ -71,18 +69,7 @@ public interface IConfiguration {
      *
      * @return
      */
-    public Map<String, SourceCodeFormatter> getCodeFormatterMap();
-
-    /**
-     * Get the <a href="https://www.mediawiki.org/wiki/Interwiki">interwiki
-     * links</a> map for converting interwiki links into external URLs.
-     *
-     * Example: maps the interwiki shortcut &quot;de&quot; to
-     * &quot;http://de.wikipedia.org/wiki/${title}&quot;
-     *
-     * @return
-     */
-    public Map<String, String> getInterwikiMap();
+    Map<String, SourceCodeFormatter> getCodeFormatterMap();
 
     /**
      * Get the currently configured cache implementation for template calls.
@@ -90,7 +77,7 @@ public interface IConfiguration {
      * @return <code>null</code> if no cache implementation is set.
      * @see IConfiguration#setTemplateCallsCache(Map)
      */
-    public Map<String, String> getTemplateCallsCache();
+    Map<String, String> getTemplateCallsCache();
 
     /**
      * Get the <a
@@ -99,7 +86,7 @@ public interface IConfiguration {
      *
      * @return
      */
-    public Map<String, ITemplateFunction> getTemplateMap();
+    Map<String, ITemplateFunction> getTemplateMap();
 
     /**
      * Get the <a href="https://www.mediawiki.org/wiki/Manual:Tag_extensions">HTML
@@ -107,7 +94,7 @@ public interface IConfiguration {
      *
      * @return
      */
-    public Map<String, TagToken> getTokenMap();
+    Map<String, TagToken> getTokenMap();
 
     /**
      * Get the set of all allowed URI scheme shortcuts like http, https, ftp,...
@@ -115,7 +102,7 @@ public interface IConfiguration {
      * See <a href="http://en.wikipedia.org/wiki/URI_scheme">URI scheme</a>
      *
      */
-    public Set<String> getUriSchemeSet();
+    Set<String> getUriSchemeSet();
 
     /**
      * Set a cache map implementation. For example based on <a
@@ -128,5 +115,5 @@ public interface IConfiguration {
      * @param map
      *          the cache implementation
      */
-    public void setTemplateCallsCache(Map<String, String> map);
+    void setTemplateCallsCache(Map<String, String> map);
 }

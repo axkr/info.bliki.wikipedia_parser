@@ -26,8 +26,7 @@ public class APIWikiModelInMemory extends WikiModel {
 
     public APIWikiModelInMemory(User user, Locale locale, String imageBaseURL,
             String linkBaseURL, Map<String, String> contentCache) {
-        super(Configuration.DEFAULT_CONFIGURATION, locale, imageBaseURL,
-                linkBaseURL);
+        super(new Configuration(), locale, imageBaseURL, linkBaseURL);
         this.user = user;
         this.contentCache = contentCache;
     }

@@ -1,15 +1,12 @@
 package info.bliki.wiki.template;
 
 import info.bliki.wiki.filter.ParsedPageName;
-import info.bliki.wiki.model.Configuration;
 import info.bliki.wiki.model.WikiModel;
 import info.bliki.wiki.model.WikiModelContentException;
 import info.bliki.wiki.template.extension.AttributeRenderer;
-import info.bliki.wiki.template.extension.DollarContext;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -59,10 +56,6 @@ public class ParserFunctionModel extends WikiModel {
      */
     public ParserFunctionModel(String imageBaseURL, String linkBaseURL) {
         super(imageBaseURL, linkBaseURL);
-        Configuration.DEFAULT_CONFIGURATION.addTemplateFunction("#$", DollarContext.CONST);
-        // set up a simple cache mock-up for JUnit tests. HashMap is not usable for
-        // production!
-        Configuration.DEFAULT_CONFIGURATION.setTemplateCallsCache(new HashMap<String, String>());
     }
 
     /**

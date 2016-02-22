@@ -6,14 +6,9 @@ import info.bliki.wiki.filter.PlainTextConverter;
 import info.bliki.wiki.model.Configuration;
 import info.bliki.wiki.model.WikiModel;
 
-import java.awt.Component;
-import java.awt.Container;
+import javax.swing.*;
+import java.awt.*;
 import java.util.Locale;
-
-import javax.swing.BoxLayout;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 
 /**
  * A converter tool for using the Wiki2HTML, Plain2Wiki and HTML2Wiki conversion
@@ -42,7 +37,7 @@ public class BlikiConverter extends JFrame {
         @Override
         public void actionPerformed(java.awt.event.ActionEvent event) {
             String strData = input.getText();
-            WikiModel wikiModel = new WikiModel(Configuration.DEFAULT_CONFIGURATION, Locale.ENGLISH, "${image}", "${title}");
+            WikiModel wikiModel = new WikiModel(new Configuration(), Locale.ENGLISH, "${image}", "${title}");
             wikiModel.setUp();
       try {
             String result = wikiModel.render(strData, false);
@@ -58,7 +53,7 @@ public class BlikiConverter extends JFrame {
         @Override
         public void actionPerformed(java.awt.event.ActionEvent event) {
             String strData = input.getText();
-            WikiModel wikiModel = new WikiModel(Configuration.DEFAULT_CONFIGURATION, Locale.ENGLISH, "${image}", "${title}");
+            WikiModel wikiModel = new WikiModel(new Configuration(), Locale.ENGLISH, "${image}", "${title}");
             wikiModel.setUp();
       try {
             String result = wikiModel.render(new PlainTextConverter(), strData, false);

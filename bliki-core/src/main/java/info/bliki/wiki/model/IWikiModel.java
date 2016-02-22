@@ -433,6 +433,16 @@ public interface IWikiModel extends IConfiguration {
     Set<String> getLinks();
 
     /**
+     * Get the
+     * <a href="https://www.mediawiki.org/wiki/Interwiki">interwiki links</a>
+     * map for converting interwiki links into external URLs.
+     *
+     * Example: maps the interwiki shortcut &quot;de&quot; to
+     * &quot;http://de.wikipedia.org/wiki/$1&quot;
+     */
+    InterWikiMap getInterwikiMap();
+
+    /**
      * Get the locale of this model.
      *
      * @return the locale for this model.
