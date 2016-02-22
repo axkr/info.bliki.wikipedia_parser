@@ -28,13 +28,13 @@ public class WPBoldItalicTag extends WPTag {
     @Override
     public void renderHTML(ITextConverter converter, Appendable buf, IWikiModel model) throws IOException {
         if (outerTag != null) {
-            buf.append("<" + outerTag + ">");
+            buf.append("<").append(outerTag).append(">");
         }
         setName(innerTag);
         super.renderHTML(converter, buf, model);
         setName("bi");
         if (outerTag != null) {
-            buf.append("</" + outerTag + ">");
+            buf.append("</").append(outerTag).append(">");
         }
     }
 
