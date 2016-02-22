@@ -59,15 +59,7 @@ public class Encoder {
             "'E6", "'E7", "'E8", "'E9", "'EA", "'EB", "'EC", "'ED", "'EE", "'EF", "'F0", "'F1", "'F2", "'F3", "'F4", "'F5", "'F6", "'F7",
             "'F8", "'F9", "'FA", "'FB", "'FC", "'FD", "'FE", "'FF" };
 
-    public static String toEntity(int c) {
-        return "&#" + c + ";";
-    }
-
-    public static char toChar(String number) {
-        return (char) Integer.decode(number.substring(1)).intValue();
-    }
-
-/**
+    /**
      * Encode a string to the "x-www-form-urlencoded" form, enhanced with the
      * UTF-8-in-URL proposal. This is what happens: See
      * http://www.w3.org/International/URLUTF8Encoder.java ) Exception: a ' '
@@ -442,8 +434,7 @@ public class Encoder {
      * copy the text in the resulting buffer and escape special html characters
      * (&lt; &gt; &#34; ( &quot; ) &amp; &#39;)
      *
-     * @param buffer
-     *          add converted text into the resulting buffer
+     * @param buffer add converted text into the resulting buffer
      */
     public static void encodeHtml(String text, StringBuilder buffer) {
         if (text.length() == 0) {
@@ -454,69 +445,6 @@ public class Encoder {
         } catch (IOException e) {
             buffer.append("Error in encodeHtml: IOException");
         }
-        //
-        // final int len = text.length();
-        // if (len == 0) {
-        // return;
-        // }
-        // int currentIndex = 0;
-        // int lastIndex = currentIndex;
-        // while (currentIndex < len) {
-        // switch (text.charAt(currentIndex++)) {
-        // case '\r': //
-        // if (lastIndex < (currentIndex - 1)) {
-        // buffer.append(text.substring(lastIndex, currentIndex - 1));
-        // lastIndex = currentIndex;
-        // }
-        // break;
-        // case '<': // special html escape character
-        // if (lastIndex < (currentIndex - 1)) {
-        // buffer.append(text.substring(lastIndex, currentIndex - 1));
-        // lastIndex = currentIndex;
-        // }
-        // buffer.append("&lt;");
-        // break;
-        // case '>': // special html escape character
-        // if (lastIndex < (currentIndex - 1)) {
-        // buffer.append(text.substring(lastIndex, currentIndex - 1));
-        // lastIndex = currentIndex;
-        // } else {
-        // lastIndex++;
-        // }
-        // buffer.append("&gt;");
-        // break;
-        // case '&': // special html escape character
-        // if (lastIndex < (currentIndex - 1)) {
-        // buffer.append(text.substring(lastIndex, currentIndex - 1));
-        // lastIndex = currentIndex;
-        // } else {
-        // lastIndex++;
-        // }
-        // buffer.append("&amp;");
-        // break;
-        // case '\'': // special html escape character
-        // if (lastIndex < (currentIndex - 1)) {
-        // buffer.append(text.substring(lastIndex, currentIndex - 1));
-        // lastIndex = currentIndex;
-        // } else {
-        // lastIndex++;
-        // }
-        // buffer.append("&#39;");
-        // break;
-        // case '\"': // special html escape character
-        // if (lastIndex < (currentIndex - 1)) {
-        // buffer.append(text.substring(lastIndex, currentIndex - 1));
-        // lastIndex = currentIndex;
-        // } else {
-        // lastIndex++;
-        // }
-        // buffer.append("&#34;");
-        // break;
-        // }
-        // }
-        // if (lastIndex < currentIndex) {
-        // buffer.append(text.substring(lastIndex, currentIndex));
-        // }
     }
 
     public static String encodeHtml(String text) {
@@ -536,25 +464,8 @@ public class Encoder {
         if (Character.isLetterOrDigit(ch)) {
             return true;
         }
-        // ' (#39;) character is excluded because of its use in wiki bold and italic
-        // markup
-        final String test = "-_.!~*;/?:@#&=+$,%";
-        return test.indexOf(ch) != (-1);
-    }
-
-    /**
-     * Determines if the specified character may be part of a wiki plugin
-     * identifier as other than the first character
-     */
-    public static boolean isWikiPluginIdentifierPart(char ch) {
-        return Character.isLetterOrDigit(ch) || (ch == '_');
-    }
-
-    /**
-     * Determines if the specified character may be part the first character of a
-     * wiki plugin identifier
-     */
-    public static boolean isWikiPluginIdentifierStart(char ch) {
-        return Character.isLetter(ch);
+        // ' (#39;) character is excluded because of its use in wiki bold and italic markup
+        final String test = "-_.!~*;/?:@#&=+$,%\\";
+        return test.indexOf(ch) != -1;
     }
 }

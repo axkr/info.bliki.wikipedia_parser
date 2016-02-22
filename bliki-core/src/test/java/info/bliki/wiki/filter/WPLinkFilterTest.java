@@ -47,6 +47,12 @@ public class WPLinkFilterTest extends FilterTestSupport {
                 "[[Test|Test]]", false)).isEqualTo("\n" + "<p><a href=\"http://www.bliki.info/wiki/Test\" title=\"Test\">Test</a></p>");
     }
 
+    @Test
+    public void testLinkWithBackslash() throws Exception {
+        assertThat(wikiModel.render("[http://foo.com/response.cgi?basename=\\data Baz]", false)).isEqualTo("\n"
+                + "<p><a class=\"external text\" href=\"http://foo.com/response.cgi?basename=\\data\" rel=\"nofollow\">Baz</a></p>");
+    }
+
     @Test public void testLinkToCategoryPage() {
         assertThat(wikiModel.render("[[:Category:Test page]]", false)).isEqualTo("\n"
                 + "<p><a href=\"http://www.bliki.info/wiki/Category:Test_page\" title=\"Category:Test page\">Category:Test page</a></p>");

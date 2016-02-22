@@ -89,6 +89,12 @@ public class HTMLCreatorTest {
         testWiktionaryENAPI("quine");
     }
 
+    @Betamax(tape = "Kazakh", mode = READ_ONLY)
+    @Test public void testWiktionaryKazakh() throws Exception {
+        final Result result = testWiktionaryENAPI("Kazakh");
+        result.assertContains("<a href=\"//kk.wikipedia.org/wiki/\">Kazakh edition</a>");
+    }
+
     @Betamax(tape = "gagauseueo", mode = READ_ONLY)
     @Test public void testWiktionaryHangul() throws Exception {
         testWiktionaryENAPI("가가우스어");
