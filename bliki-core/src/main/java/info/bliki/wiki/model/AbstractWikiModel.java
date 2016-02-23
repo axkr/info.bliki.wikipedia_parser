@@ -1209,25 +1209,22 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
     }
 
     @Override
-    public String render(ITextConverter converter, String rawWikiText) {
+    public String render(ITextConverter converter, String rawWikiText) throws IOException {
         return render(converter, rawWikiText, false);
     }
 
     @Override
     public String render(ITextConverter converter, String rawWikiText,
-            boolean templateTopic) {
+            boolean templateTopic) throws IOException {
         initialize();
         if (rawWikiText == null) {
             return "";
         }
         StringBuilder buf = new StringBuilder(rawWikiText.length()
                 + rawWikiText.length() / 10);
-        try {
-            render(converter, rawWikiText, buf, templateTopic, true);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
+
+        render(converter, rawWikiText, buf, templateTopic, true);
+
         return buf.toString();
     }
 
@@ -1254,17 +1251,17 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
     }
 
     @Override
-    public String render(String rawWikiText) {
+    public String render(String rawWikiText) throws IOException {
         return render(rawWikiText, false);
     }
 
     @Override
-    public String render(String rawWikiText, boolean templateTopic) {
+    public String render(String rawWikiText, boolean templateTopic) throws IOException {
         return render(new HTMLConverter(), rawWikiText, templateTopic);
     }
 
     @Override
-    public String renderPDF(String rawWikiText) {
+    public String renderPDF(String rawWikiText) throws IOException {
         return render(new PDFConverter(), rawWikiText, false);
     }
 

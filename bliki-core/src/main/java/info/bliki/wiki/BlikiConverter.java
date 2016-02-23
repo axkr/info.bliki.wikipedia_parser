@@ -8,6 +8,7 @@ import info.bliki.wiki.model.WikiModel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 import java.util.Locale;
 
 /**
@@ -39,12 +40,14 @@ public class BlikiConverter extends JFrame {
             String strData = input.getText();
             WikiModel wikiModel = new WikiModel(new Configuration(), Locale.ENGLISH, "${image}", "${title}");
             wikiModel.setUp();
-      try {
-            String result = wikiModel.render(strData, false);
-            output.setText(result);
-      } finally {
-        wikiModel.tearDown();
-      }
+            try {
+                String result = wikiModel.render(strData, false);
+                output.setText(result);
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                wikiModel.tearDown();
+            }
         }
     }
 
@@ -55,12 +58,14 @@ public class BlikiConverter extends JFrame {
             String strData = input.getText();
             WikiModel wikiModel = new WikiModel(new Configuration(), Locale.ENGLISH, "${image}", "${title}");
             wikiModel.setUp();
-      try {
-            String result = wikiModel.render(new PlainTextConverter(), strData, false);
-            output.setText(result);
-      } finally {
-        wikiModel.tearDown();
-      }
+            try {
+                String result = wikiModel.render(new PlainTextConverter(), strData, false);
+                output.setText(result);
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                wikiModel.tearDown();
+            }
         }
     }
 

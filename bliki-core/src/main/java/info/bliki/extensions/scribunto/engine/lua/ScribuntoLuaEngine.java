@@ -285,8 +285,12 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
     private LuaValue preprocess() {
         return new TwoArgFunction() {
             @Override public LuaValue call(LuaValue frameId, LuaValue text) {
-                Frame frame = getFrameById(frameId);
-                return toLuaString(model.render(text.checkjstring()));
+                try {
+                    return toLuaString(model.render(text.checkjstring()));
+                } catch (IOException e) {
+                    logger.error("error rendering", e);
+                    return LuaValue.NIL;
+                }
             }
         };
     }

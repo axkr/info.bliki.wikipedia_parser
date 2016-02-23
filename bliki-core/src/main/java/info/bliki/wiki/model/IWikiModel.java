@@ -858,11 +858,8 @@ public interface IWikiModel extends IConfiguration {
      *            parsing process.
      * @param rawWikiText
      *            a raw wiki text
-     * @return <code>null</code> if an IOException occurs or
-     *         <code>converter==null</code>
-     * @return
      */
-    @Nullable String render(ITextConverter converter, String rawWikiText);
+    String render(ITextConverter converter, String rawWikiText) throws IOException;
 
     /**
      * Render the raw Wikipedia text into a string for a given converter
@@ -904,19 +901,15 @@ public interface IWikiModel extends IConfiguration {
      *            if a common wiki topic will be displayed.
      * @return <code>null</code> if an IOException occurs or
      *         <code>converter==null</code>
-     * @return
      */
-    @Nullable String render(ITextConverter converter, String rawWikiText,
-                  boolean templateTopic);
+    String render(ITextConverter converter, String rawWikiText,
+                  boolean templateTopic) throws IOException;
 
     /**
      * Render the raw Wikipedia text into an HTML string and use the default
      * HTMLConverter
-     *
-     * @param rawWikiText
-     * @return <code>null</code> if an IOException occured
      */
-    @Nullable String render(String rawWikiText);
+    String render(String rawWikiText) throws IOException;
 
     /**
      * Render the raw Wikipedia text into an HTML string and use the default
@@ -927,9 +920,8 @@ public interface IWikiModel extends IConfiguration {
      *            if <code>true</code>, render the wiki text as if a template
      *            topic will be displayed directly, otherwise render the text as
      *            if a common wiki topic will be displayed.
-     * @return <code>null</code> if an IOException occurs
      */
-    @Nullable String render(String rawWikiText, boolean templateTopic);
+    String render(String rawWikiText, boolean templateTopic) throws IOException;
 
     /**
      * Render the raw Wikipedia text into an HTML string and use the default
@@ -939,7 +931,7 @@ public interface IWikiModel extends IConfiguration {
      * @param rawWikiText
      * @return <code>null</code> if an IOException occurs
      */
-    @Nullable String renderPDF(String rawWikiText);
+    String renderPDF(String rawWikiText) throws IOException;
 
     /**
      * Replace a colon ':' with a slash '/' in wiki names (i.e. links,

@@ -30,7 +30,7 @@ public class WikiXMLParserTest {
         final Siteinfo[] parsedSiteInfo = new Siteinfo[1];
         WikiXMLParser parser = new WikiXMLParser(new File(dump.getFile()), new IArticleFilter() {
             @Override
-            public void process(WikiArticle article, Siteinfo siteinfo) throws SAXException {
+            public void process(WikiArticle article, Siteinfo siteinfo) {
                 articles.add(article);
                 parsedSiteInfo[0] = siteinfo;
             }

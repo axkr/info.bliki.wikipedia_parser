@@ -2,9 +2,8 @@ package info.bliki.wiki.dump;
 
 import info.bliki.wiki.model.WikiModel;
 
-import org.xml.sax.SAXException;
-
 import java.io.File;
+import java.io.IOException;
 
 /**
  * Example filter which prints the rendered HTML articles to System.out
@@ -29,10 +28,10 @@ public class PrintArticle implements IArticleFilter {
     }
 
     @Override
-    public void process(WikiArticle article, Siteinfo siteinfo) throws SAXException {
+    public void process(WikiArticle article, Siteinfo siteinfo) throws IOException {
         counter++;
         if (counter >= max_counter) {
-            throw new SAXException("\nLimit reached after " + max_counter + " entries.");
+            throw new IOException("\nLimit reached after " + max_counter + " entries.");
         }
         String htmlText = "";
         WikiModel wikiModel = new WikiModel("${image}", "${title}");

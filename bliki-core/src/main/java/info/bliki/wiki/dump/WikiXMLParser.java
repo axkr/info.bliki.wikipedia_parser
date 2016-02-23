@@ -151,7 +151,11 @@ public class WikiXMLParser extends DefaultHandler {
                     // ignore
                 } else if (WIKIPEDIA_TEXT.equals(qName)) {
                     fArticle.setText(getString());
-                    fArticleFilter.process(fArticle, fSiteinfo);
+                    try {
+                        fArticleFilter.process(fArticle, fSiteinfo);
+                    } catch (IOException e) {
+                        throw new SAXException(e);
+                    }
                     // emit(wikiText);
                 } else if (WIKIPEDIA_TITLE.equals(qName)) {
                     fArticle.setTitle(getString(), fSiteinfo);

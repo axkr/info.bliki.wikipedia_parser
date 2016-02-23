@@ -1,9 +1,6 @@
 package info.bliki.wiki.dump;
 
-import org.xml.sax.SAXException;
-
 import java.io.File;
-import java.io.IOException;
 
 /**
  * Demo application which reads a compressed or uncompressed Wikipedia XML dump
@@ -19,7 +16,7 @@ public class DumpExample {
     static class DemoArticleFilter implements IArticleFilter {
 
         @Override
-        public void process(WikiArticle page, Siteinfo siteinfo) throws SAXException {
+        public void process(WikiArticle page, Siteinfo siteinfo) {
             System.out.println("----------------------------------------");
             System.out.println(page.getId());
             System.out.println(page.getRevisionId());
@@ -36,7 +33,7 @@ public class DumpExample {
     static class DemoMainArticleFilter implements IArticleFilter {
 
         @Override
-        public void process(WikiArticle page, Siteinfo siteinfo) throws SAXException {
+        public void process(WikiArticle page, Siteinfo siteinfo)  {
             if (page.isMain()) {
                 System.out.println(page.getTitle());
             }
@@ -49,7 +46,7 @@ public class DumpExample {
     static class DemoTemplateArticleFilter implements IArticleFilter {
 
         @Override
-        public void process(WikiArticle page, Siteinfo siteinfo) throws SAXException {
+        public void process(WikiArticle page, Siteinfo siteinfo) {
             if (page.isTemplate()) {
                 System.out.println(page.getTitle());
             }
@@ -62,7 +59,7 @@ public class DumpExample {
     static class DemoCategoryArticleFilter implements IArticleFilter {
 
         @Override
-        public void process(WikiArticle page, Siteinfo siteinfo) throws SAXException {
+        public void process(WikiArticle page, Siteinfo siteinfo)  {
             if (page.isCategory()) {
                 System.out.println(page.getTitle());
             }
@@ -73,7 +70,7 @@ public class DumpExample {
     /**
      * @param args filename, e.g. dewikiversity-20100401-pages-articles.xml.bz2
      */
-    public static void main(String[] args) throws IOException, SAXException {
+    public static void main(String[] args) throws Exception {
         if (args.length < 1) {
             System.err.println("Usage: Parser <xml-file.[bz2|gz]>");
             System.exit(-1);
