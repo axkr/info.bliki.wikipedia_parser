@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class PythonTest extends FilterTestSupport {
-    @Test public void testPython() {
+    @Test public void testPython() throws Exception {
         String result = wikiModel.render("<source lang=python>\n" + "# Python: \"Hello, world!\"\n" + "print \"Hello, world!\"\n"
                 + "# last comment line" + "</source>", false);
 

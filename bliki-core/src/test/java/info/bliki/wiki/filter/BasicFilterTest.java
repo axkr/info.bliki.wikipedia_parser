@@ -9,7 +9,7 @@ public class BasicFilterTest extends FilterTestSupport {
     /**
      * Issue 149
      */
-    @Test public void testIssue149() {
+    @Test public void testIssue149() throws Exception {
         assertThat(wikiModel.render("mit '''db2 connect to <db>''' mit der Datenbank v", false)).isEqualTo("\n" +
                 "<p>mit <b>db2 connect to &#60;db&#62;</b> mit der Datenbank v</p>");
     }
@@ -17,7 +17,7 @@ public class BasicFilterTest extends FilterTestSupport {
     /**
      * Issue 135
      */
-    @Test public void testIssue135() {
+    @Test public void testIssue135() throws Exception {
         assertThat(wikiModel.render("Test_", false)).isEqualTo("\n" +
                 "<p>Test_</p>");
     }
@@ -25,14 +25,14 @@ public class BasicFilterTest extends FilterTestSupport {
     /**
      * Issue 135
      */
-    @Test public void testIssue135b() {
+    @Test public void testIssue135b() throws Exception {
         assertThat(wikiModel.render("Test__", false)).isEqualTo("\n" +
                 "<p>Test__</p>");
     }
     /**
      * Issue 118
      */
-    @Test public void testLiNoUl01() {
+    @Test public void testLiNoUl01() throws Exception {
         assertThat(wikiModel.render(
                 "<li>test1\n<li>test2", false)).isEqualTo("\n" + "<ul>\n" + "\n" + "<li>test1</li>\n" + "<li>test2</li>\n" + "</ul>");
     }
@@ -40,90 +40,90 @@ public class BasicFilterTest extends FilterTestSupport {
     /**
      * Issue 98
      */
-    @Test public void testEmptyTags001() {
+    @Test public void testEmptyTags001() throws Exception {
         assertThat(wikiModel.render("<s></s>", false)).isEqualTo("\n" + "<p></p>");
     }
 
     /**
      * Issue 98
      */
-    @Test public void testEmptyTags002() {
+    @Test public void testEmptyTags002() throws Exception {
         assertThat(wikiModel.render("<div class=\"ltrtxt\"></div>", false)).isEqualTo("");
     }
 
     /**
      * Issue 98
      */
-    @Test public void testEmptyTags003() {
+    @Test public void testEmptyTags003() throws Exception {
         assertThat(wikiModel.render("<br />", false)).isEqualTo("\n" + "<p><br /></p>");
     }
 
     /**
      * Issue 98
      */
-    @Test public void testEmptyTags004() {
+    @Test public void testEmptyTags004() throws Exception {
         assertThat(wikiModel.render("<hr />", false)).isEqualTo("<hr />");
     }
 
-    @Test public void testTT() {
+    @Test public void testTT() throws Exception {
         assertThat(wikiModel.render("'''hosted by:'''<br>", false)).isEqualTo("\n" + "<p><b>hosted by:</b><br /></p>");
     }
 
-    @Test public void testBlankInput() {
+    @Test public void testBlankInput() throws Exception {
         assertThat(wikiModel.render("", false)).isEqualTo("");
     }
 
-    @Test public void testNullInput() {
+    @Test public void testNullInput() throws Exception {
         assertThat(wikiModel.render(null, false)).isEqualTo("");
     }
 
-    @Test public void testCharInput() {
+    @Test public void testCharInput() throws Exception {
         assertThat(wikiModel.render("[", false)).isEqualTo("\n" + "<p>[</p>");
     }
 
-    @Test public void testParagraph1() {
+    @Test public void testParagraph1() throws Exception {
         assertThat(wikiModel.render("This is a simple paragraph.", false)).isEqualTo("\n" + "<p>This is a simple paragraph.</p>");
     }
 
-    @Test public void testParagraph2() {
+    @Test public void testParagraph2() throws Exception {
         assertThat(wikiModel.render(
                 "This is a simple paragraph.\n\nA second paragraph.", false)).isEqualTo("\n" + "<p>This is a simple paragraph.</p>\n" + "<p>A second paragraph.</p>");
     }
 
-    @Test public void testParagraph3() {
+    @Test public void testParagraph3() throws Exception {
         assertThat(wikiModel.render(
                 "This is a simple paragraph.\n\nA second paragraph.", false)).isEqualTo("\n" + "<p>This is a simple paragraph.</p>\n" + "<p>A second paragraph.</p>");
     }
 
-    @Test public void testNowiki01() {
+    @Test public void testNowiki01() throws Exception {
         assertThat(wikiModel.render(
                 "<nowiki>\n* This is not an unordered list item.</nowiki>", false)).isEqualTo("\n" + "<p>\n" + "* This is not an unordered list item.</p>");
     }
 
-    @Test public void testNowiki02() {
+    @Test public void testNowiki02() throws Exception {
         assertThat(wikiModel.render(
                 "<noWiki>\n* This is not an unordered list item.</nowiKi>", false)).isEqualTo("\n" + "<p>\n" + "* This is not an unordered list item.</p>");
     }
 
-    @Test public void testSimpleList() {
+    @Test public void testSimpleList() throws Exception {
         assertThat(wikiModel.render("* Item 1\n" + "* Item 2",
                 false)).isEqualTo("\n" + "<ul>\n" + "<li>Item 1</li>\n" + "<li>Item 2</li>\n</ul>");
     }
 
-    @Test public void testSimpleTable() {
+    @Test public void testSimpleTable() throws Exception {
         assertThat(wikiModel.render("{|\n" + "|a\n|b\n" + "|}", false)).isEqualTo("\n" + "<div style=\"page-break-inside: avoid;\">\n" + "<table>\n" + "<tr>\n" + "<td>a</td>\n"
                 + "<td>b</td></tr></table></div>");
     }
 
-    @Test public void testNOTOC() {
+    @Test public void testNOTOC() throws Exception {
         assertThat(wikiModel.render("jhfksd __NOTOC__ sflkjsd", false)).isEqualTo("\n" + "<p>jhfksd  sflkjsd</p>");
     }
 
-    @Test public void testWrongNOTOC() {
+    @Test public void testWrongNOTOC() throws Exception {
         assertThat(wikiModel.render("jhfksd __WRONGTOC__ sflkjsd", false)).isEqualTo("\n" + "<p>jhfksd  sflkjsd</p>");
     }
 
-    @Test public void testbq1() {
+    @Test public void testbq1() throws Exception {
         assertThat(wikiModel
                 .render(
                         "<blockquote style=\"background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;\">\n'''Hello World'''</blockquote>",
@@ -131,7 +131,7 @@ public class BasicFilterTest extends FilterTestSupport {
                 + "<p><b>Hello World</b></p>\n</blockquote>");
     }
 
-    @Test public void testbq2() {
+    @Test public void testbq2() throws Exception {
         assertThat(wikiModel.render("<blockquote>\n" + "The \'\'\'blockquote\'\'\' command formats block \n"
                         + "quotations, typically by surrounding them \n" + "with whitespace and a slightly different font.\n" + "</blockquote>\n",
                 false
@@ -140,7 +140,7 @@ public class BasicFilterTest extends FilterTestSupport {
                 + "</p>\n</blockquote>\n" + "");
     }
 
-    @Test public void testbq3() {
+    @Test public void testbq3() throws Exception {
         assertThat(wikiModel.render("<blockquote>start blockquote here\n" + "\n"
                 + "line above me\n" + "no line above me and i am <b>bold</b>\n" + "\n" + "\n" + "and line above me\n"
                 + "end of blockquote here</blockquote> ", false)).isEqualTo("<blockquote>start blockquote here\n" + "\n" + "<p>line above me\n"
@@ -148,13 +148,13 @@ public class BasicFilterTest extends FilterTestSupport {
                 + "end of blockquote here</p>\n</blockquote> ");
     }
 
-    @Test public void testPreBlock() {
+    @Test public void testPreBlock() throws Exception {
         assertThat(wikiModel.render(" * Lists are easy to do:\n" + " ** start every line\n"
                 + " * with a star\n" + " ** more stars mean\n" + " *** deeper levels", false)).isEqualTo("\n<pre>* Lists are easy to do:\n" + "** start every line\n" + "* with a star\n" + "** more stars mean\n"
                 + "*** deeper levels\n</pre>");
     }
 
-    @Test public void testNestedPreBlock() {
+    @Test public void testNestedPreBlock() throws Exception {
         assertThat(wikiModel.render(
                 "{|border=1 width=\"79%\"\n" + "!wikitext\n" + "|-\n" + "|\n" + " * Lists are easy to do:\n" + " ** start every line\n"
                         + " * with a star\n" + " ** more stars mean\n" + " *** deeper levels\n" + "|}", false
@@ -163,7 +163,7 @@ public class BasicFilterTest extends FilterTestSupport {
                 + "* with a star\n" + "** more stars mean\n" + "*** deeper levels\n</pre></td></tr></table></div>");
     }
 
-    @Test public void testPBlock() {
+    @Test public void testPBlock() throws Exception {
         assertThat(wikiModel
                 .render(
                         "<p style=\"padding: 1em; border: 1px dashed #2f6fab; color: Black; background-color: #f9f9f9; line-height: 1.1em;\"> <tt>\n"
@@ -187,54 +187,54 @@ public class BasicFilterTest extends FilterTestSupport {
                 + "&#38;#124;&#38;#125; &#60;br /&#62; <br />\n" + "&#60;/tt&#62; &#60;/p&#62;\n" + "</tt> </p>");
     }
 
-    @Test public void testALink001() {
+    @Test public void testALink001() throws Exception {
         assertThat(wikiModel.render(
                 "<a href=\"http://www.test.com\">Test2</a>", false)).isEqualTo("\n" + "<p><a href=\"http://www.test.com\" rel=\"nofollow\">Test2</a></p>");
     }
 
-    @Test public void testXSS001() {
+    @Test public void testXSS001() throws Exception {
         assertThat(wikiModel.render("<h1 onmouseover=\"javascript:alert(\'yo\')\">Test</h1>", false)).isEqualTo("<h1>Test</h1>");
     }
 
-    @Test public void testSignature01() {
+    @Test public void testSignature01() throws Exception {
         assertThat(wikiModel.render("a simple~~~~test", false)).isEqualTo("\n" + "<p>a simple~~~~test</p>");
     }
 
-    @Test public void testSignature02() {
+    @Test public void testSignature02() throws Exception {
         assertThat(wikiModel.render("a simple~~~~", false)).isEqualTo("\n" + "<p>a simple~~~~</p>");
     }
 
-    @Test public void testSignature03() {
+    @Test public void testSignature03() throws Exception {
         assertThat(wikiModel.render("a simple~~~~~test", false)).isEqualTo("\n" + "<p>a simple~~~~~test</p>");
     }
 
-    @Test public void testSignature04() {
+    @Test public void testSignature04() throws Exception {
         assertThat(wikiModel.render("a simple~~~~~", false)).isEqualTo("\n" + "<p>a simple~~~~~</p>");
     }
 
-    @Test public void testSignature05() {
+    @Test public void testSignature05() throws Exception {
         assertThat(wikiModel.render("a simple~~~test", false)).isEqualTo("\n" + "<p>a simple~~~test</p>");
     }
 
-    @Test public void testSignature06() {
+    @Test public void testSignature06() throws Exception {
         assertThat(wikiModel.render("a simple~~~", false)).isEqualTo("\n" + "<p>a simple~~~</p>");
     }
 
-    @Test public void testSignature07() {
+    @Test public void testSignature07() throws Exception {
         assertThat(wikiModel.render("~~~test", false)).isEqualTo("\n" + "<p>~~~test</p>");
     }
 
-    @Test public void testSignature08() {
+    @Test public void testSignature08() throws Exception {
         assertThat(wikiModel.render("~~~", false)).isEqualTo("\n" + "<p>~~~</p>");
     }
 
-    @Test public void testSpan001() {
+    @Test public void testSpan001() throws Exception {
 
         assertThat(wikiModel.render("<span class=\"xxx\"\n" + ">test</span>", false)).isEqualTo("\n" + "<p><span class=\"xxx\">test</span></p>");
 
     }
 
-    @Test public void testReuseModel001() {
+    @Test public void testReuseModel001() throws Exception {
         wikiModel.setUp();
         try {
             assertThat(wikiModel
@@ -284,16 +284,16 @@ public class BasicFilterTest extends FilterTestSupport {
 
     }
 
-    @Test public void testAbbr01() {
+    @Test public void testAbbr01() throws Exception {
         assertThat(wikiModel.render("<abbr title=\"test\">[?]</abbr>", false)).isEqualTo("\n" + "<p>" + "<abbr title=\"test\">[?]</abbr></p>");
     }
 
-    @Test public void testAbbr02() {
+    @Test public void testAbbr02() throws Exception {
         assertThat(wikiModel.render(
                 "<abbr title=\"<nowiki>test</nowiki>\">[?]</abbr>", false)).isEqualTo("\n" + "<p>" + "<abbr title=\"test\">[?]</abbr></p>");
     }
 
-    @Test public void testIFrame01() {
+    @Test public void testIFrame01() throws Exception {
         assertThat(wikiModel.render("<iframe name=\"inlineframe\" src=\"float.html\" frameborder=\"0\" scrolling=\"auto\" width=\"500\" height=\"180\" marginwidth=\"5\" marginheight=\"5\" >&nbsp;</iframe>", false)).isEqualTo("<iframe height=\"180\" name=\"inlineframe\" src=\"float.html\" width=\"500\"> </iframe>");
     }
 

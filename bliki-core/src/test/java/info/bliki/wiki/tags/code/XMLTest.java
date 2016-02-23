@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class XMLTest extends FilterTestSupport {
-    @Test public void testXml() {
+    @Test public void testXml() throws Exception {
         String result = wikiModel.render("\'\'\'XML example:\'\'\'\n" + "<source lang=xml>\n" + "  <extension\n"
                 + "           point=\"org.eclipse.help.toc\">\n" + "        <toc\n" + "              file=\"phphelp.xml\"\n"
                 + "              primary=\"true\">\n" + "     <!-- simple comment -->                      \n" + "        </toc>\n"
@@ -26,7 +26,7 @@ public class XMLTest extends FilterTestSupport {
                 "</pre>");
     }
 
-    @Test public void testXmlWithoutLangAttr() {
+    @Test public void testXmlWithoutLangAttr() throws Exception {
         String result = wikiModel.render("\'\'\'XML example:\'\'\'\n" + "<source>\n" + "  <extension\n"
                 + "           point=\"org.eclipse.help.toc\">\n" + "        <toc\n" + "              file=\"phphelp.xml\"\n"
                 + "              primary=\"true\">\n" + "     <!-- simple comment -->                      \n" + "        </toc>\n"
@@ -46,7 +46,7 @@ public class XMLTest extends FilterTestSupport {
                 "</pre>");
     }
 
-    @Test public void testXmlColon() {
+    @Test public void testXmlColon() throws Exception {
         String result = wikiModel.render("a '''simple XML''' \n<source lang=\"xml\">\n"
                 + "<ui:remove>\n"
                 + "   <!-- das ist der kommentar -->\n"
@@ -64,7 +64,7 @@ public class XMLTest extends FilterTestSupport {
                 "</pre>");
     }
 
-    @Test public void testXmlColonNotClosed() {
+    @Test public void testXmlColonNotClosed() throws Exception {
         String result = wikiModel.render("a '''simple XML''' \n<source lang=\"xml\">\n"
                 + "<ui:remove>\n"
                 + "   <!-- das ist der kommentar -->\n"

@@ -6,12 +6,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class FontFilterTest extends FilterTestSupport {
 
-  @Test public void testFont1() {
+  @Test public void testFont1()throws Exception {
       assertThat(wikiModel.render("<font color=\"red\">Text</font>", false)).isEqualTo("\n" +
               "<p><font color=\"red\">Text</font></p>");
   }
 
-  @Test public void testFont4() {
+  @Test public void testFont4() throws Exception {
       assertThat(wikiModel.render("<font color=red>Text</font>", false)).isEqualTo("\n" +
               "<p><font color=\"red\">Text</font></p>");
   }

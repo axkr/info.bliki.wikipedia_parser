@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class TOCFilterTest extends FilterTestSupport {
 
-    @Test public void testTOC01() {
+    @Test public void testTOC01() throws Exception {
         assertThat(wikiModel
                 .render("{| align=\"right\" \n" + "| __TOC__ \n" + "|}\n" + "\n" + "==hello world 2==\n" + "hello world 2\n" + "\n"
                         + "===hello world3===\n" + "hello world 3", false)).isEqualTo("\n" +
@@ -38,7 +38,7 @@ public class TOCFilterTest extends FilterTestSupport {
                 "<p>hello world 3</p>");
     }
 
-    @Test public void testTOC02() {
+    @Test public void testTOC02() throws Exception {
         assertThat(wikiModel
                 .render("{| align=\"right\"\n" + "| __TOC__\n" + "|}\n" + "\n" + "=hello world 1=\n" + "hello world 1\n" + "\n"
                         + "==hello world 2==\n" + "hello world 2\n" + "\n" + "==hello world1a==\n" + "hello world 1a\n" + "", false)).isEqualTo("\n" +
@@ -72,7 +72,7 @@ public class TOCFilterTest extends FilterTestSupport {
                 "</p>");
     }
 
-    @Test public void testTOC03() {
+    @Test public void testTOC03() throws Exception {
         assertThat(wikiModel
                 .render("=hello world 1=\n" + "hello world 1\n" + "\n" + "==hello world 2==\n" + "hello world 2\n", false)).isEqualTo("<h1><span class=\"mw-headline\" id=\"hello_world_1\">hello world 1</span></h1>\n" +
                 "<p>hello world 1</p>\n" +
@@ -81,7 +81,7 @@ public class TOCFilterTest extends FilterTestSupport {
                 "</p>");
     }
 
-    @Test public void testTOC04() {
+    @Test public void testTOC04() throws Exception {
         assertThat(wikiModel.render("=hello world 1=\n" + "hello world 1\n" + "\n" + "==hello world 2==\n"
                 + "hello world 2\n" + "\n" + "==hello world 3==\n" + "hello world 3\n" + "===hello world 4===\n" + "hello world 4\n", false)).isEqualTo("<table id=\"toc\" class=\"toc\" summary=\"Contents\">\n" +
                 "<tr>\n" +
@@ -114,7 +114,7 @@ public class TOCFilterTest extends FilterTestSupport {
                 "</p>");
     }
 
-    @Test public void testTOC05() {
+    @Test public void testTOC05() throws Exception {
         assertThat(wikiModel.render("__NOTOC__ \n" + "=hello world 1=\n" + "hello world 1\n" + "\n" + "==hello world 2==\n"
                 + "hello world 2\n" + "\n" + "==hello world 3==\n" + "hello world 3\n" + "===hello world 4===\n" + "hello world 4\n", false)).isEqualTo(" \n" +
                 "<h1><span class=\"mw-headline\" id=\"hello_world_1\">hello world 1</span></h1>\n" +
@@ -128,7 +128,7 @@ public class TOCFilterTest extends FilterTestSupport {
                 "</p>");
     }
 
-    @Test public void testTOC06() {
+    @Test public void testTOC06() throws Exception {
         assertThat(wikiModel.render("=hello world 1=\n" + "hello world 1\n" + "\n"
                 + "==hello world 2==\n" + "hello world 2\n" + "\n" + "==hello world Übersicht==\n" + "hello world Übersicht\n", false)).isEqualTo("<h1><span class=\"mw-headline\" id=\"hello_world_1\">hello world 1</span></h1>\n" +
                 "<p>hello world 1</p>\n" +
@@ -139,7 +139,7 @@ public class TOCFilterTest extends FilterTestSupport {
                 "</p>");
     }
 
-    @Test public void testTOC07() {
+    @Test public void testTOC07() throws Exception {
         assertThat(wikiModel.render("\n" +
                 "__FORCETOC__\n" +
                 "== -_/.:!~'() ==", false)).isEqualTo("" +

@@ -6,19 +6,19 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class HeaderFilterTest extends FilterTestSupport {
 
-    @Test public void testBad01() {
+    @Test public void testBad01() throws Exception {
         assertThat(wikiModel.render("=", false)).isEqualTo("\n" + "<p>=</p>");
     }
 
-    @Test public void testBad02() {
+    @Test public void testBad02() throws Exception {
         assertThat(wikiModel.render("=\n", false)).isEqualTo("\n<p>=\n</p>");
     }
 
-    @Test public void testBad03() {
+    @Test public void testBad03() throws Exception {
         assertThat(wikiModel.render("==  \r  \n", false)).isEqualTo("<h1><span class=\"mw-headline\" id=\"\" /></h1>\n" + "");
     }
 
-    @Test public void testH2OneCharacter() {
+    @Test public void testH2OneCharacter() throws Exception {
         assertThat(wikiModel.render("==a==", false)).isEqualTo("<h2><span class=\"mw-headline\" id=\"a\">a</span></h2>");
         assertThat(wikiModel.render("line 1\n==a==", false)).isEqualTo("\n" +
                 "<p>line 1\n" +
@@ -28,23 +28,23 @@ public class HeaderFilterTest extends FilterTestSupport {
                 "<p>line 1\n" +
                 "</p><h3><span class=\"mw-headline\" id=\"a\">a</span></h3>");
     }
-    @Test public void testH2() {
+    @Test public void testH2() throws Exception {
         assertThat(wikiModel.render("==Text==", false)).isEqualTo("<h2><span class=\"mw-headline\" id=\"Text\">Text</span></h2>");
     }
 
-    @Test public void testH6Whitespace() {
+    @Test public void testH6Whitespace() throws Exception {
         assertThat(wikiModel.render("=======Text Übersicht=======   \r \nA new line.", false)).isEqualTo("<h6><span class=\"mw-headline\" id=\"Text_.C3.9Cbersicht\">Text Übersicht</span></h6>\n" + "<p>A new line.</p>");
     }
 
-    @Test public void testH2WithPunctuation() {
+    @Test public void testH2WithPunctuation() throws Exception {
         assertThat(wikiModel.render("==Text Übersicht==:", false)).isEqualTo("\n" + "<p>==Text Übersicht==:</p>");
     }
 
-    @Test public void testH2Apostrophe() {
+    @Test public void testH2Apostrophe() throws Exception {
         assertThat(wikiModel.render("==Wikipedia's sister projects==", false)).isEqualTo("<h2><span class=\"mw-headline\" id=\"Wikipedia.27s_sister_projects\">Wikipedia&#39;s sister projects</span></h2>");
     }
 
-    @Test public void testH2Link01() {
+    @Test public void testH2Link01() throws Exception {
         assertThat(wikiModel.render("__FORCETOC__ \n==Text [[Overview|Übersicht]]==", false)).isEqualTo(" \n"
                 + "<table id=\"toc\" class=\"toc\" summary=\"Contents\">\n"
                 + "<tr>\n"
@@ -61,7 +61,7 @@ public class HeaderFilterTest extends FilterTestSupport {
                 + "<h2><span class=\"mw-headline\" id=\"Text_.C3.9Cbersicht\">Text <a href=\"http://www.bliki.info/wiki/Overview\" title=\"Overview\">Übersicht</a></span></h2>");
     }
 
-    @Test public void testH3Link01() {
+    @Test public void testH3Link01() throws Exception {
         assertThat(wikiModel.render("__FORCETOC__ \n===[[Help:Table Caption|Captions]]===", false)).isEqualTo(" \n"
                 + "<table id=\"toc\" class=\"toc\" summary=\"Contents\">\n"
                 + "<tr>\n"
@@ -80,7 +80,7 @@ public class HeaderFilterTest extends FilterTestSupport {
                 + "<h3><span class=\"mw-headline\" id=\"Captions\"><a href=\"http://www.bliki.info/wiki/Help:Table_Caption\" title=\"Help:Table Caption\">Captions</a></span></h3>");
     }
 
-    @Test public void testH2Multiple() {
+    @Test public void testH2Multiple() throws Exception {
         assertThat(wikiModel.render("__FORCETOC__ \n==Head 1==\nA first line.\n==Head 1==\nA second line.\n==Head 1==\nA third line.", false)).isEqualTo(" \n" +
                 "<table id=\"toc\" class=\"toc\" summary=\"Contents\">\n" +
                 "<tr>\n" +

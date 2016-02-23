@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class JavaTest extends FilterTestSupport {
 
-    @Test public void testJava001() {
+    @Test public void testJava001() throws Exception {
         String result = wikiModel.render("'''Java Example'''\n" + "<source lang=java>\n" + "public class Test {\n" + "< > \" \' &"
                 + "}\n" + "</source>", false);
         assertThat(result).isEqualTo("\n" +
@@ -18,7 +18,7 @@ public class JavaTest extends FilterTestSupport {
                 "</span></pre>");
     }
 
-    @Test public void testJava002() {
+    @Test public void testJava002() throws Exception {
         String result = wikiModel.render("'''Java Example'''\n" + "<source lang=java>"
                 + "Util util = new Util(\"c:\\\\temp\\\\\");\n" + "util.doIt();" + "</source>", false);
 

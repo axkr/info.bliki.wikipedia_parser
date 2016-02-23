@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class ChartFilterTest extends FilterTestSupport {
 
-    @Test public void testChart001() {
+    @Test public void testChart001() throws Exception {
         assertThat(wikiModel
                 .render("<chart \n" +
                         "  cht=bvs \n" +
@@ -21,7 +21,7 @@ public class ChartFilterTest extends FilterTestSupport {
                 + "<p><img border=\"0\" src=\"http://chart.apis.google.com/chart?chbh=20%2C1&amp;chco=76A4FB&amp;chd=t%3A1%2C2%2C3%2C6%2C9%2C13%2C20%2C28%2C37%2C49%2C60%2C72%2C83%2C92%2C98%2C100%2C98%2C92%2C83%2C72%2C60%2C49%2C37%2C28%2C20%2C13%2C9%2C6%2C3%2C2%2C1&amp;chls=2.0&amp;chs=800x300&amp;cht=bvs&amp;chxt=x%2Cy\" alt=\"\" /></p>");
     }
 
-    @Test public void testChart002() {
+    @Test public void testChart002() throws Exception {
         // TeX formula
         assertThat(wikiModel.render("<chart cht=tx chl=\"x = \\frac{-b \\pm \\sqrt {b^2-4ac}}{2a}\" />", false)).isEqualTo("\n" +
                 "<p><img border=\"0\" src=\"http://chart.apis.google.com/chart?chl=x+%3D+%5Cfrac%7B-b+%5Cpm+%5Csqrt+%7Bb%5E2-4ac%7D%7D%7B2a%7D&amp;cht=tx\" alt=\"\" /></p>");

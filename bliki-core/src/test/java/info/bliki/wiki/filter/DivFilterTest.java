@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class DivFilterTest extends FilterTestSupport {
 
-    @Test public void testDivTag1() {
+    @Test public void testDivTag1() throws Exception {
         assertThat(wikiModel
                 .render("<div class=\"TabelleFeldListe\">\n"
                         + "<div class=\"TabelleFeldListeHeader\">AuftragsKopf Felder</div>\n"

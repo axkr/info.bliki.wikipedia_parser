@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SQLTest extends FilterTestSupport {
-    @Test public void test001() {
+    @Test public void test001() throws Exception {
         final String result = wikiModel.render("'''SQL Example'''\n" + "<source lang='sql'>create table Hydroxyl (\n"
                 + " id integer primary key,\n" + " name varchar(42)\n" + ")\n" + "</source>", false);
         String expect = "\n" +
@@ -19,7 +19,7 @@ public class SQLTest extends FilterTestSupport {
         assertThat(result).isEqualTo(expect);
     }
 
-    @Test public void test002() {
+    @Test public void test002() throws Exception {
         // test for wrong sql text
         final String result = wikiModel.render("'''SQL Example'''\n" + "<source lang='sql'>\n"
                 + "<form><input type=\"button\" onclick=\"alert('Are you sure you want to do this?')\" value=\"Alert\"></form>\n"
@@ -32,7 +32,7 @@ public class SQLTest extends FilterTestSupport {
         assertThat(result).isEqualTo(expect);
     }
 
-    @Test public void test003() {
+    @Test public void test003() throws Exception {
         final String result = wikiModel.render("<source lang=\"sql\">\n-- a line comment\n" +
                 "select * from testtable WITH UR\n" +
                 "</source>", false);
@@ -43,7 +43,7 @@ public class SQLTest extends FilterTestSupport {
         assertThat(result).isEqualTo(expect);
     }
 
-    @Test public void test004() {
+    @Test public void test004() throws Exception {
         final String result = wikiModel.render("<source lang=\"sql\">\n" +
                 "coMMEnt on column CALCULATEALL_VEHICLE.ACTIVE is 'Flag indicating if the vehicle is active or not';\n" +
                 "</source>", false);

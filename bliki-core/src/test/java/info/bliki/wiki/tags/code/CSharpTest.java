@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class CSharpTest extends FilterTestSupport
 {
-    @Test public void testCSharp() {
+    @Test public void testCSharp() throws Exception {
         String result = wikiModel.render("'''C# Example'''\n" + "<source lang=csharp>\n" + "public class Test {\n" + "< > \" \' &" + "}\n"
                 + "</source>", false);
 

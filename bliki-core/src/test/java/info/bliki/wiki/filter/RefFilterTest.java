@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class RefFilterTest extends FilterTestSupport {
 
-    @Test public void testRef01() {
+    @Test public void testRef01() throws Exception {
         assertThat(wikiModel
                 .render("A <ref>Reference</ref> Test\n\n<references/>", false))
             .isEqualTo("\n"
@@ -20,7 +20,7 @@ public class RefFilterTest extends FilterTestSupport {
         assertThat(ref.getRefString()).isEqualTo("Reference");
     }
 
-    @Test public void testRef02() {
+    @Test public void testRef02() throws Exception {
         assertThat(wikiModel.render("A <ref>first reference</ref> and a <ref>second reference</ref> Test\n\n<references/>", false))
             .isEqualTo("\n"
                 + "<p>A <sup id=\"_ref-1\" class=\"reference\"><a href=\"#_note-1\" title=\"\">[1]</a></sup> and a <sup id=\"_ref-2\" class=\"reference\"><a href=\"#_note-2\" title=\"\">[2]</a></sup> Test</p><ol class=\"references\">\n"
@@ -32,7 +32,7 @@ public class RefFilterTest extends FilterTestSupport {
         assertThat(ref.getRefString()).isEqualTo("second reference");
     }
 
-    @Test public void testRef03() {
+    @Test public void testRef03() throws Exception {
         assertThat(wikiModel.render("aaa <ref name=\"Freitag\"/> bbb<ref name=\"Arndt\"/> <ref>ccc</ref> <references/>", false))
             .isEqualTo("\n" +
                 "<p>aaa <sup id=\"_ref-Freitag\" class=\"reference\"><a href=\"#_note-Freitag\" title=\"\">[1]</a></sup> bbb<sup id=\"_ref-Arndt\" class=\"reference\"><a href=\"#_note-Arndt\" title=\"\">[2]</a></sup> <sup id=\"_ref-3\" class=\"reference\"><a href=\"#_note-3\" title=\"\">[3]</a></sup> </p><ol class=\"references\">\n" +
@@ -46,7 +46,7 @@ public class RefFilterTest extends FilterTestSupport {
         assertThat(ref.getRefString()).isEqualTo("ccc");
     }
 
-    @Test public void testRef04() {
+    @Test public void testRef04() throws Exception {
         assertThat(wikiModel.render("aaa <ref name=Freitag></ref> bbb<ref    name=Arndt>arn</ref> <ref>ccc</ref> <references/>", false))
             .isEqualTo("\n" +
                 "<p>aaa <sup id=\"_ref-Freitag\" class=\"reference\"><a href=\"#_note-Freitag\" title=\"\">[1]</a></sup> bbb<sup id=\"_ref-Arndt\" class=\"reference\"><a href=\"#_note-Arndt\" title=\"\">[2]</a></sup> <sup id=\"_ref-3\" class=\"reference\"><a href=\"#_note-3\" title=\"\">[3]</a></sup> </p><ol class=\"references\">\n" +
@@ -60,7 +60,7 @@ public class RefFilterTest extends FilterTestSupport {
         assertThat(ref.getRefString()).isEqualTo("ccc");
     }
 
-    @Test public void testRef05() {
+    @Test public void testRef05() throws Exception {
         assertThat(wikiModel.render("aaa <ref name=Freitag/> bbb<ref name=Arndt /> <ref>ccc</ref> <references/>", false))
             .isEqualTo("\n" +
                 "<p>aaa <sup id=\"_ref-Freitag\" class=\"reference\"><a href=\"#_note-Freitag\" title=\"\">[1]</a></sup> bbb<sup id=\"_ref-Arndt\" class=\"reference\"><a href=\"#_note-Arndt\" title=\"\">[2]</a></sup> <sup id=\"_ref-3\" class=\"reference\"><a href=\"#_note-3\" title=\"\">[3]</a></sup> </p><ol class=\"references\">\n" +
@@ -74,7 +74,7 @@ public class RefFilterTest extends FilterTestSupport {
         assertThat(ref.getRefString()).isEqualTo("ccc");
     }
 
-    @Test public void testRef06() {
+    @Test public void testRef06() throws Exception  {
         assertThat(wikiModel.render("aaa <ref name=Freitag/> bbb<ref name=A&B /> <ref>ccc</ref> <references/>", false))
             .isEqualTo("\n" +
                 "<p>aaa <sup id=\"_ref-Freitag\" class=\"reference\"><a href=\"#_note-Freitag\" title=\"\">[1]</a></sup> bbb<sup id=\"_ref-A.26B\" class=\"reference\"><a href=\"#_note-A.26B\" title=\"\">[2]</a></sup> <sup id=\"_ref-3\" class=\"reference\"><a href=\"#_note-3\" title=\"\">[3]</a></sup> </p><ol class=\"references\">\n" +
@@ -88,7 +88,7 @@ public class RefFilterTest extends FilterTestSupport {
         assertThat(ref.getRefString()).isEqualTo("ccc");
     }
 
-    @Test public void testRef07() {
+    @Test public void testRef07() throws Exception {
         assertThat(wikiModel
                 .render("<ref>{{cite book |last=Malins|first=Steve|title=Depeche Mode: A Biography|year=2001|publisher=Andre Deutsch|chapter=|pages=82|isbn=978-0233994307}}</ref>\n\n\n<references/>", false))
             .isEqualTo("\n" +
@@ -98,7 +98,7 @@ public class RefFilterTest extends FilterTestSupport {
 
     }
 
-    @Test public void testRef08() {
+    @Test public void testRef08() throws Exception {
         assertThat(wikiModel.render("; 506 Variant Also Negotiates<ref name=\"RFC 2295\">RFC 2295</ref>\n" + "\n"
                 + "== Einzelnachweise ==\n" + "\n" + "<references />", false))
             .isEqualTo("\n" +

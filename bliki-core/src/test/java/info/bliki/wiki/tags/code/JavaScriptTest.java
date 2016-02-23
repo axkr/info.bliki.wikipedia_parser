@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class JavaScriptTest extends FilterTestSupport
 {
-    @Test public void testJavaScript() {
+    @Test public void testJavaScript() throws Exception {
         String result = wikiModel.render("'''JavaScript Example'''\n" + "<source lang=javascript>\n" + "public class Test {\n" + "< > \" \' &"
                 + "}\n" + "</source>", false);
 

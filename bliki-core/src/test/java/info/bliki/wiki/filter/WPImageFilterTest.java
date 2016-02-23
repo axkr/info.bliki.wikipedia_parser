@@ -15,7 +15,7 @@ public class WPImageFilterTest extends FilterTestSupport {
                 .encodeTitleLocalUrl("/hello/you.this.is..an../exa..mple.html")).isEqualTo("/hello/you'2Ethis'2Eis'2E'2Ean'2E'2E/exa..mple.html");
     }
 
-    @Test public void testImage00() {
+    @Test public void testImage00() throws Exception {
         assertThat(wikiModel.render("[[Image:baby_elephant.jpg|thumb|Link to the [[Sandbox]]]]", false)).isEqualTo("\n" +
                 "<div class=\"thumb tright\">\n" +
                 "<div class=\"thumbinner\" style=\"width:222px;\"><a class=\"internal\" href=\"http://www.bliki.info/wiki/Image:baby_elephant.jpg\" title=\"Link to the Sandbox\"><img src=\"http://www.bliki.info/wiki/baby_elephant.jpg\" alt=\"Link to the Sandbox\" title=\"Link to the Sandbox\" class=\"type-thumb\" width=\"220\" />\n" +
@@ -24,7 +24,7 @@ public class WPImageFilterTest extends FilterTestSupport {
                 "</div>\n");
     }
 
-    @Test public void testImage01b() {
+    @Test public void testImage01b() throws Exception {
         assertThat(wikiModel.render("[[Image:baby_elephant.jpg|thumb|Link to the [[Sandbox]] caption]]", false)).isEqualTo("\n" +
                 "<div class=\"thumb tright\">\n" +
                 "<div class=\"thumbinner\" style=\"width:222px;\"><a class=\"internal\" href=\"http://www.bliki.info/wiki/Image:baby_elephant.jpg\" title=\"Link to the Sandbox caption\"><img src=\"http://www.bliki.info/wiki/baby_elephant.jpg\" alt=\"Link to the Sandbox caption\" title=\"Link to the Sandbox caption\" class=\"type-thumb\" width=\"220\" />\n" +
@@ -34,7 +34,7 @@ public class WPImageFilterTest extends FilterTestSupport {
                 "");
     }
 
-    @Test public void testImage02() {
+    @Test public void testImage02() throws Exception {
         assertThat(wikiModel
                 .render("these are the [[Image:FIFA WM 2006 Teams.png|thumb|220px|Qualifying countries]]...", false)).isEqualTo("\n" +
                 "<p>these are the </p>\n" +
@@ -47,12 +47,12 @@ public class WPImageFilterTest extends FilterTestSupport {
                 "<p>...</p>");
     }
 
-    @Test public void testImage03() {
+    @Test public void testImage03() throws Exception {
         assertThat(wikiModel.render("http://Westernpad.jpg", false)).isEqualTo("\n"
                 + "<p><a class=\"external free\" href=\"http://Westernpad.jpg\" rel=\"nofollow\">http://Westernpad.jpg</a></p>");
     }
 
-    @Test public void testImage04() {
+    @Test public void testImage04() throws Exception {
         assertThat(wikiModel
                 .render(
                         "test [[Image:Kurhaus Wiesbaden A.jpg|thumb|Neues [[Kurhaus Wiesbaden|Kurhaus]] aus dem Jahr 1907 am [[Bowling Green (Wiesbaden)|Bowling Green]]]] abc...",
@@ -67,13 +67,13 @@ public class WPImageFilterTest extends FilterTestSupport {
                 "<p> abc...</p>");
     }
 
-    @Test public void testImage05() {
+    @Test public void testImage05() throws Exception {
         assertThat(wikiModel.render("[[Image:wikipedia_new_project1.png]]", false)).isEqualTo("\n" +
                 "<p><a class=\"image\" href=\"http://www.bliki.info/wiki/Image:wikipedia_new_project1.png\" ><img src=\"http://www.bliki.info/wiki/wikipedia_new_project1.png\" width=\"220\" />\n" +
                 "</a></p>");
     }
 
-    @Test public void testImage06() {
+    @Test public void testImage06() throws Exception {
         assertThat(wikiModel
                 .render(
                         "[[Image:Henkell-Schlösschen.JPG|thumb|\'\'Henkell-Schlösschen\'\' der Sektkellerei [[Henkell & Söhnlein KG]]]] Wiesbaden",
@@ -87,27 +87,27 @@ public class WPImageFilterTest extends FilterTestSupport {
                 "<p> Wiesbaden</p>");
     }
 
-    @Test public void testImage07() {
+    @Test public void testImage07() throws Exception {
         assertThat(wikiModel.render("[[Image:ImageFileName.jpg|400px|Center]]", false)).isEqualTo("\n" +
                 "<p><a class=\"image\" href=\"http://www.bliki.info/wiki/Image:400px-ImageFileName.jpg\" ><img src=\"http://www.bliki.info/wiki/400px-ImageFileName.jpg\" class=\"location-center\" width=\"400\" />\n" +
                 "</a></p>");
     }
 
-    @Test public void testImage08() {
+    @Test public void testImage08() throws Exception {
         assertThat(wikiModel.render("[http://www.homeportals.net/downloads/ClassDiagram_3.0.198.jpg Class\n"
                 + "Diagram]", false)).isEqualTo("\n"
                 + "<p>[<a class=\"external free\" href=\"http://www.homeportals.net/downloads/ClassDiagram_3.0.198.jpg\" rel=\"nofollow\">http://www.homeportals.net/downloads/ClassDiagram_3.0.198.jpg</a> Class\n"
                 + "Diagram]</p>");
     }
 
-    @Test public void testImage09() {
+    @Test public void testImage09() throws Exception {
         assertThat(wikiModel.render(
                 "[[Image:Example.png|150px|link=Main Page\n" + "|alt=Alt text|Title text]]", false)).isEqualTo("\n" +
                 "<p><a class=\"image\" href=\"http://www.bliki.info/wiki/Main_Page\" title=\"Alt text\"><img src=\"http://www.bliki.info/wiki/150px-Example.png\" alt=\"Alt text\" width=\"150\" />\n" +
                 "</a></p>");
     }
 
-    @Test public void testImage10() {
+    @Test public void testImage10() throws Exception {
         assertThat(wikiModel.render(
                 "[[Bild:Example.png|150px|link=Main Page|thumb|alt=Alt text|Caption]]", false)).isEqualTo("\n" +
                 "<div class=\"thumb tright\">\n" +
@@ -118,7 +118,7 @@ public class WPImageFilterTest extends FilterTestSupport {
                 "");
     }
 
-    @Test public void testImage11() {
+    @Test public void testImage11() throws Exception {
         assertThat(wikiModel.render(
                 "[[Bild:Example.png|150px|link=|thumb|alt=Alt text|Caption]]", false)).isEqualTo("\n" +
                 "<div class=\"thumb tright\">\n" +
@@ -129,7 +129,7 @@ public class WPImageFilterTest extends FilterTestSupport {
                 "");
     }
 
-    @Test public void testImage12() {
+    @Test public void testImage12() throws Exception {
         assertThat(wikiModel
                 .render("these are the [[Image:FIFA WM 2006 Teams.png|thumb|220x100px|Qualifying countries]]...", false)).isEqualTo("\n" +
                 "<p>these are the </p>\n" +
@@ -142,7 +142,7 @@ public class WPImageFilterTest extends FilterTestSupport {
                 "<p>...</p>");
     }
 
-    @Test public void testImage13() {
+    @Test public void testImage13() throws Exception {
         assertThat(wikiModel
                 .render("these are the [[Image:FIFA WM 2006 Teams.png|thumb|x100px|Qualifying countries]]...", false)).isEqualTo("\n" +
                 "<p>these are the </p>\n" +
@@ -155,7 +155,7 @@ public class WPImageFilterTest extends FilterTestSupport {
                 "<p>...</p>");
     }
 
-    @Test public void testImage14() {
+    @Test public void testImage14() throws Exception {
         assertThat(wikiModel
                 .render(
                         "[[Image:William Fettes Douglas - The Alchemist.jpg|thumb|left|\"Renel the Alchemist\", by Sir William Douglas, 1853]]",
@@ -168,7 +168,7 @@ public class WPImageFilterTest extends FilterTestSupport {
                 "");
     }
 
-    @Test public void testImage15() {
+    @Test public void testImage15() throws Exception {
         String raw = "[[Image:Bamfield (171).jpg|right|thumb" + "|Tsunami hazard sign at [[Bamfield]], [[British Columbia]]"
                 + "|alt=Photo of sign reading " + "\"Tsunami Hazard Zone...In case of earthquake," + " go to higher ground or inland\"]]";
         String expected = "\n" +
@@ -181,13 +181,13 @@ public class WPImageFilterTest extends FilterTestSupport {
         assertThat(wikiModel.render(raw, false)).isEqualTo(expected);
     }
 
-    @Test public void testImage16() {
+    @Test public void testImage16() throws Exception {
         assertThat(wikiModel.render("[[Image:skull.jpg|link=sandbox:createNewPage#Section Three]]", false)).isEqualTo("\n" +
                 "<p><a class=\"image\" href=\"http://www.bliki.info/wiki/Sandbox:createNewPage#Section_Three\" ><img src=\"http://www.bliki.info/wiki/skull.jpg\" width=\"220\" />\n" +
                 "</a></p>");
     }
 
-    @Test public void testImage17() {
+    @Test public void testImage17() throws Exception {
         assertThat(Encoder.encodeTitleLocalUrl("Test & ToDo.jpg")).isEqualTo("Test_'26_ToDo.jpg");
         assertThat(wikiModel.render(
                 "[[File:Test 4711.jpg|thumb|left|150px|Test 4711]]", false)).isEqualTo("\n" +
@@ -199,13 +199,13 @@ public class WPImageFilterTest extends FilterTestSupport {
                 "");
     }
 
-    @Test public void testImage19() {
+    @Test public void testImage19() throws Exception {
         assertThat(wikiModel.render("test1[[Image:PeanutButter.jpg]]test2", false)).isEqualTo("\n" +
                 "<p>test1<a class=\"image\" href=\"http://www.bliki.info/wiki/Image:PeanutButter.jpg\" ><img src=\"http://www.bliki.info/wiki/PeanutButter.jpg\" width=\"220\" />\n" +
                 "</a>test2</p>");
     }
 
-    @Test public void testImage18() {
+    @Test public void testImage18() throws Exception {
         assertThat(wikiModel.render("[[Image:Speakerlink.png|11px|link=Speakerlink.png|Listen]]", false)).isEqualTo("\n" +
                 "<p><a class=\"image\" href=\"http://www.bliki.info/wiki/Speakerlink.png\" title=\"Listen\"><img src=\"http://www.bliki.info/wiki/11px-Speakerlink.png\" alt=\"Listen\" width=\"11\" />\n" +
                 "</a></p>");

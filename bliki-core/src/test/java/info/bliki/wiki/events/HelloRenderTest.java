@@ -95,7 +95,7 @@ public class HelloRenderTest  {
     }
 
 
-    @Test public void test996() {
+    @Test public void test996() throws Exception {
         String result = wikiModel.render(HELLO_TEXT, false);
     }
 

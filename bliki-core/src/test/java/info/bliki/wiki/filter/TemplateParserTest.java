@@ -5,6 +5,7 @@ import info.bliki.wiki.model.WikiModel;
 import info.bliki.wiki.tags.HTMLBlockTag;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Locale;
 
@@ -73,7 +74,7 @@ public class TemplateParserTest extends FilterTestSupport {
                 .isEqualTo("test1 noincludetext\n" + "\n" + "");
     }
 
-    @Test public void testNoincludeDemo002() {
+    @Test public void testNoincludeDemo002() throws Exception {
         assertThat(wikiModel.render("test1<noinclude> noincludetext</noinclude>\n" + "\n"
                 + "<includeonly>includeonlytext<noinclude> noincludetext</noinclude></includeonly>", true))
                 .isEqualTo("\n" + "<p>test1 noincludetext</p>\n" + "");
@@ -94,7 +95,7 @@ public class TemplateParserTest extends FilterTestSupport {
         assertThat(wikiModel.parseTemplates("{{OnlyincludeDemo}}")).isEqualTo("def");
     }
 
-    @Test public void testOnlyincludeDemo003() {
+    @Test public void testOnlyincludeDemo003() throws Exception {
         assertThat(wikiModel.render(ONLYINCLUDE_DEMO, true))
                 .isEqualTo("\n"
                 + "<p>abcdefghi</p><hr />\n"
@@ -117,7 +118,7 @@ public class TemplateParserTest extends FilterTestSupport {
                 + "</pre>\n" + "\n" + "\n" + "<p>\n" + "</p>\n" + "");
     }
 
-    @Test public void testOnlyincludeDemo004() {
+    @Test public void testOnlyincludeDemo004() throws Exception {
         assertThat(wikiModel.render("{{OnlyincludeDemo}}", false)).isEqualTo("\n" + "<p>def</p>");
     }
 
@@ -179,7 +180,7 @@ public class TemplateParserTest extends FilterTestSupport {
                 + "|}");
     }
 
-    @Test public void test001() {
+    @Test public void test001() throws Exception {
         assertThat(wikiModel.render(
                 "{{Lageplan\n" + "|marker     = reddot.svg\n" + "|markersize = 5\n"
                         + "|markertext = {{#if: {{{Name|}}} | {{{Name}}} | {{PAGENAME}} }}\n"
@@ -217,7 +218,7 @@ public class TemplateParserTest extends FilterTestSupport {
                 + "|- class=\"hintergrundfarbe2\"\n" + "|}");
     }
 
-    @Test public void test003() {
+    @Test public void test003() throws Exception {
         assertThat(wikiModel.render(
                 "{{Infobox Ort in Deutschland}}", false))
                 .isEqualTo("\n"
@@ -261,7 +262,7 @@ public class TemplateParserTest extends FilterTestSupport {
                 + "|- class=\"hintergrundfarbe2\"\n" + "|}");
     }
 
-    @Test public void test005() {
+    @Test public void test005() throws Exception {
         assertThat(wikiModel
                 .render("{{Infobox Ort in Deutschland\n" + "|Art               = Stadt\n"
                                 + "|Wappen            = Wappen_Grafenwöhr.png\n" + "|lat_deg           = 49 |lat_min = 43\n"
@@ -294,7 +295,7 @@ public class TemplateParserTest extends FilterTestSupport {
                 + "<td><a href=\"http://www.bliki.info/wiki/Bayern\" title=\"Bayern\">Bayern</a></td></tr></table></div>");
     }
 
-    @Test public void test006() {
+    @Test public void test006() throws Exception {
         assertThat(wikiModel
                 .render(
                         "{{#if: {{{Karte|}}} | [[Bild:{{{Karte}}}|140x175px|Deitschlandkartn, Position vo {{#if: {{{Name|}}} | {{{Name}}} | {{PAGENAME}} }} heavoghobn]] | {{#if: {{{lat_deg|t2}}} |\n"
@@ -1252,7 +1253,7 @@ public class TemplateParserTest extends FilterTestSupport {
         assertThat(wikiModel.parseTemplates("test123 start<includeonly>\n" + "test123 end")).isEqualTo("test123 start");
     }
 
-    @Test public void testOnlyIncludeNestedInsedIncludeOnly() {
+    @Test public void testOnlyIncludeNestedInsedIncludeOnly() throws Exception {
         assertThat(wikiModel.render("123<includeonly><onlyinclude>345</onlyinclude></includeonly>", false).trim()).isEqualTo("<p>345</p>");
     }
 
@@ -1802,7 +1803,7 @@ public class TemplateParserTest extends FilterTestSupport {
         assertThat(wikiModel.parseTemplates("{{#switch:\n2\n|\n1 =\npq\n|\n2 =\nrs\n|\n3 =\ntu\n}}")).isEqualTo("rs");
     }
 
-    @Test public void testCategory001() {
+    @Test public void testCategory001() throws Exception {
         assertThat(wikiModel.render("[[Category:Main Page]]", false)).isEqualTo("");
         HashMap<String, String> expectedCategories = new HashMap<>();
         expectedCategories.put("Main Page", "Category:Main Page");

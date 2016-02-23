@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class ABAPTest extends FilterTestSupport {
 
-    @Test public void testABAP() {
+    @Test public void testABAP() throws Exception {
         String result = wikiModel.render("'''ABAP Example'''\n" + "<source lang=\"abap\">\n" + "*--- line comment\n"
                 + "*--- line comment\n" + "WRITE: / '''Hello World''' \"test comment\n" + "< > \" \' &" + "}\n" + "</source>", false);
 
@@ -23,7 +23,7 @@ public class ABAPTest extends FilterTestSupport {
                 "</span></pre>");
     }
 
-    @Test public void testABAPWithoutLangAttr() {
+    @Test public void testABAPWithoutLangAttr() throws Exception {
         String result = wikiModel.render("'''ABAP Example'''\n" + "<source> REPORT ZZTEST00\n" + "*--- line comment\n"
                 + "*--- line comment\n" + "WRITE: / '''Hello World''' \"test comment\n" + "< > \" \' &" + "}\n" + "</source>", false);
 

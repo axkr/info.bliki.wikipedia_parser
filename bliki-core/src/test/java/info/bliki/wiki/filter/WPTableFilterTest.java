@@ -65,7 +65,7 @@ public class WPTableFilterTest extends FilterTestSupport {
             + "|-\n" + "| TABLE\n" + "|}\n" + "| valign=\"bottom\" | the original table again\n" + "|}\n" + "</blockquote>\n" + "\n" + "";
 
 
-    @Test public void testNestedTable1() {
+    @Test public void testNestedTable1() throws Exception {
         assertThat(wikiModel
                 .render(TEST, false)).isEqualTo("\n" +
                 "<div style=\"page-break-inside: avoid;\">\n" +
@@ -90,7 +90,7 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "</td></tr></table></div>");
     }
 
-    @Test public void testNestedTable2() {
+    @Test public void testNestedTable2() throws Exception {
         assertThat(wikiModel.render("{| border=1\n" + "|[[Test Link|Test]]\n"
                 + "| &alpha;\n" + "|\n" + "{| bgcolor=#ABCDEF border=2\n" + "|nested\n" + "|-\n" + "|table\n" + "|}\n"
                 + "|the original table again\n" + "|}", false)).isEqualTo("\n" +
@@ -110,7 +110,7 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "<td>the original table again</td></tr></table></div>");
     }
 
-    @Test public void testBlockquoteTable01() {
+    @Test public void testBlockquoteTable01() throws Exception {
         assertThat(wikiModel.render(TEST3, false)).isEqualTo("<h3><span class=\"mw-headline\" id=\"Simple_example\">Simple example</span></h3>\n" +
                 "<p>Both of these generate the same output.  Choose a style based on the number of cells in each row and the total text inside each cell.</p>\n" +
                 "<p><b>Wiki markup</b>\n" +
@@ -147,12 +147,12 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "");
     }
 
-    @Test public void testBlockquoteTable02() {
+    @Test public void testBlockquoteTable02() throws Exception {
         assertThat(wikiModel.render("<table><tr> \n" + "<td></td>\n\n</tr>\n</table>\n", false)).isEqualTo("\n" + "<table>\n" + "\n" + "<tr>\n" + " \n" + "\n" + "\n" + "\n" + "</tr>\n" + "\n" + "</table>\n"
                 + "");
     }
 
-    @Test public void testBlockquoteTable03() {
+    @Test public void testBlockquoteTable03() throws Exception {
         assertThat(wikiModel.render("<table><tr> \n" + "<td></td><tr><td></tr></table>\n", false)).isEqualTo("\n" +
                 "<table>\n" +
                 "\n" +
@@ -167,13 +167,13 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "" + "");
     }
 
-    @Test public void testBlockquoteTable04() {
+    @Test public void testBlockquoteTable04() throws Exception {
         assertThat(wikiModel.render("<table><tr> \n"
                 + "<td>number 1<tr><td>number2</table>\n", false)).isEqualTo("\n" + "<table>\n" + "\n" + "<tr>\n" + " \n" + "\n" + "<td>number 1</td>\n" + "</tr>\n" + "<tr>\n" + "\n"
                 + "<td>number2\n" + "</td>\n" + "</tr>\n" + "</table>");
     }
 
-    @Test public void testBlockquoteTable05() {
+    @Test public void testBlockquoteTable05() throws Exception {
         assertThat(wikiModel.render(TEST5, false)).isEqualTo("\n" +
                 "<table>\n" +
                 "\n" +
@@ -220,7 +220,7 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "");
     }
 
-    @Test public void testBlockquoteTable06() {
+    @Test public void testBlockquoteTable06() throws Exception {
         assertThat(wikiModel
                 .render("<table align=\"center\" border=\"1\" cellspacing=\"0\" cellpadding=\"3\">\n" + "   <tr>\n" + "      <td>1</td>\n"
                         + "      <td>2</td>\n" + "   </tr> \n" + "   <tr>\n" + "      <td>3</td> \n" + "      <td>4</td> \n" + "   </tr>\n"
@@ -250,13 +250,13 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "");
     }
 
-    @Test public void testMathTable1() {
+    @Test public void testMathTable1() throws Exception {
         assertThat(wikiModel.render("{| border=1\n" + "|-\n" + "|<math>\\frac{1}{|a|} G \\left( \\frac{\\omega}{a} \\right)\\,</math>\n"
                 + "|}", false)).isEqualTo("\n" + "<div style=\"page-break-inside: avoid;\">\n" + "<table border=\"1\">\n" + "<tr>\n"
                 + "<td><span class=\"math\">\\frac{1}{|a|} G \\left( \\frac{\\omega}{a} \\right)\\,</span></td></tr></table></div>");
     }
 
-    @Test public void testAll() {
+    @Test public void testAll() throws Exception {
         assertThat(wikiModel
                 .render(TEST, false)).isEqualTo("\n" +
                 "<div style=\"page-break-inside: avoid;\">\n" +
@@ -310,7 +310,7 @@ public class WPTableFilterTest extends FilterTestSupport {
                 + "<td><b>Start</b></td>\n" + "<td colspan=\"3\">&#60;From Date - To Date&#62;</td></tr></table></div>");
     }
 
-    @Test public void testTHTableMix001() {
+    @Test public void testTHTableMix001() throws Exception {
         assertThat(wikiModel
                 .render("{| class=\"infobox bordered vcard\" style=\"width: 25em; text-align: left; font-size: 95%;\"\n"
                         + "! colspan=\"2\" style=\"text-align:center; font-size:larger;\" class=\"fn\"| Chris Capuano\n"
@@ -342,13 +342,13 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "</th> </tr></table></div>");
     }
 
-    @Test public void testEmptyCellTable() {
+    @Test public void testEmptyCellTable() throws Exception {
         assertThat(wikiModel
                 .render("{|border=\"1\"\n" + "|\n" + "|a.\n" + "|-\n" + "|\n" + "|b.\n" + "|}\n" + "", false)).isEqualTo("\n" + "<div style=\"page-break-inside: avoid;\">\n" + "<table border=\"1\">\n" + "<tr>\n" + "<td></td>\n"
                 + "<td>a.</td></tr>\n" + "<tr>\n" + "<td></td>\n" + "<td>b.</td></tr></table></div>\n" + "");
     }
 
-    @Test public void testBlockquoteTableText01() {
+    @Test public void testBlockquoteTableText01() throws Exception {
         assertThat(wikiModel.render(new PlainTextConverter(), TEST3, false)).isEqualTo("\n" +
                 "Simple example\n" +
                 "Both of these generate the same output.  Choose a style based on the number of cells in each row and the total text inside each cell.\n" +
@@ -384,17 +384,17 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "\n");
     }
 
-    @Test public void testWPTableText01() {
+    @Test public void testWPTableText01() throws Exception {
         assertThat(wikiModel.render(new PlainTextConverter(), TEST, false)).isEqualTo("\n" + "\n" + "\n" + "\n" + "Plog4u.org is dedicated to developing a Wikipedia Eclipse Plugin\n" + "     \n"
                 + "\n" + "\n" + " \n" + "\n" + " ");
     }
 
-    @Test public void testUmlauts01() {
+    @Test public void testUmlauts01() throws Exception {
         assertThat(wikiModel.render(new PlainTextConverter(), "Eine große''' <del>Überraschung</del>", false)).isEqualTo("\n" +
                 "Eine große Überraschung");
     }
 
-    @Test public void testTableCross() {
+    @Test public void testTableCross() throws Exception {
         // 2009-11-03, from enwiki page "Cross"
         String raw = "{| class=\"wikitable\"\n" + "|-\n" + "! col1 !! col2 !! col3\n"
                 + "|-| | '''[[lorem ipsum]]''' (test malformed table)\n" + "| | '''[[testing]]'''\n" + "|\n"

@@ -10,7 +10,7 @@ public class PreFilterTest extends FilterTestSupport {
      * See Issue 106
      *
      */
-    @Test public void testPre4() {
+    @Test public void testPre4() throws Exception {
         assertThat(wikiModel.render("== Peanut Butter (variant 1) ==\n" +
                         " [[Image:PeanutButter.jpg|thumb|\"Smooth\" peanut butter in a jar]]",
                 false
@@ -27,7 +27,7 @@ public class PreFilterTest extends FilterTestSupport {
      * See Issue 106
      *
      */
-    @Test public void testPre5() {
+    @Test public void testPre5() throws Exception {
         assertThat(wikiModel.render("== Peanut Butter (variant 2) ==\n" +
                         " test0\n" +
                         " [[Image:PeanutButter.jpg|thumb|\"Smooth\" peanut butter in a jar]]\n" +
@@ -55,7 +55,7 @@ public class PreFilterTest extends FilterTestSupport {
      * See Issue 106
      *
      */
-    @Test public void testPre6() {
+    @Test public void testPre6() throws Exception {
         assertThat(wikiModel.render("== Peanut Butter (variant 3) ==\n" +
                         " test0\n" +
                         " test[[Image:PeanutButter.jpg|thumb|\"Smooth\" peanut butter in a jar]]\n" +
@@ -84,7 +84,7 @@ public class PreFilterTest extends FilterTestSupport {
      * See Issue 104
      *
      */
-    @Test public void testPre7() {
+    @Test public void testPre7() throws Exception {
         assertThat(wikiModel.render("== TestLBPre ==\n" +
                 " test1\n" +
                 "\n" +
@@ -101,7 +101,7 @@ public class PreFilterTest extends FilterTestSupport {
      * See Issue 104
      *
      */
-    @Test public void testPre8() {
+    @Test public void testPre8() throws Exception {
         assertThat(wikiModel.render("== TestLBPre ==\n" +
                 " test1\n" +
                 " \n" +
@@ -113,7 +113,7 @@ public class PreFilterTest extends FilterTestSupport {
                 "</pre>");
     }
 
-    @Test public void testPre0() {
+    @Test public void testPre0() throws Exception {
         assertThat(wikiModel.render("<nowiki>\n" + "The nowiki tag ignores [[Wiki]] ''markup''.\n"
                 + "It reformats text by removing\n" + "newlines    and multiple spaces.\n" + "It still interprets special\n"
                 + "characters: & \n" + "</nowiki>", false)).isEqualTo("\n" + "<p>\n" + "The nowiki tag ignores [[Wiki]] &#39;&#39;markup&#39;&#39;.\n"
@@ -121,11 +121,11 @@ public class PreFilterTest extends FilterTestSupport {
                 + "characters: &#38; \n" + "</p>");
     }
 
-    @Test public void testPre1() {
+    @Test public void testPre1() throws Exception {
         assertThat(wikiModel.render("First line:\n" + " pre text 1\n" + " pre text 2\n" + "last line", false)).isEqualTo("\n" + "<p>First line:</p>\n" + "<pre>" + "pre text 1\n" + "pre text 2\n" + "</pre>\n" + "<p>last line</p>");
     }
 
-    @Test public void testPre3() {
+    @Test public void testPre3() throws Exception {
         assertThat(wikiModel.render(
                 "\n" + "* line 1 ...\n" + "* line 2 < test wrong tag\n" + "* line 3 < test wrong tag\n" + "\n" + "<pre>"
                         + "preformatted text\n" + "</pre>", false
@@ -142,7 +142,7 @@ public class PreFilterTest extends FilterTestSupport {
     // "characters: & \n" +
     // "</nowiki>\n</pre>"));
     // }
-    @Test public void testPre2() {
+    @Test public void testPre2() throws Exception {
         assertThat(wikiModel.render("\n" + " pre text\n" + "\n"
                 + "\n" + "\n" + "last line", false)).isEqualTo("\n" +
                 "<pre>" +
@@ -153,7 +153,7 @@ public class PreFilterTest extends FilterTestSupport {
                 "<p>last line</p>");
     }
 
-    @Test public void testPre10() {
+    @Test public void testPre10() throws Exception {
         assertThat(wikiModel
                 .render(
                         "Aufzählungstypen dienen zur automatischen Nummerierung der in der Aufzählung enthaltenen Elemente. Die Syntax für die Definition von Aufzählungstypen verwendet das Schlüsselwort <tt>enum</tt> (Kurzform für Enumeration).\n"

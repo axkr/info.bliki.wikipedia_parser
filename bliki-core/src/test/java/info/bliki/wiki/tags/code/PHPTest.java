@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class PHPTest extends FilterTestSupport
 {
-    @Test public void testPHP() {
+    @Test public void testPHP() throws Exception {
         String result = wikiModel.render("<source lang=php>\n" + "<?php\n" + "/* A simple php script */\n" + " \n" + "$choice = $_GET[\'foo\'];\n"
                 + "if ( $choice == 1 )\n" + "{\n" + "  echo \"Hello world\";\n" + "}\n" + "# end of script\n" + "?>\n" + "</source>", false);
 
