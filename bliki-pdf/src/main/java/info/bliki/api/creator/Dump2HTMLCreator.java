@@ -105,7 +105,7 @@ public class Dump2HTMLCreator {
             this.wikiDB = wikiDB;
         }
 
-        public void process(WikiArticle page, Siteinfo siteinfo) throws SAXException {
+        public void process(WikiArticle page, Siteinfo siteinfo) throws IOException {
             if (page.isTemplate() || page.isModule()) {
                 TopicData topicData = new TopicData(page.getTitle(), page.getText());
                 try {
@@ -114,8 +114,8 @@ public class Dump2HTMLCreator {
                     if (++counter % 80 == 0) {
                         System.out.println(' ');
                     }
-                } catch (Exception e) {
-                    throw new SAXException(e);
+                } catch (SQLException e) {
+                    throw new IOException(e);
                 }
             }
         }
@@ -133,7 +133,7 @@ public class Dump2HTMLCreator {
             this.imageDirectory = imageDirectory;
         }
 
-        public void process(WikiArticle page, Siteinfo siteinfo) throws SAXException {
+        public void process(WikiArticle page, Siteinfo siteinfo) throws IOException {
             if (page.isMain() || page.isCategory() || page.isProject()) {
                 String title = page.getTitle();
                 String titleURL = Encoder.encodeTitleLocalUrl(title);
@@ -143,14 +143,10 @@ public class Dump2HTMLCreator {
                 creator.setHeader(HTMLConstants.HTML_HEADER1 + HTMLConstants.CSS_SCREEN_STYLE + HTMLConstants.HTML_HEADER2);
                 creator.setFooter(HTMLConstants.HTML_FOOTER);
                 wikiModel.setUp();
-                try {
-                    creator.renderToFile(generatedHTMLFilename);
-                    System.out.print('.');
-                    if (++counter % 80 == 0) {
-                        System.out.println(' ');
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
+                creator.renderToFile(generatedHTMLFilename);
+                System.out.print('.');
+                if (++counter % 80 == 0) {
+                    System.out.println(' ');
                 }
             }
         }
