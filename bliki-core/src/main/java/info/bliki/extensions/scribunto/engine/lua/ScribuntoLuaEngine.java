@@ -45,16 +45,20 @@ import java.util.Map;
  */
 public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterface {
     private static final int MAX_EXPENSIVE_CALLS = 10;
+    private static final boolean ENABLE_LUA_DEBUG_LIBRARY = false;
     private final Globals globals;
     private Frame currentFrame;
     private int expensiveFunctionCount;
 
     private final CompiledScriptCache compiledScriptCache;
-
     private final MwInterface[] interfaces;
 
     public ScribuntoLuaEngine(IWikiModel model, CompiledScriptCache cache) {
-        this(model, cache, JsePlatform.standardGlobals());
+        this(model, cache, ENABLE_LUA_DEBUG_LIBRARY);
+    }
+
+    public ScribuntoLuaEngine(IWikiModel model, CompiledScriptCache cache, boolean debug) {
+        this(model, cache, debug ? JsePlatform.debugGlobals() : JsePlatform.standardGlobals());
     }
 
     private ScribuntoLuaEngine(IWikiModel model, CompiledScriptCache compiledScriptCache, Globals globals) {
