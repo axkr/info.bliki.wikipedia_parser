@@ -237,9 +237,6 @@ public class Scanner {
                         str = String.valueOf(fCurrentChar);
                         break;
                     }
-                    if (fCurrentChar == '<') {
-
-                    }
                     throwSyntaxError("Unrecognised punctuation character: \"" + str + "\"");
                 }
 

@@ -34,6 +34,7 @@ import info.bliki.wiki.tags.util.TagStack;
 import info.bliki.wiki.template.ITemplateFunction;
 import info.bliki.wiki.template.extension.AttributeList;
 import info.bliki.wiki.template.extension.AttributeRenderer;
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -584,7 +585,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 
     @Override
     public boolean appendRawWikipediaLink(String rawLinkText, String suffix) {
-        String rawTopicName = rawLinkText;
+        String rawTopicName = StringEscapeUtils.unescapeHtml4(rawLinkText);
         if (rawTopicName != null) {
             // trim the name for whitespace characters on the left side
             int trimLeftIndex = 0;
@@ -602,8 +603,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
                 alias = rawTopicName.substring(pipeIndex + 1);
                 rawTopicName = rawTopicName.substring(0, pipeIndex);
                 if (alias.length() == 0) {
-                    // special cases like: [[Test:hello world|]] or [[Test(hello
-                    // world)|]] or [[Test, hello world|]]
+                    // special cases like: [[Test:hello world|]] or [[Test(hello world)|]] or [[Test, hello world|]]
                     alias = rawTopicName;
                     int index = alias.indexOf(':');
                     if (index != -1) {

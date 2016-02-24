@@ -280,4 +280,10 @@ public class WPLinkFilterTest extends FilterTestSupport {
 
         assertThat(wikiModel.render("[[foo]]")).isEqualTo("\n<p><a href=\"foo\" title=\"foo\">foo</a></p>");
     }
+
+    @Test public void testLinkWithEscapedColon() throws Exception {
+        assertThat(wikiModel
+                .render("[[en&#x3a;Test|Test]]", false)).isEqualTo("\n" + "<p><a href=\"//en.wikipedia.org/wiki/Test\">Test</a></p>");
+    }
+
 }

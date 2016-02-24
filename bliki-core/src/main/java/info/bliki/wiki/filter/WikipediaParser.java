@@ -685,14 +685,9 @@ public class WikipediaParser extends AbstractWikipediaParser {
         int temp = fCurrentPosition;
         if (findWikiLinkEnd()) {
             endLinkPosition = fCurrentPosition - 2;
-            String name = fStringSource.substring(startLinkPosition,
-                    endLinkPosition);
-            // test for a suffix string behind the Wiki link. Useful for
-            // plurals.
-            // Example:
-            // Dolphins are [[aquatic mammal]]s that are closely related to
-            // [[whale]]s
-            // and [[porpoise]]s.
+            final String name = fStringSource.substring(startLinkPosition, endLinkPosition);
+            // test for a suffix string behind the Wiki link. Useful for plurals.
+            // Example: Dolphins are [[aquatic mammal]]s that are closely related to [[whale]]s and [[porpoise]]s.
             temp = fCurrentPosition;
             String suffix = "";
             try {
@@ -716,6 +711,7 @@ public class WikipediaParser extends AbstractWikipediaParser {
             }
             fEventListener.onWikiLink(fSource, startLinkPosition,
                     endLinkPosition, suffix);
+
             if (!fWikiModel.appendRawWikipediaLink(name, suffix)) {
                 fCurrentPosition = temp;
             }

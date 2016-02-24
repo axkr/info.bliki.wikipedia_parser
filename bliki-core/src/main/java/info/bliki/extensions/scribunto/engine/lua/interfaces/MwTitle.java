@@ -113,7 +113,7 @@ public class MwTitle implements MwInterface {
     private LuaValue getContent() {
         return new OneArgFunction() {
             /**
-             * @param page
+             * @param page the title of the page to fetch
              * @return the (unparsed) content of the page, or nil if there is no page.
              * The page will be recorded as a transclusion.
              */
