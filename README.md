@@ -4,7 +4,6 @@
 
 ## Installation from source
 
-    $ git submodule init && git submodule update
     $ mvn install -DskipTests
 
 ## Links
