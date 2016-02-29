@@ -24,7 +24,7 @@ public class StringToTimeTest {
     }
 
     @Test public void testMySqlDateFormat() {
-        Date now = new Date();
+        Date now = now();
         Calendar cal = Calendar.getInstance();
         cal.setTime(now);
 
@@ -40,8 +40,8 @@ public class StringToTimeTest {
     }
 
 	@Ignore @Test public void testISO8601() {
-		Date now = new Date();
-		Calendar cal = Calendar.getInstance();
+        Date now = now();
+        Calendar cal = Calendar.getInstance();
 		cal.setTime(now);
 
 		cal.set(Calendar.MONTH, Calendar.OCTOBER);
@@ -56,7 +56,7 @@ public class StringToTimeTest {
 	}
 
     @Test public void test1200Seconds() {
-        Date now = new Date();
+        Date now = now();
         Calendar cal = Calendar.getInstance();
         cal.setTime(now);
 
@@ -66,7 +66,7 @@ public class StringToTimeTest {
     }
 
     @Test public void testVariousExpressionsOfTimeOfDay() {
-        Date now = new Date();
+        Date now = now();
         Calendar cal = Calendar.getInstance();
         cal.setTime(now);
 
@@ -82,7 +82,7 @@ public class StringToTimeTest {
         assertEquals(new Date(cal.getTimeInMillis()), new StringToTime("11:59 PM", now));
 
         cal.set(Calendar.MILLISECOND, 123);
-        assertEquals(new Date(cal.getTimeInMillis()), new StringToTime("23:59:00.123"));
+        assertEquals(new Date(cal.getTimeInMillis()), new StringToTime("23:59:00.123", now));
 
         cal.set(Calendar.MONTH, Calendar.OCTOBER);
         cal.set(Calendar.DATE, 26);
@@ -114,7 +114,7 @@ public class StringToTimeTest {
     }
 
     @Test public void testStaticMethods() {
-        Date now = new Date();
+        Date now = now();
 
         // timestamp
         Long time = (Long) StringToTime.time("now", now);
@@ -131,45 +131,45 @@ public class StringToTimeTest {
 
 
     @Test public void testNow() {
-        Date now = new Date();
+        Date now = now();
         assertEquals(new Date(now.getTime()), new StringToTime("now", now));
     }
 
     @Test public void testToday() {
-        Date now = new Date();
+        Date now = now();
         assertEquals(new StringToTime("00:00:00.000", now), new StringToTime("today", now));
     }
 
     @Test public void testThisMorning() {
-        Date now = new Date();
+        Date now = now();
         assertEquals(new StringToTime("07:00:00.000", now), new StringToTime("this morning", now));
         assertEquals(new StringToTime("morning", now), new StringToTime("this morning", now));
     }
 
     @Test public void testNoon() {
-        Date now = new Date();
+        Date now = now();
         assertEquals(new StringToTime("12:00:00.000", now), new StringToTime("noon", now));
     }
 
     @Test public void testThisAfternoon() {
-        Date now = new Date();
+        Date now = now();
         assertEquals(new StringToTime("13:00:00.000", now), new StringToTime("this afternoon", now));
         assertEquals(new StringToTime("afternoon", now), new StringToTime("this afternoon", now));
     }
 
     @Test public void testThisEvening() {
-        Date now = new Date();
+        Date now = now();
         assertEquals(new StringToTime("17:00:00.000", now), new StringToTime("this evening", now));
         assertEquals(new StringToTime("evening", now), new StringToTime("this evening", now));
     }
 
     @Test public void testTonight() {
-        Date now = new Date();
+        Date now = now();
         assertEquals(StringToTime.time("20:00:00.000", now), StringToTime.time("tonight", now));
     }
 
     @Test public void testIncrements() {
-        Date now = new Date();
+        Date now = new Date(0);
 
         Calendar cal = Calendar.getInstance();
         cal.setTime(now);
@@ -190,7 +190,7 @@ public class StringToTimeTest {
     }
 
     @Test public void testDecrements() {
-        Date now = new Date();
+        Date now = now();
 
         Calendar cal = Calendar.getInstance();
         cal.setTime(now);
@@ -199,7 +199,7 @@ public class StringToTimeTest {
     }
 
     @Test public void testTomorrow() {
-        Date now = new Date();
+        Date now = now();
         Calendar cal = Calendar.getInstance();
         cal.setTime(now);
         cal.set(Calendar.DATE, cal.get(Calendar.DATE) + 1);
@@ -208,28 +208,30 @@ public class StringToTimeTest {
     }
 
     @Test public void testTomorrowMorning() {
-        Date now = new Date();
+        Date now = now();
         assertEquals(new StringToTime("this morning +24 hours", now), new StringToTime("tomorrow morning", now));
     }
 
     @Test public void testTomorrowNoon() {
-        Date now = new Date();
+        Date now = now();
         assertEquals(new StringToTime("noon +24 hours", now), new StringToTime("tomorrow noon", now));
         assertEquals(new StringToTime("noon +24 hours", now), new StringToTime("noon tomorrow", now));
     }
 
     @Test public void testTomorrowAfternoon() {
-        Date now = new Date();
+        Date now = now();
         assertEquals(new StringToTime("this afternoon +24 hours", now), new StringToTime("tomorrow afternoon", now));
     }
 
+
+
     @Test public void testTomorrowEvening() {
-        Date now = new Date();
+        Date now = now();
         assertEquals(new StringToTime("this evening +24 hours", now), new StringToTime("tomorrow evening", now));
     }
 
     @Test public void testTomorrowNight() {
-        Date now = new Date();
+        Date now = now();
         assertEquals(new StringToTime("tonight +24 hours", now), new StringToTime("tomorrow night", now));
     }
 
@@ -266,7 +268,7 @@ public class StringToTimeTest {
 
     // e.g., October 26 and Oct 26
     @Ignore @Test public void testMonthAndDate() throws Exception {
-        Date now = new Date();
+        Date now = now();
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.MONTH, Calendar.OCTOBER);
         cal.set(Calendar.DATE, 26);
@@ -284,7 +286,7 @@ public class StringToTimeTest {
 
     // e.g., October or Oct
     @Test public void testMonth() throws Exception {
-        Date now = new Date();
+        Date now = now();
 
         assertEquals(new StringToTime("October", now), new StringToTime("Oct", now));
 
@@ -297,7 +299,7 @@ public class StringToTimeTest {
     }
 
     @Ignore  @Test public void testDayOfWeek() throws Exception {
-        Date now = new Date();
+        Date now = now();
         assertEquals(StringToTime.date("Friday", now), StringToTime.date("Fri", now));
 
         Calendar cal = Calendar.getInstance();
@@ -311,7 +313,7 @@ public class StringToTimeTest {
     }
 
     @Test public void testNext() {
-        Date now = new Date();
+        Date now = now();
         assertEquals(new StringToTime("next January 15", now), new StringToTime("Jan 15", now));
         assertEquals(new StringToTime("next Dec", now), new StringToTime("December", now));
         assertEquals(new StringToTime("next Sunday", now), new StringToTime("Sun", now));
@@ -319,10 +321,14 @@ public class StringToTimeTest {
     }
 
     @Test public void testLast() {
-        Date now = new Date();
+        Date now = now();
         assertEquals(new StringToTime("last January 15", now), new StringToTime("Jan 15 -1 year", now));
         assertEquals(new StringToTime("last Dec", now), new StringToTime("December -1 year", now));
         assertEquals(new StringToTime("last Sunday", now), new StringToTime("Sun -1 week", now));
         assertEquals(new StringToTime("last Sat", now), new StringToTime("Saturday -1 week", now));
+    }
+
+    private Date now() {
+        return new Date(0);
     }
 }
