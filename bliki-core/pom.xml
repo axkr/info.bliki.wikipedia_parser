@@ -61,11 +61,6 @@
             <groupId>software.betamax</groupId>
             <artifactId>betamax-junit</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy</artifactId>
-        </dependency>
     </dependencies>
     <build>
         <plugins>
