@@ -66,7 +66,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <derby.version>10.11.1.1</derby.version>
+        <derby.version>10.12.1.1</derby.version>
     </properties>
 
     <dependencyManagement>
