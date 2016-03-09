@@ -58,18 +58,8 @@
         </dependency>
 
         <dependency>
-            <groupId>co.freeside.betamax</groupId>
+            <groupId>software.betamax</groupId>
             <artifactId>betamax-junit</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>co.freeside.betamax</groupId>
-            <artifactId>betamax-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>co.freeside.betamax</groupId>
-            <artifactId>betamax-proxy</artifactId>
         </dependency>
 
         <dependency>

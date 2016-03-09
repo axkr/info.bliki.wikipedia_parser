@@ -1,7 +1,5 @@
 package info.bliki.api.creator;
 
-import co.freeside.betamax.ProxyConfiguration;
-import co.freeside.betamax.junit.RecorderRule;
 import info.bliki.annotations.IntegrationTest;
 import info.bliki.api.TestUser;
 import info.bliki.api.User;
@@ -9,6 +7,8 @@ import info.bliki.wiki.impl.APIWikiModel;
 import info.bliki.wiki.model.Configuration;
 import org.junit.Rule;
 import org.junit.experimental.categories.Category;
+import software.betamax.ProxyConfiguration;
+import software.betamax.junit.RecorderRule;
 
 import java.io.File;
 import java.io.IOException;
