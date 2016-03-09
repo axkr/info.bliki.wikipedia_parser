@@ -1,4 +1,4 @@
-This Java Wikipedia API library is free software; you can redistribute it and/or modify 
+This Java Wikipedia API library is free software; you can redistribute it and/or modify
 it under the terms of two licenses (http://en.wikipedia.org/wiki/Dual-licensing):
 1) the Eclipse Public License - v 1.0
 http://www.opensource.org/licenses/eclipse-1.0.php
