@@ -78,6 +78,16 @@ public class WPLinkFilterTest extends FilterTestSupport {
         assertThat(map).containsValue("Beatles, The");
     }
 
+    @Test public void testCategoryWithSuffix() throws Exception {
+        assertThat(wikiModel.render("[[Category:Test]]xx", false)).isEqualTo("\n<p>xx</p>");
+        Map<String, String> map = wikiModel.getCategories();
+        assertThat(map).containsKey("Test");
+    }
+
+    @Test public void testLinkWithSuffix() throws Exception {
+        assertThat(wikiModel.render("[[Test]]xx", false)).isEqualTo("\n" + "<p><a href=\"http://www.bliki.info/wiki/Test\" title=\"Test\">Testxx</a></p>");
+    }
+
     @Test public void testLink5() throws Exception {
         assertThat(wikiModel.render(
                 "[[wikivoyage:test]]", false)).isEqualTo("\n" + "<p><a href=\"//en.wikivoyage.org/wiki/test\">wikivoyage:test</a></p>");
