@@ -31,7 +31,7 @@
 
     <scm>
         <connection>scm:git:https://bitbucket.org/axelclk/info.bliki.wiki.git</connection>
-        <developerConnection>scm:git:ssh://git@bitbucket.org:axelclk/info.bliki.wiki.git</developerConnection>
+        <developerConnection>scm:git:ssh://git@bitbucket.org/axelclk/info.bliki.wiki.git</developerConnection>
         <tag>master</tag>
         <url>https://bitbucket.org/axelclk/info.bliki.wiki/src</url>
     </scm>
@@ -223,6 +223,15 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-plugin</artifactId>
+                <version>1.9.4</version>
+                <configuration>
+                    <connectionType>developerConnection</connectionType>
+                </configuration>
             </plugin>
 
             <plugin>
