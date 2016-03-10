@@ -180,10 +180,10 @@
                     <source>1.7</source>
                     <target>1.7</target>
                     <encoding>UTF-8</encoding>
-                    <compilerArguments>
-                        <Werror />
-                        <Xlint:all />
-                    </compilerArguments>
+                    <compilerArgs>
+                        <arg>-Werror</arg>
+                        <arg>-Xlint:all</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
 
