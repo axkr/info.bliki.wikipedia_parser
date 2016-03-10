@@ -1,7 +1,5 @@
 image: oraclejdk7
 script:
-  - git submodule init
-  - git submodule update
   - mvn install -q -DskipTests=true
   - mvn test
 notify:
