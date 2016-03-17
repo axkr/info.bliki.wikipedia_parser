@@ -690,25 +690,35 @@ public class WikipediaParser extends AbstractWikipediaParser {
             // Example: Dolphins are [[aquatic mammal]]s that are closely related to [[whale]]s and [[porpoise]]s.
             temp = fCurrentPosition;
             String suffix = "";
-            try {
-                fCurrentCharacter = fSource[fCurrentPosition];
-                if (Character.isLowerCase(fCurrentCharacter)) {
-                    fCurrentPosition++;
-                    StringBuilder suffixBuffer = new StringBuilder(16);
+            // BUGFIX Issue #22
+            if (fCurrentPosition != fSource.length && Character.isLowerCase(fCurrentCharacter = fSource[fCurrentPosition])) {
+                StringBuilder suffixBuffer = new StringBuilder(16);
+                do {
                     suffixBuffer.append(fCurrentCharacter);
-                    while (true) {
-                        fCurrentCharacter = fSource[fCurrentPosition++];
-                        if (!Character.isLowerCase(fCurrentCharacter)) {
-                            fCurrentPosition--;
-                            break;
-                        }
-                        suffixBuffer.append(fCurrentCharacter);
-                    }
-                    suffix = suffixBuffer.toString();
-                }
-            } catch (IndexOutOfBoundsException e) {
-                fCurrentPosition = temp;
+                    fCurrentPosition++;
+                } while(fCurrentPosition != fSource.length && Character.isLowerCase(fCurrentCharacter = fSource[fCurrentPosition]));
+                suffix = suffixBuffer.toString();
             }
+            // END BUGFIX -- should replace the following try
+//            try {
+//                fCurrentCharacter = fSource[fCurrentPosition];
+//                if (Character.isLowerCase(fCurrentCharacter)) {
+//                    fCurrentPosition++;
+//                    StringBuilder suffixBuffer = new StringBuilder(16);
+//                    suffixBuffer.append(fCurrentCharacter);
+//                    while (true) {
+//                        fCurrentCharacter = fSource[fCurrentPosition++];
+//                        if (!Character.isLowerCase(fCurrentCharacter)) {
+//                            fCurrentPosition--;
+//                            break;
+//                        }
+//                        suffixBuffer.append(fCurrentCharacter);
+//                    }
+//                    suffix = suffixBuffer.toString();
+//                }
+//            } catch (IndexOutOfBoundsException e) {
+//                fCurrentPosition = temp;
+//            }
             fEventListener.onWikiLink(fSource, startLinkPosition,
                     endLinkPosition, suffix);
 
