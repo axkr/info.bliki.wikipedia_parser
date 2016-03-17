@@ -1,4 +1,4 @@
-This Java Wikipedia API library is free software; you can redistribute it and/or modify 
+This Java Wikipedia API library is free software; you can redistribute it and/or modify
 it under the terms of two licenses (http://en.wikipedia.org/wiki/Dual-licensing):
 1) the Eclipse Public License - v 1.0
 http://www.opensource.org/licenses/eclipse-1.0.php
@@ -60,3 +60,11 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 For more information see:
 https://github.com/collegeman/stringtotime
+
+j) the Scribunto MediaWiki extension which is published under GPL-2.0+ and MIT
+https://www.mediawiki.org/wiki/Extension:Scribunto
+
+k) The LuaJ library is published under the MIT license
+http://www.luaj.org/luaj/3.0/README.html
+
+Copyright (c) 2009-2014 Luaj.org.

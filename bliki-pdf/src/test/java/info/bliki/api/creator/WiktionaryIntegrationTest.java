@@ -1,14 +1,14 @@
 package info.bliki.api.creator;
 
-import co.freeside.betamax.junit.Betamax;
 import info.bliki.wiki.model.Configuration;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import software.betamax.junit.Betamax;
 
-import static co.freeside.betamax.TapeMode.READ_ONLY;
 import static info.bliki.wiki.model.IConfiguration.Casing.CaseSensitive;
 import static java.util.Locale.ENGLISH;
+import static software.betamax.TapeMode.READ_ONLY;
 
 public class WiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
     private TestWikiDB wiktionaryEn;
