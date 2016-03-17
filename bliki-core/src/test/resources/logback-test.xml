@@ -12,6 +12,6 @@
     <logger name="com.barchart.udt" level="WARN"/>
     <logger name="org.littleshoot" level="WARN"/>
     <logger name="io.netty" level="WARN"/>
-    <logger name="co.freeside.betamax" level="WARN"/>
+    <logger name="software.betamax" level="WARN"/>
 
 </configuration>

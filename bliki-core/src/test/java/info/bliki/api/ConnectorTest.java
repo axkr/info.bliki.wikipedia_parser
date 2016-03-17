@@ -1,19 +1,19 @@
 package info.bliki.api;
 
-import co.freeside.betamax.ProxyConfiguration;
-import co.freeside.betamax.junit.Betamax;
-import co.freeside.betamax.junit.RecorderRule;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import software.betamax.ProxyConfiguration;
+import software.betamax.junit.Betamax;
+import software.betamax.junit.RecorderRule;
 
 import java.util.Collections;
 import java.util.List;
 
-import static co.freeside.betamax.TapeMode.READ_ONLY;
-import static co.freeside.betamax.TapeMode.READ_SEQUENTIAL;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.MockitoAnnotations.initMocks;
+import static software.betamax.TapeMode.READ_ONLY;
+import static software.betamax.TapeMode.READ_SEQUENTIAL;
 
 public class ConnectorTest {
     private Connector subject;

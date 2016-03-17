@@ -1,14 +1,14 @@
 package info.bliki.api.creator;
 
-import co.freeside.betamax.junit.Betamax;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import software.betamax.junit.Betamax;
 
-import static co.freeside.betamax.TapeMode.READ_ONLY;
-import static co.freeside.betamax.TapeMode.WRITE_ONLY;
 import static java.util.Locale.ENGLISH;
 import static java.util.Locale.GERMAN;
+import static software.betamax.TapeMode.READ_ONLY;
+import static software.betamax.TapeMode.WRITE_ONLY;
 
 public class WikipediaIntegrationTest extends HTMLCreatorIntegrationTest {
     private TestWikiDB wikipediaEn, wikipediaDe;
