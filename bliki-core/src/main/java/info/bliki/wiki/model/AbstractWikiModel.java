@@ -562,17 +562,6 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
             }
         }
 
-        // Put this part in up in the stack and return false in appendRaw...
-//        if (fNamespace.isNamespace(ns, NamespaceCode.CATEGORY_NAMESPACE_KEY)) {
-//            // add the category to this texts metadata
-//            String category = rawNamespaceTopic.substring(colonIndex + 1).trim();
-//            if (category.length() > 0) {
-//                // TODO implement more sort-key behaviour
-//                // http://en.wikipedia.org/wiki/Wikipedia:Categorization#Category_sorting
-//                addCategory(category, viewableLinkDescription);
-//                return true;
-//            }
-//        } else
         if (isInterWiki(ns)) {
             String title = rawNamespaceTopic.substring(colonIndex + 1);
             appendInterWikiLink(ns, title, viewableLinkDescription);
