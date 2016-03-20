@@ -562,16 +562,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
             }
         }
 
-        if (fNamespace.isNamespace(ns, NamespaceCode.CATEGORY_NAMESPACE_KEY)) {
-            // add the category to this texts metadata
-            String category = rawNamespaceTopic.substring(colonIndex + 1).trim();
-            if (category.length() > 0) {
-                // TODO implement more sort-key behaviour
-                // http://en.wikipedia.org/wiki/Wikipedia:Categorization#Category_sorting
-                addCategory(category, viewableLinkDescription);
-                return true;
-            }
-        } else if (isInterWiki(ns)) {
+        if (isInterWiki(ns)) {
             String title = rawNamespaceTopic.substring(colonIndex + 1);
             appendInterWikiLink(ns, title, viewableLinkDescription);
             return true;
@@ -641,17 +632,20 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
             }
 
             // rawTopicName = Encoder.encodeHtml(rawTopicName); // see issue #25
+            String viewableLinkDescriptionWithoutSuffix;
             String viewableLinkDescription;
             if (-1 != pipeIndex) {
-                viewableLinkDescription = alias + suffix;
+                viewableLinkDescriptionWithoutSuffix = alias;
             } else {
                 final String hashStr = (hash != null) ? "&#35;" + hash : ""; // #....
                 if (rawTopicName.length() > 0 && rawTopicName.charAt(0) == ':') {
-                    viewableLinkDescription = rawTopicName.substring(1) + hashStr + suffix;
+                    viewableLinkDescriptionWithoutSuffix = rawTopicName.substring(1) + hashStr;
                 } else {
-                    viewableLinkDescription = rawTopicName + hashStr + suffix;
+                    viewableLinkDescriptionWithoutSuffix = rawTopicName + hashStr;
                 }
             }
+            viewableLinkDescription = viewableLinkDescriptionWithoutSuffix + suffix;
+
 
             if (appendRawNamespaceLinks(rawTopicName, viewableLinkDescription, pipeIndex == -1)) {
                 return true;
@@ -663,6 +657,16 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
                 namespace = rawTopicName.substring(0, indx);
             }
             if (namespace != null
+                    && fNamespace.isNamespace(namespace, NamespaceCode.CATEGORY_NAMESPACE_KEY)) {
+                // add the category to this texts metadata
+                String category = rawTopicName.substring(indx + 1).trim();
+                if (category.length() > 0) {
+                    // TODO implement more sort-key behaviour
+                    // http://en.wikipedia.org/wiki/Wikipedia:Categorization#Category_sorting
+                    addCategory(category, viewableLinkDescriptionWithoutSuffix);
+                    return false;
+                }
+            } else if (namespace != null
                     && fNamespace.isNamespace(namespace,
                             NamespaceCode.FILE_NAMESPACE_KEY)) {
                 parseInternalImageLink(namespace, rawLinkText);
