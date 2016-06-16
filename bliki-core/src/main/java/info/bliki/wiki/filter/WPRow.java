@@ -29,6 +29,10 @@ public class WPRow {
         fAttributes = null;
     }
 
+    public Map<String, String> getAttributes() {
+        return fAttributes;
+    }
+
     /**
      * @return Returns the parameters.
      */
