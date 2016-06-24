@@ -65,7 +65,7 @@ public class WPListElement {
     /**
      * @return returns the character sequence of this list element.
      */
-    char[] getSequence() {
+    public char[] getSequence() {
         return fSequence;
     }
 

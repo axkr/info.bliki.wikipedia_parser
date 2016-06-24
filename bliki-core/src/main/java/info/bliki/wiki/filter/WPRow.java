@@ -4,6 +4,7 @@ import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.tags.HTMLTag;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -27,6 +28,10 @@ public class WPRow {
         fParams = null;
         fType = WPCell.DEFAULT;
         fAttributes = null;
+    }
+
+    public Map<String, String> getAttributes() {
+        return Collections.unmodifiableMap(fAttributes);
     }
 
     /**
