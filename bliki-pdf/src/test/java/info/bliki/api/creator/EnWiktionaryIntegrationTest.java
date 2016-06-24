@@ -10,7 +10,7 @@ import static info.bliki.wiki.model.IConfiguration.Casing.CaseSensitive;
 import static java.util.Locale.ENGLISH;
 import static software.betamax.TapeMode.READ_ONLY;
 
-public class WiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
+public class EnWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
     private TestWikiDB wiktionaryEn;
 
     @Before

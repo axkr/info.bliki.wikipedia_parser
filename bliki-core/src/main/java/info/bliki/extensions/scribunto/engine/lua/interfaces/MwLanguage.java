@@ -10,10 +10,10 @@ import org.luaj.vm2.lib.TwoArgFunction;
 import org.luaj.vm2.lib.ZeroArgFunction;
 
 import java.util.Date;
+import java.util.Locale;
 
 import static info.bliki.extensions.scribunto.engine.lua.ScribuntoLuaEngine.toLuaString;
 import static info.bliki.extensions.scribunto.engine.lua.interfaces.MwInterface.DefaultFunction.defaultFunction;
-import static java.util.Locale.forLanguageTag;
 
 public class MwLanguage implements MwInterface {
     private Languages languages = new Languages();
@@ -42,10 +42,10 @@ public class MwLanguage implements MwInterface {
         table.set("formatDate", formatDate());
         table.set("lc", lc());
         table.set("uc", uc());
+        table.set("lcfirst", lcfirst());
+        table.set("ucfirst", ucfirst());
         /*
         // TODO
-        lcfirst
-        ucfirst
         caseFold
         formatNum
         formatDate
@@ -56,6 +56,36 @@ public class MwLanguage implements MwInterface {
         gender
         */
         return table;
+    }
+
+    private LuaValue lcfirst() {
+        return new TwoArgFunction() {
+            @Override
+            public LuaValue call(LuaValue lang, LuaValue string) {
+                final Locale locale = getLocale(lang);
+                final String input = string.checkjstring();
+                switch (input.length()) {
+                    case 0: return string;
+                    case 1: return toLuaString(input.toLowerCase(locale));
+                    default: return toLuaString(input.substring(0, 1).toLowerCase(locale) + input.substring(1));
+                }
+            }
+        };
+    }
+
+    private LuaValue ucfirst() {
+        return new TwoArgFunction() {
+            @Override
+            public LuaValue call(LuaValue lang, LuaValue string) {
+                final Locale locale = getLocale(lang);
+                final String input = string.checkjstring();
+                switch (input.length()) {
+                    case 0: return string;
+                    case 1: return toLuaString(input.toUpperCase(locale));
+                    default: return toLuaString(input.substring(0, 1).toUpperCase(locale) + input.substring(1));
+                }
+            }
+        };
     }
 
     private LuaValue formatDate() {
@@ -78,7 +108,7 @@ public class MwLanguage implements MwInterface {
     private LuaValue lc() {
         return new TwoArgFunction() {
             @Override public LuaValue call(LuaValue code, LuaValue string) {
-                return toLuaString(string.checkjstring().toLowerCase(forLanguageTag(code.checkjstring())));
+                return toLuaString(string.checkjstring().toLowerCase(getLocale(code)));
             }
         };
     }
@@ -86,7 +116,7 @@ public class MwLanguage implements MwInterface {
     private LuaValue uc() {
         return new TwoArgFunction() {
             @Override public LuaValue call(LuaValue code, LuaValue string) {
-                return toLuaString(string.checkjstring().toUpperCase(forLanguageTag(code.checkjstring())));
+                return toLuaString(string.checkjstring().toUpperCase(getLocale(code)));
             }
         };
     }
@@ -139,5 +169,13 @@ public class MwLanguage implements MwInterface {
     @Override
     public LuaValue getSetupOptions() {
         return null;
+    }
+
+    static Locale getLocale(LuaValue value) {
+        Locale locale = Locale.forLanguageTag(value.checkjstring());
+        if (locale.getLanguage().isEmpty()) {
+            LuaValue.error(String.format("language code '%s' is invalid", value.checkstring()));
+        }
+        return locale;
     }
 }
