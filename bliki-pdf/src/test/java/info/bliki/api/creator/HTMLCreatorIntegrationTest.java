@@ -7,7 +7,7 @@ import info.bliki.wiki.impl.APIWikiModel;
 import info.bliki.wiki.model.Configuration;
 import org.junit.Rule;
 import org.junit.experimental.categories.Category;
-import software.betamax.ProxyConfiguration;
+import software.betamax.ConfigurationBuilder;
 import software.betamax.junit.RecorderRule;
 
 import java.io.File;
@@ -25,7 +25,7 @@ import static org.assertj.core.api.Assertions.contentOf;
 @Category(IntegrationTest.class)
 public abstract class HTMLCreatorIntegrationTest {
     @Rule
-    public RecorderRule recorder = new RecorderRule(ProxyConfiguration.builder().sslEnabled(true).build());
+    public RecorderRule recorder = new RecorderRule(new ConfigurationBuilder().sslEnabled(true).build());
 
     protected  TestWikiDB createTestDB(String name) throws SQLException, IOException {
         File directory = File.createTempFile("bliki-integration-tests", name);

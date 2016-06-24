@@ -3,7 +3,7 @@ package info.bliki.api;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import software.betamax.ProxyConfiguration;
+import software.betamax.ConfigurationBuilder;
 import software.betamax.junit.Betamax;
 import software.betamax.junit.RecorderRule;
 
@@ -18,7 +18,7 @@ import static software.betamax.TapeMode.READ_SEQUENTIAL;
 public class ConnectorTest {
     private Connector subject;
 
-    @Rule public RecorderRule recorder = new RecorderRule(ProxyConfiguration.builder().sslEnabled(true).build());
+    @Rule public RecorderRule recorder = new RecorderRule(new ConfigurationBuilder().sslEnabled(true).build());
     private User anonUser;
 
     @Before public void before() {
