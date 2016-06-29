@@ -124,7 +124,7 @@ public class Configuration implements IConfiguration {
     public static final  HTMLTag HTML_UNDERLINE_OPEN = new HTMLTag("u");
     public static final  HTMLTag HTML_SUB_OPEN = new HTMLTag("sub");
     public static final  HTMLTag HTML_SUP_OPEN = new HTMLTag("sup");
-    public static final  HTMLTag HTML_CENTER_OPEN = new HTMLTag("center");
+    public static final  HTMLTag HTML_CENTER_OPEN = new HTMLBlockTag("center", SPECIAL_BLOCK_TAGS);
     public static final  HTMLTag HTML_TT_OPEN = new HTMLTag("tt");
     public static final  HTMLTag HTML_TABLE_OPEN = new HTMLBlockTag("table", SPECIAL_BLOCK_TAGS);
     public static final  HTMLTag HTML_CAPTION_OPEN = new HTMLBlockTag("caption", "|table|");
