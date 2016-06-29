@@ -5,3 +5,12 @@ derby.log
 log.txt
 lib/
 littleproxy_*
+
+# Eclipse
+.classpath
+.project
+.settings
+.checkstyle
+.fbprefs
+bin
+
