@@ -161,9 +161,10 @@ public class Configuration implements IConfiguration {
     private final Map<String, String> interWikiMapping = new HashMap<>();
 
     /**
-     * Map the HTML token string to the correspoding TagToken implementation
+     * Map the HTML token string to the corresponding TagToken implementation
      */
     protected static final HashMap<String, TagToken> TAG_TOKEN_MAP = new HashMap<>();
+    protected final HashMap<String, TagToken> tagTokenMap = new HashMap<>(TAG_TOKEN_MAP);
 
     /**
      * Map the source code's language string to the code formatter implementation
@@ -442,12 +443,12 @@ public class Configuration implements IConfiguration {
 
     @Override
     public Map<String, TagToken> getTokenMap() {
-        return TAG_TOKEN_MAP;
+        return tagTokenMap;
     }
 
     @Override
     public TagToken addTokenTag(String key, TagToken value) {
-        return TAG_TOKEN_MAP.put(key, value);
+        return tagTokenMap.put(key, value);
     }
 
     /**
