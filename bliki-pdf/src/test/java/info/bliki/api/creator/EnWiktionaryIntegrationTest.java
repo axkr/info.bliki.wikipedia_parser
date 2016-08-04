@@ -54,6 +54,11 @@ public class EnWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
         testWiktionaryENAPI("가가우스어");
     }
 
+    @Betamax(tape = "French_toast", mode = READ_ONLY)
+    @Test public void testFrenchToast() throws Exception {
+        testWiktionaryENAPI("French toast");
+    }
+
     @Ignore
     @Betamax(tape = "teo", mode = READ_ONLY)
     @Test public void testHangul2() throws Exception {

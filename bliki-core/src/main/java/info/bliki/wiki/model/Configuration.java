@@ -27,6 +27,7 @@ import info.bliki.wiki.tags.code.SourceCodeFormatter;
 import info.bliki.wiki.tags.code.XMLCodeFilter;
 import info.bliki.wiki.template.Anchorencode;
 import info.bliki.wiki.template.Expr;
+import info.bliki.wiki.template.FormatDate;
 import info.bliki.wiki.template.Formatnum;
 import info.bliki.wiki.template.Fullurl;
 import info.bliki.wiki.template.ITemplateFunction;
@@ -216,6 +217,8 @@ public class Configuration implements IConfiguration {
         TEMPLATE_FUNCTION_MAP.put("padright", Padright.CONST);
         TEMPLATE_FUNCTION_MAP.put("plural", Plural.CONST);
         TEMPLATE_FUNCTION_MAP.put("#expr", Expr.CONST);
+        TEMPLATE_FUNCTION_MAP.put("#formatdate", FormatDate.CONST);
+        TEMPLATE_FUNCTION_MAP.put("#dateformat", FormatDate.CONST);
         TEMPLATE_FUNCTION_MAP.put("#if", If.CONST);
         TEMPLATE_FUNCTION_MAP.put("#iferror", Iferror.CONST);
         TEMPLATE_FUNCTION_MAP.put("#ifeq", Ifeq.CONST);
