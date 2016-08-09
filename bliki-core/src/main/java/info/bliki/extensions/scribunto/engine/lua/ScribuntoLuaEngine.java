@@ -198,7 +198,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
     }
 
     private void stubWikiBase() {
-        // fake http://www.mediawiki.org/wiki/Extension:Wikibase
+        // fake https://www.mediawiki.org/wiki/Extension:Wikibase
         final LuaValue mw = globals.get("mw");
         final LuaTable wikibase = new LuaTable();
         wikibase.set("getEntity", new ZeroArgFunction() {

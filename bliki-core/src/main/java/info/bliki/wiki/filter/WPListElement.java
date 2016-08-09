@@ -5,8 +5,8 @@ import info.bliki.wiki.tags.util.TagStack;
 
 /**
  * Entry for a Wikipedia list string (i.e. a line which starts with '*', '#',
- * ':', ';'). See <a href="http://meta.wikimedia.org/wiki/Help:List"
- * >http://meta.wikimedia.org/wiki/Help:List</a>
+ * ':', ';'). See <a href="https://meta.wikimedia.org/wiki/Help:List"
+ * >https://meta.wikimedia.org/wiki/Help:List</a>
  *
  * @see info.bliki.wiki.filter.WPList
  */

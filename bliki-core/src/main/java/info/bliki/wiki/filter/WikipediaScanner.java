@@ -48,7 +48,7 @@ public class WikipediaScanner {
     /**
      * Scan a wikipedia table.
      *
-     * See: <a href="http://meta.wikimedia.org/wiki/Help:Table">Help - Table</a>
+     * See: <a href="https://meta.wikimedia.org/wiki/Help:Table">Help - Table</a>
      *
      * @param tableOfContentTag
      * @return <code>null</code> if no wiki table was found
@@ -837,9 +837,9 @@ public class WikipediaScanner {
     /**
      * Parse a tag. Parse the name and attributes from a start tag.
      * <p>
-     * From the <a href="http://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.2">
+     * From the <a href="https://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.2">
      * HTML 4.01 Specification, W3C Recommendation 24 December 1999</a>
-     * http://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.2
+     * https://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.2
      * <p>
      * <cite> 3.2.2 Attributes
      * <p>

@@ -15,7 +15,7 @@ public class PythonCodeFilter extends AbstractCPPBasedCodeFilter implements Sour
             "or", "pass", "raise", "return", "try", "with", "while", "yield" };
 
     private static final String[] OBJECT_WORDS = {
-            // see http://docs.python.org/library/functions.html
+            // see https://docs.python.org/library/functions.html
             "abs", "all", "any", "basestring", "bin", "bool", "callable", "chr", "classmethod", "cmp", "compile", "complex", "delattr",
             "dict", "dir", "divmod", "enumerate", "eval", "execfile", "file", "filter", "float", "format", "frozenset", "getattr",
             "globals", "hasattr", "hash", "help", "hex", "id", "input", "int", "isinstance", "issubclass", "iter", "len", "list",

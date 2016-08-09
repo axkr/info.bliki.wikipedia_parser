@@ -773,7 +773,7 @@ public class TemplateParser extends AbstractParser {
      * <code>parameterMap</code>.
      *
      *
-     * See <a href="http://meta.wikimedia.org/wiki/Help:Template#Mix_of_named_and_unnamed_parameters"
+     * See <a href="https://meta.wikimedia.org/wiki/Help:Template#Mix_of_named_and_unnamed_parameters"
      * >Help:Template#Mix_of_named_and_unnamed_parameters</a>
      */
     public static void mergeParameters(LinkedHashMap<String, String> parameterMap, List<String> unnamedParameters) {
@@ -836,7 +836,7 @@ public class TemplateParser extends AbstractParser {
      * <b>named parameters map</b> or <b>unnamed parameter list</b>
      *
      * <p>
-     * See <a href="http://en.wikipedia.org/wiki/Help:Template">Help:Template</a>:
+     * See <a href="https://en.wikipedia.org/wiki/Help:Template">Help:Template</a>:
      * <i>Remember that whitespace characters (spaces, tabs, carriage returns and
      * line feeds) are not automatically stripped from the start and end of
      * unnamed parameters (as they are from named parameters). Including such

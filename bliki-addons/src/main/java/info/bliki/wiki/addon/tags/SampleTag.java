@@ -37,7 +37,7 @@ public class SampleTag extends NowikiTag implements INoBodyParsingTag {
         // sample actions
         Utils.appendAmpersandEscapedAttribute(evalUrl, "ca", tagAtttributes);
         buf.append(HEADER);
-        // URL points to http://matheclipse.org/eval.jsp
+        // URL points to https://matheclipse.org/eval.jsp
         buf.append("../eval.jsp?");
         buf.append(evalUrl);
         // renderHTMLWithoutTag(converter, buf, model);

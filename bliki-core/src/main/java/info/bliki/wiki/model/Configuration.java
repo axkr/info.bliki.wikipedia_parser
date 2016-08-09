@@ -252,7 +252,7 @@ public class Configuration implements IConfiguration {
         TAG_TOKEN_MAP.put("ref", new RefTag());
         TAG_TOKEN_MAP.put("references", new ReferencesTag());
 
-        // see http://www.mediawiki.org/wiki/Extension:SyntaxHighlight_GeSHi
+        // see https://www.mediawiki.org/wiki/Extension:SyntaxHighlight_GeSHi
         TAG_TOKEN_MAP.put("syntaxhighlight", new SourceTag());
         TAG_TOKEN_MAP.put("source", new SourceTag());
 
@@ -343,7 +343,7 @@ public class Configuration implements IConfiguration {
      * (disable to get more MediaWiki-compliant HTML code).
      *
      * Note: Only supported by Opera, according to
-     * http://www.w3schools.com/cssref/pr_print_pagebi.asp
+     * https://www.w3schools.com/cssref/pr_print_pagebi.asp
      */
     public static boolean AVOID_PAGE_BREAK_IN_TABLE = true;
 
@@ -389,7 +389,7 @@ public class Configuration implements IConfiguration {
     /**
      * Get the set of all allowed URI scheme shortcuts like http, https, ftp,...
      *
-     * See <a href="http://en.wikipedia.org/wiki/URI_scheme">URI scheme</a>
+     * See <a href="https://en.wikipedia.org/wiki/URI_scheme">URI scheme</a>
      *
      */
     @Override
@@ -400,7 +400,7 @@ public class Configuration implements IConfiguration {
     /**
      * Add an allowed URI scheme shortcut like http, https, ftp,...
      *
-     * See <a href="http://en.wikipedia.org/wiki/URI_scheme">URI scheme</a>
+     * See <a href="https://en.wikipedia.org/wiki/URI_scheme">URI scheme</a>
      *
      * @return <code>true</code> if the set did not already contain the specified
      *         URI key.

@@ -263,9 +263,9 @@ public class WikiModel extends AbstractWikiModel {
      *
      * <br/>
      * <br/>
-     * See <a href="http://en.wikipedia.org/wiki/Image_markup">Image markup</a>
+     * See <a href="https://en.wikipedia.org/wiki/Image_markup">Image markup</a>
      * and see <a
-     * href="http://www.mediawiki.org/wiki/Help:Images">Help:Images</a>
+     * href="https://www.mediawiki.org/wiki/Help:Images">Help:Images</a>
      *
      * @param imageNamespace
      *            the image namespace

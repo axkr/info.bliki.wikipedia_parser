@@ -9,7 +9,7 @@ import java.util.List;
  * A template parser function for <code>{{ #switch: ... }}</code> syntax.
  *
  * See <a href
- * ="http://www.mediawiki.org/wiki/Help:Extension:ParserFunctions">Mediwiki's
+ * ="https://www.mediawiki.org/wiki/Help:Extension:ParserFunctions">Mediwiki's
  * Help:Extension:ParserFunctions</a>
  *
  */

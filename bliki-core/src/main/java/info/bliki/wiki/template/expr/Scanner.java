@@ -9,7 +9,7 @@ import java.util.List;
  * Determine the tokens from a math formulas string representation.
  *
  * See <a
- * href="http://en.wikipedia.org/wiki/Lexical_analysis">Lexical analysis</a>.
+ * href="https://en.wikipedia.org/wiki/Lexical_analysis">Lexical analysis</a>.
  */
 public class Scanner {
     /**

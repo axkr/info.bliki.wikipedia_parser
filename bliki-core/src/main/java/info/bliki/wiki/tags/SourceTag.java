@@ -13,7 +13,7 @@ import java.util.Map;
  * Allows source code to be syntax highlighted on the wiki pages.
  *
  * The syntax is similar to this <a
- * href="http://www.mediawiki.org/wiki/Extension:SyntaxHighlight_GeSHi">syntax
+ * href="https://www.mediawiki.org/wiki/Extension:SyntaxHighlight_GeSHi">syntax
  * highlighting extension</a>.
  *
  */

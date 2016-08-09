@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * Wiki tag for references &lt;ref&gt;reference text...&lt;/ref&gt;
  *
- * See <a href="http://en.wikipedia.org/wiki/Wikipedia:Footnotes">Footnotes</a>
+ * See <a href="https://en.wikipedia.org/wiki/Wikipedia:Footnotes">Footnotes</a>
  */
 public class RefTag extends HTMLTag implements IBodyTag {
 

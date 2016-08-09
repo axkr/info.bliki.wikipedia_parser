@@ -1,7 +1,7 @@
 package info.bliki.api;
 
 /**
- * Manages revision data from the <a href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>
+ * Manages revision data from the <a href="https://meta.wikimedia.org/w/api.php">Wikimedia API</a>
  */
 public class Revision {
     String user;

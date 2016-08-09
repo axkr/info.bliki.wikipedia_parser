@@ -62,7 +62,7 @@ public class Encoder {
     /**
      * Encode a string to the "x-www-form-urlencoded" form, enhanced with the
      * UTF-8-in-URL proposal. This is what happens: See
-     * http://www.w3.org/International/URLUTF8Encoder.java ) Exception: a ' '
+     * https://www.w3.org/International/URLUTF8Encoder.java ) Exception: a ' '
      * (space) will be replaced by a '_' (underscore) not '+' (plus); a '#' remain the same.
      *
      * <ul>
@@ -146,7 +146,7 @@ public class Encoder {
 /**
      * Encode a string to the "x-www-form-urlencoded" form, enhanced with the
      * UTF-8-in-URL proposal. This is what happens: 8see
-     * http://www.w3.org/International/URLUTF8Encoder.java ) Exception: a ' '
+     * https://www.w3.org/International/URLUTF8Encoder.java ) Exception: a ' '
      * (space) will be replaced by a '_' (underscore) not '+' (plus)
      *
      * <ul>

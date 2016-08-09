@@ -548,7 +548,7 @@ public class WikipediaParser extends AbstractWikipediaParser {
     }
 
     /**
-     * See <a href="http://en.wikipedia.org/wiki/URI_scheme">URI scheme</a>
+     * See <a href="https://en.wikipedia.org/wiki/URI_scheme">URI scheme</a>
      *
      * @return <code>true</code> if a registered URI scheme was found in the
      *         wiki models configuration..

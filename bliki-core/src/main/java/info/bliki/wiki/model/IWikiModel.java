@@ -34,7 +34,7 @@ public interface IWikiModel extends IConfiguration {
      * When an article contains a token indicating that the article belongs to a
      * specific category this method should be called to add that category to
      * the output metadata. For the <code>sortKey</code> see also <a href=
-     * "http://en.wikipedia.org/wiki/Wikipedia:Categorization#Category_sorting"
+     * "https://en.wikipedia.org/wiki/Wikipedia:Categorization#Category_sorting"
      * >Wikipedia:Categorization#Category_sorting</a>
      *
      * @param categoryName
@@ -58,7 +58,7 @@ public interface IWikiModel extends IConfiguration {
     void addLink(String topicName);
 
     /**
-     * See <a href="http://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic
+     * See <a href="https://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic
      * MediaWiki</a> for more information.
      *
      * @param attribute
@@ -68,7 +68,7 @@ public interface IWikiModel extends IConfiguration {
     boolean addSemanticAttribute(String attribute, String attributeValue);
 
     /**
-     * See <a href="http://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic
+     * See <a href="https://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic
      * MediaWiki</a> for more information.
      *
      * @param relation
@@ -135,17 +135,17 @@ public interface IWikiModel extends IConfiguration {
 
     /**
      * Append an external link (starting with http, https, ftp,...) as described
-     * in <a href="http://en.wikipedia.org/wiki/Help:Link#External_links">Help
+     * in <a href="https://en.wikipedia.org/wiki/Help:Link#External_links">Help
      * Links</a>
      *
      * @param uriSchemeName
      *            the top level URI (Uniform Resource Identifier) scheme name
      *            (without the following colon character ":"). Example "ftp",
      *            "http", "https". See <a
-     *            href="http://en.wikipedia.org/wiki/URI_scheme">URI scheme</a>
+     *            href="https://en.wikipedia.org/wiki/URI_scheme">URI scheme</a>
      * @param link
      *            the external link with
-     *            <code>http://, https:// or ftp://</code> prefix
+     *            <code>https://, https:// or ftp://</code> prefix
      * @param linkName
      *            the link name which is separated from the URL by a space
      * @param withoutSquareBrackets
@@ -192,7 +192,7 @@ public interface IWikiModel extends IConfiguration {
 
     /**
      * Append an internal wikilink as described in <a
-     * href="http://en.wikipedia.org/wiki/Help:Link#Wikilinks">Help Links</a>
+     * href="https://en.wikipedia.org/wiki/Help:Link#Wikilinks">Help Links</a>
      *
      * @param topic
      * @param hashSection
@@ -218,13 +218,13 @@ public interface IWikiModel extends IConfiguration {
     /**
      * Append an external ISBN link (starting with <code>ISBN </code>) as
      * described in <a
-     * href="http://en.wikipedia.org/wiki/Wikipedia:ISBN">Wikipedia:ISBN</a>
+     * href="https://en.wikipedia.org/wiki/Wikipedia:ISBN">Wikipedia:ISBN</a>
      *
      * <br/>
      * <br/>
      * <b>Note:</b> The default implementation in the
      * <code>AbstractWikiModel</code> class creates a link to <a
-     * href="http://amazon.com">Amazon.com</a>.
+     * href="https://amazon.com">Amazon.com</a>.
      *
      * @param isbnPureText
      *            the pure ISBN string which contains the ISBN prefix and
@@ -235,7 +235,7 @@ public interface IWikiModel extends IConfiguration {
     /**
      * Append an external link (starting with mailto:...) as described in <a
      * href
-     * ="http://en.wikipedia.org/wiki/Help:Wikitext#Links">Help:Wikitext#Links
+     * ="https://en.wikipedia.org/wiki/Help:Wikitext#Links">Help:Wikitext#Links
      * </a>
      *
      * @param link
@@ -427,7 +427,7 @@ public interface IWikiModel extends IConfiguration {
      * map for converting interwiki links into external URLs.
      *
      * Example: maps the interwiki shortcut &quot;de&quot; to
-     * &quot;http://de.wikipedia.org/wiki/$1&quot;
+     * &quot;https://de.wikipedia.org/wiki/$1&quot;
      */
     InterWikiMap getInterwikiMap();
 
@@ -545,7 +545,7 @@ public interface IWikiModel extends IConfiguration {
     /**
      * Get the list of SemanticRelations.
      *
-     * See <a href="http://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic
+     * See <a href="https://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic
      * MediaWiki</a> for more information.
      *
      * @return the list of SemanticRelations or <code>null</code> if no
@@ -589,7 +589,7 @@ public interface IWikiModel extends IConfiguration {
      * For the english Wikipedia this URL would look like:
      *
      * <pre>
-     * http://en.wikipedia.org/w/index.php?title=${title}
+     * https://en.wikipedia.org/w/index.php?title=${title}
      * </pre>
      *
      * @return the wiki articles edit action URL
@@ -607,7 +607,7 @@ public interface IWikiModel extends IConfiguration {
      * For the english Wikipedia this URL would look like:
      *
      * <pre>
-     * http://en.wikipedia.org/wiki/${title}
+     * https://en.wikipedia.org/wiki/${title}
      * </pre>
      *
      * @return the wiki articles URL
@@ -642,7 +642,7 @@ public interface IWikiModel extends IConfiguration {
     int incrementTemplateRecursionLevel();
 
     /**
-     * Checks if <a href="http://en.wikipedia.org/wiki/CamelCase">CamelCase</a>
+     * Checks if <a href="https://en.wikipedia.org/wiki/CamelCase">CamelCase</a>
      * words should also be used as wiki links.
      *
      *
@@ -678,7 +678,7 @@ public interface IWikiModel extends IConfiguration {
 
     /**
      * If the <code>&lt;math&gt;</code> tag should be rendered for the <a
-     * href="http://www.mathtran.org">www.mathtran.org</a> service, then return
+     * href="https://www.mathtran.org">www.mathtran.org</a> service, then return
      * <code>true</code>.
      *
      * @return <code>true</code> the <code>&lt;math&gt;</code> tag should be
@@ -711,7 +711,7 @@ public interface IWikiModel extends IConfiguration {
 
     /**
      * Allow the parsing of semantic mediawiki (SMW) links. See <a
-     * href="http://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic
+     * href="https://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic
      * MediaWiki</a> for more information.
      *
      * @param namespace
@@ -732,7 +732,7 @@ public interface IWikiModel extends IConfiguration {
      * Check if the top level URI (Uniform Resource Identifier) scheme name is
      * valid in this model.
      *
-     * See <a href="http://en.wikipedia.org/wiki/URI_scheme">URI scheme</a>
+     * See <a href="https://en.wikipedia.org/wiki/URI_scheme">URI scheme</a>
      *
      * @param uriScheme
      *            the top level URI (Uniform Resource Identifier) scheme name
@@ -746,7 +746,7 @@ public interface IWikiModel extends IConfiguration {
      * Check if the scheme-specific part for a given top level URI (Uniform
      * Resource Identifier) scheme name is valid in this model.
      *
-     * See <a href="http://en.wikipedia.org/wiki/URI_scheme">URI scheme</a>
+     * See <a href="https://en.wikipedia.org/wiki/URI_scheme">URI scheme</a>
      *
      * @param uriScheme
      *            the top level URI (Uniform Resource Identifier) scheme name
@@ -764,7 +764,7 @@ public interface IWikiModel extends IConfiguration {
      * Parse a behavior switch (i.e. an identifier with two leading and trailing
      * underscores &quot;__&quot; like for example
      * <code>__NOEDITSECTION__</code> ). See <a href
-     * ="http://www.mediawiki.org/wiki/Help:Magic_words#Behavior_switches">Help
+     * ="https://www.mediawiki.org/wiki/Help:Magic_words#Behavior_switches">Help
      * :Magic_words#Behavior_switches</a>.
      *
      * @param identifier
@@ -787,9 +787,9 @@ public interface IWikiModel extends IConfiguration {
     /**
      * Append the internal wiki image link to this model. <br/>
      * <br/>
-     * See <a href="http://en.wikipedia.org/wiki/Image_markup">Image markup</a>
+     * See <a href="https://en.wikipedia.org/wiki/Image_markup">Image markup</a>
      * and see <a
-     * href="http://www.mediawiki.org/wiki/Help:Images">Help:Images</a>.
+     * href="https://www.mediawiki.org/wiki/Help:Images">Help:Images</a>.
      *
      * @param imageNamespace
      *            the image namespace
@@ -979,7 +979,7 @@ public interface IWikiModel extends IConfiguration {
 
     /**
      * Activate the parsing of semantic Mediawiki (SMW) links See <a
-     * href="http://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic
+     * href="https://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic
      * MediaWiki</a> for more information.
      *
      */

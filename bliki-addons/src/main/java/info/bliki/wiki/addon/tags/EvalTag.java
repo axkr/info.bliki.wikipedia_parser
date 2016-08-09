@@ -11,7 +11,7 @@ import java.util.Map;
 
 
 public class EvalTag extends HTMLTag {
-    // http://matheclipse.org/eval.jsp?ci=x:namex:i:value|z:namez|ta::t:valueta&ca=LabelD:D[x,z]|Binomial:Binomial[x,z]
+    // https://matheclipse.org/eval.jsp?ci=x:namex:i:value|z:namez|ta::t:valueta&ca=LabelD:D[x,z]|Binomial:Binomial[x,z]
     public EvalTag() {
         super("eval");
     }
@@ -27,7 +27,7 @@ public class EvalTag extends HTMLTag {
         Utils.appendAmpersandEscapedAttribute(evalUrl, "ci", tagAtttributes);
         // eval actions
         Utils.appendAmpersandEscapedAttribute(evalUrl, "ca", tagAtttributes);
-        // URL points to http://matheclipse.org/eval.jsp
+        // URL points to https://matheclipse.org/eval.jsp
         buf.append("<a href=\"../eval.jsp?");
         buf.append(evalUrl);
         buf.append("\" >");

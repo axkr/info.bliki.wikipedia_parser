@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * A template parser function for <code>{{formatnum: ... }}</code> <i>lower
  * case</i> syntax. See <a
- * href="http://en.wikipedia.org/wiki/Help:Variable#Formatting">Wikipedia -
+ * href="https://en.wikipedia.org/wiki/Help:Variable#Formatting">Wikipedia -
  * Help:Variable#Formatting</a>
  *
  */

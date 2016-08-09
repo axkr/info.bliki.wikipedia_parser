@@ -797,7 +797,7 @@ public class TemplateParserTest extends FilterTestSupport {
 
     /**
      * See <a href=
-     * "http://www.mediawiki.org/wiki/Help:Extension:ParserFunctions#Rounding"
+     * "https://www.mediawiki.org/wiki/Help:Extension:ParserFunctions#Rounding"
      * >Help:Extension:ParserFunctions Expr Rounding</a>
      */
     @Test public void testExpr019() {
@@ -1302,7 +1302,7 @@ public class TemplateParserTest extends FilterTestSupport {
     // @Test public void testRef001() {
     // assertEquals(
     // "",
-    // wikiModel.parseTemplates("<ref>{{cite web |url=http://www.pottsmerc.com/articles/2009/04/12/opinion/srv0000005095974.txt |title=Actor Tom Hanks talks about religion |author=Terry Mattingly |work=The Mercury |date=April 12, 2009 |accessdate=October 19, 2010}}</ref>\n\n<references/>"));
+    // wikiModel.parseTemplates("<ref>{{cite web |url=https://www.pottsmerc.com/articles/2009/04/12/opinion/srv0000005095974.txt |title=Actor Tom Hanks talks about religion |author=Terry Mattingly |work=The Mercury |date=April 12, 2009 |accessdate=October 19, 2010}}</ref>\n\n<references/>"));
     // }
     //
     //

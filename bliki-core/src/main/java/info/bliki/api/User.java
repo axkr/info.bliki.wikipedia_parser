@@ -7,7 +7,7 @@ import java.util.Objects;
 
 /**
  * Manages user data from the <a
- * href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>.
+ * href="https://meta.wikimedia.org/w/api.php">Wikimedia API</a>.
  *
  * See also <a href="https://www.mediawiki.org/wiki/API:Login">Mediawiki
  * API:Login</a>
@@ -37,7 +37,7 @@ public class User {
      * @param name User Name
      * @param password Password
      * @param mediawikiApiUrl A mediawiki API Url
-     *                        (example: <a href="http://meta.wikimedia.org/w/api.php">http://meta.wikimedia.org/w/api.php</a>
+     *                        (example: <a href="https://meta.wikimedia.org/w/api.php">https://meta.wikimedia.org/w/api.php</a>
      */
     public User(String name, String password, String mediawikiApiUrl) {
         this(name, password, mediawikiApiUrl, "");
@@ -49,9 +49,7 @@ public class User {
      * @param name User Name
      * @param password Password
      * @param mediawikiApiUrl
-     *          A mediawiki API Url (example: <a
-     *          href="http://meta.wikimedia.org/w/api.php"
-     *          >http://meta.wikimedia.org/w/api.php</a>
+     *          A mediawiki API Url (example: <a href="https://meta.wikimedia.org/w/api.php" >https://meta.wikimedia.org/w/api.php</a>
      * @param domain Domain (optional)
      */
     public User(String name, String password, String mediawikiApiUrl, String domain) {
@@ -82,7 +80,7 @@ public class User {
     /**
      * Complete the users login information. The user must contain a username,
      * password and actionURL. See <a
-     * href="http://www.mediawiki.org/wiki/API:Login">Mediawiki API:Login</a>
+     * href="https://www.mediawiki.org/wiki/API:Login">Mediawiki API:Login</a>
      *
      * @return <code>true</code> if th login was successful; <code>false</code>
      *         otherwise.
@@ -184,7 +182,7 @@ public class User {
 
     /**
      * Get the Mediawiki API Url defined for this user(example:
-     * <a href="http://meta.wikimedia.org/w/api.php" >http://meta.wikimedia.org/w/api.php</a>)
+     * <a href="https://meta.wikimedia.org/w/api.php" >https://meta.wikimedia.org/w/api.php</a>)
      */
     public String getActionUrl() {
         return actionUrl;

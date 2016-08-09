@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * A template parser function for <code>{{padright: ... }}</code>, which <i>pads
  * a string with a character to the specified width</i>. See: <a
- * href="http://meta.wikimedia.org/wiki/Help:Magic_words#Formatting">Magic words
+ * href="https://meta.wikimedia.org/wiki/Help:Magic_words#Formatting">Magic words
  * - Formatting</a>
  *
  */

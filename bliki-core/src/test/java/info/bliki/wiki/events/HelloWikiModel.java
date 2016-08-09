@@ -12,8 +12,8 @@ import java.util.Map;
  * predefined templates
  *
  * Uses a modified template from: <a
- * href="http://en.wikipedia.org/wiki/Template:Reflist"
- * >http://en.wikipedia.org/wiki/Template:Reflist</a>
+ * href="https://en.wikipedia.org/wiki/Template:Reflist"
+ * >https://en.wikipedia.org/wiki/Template:Reflist</a>
  */
 public class HelloWikiModel extends WikiModel {
     public final static String REFLIST_TEXT = "<div class=\"references-small\" {{#if: {{{colwidth|}}}| style=\"-moz-column-width:{{{colwidth}}}; -webkit-column-width:{{{colwidth}}}; column-width:{{{colwidth}}};\" | {{#if: {{{1|}}}| style=\"-moz-column-count:{{{1}}}; -webkit-column-count:{{{1}}}; column-count:{{{1}}} }};\" |}}>\n"

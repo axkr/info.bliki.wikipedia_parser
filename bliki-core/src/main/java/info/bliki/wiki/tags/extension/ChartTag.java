@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Wiki tag for the <a href="http://code.google.com/apis/chart/">Google Chart
+ * Wiki tag for the <a href="https://code.google.com/apis/chart/">Google Chart
  * API</a>
  *
  */
@@ -22,7 +22,7 @@ public class ChartTag extends HTMLTag implements INoBodyParsingTag {
 
     /**
      * See <a href=
-     * "http://code.google.com/intl/de-DE/apis/chart/docs/chart_params.html">chart
+     * "https://code.google.com/intl/de-DE/apis/chart/docs/chart_params.html">chart
      * parameters supported by the Google Chart API</a>.
      */
     final static public String[] ALLOWED_ATTRIBUTES = { "alt", "chbh", "chco", "chd", "chdl", "chdlp", "chds", "chem", "chf", "chfd",

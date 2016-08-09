@@ -7,7 +7,7 @@ import java.util.List;
  * Represents form data parsed from HTML.
  *
  * Sources adopted from the article <a
- * href="http://www.javaworld.com/javaworld/jw-08-2008/jw-08-java-wiki-extensions.html">Add
+ * href="https://www.javaworld.com/javaworld/jw-08-2008/jw-08-java-wiki-extensions.html">Add
  * Java extensions to your wiki</a> with permission from Randall Scarberry.
  *
  * @author R.Scarberry

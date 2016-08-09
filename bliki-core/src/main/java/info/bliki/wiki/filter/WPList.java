@@ -10,8 +10,8 @@ import java.util.ArrayList;
 
 /**
  * Represents a Wikipedia list. See <a
- * href="http://meta.wikimedia.org/wiki/Help:List"
- * >http://meta.wikimedia.org/wiki/Help:List</a>
+ * href="https://meta.wikimedia.org/wiki/Help:List"
+ * >https://meta.wikimedia.org/wiki/Help:List</a>
  *
  * @see info.bliki.wiki.filter.WPListElement
  *

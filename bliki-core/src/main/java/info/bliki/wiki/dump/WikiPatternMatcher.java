@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
  *
  *
  * Copied and modified from the <a
- * href="http://code.google.com/p/wikixmlj/">WikiXMLJ project</a>.
+ * href="https://code.google.com/p/wikixmlj/">WikiXMLJ project</a>.
  *
  * @author Delip Rao modified by Axel Kramer
  *

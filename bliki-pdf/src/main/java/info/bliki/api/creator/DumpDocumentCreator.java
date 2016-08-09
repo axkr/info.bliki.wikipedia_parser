@@ -19,8 +19,8 @@ import java.net.URL;
  * <p>
  * Create an HTML or PDF file from a Mediawiki wiki which supports the
  * <code>api.php</code> interface from <a
- * href="http://en.wikipedia.org/w/api.php"
- * >http://en.wikipedia.org/w/api.php</a>.
+ * href="https://en.wikipedia.org/w/api.php"
+ * >https://en.wikipedia.org/w/api.php</a>.
  * </p>
  *
  */

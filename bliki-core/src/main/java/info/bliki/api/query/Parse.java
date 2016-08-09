@@ -4,7 +4,7 @@ package info.bliki.api.query;
  * Module Parse <b> action=parse </b>.<br/> Parses wikitext pages and
  * returns parser output
  *
- * Example: <a href="http://en.wikipedia.org/w/api.php?action=parse">api.php
+ * Example: <a href="https://en.wikipedia.org/w/api.php?action=parse">api.php
  * ?action=parse</a>
  *
  */

@@ -16,8 +16,8 @@ import java.util.Map;
  * Evaluate math expressions to <code>double</code> numbers.
  *
  * Use the expression syntax describe here: <a
- * href="http://meta.wikimedia.org/wiki/Help:ParserFunctions#.23expr:"
- * >http://meta.wikimedia.org/wiki/Help:ParserFunctions#.23expr:</a>
+ * href="https://meta.wikimedia.org/wiki/Help:ParserFunctions#.23expr:"
+ * >https://meta.wikimedia.org/wiki/Help:ParserFunctions#.23expr:</a>
  */
 public class DoubleEvaluator {
     /**

@@ -23,7 +23,7 @@ public class HTMLTag extends TagNode {
                 if (attName.length() >= 1 && Character.isLetter(attName.charAt(0))) {
                     // skip any invalid element names
                     // these usually come from bad markup input
-                    // http://www.w3.org/TR/REC-xml-names/#NT-PrefixedName
+                    // https://www.w3.org/TR/REC-xml-names/#NT-PrefixedName
                     if (!XML_QNAME.matcher(attName).matches()) {
                         continue;
                     }

@@ -41,9 +41,9 @@ public class APIWikiModel extends WikiModel {
 
     /**
      * WikiModel which loads the templates and images through the
-     * <a href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>
+     * <a href="https://meta.wikimedia.org/w/api.php">Wikimedia API</a>
      *
-     * @param user           a user for the <a href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>
+     * @param user           a user for the <a href="https://meta.wikimedia.org/w/api.php">Wikimedia API</a>
      * @param wikiDB         a wiki database to retrieve already downloaded topics and templates
      * @param imageBaseURL   a url string which must contains a &quot;${image}&quot; variable
      *                       which will be replaced by the image name, to create links to
@@ -60,10 +60,10 @@ public class APIWikiModel extends WikiModel {
 
     /**
      * WikiModel which loads the templates and images through the <a
-     * href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>
+     * href="https://meta.wikimedia.org/w/api.php">Wikimedia API</a>
      *
      * @param user           a user for the <a
-     *                       href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>
+     *                       href="https://meta.wikimedia.org/w/api.php">Wikimedia API</a>
      * @param wikiDB         a wiki database to retrieve already downloaded topics and templates
      * @param configuration  the wiki configuration to use
      * @param locale         a locale for loading language specific resources

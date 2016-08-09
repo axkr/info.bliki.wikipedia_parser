@@ -18,7 +18,7 @@ import org.xml.sax.helpers.DefaultHandler;
  * TODO: delete this class file!
  *
  * Sources adopted from the article <a href=
- * "http://www.javaworld.com/javaworld/jw-08-2008/jw-08-java-wiki-extensions.html"
+ * "https://www.javaworld.com/javaworld/jw-08-2008/jw-08-java-wiki-extensions.html"
  * >Add Java extensions to your wiki</a> with permission from Randall Scarberry.
  *
  *

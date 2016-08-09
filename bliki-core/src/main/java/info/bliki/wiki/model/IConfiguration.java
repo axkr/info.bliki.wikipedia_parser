@@ -9,8 +9,8 @@ import java.util.Set;
 
 /**
  * Configuration interface for extensions similar to the Mediawiki
- * <a href="http://www.mediawiki.org/wiki/Manual:Tag_extensions">HTML styled tag extension</a>,
- * <a href="http://www.mediawiki.org/wiki/Manual:Parser_functions">template parser functions</a>
+ * <a href="https://www.mediawiki.org/wiki/Manual:Tag_extensions">HTML styled tag extension</a>,
+ * <a href="https://www.mediawiki.org/wiki/Manual:Parser_functions">template parser functions</a>
  * and <a href="https://www.mediawiki.org/wiki/Interwiki">interwiki links</a>
  *
  * @see info.bliki.wiki.model.Configuration
@@ -26,7 +26,7 @@ public interface IConfiguration {
 
     /**
      * Add a new
-     * <a href="http://www.mediawiki.org/wiki/Extension:SyntaxHighlight_GeSHi">source code formatter</a>
+     * <a href="https://www.mediawiki.org/wiki/Extension:SyntaxHighlight_GeSHi">source code formatter</a>
      * to the configuration
      */
     SourceCodeFormatter addCodeFormatter(String key, SourceCodeFormatter value);
@@ -50,12 +50,12 @@ public interface IConfiguration {
 
     /**
      * Add a new
-     * <a href="http://www.mediawiki.org/wiki/Manual:Tag_extensions">HTML styled tag</a> to the configuration
+     * <a href="https://www.mediawiki.org/wiki/Manual:Tag_extensions">HTML styled tag</a> to the configuration
      */
     TagToken addTokenTag(String key, TagToken value);
 
     /**
-     * Get the <a href="http://www.mediawiki.org/wiki/Extension:SyntaxHighlight_GeSHi">source code formatter</a> map of built-in source code formatters
+     * Get the <a href="https://www.mediawiki.org/wiki/Extension:SyntaxHighlight_GeSHi">source code formatter</a> map of built-in source code formatters
      */
     Map<String, SourceCodeFormatter> getCodeFormatterMap();
 
@@ -69,7 +69,7 @@ public interface IConfiguration {
 
     /**
      * Get the <a
-     * href="http://www.mediawiki.org/wiki/Manual:Parser_functions">template
+     * href="https://www.mediawiki.org/wiki/Manual:Parser_functions">template
      * parser functions</a> map of built-in template functions
      */
     Map<String, ITemplateFunction> getTemplateMap();
@@ -83,13 +83,13 @@ public interface IConfiguration {
     /**
      * Get the set of all allowed URI scheme shortcuts like http, https, ftp,...
      *
-     * See <a href="http://en.wikipedia.org/wiki/URI_scheme">URI scheme</a>
+     * See <a href="https://en.wikipedia.org/wiki/URI_scheme">URI scheme</a>
      */
     Set<String> getUriSchemeSet();
 
     /**
      * Set a cache map implementation. For example based on <a
-     * href="http://jcp.org/en/jsr/detail?id=107">JSR 107</a>. Template calls
+     * href="https://jcp.org/en/jsr/detail?id=107">JSR 107</a>. Template calls
      * which use the same parameters over and over again do lookup this cache and
      * use the preparsed result if available.
      *

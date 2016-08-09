@@ -16,7 +16,7 @@ import java.util.Map;
 
 /**
  * A template parser function for <code>{{safesubst: ... }}</code>. See
- * <a href="http://en.wikipedia.org/wiki/en:Help:Substitution#safesubst:">Wikipedia-Help:Substitution</a>
+ * <a href="https://en.wikipedia.org/wiki/en:Help:Substitution#safesubst:">Wikipedia-Help:Substitution</a>
  */
 public class Safesubst extends AbstractTemplateFunction {
     public final static ITemplateFunction CONST = new Safesubst();

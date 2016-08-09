@@ -2,7 +2,7 @@ package info.bliki.wiki.model;
 
 /**
  * Internal class for managing <a
- * href="http://en.wikipedia.org/wiki/Wikipedia:Footnotes">Footnotes</a>
+ * href="https://en.wikipedia.org/wiki/Wikipedia:Footnotes">Footnotes</a>
  *
  */
 public class Reference {

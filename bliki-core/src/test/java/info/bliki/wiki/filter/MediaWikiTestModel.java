@@ -129,7 +129,7 @@ public class MediaWikiTestModel extends WikiModel {
 
     /**
      * Test for <a
-     * href="http://groups.google.de/group/bliki/t/a0540e27f27f02a5">Discussion:
+     * href="https://groups.google.de/group/bliki/t/a0540e27f27f02a5">Discussion:
      * Hide Table of Contents (toc)?</a>
      */
     // public ITableOfContent createTableOfContent(boolean isTOCIdentifier) {

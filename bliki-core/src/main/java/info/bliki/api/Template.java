@@ -1,7 +1,7 @@
 package info.bliki.api;
 
 /**
- * Manages template data from the <a href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>
+ * Manages template data from the <a href="https://meta.wikimedia.org/w/api.php">Wikimedia API</a>
  */
 public class Template {
     private String ns;

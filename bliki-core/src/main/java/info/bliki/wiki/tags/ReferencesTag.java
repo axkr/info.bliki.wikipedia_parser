@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Wiki tag for references &lt;references /&gt;
  *
- * See <a href="http://en.wikipedia.org/wiki/Wikipedia:Footnotes">Footnotes</a>
+ * See <a href="https://en.wikipedia.org/wiki/Wikipedia:Footnotes">Footnotes</a>
  */
 public class ReferencesTag extends HTMLTag {
     public ReferencesTag() {

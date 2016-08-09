@@ -5,7 +5,7 @@ package info.bliki.api.query;
  * list.
  *
  * Example: <a
- * href="http://en.wikipedia.org/w/api.php?action=sitematrix">api.php
+ * href="https://en.wikipedia.org/w/api.php?action=sitematrix">api.php
  * ?action=sitematrix</a>
  *
  */

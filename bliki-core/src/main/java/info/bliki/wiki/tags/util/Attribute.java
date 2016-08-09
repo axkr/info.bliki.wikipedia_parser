@@ -140,9 +140,9 @@ import java.io.Serializable;
  * something, and Quote is " it's a double quoted attribute -- name="value" <br>
  * All other states are invalid HTML.
  * <p>
- * From the <a href="http://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.2">
+ * From the <a href="https://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.2">
  * HTML 4.01 Specification, W3C Recommendation 24 December 1999</a>
- * http://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.2:
+ * https://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.2:
  * <p>
  * <cite> 3.2.2 Attributes
  * <p>
@@ -185,7 +185,7 @@ import java.io.Serializable;
  * case-insensitive.
  * <p>
  * All the attributes defined by this specification are listed in the <a
- * href="http://www.w3.org/TR/html4/index/attributes.html">attribute index</a>.
+ * href="https://www.w3.org/TR/html4/index/attributes.html">attribute index</a>.
  * <p>
  * </cite>
  * <p>

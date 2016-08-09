@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  * Manages page data from the <a
- * href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>
+ * href="https://meta.wikimedia.org/w/api.php">Wikimedia API</a>
  */
 public class Page extends PageInfo {
     private List<Link> links;

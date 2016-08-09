@@ -24,7 +24,7 @@ package info.bliki.api.query;
  *   indexpageids   - Include an additional pageids section listing all returned page IDs.
  * </pre>
  *
- * Example: <a href="http://en.wikipedia.org/w/api.php?action=query&amp;prop=revisions&amp;meta=siteinfo&amp;titles=Main%20Page&amp;rvprop=user%7Ccomment"
+ * Example: <a href="https://en.wikipedia.org/w/api.php?action=query&amp;prop=revisions&amp;meta=siteinfo&amp;titles=Main%20Page&amp;rvprop=user%7Ccomment"
  * >api.php?action=query&amp;prop=revisions&amp;meta=siteinfo&amp;titles=Main%20
  * Page&amp;rvprop=user|comment</a>
  *

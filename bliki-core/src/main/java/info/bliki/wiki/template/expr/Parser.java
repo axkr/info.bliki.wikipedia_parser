@@ -14,7 +14,7 @@ import info.bliki.wiki.template.expr.operator.PrefixOperator;
  * formulas string representation.
  *
  * See <a
- * href="http://en.wikipedia.org/wiki/Operator-precedence_parser">Operator
+ * href="https://en.wikipedia.org/wiki/Operator-precedence_parser">Operator
  * -precedence parser</a> for the idea, how to parse the operators depending on
  * their precedence.
  */
@@ -153,7 +153,7 @@ public class Parser extends Scanner {
 
     /**
      * See <a
-     * href="http://en.wikipedia.org/wiki/Operator-precedence_parser">Operator
+     * href="https://en.wikipedia.org/wiki/Operator-precedence_parser">Operator
      * -precedence parser</a> for the idea, how to parse the operators depending
      * on their precedence.
      *

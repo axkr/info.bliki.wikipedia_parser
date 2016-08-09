@@ -3,7 +3,7 @@ package info.bliki.api;
 import java.util.List;
 
 /**
- * Manages parse data from the <a href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>
+ * Manages parse data from the <a href="https://meta.wikimedia.org/w/api.php">Wikimedia API</a>
  */
 public class ParseData {
     private String displaytitle;

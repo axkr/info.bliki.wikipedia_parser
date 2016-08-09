@@ -281,17 +281,17 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 
     /**
      * Append an external link (starting with http, https, ftp,...) as described
-     * in <a href="http://en.wikipedia.org/wiki/Help:Link#External_links">Help
+     * in <a href="https://en.wikipedia.org/wiki/Help:Link#External_links">Help
      * Links</a>
      *
      * @param uriSchemeName
      *            the top level URI (Uniform Resource Identifier) scheme name
      *            (without the following colon character ":"). Example "ftp",
      *            "http", "https". See <a
-     *            href="http://en.wikipedia.org/wiki/URI_scheme">URI scheme</a>
+     *            href="https://en.wikipedia.org/wiki/URI_scheme">URI scheme</a>
      * @param link
      *            the external link with
-     *            <code>http://, https:// or ftp://</code> prefix
+     *            <code>https://, https:// or ftp://</code> prefix
      * @param linkName
      *            the link name which is separated from the URL by a space
      * @param withoutSquareBrackets
@@ -535,7 +535,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
         final String ns = rawNamespaceTopic.substring(0, colonIndex);
 
         if (isSemanticWebActive() && rawNamespaceTopic.length() > colonIndex + 1) {
-            // See <a href="http://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic MediaWiki</a> for more information.
+            // See <a href="https://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic MediaWiki</a> for more information.
             if (rawNamespaceTopic.charAt(colonIndex + 1) == ':') {
                 // found an SMW relation
                 String relationValue = rawNamespaceTopic
@@ -662,7 +662,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
                 String category = rawTopicName.substring(indx + 1).trim();
                 if (category.length() > 0) {
                     // TODO implement more sort-key behaviour
-                    // http://en.wikipedia.org/wiki/Wikipedia:Categorization#Category_sorting
+                    // https://en.wikipedia.org/wiki/Wikipedia:Categorization#Category_sorting
                     addCategory(category, viewableLinkDescriptionWithoutSuffix);
                     return false;
                 }

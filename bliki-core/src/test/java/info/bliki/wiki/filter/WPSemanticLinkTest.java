@@ -19,7 +19,7 @@ public class WPSemanticLinkTest extends FilterTestSupport {
     /*
      * Test a semantic relation
      *
-     * See <a href="http://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic
+     * See <a href="https://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic
      * MediaWiki</a> for more information.
      */
     @Test public void testLink01() throws Exception {
@@ -35,7 +35,7 @@ public class WPSemanticLinkTest extends FilterTestSupport {
     /*
      * Test a semantic attribute
      *
-     * See <a href="http://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic
+     * See <a href="https://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic
      * MediaWiki</a> for more information.
      */
     @Test public void testLink02() throws Exception {

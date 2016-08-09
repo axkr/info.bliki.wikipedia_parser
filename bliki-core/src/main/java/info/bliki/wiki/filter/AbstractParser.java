@@ -242,7 +242,7 @@ public abstract class AbstractParser extends WikipediaScanner {
                 } else if (ch == '{' || ch == '}' || ch == '<' || ch == '>') {
                     if (!pipeSymbolFound) {
                         // see
-                        // http://en.wikipedia.org/wiki/Help:Page_name#Special_characters
+                        // https://en.wikipedia.org/wiki/Help:Page_name#Special_characters
                         return false;
                     }
                 }

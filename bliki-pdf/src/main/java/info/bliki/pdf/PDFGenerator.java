@@ -23,7 +23,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  * Create a PDF document from a given rendered XHTML text.
  *
  * Uses the <a href="https://xhtmlrenderer.dev.java.net/">Flying Saucer Project</a>
- * and <a href="http://en.wikipedia.org/wiki/IText">iText</a> Open Source
+ * and <a href="https://en.wikipedia.org/wiki/IText">iText</a> Open Source
  * libraries for creating and manipulating PDF.
  *
  */

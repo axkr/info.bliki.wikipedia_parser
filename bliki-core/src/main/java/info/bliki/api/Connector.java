@@ -33,11 +33,11 @@ import java.util.List;
 
 /**
  * Manages the queries for the <a
- * href="http://meta.wikimedia.org/w/api.php">Wikimedia API</a>. See the <a
- * href="http://www.mediawiki.org/wiki/API:Main_page">API Documentation</a>.
+ * href="https://meta.wikimedia.org/w/api.php">Wikimedia API</a>. See the <a
+ * href="https://www.mediawiki.org/wiki/API:Main_page">API Documentation</a>.
  *
  * The queries set their own user-agent string. See <a
- * href="http://meta.wikimedia.org/wiki/User-Agent_policy">User-Agent policy</a>
+ * href="https://meta.wikimedia.org/wiki/User-Agent_policy">User-Agent policy</a>
  */
 public class Connector {
     protected final static String USER_AGENT = "JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/";
@@ -93,7 +93,7 @@ public class Connector {
     /**
      * Complete the users login information. The user must contain a username,
      * password and actionURL. See <a
-     * href="http://www.mediawiki.org/wiki/API:Login">Mediawiki API:Login</a>
+     * href="https://www.mediawiki.org/wiki/API:Login">Mediawiki API:Login</a>
      *
      * @param user a user account from a Mediawiki installation with filled out user
      *             name, password and the installations API url.

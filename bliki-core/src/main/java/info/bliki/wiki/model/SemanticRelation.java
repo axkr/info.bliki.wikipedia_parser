@@ -3,7 +3,7 @@ package info.bliki.wiki.model;
 /**
  * A semantic web relation
  *
- * See <a href="http://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic MediaWiki</a> for more information.
+ * See <a href="https://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic MediaWiki</a> for more information.
  *
  */
 public class SemanticRelation {

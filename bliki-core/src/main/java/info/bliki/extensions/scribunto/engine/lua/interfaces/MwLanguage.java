@@ -91,7 +91,7 @@ public class MwLanguage implements MwInterface {
     private LuaValue formatDate() {
         return new ThreeArgFunction() {
             @Override public LuaValue call(LuaValue lang, LuaValue format, LuaValue date) {
-                // http://php.net/manual/en/function.date.php
+                // https://php.net/manual/en/function.date.php
                 final String formatString = format.checkjstring();
                 final String dateString = date.checkjstring();
                 final Date time = dateString.isEmpty() ? wikiModel.getCurrentTimeStamp() : (Date) StringToTime.date(dateString);

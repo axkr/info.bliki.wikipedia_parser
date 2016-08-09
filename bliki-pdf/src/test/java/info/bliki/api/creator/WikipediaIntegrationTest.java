@@ -108,7 +108,7 @@ public class WikipediaIntegrationTest extends HTMLCreatorIntegrationTest {
     @Ignore @Test public void testManchester_United_Football_Club() throws Exception {
         String redirectedLink = testWikipediaENAPI("Manchester United Football Club").redirectLink;
         if (redirectedLink != null) {
-            // see http://code.google.com/p/gwtwiki/issues/detail?id=38
+            // see https://code.google.com/p/gwtwiki/issues/detail?id=38
             testWikipediaENAPI(redirectedLink);
         }
     }

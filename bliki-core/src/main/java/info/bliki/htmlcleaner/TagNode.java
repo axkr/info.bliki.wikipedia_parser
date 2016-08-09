@@ -157,7 +157,7 @@ public class TagNode extends TagToken implements PlainTextConvertable {
             }
             // attempt to prevent cross-site scripting inside CSS style (this is
             // not complete!)
-            // see http://openmya.hacker.jp/hasegawa/security/expression.txt
+            // see https://openmya.hacker.jp/hasegawa/security/expression.txt
             if (checkedAttributes && attName.equalsIgnoreCase("style")) {
                 if (valueLowerCased.contains("expression")) {
                     checkedAttributes = false;

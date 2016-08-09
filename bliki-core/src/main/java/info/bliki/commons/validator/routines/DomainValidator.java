@@ -6,7 +6,7 @@
  * (the "License"); you may not use this file except in compliance with
  * the License.  You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -30,8 +30,8 @@ import java.util.List;
  * </p>
  *
  * <p>Domain names are evaluated according
- * to the standards <a href="http://www.ietf.org/rfc/rfc1034.txt">RFC1034</a>,
- * section 3, and <a href="http://www.ietf.org/rfc/rfc1123.txt">RFC1123</a>,
+ * to the standards <a href="https://www.ietf.org/rfc/rfc1034.txt">RFC1034</a>,
+ * section 3, and <a href="https://www.ietf.org/rfc/rfc1123.txt">RFC1123</a>,
  * section 2.1. No accomodation is provided for the specialized needs of
  * other applications; if the domain name has been URL-encoded, for example,
  * validation will fail even though the equivalent plaintext version of the
@@ -168,7 +168,7 @@ public class DomainValidator implements Serializable {
     // ---------------------------------------------
     // ----- TLDs defined by IANA
     // ----- Authoritative and comprehensive list at:
-    // ----- http://data.iana.org/TLD/tlds-alpha-by-domain.txt
+    // ----- https://data.iana.org/TLD/tlds-alpha-by-domain.txt
 
     private static final String[] INFRASTRUCTURE_TLDS = new String[] {
         "arpa",               // internet infrastructure

@@ -197,9 +197,9 @@ public class ImageFormat {
      * additionally calculate the integer value of the width and optionally the
      * size of the height (example: "600px"). If the size is negative ignore it.
      *
-     * See <a href="http://en.wikipedia.org/wiki/Image_markup#Size">Image
+     * See <a href="https://en.wikipedia.org/wiki/Image_markup#Size">Image
      * markup#Size</a> and See <a
-     * href="http://www.mediawiki.org/wiki/Help:Images">Help:Images</a>
+     * href="https://www.mediawiki.org/wiki/Help:Images">Help:Images</a>
      *
      * @param size
      */

@@ -28,7 +28,7 @@ public class TemplateSubstParserTest extends FilterTestSupport {
     }
 
     @Test public void testSubst006() {
-        // http://www.mediawiki.org/wiki/Manual:Substitution#Predefined_templates
+        // https://www.mediawiki.org/wiki/Manual:Substitution#Predefined_templates
         wikiModel.setNamespaceName("help");
         assertThat(wikiModel.parseTemplates("{{subst:t1|{{subst:NAMESPACE}}}}", true)).isEqualTo("startHelpend");
         assertThat(wikiModel.parseTemplates("{{subst:t1|{{subst:NAMESPACE}}}}", false)).isEqualTo("startHelpend");

@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * Wiki tag which renders no HTML output. This tag is useful for ignoring wiki
  * extension tags, which shouldn't be supported. See <a
- * href="http://code.google.com/p/gwtwiki/issues/detail?id=94">Issue 94</a>
+ * href="https://code.google.com/p/gwtwiki/issues/detail?id=94">Issue 94</a>
  *
  */
 public class IgnoreTag extends HTMLTag implements INoBodyParsingTag {

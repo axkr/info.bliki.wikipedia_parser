@@ -23,8 +23,8 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  * A Wikipedia XML dump file parser
  *
  * Original version with permission from Marco Schmidt. See: <a
- * href="http://schmidt.devlib.org/software/lucene-wikipedia.html"
- * >http://schmidt.devlib.org/software/lucene-wikipedia.html</a>
+ * href="https://schmidt.devlib.org/software/lucene-wikipedia.html"
+ * >https://schmidt.devlib.org/software/lucene-wikipedia.html</a>
  *
  * @author Marco Schmidt
  */

@@ -19,7 +19,7 @@ import java.util.Map;
  * Supporting more control flags, but still not complete though.
  *
  * See <a
- * href="http://www.mediawiki.org/wiki/Help:Extension:ParserFunctions#.23time">
+ * href="https://www.mediawiki.org/wiki/Help:Extension:ParserFunctions#.23time">
  * Mediwiki's Help:Extension:ParserFunctions - #time</a>
  */
 public class Time extends AbstractTemplateFunction {

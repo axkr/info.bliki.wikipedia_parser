@@ -19,7 +19,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
 /**
- * Create a <a href="http://en.wikipedia.org/wiki/DocBook">DocBook</a> document
+ * Create a <a href="https://en.wikipedia.org/wiki/DocBook">DocBook</a> document
  * from a wiki string
  *
  */
@@ -38,7 +38,7 @@ public class DocbookGenerator {
     }
 
     /**
-     * Create a <a href="http://en.wikipedia.org/wiki/DocBook">DocBook</a> string
+     * Create a <a href="https://en.wikipedia.org/wiki/DocBook">DocBook</a> string
      * from a given rendered XHTML text.
      *
      * @param xhtmlContent

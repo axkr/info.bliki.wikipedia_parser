@@ -93,7 +93,7 @@ import java.util.regex.Pattern;
  *
  * @author Aaron Collegeman acollegeman@clutch-inc.com
  * @since JRE 1.5.0
- * @see "http://us3.php.net/manual/en/function.strtotime.php"
+ * @see "https://us3.php.net/manual/en/function.strtotime.php"
  */
 public class StringToTime extends Date {
 
