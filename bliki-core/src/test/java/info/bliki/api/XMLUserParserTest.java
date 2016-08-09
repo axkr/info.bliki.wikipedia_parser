@@ -10,7 +10,7 @@ public class XMLUserParserTest {
     private User user;
 
     @Before public void before() {
-        user = new User("name", "password", "url");
+        user = new User("name", "password", "https://url");
     }
 
     @Test public void testParseNeedsTokenResponse() throws Exception {
