@@ -53,7 +53,10 @@ public class User {
      * @param domain Domain (optional)
      */
     public User(String name, String password, String mediawikiApiUrl, String domain) {
-        super();
+        if (mediawikiApiUrl != null && !mediawikiApiUrl.startsWith("https://")) {
+            throw new IllegalArgumentException("the mediawiki API url must use HTTPS " +
+                    "(https://lists.wikimedia.org/pipermail/mediawiki-api-announce/2016-May/000110.html)");
+        }
         this.result = ILLEGAL_ID;
         this.userId = "";
         this.username = name;
