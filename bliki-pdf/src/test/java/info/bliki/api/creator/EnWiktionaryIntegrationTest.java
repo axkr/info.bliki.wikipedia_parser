@@ -8,6 +8,7 @@ import software.betamax.junit.Betamax;
 
 import static info.bliki.wiki.model.IConfiguration.Casing.CaseSensitive;
 import static java.util.Locale.ENGLISH;
+import static org.assertj.core.api.Assertions.assertThat;
 import static software.betamax.TapeMode.READ_ONLY;
 
 public class EnWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
@@ -21,6 +22,18 @@ public class EnWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
     @Betamax(tape = "backplane", mode = READ_ONLY)
     @Test public void testBackplane() throws Exception {
         testWiktionaryENAPI("backplane");
+    }
+
+    @Betamax(tape = "backplane", mode = READ_ONLY)
+    @Test public void testCategoriesAreExtracted() throws Exception {
+        Result result = testWiktionaryENAPI("backplane");
+        assertThat(result.categories).containsKeys(
+            "English compound words",
+            "English lemmas",
+            "English nouns",
+            "English terms with audio links",
+            "en:Electronics"
+        );
     }
 
     @Betamax(tape = "Vadimas", mode = READ_ONLY)

@@ -7,6 +7,7 @@ import software.betamax.junit.Betamax;
 
 import static info.bliki.wiki.model.IConfiguration.Casing.CaseSensitive;
 import static java.util.Locale.FRENCH;
+import static org.assertj.core.api.Assertions.assertThat;
 import static software.betamax.TapeMode.READ_ONLY;
 
 public class FrWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
@@ -19,6 +20,18 @@ public class FrWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
     @Test @Betamax(tape = "eau", mode = READ_ONLY)
     public void testEau() throws Exception {
         testWiktionaryFRAPI("eau");
+    }
+
+    @Test @Betamax(tape = "eau", mode = READ_ONLY)
+    public void testCategoriesAreExtracted() throws Exception {
+        Result result = testWiktionaryFRAPI("eau");
+        assertThat(result.categories).containsKeys(
+            "Articles de qualité",
+            "Boissons en français",
+            "Couleurs en français",
+            "Lexique en français de la marine",
+            "Lexique en français de la reproduction"
+        );
     }
 
     @Test @Betamax(tape = "tenir", mode = READ_ONLY)

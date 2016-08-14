@@ -17,6 +17,7 @@ import java.nio.file.Path;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 import static info.bliki.wiki.filter.Encoder.encodeTitleLocalUrl;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -69,16 +70,20 @@ public abstract class HTMLCreatorIntegrationTest {
         assertThat(generatedHTMLFilename.toFile()).isFile();
         assertThat(generatedHTMLFilename.toFile().length()).isGreaterThan(0);
 
-        return new Result(generatedHTMLFilename.toFile(), wikiModel.getRedirectLink());
+        return new Result(generatedHTMLFilename.toFile(),
+                wikiModel.getRedirectLink(),
+                wikiModel.getCategories());
     }
 
     protected static class Result {
         final String redirectLink;
         final File content;
+        final Map<String, String> categories;
 
-        Result(File content, String redirectLink) {
+        Result(File content, String redirectLink, Map<String,String> categories) {
             this.redirectLink = redirectLink;
             this.content = content;
+            this.categories = categories;
         }
 
         public void assertContains(CharSequence ...values) {
