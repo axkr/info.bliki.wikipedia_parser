@@ -197,20 +197,11 @@ public class WikiModel extends AbstractWikiModel {
         popNode();
     }
 
-    /**
-     * Get the set of Wikipedia category names used in this text
-     *
-     * @return the set of category strings
-     */
+    @Override
     public Map<String, String> getCategories() {
         return categories;
     }
 
-    /**
-     * Get the set of Wikipedia links used in this text
-     *
-     * @return the set of category strings
-     */
     @Override
     public Set<String> getLinks() {
         return links;

@@ -48,6 +48,13 @@ public interface IWikiModel extends IConfiguration {
     void addCategory(String categoryName, String sortKey);
 
     /**
+     * Get the set of Wikipedia category names used in this text
+     *
+     * @return the set of category strings
+     */
+    Map<String, String> getCategories();
+
+    /**
      * When a document contains a token indicating that the document links to
      * another Wiki topic this method should be called to add that topic link to
      * the output metadata.
