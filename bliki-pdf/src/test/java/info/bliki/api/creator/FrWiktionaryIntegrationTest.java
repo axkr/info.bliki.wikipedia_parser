@@ -25,6 +25,7 @@ public class FrWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
     @Test @Betamax(tape = "eau", mode = READ_ONLY)
     public void testCategoriesAreExtracted() throws Exception {
         Result result = testWiktionaryFRAPI("eau");
+        assertThat(result.categories.size()).isEqualTo(437);
         assertThat(result.categories).containsKeys(
             "Articles de qualité",
             "Boissons en français",
