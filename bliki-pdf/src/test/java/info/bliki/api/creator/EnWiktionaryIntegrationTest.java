@@ -121,8 +121,8 @@ public class EnWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
         testWiktionaryENAPI("limpet");
     }
 
-    @Betamax(tape = "Stein_des_Anstoßes", mode = READ_ONLY)
-    @Ignore @Test public void testSteinDesAnstoßes() throws Exception {
+    @Betamax(tape = "Stein_des_Anstosses", mode = READ_ONLY)
+    @Ignore @Test public void testSteinDesAnstosses() throws Exception {
         testWiktionaryENAPI("Stein_des_Anstoßes");
     }
 
