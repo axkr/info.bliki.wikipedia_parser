@@ -35,6 +35,18 @@ public class EnWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
             "en:Electronics"
         );
     }
+    @Betamax(tape = "-yer", mode = READ_ONLY)
+    @Test public void testCategoriesWithExtraSpaces() throws Exception {
+        Result result = testWiktionaryENAPI("-yer");
+        assertThat(result.categories.keySet()).contains(
+            "English terms derived from Middle English",
+            // two spaces?
+            "English  terms with rare senses",
+            "English lemmas",
+            "English suffixes",
+            "etyl cleanup/en"
+        );
+    }
 
     @Betamax(tape = "Vadimas", mode = READ_ONLY)
     @Test public void testVadimas() throws Exception {
@@ -107,6 +119,11 @@ public class EnWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
     @Betamax(tape = "limpet", mode = READ_ONLY)
     @Test public void testLimpet() throws Exception {
         testWiktionaryENAPI("limpet");
+    }
+
+    @Betamax(tape = "Stein_des_Anstoßes", mode = READ_ONLY)
+    @Ignore @Test public void testSteinDesAnstoßes() throws Exception {
+        testWiktionaryENAPI("Stein_des_Anstoßes");
     }
 
     @Betamax(tape = "titeln", mode = READ_ONLY)
