@@ -40,8 +40,7 @@ public class EnWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
         Result result = testWiktionaryENAPI("-yer");
         assertThat(result.categories.keySet()).contains(
             "English terms derived from Middle English",
-            // two spaces?
-            "English  terms with rare senses",
+            "English terms with rare senses",
             "English lemmas",
             "English suffixes",
             "etyl cleanup/en"

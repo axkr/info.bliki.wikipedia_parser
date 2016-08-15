@@ -1,7 +1,7 @@
 !tape
 name: -yer
 interactions:
-- recorded: 2016-08-15T20:44:29.356Z
+- recorded: 2016-08-15T22:29:24.304Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=-yer&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -14,25 +14,25 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=28472 t=1471293869236555
+      Backend-Timing: D=34279 t=1471300164142784
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:29 GMT
+      Date: Mon, 15 Aug 2016 22:29:24 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1198.eqiad.wmnet
+      Server: mw1193.eqiad.wmnet
       Set-Cookie: WMF-Last-Access=15-Aug-2016;Path=/;HttpOnly;secure;Expires=Fri, 16 Sep 2016 12:00:00 GMT, GeoIP=PT:17:Porto:41.15:-8.61:v4; Path=/; secure; Domain=.wiktionary.org
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;https=1;nocookies=1
-      X-Cache: cp1053 pass, cp3040 pass, cp3033 pass
+      X-Cache: cp1053 pass, cp3042 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 1539161422, 3049599327, 1186416123
+      X-Varnish: 1557241814, 1952097601, 1213986136
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="2645239" pageid="2645239" ns="0" title="-yer"><revisions><rev user="MewBot" timestamp="2016-07-27T19:21:59Z" comment="Renamed label &gt; lb" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{also|yer|YER}}
       ==English==
@@ -49,7 +49,7 @@ interactions:
 
       ====Derived terms====
       {{suffixsee|en}}</rev></revisions></page></pages></query></api>
-- recorded: 2016-08-15T20:44:29.644Z
+- recorded: 2016-08-15T22:29:24.600Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Aalso&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -64,26 +64,26 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=24463 t=1471293869542583
+      Backend-Timing: D=27742 t=1471300164497975
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:29 GMT
+      Date: Mon, 15 Aug 2016 22:29:24 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1235.eqiad.wmnet
+      Server: mw1284.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1068 pass, cp3030 pass, cp3033 pass
+      X-Cache: cp1068 pass, cp3043 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 1856436259, 2655421401, 1186418241
+      X-Varnish: 1875551294, 2082308733, 1213987366
     body: <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="178449" pageid="178449" ns="10" title="Template:also"><revisions><rev user="Ruakh" timestamp="2013-03-12T06:23:44Z" comment="{{#invoke:[[Module:Template:also|Template:also]]|main}}" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{#invoke:Template:also|main}}&lt;noinclude&gt;{{documentation}}&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2016-08-15T20:44:30.157Z
+- recorded: 2016-08-15T22:29:24.977Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Aetyl&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -98,24 +98,24 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=24208 t=1471293870050949
+      Backend-Timing: D=26994 t=1471300164873176
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:30 GMT
+      Date: Mon, 15 Aug 2016 22:29:24 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1285.eqiad.wmnet
+      Server: mw1286.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1068 pass, cp3040 pass, cp3033 pass
+      X-Cache: cp1068 pass, cp3041 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 1856437707, 3049601429, 1186420217
+      X-Varnish: 1875552916, 2725062656, 1213988488
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="907689" pageid="907689" ns="10" title="Template:etyl"><revisions><rev user="Daniel Carrero" timestamp="2016-07-27T16:54:07Z" comment="" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;span class=&quot;etylcleanup&quot;&gt;{{#invoke:etymology/templates|etyl}}&lt;/span&gt;&lt;!--
 
@@ -129,7 +129,7 @@ interactions:
       --&gt;&lt;/includeonly&gt;&lt;!--
 
       --&gt;&lt;noinclude&gt;{{documentation}}&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2016-08-15T20:44:30.528Z
+- recorded: 2016-08-15T22:29:25.282Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Aetymology%2Ftemplates&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -144,24 +144,24 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=24813 t=1471293870371836
+      Backend-Timing: D=24994 t=1471300165122885
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:30 GMT
+      Date: Mon, 15 Aug 2016 22:29:25 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1232.eqiad.wmnet
+      Server: mw1225.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1054 pass, cp3033 pass, cp3033 pass
+      X-Cache: cp1054 pass, cp3041 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 311457714, 1155702788, 1186421481
+      X-Varnish: 329456898, 2725064481, 1213990712
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4998801\" pageid=\"4998801\" ns=\"828\" title=\"Module:etymology/templates\"><revisions><rev user=\"CodeCat\" timestamp=\"2016-07-26T12:22:20Z\" comment=\"\" contentformat=\"\
       text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">local export = {}\n\nfunction export.etyl(frame)\n\tlocal params = {\n\t\t[1] = {required = true, default = &quot;und&quot;},\n\t\t[2] = {},\n\t\t[&quot;sort&quot;] = {},\n\t}\n\t\n\tlocal\
       \ args = require(&quot;Module:parameters&quot;).process(frame:getParent().args, params)\n\t\n\tlocal source = args[1]\n\tlocal lang = args[2]\n\tlocal sort_key = args[&quot;sort&quot;]\n\t\n\t-- Empty language means English, but &quot;-&quot; means no\
@@ -209,7 +209,7 @@ interactions:
       \ parts = {}\n\t\n\tfor i = 1, math.max(args[compat and 1 or 2].maxindex, args[&quot;alt&quot;].maxindex, args[&quot;gloss&quot;].maxindex, args[&quot;tr&quot;].maxindex) do\n\t\ttable.insert(parts, {\n\t\t\tterm = args[compat and 1 or 2][i],\n\t\t\talt\
       \ = args[&quot;alt&quot;][i],\n\t\t\ttr = args[&quot;tr&quot;][i],\n\t\t\tgloss = args[&quot;gloss&quot;][i],\n\t\t\tpos = args[&quot;pos&quot;][i],\n\t\t})\n\tend\n\t\n\treturn require(&quot;Module:etymology&quot;).calque(\n\t\tlang,\n\t\t{lang = source,\
       \ term = args[&quot;etyl term&quot;], tr = args[&quot;etyl tr&quot;], gloss = args[&quot;etyl t&quot;]},\n\t\tparts, args[&quot;sort&quot;], args[&quot;nocap&quot;], args[&quot;notext&quot;])\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
-- recorded: 2016-08-15T20:44:30.734Z
+- recorded: 2016-08-15T22:29:25.489Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Aparameters&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -224,24 +224,24 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=28446 t=1471293870621942
+      Backend-Timing: D=34460 t=1471300165375598
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:30 GMT
+      Date: Mon, 15 Aug 2016 22:29:25 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1228.eqiad.wmnet
+      Server: mw1278.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1054 pass, cp3032 pass, cp3033 pass
+      X-Cache: cp1054 pass, cp3042 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 311458175, 2154956557, 1186422746
+      X-Varnish: 329457493, 1952101807, 1213992091
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4797340\" pageid=\"4797340\" ns=\"828\" title=\"Module:parameters\"><revisions><rev user=\"Kc kennylau\" timestamp=\"2016-01-24T10:35:50Z\" comment=\"\" contentformat=\"text/plain\"\
       \ contentmodel=\"Scribunto\" xml:space=\"preserve\">local export = {}\n\n-- A helper function to escape magic characters in a string\n-- Magic characters: ^$()%.[]*+-?\nlocal function plain(text)\n\treturn mw.ustring.gsub(text, &quot;([%^%$%(%)%%%.%[%]%*%+%-%?])&quot;,\
       \ &quot;%%%1&quot;)\nend\n\n-- A helper function that removes empty numeric indexes in a table,\n-- so that the values are tightly packed like in a normal Lua table.\nfunction export.remove_holes(list)\n\tlocal new_list = {}\n\t\n\tfor i = 1, list.maxindex\
@@ -272,7 +272,7 @@ interactions:
       \ should now be empty.\n\t-- If any entry remains, trigger an error, unless we're in the template namespace.\n\tif mw.title.getCurrentTitle().nsText ~= &quot;Template&quot; then\n\t\tfor name, param in pairs(required) do\n\t\t\terror(&quot;The parameter\
       \ \\&quot;&quot; .. name .. &quot;\\&quot; is required.&quot;)\n\t\tend\n\tend\n\t\n\t-- Remove holes in any list parameters if needed.\n\tfor name, val in pairs(args_new) do\n\t\tif type(val) == &quot;table&quot; and not params[name].allow_holes then\n\
       \t\t\targs_new[name] = export.remove_holes(val)\n\t\tend\n\tend\n\t\n\tif return_unknown then\n\t\treturn args_new, args_unknown\n\telse\n\t\treturn args_new\n\tend\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
-- recorded: 2016-08-15T20:44:31.113Z
+- recorded: 2016-08-15T22:29:25.701Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Alanguages&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -287,24 +287,24 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=21281 t=1471293870951114
+      Backend-Timing: D=40203 t=1471300165583625
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:31 GMT
+      Date: Mon, 15 Aug 2016 22:29:25 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1288.eqiad.wmnet
+      Server: mw1193.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1068 pass, cp3033 pass, cp3033 pass
+      X-Cache: cp1067 pass, cp3031 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 1856439951, 1155703732, 1186423728
+      X-Varnish: 3134170453, 2016101655, 1213993386
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4453474\" pageid=\"4453474\" ns=\"828\" title=\"Module:languages\"><revisions><rev user=\"CodeCat\" timestamp=\"2016-06-04T12:21:42Z\" comment=\"\" contentformat=\"text/plain\"\
       \ contentmodel=\"Scribunto\" xml:space=\"preserve\">local export = {}\n\nlocal Language = {}\n\n\nfunction Language:getCode()\n\treturn self._code\nend\n\n\nfunction Language:getCanonicalName()\n\treturn self._rawData.canonicalName\nend\n\n\n-- Commented\
       \ out; I don't think anything uses this, the presence/absence of script errors should confirm\n--function Language:getAllNames()\n--\treturn self._rawData.names\n--end\n\n\nfunction Language:getOtherNames()\n\treturn self._rawData.otherNames or {}\nend\n\
@@ -339,7 +339,7 @@ interactions:
       \ .. code)\n\tend\n\t\n\treturn data and setmetatable({ _rawData = data, _code = code }, Language) or nil\nend\n\n\nfunction export.getByCode(code)\n\treturn export.makeObject(code, getRawLanguageData(code))\nend\n\n\nfunction export.getByCanonicalName(name)\n\
       \tlocal code = mw.loadData(&quot;Module:languages/by name&quot;)[name]\n\t\n\tif not code then\n\t\treturn nil\n\tend\n\t\n\treturn export.makeObject(code, getRawLanguageData(code))\nend\n\n\nfunction export.iterateAll()\n\tmw.incrementExpensiveFunctionCount()\n\
       \tlocal m_data = mw.loadData(&quot;Module:languages/alldata&quot;)\n\tlocal func, t, var = pairs(m_data)\n\t\n\treturn function()\n\t\tlocal code, data = func(t, var)\n\t\treturn export.makeObject(code, data)\n\tend\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
-- recorded: 2016-08-15T20:44:31.836Z
+- recorded: 2016-08-15T22:29:25.992Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Alanguages%2Fdata2&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -354,24 +354,24 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=43858 t=1471293871279970
+      Backend-Timing: D=35227 t=1471300165800733
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:31 GMT
+      Date: Mon, 15 Aug 2016 22:29:25 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1194.eqiad.wmnet
+      Server: mw1282.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1053 pass, cp3030 pass, cp3033 pass
+      X-Cache: cp1068 pass, cp3041 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 1539167693, 2655424423, 1186425341
+      X-Varnish: 1875556768, 2725066948, 1213994173
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4206184\" pageid=\"4206184\" ns=\"828\" title=\"Module:languages/data2\"><revisions><rev user=\"-sche\" timestamp=\"2016-08-14T19:22:25Z\" comment=\"merge and rename per rfm\"\
       \ contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">local u = mw.ustring.char\n\n-- UTF-8 encoded strings for some commonly-used diacritics\nlocal GRAVE     = u(0x0300)\nlocal ACUTE     = u(0x0301)\nlocal CIRC      = u(0x0302)\n\
       local TILDE     = u(0x0303)\nlocal MACRON    = u(0x0304)\nlocal BREVE     = u(0x0306)\nlocal DOTABOVE  = u(0x0307)\nlocal DIAER     = u(0x0308)\nlocal CARON     = u(0x030C)\nlocal DGRAVE    = u(0x030F)\nlocal INVBREVE  = u(0x0311)\nlocal DOTBELOW  = u(0x0323)\n\
@@ -594,7 +594,7 @@ interactions:
       \ = &quot;Yoruba&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;alv-von&quot;,\n}\n\nm[&quot;za&quot;] = {\n\tcanonicalName = &quot;Zhuang&quot;,\n\tscripts = {&quot;Latn&quot;, &quot;Hani&quot;},\n\tfamily = &quot;tai&quot;,\n}\n\nm[&quot;zh&quot;]\
       \ = {\n\tcanonicalName = &quot;Chinese&quot;,\n\tscripts = {&quot;Hani&quot;, &quot;Brai&quot;},\n\tfamily = &quot;sit&quot;,\n\tancestors = {&quot;ltc&quot;},\n}\n\nm[&quot;zu&quot;] = {\n\tcanonicalName = &quot;Zulu&quot;,\n\totherNames = {&quot;isiZulu&quot;},\n\
       \tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;bnt-ngu&quot;,\n}\n\nreturn m</rev></revisions></page></pages></query></api>"
-- recorded: 2016-08-15T20:44:32.103Z
+- recorded: 2016-08-15T22:29:26.253Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Alanguages%2Fdata3%2Fe&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -609,24 +609,24 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=38378 t=1471293871973695
+      Backend-Timing: D=27153 t=1471300166140775
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:32 GMT
+      Date: Mon, 15 Aug 2016 22:29:26 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1198.eqiad.wmnet
+      Server: mw1281.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1065 pass, cp3030 pass, cp3033 pass
+      X-Cache: cp1065 pass, cp3033 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 2742267281, 2655427576, 1186430617
+      X-Varnish: 2761847505, 1171026333, 1213995003
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4206196\" pageid=\"4206196\" ns=\"828\" title=\"Module:languages/data3/e\"><revisions><rev user=\"-sche\" timestamp=\"2016-07-15T03:29:45Z\" comment=\"\" contentformat=\"text/plain\"\
       \ contentmodel=\"Scribunto\" xml:space=\"preserve\">local u = mw.ustring.char\n\n-- UTF-8 encoded strings for some commonly-used diacritics\nlocal GRAVE     = u(0x0300)\nlocal ACUTE     = u(0x0301)\nlocal CIRC      = u(0x0302)\nlocal TILDE     = u(0x0303)\n\
       local MACRON    = u(0x0304)\nlocal BREVE     = u(0x0306)\nlocal DOTABOVE  = u(0x0307)\nlocal DIAER     = u(0x0308)\nlocal CARON     = u(0x030C)\nlocal DGRAVE    = u(0x030F)\nlocal INVBREVE  = u(0x0311)\nlocal DOTBELOW  = u(0x0323)\nlocal RINGBELOW = u(0x0325)\n\
@@ -685,7 +685,7 @@ interactions:
       \ = &quot;Extremaduran&quot;,\n\tscripts = {&quot;Latn&quot;},\n\tfamily = &quot;roa&quot;,\n}\n\nm[&quot;eya&quot;] = {\n\tcanonicalName = &quot;Eyak&quot;,\n\tfamily = &quot;xnd&quot;,\n}\n\nm[&quot;eyo&quot;] = {\n\tcanonicalName = &quot;Keiyo&quot;,\n\
       \tfamily = &quot;sdv&quot;,\n}\n\nm[&quot;eza&quot;] = {\n\tcanonicalName = &quot;Ezaa&quot;,\n\totherNames = {&quot;Ezza&quot;, &quot;Eza&quot;},\n\tfamily = &quot;alv-von&quot;,\n}\n\nm[&quot;eze&quot;] = {\n\tcanonicalName = &quot;Uzekwe&quot;,\n\t\
       family = &quot;nic-bco&quot;,\n}\n\nreturn m</rev></revisions></page></pages></query></api>"
-- recorded: 2016-08-15T20:44:32.416Z
+- recorded: 2016-08-15T22:29:26.457Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Aetymology&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -700,24 +700,24 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=24426 t=1471293872291346
+      Backend-Timing: D=29188 t=1471300166351245
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:32 GMT
+      Date: Mon, 15 Aug 2016 22:29:26 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1232.eqiad.wmnet
+      Server: mw1227.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1068 pass, cp3030 pass, cp3033 pass
+      X-Cache: cp1053 pass, cp3030 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 1856445227, 2655428252, 1186431862
+      X-Varnish: 1557249843, 2670453438, 1213996281
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4998763\" pageid=\"4998763\" ns=\"828\" title=\"Module:etymology\"><revisions><rev user=\"CodeCat\" timestamp=\"2016-08-15T15:57:39Z\" comment=\"Extra checking for term parameters\
       \ on non-languages\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">local export = {}\n\nfunction export.format_etyl(lang, source, sort_key)\n\tlocal info\n\t\n\tif source:getCode() == &quot;und&quot; then\n\t\tinfo = {\n\
       \t\t\tdisplay = &quot;undetermined&quot;,\n\t\t\tcat_name = &quot;other languages&quot;}\n\telseif source:getType() == &quot;etymology language&quot; then\n\t\tinfo = {\n\t\t\tdisplay = &quot;[[w:&quot; .. source:getWikipediaArticle() .. &quot;|&quot;\
@@ -756,7 +756,7 @@ interactions:
       local result = &quot;&quot;\n\t\n\tif parts and #parts ~= 0 then\n\t\tresult = result .. require(&quot;Module:compound&quot;).show_compound(lang, nil, parts)\n\t\tresult = result .. &quot;, [[Appendix:Glossary#calque|calque]] of&quot;\n\t\tresult = result\
       \ .. &quot;[[Category:calque with terms]] &quot;\n\telseif not notext then\n\t\tresult = result .. &quot;[[Appendix:Glossary#calque|&quot; .. (nocap and &quot;c&quot; or &quot;C&quot;) .. &quot;alque]] of &quot;\n\tend\n\t\n\tlocal categories = require(&quot;Module:utilities&quot;).format_categories({lang:getCanonicalName()\
       \ .. &quot; calques&quot;}, lang, sort_key)\n\t\n\tresult = result .. &quot; &quot; .. export.format_borrowed(lang, terminfo, sort_key, false, true, false) .. categories\n\t\n\treturn result\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
-- recorded: 2016-08-15T20:44:32.753Z
+- recorded: 2016-08-15T22:29:26.659Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Autilities&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -771,24 +771,24 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=33855 t=1471293872642177
+      Backend-Timing: D=34916 t=1471300166549138
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:32 GMT
+      Date: Mon, 15 Aug 2016 22:29:26 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1277.eqiad.wmnet
+      Server: mw1278.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1052 pass, cp3040 pass, cp3033 pass
+      X-Cache: cp1052 pass, cp3031 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 3153417595, 3049608726, 1186433935
+      X-Varnish: 3172172491, 2016103612, 1213996723
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4073440\" pageid=\"4073440\" ns=\"828\" title=\"Module:utilities\"><revisions><rev user=\"CodeCat\" timestamp=\"2016-02-26T15:05:21Z\" comment=\"\" contentformat=\"text/plain\"\
       \ contentmodel=\"Scribunto\" xml:space=\"preserve\">local export = {}\n\nlocal notneeded = {\n\t[&quot;und&quot;] = true,\n\t[&quot;cmn&quot;] = true,\n\t[&quot;ja&quot;] = true,\n\t[&quot;zu&quot;] = true,\n\t[&quot;nan&quot;] = true,\n\t[&quot;yue&quot;]\
       \ = true,\n\t[&quot;ko&quot;] = true,\n}\n\nlocal neededhassubpage = {\n\t[&quot;ga&quot;] = true,\n\t[&quot;gv&quot;] = true,\n\t[&quot;nv&quot;] = true,\n\t[&quot;roa-jer&quot;] = true,\n\t[&quot;fr&quot;] = true,\n\t[&quot;rm&quot;] = true,\n\t[&quot;prg&quot;]\
@@ -806,7 +806,7 @@ interactions:
       \ .. langcode .. &quot;\\&quot; is not valid.&quot;)\n\tend\n\t\n\tlocal prefix = &quot;&quot;\n\t\n\tif format == &quot;pos&quot; then\n\t\tprefix = lang:getCanonicalName() .. &quot; &quot;\n\telseif format == &quot;topic&quot; then\n\t\tprefix = lang:getCode()\
       \ .. &quot;:&quot;\n\tend\n\t\n\tlocal i = 2\n\tlocal cat = args[i]\n\t\n\twhile cat do\n\t\tif cat ~= &quot;&quot; then\n\t\t\ttable.insert(categories, prefix .. cat)\n\t\tend\n\t\t\n\t\ti = i + 1\n\t\tcat = args[i]\n\tend\n\t\n\treturn export.format_categories(categories,\
       \ lang, sort_key)\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
-- recorded: 2016-08-15T20:44:32.999Z
+- recorded: 2016-08-15T22:29:26.885Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Am&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -821,26 +821,26 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=35322 t=1471293872885447
+      Backend-Timing: D=29345 t=1471300166778252
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:32 GMT
+      Date: Mon, 15 Aug 2016 22:29:26 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1189.eqiad.wmnet
+      Server: mw1190.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1054 pass, cp3030 pass, cp3033 pass
+      X-Cache: cp1054 pass, cp3041 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 311465623, 2655429614, 1186434917
+      X-Varnish: 329461368, 2725068943, 1213997657
     body: <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="4580450" pageid="4580450" ns="10" title="Template:m"><revisions><rev user="CodeCat" timestamp="2014-10-30T23:32:44Z" comment="Redirected page to [[Template:mention]]" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">#REDIRECT [[Template:mention]]</rev></revisions></page></pages></query></api>
-- recorded: 2016-08-15T20:44:33.190Z
+- recorded: 2016-08-15T22:29:27.069Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Amention&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -855,24 +855,24 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=26490 t=1471293873088639
+      Backend-Timing: D=23487 t=1471300166972129
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:33 GMT
+      Date: Mon, 15 Aug 2016 22:29:27 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1225.eqiad.wmnet
+      Server: mw1290.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1068 pass, cp3032 pass, cp3033 pass
+      X-Cache: cp1068 pass, cp3033 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 1856447274, 2154963085, 1186435658
+      X-Varnish: 1875559932, 1171028189, 1213998104
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="4064248" pageid="4064248" ns="10" title="Template:mention"><revisions><rev user="Daniel Carrero" timestamp="2016-06-28T04:54:37Z" comment="" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{#invoke:links/templates|l_term_t|face=term&lt;noinclude&gt;|demo=term&lt;/noinclude&gt;}}&lt;!--
 
@@ -885,7 +885,7 @@ interactions:
       --&gt;{{redlink category|{{{1|}}}|{{{2|}}}|template=m}}&lt;!--
 
       --&gt;&lt;noinclude&gt;{{documentation}}&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2016-08-15T20:44:33.428Z
+- recorded: 2016-08-15T22:29:27.361Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Alinks%2Ftemplates&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -900,24 +900,24 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=28729 t=1471293873323363
+      Backend-Timing: D=22332 t=1471300167254439
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:33 GMT
+      Date: Mon, 15 Aug 2016 22:29:27 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1224.eqiad.wmnet
+      Server: mw1289.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1068 pass, cp3031 pass, cp3033 pass
+      X-Cache: cp1055 pass, cp3031 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 1856447686, 2000990689, 1186436434
+      X-Varnish: 254636848, 2016104917, 1213999062
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4282542\" pageid=\"4282542\" ns=\"828\" title=\"Module:links/templates\"><revisions><rev user=\"CodeCat\" timestamp=\"2016-07-25T15:56:25Z\" comment=\"\" contentformat=\"text/plain\"\
       \ contentmodel=\"Scribunto\" xml:space=\"preserve\">local m_links = require(&quot;Module:links&quot;)\n\nlocal export = {}\n\n-- Used in [[Template:l]] and [[Template:m]]\nfunction export.l_term_t(frame)\n\tlocal face = frame.args[&quot;face&quot;]\n\t\
       local allowSelfLink = frame.args[&quot;notself&quot;]; allowSelfLink = not allowSelfLink or allowSelfLink == &quot;&quot;\n\t\n\tlocal params = {\n\t\t[1] = {required = true},\n\t\t[2] = {},\n\t\t[3] = {},\n\t\t[4] = {alias_of = &quot;gloss&quot;},\n\t\
@@ -933,7 +933,7 @@ interactions:
       \ text = args[2]\n\tlocal alt = args[3]\n\tif text == &quot;&quot; then return alt or &quot;&quot; end\n\tif alt == &quot;&quot; then alt = nil end\n\t\n\tlocal id = args[&quot;id&quot;]; if id == &quot;&quot; then id = nil end\n\t\n\treturn m_links.language_link(text,\
       \ alt, lang, id, allowSelfLink)\nend\n\nfunction export.def_t(frame)\n\tlocal params = {\n\t\t[1] = {required = true, default = &quot;&quot;},\n\t}\n\t\n\tlocal args = require(&quot;Module:parameters&quot;).process(frame:getParent().args, params)\n\t\n\
       \treturn m_links.english_links(args[1])\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
-- recorded: 2016-08-15T20:44:33.630Z
+- recorded: 2016-08-15T22:29:27.573Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Alinks&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -948,24 +948,24 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=30821 t=1471293873516535
+      Backend-Timing: D=34193 t=1471300167451090
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:33 GMT
+      Date: Mon, 15 Aug 2016 22:29:27 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1278.eqiad.wmnet
+      Server: mw1221.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1052 pass, cp3031 pass, cp3033 pass
+      X-Cache: cp1052 pass, cp3032 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 3153419256, 2000990975, 1186437160
+      X-Varnish: 3172174349, 2169860789, 1213999773
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"3935515\" pageid=\"3935515\" ns=\"828\" title=\"Module:links\"><revisions><rev user=\"CodeCat\" timestamp=\"2016-07-25T15:52:49Z\" comment=\"\" contentformat=\"text/plain\"\
       \ contentmodel=\"Scribunto\" xml:space=\"preserve\">local export = {}\n\n--TODO: move to [[Module:languages]]\nlocal override_translit = {\n\t[&quot;ab&quot;] = true,\n\t[&quot;abq&quot;] = true,\n\t[&quot;ady&quot;] = true,\n\t[&quot;av&quot;] = true,\n\
       \t[&quot;axm&quot;] = true,\n\t[&quot;ba&quot;] = true,\n\t[&quot;bo&quot;] = true,\n\t[&quot;bua&quot;] = true,\n\t[&quot;ce&quot;] = true,\n\t[&quot;chm&quot;] = true,\n\t[&quot;cv&quot;] = true,\t\n\t[&quot;dar&quot;] = true,\n\t[&quot;dv&quot;] = true,\n\
@@ -1035,7 +1035,7 @@ interactions:
       \ text then text = &quot;&quot; end\n\t\n\ttext = text:gsub(&quot;%[%[Category:[^|%]]-|?[^|%]]-%]%]&quot;, &quot;&quot;)\n\ttext = text:gsub(&quot;%[%[[^|%]]-|&quot;, &quot;&quot;)\n\ttext = text:gsub(&quot;%[%[&quot;, &quot;&quot;)\n\ttext = text:gsub(&quot;%]%]&quot;,\
       \ &quot;&quot;)\n\n\treturn text\nend\n\nfunction export.english_links(text)\n\tlocal lang = require(&quot;Module:languages&quot;).getByCode(&quot;en&quot;)\n\t\n\ttext = mw.ustring.gsub(text, &quot;%[%[([^%]]+)%]%]&quot;,\n\t\tfunction(linktext)\n\t\t\
       \tlocal link = parseLink(linktext)\n\t\t\treturn makeLangLink(link, lang, nil, true, false)\n\t\tend\n\t)\n\t\n\treturn text\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
-- recorded: 2016-08-15T20:44:33.834Z
+- recorded: 2016-08-15T22:29:27.838Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Ascript+utilities&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -1050,24 +1050,24 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=26618 t=1471293873731489
+      Backend-Timing: D=32500 t=1471300167726678
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:33 GMT
+      Date: Mon, 15 Aug 2016 22:29:27 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1234.eqiad.wmnet
+      Server: mw1279.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1068 pass, cp3032 pass, cp3033 pass
+      X-Cache: cp1068 pass, cp3031 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 1856448452, 2154963796, 1186437824
+      X-Varnish: 1875561155, 2016105308, 1214000427
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4099100\" pageid=\"4099100\" ns=\"828\" title=\"Module:script utilities\"><revisions><rev user=\"Benwing\" timestamp=\"2016-08-15T02:29:06Z\" comment=\"support &#039;hypothetical&#039;\
       \ face in tag_text()\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">local export = {}\n\n-- Implements [[Template:lang]]\nfunction export.lang_t(frame)\n\tlocal args = frame:getParent().args\n\tNAMESPACE = mw.title.getCurrentTitle().nsText\n\
       \t\n\tlocal lang = args[1]; if lang == &quot;&quot; then lang = nil end\n\tlocal text = args[2] or &quot;&quot;\n\tlocal sc = args[&quot;sc&quot;]; if sc == &quot;&quot; then sc = nil end\n\tlocal face = args[&quot;face&quot;]; if face == &quot;&quot;\
@@ -1089,7 +1089,7 @@ interactions:
       \ = args[&quot;sc&quot;]; if sc == &quot;&quot; then sc = nil end\n\tlang = require(&quot;Module:languages&quot;).getByCode(lang) or error(&quot;The language code \\&quot;&quot; .. lang .. &quot;\\&quot; is not valid.&quot;)\n\tsc = (sc and (require(&quot;Module:scripts&quot;).getByCode(sc)\
       \ or error(&quot;The script code \\&quot;&quot; .. sc .. &quot;\\&quot; is not valid.&quot;)) or nil)\n\t\n\tlocal ret = export.request_script(lang, sc)\n\t\n\tif ret == &quot;&quot; then\n\t\terror(&quot;This language is written in the Latin alphabet.\
       \ It does not need a native script.&quot;)\n\telse\n\t\treturn ret\n\tend\nend\n\nfunction is_Latin_script(sc)\n\treturn (sc:getCode():find(&quot;Latn&quot;, nil, true)) or sc:getCode() == &quot;Latinx&quot;\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
-- recorded: 2016-08-15T20:44:34.128Z
+- recorded: 2016-08-15T22:29:28.020Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Ascripts&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -1104,24 +1104,24 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=30424 t=1471293874019162
+      Backend-Timing: D=21218 t=1471300167923183
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:34 GMT
+      Date: Mon, 15 Aug 2016 22:29:27 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1192.eqiad.wmnet
+      Server: mw1289.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1068 pass, cp3041 pass, cp3033 pass
+      X-Cache: cp1068 pass, cp3031 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 1856449358, 2709980081, 1186438563
+      X-Varnish: 1875562163, 2016105987, 1214001423
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4216643\" pageid=\"4216643\" ns=\"828\" title=\"Module:scripts\"><revisions><rev user=\"Daniel Carrero\" timestamp=\"2016-07-29T08:24:51Z\" comment=\"\" contentformat=\"text/plain\"\
       \ contentmodel=\"Scribunto\" xml:space=\"preserve\">local export = {}\nlocal Script = {}\n\nfunction Script:getCode()\n\treturn self._code\nend\n\nfunction Script:getCanonicalName()\n\treturn self._rawData.canonicalName\nend\n\nfunction Script:getOtherNames()\n\
       \treturn self._rawData.otherNames or {}\nend\n\nfunction Script:getParent()\n\treturn self._rawData.parent\nend\n\nfunction Script:getSystems()\n\tif not self._systemObjects then\n\t\tlocal m_systems = require(&quot;Module:Writing systems&quot;)\n\t\t\
@@ -1135,7 +1135,7 @@ interactions:
       return export.getByCode(&quot;None&quot;)\n\tend\n\t\n\tlocal scripts = lang:getScripts()\n\t\n\t-- Try to match every script against the text,\n\t-- and return the one with the most matching characters.\n\tlocal bestcount = 0\n\tlocal bestscript = nil\n\
       \t\n\tfor i, script in ipairs(scripts) do\n\t\tlocal count = script:countCharacters(text)\n\t\t\n\t\tif count &gt; bestcount then\n\t\t\tbestcount = count\n\t\t\tbestscript = script\n\t\tend\n\tend\n\t\n\tif bestscript then\n\t\treturn bestscript\n\tend\n\
       \t\n\t-- No matching script was found. Return &quot;None&quot;.\n\treturn export.getByCode(&quot;None&quot;)\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
-- recorded: 2016-08-15T20:44:34.338Z
+- recorded: 2016-08-15T22:29:28.305Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Ascripts%2Fdata&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -1150,27 +1150,27 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=25523 t=1471293874230173
+      Backend-Timing: D=30798 t=1471300168192253
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:34 GMT
+      Date: Mon, 15 Aug 2016 22:29:28 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1288.eqiad.wmnet
+      Server: mw1205.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1067 pass, cp3033 pass, cp3033 pass
+      X-Cache: cp1067 pass, cp3041 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 3116630505, 1155711838, 1186440082
+      X-Varnish: 3134176461, 2725071395, 1214002277
     body: !!binary |-
       PD94bWwgdmVyc2lvbj0iMS4wIj8+PGFwaSBiYXRjaGNvbXBsZXRlPSIiPjxxdWVyeT48cGFnZXM+PHBhZ2UgX2lkeD0iNDA3MzYwMiIgcGFnZWlkPSI0MDczNjAyIiBucz0iODI4IiB0aXRsZT0iTW9kdWxlOnNjcmlwdHMvZGF0YSI+PHJldmlzaW9ucz48cmV2IHVzZXI9IkRhbmllbCBDYXJyZXJvIiB0aW1lc3RhbXA9IjIwMTYtMDgtMDlUMjE6NTE6MTlaIiBjb21tZW50PSIiIGNvbnRlbnRmb3JtYXQ9InRleHQvcGxhaW4iIGNvbnRlbnRtb2RlbD0iU2NyaWJ1bnRvIiB4bWw6c3BhY2U9InByZXNlcnZlIj4tLSBXaGVuIGFkZGluZyBuZXcgc2NyaXB0cyB0byB0aGlzIGZpbGUsIHBsZWFzZSBkb24ndCBmb3JnZXQgdG8gYWRkCi0tIHN0eWxlIGRlZmluaXRvbnMgZm9yIHRoZSBzY3JpcHQgaW4gW1tNZWRpYVdpa2k6Q29tbW9uLmNzc11dLgoKbG9jYWwgdSA9IG13LnVzdHJpbmcuY2hhcgpsb2NhbCBtID0ge30KCm1bJnF1b3Q7QWRsbSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7QWRsYW0mcXVvdDssCgp9CgptWyZxdW90O0FmYWsmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0FmYWthJnF1b3Q7LAp9CgptWyZxdW90O0FnaGImcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0NhdWNhc2lhbiBBbGJhbmlhbiZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkJSwLfCQlaPwkJWvJnF1b3Q7LAp9CgptWyZxdW90O0Fob20mcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0Fob20mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JGcgC3wkZy/JnF1b3Q7LAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtBcmFiJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtBcmFiaWMmcXVvdDssCglvdGhlck5hbWVzID0geyZxdW90O0phd2kmcXVvdDt9LAoJY2hhcmFjdGVycyA9ICZxdW90O9iALdu/3ZAt3b/goqAt4KO/762QLe+3ve+5sC3vu7wmcXVvdDssCn0KCm1bJnF1b3Q7ZmEtQXJhYiZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7QXJhYmljJnF1b3Q7LAoJb3RoZXJOYW1lcyA9IHsmcXVvdDtQZXJzby1BcmFiaWMmcXVvdDt9LAoJY2hhcmFjdGVycyA9IG1bJnF1b3Q7QXJhYiZxdW90O10uY2hhcmFjdGVycywKCXBhcmVudCA9ICZxdW90O0FyYWImcXVvdDssCn0KCm1bJnF1b3Q7a2stQXJhYiZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7QXJhYmljJnF1b3Q7LAoJY2hhcmFjdGVycyA9IG1bJnF1b3Q7QXJhYiZxdW90O10uY2hhcmFjdGVycywKCXBhcmVudCA9ICZxdW90O0FyYWImcXVvdDssCn0KCm1bJnF1b3Q7a3MtQXJhYiZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7QXJhYmljJnF1b3Q7LAoJY2hhcmFjdGVycyA9IG1bJnF1b3Q7QXJhYiZxdW90O10uY2hhcmFjdGVycywKCXBhcmVudCA9ICZxdW90O0FyYWImcXVvdDssCn0KCm1bJnF1b3Q7a3UtQXJhYiZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7QXJhYmljJnF1b3Q7LAoJY2hhcmFjdGVycyA9IG1bJnF1b3Q7QXJhYiZxdW90O10uY2hhcmFjdGVycywKCXBhcmVudCA9ICZxdW90O0FyYWImcXVvdDssCn0KCm1bJnF1b3Q7bXpuLUFyYWImcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0FyYWJpYyZxdW90OywKCWNoYXJhY3RlcnMgPSBtWyZxdW90O0FyYWImcXVvdDtdLmNoYXJhY3RlcnMsCglwYXJlbnQgPSAmcXVvdDtBcmFiJnF1b3Q7LAp9CgptWyZxdW90O290YS1BcmFiJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtBcmFiaWMmcXVvdDssCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtBcmFiJnF1b3Q7XS5jaGFyYWN0ZXJzLAoJcGFyZW50ID0gJnF1b3Q7QXJhYiZxdW90OywKfQoKbVsmcXVvdDtwYS1BcmFiJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtBcmFiaWMmcXVvdDssCglvdGhlck5hbWVzID0geyZxdW90O1NoYWhtdWtoaSZxdW90O30sCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtBcmFiJnF1b3Q7XS5jaGFyYWN0ZXJzLAoJcGFyZW50ID0gJnF1b3Q7QXJhYiZxdW90OywKfQoKbVsmcXVvdDtwcy1BcmFiJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtBcmFiaWMmcXVvdDssCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtBcmFiJnF1b3Q7XS5jaGFyYWN0ZXJzLAoJcGFyZW50ID0gJnF1b3Q7QXJhYiZxdW90OywKfQoKbVsmcXVvdDtzZC1BcmFiJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtBcmFiaWMmcXVvdDssCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtBcmFiJnF1b3Q7XS5jaGFyYWN0ZXJzLAoJcGFyZW50ID0gJnF1b3Q7QXJhYiZxdW90OywKfQoKbVsmcXVvdDt0dC1BcmFiJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtBcmFiaWMmcXVvdDssCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtBcmFiJnF1b3Q7XS5jaGFyYWN0ZXJzLAoJcGFyZW50ID0gJnF1b3Q7QXJhYiZxdW90OywKfQoKbVsmcXVvdDt1Zy1BcmFiJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtBcmFiaWMmcXVvdDssCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtBcmFiJnF1b3Q7XS5jaGFyYWN0ZXJzLAoJcGFyZW50ID0gJnF1b3Q7QXJhYiZxdW90OywKfQoKbVsmcXVvdDt1ci1BcmFiJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtBcmFiaWMmcXVvdDssCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtBcmFiJnF1b3Q7XS5jaGFyYWN0ZXJzLAoJcGFyZW50ID0gJnF1b3Q7QXJhYiZxdW90OywKfQoKbVsmcXVvdDtBcmFuJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtOYXN0YWxlZXEmcXVvdDssCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtBcmFiJnF1b3Q7XS5jaGFyYWN0ZXJzLAp9CgptWyZxdW90O0FybWkmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0ltcGVyaWFsIEFyYW1haWMmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JChgC3wkKGfJnF1b3Q7LAp9CgptWyZxdW90O0FybW4mcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0FybWVuaWFuJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O9SxLdaP76yTLe+slyZxdW90OywKfQoKbVsmcXVvdDtBdnN0JnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtBdmVzdGFuJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CQrIAt8JCsvyZxdW90OywKfQoKbVsmcXVvdDtCYWxpJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtCYWxpbmVzZSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvhrIAt4a28JnF1b3Q7LAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtCYW11JnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtCYW11bSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvqmqAt6pu38JaggC3wlqi4JnF1b3Q7LAp9CgptWyZxdW90O0Jhc3MmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0Jhc3NhJnF1b3Q7LAoJb3RoZXJOYW1lcyA9IHsmcXVvdDtCYXNzYSBWYWgmcXVvdDssICZxdW90O1ZhaCZxdW90O30sCgljaGFyYWN0ZXJzID0gJnF1b3Q78JarkC3wlqu1JnF1b3Q7LAp9CgptWyZxdW90O0JhdGsmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0JhdGFrJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+GvgC3hr78mcXVvdDssCglzeXN0ZW1zID0geyZxdW90O2FidWdpZGEmcXVvdDt9LAp9CgptWyZxdW90O0JlbmcmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0JlbmdhbGkmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74KaBLeCnuiZxdW90OywKCXN5c3RlbXMgPSB7JnF1b3Q7YWJ1Z2lkYSZxdW90O30sCn0KCm1bJnF1b3Q7QmhrcyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7QmhhaWtzdWtpJnF1b3Q7LAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtCb3BvJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtaaHV5aW4mcXVvdDssCglvdGhlck5hbWVzID0geyZxdW90O1podXlpbiBGdWhhbyZxdW90OywgJnF1b3Q7Qm9wb21vZm8mcXVvdDt9LAoJY2hhcmFjdGVycyA9ICZxdW90O+OEhS3jhK3jhqAt44a6JnF1b3Q7LAp9CgptWyZxdW90O0JyYWgmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0JyYWhtaSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkYCALfCRga8mcXVvdDssCglzeXN0ZW1zID0geyZxdW90O2FidWdpZGEmcXVvdDt9LAp9CgptWyZxdW90O0JyYWkmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0JyYWlsbGUmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74qCALeKjvyZxdW90OywKfQoKbVsmcXVvdDtCdWdpJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtCdWdpbmVzZSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvhqIAt4aifJnF1b3Q7LAp9CgptWyZxdW90O0J1aGQmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0J1aGlkJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+GdgC3hnZMmcXVvdDssCn0KCm1bJnF1b3Q7Q2FrbSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7Q2hha21hJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CRhIAt8JGFgyZxdW90OywKCXN5c3RlbXMgPSB7JnF1b3Q7YWJ1Z2lkYSZxdW90O30sCn0KCm1bJnF1b3Q7Q2FucyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7Q2FuYWRpYW4gc3lsbGFiaWNzJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+GQgC3hmb8mcXVvdDssCglzeXN0ZW1zID0geyZxdW90O2FidWdpZGEmcXVvdDt9LAp9CgptWyZxdW90O0NhcmkmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0NhcmlhbiZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkIqgLfCQi5AmcXVvdDssCn0KCm1bJnF1b3Q7Q2hhbSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7Q2hhbSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvqqIAt6qmfJnF1b3Q7LAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtDaGVyJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtDaGVyb2tlZSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvhjqAt4Y+06q2wLequvyZxdW90OywKfQoKbVsmcXVvdDtDb3B0JnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtDb3B0aWMmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q7z6Itz6/isoAt4rO/8JCLoS3wkIu7JnF1b3Q7LCAtLSB0aGlzIGlzIG1vc3RseSAmcXVvdDtDb3B0aWMmcXVvdDssIG5vdCB1bmlmaWVkICZxdW90O0dyZWVrIGFuZCBDb3B0aWMmcXVvdDsKfQoKbVsmcXVvdDtDcHJ0JnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtDeXByaW90JnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CQoIAt8JCgvyZxdW90OywKfQoKbVsmcXVvdDtDeXJsJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtDeXJpbGxpYyZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvQgC3Rn9KKLdSn6pqALeqalyZxdW90OywKfQoKbVsmcXVvdDtDeXJzJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtPbGQgQ3lyaWxsaWMmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q70IAt1KfqmYAt6pqXJnF1b3Q7LAp9CgptWyZxdW90O0RldmEmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0RldmFuYWdhcmkmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74KSALeClv+qjoC3qo7smcXVvdDssCglzeXN0ZW1zID0geyZxdW90O2FidWdpZGEmcXVvdDt9LAp9CgptWyZxdW90O0RzcnQmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0Rlc2VyZXQmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCQgC3wkJGPJnF1b3Q7LAp9CgptWyZxdW90O0R1cGwmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0R1cGxveWFuJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CbsIAt8JuynyZxdW90OywKfQoKbVsmcXVvdDtFZ3lkJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtEZW1vdGljJnF1b3Q7LAp9CgptWyZxdW90O0VneXAmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0VneXB0aWFuIGhpZXJvZ2x5cGhpYyZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwk4CALfCTkK4mcXVvdDssCn0KCm1bJnF1b3Q7RWxiYSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7RWxiYXNhbiZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkJSALfCQlKcmcXVvdDssCn0KCm1bJnF1b3Q7RXRoaSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7RXRoaW9waWMmcXVvdDssCglvdGhlck5hbWVzID0geyZxdW90O0dlJ2V6JnF1b3Q7fSwKCWNoYXJhY3RlcnMgPSAmcXVvdDvhiIAt4Y6Z4raALeK3nuqsgS3qrK4mcXVvdDssCglzeXN0ZW1zID0geyZxdW90O2FidWdpZGEmcXVvdDt9LAp9CgptWyZxdW90O0dlb2smcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0todXRzdXJpJnF1b3Q7LAoJb3RoZXJOYW1lcyA9IHsmcXVvdDtOdXNraHVyaSZxdW90OywgJnF1b3Q7QXNvbXRhdnJ1bGkmcXVvdDt9LAoJY2hhcmFjdGVycyA9ICZxdW90O+GCoC3hg43itIAt4rStJnF1b3Q7LCAtLSDhgqAt4YONIGlzIEFzb210YXZydWxpLCDitIAt4rStIGlzIE51c2todXJpCn0KCm1bJnF1b3Q7R2VvciZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7R2VvcmdpYW4mcXVvdDssCglvdGhlck5hbWVzID0geyZxdW90O01raGVkcnVsaSZxdW90O30sCgljaGFyYWN0ZXJzID0gJnF1b3Q74YKgLeGDvCZxdW90OywgLS0gdGVjaG5pY2FsbHkgb25seSB0aGUgcmFuZ2UgW+GDkC3hg79dIGlzIE1raGVkcnVsaQp9CgptWyZxdW90O0dsYWcmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0dsYWdvbGl0aWMmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74rCALeKxniZxdW90OywKfQoKbVsmcXVvdDtHb3RoJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtHb3RoaWMmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCMsC3wkI2KJnF1b3Q7LAp9CgptWyZxdW90O0dyYW4mcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0dyYW50aGEmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JGMgS3wkY20JnF1b3Q7LAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtHcmVrJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtHcmVlayZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvNsC3PvyZxdW90OywKfQoKbVsmcXVvdDtwb2x5dG9uaWMmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0dyZWVrJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+G8gC3hv74mcXVvdDsgLi4gbVsmcXVvdDtHcmVrJnF1b3Q7XS5jaGFyYWN0ZXJzLAoJcGFyZW50ID0gJnF1b3Q7R3JlayZxdW90OywKfQoKbVsmcXVvdDtHdWpyJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtHdWphcmF0aSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvgqoEt4KuxJnF1b3Q7LAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtHdXJ1JnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtHdXJtdWtoaSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvgqIEt4Km1JnF1b3Q7LAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtIYW5nJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtIYW5ndWwmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74YSALeGHv+qwgC3tnqPjhLEt44aOJnF1b3Q7LAp9CgptWyZxdW90O0hhbmkmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0hhbiZxdW90OywKCW90aGVyTmFtZXMgPSB7JnF1b3Q7SGFuemkmcXVvdDssICZxdW90O0NodSBOb20mcXVvdDt9LAoJY2hhcmFjdGVycyA9ICZxdW90O+S4gC3pv4zjkIAt5La144CALeOAv/CggIAt8Ky6r++8gS3vv64mcXVvdDssCn0KCm1bJnF1b3Q7SGFucyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7U2ltcGxpZmllZCBIYW4mcXVvdDssCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtIYW5pJnF1b3Q7XS5jaGFyYWN0ZXJzLAp9CgptWyZxdW90O0hhbnQmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1RyYWRpdGlvbmFsIEhhbiZxdW90OywKCWNoYXJhY3RlcnMgPSBtWyZxdW90O0hhbmkmcXVvdDtdLmNoYXJhY3RlcnMsCn0KCm1bJnF1b3Q7SGF0ciZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7SGF0cmFuJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CQo6At8JCjvyZxdW90OywKfQoKbVsmcXVvdDtIaXJhJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtIaXJhZ2FuYSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvjgYEt44KfJnF1b3Q7LAp9CgptWyZxdW90O0hsdXcmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0FuYXRvbGlhbiBIaWVyb2dseXBocyZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwlJCALfCUmYYmcXVvdDssCn0KCm1bJnF1b3Q7SHVuZyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7SHVuZ2FyaWFuIFJ1bmVzJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CQsoAt8JCysiZxdW90OywKfQoKbVsmcXVvdDtLYW5hJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtLYXRha2FuYSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvjgqAt44O/44ewLeOHvyZxdW90OywKfQoKLS0gVGhlc2Ugc2hvdWxkIGJlIGRlZmluZWQgYWZ0ZXIgdGhlIHNjcmlwdHMgdGhleSBhcmUgY29tcG9zZWQgb2YKCm1bJnF1b3Q7SnBhbiZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7SmFwYW5lc2UmcXVvdDssCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtIaXJhJnF1b3Q7XS5jaGFyYWN0ZXJzIC4uIG1bJnF1b3Q7S2FuYSZxdW90O10uY2hhcmFjdGVycyAuLiBtWyZxdW90O0hhbmkmcXVvdDtdLmNoYXJhY3RlcnMsIAp9CgptWyZxdW90O0tvcmUmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0tvcmVhbiZxdW90OywKCWNoYXJhY3RlcnMgPSBtWyZxdW90O0hhbmcmcXVvdDtdLmNoYXJhY3RlcnMgLi4gbVsmcXVvdDtIYW5pJnF1b3Q7XS5jaGFyYWN0ZXJzIC4uICZxdW90O++8gS3vv64mcXVvdDssIAp9CgptWyZxdW90O0NHSyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7S29yZWFuJnF1b3Q7LAp9CgptWyZxdW90O0hhbm8mcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0hhbnVub28mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74ZygLeGctCZxdW90OywKCXN5c3RlbXMgPSB7JnF1b3Q7YWJ1Z2lkYSZxdW90O30sCn0KCm1bJnF1b3Q7SGViciZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7SGVicmV3JnF1b3Q7LAoJY2hhcmFjdGVycyA9IHUoMHgwNTkwKSAuLiAmcXVvdDstJnF1b3Q7IC4uIHUoMHgwNUZGKSAuLiB1KDB4RkIxRCkgLi4gJnF1b3Q7LSZxdW90OyAuLiB1KDB4RkI0RiksCn0KCm1bJnF1b3Q7SG1uZyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7SG1vbmcmcXVvdDssCglvdGhlck5hbWVzID0geyZxdW90O1BhaGF3aCBIbW9uZyZxdW90O30sCgljaGFyYWN0ZXJzID0gJnF1b3Q78JasgC3wlq6PJnF1b3Q7LAp9CgptWyZxdW90O0licm4mcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0liZXJpYW4mcXVvdDssCn0KCm1bJnF1b3Q7SW5kcyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7SW5kdXMmcXVvdDssCglvdGhlck5hbWVzID0geyZxdW90O0hhcmFwcGFuJnF1b3Q7LCAmcXVvdDtJbmR1cyBWYWxsZXkmcXVvdDt9LAp9CgptWyZxdW90O0lQQWNoYXImcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0ludGVybmF0aW9uYWwgUGhvbmV0aWMgQWxwaGFiZXQmcXVvdDssCn0KCm1bJnF1b3Q7SXRhbCZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7T2xkIEl0YWxpYyZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkIyALfCQjKMmcXVvdDssCn0KCm1bJnF1b3Q7SmF2YSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7SmF2YW5lc2UmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q76qaALeqnnyZxdW90OywKCXN5c3RlbXMgPSB7JnF1b3Q7YWJ1Z2lkYSZxdW90O30sCn0KCm1bJnF1b3Q7SnVyYyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7SnVyY2hlbiZxdW90OywKfQoKbVsmcXVvdDtLYWxpJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtLYXlhaCBMaSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvqpIAt6qSvJnF1b3Q7LAp9CgptWyZxdW90O0toYXImcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0toYXJvc2h0aGkmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCogC3wkKmYJnF1b3Q7LAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtLaG1yJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtLaG1lciZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvhnoAt4Z+5JnF1b3Q7LAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtLaG9qJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtLaG9qa2kmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JGIgC3wkYi9JnF1b3Q7LAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtLaXRsJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtLaGl0YW4gTGFyZ2UmcXVvdDssCn0KCm1bJnF1b3Q7S2l0cyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7S2hpdGFuIFNtYWxsJnF1b3Q7LAp9CgptWyZxdW90O0tuZGEmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0thbm5hZGEmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74LKCLeCzsiZxdW90OywKCXN5c3RlbXMgPSB7JnF1b3Q7YWJ1Z2lkYSZxdW90O30sCn0KCm1bJnF1b3Q7S3RoaSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7S2FpdGhpJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CRgoAt8JGDgSZxdW90OywKCXN5c3RlbXMgPSB7JnF1b3Q7YWJ1Z2lkYSZxdW90O30sCn0KCm1bJnF1b3Q7TGFuYSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7TGFubmEmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74aigLeGqrSZxdW90OywKfQoKbVsmcXVvdDtMYW9vJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtMYW8mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74LqBLeC7nyZxdW90OywKCXN5c3RlbXMgPSB7JnF1b3Q7YWJ1Z2lkYSZxdW90O30sCn0KCm1bJnF1b3Q7TGF0biZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7TGF0aW4mcXVvdDssCglvdGhlck5hbWVzID0geyZxdW90O1JvbWFuJnF1b3Q7LCAmcXVvdDtSdW1pJnF1b3Q7LCAmcXVvdDtSb21hamkmcXVvdDssICZxdW90O1LFjW1hamkmcXVvdDt9LAoJY2hhcmFjdGVycyA9ICZxdW90OzAtOUEtWmEtesKhLVwyMDVcMTc14biALeG7vyZxdW90OywKfQoKbVsmcXVvdDtMYXRmJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtGcmFrdHVyJnF1b3Q7LAoJb3RoZXJOYW1lcyA9IHsmcXVvdDtCbGFja2xldHRlciZxdW90O30sCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtMYXRuJnF1b3Q7XS5jaGFyYWN0ZXJzLAp9CgptWyZxdW90O0xhdGlueCZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7TGF0aW4mcXVvdDssCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtMYXRuJnF1b3Q7XS5jaGFyYWN0ZXJzIC4uICZxdW90O+KxoC3isb/qnKAt6p+/6qywLeqtpSZxdW90OywKCXBhcmVudCA9ICZxdW90O0xhdG4mcXVvdDssCn0KCm1bJnF1b3Q7bnYtTGF0biZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7TGF0aW4mcXVvdDssCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtMYXRuJnF1b3Q7XS5jaGFyYWN0ZXJzLAoJcGFyZW50ID0gJnF1b3Q7TGF0biZxdW90OywKfQoKbVsmcXVvdDtwanQtTGF0biZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7TGF0aW4mcXVvdDssCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtMYXRuJnF1b3Q7XS5jaGFyYWN0ZXJzLAoJcGFyZW50ID0gJnF1b3Q7TGF0biZxdW90OywKfQoKbVsmcXVvdDtMZWtlJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtMZWtlJnF1b3Q7LAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtMZXBjJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtMZXBjaGEmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74bCALeGxjyZxdW90OywKCXN5c3RlbXMgPSB7JnF1b3Q7YWJ1Z2lkYSZxdW90O30sCn0KCm1bJnF1b3Q7TGltYiZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7TGltYnUmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74aSALeGljyZxdW90OywKCXN5c3RlbXMgPSB7JnF1b3Q7YWJ1Z2lkYSZxdW90O30sCn0KCm1bJnF1b3Q7TGluYSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7TGluZWFyIEEmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCYgC3wkJ2nJnF1b3Q7LAp9CgptWyZxdW90O0xpbmImcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0xpbmVhciBCJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CQgIAt8JCDuiZxdW90OywKfQoKbVsmcXVvdDtMaXN1JnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtMaXN1JnF1b3Q7LAoJb3RoZXJOYW1lcyA9IHsmcXVvdDtGcmFzZXImcXVvdDt9LAoJY2hhcmFjdGVycyA9ICZxdW90O+qTkC3qk78mcXVvdDssCn0KCm1bJnF1b3Q7THljaSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7THljaWFuJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CQioAt8JCKnCZxdW90OywKfQoKbVsmcXVvdDtMeWRpJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtMeWRpYW4mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCkoC3wkKS/JnF1b3Q7LAp9CgptWyZxdW90O01haGomcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O01haGFqYW5pJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CRhbYt8JGFkCZxdW90OywKCXN5c3RlbXMgPSB7JnF1b3Q7YWJ1Z2lkYSZxdW90O30sCn0KCm1bJnF1b3Q7TWFuZCZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7TWFuZGFpYyZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvgoYAt4KGeJnF1b3Q7LAp9CgptWyZxdW90O01hbmkmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O01hbmljaGFlYW4mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCrgC3wkKu2JnF1b3Q7LAp9CgptWyZxdW90O01heWEmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O01heWEmcXVvdDssCglvdGhlck5hbWVzID0geyZxdW90O01heWEgaGllcm9nbHlwaGljJnF1b3Q7LCAmcXVvdDtNYXlhbiZxdW90OywgJnF1b3Q7TWF5YW4gaGllcm9nbHlwaGljJnF1b3Q7fSwKfQoKbVsmcXVvdDtNZW5kJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtNZW5kZSZxdW90OywKCW90aGVyTmFtZXMgPSB7JnF1b3Q7TWVuZGUgS2lrYWt1aSZxdW90O30sCgljaGFyYWN0ZXJzID0gJnF1b3Q78J6ggC3wnqOWJnF1b3Q7LAp9CgptWyZxdW90O01lcmMmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O01lcm9pdGljIGN1cnNpdmUmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCmoC3wkKa/JnF1b3Q7LAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtNZXJvJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtNZXJvaXRpYyBoaWVyb2dseXBoaWMmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCmgC3wkKafJnF1b3Q7LAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtNbHltJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtNYWxheWFsYW0mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74LSCLeC1vyZxdW90OywKCXN5c3RlbXMgPSB7JnF1b3Q7YWJ1Z2lkYSZxdW90O30sCn0KCm1bJnF1b3Q7TW9kaSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7TW9kaSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkZiALfCRmZkmcXVvdDssCglzeXN0ZW1zID0geyZxdW90O2FidWdpZGEmcXVvdDt9LAp9CgptWyZxdW90O01vbmcmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O01vbmdvbGlhbiZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvhoIAt4aKqJnF1b3Q7LAp9CgptWyZxdW90O01yb28mcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O01ybyZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwlqmALfCWqa8mcXVvdDssCn0KCm1bJnF1b3Q7TXRlaSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7TWVpdGVpIE1heWVrJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+qvgC3qr7/qq6At6qu/JnF1b3Q7LAp9CgptWyZxdW90O011bHQmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O011bHRhbmkmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JGKgC3wkYqpJnF1b3Q7LAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDttdXNpY2FsJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtNdXNpY2FsIG5vdGF0aW9uJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CdhIAt8J2HnSZxdW90OywKfQoKbVsmcXVvdDtNeW1yJnF1b3Q7XSA9IHsKICAgICAgICBjYW5vbmljYWxOYW1lID0gJnF1b3Q7QnVybWVzZSZxdW90OywKICAgICAgICBvdGhlck5hbWVzID0geyZxdW90O015YW5tYXImcXVvdDt9LAogICAgICAgIGNoYXJhY3RlcnMgPSAmcXVvdDvhgIAt4YKf6qmgLeqpv+qnoC3qp74mcXVvdDssCiAgICAgICAgc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtOYXJiJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtPbGQgTm9ydGggQXJhYmlhbiZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkKqALfCQqp8mcXVvdDssCn0KCm1bJnF1b3Q7TmJhdCZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7TmFiYXRhZWFuJnF1b3Q7LAoJb3RoZXJOYW1lcyA9IHsmcXVvdDtOYWJhdGVhbiZxdW90O30sCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCigC3wkKKvJnF1b3Q7LAp9CgptWyZxdW90O05rb28mcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O04nS28mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q734At37omcXVvdDssCn0KCm1bJnF1b3Q7Tm9uZSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7Tm8gc2NyaXB0IHNwZWNpZmllZCZxdW90OywKCS0tIFRoaXMgc2hvdWxkIG5vdCBoYXZlIGFueSBjaGFyYWN0ZXJzIGxpc3RlZAoJY2hhcmFjdGVyX2NhdGVnb3J5ID0gZmFsc2UsIC0tIG5vbmUKfQoKbVsmcXVvdDtPZ2FtJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtPZ2hhbSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvhmoAt4ZqcJnF1b3Q7LAp9CgptWyZxdW90O09sY2smcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O09sIENoaWtpJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+GxkC3hsb8mcXVvdDssCn0KCm1bJnF1b3Q7T3JraCZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7T3JraG9uIHJ1bmVzJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CQsIAt8JCxiCZxdW90OywKfQoKbVsmcXVvdDtPcnlhJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtPcml5YSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvgrIEt4K23JnF1b3Q7LAp9CgptWyZxdW90O09zZ2UmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O09zYWdlJnF1b3Q7LAp9CgptWyZxdW90O09zbWEmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O09zbWFueWEmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCSgC3wkJKpJnF1b3Q7LAp9CgptWyZxdW90O1BhbG0mcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1BhbG15cmVuZSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkKGgLfCQob8mcXVvdDssCn0KCm1bJnF1b3Q7UGF1YyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7UGF1IENpbiBIYXUmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JGrgC3wkau4JnF1b3Q7LAp9CgptWyZxdW90O1Blcm0mcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O09sZCBQZXJtaWMmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCNkC3wkI26JnF1b3Q7LAp9CgptWyZxdW90O1BoYWcmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1BoYWdzLXBhJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+qhgC3qobcmcXVvdDssCglzeXN0ZW1zID0geyZxdW90O2FidWdpZGEmcXVvdDt9LAp9CgptWyZxdW90O01hcmMmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O01hcmNoZW4mcXVvdDssCgljaGFyYWN0ZXJzID0gbVsmcXVvdDtQaGFnJnF1b3Q7XS5jaGFyYWN0ZXJzLAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtQaGxpJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtJbnNjcmlwdGlvbmFsIFBhaGxhdmkmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCtoC3wkK2/JnF1b3Q7LAp9CgptWyZxdW90O1BobHAmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1BzYWx0ZXIgUGFobGF2aSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkK6ALfCQrq8mcXVvdDssCn0KCm1bJnF1b3Q7UGhsdiZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7Qm9vayBQYWhsYXZpJnF1b3Q7LAoJLS0gTm90IGluIFVuaWNvZGUKfQoKbVsmcXVvdDtQaG54JnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtQaG9lbmljaWFuJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CQpIAt8JCknyZxdW90OywKfQoKbVsmcXVvdDtQbHJkJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtQb2xsYXJkJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CWvIAt8Ja+nyZxdW90OywKCXN5c3RlbXMgPSB7JnF1b3Q7YWJ1Z2lkYSZxdW90O30sCn0KCm1bJnF1b3Q7UHJ0aSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7UGFydGhpYW4mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCtgC3wkK2fJnF1b3Q7LAp9CgptWyZxdW90O1JqbmcmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1JlamFuZyZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvqpLAt6qWfJnF1b3Q7LAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtSdW1pbnVtZXJhbHMmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1J1bWkgbnVtZXJhbHMmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JC5oC3wkLm+JnF1b3Q7LAoJY2hhcmFjdGVyX2NhdGVnb3J5ID0gJnF1b3Q7UnVtaSBudW1lcmFscyZxdW90OywKfQoKbVsmcXVvdDtSdW5yJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtSdW5pYyZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvhmqAt4ZuwJnF1b3Q7LAp9CgptWyZxdW90O1NhbXImcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1NhbWFyaXRhbiZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvgoIAt4KC+JnF1b3Q7LAp9CgptWyZxdW90O1NhcmImcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O09sZCBTb3V0aCBBcmFiaWFuJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CQqaAt8JCpvyZxdW90OywKfQoKbVsmcXVvdDtTYXVyJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtTYXVyYXNodHJhJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+qigC3qo5kmcXVvdDssCn0KCm1bJnF1b3Q7U2dudyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7U2lnbldyaXRpbmcmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78J2ggC3wnaqvJnF1b3Q7LAp9CgptWyZxdW90O1NoYXcmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1NoYXZpYW4mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCRkC3wkJG/JnF1b3Q7LAp9CgptWyZxdW90O1NocmQmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1NoYXJhZGEmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JGGgC3wkYeZJnF1b3Q7LAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtTaWRkJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtTaWRkaGFtJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CRloAt8JGXnSZxdW90OywKCXN5c3RlbXMgPSB7JnF1b3Q7YWJ1Z2lkYSZxdW90O30sCn0KCm1bJnF1b3Q7U2luZCZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7S2h1ZGF3YWRpJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CRirAt8JGLuSZxdW90OywKCXN5c3RlbXMgPSB7JnF1b3Q7YWJ1Z2lkYSZxdW90O30sCn0KCm1bJnF1b3Q7U2luaCZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7U2luaGFsZXNlJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+C2gi3gt7QmcXVvdDssCglzeXN0ZW1zID0geyZxdW90O2FidWdpZGEmcXVvdDt9LAp9CgptWyZxdW90O1NvcmEmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1NvcmFuZyBTb21wZW5nJnF1b3Q7LAoJb3RoZXJOYW1lcyA9IHsmcXVvdDtTb3JhIFNvbXBlbmcmcXVvdDt9LAoJY2hhcmFjdGVycyA9ICZxdW90O/CRg5At8JGDuSZxdW90OywKfQoKbVsmcXVvdDtTdW5kJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtTdW5kYW5lc2UmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74a6ALeGuvyZxdW90OywKCXN5c3RlbXMgPSB7JnF1b3Q7YWJ1Z2lkYSZxdW90O30sCn0KCm1bJnF1b3Q7U3lsbyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7U3lsb3RpIE5hZ3JpJnF1b3Q7LAoJb3RoZXJOYW1lcyA9IHsmcXVvdDtTeWxoZXRpIE5hZ2FyaSZxdW90O30sCglzeXN0ZW1zID0geyZxdW90O2FidWdpZGEmcXVvdDt9LAp9CgptWyZxdW90O1N5cmMmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1N5cmlhYyZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvcgC3djyZxdW90OywKfQoKbVsmcXVvdDtUYWdiJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtUYWdiYW53YSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvhnaAt4Z2zJnF1b3Q7LAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtUYWtyJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtUYWtyaSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkZqALfCRm4kmcXVvdDssCglzeXN0ZW1zID0geyZxdW90O2FidWdpZGEmcXVvdDt9LAp9CgptWyZxdW90O1RhbGUmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1RhaSBMZSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvhpZAt4aW0JnF1b3Q7LAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtUYWx1JnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtOZXcgVGFpIEx1ZSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvhpoAt4aefJnF1b3Q7LAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtUYW1sJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtUYW1pbCZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvgroIt4K+6JnF1b3Q7LAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtUYW5nJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtUYW5ndXQmcXVvdDssCn0KCm1bJnF1b3Q7VGF2dCZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7VGFpIFZpZXQmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q76qqALeqrnyZxdW90OywKfQoKbVsmcXVvdDtUZWx1JnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtUZWx1Z3UmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74LCBLeCxvyZxdW90OywKCXN5c3RlbXMgPSB7JnF1b3Q7YWJ1Z2lkYSZxdW90O30sCn0KCm1bJnF1b3Q7VGVuZyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7VGVuZ3dhciZxdW90OywKfQoKbVsmcXVvdDtUZm5nJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtUaWZpbmFnaCZxdW90OywKCW90aGVyTmFtZXMgPSB7JnF1b3Q7TGlieWNvLUJlcmJlciZxdW90OywgJnF1b3Q7QmVyYmVyJnF1b3Q7fSwKCWNoYXJhY3RlcnMgPSAmcXVvdDvitLAt4rW/JnF1b3Q7LAp9CgptWyZxdW90O1RnbGcmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1RhZ2Fsb2cmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74ZyALeGclCZxdW90OywKfQoKbVsmcXVvdDtUaGFhJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtUaGFhbmEmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q73oAt3rEmcXVvdDssCglzeXN0ZW1zID0geyZxdW90O2FidWdpZGEmcXVvdDt9LAp9CgptWyZxdW90O1RoYWkmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1RoYWkmcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q74LiBLeC5myZxdW90OywKCXN5c3RlbXMgPSB7JnF1b3Q7YWJ1Z2lkYSZxdW90O30sCn0KCm1bJnF1b3Q7VGlidCZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7VGliZXRhbiZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvgvIAt4L+aJnF1b3Q7LAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtUaXJoJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtUaXJodXRhJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O/CRkoAt8JGTmSZxdW90OywKCXN5c3RlbXMgPSB7JnF1b3Q7YWJ1Z2lkYSZxdW90O30sCn0KCm1bJnF1b3Q7eHpoLVRpYnQmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1poYW5nLVpodW5nJnF1b3Q7LAoJc3lzdGVtcyA9IHsmcXVvdDthYnVnaWRhJnF1b3Q7fSwKfQoKbVsmcXVvdDtVZ2FyJnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDtVZ2FyaXRpYyZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkI6ALfCQjp8mcXVvdDssCn0KCm1bJnF1b3Q7VmFpaSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7VmFpJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+qUgC3qmKsmcXVvdDssCn0KCm1bJnF1b3Q7V2FyYSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7VmFyYW5nIEtzaGl0aSZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvwkaKgLfCRo78mcXVvdDssCn0KCm1bJnF1b3Q7WHBlbyZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7T2xkIFBlcnNpYW4mcXVvdDssCgljaGFyYWN0ZXJzID0gJnF1b3Q78JCOoC3wkI+VJnF1b3Q7LAp9CgptWyZxdW90O1hzdXgmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O0N1bmVpZm9ybSZxdW90OywKCW90aGVyTmFtZXMgPSB7JnF1b3Q7U3VtZXJvLUFra2FkaWFuIEN1bmVpZm9ybSZxdW90O30sCgljaGFyYWN0ZXJzID0gJnF1b3Q78JKAgC3wko2u8JKQgC3wkpGzJnF1b3Q7LAp9CgptWyZxdW90O1lpaWkmcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O1lpJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+qAgC3qk4YmcXVvdDssCn0KCm1bJnF1b3Q7Wm10aCZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7bWF0aGVtYXRpY2FsIG5vdGF0aW9uJnF1b3Q7LAoJY2hhcmFjdGVycyA9ICZxdW90O+KEteKIgC3ii7/in4At4p+v4qaALeKnv+KogC3iq7/wnZCALfCdn78mcXVvdDssCgljaGFyYWN0ZXJfY2F0ZWdvcnkgPSAmcXVvdDtNYXRoZW1hdGljYWwgbm90YXRpb24gc3ltYm9scyZxdW90OywgLS0gPwp9CgptWyZxdW90O1pzeW0mcXVvdDtdID0gewoJY2Fub25pY2FsTmFtZSA9ICZxdW90O3N5bWJvbCZxdW90OywKCWNoYXJhY3RlcnMgPSAmcXVvdDvilIAt4p6/4oaQ4oe/4oyALeKPs/CfjIAt8J+bhSZxdW90OywKCWNoYXJhY3Rlcl9jYXRlZ29yeSA9IGZhbHNlLCAtLSBub25lCn0KCm1bJnF1b3Q7Wnl5eSZxdW90O10gPSB7CgljYW5vbmljYWxOYW1lID0gJnF1b3Q7dW5kZXRlcm1pbmVkJnF1b3Q7LAoJLS0gVGhpcyBzaG91bGQgbm90IGhhdmUgYW55IGNoYXJhY3RlcnMgbGlzdGVkLCBwcm9iYWJseQoJY2hhcmFjdGVyX2NhdGVnb3J5ID0gZmFsc2UsIC0tIG5vbmUKfQoKbVsmcXVvdDtaenp6JnF1b3Q7XSA9IHsKCWNhbm9uaWNhbE5hbWUgPSAmcXVvdDt1bmNvZGVkJnF1b3Q7LAoJLS0gVGhpcyBzaG91bGQgbm90IGhhdmUgYW55IGNoYXJhY3RlcnMgbGlzdGVkCgljaGFyYWN0ZXJfY2F0ZWdvcnkgPSBmYWxzZSwgLS0gbm9uZQp9CgpyZXR1cm4gbTwvcmV2PjwvcmV2aXNpb25zPjwvcGFnZT48L3BhZ2VzPjwvcXVlcnk+PC9hcGk+
-- recorded: 2016-08-15T20:44:34.593Z
+- recorded: 2016-08-15T22:29:28.527Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Aredlink+category&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -1185,24 +1185,24 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=26285 t=1471293874477881
+      Backend-Timing: D=24607 t=1471300168421603
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:34 GMT
+      Date: Mon, 15 Aug 2016 22:29:28 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1280.eqiad.wmnet
+      Server: mw1230.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1067 pass, cp3031 pass, cp3033 pass
+      X-Cache: cp1055 pass, cp3041 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 3116630928, 2000993026, 1186441478
+      X-Varnish: 254639813, 2725072164, 1214003524
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="5379564" pageid="5379564" ns="10" title="Template:redlink category"><revisions><rev user="Daniel Carrero" timestamp="2016-07-03T13:52:45Z" comment="" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;!--
       --&gt;{{#switch:{{PAGENAME}}|-ere|mies|water|=|&lt;!--
@@ -1216,7 +1216,7 @@ interactions:
       --&gt;}}&lt;!--
 
       --&gt;&lt;noinclude&gt;{{documentation}}&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2016-08-15T20:44:34.949Z
+- recorded: 2016-08-15T22:29:29.082Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Al&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -1231,26 +1231,26 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=31017 t=1471293874839923
+      Backend-Timing: D=26527 t=1471300168982455
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:34 GMT
+      Date: Mon, 15 Aug 2016 22:29:29 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1193.eqiad.wmnet
+      Server: mw1289.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1065 pass, cp3031 pass, cp3033 pass
+      X-Cache: cp1065 pass, cp3041 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 2742275513, 2000994262, 1186443639
+      X-Varnish: 2761855335, 2725073449, 1214005693
     body: <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="4580518" pageid="4580518" ns="10" title="Template:l"><revisions><rev user="CodeCat" timestamp="2014-10-30T23:36:59Z" comment="CodeCat moved page [[Template:l]] to [[Template:link]] over redirect" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">#REDIRECT [[Template:link]]</rev></revisions></page></pages></query></api>
-- recorded: 2016-08-15T20:44:35.140Z
+- recorded: 2016-08-15T22:29:29.265Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Alink&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -1265,24 +1265,24 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=29837 t=1471293875036255
+      Backend-Timing: D=23922 t=1471300169166766
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:35 GMT
+      Date: Mon, 15 Aug 2016 22:29:29 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1197.eqiad.wmnet
+      Server: mw1233.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1068 pass, cp3041 pass, cp3033 pass
+      X-Cache: cp1068 pass, cp3033 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 1856452682, 2709983162, 1186444363
+      X-Varnish: 1875565254, 1171032710, 1214006142
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="784216" pageid="784216" ns="10" title="Template:link"><revisions><rev user="Daniel Carrero" timestamp="2016-07-06T16:27:48Z" comment="" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{#invoke:links/templates|l_term_t&lt;noinclude&gt;|demo=term&lt;/noinclude&gt;}}&lt;!--
 
@@ -1293,7 +1293,7 @@ interactions:
       --&gt;{{redlink category|{{{1|}}}|{{{2|}}}|template=l}}&lt;!--
 
       --&gt;&lt;noinclude&gt;{{documentation}}&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2016-08-15T20:44:35.530Z
+- recorded: 2016-08-15T22:29:29.730Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Aen-suffix&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -1308,29 +1308,29 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=29662 t=1471293875425807
+      Backend-Timing: D=29584 t=1471300169626832
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:35 GMT
+      Date: Mon, 15 Aug 2016 22:29:29 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1230.eqiad.wmnet
+      Server: mw1192.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1052 pass, cp3033 pass, cp3033 pass
+      X-Cache: cp1052 pass, cp3043 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 3153425046, 1155715287, 1186446589
+      X-Varnish: 3172180391, 2082320669, 1214007468
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="2046761" pageid="2046761" ns="10" title="Template:en-suffix"><revisions><rev user="CodeCat" timestamp="2015-05-06T14:01:01Z" comment="" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{head|en|suffix|head={{{head|}}}|cat2={{{cat2|}}}|cat3={{{cat3|}}}}}&lt;!--
 
       --&gt;&lt;noinclude&gt;{{documentation}}&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2016-08-15T20:44:35.733Z
+- recorded: 2016-08-15T22:29:29.921Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Ahead&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -1345,29 +1345,29 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=33548 t=1471293875625394
+      Backend-Timing: D=30922 t=1471300169815533
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:35 GMT
+      Date: Mon, 15 Aug 2016 22:29:29 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1190.eqiad.wmnet
+      Server: mw1204.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1067 pass, cp3033 pass, cp3033 pass
+      X-Cache: cp1067 pass, cp3031 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 3116634585, 1155715850, 1186447620
+      X-Varnish: 3134180571, 2016110099, 1214008615
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="338925" pageid="338925" ns="10" title="Template:head"><revisions><rev user="CodeCat" timestamp="2016-03-20T01:41:19Z" comment="Changed protection level for &quot;[[Template:head]]&quot;: No reason for cascading projection. This is a very restrictive protection level and needs to be well motivated. ([Edit=Allow only administrators] (indefinite) [Move=Allow only administrators] (indefinite))" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{#invoke:headword/templates|head_t}}&lt;!--
 
       --&gt;&lt;noinclude&gt;{{documentation}}&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2016-08-15T20:44:36.031Z
+- recorded: 2016-08-15T22:29:30.140Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Aheadword%2Ftemplates&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -1382,24 +1382,24 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=24715 t=1471293875928126
+      Backend-Timing: D=31970 t=1471300170030965
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:35 GMT
+      Date: Mon, 15 Aug 2016 22:29:30 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1226.eqiad.wmnet
+      Server: mw1225.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1052 pass, cp3031 pass, cp3033 pass
+      X-Cache: cp1052 pass, cp3033 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 3153426316, 2000996528, 1186448502
+      X-Varnish: 3172181683, 1171034634, 1214009466
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4262766\" pageid=\"4262766\" ns=\"828\" title=\"Module:headword/templates\"><revisions><rev user=\"JohnC5\" timestamp=\"2016-06-25T19:51:16Z\" comment=\"Undo revision 38902248\
       \ by [[Special:Contributions/JohnC5|JohnC5]] ([[User talk:JohnC5|talk]])\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">local export = {}\n\n-- Part of speech types that should not be pluralized.\nlocal invariable = {\n\
       \t[&quot;cmavo&quot;] = true,\n\t[&quot;cmene&quot;] = true,\n\t[&quot;fu'ivla&quot;] = true,\n\t[&quot;gismu&quot;] = true,\n\t[&quot;Han tu&quot;] = true,\n\t[&quot;hanzi&quot;] = true,\n\t[&quot;hanja&quot;] = true,\n\t[&quot;jyutping&quot;] = true,\n\
@@ -1426,7 +1426,7 @@ interactions:
       \ &quot; &quot; .. cat2)\n\tend\n\t\n\tif cat3 then\n\t\ttable.insert(categories, lang:getCanonicalName() .. &quot; &quot; .. cat3)\n\tend\n\t\n\tif cat4 then\n\t\ttable.insert(categories, lang:getCanonicalName() .. &quot; &quot; .. cat4)\n\tend\n\t\n\t\
       if #categories == 0 and mw.title.getCurrentTitle().nsText == &quot;Template&quot; then\n\t\tcategories = {&quot;Undetermined nouns&quot;}\n\tend\n\t\n\treturn\n\t\trequire(&quot;Module:headword&quot;).full_headword(lang, sc, heads, translits, genders,\
       \ inflections, categories, sort_key) ..\n\t\trequire(&quot;Module:utilities&quot;).format_categories(tracking_categories, lang, sort_key)\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
-- recorded: 2016-08-15T20:44:36.253Z
+- recorded: 2016-08-15T22:29:30.371Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Aheadword&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -1441,24 +1441,24 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=27600 t=1471293876142088
+      Backend-Timing: D=27508 t=1471300170261177
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:36 GMT
+      Date: Mon, 15 Aug 2016 22:29:30 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1284.eqiad.wmnet
+      Server: mw1287.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1053 pass, cp3032 pass, cp3033 pass
+      X-Cache: cp1053 pass, cp3030 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 1539182459, 2154969821, 1186449841
+      X-Varnish: 1557259501, 2670461147, 1214010310
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"3989053\" pageid=\"3989053\" ns=\"828\" title=\"Module:headword\"><revisions><rev user=\"CodeCat\" timestamp=\"2016-08-15T17:25:25Z\" comment=\"\" contentformat=\"text/plain\"\
       \ contentmodel=\"Scribunto\" xml:space=\"preserve\">local export = {}\n\nlocal lemmas = {\n\t[&quot;abbreviations&quot;] = true,\n\t[&quot;acronyms&quot;] = true,\n\t[&quot;adjectives&quot;] = true,\n\t[&quot;adnominals&quot;] = true,\n\t[&quot;adpositions&quot;]\
       \ = true,\n\t[&quot;adverbs&quot;] = true,\n\t[&quot;affixes&quot;] = true,\n\t[&quot;ambipositions&quot;] = true,\n\t[&quot;articles&quot;] = true,\n\t[&quot;circumfixes&quot;] = true,\n\t[&quot;circumpositions&quot;] = true,\n\t[&quot;classifiers&quot;]\
@@ -1535,7 +1535,7 @@ interactions:
       \ ~= 1 then\n\t\t\tfor character in mw.ustring.gmatch(mw.title.getCurrentTitle().subpageText, &quot;([^&quot; .. standard .. &quot;])&quot;) do\n\t\t\t\ttable.insert(categories, lang:getCanonicalName() .. &quot; terms spelled with &quot; .. mw.ustring.upper(character))\n\
       \t\t\tend\n\t\tend\n\tend\n\t\n\treturn\n\t\texport.show_headword_line(data) ..\n\t\trequire(&quot;Module:utilities&quot;).format_categories(categories, data.lang, data.sort_key) ..\n\t\trequire(&quot;Module:utilities&quot;).format_categories(tracking_categories,\
       \ data.lang, data.sort_key)\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
-- recorded: 2016-08-15T20:44:36.498Z
+- recorded: 2016-08-15T22:29:30.591Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Alb&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -1550,26 +1550,26 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=19890 t=1471293876402597
+      Backend-Timing: D=24015 t=1471300170493549
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:36 GMT
+      Date: Mon, 15 Aug 2016 22:29:30 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1277.eqiad.wmnet
+      Server: mw1234.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1052 pass, cp3032 pass, cp3033 pass
+      X-Cache: cp1052 pass, cp3030 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 3153428948, 2154971503, 1186452380
+      X-Varnish: 3172183439, 2670462542, 1214012062
     body: <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="4376313" pageid="4376313" ns="10" title="Template:lb"><revisions><rev user="CodeCat" timestamp="2014-03-28T22:52:19Z" comment="Redirected page to [[Template:label]]" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">#REDIRECT [[Template:label]]</rev></revisions></page></pages></query></api>
-- recorded: 2016-08-15T20:44:36.691Z
+- recorded: 2016-08-15T22:29:30.771Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Alabel&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -1584,29 +1584,29 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=29115 t=1471293876586782
+      Backend-Timing: D=21696 t=1471300170675497
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:36 GMT
+      Date: Mon, 15 Aug 2016 22:29:30 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1225.eqiad.wmnet
+      Server: mw1288.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1066 pass, cp3030 pass, cp3033 pass
+      X-Cache: cp1066 pass, cp3041 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 3488883819, 2655438957, 1186453456
+      X-Varnish: 3508237354, 2725077480, 1214012425
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="3734544" pageid="3734544" ns="10" title="Template:label"><revisions><rev user="TheDaveRoss" timestamp="2016-02-06T16:23:44Z" comment="Adding closing [[Category:Templates with unbalanced tags|noinclude/includeonly]] tag." contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{#invoke:labels/templates|show}}&lt;!--
 
       --&gt;&lt;noinclude&gt;{{documentation}}&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2016-08-15T20:44:36.904Z
+- recorded: 2016-08-15T22:29:31.003Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Alabels%2Ftemplates&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -1621,24 +1621,24 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=24438 t=1471293876803755
+      Backend-Timing: D=21989 t=1471300170904060
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:36 GMT
+      Date: Mon, 15 Aug 2016 22:29:30 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1221.eqiad.wmnet
+      Server: mw1276.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1067 pass, cp3031 pass, cp3033 pass
+      X-Cache: cp1055 pass, cp3041 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 3116639059, 2001000197, 1186454632
+      X-Varnish: 254648004, 2725078654, 1214013928
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4393059\" pageid=\"4393059\" ns=\"828\" title=\"Module:labels/templates\"><revisions><rev user=\"Kc kennylau\" timestamp=\"2016-03-04T15:02:39Z\" comment=\"Reverted edits by\
       \ [[Special:Contributions/Kc kennylau|Kc kennylau]]. If you think this rollback is in error, please leave a message on my talk page.\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">local m_labels = require(&quot;Module:labels&quot;)\n\
       \nlocal export = {}\n\nfunction export.show(frame)\n\tlocal compat = (frame.args[&quot;compat&quot;] or &quot;&quot;) ~= &quot;&quot;\n\tlocal term_mode = (frame.args[&quot;term&quot;] or &quot;&quot;) ~= &quot;&quot;\n\t\n\tlocal params = {\n\t\t[1] =\
@@ -1655,7 +1655,7 @@ interactions:
       \ .. cat .. ']]'\t\n\t\t\t\tend\n\t\t\tend\n\t\tend\n\n\t\ttable.insert(froms, label)\n\t\ti = i + 1\n\t\tif i &gt; limit then\n\t\t\tbreak\t\n\t\tend\n\t\tkey = 'from' .. i\n\tend\n\t\n\tif #froms == 0 then\n\t\treturn frame.args.default\t\n\tend\n\t\n\
       \tif #froms == 2 then\n\t\treturn froms[1] .. &quot; and &quot; .. froms[2]\n\tend\n\t\n\tlocal result = &quot;&quot;\n\tfor i, item in ipairs(froms) do\n\t\tif i == 1 then\n\t\t\t-- nothing\n\t\telseif i == #froms then\n\t\t\tresult = result .. '&lt;span\
       \ class=&quot;serial-comma&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;serial-and&quot;&gt; and&lt;/span&gt; '\n\t\telse\n\t\t\tresult = result .. ', '\n\t\tend\n\t\t\n\t\tresult = result .. item\n\tend\n\treturn result\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
-- recorded: 2016-08-15T20:44:37.092Z
+- recorded: 2016-08-15T22:29:31.195Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Alabels&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -1670,46 +1670,45 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=25927 t=1471293876990652
+      Backend-Timing: D=29490 t=1471300171088154
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:37 GMT
+      Date: Mon, 15 Aug 2016 22:29:31 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1227.eqiad.wmnet
+      Server: mw1228.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1052 pass, cp3033 pass, cp3033 pass
+      X-Cache: cp1052 pass, cp3032 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 3153431227, 1155720082, 1186455292
-    body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4073701\" pageid=\"4073701\" ns=\"828\" title=\"Module:labels\"><revisions><rev user=\"Liliana-60\" timestamp=\"2016-02-28T20:41:13Z\" comment=\"revert basically for the same\
-      \ reason as [[Module:a]]. [[water]] couldn&#039;t even get through all the translations before breaking, good job.\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">local m_labeldata = mw.loadData(&quot;Module:labels/data&quot;)\n\
-      local m_utilities = require(&quot;Module:utilities&quot;)\n\nlocal export = {}\n\nlocal function show_categories(data, lang, script, sort_key, script2, sort_key2, term_mode)\n\tlocal categories = {}\n\tlocal categories2 = {}\n\t\n\tfor i, cat in ipairs(data.topical_categories\
-      \ or {}) do\n\t\ttable.insert(categories, lang:getCode() .. &quot;:&quot; .. cat)\n\t\t\n\t\tif script then\n\t\t\ttable.insert(categories, lang:getCode() .. &quot;:&quot; .. cat .. &quot; in &quot; .. script .. &quot; script&quot;)\n\t\tend\n\t\t\n\t\t\
-      if script2 then\n\t\t\ttable.insert(categories2, lang:getCode() .. &quot;:&quot; .. cat .. &quot; in &quot; .. script2 .. &quot; script&quot;)\n\t\tend\n\tend\n\t\n\tfor i, cat in ipairs(data.sense_categories or {}) do\n\t\tcat = (term_mode and (cat ..\
-      \ &quot; terms&quot;) or (&quot; terms with &quot; .. cat .. &quot; senses&quot;))\n\t\ttable.insert(categories, lang:getCanonicalName() .. &quot; &quot; .. cat)\n\t\t\n\t\tif script then\n\t\t\ttable.insert(categories, lang:getCanonicalName() .. &quot;\
-      \ &quot; .. cat .. &quot; in &quot; .. script .. &quot; script&quot;)\n\t\tend\n\t\t\n\t\tif script2 then\n\t\t\ttable.insert(categories2, lang:getCanonicalName() .. &quot; &quot; .. cat .. &quot; in &quot; .. script2 .. &quot; script&quot;)\n\t\tend\n\
-      \tend\n\n\tfor i, cat in ipairs(data.pos_categories or {}) do\n\t\ttable.insert(categories, lang:getCanonicalName() .. &quot; &quot; .. cat)\n\t\t\n\t\tif script then\n\t\t\ttable.insert(categories, lang:getCanonicalName() .. &quot; &quot; .. cat .. &quot;\
-      \ in &quot; .. script .. &quot; script&quot;)\n\t\tend\n\t\t\n\t\tif script2 then\n\t\t\ttable.insert(categories2, lang:getCanonicalName() .. &quot; &quot; .. cat .. &quot; in &quot; .. script2 .. &quot; script&quot;)\n\t\tend\n\tend\n\t\n\tfor i, cat\
-      \ in ipairs(data.regional_categories or {}) do\n\t\ttable.insert(categories, cat .. &quot; &quot; .. lang:getCanonicalName())\n\t\t\n\t\tif script then\n\t\t\ttable.insert(categories, cat .. &quot; &quot; .. lang:getCanonicalName() .. &quot; in &quot;\
-      \ .. script .. &quot; script&quot;)\n\t\tend\n\t\t\n\t\tif script2 then\n\t\t\ttable.insert(categories2, cat .. &quot; &quot; .. lang:getCanonicalName() .. &quot; in &quot; .. script2 .. &quot; script&quot;)\n\t\tend\n\tend\n\t\n\tfor i, cat in ipairs(data.plain_categories\
-      \ or {}) do\n\t\ttable.insert(categories, cat)\n\t\t\n\t\tif script then\n\t\t\ttable.insert(categories, cat .. &quot; in &quot; .. script .. &quot; script&quot;)\n\t\tend\n\t\t\n\t\tif script2 then\n\t\t\ttable.insert(categories2, cat .. &quot; in &quot;\
-      \ .. script2 .. &quot; script&quot;)\n\t\tend\n\tend\n\t\n\treturn m_utilities.format_categories(categories, lang, sort_key) .. m_utilities.format_categories(categories2, lang, sort_key2)\nend\n\nfunction export.show_labels(labels, lang, script, script2,\
-      \ sort_key, sort_key2, nocat, term_mode)\n\tif #labels &lt; 1 then\n\t\tif mw.title.getCurrentTitle().nsText == &quot;Template&quot; then\n\t\t\tlabels = {&quot;example&quot;}\n\t\telse\n\t\t\terror(&quot;You must specify at least one label.&quot;)\n\t\
-      \tend\n\tend\n\t\n\t-- Show the labels\n\tlocal omit_preComma = false\n\tlocal omit_postComma = false\n\t\n\tfor i, label in ipairs(labels) do\n\t\tif omit_postComma then\n\t\t\tomit_preComma = true\n\t\t\tomit_postComma = false\n\t\tend\n\t\t\n\t\tlocal\
-      \ deprecated = false\n\t\tif m_labeldata.deprecated[label] then\n\t\t\tdeprecated = true\n\t\tend\n\t\tif m_labeldata.aliases[label] then\n\t\t\tlabel = m_labeldata.aliases[label]\n\t\tend\n\t\tif m_labeldata.deprecated[label] then\n\t\t\tdeprecated =\
-      \ true\n\t\tend\n\t\t\t\n\t\tlocal data = m_labeldata.labels[label] or {}\n\t\t\t\n\t\tlabel = data.display or label\n\t\t\n\t\tlocal omit_comma = omit_preComma or data.omit_preComma\n\t\tomit_preComma = false\n\t\tomit_postComma = data.omit_postComma\n\
-      \t\t\n\t\tif deprecated then\n\t\t\tlabel = '&lt;span class=&quot;deprecated-label&quot;&gt;' .. label .. '&lt;/span&gt;'\n\t\t\tif not nocat then\n\t\t\t\tlabel = label .. m_utilities.format_categories({ &quot;Entries with deprecated labels&quot; }, lang)\n\
-      \t\t\tend\n\t\tend\n\t\t\n\t\tif i &gt; 1 then\n\t\t\tlabel = (not omit_comma and &quot;&lt;span class=\\&quot;ib-comma\\&quot;&gt;,&lt;/span&gt;&quot; or &quot;&quot;) .. &quot;&amp;#32;&quot; .. label\n\t\tend\n\t\t\n\t\tlabels[i] = label .. (nocat and\
-      \ &quot;&quot; or show_categories(data, lang, script, sort_key, script2, sort_key2, term_mode))\n\tend\n\t\n\treturn\n\t\t&quot;&lt;span class=\\&quot;ib-brac\\&quot;&gt;(&lt;/span&gt;&lt;span class=\\&quot;ib-content\\&quot;&gt;&quot; ..\n\t\ttable.concat(labels,\
-      \ &quot;&quot;) ..\n\t\t&quot;&lt;/span&gt;&lt;span class=\\&quot;ib-brac\\&quot;&gt;)&lt;/span&gt;&quot;\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
-- recorded: 2016-08-15T20:44:37.764Z
+      X-Varnish: 3172185588, 2169869958, 1214014774
+    body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4073701\" pageid=\"4073701\" ns=\"828\" title=\"Module:labels\"><revisions><rev user=\"CodeCat\" timestamp=\"2016-08-15T21:23:42Z\" comment=\"\" contentformat=\"text/plain\"\
+      \ contentmodel=\"Scribunto\" xml:space=\"preserve\">local m_labeldata = mw.loadData(&quot;Module:labels/data&quot;)\nlocal m_utilities = require(&quot;Module:utilities&quot;)\n\nlocal export = {}\n\nlocal function show_categories(data, lang, script, sort_key,\
+      \ script2, sort_key2, term_mode)\n\tlocal categories = {}\n\tlocal categories2 = {}\n\t\n\tfor i, cat in ipairs(data.topical_categories or {}) do\n\t\ttable.insert(categories, lang:getCode() .. &quot;:&quot; .. cat)\n\t\t\n\t\tif script then\n\t\t\ttable.insert(categories,\
+      \ lang:getCode() .. &quot;:&quot; .. cat .. &quot; in &quot; .. script .. &quot; script&quot;)\n\t\tend\n\t\t\n\t\tif script2 then\n\t\t\ttable.insert(categories2, lang:getCode() .. &quot;:&quot; .. cat .. &quot; in &quot; .. script2 .. &quot; script&quot;)\n\
+      \t\tend\n\tend\n\t\n\tfor i, cat in ipairs(data.sense_categories or {}) do\n\t\tcat = (term_mode and (cat .. &quot; terms&quot;) or (&quot;terms with &quot; .. cat .. &quot; senses&quot;))\n\t\ttable.insert(categories, lang:getCanonicalName() .. &quot;\
+      \ &quot; .. cat)\n\t\t\n\t\tif script then\n\t\t\ttable.insert(categories, lang:getCanonicalName() .. &quot; &quot; .. cat .. &quot; in &quot; .. script .. &quot; script&quot;)\n\t\tend\n\t\t\n\t\tif script2 then\n\t\t\ttable.insert(categories2, lang:getCanonicalName()\
+      \ .. &quot; &quot; .. cat .. &quot; in &quot; .. script2 .. &quot; script&quot;)\n\t\tend\n\tend\n\n\tfor i, cat in ipairs(data.pos_categories or {}) do\n\t\ttable.insert(categories, lang:getCanonicalName() .. &quot; &quot; .. cat)\n\t\t\n\t\tif script\
+      \ then\n\t\t\ttable.insert(categories, lang:getCanonicalName() .. &quot; &quot; .. cat .. &quot; in &quot; .. script .. &quot; script&quot;)\n\t\tend\n\t\t\n\t\tif script2 then\n\t\t\ttable.insert(categories2, lang:getCanonicalName() .. &quot; &quot; ..\
+      \ cat .. &quot; in &quot; .. script2 .. &quot; script&quot;)\n\t\tend\n\tend\n\t\n\tfor i, cat in ipairs(data.regional_categories or {}) do\n\t\ttable.insert(categories, cat .. &quot; &quot; .. lang:getCanonicalName())\n\t\t\n\t\tif script then\n\t\t\t\
+      table.insert(categories, cat .. &quot; &quot; .. lang:getCanonicalName() .. &quot; in &quot; .. script .. &quot; script&quot;)\n\t\tend\n\t\t\n\t\tif script2 then\n\t\t\ttable.insert(categories2, cat .. &quot; &quot; .. lang:getCanonicalName() .. &quot;\
+      \ in &quot; .. script2 .. &quot; script&quot;)\n\t\tend\n\tend\n\t\n\tfor i, cat in ipairs(data.plain_categories or {}) do\n\t\ttable.insert(categories, cat)\n\t\t\n\t\tif script then\n\t\t\ttable.insert(categories, cat .. &quot; in &quot; .. script ..\
+      \ &quot; script&quot;)\n\t\tend\n\t\t\n\t\tif script2 then\n\t\t\ttable.insert(categories2, cat .. &quot; in &quot; .. script2 .. &quot; script&quot;)\n\t\tend\n\tend\n\t\n\treturn m_utilities.format_categories(categories, lang, sort_key) .. m_utilities.format_categories(categories2,\
+      \ lang, sort_key2)\nend\n\nfunction export.show_labels(labels, lang, script, script2, sort_key, sort_key2, nocat, term_mode)\n\tif #labels &lt; 1 then\n\t\tif mw.title.getCurrentTitle().nsText == &quot;Template&quot; then\n\t\t\tlabels = {&quot;example&quot;}\n\
+      \t\telse\n\t\t\terror(&quot;You must specify at least one label.&quot;)\n\t\tend\n\tend\n\t\n\t-- Show the labels\n\tlocal omit_preComma = false\n\tlocal omit_postComma = false\n\t\n\tfor i, label in ipairs(labels) do\n\t\tif omit_postComma then\n\t\t\t\
+      omit_preComma = true\n\t\t\tomit_postComma = false\n\t\tend\n\t\t\n\t\tlocal deprecated = false\n\t\tif m_labeldata.deprecated[label] then\n\t\t\tdeprecated = true\n\t\tend\n\t\tif m_labeldata.aliases[label] then\n\t\t\tlabel = m_labeldata.aliases[label]\n\
+      \t\tend\n\t\tif m_labeldata.deprecated[label] then\n\t\t\tdeprecated = true\n\t\tend\n\t\t\t\n\t\tlocal data = m_labeldata.labels[label] or {}\n\t\t\t\n\t\tlabel = data.display or label\n\t\t\n\t\tlocal omit_comma = omit_preComma or data.omit_preComma\n\
+      \t\tomit_preComma = false\n\t\tomit_postComma = data.omit_postComma\n\t\t\n\t\tif deprecated then\n\t\t\tlabel = '&lt;span class=&quot;deprecated-label&quot;&gt;' .. label .. '&lt;/span&gt;'\n\t\t\tif not nocat then\n\t\t\t\tlabel = label .. m_utilities.format_categories({\
+      \ &quot;Entries with deprecated labels&quot; }, lang)\n\t\t\tend\n\t\tend\n\t\t\n\t\tif i &gt; 1 then\n\t\t\tlabel = (not omit_comma and &quot;&lt;span class=\\&quot;ib-comma\\&quot;&gt;,&lt;/span&gt;&quot; or &quot;&quot;) .. &quot;&amp;#32;&quot; ..\
+      \ label\n\t\tend\n\t\t\n\t\tlabels[i] = label .. (nocat and &quot;&quot; or show_categories(data, lang, script, sort_key, script2, sort_key2, term_mode))\n\tend\n\t\n\treturn\n\t\t&quot;&lt;span class=\\&quot;ib-brac\\&quot;&gt;(&lt;/span&gt;&lt;span class=\\\
+      &quot;ib-content\\&quot;&gt;&quot; ..\n\t\ttable.concat(labels, &quot;&quot;) ..\n\t\t&quot;&lt;/span&gt;&lt;span class=\\&quot;ib-brac\\&quot;&gt;)&lt;/span&gt;&quot;\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
+- recorded: 2016-08-15T22:29:31.630Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Alabels%2Fdata&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -1724,24 +1723,24 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=43998 t=1471293877261180
+      Backend-Timing: D=30764 t=1471300171367381
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:37 GMT
+      Date: Mon, 15 Aug 2016 22:29:31 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1284.eqiad.wmnet
+      Server: mw1234.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1054 pass, cp3040 pass, cp3033 pass
+      X-Cache: cp1054 pass, cp3032 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 311479113, 3049620334, 1186456642
+      X-Varnish: 329473997, 2169870110, 1214015231
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4077514\" pageid=\"4077514\" ns=\"828\" title=\"Module:labels/data\"><revisions><rev user=\"Arctic.gnome\" timestamp=\"2016-07-25T15:27:52Z\" comment=\"\" contentformat=\"text/plain\"\
       \ contentmodel=\"Scribunto\" xml:space=\"preserve\">local labels = {}\nlocal aliases = {}\nlocal deprecated = {}\n\n--  Helper labels\n\nlabels['_'] = {\n\tdisplay = '',\n\tomit_preComma = true,\n\tomit_postComma = true }\n\nlabels['and'] = {\n\tomit_preComma\
       \ = true,\n\tomit_postComma = true }\naliases['&amp;'] = 'and'\n\nlabels['or'] = {\n\tomit_preComma = true,\n\tomit_postComma = true }\n\nlabels['except'] = { -- combine with 'except in', 'outside'? or retain for entries like &quot;wnuczę&quot;?\n\tomit_preComma\
@@ -2146,7 +2145,7 @@ interactions:
       \ jargon&quot;\naliases[&quot;Wiktionary&quot;] = &quot;Wiktionary and WMF jargon&quot;\naliases[&quot;Wiktionary jargon&quot;] = &quot;Wiktionary and WMF jargon&quot;\n\nlabels[&quot;women's speech&quot;] = { -- for Awetí, Karajá, etc., where men &amp;\
       \ women use different words\n\tdisplay = &quot;[[Appendix:Glossary#women's speech|women's speech]]&quot;,\n\tpos_categories = {&quot;women's speech terms&quot;} }\naliases[&quot;female speech&quot;] = &quot;women's speech&quot;\n\n\nreturn {[&quot;labels&quot;]\
       \ = labels, [&quot;aliases&quot;] = aliases, [&quot;deprecated&quot;] = deprecated}</rev></revisions></page></pages></query></api>"
-- recorded: 2016-08-15T20:44:38.137Z
+- recorded: 2016-08-15T22:29:31.947Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Alabels%2Fdata%2Fregional&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -2161,24 +2160,24 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=35745 t=1471293877869004
+      Backend-Timing: D=27538 t=1471300171740587
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:37 GMT
+      Date: Mon, 15 Aug 2016 22:29:31 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1191.eqiad.wmnet
+      Server: mw1288.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1067 pass, cp3041 pass, cp3033 pass
+      X-Cache: cp1067 pass, cp3042 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 3116641357, 2709990757, 1186459091
+      X-Varnish: 3134187400, 1952117152, 1214017182
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4952140\" pageid=\"4952140\" ns=\"828\" title=\"Module:labels/data/regional\"><revisions><rev user=\"-sche\" timestamp=\"2016-08-13T08:12:51Z\" comment=\"\" contentformat=\"\
       text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">local labels = {}\nlocal aliases = {}\nlocal deprecated = {}\n\n-- Generic\n\n--not sure where to put this\nlabels[&quot;classical&quot;] = {\n--\tdisplay = &quot;[[Classical &quot; .. lang:getCanonicalName()\
       \ .. &quot;]]&quot;, -- don't know how to make this work\n\tregional_categories = {&quot;Classical&quot;},\n}\n\nlabels[&quot;regional&quot;] = {\n\tregional_categories = {&quot;Regional&quot;},\n}\n\n\n-- Africa\n\nlabels[&quot;Africa&quot;] = {\n\tregional_categories\
@@ -2556,7 +2555,7 @@ interactions:
       \ Low German&quot;\naliases[&quot;West Pomeranian LG&quot;] = &quot;Western Pomeranian Low German&quot;\n\nlabels[&quot;Western Samic&quot;] = {\n\tplain_categories = {&quot;Western Proto-Samic&quot;},\n}\n\nlabels[&quot;Wu&quot;] = {\n\tdisplay = &quot;[[w:Wu\
       \ Chinese|Wu]]&quot;,\n\tplain_categories = {&quot;Wu Chinese&quot;},\n}\n\nlabels[&quot;Xiang&quot;] = {\n\tdisplay = &quot;[[w:Xiang Chinese|Xiang]]&quot;,\n\tplain_categories = {&quot;Xiang Chinese&quot;},\n}\n\nlabels[&quot;Ye'kwana&quot;] = {\n\t\
       display = &quot;Ye'kwana dialect&quot;,\n\tplain_categories = {&quot;Ye'kwana Maquiritari&quot;},\n}\naliases[&quot;Ye'kwana dialect&quot;] = &quot;Ye'kwana&quot;\n\nreturn {labels = labels, aliases = aliases, deprecated = deprecated}</rev></revisions></page></pages></query></api>"
-- recorded: 2016-08-15T20:44:38.418Z
+- recorded: 2016-08-15T22:29:32.227Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Asuffixsee&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -2571,29 +2570,29 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=36573 t=1471293878304423
+      Backend-Timing: D=29050 t=1471300172124030
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:38 GMT
+      Date: Mon, 15 Aug 2016 22:29:32 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1199.eqiad.wmnet
+      Server: mw1208.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1052 pass, cp3032 pass, cp3033 pass
+      X-Cache: cp1054 pass, cp3032 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 3153434613, 2154975972, 1186461399
+      X-Varnish: 329476464, 2169872295, 1214018627
     body: |-
       <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="1877023" pageid="1877023" ns="10" title="Template:suffixsee"><revisions><rev user="DTLHS" timestamp="2015-09-03T18:34:28Z" comment="Reverted edits by [[Special:Contributions/DTLHS|DTLHS]]. If you think this rollback is in error, please leave a message on my talk page." contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{#invoke:compound/templates|derivsee|derivtype=suffix}}&lt;!--
 
       --&gt;&lt;noinclude&gt;{{documentation}}&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2016-08-15T20:44:38.641Z
+- recorded: 2016-08-15T22:29:32.430Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Acompound%2Ftemplates&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -2608,24 +2607,24 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=30351 t=1471293878527625
+      Backend-Timing: D=23587 t=1471300172327927
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:38 GMT
+      Date: Mon, 15 Aug 2016 22:29:32 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1199.eqiad.wmnet
+      Server: mw1287.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1066 pass, cp3041 pass, cp3033 pass
+      X-Cache: cp1066 pass, cp3030 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 3488889305, 2709992379, 1186462281
+      X-Varnish: 3508242631, 2670466836, 1214019047
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4534570\" pageid=\"4534570\" ns=\"828\" title=\"Module:compound/templates\"><revisions><rev user=\"CodeCat\" timestamp=\"2016-05-30T16:57:21Z\" comment=\"\" contentformat=\"\
       text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">local m_compound = require(&quot;Module:compound&quot;)\n\nlocal export = {}\n\nlocal function get_part(args, offset, i)\n\toffset = offset or 0\n\t\n\tlocal term = args[i + offset]; if term\
       \ == &quot;&quot; then term = nil end\n\tlocal alt = args[&quot;alt&quot; .. i]; if alt == &quot;&quot; then alt = nil end\n\tlocal id = args[&quot;id&quot; .. i]; if id == &quot;&quot; then id = nil end\n\tlocal lang = args[&quot;lang&quot; .. i]; if\
@@ -2701,7 +2700,7 @@ interactions:
       \ = lang:getCanonicalName() .. &quot; &quot; .. pos .. &quot; &quot; .. derivtype .. &quot;ed with &quot; .. term .. (id and &quot; (&quot; .. id .. &quot;)&quot; or &quot;&quot;)\n\tend\n\t\n\treturn frame:callParserFunction{\n\t\tname = &quot;#categorytree&quot;,\n\
       \t\targs = {\n\t\t\tcategory,\n\t\t\tdepth = 0,\n\t\t\tclass = &quot;\\&quot;derivedterms&quot; .. (sc and &quot; &quot; .. sc:getCode() or &quot;&quot;) .. &quot;\\&quot;&quot;,\n\t\t\tnamespaces = &quot;-&quot; .. (mw.title.getCurrentTitle().nsText ==\
       \ &quot;Reconstruction&quot; and &quot; Reconstruction&quot; or &quot;&quot;),\n\t\t\t}\n\t\t}\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
-- recorded: 2016-08-15T20:44:38.851Z
+- recorded: 2016-08-15T22:29:32.715Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Acompound&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -2716,24 +2715,24 @@ interactions:
     status: 200
     headers:
       Age: '0'
-      Backend-Timing: D=34066 t=1471293878736082
+      Backend-Timing: D=31553 t=1471300172598557
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
       Content-Type: text/xml; charset=utf-8
-      Date: Mon, 15 Aug 2016 20:44:38 GMT
+      Date: Mon, 15 Aug 2016 22:29:32 GMT
       P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
-      Server: mw1277.eqiad.wmnet
+      Server: mw1199.eqiad.wmnet
       Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
       Transfer-Encoding: chunked
       Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Aug-2016;https=1
-      X-Cache: cp1066 pass, cp3041 pass, cp3033 pass
+      X-Cache: cp1066 pass, cp3032 pass, cp3033 pass
       X-Cache-Status: pass
       X-Client-IP: 82.155.193.179
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
       X-Powered-By: HHVM/3.12.1
-      X-Varnish: 3488889661, 2709992587, 1186462986
+      X-Varnish: 3508243437, 2169872613, 1214019493
     body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4105621\" pageid=\"4105621\" ns=\"828\" title=\"Module:compound\"><revisions><rev user=\"CodeCat\" timestamp=\"2016-05-30T16:54:04Z\" comment=\"\" contentformat=\"text/plain\"\
       \ contentmodel=\"Scribunto\" xml:space=\"preserve\">local m_links = require(&quot;Module:links&quot;)\nlocal m_utilities = require(&quot;Module:utilities&quot;)\n\nlocal export = {}\n\n-- FIXME: should be script-based\n-- But we can't do that unless we\
       \ do script detection before linking.\nlocal hyphens = {\n\t[&quot;ar&quot;] = &quot;ـ&quot;,\n\t[&quot;fa&quot;] = &quot;ـ&quot;,\n\t[&quot;he&quot;] = &quot;־&quot;,\n\t[&quot;ja&quot;] = &quot;&quot;,\n\t[&quot;ko&quot;] = &quot;&quot;,\n\t[&quot;yi&quot;]\
