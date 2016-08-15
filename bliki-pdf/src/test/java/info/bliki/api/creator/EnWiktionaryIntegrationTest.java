@@ -122,7 +122,7 @@ public class EnWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
     }
 
     @Betamax(tape = "Stein_des_Anstosses", mode = READ_ONLY)
-    @Ignore @Test public void testSteinDesAnstosses() throws Exception {
+    @Test public void testSteinDesAnstosses() throws Exception {
         testWiktionaryENAPI("Stein_des_Anstoßes");
     }
 

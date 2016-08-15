@@ -61,7 +61,15 @@ public class Frame {
         return page.pagename;
     }
 
+    public ParsedPageName getPage() {
+        return page;
+    }
+
     public boolean isSubsting() {
         return isSubst;
+    }
+
+    public String getFrameId() {
+        return getClass().getName() + "@" + Integer.toHexString(hashCode());
     }
 }

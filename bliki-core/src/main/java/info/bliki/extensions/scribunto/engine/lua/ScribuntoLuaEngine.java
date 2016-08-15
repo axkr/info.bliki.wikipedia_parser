@@ -38,6 +38,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -48,6 +49,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
     private static final boolean ENABLE_LUA_DEBUG_LIBRARY = false;
     private final Globals globals;
     private Frame currentFrame;
+    private Map<String,Frame> childFrames = new HashMap<>();
     private int expensiveFunctionCount;
 
     private final CompiledScriptCache compiledScriptCache;
@@ -129,7 +131,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         try {
             currentFrame = frame;
             LuaValue executeFunction = globals.get("mw").get("executeFunction");
-            logger.trace("executing "+luaFunction);
+            logger.trace("executing " + luaFunction);
             final LuaString result = executeFunction.call(luaFunction).checkstring();
             return new String(result.m_bytes, result.m_offset, result.m_length, UTF8);
         } finally {
@@ -305,16 +307,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
             public LuaValue call(LuaValue frameId, LuaValue title, LuaValue args) {
                 final Frame frame = getFrameById(frameId);
                 final Map<String, String> parameterMap = frame.getTemplateParameters();
-                final LuaTable table = args.checktable();
-                LuaValue key = LuaValue.NIL;
-                while (true) {
-                    Varargs next = table.next(key);
-                    if ((key = next.arg1()).isnil())
-                        break;
-
-                    LuaValue value = next.arg(2);
-                    parameterMap.put(key.checkjstring(), value.checkjstring());
-                }
+                parameterMap.putAll(luaParams(args));
                 StringWriter writer = new StringWriter();
                 try {
                     model.substituteTemplateCall(title.tojstring(), parameterMap, writer);
@@ -335,19 +328,19 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         };
     }
 
-    private Frame getFrameById(LuaValue frameId) {
-        if (currentFrame == null) {
-            throw new AssertionError("No current frame set: "+ frameId);
-        }
-        Frame frame;
-        if (frameId.tojstring().equals("parent")) {
+    private Frame getFrameById(LuaValue luaFrameId) {
+        assert(currentFrame != null);
+        final String frameId = luaFrameId.checkjstring();
+        Frame frame = null;
+        if (frameId.equals("parent")) {
             frame = currentFrame.getParent();
-        } else {
+        } else if (frameId.equals("current")) {
             frame = currentFrame;
+        } else if (childFrames.containsKey(frameId)) {
+            frame = childFrames.get(frameId);
         }
-
         if (frame == null) {
-            throw new AssertionError("No frame set: "+ frameId);
+            throw new AssertionError("No frame set: "+ luaFrameId);
         }
         return frame;
     }
@@ -371,9 +364,20 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
 
     private LuaValue newChildFrame() {
         return new ThreeArgFunction() {
+            /**
+             * Creates a new frame
+             * @return the new frame id
+             */
             @Override
             public LuaValue call(LuaValue frameId, LuaValue title, LuaValue args) {
-                return NIL;
+                final Frame childFrame =
+                        currentFrame.newChild(
+                            new ParsedPageName(currentFrame.getPage().namespace, title.checkjstring(), true),
+                            luaParams(args),
+                            currentFrame.isSubsting());
+
+                childFrames.put(childFrame.getFrameId(), childFrame);
+                return toLuaString(childFrame.getFrameId());
             }
         };
     }
@@ -507,6 +511,21 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
      */
     public static LuaString toLuaString(String string) {
         return LuaString.valueOf(string.getBytes(UTF8));
+    }
+
+    private static Map<String,String> luaParams(LuaValue args) {
+        Map<String,String> parameters = new HashMap<>();
+        final LuaTable table = args.checktable();
+        LuaValue key = LuaValue.NIL;
+        while (true) {
+            Varargs next = table.next(key);
+            if ((key = next.arg1()).isnil())
+                break;
+
+            LuaValue value = next.arg(2);
+            parameters.put(key.checkjstring(), value.checkjstring());
+        }
+        return parameters;
     }
 
     private static class unpack extends VarArgFunction {
