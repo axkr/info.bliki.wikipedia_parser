@@ -14,6 +14,7 @@ import info.bliki.extensions.scribunto.engine.lua.interfaces.MwTitle;
 import info.bliki.extensions.scribunto.engine.lua.interfaces.MwUri;
 import info.bliki.extensions.scribunto.engine.lua.interfaces.MwUstring;
 import info.bliki.extensions.scribunto.template.Frame;
+import info.bliki.wiki.filter.MagicWord;
 import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.model.IWikiModel;
 import org.luaj.vm2.Globals;
@@ -40,6 +41,8 @@ import java.io.InputStream;
 import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.Map;
+
+import static info.bliki.wiki.filter.MagicWord.processMagicWord;
 
 /**
  * scribunto/engines/LuaCommon/LuaCommon.php
@@ -260,11 +263,15 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         return new ThreeArgFunction() {
             @Override
             public LuaValue call(LuaValue frameId, LuaValue function, LuaValue args) {
-                if ("filepath".equals(function.checkjstring())) {
-                    String path = args.get(1).checkjstring();
-                    return toLuaString(path);
+                final String functionName = function.checkjstring();
+                MagicWord.MagicWordE magic =
+                        MagicWord.getMagicWord(functionName);
+                if (magic != null) {
+                    final String argument = args.optjstring(null);
+                    final String processed = processMagicWord(magic, argument, model);
+                    return toLuaString(processed);
                 }
-                return LuaValue.NIL;
+                return NIL;
             }
         };
     }

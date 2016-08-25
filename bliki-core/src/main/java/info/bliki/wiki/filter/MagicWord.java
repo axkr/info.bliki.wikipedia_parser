@@ -95,6 +95,9 @@ public class MagicWord {
         // {{fullurl:Category:Top level|action=edit}} -> //www.mediawiki.org/w/index.php?title=Category:Top_level&action=edit
         MAGIC_FULL_URL("FULLURL"),
         MAGIC_FULL_URL_E("FULLURLE"),
+        // A protocol-relative path to the full size or thumbnail (1.18+) of a media file.
+        // {{filepath:Wiki.png}}
+        MAGIC_FILEPATH("FILEPATH"),
 
         MAGIC_TALK_SPACE("TALKSPACE"),
         MAGIC_TALK_SPACE_E("TALKSPACEE"),
@@ -126,7 +129,18 @@ public class MagicWord {
         /** The username of the user who made the most recent edit to the page, or the current user when previewing an edit. */
         MAGIC_REVISION_USER("REVISIONUSER"),
 
+        // Returns the page identifier
+        MAGIC_PAGEID("PAGEID"),
+
+        // Outputs the protection level (e.g. "autoconfirmed", "sysop") for a given action
+        // (e.g. "edit", "move") on the current page. Returns an empty string if not protected.
         MAGIC_PROTECTION_LEVEL("PROTECTIONLEVEL"),
+        // Outputs the protection expiry (e.g. "20160418155030", "infinity") for a given action
+        // (e.g. "edit", "move") on the current page. Returns "infinity" if not protected.
+        MAGIC_PROTECTIONEXPIRY("PROTECTIONEXPIRY"),
+        // Returns the sources of any cascading protection acting on the current page.
+        MAGIC_CASCADINGSOURCES("CASCADINGSOURCES"),
+
         MAGIC_DISPLAY_TITLE("DISPLAYTITLE"),
         MAGIC_DEFAULT_SORT("DEFAULTSORT"),
         MAGIC_DEFAULT_SORT_KEY("DEFAULTSORTKEY"),
