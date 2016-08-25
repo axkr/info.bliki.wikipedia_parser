@@ -2,6 +2,7 @@ package info.bliki.api.creator;
 
 import info.bliki.wiki.model.Configuration;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import software.betamax.junit.Betamax;
 
@@ -17,13 +18,13 @@ public class FrWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
         wiktionaryFr = createTestDB("wiktionary-FR");
     }
 
-    @Test @Betamax(tape = "eau", mode = READ_ONLY)
-    public void testEau() throws Exception {
+    @Betamax(tape = "eau", mode = READ_ONLY)
+    @Ignore @Test public void testEau() throws Exception {
         testWiktionaryFRAPI("eau");
     }
 
-    @Test @Betamax(tape = "eau", mode = READ_ONLY)
-    public void testCategoriesAreExtracted() throws Exception {
+    @Betamax(tape = "eau", mode = READ_ONLY)
+    @Ignore @Test public void testCategoriesAreExtracted() throws Exception {
         Result result = testWiktionaryFRAPI("eau");
         assertThat(result.categories.size()).isEqualTo(437);
         assertThat(result.categories).containsKeys(
