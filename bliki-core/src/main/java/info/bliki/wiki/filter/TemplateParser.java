@@ -186,7 +186,7 @@ public class TemplateParser extends AbstractParser {
             sb = new StringBuilder(sb.length());
             parser.runParser(sb);
 
-            // parse again?
+            // parse again, expansion inside parameter arguments
             if (!wikiModel.isParameterParsingMode()) {
                 parser = new TemplateParser(sb.toString(), parseOnlySignature, renderTemplate);
                 parser.setModel(wikiModel);

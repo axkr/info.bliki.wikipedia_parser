@@ -25,6 +25,8 @@ public class MwText implements MwInterface {
         return table;
     }
 
+    // Replaces MediaWiki <nowiki> strip markers with the corresponding text.
+    // Other types of strip markers are not changed.
     private LuaValue unstripNoWiki() {
         return new OneArgFunction() {
             @Override
@@ -34,6 +36,7 @@ public class MwText implements MwInterface {
         };
     }
 
+    // Removes all MediaWiki strip markers from a string.
     private LuaValue killMarkers() {
         return new OneArgFunction() {
             @Override
