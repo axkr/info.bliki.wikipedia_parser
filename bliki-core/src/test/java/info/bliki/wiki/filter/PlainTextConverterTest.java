@@ -89,6 +89,11 @@ public class PlainTextConverterTest extends FilterTestSupport {
         assertThat(wikiModel.render(plainTextConverter, "----\n", false)).isEqualTo("");
     }
 
+    @Test public void testRefTagsGetFilteredOut() throws Exception {
+        plainTextConverter = new PlainTextConverter(true);
+        assertThat(wikiModel.render(plainTextConverter, "foo<ref>bar</ref>baz", false)).isEqualTo("\nfoobaz");
+    }
+
     @Test public void testConvertLinkNode() throws Exception {
         WPATag aTag = new WPATag();
         aTag.addAttribute(HREF, "some-href", false);

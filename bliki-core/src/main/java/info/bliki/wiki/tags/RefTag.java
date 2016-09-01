@@ -48,6 +48,10 @@ public class RefTag extends HTMLTag implements IBodyTag {
     }
 
     @Override
+    public void renderPlainText(ITextConverter converter, Appendable buf, IWikiModel wikiModel) throws IOException {
+    }
+
+    @Override
     public boolean isReduceTokenStack() {
         return false;
     }
