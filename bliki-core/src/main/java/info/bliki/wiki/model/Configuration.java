@@ -152,8 +152,11 @@ public class Configuration implements IConfiguration {
     public static final  HTMLTag HTML_PRE_OPEN = new PreTag();
 
     // dl/dd
-    public static final  HTMLTag HTML_DL_OPEN = new HTMLTag("dl");
-    public static final  HTMLTag HTML_DD_OPEN = new HTMLTag("dd");
+    public static final  HTMLTag HTML_DL_OPEN = new HTMLBlockTag("dl", SPECIAL_BLOCK_TAGS);
+    public static final  HTMLTag HTML_DD_OPEN = new HTMLBlockTag("dd", null, HTML_DL_OPEN);
+
+    // q
+    public static final  HTMLTag HTML_Q_OPEN = new HTMLBlockTag("q", SPECIAL_BLOCK_TAGS);
 
     public static final String DEFAULT_WIKI_ID = "enwiki";
 
@@ -310,6 +313,8 @@ public class Configuration implements IConfiguration {
 
         TAG_TOKEN_MAP.put("dl", HTML_DL_OPEN);
         TAG_TOKEN_MAP.put("dd", HTML_DD_OPEN);
+
+        TAG_TOKEN_MAP.put("q", HTML_Q_OPEN);
     }
 
     /**

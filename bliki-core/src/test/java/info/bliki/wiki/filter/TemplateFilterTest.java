@@ -1215,6 +1215,10 @@ public class TemplateFilterTest extends FilterTestSupport {
     }
 
     @Test public void testRenderDlDd() throws Exception {
-        assertThat(wikiModel.render("<dl><dd>Foo</dd></dl>").trim()).isEqualTo("<p><dl><dd>Foo</dd></dl></p>");
+        assertThat(wikiModel.render("<dl><dd>Foo</dd></dl>").trim()).isEqualTo("<dl><dd>Foo</dd></dl>");
+    }
+
+    @Test public void testRenderQ() throws Exception {
+        assertThat(wikiModel.render("<q>foo</q>").trim()).isEqualTo("<q>foo</q>");
     }
 }
