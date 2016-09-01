@@ -1188,7 +1188,6 @@ public class TemplateFilterTest extends FilterTestSupport {
      */
     @Test public void testTemplateCache004() throws Exception {
         String foodate = wikiModel.render("{{FOODATE}}", false);
-        System.out.println("testTemplateCache004: " + foodate);
         try {
             Thread.sleep(1);
         } catch (InterruptedException ignored) {
@@ -1202,7 +1201,6 @@ public class TemplateFilterTest extends FilterTestSupport {
      */
     @Test public void testTemplateCache005() throws Exception {
         String foodate = wikiModel.render("{{Template:FOODATE}}", false);
-        System.out.println("testTemplateCache005: " + foodate);
         try {
             Thread.sleep(1);
         } catch (InterruptedException ignored) {
@@ -1214,5 +1212,9 @@ public class TemplateFilterTest extends FilterTestSupport {
         assertThat(wikiModel.render("[http://url.com/with'singlequotes foo]").trim())
             .isEqualTo(
                 "<p><a class=\"external text\" href=\"http://url.com/with&#39;singlequotes\" rel=\"nofollow\">foo</a></p>");
+    }
+
+    @Test public void testRenderDlDd() throws Exception {
+        assertThat(wikiModel.render("<dl><dd>Foo</dd></dl>").trim()).isEqualTo("<p><dl><dd>Foo</dd></dl></p>");
     }
 }

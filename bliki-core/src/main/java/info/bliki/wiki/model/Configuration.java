@@ -151,6 +151,10 @@ public class Configuration implements IConfiguration {
     public static final  HTMLTag HTML_DEL_OPEN = new HTMLTag("del");
     public static final  HTMLTag HTML_PRE_OPEN = new PreTag();
 
+    // dl/dd
+    public static final  HTMLTag HTML_DL_OPEN = new HTMLTag("dl");
+    public static final  HTMLTag HTML_DD_OPEN = new HTMLTag("dd");
+
     public static final String DEFAULT_WIKI_ID = "enwiki";
 
     private static Map<String, String> TEMPLATE_CALLS_CACHE = null;
@@ -303,6 +307,9 @@ public class Configuration implements IConfiguration {
 
         TAG_TOKEN_MAP.put("abbr", HTML_ABBR_OPEN);
         TAG_TOKEN_MAP.put("cite", HTML_CITE_OPEN);
+
+        TAG_TOKEN_MAP.put("dl", HTML_DL_OPEN);
+        TAG_TOKEN_MAP.put("dd", HTML_DD_OPEN);
     }
 
     /**
