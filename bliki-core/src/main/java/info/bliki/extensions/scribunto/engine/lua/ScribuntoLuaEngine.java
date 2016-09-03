@@ -491,6 +491,9 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
             }
         });
 
+        // math.mod was renamed to fmod
+        math.set("mod", math.get("modf"));
+
         // table.maxn got removed in 5.2
         LuaValue table = globals.get("table");
         table.set("maxn", new OneArgFunction() {
