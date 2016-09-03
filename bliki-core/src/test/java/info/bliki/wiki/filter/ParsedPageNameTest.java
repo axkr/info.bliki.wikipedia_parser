@@ -16,6 +16,16 @@ public class ParsedPageNameTest extends FilterTestSupport {
         assertThat(name.namespace).isEqualTo(wikiModel.getNamespace().getTalk());
     }
 
+    @Test public void testParsePageNameWithNamespaceArgument() throws Exception {
+        ParsedPageName name = ParsedPageName.parsePageName(wikiModel, "foo", wikiModel.getNamespace().getModule(), false, false);
+        assertThat(name.fullPagename()).isEqualTo("Module:foo");
+    }
+
+    @Test public void testParsePageNameWithNamespaceArgumentAlreadyContainingNamespace() throws Exception {
+        ParsedPageName name = ParsedPageName.parsePageName(wikiModel, "Module:foo", wikiModel.getNamespace().getModule(), false, false);
+        assertThat(name.fullPagename()).isEqualTo("Module:foo");
+    }
+
     @Test public void testParsePageWithEmptyStringParsesAsEmpty() throws Exception {
         ParsedPageName name = ParsedPageName.parsePageName(wikiModel, "", null, false, false);
         assertThat(name.pagename).isEqualTo("");
