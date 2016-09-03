@@ -10,7 +10,7 @@ import static java.util.Locale.GERMAN;
 import static software.betamax.TapeMode.READ_ONLY;
 import static software.betamax.TapeMode.WRITE_ONLY;
 
-public class WikipediaIntegrationTest extends HTMLCreatorIntegrationTest {
+public class EnWikipediaIntegrationTest extends HTMLCreatorIntegrationTest {
     private TestWikiDB wikipediaEn, wikipediaDe;
 
     @Before
