@@ -59,5 +59,4 @@ public abstract class AbstractTemplateFunction implements ITemplateFunction {
     public static String parseTrim(String content, IWikiModel model) {
         return parse(content, model).trim();
     }
-
 }
