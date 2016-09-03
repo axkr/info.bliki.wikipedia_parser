@@ -135,32 +135,38 @@ public class APIWikiModel extends WikiModel {
             } else {
                 return fetchAndCacheContent(pageName, templateParameters);
             }
-        } catch (SQLException e) {
+        } catch (IOException | SQLException e) {
             logger.warn(null, e);
             final String message = e.getMessage() == null ? e.getClass().getSimpleName() : e.getMessage();
             throw new WikiModelContentException("<span class=\"error\">Exception: " + message + "</span>", e);
         }
     }
 
-    private String fetchAndCacheContent(String fullPageName, Map<String, String> templateParameters) throws SQLException {
+    private String fetchAndCacheContent(String fullPageName, Map<String, String> templateParameters) throws SQLException, IOException {
+        String content = fetchContent(fullPageName);
+        if (content != null) {
+            cacheContent(fullPageName, content);
+            content = getRedirectedWikiContent(content, templateParameters);
+            return content != null && content.length() > 0 ? content : null;
+        } else {
+            logger.warn("no content for page " + fullPageName);
+            return null;
+        }
+    }
+
+    protected String fetchContent(String fullPageName) throws IOException {
         logger.debug("fetching '"+fullPageName+"' from API");
         fUser.login();
         List<Page> listOfPages = fUser.queryContent(fullPageName);
         if (listOfPages.size() > 0) {
-            final Page page = listOfPages.get(0);
-            String content = page.getCurrentContent();
-            if (content != null) {
-                fWikiDB.insertTopic(new TopicData(fullPageName, content));
-                content = getRedirectedWikiContent(content, templateParameters);
-                return content != null && content.length() > 0 ?  content : null;
-            } else {
-                logger.warn("no content for page "+page);
-                return null;
-            }
+            return listOfPages.get(0).getCurrentContent();
         } else {
-            logger.warn("no content for page "+fullPageName);
             return null;
         }
+    }
+
+    protected void cacheContent(String pageName, String content) throws SQLException {
+        fWikiDB.insertTopic(new TopicData(pageName, content));
     }
 
     private String getRedirectedWikiContent(String rawWikitext, Map<String, String> templateParameters) {
