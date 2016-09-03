@@ -3,6 +3,7 @@ package info.bliki.extensions.scribunto.engine;
 import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.model.WikiModelContentException;
+import info.bliki.wiki.namespaces.INamespace;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,17 +17,19 @@ public abstract class ScribuntoEngineBase implements ScribuntoEngine {
 
     protected Logger logger = LoggerFactory.getLogger(getClass());
     protected final IWikiModel model;
+    protected final INamespace.INamespaceValue moduleNamespace;
 
     protected ScribuntoEngineBase(IWikiModel model) {
         this.model = model;
+        this.moduleNamespace = model.getNamespace().getModule();
     }
 
     protected ParsedPageName pageNameForModule(String moduleName) {
-        return ParsedPageName.parsePageName(model,
-                moduleName,
-                model.getNamespace().getModule(),
-                false,
-                false);
+        if (moduleName.startsWith(moduleNamespace.getPrimaryText() + ":")) {
+            return ParsedPageName.parsePageName(model, moduleName, moduleNamespace, false, false);
+        } else {
+            return new ParsedPageName(moduleNamespace, moduleName, true);
+        }
     }
 
     protected InputStream getRawWikiContentStream(ParsedPageName pageName) throws FileNotFoundException {

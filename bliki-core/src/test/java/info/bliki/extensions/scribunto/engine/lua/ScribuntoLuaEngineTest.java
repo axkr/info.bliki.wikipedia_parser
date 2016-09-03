@@ -19,6 +19,7 @@ import static org.junit.Assert.fail;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyMap;
 import static org.mockito.Matchers.isNull;
+import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
@@ -31,6 +32,15 @@ public class ScribuntoLuaEngineTest {
         initMocks(this);
         when(model.getNamespace()).thenReturn(new Namespace());
         subject = new ScribuntoLuaEngine(model, CompiledScriptCache.DONT_CACHE);
+    }
+
+    @Test public void testFetchModuleFromParserContainingTemplatePrefix() throws Exception {
+        ParsedPageName expectedPage = new ParsedPageName(model.getNamespace().getModule(), "Template:also", true);
+        assertThat(expectedPage.fullPagename()).isEqualTo("Module:Template:also");
+
+        when(model.getRawWikiContent(eq(expectedPage), anyMap())).thenReturn("");
+
+        assertThat(subject.fetchModuleFromParser("Template:also").pageName()).isEqualTo(expectedPage);
     }
 
     @Test(expected = ScribuntoException.class)
