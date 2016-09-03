@@ -1,5 +1,7 @@
 package info.bliki.extensions.scribunto.template;
 
+import info.bliki.wiki.filter.ParsedPageName;
+import info.bliki.wiki.namespaces.Namespace;
 import org.junit.Before;
 import org.junit.Test;
 import org.luaj.vm2.LuaValue;
@@ -17,7 +19,12 @@ public class FrameTest {
         params.put("a", "a value");
         params.put("b", "b value");
         params.put("1", "numbered param");
-        subject = new Frame(null, params, null, false);
+        subject = new Frame(new ParsedPageName(new Namespace().getModule(), "Test", true),
+                params, null, false);
+    }
+
+    @Test public void testGetTitleReturnsFullPageName() throws Exception {
+        assertThat(subject.getTitle()).isEqualTo("Module:Test");
     }
 
     @Test public void testGetAllArguments() {

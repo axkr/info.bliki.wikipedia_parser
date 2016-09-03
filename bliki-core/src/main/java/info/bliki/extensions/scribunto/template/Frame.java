@@ -58,7 +58,7 @@ public class Frame {
     }
 
     public String getTitle() {
-        return page.pagename;
+        return page.fullPagename();
     }
 
     public ParsedPageName getPage() {
