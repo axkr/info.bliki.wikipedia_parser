@@ -102,6 +102,12 @@ public class EnWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
         result.assertContains("ʾaʿdād");
     }
 
+    @Betamax(tape = "eye_dialect", mode = READ_ONLY)
+    @Test public void testEyeDialect() throws Exception {
+        testWiktionaryENAPI("User:Jberkel/bliki-testcases/eye_dialect")
+            .assertContains("representing NotFound English");
+    }
+
     @Betamax(tape = "t2i", mode = READ_ONLY)
     @Test public void testT2i() throws Exception {
         final Result result = testWiktionaryENAPI("User:Jberkel/bliki-testcases/t2i");

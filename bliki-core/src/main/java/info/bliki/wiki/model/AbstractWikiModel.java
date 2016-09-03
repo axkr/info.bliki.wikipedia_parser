@@ -941,9 +941,6 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
                     (MagicWordE) parsedPagename.magicWord,
                     parsedPagename.magicWordParameter, this);
         }
-        if (parsedPagename.namespace.isType(NamespaceCode.TEMPLATE_NAMESPACE_KEY)) {
-            setFrame(new Frame(parsedPagename, templateParameters, getFrame(), false));
-        }
         return null;
     }
 
@@ -1298,18 +1295,6 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
             attributes = new HashMap<>();
         }
 
-        // if (value instanceof StringTemplate) {
-        // ((StringTemplate) value).setEnclosingInstance(this);
-        // } else {
-        // // convert value if array
-        // value = ASTExpr.convertArrayToList(value);
-        // }
-
-        // convert plain collections
-        // get exactly in this scope (no enclosing)
-
-        // it will be a multi-value attribute
-        // System.out.println("exists: "+name+"="+o);
         AttributeList v;
 
         Object o = this.attributes.get(name);
@@ -1520,8 +1505,12 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 
             StringBuilder templateBuffer = new StringBuilder(
                     plainContent.length());
-            TemplateParser.parseRecursive(plainContent.trim(), this,
-                    templateBuffer, false, false, parameterMap);
+
+
+            final Frame currentFrame = getFrame();
+            setFrame(new Frame(parsedPagename, parameterMap, currentFrame, false));
+            TemplateParser.parseRecursive(plainContent.trim(), this, templateBuffer, false, false, parameterMap);
+            setFrame(currentFrame);
 
             if (templateCallsCache != null && cacheKey != null) {
                 // save this template call in the cache
@@ -1600,8 +1589,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
             fNamespaceName = "";
             return;
         }
-        // TODO: we should only allow valid namespaces and probably set pagename
-        // and
+        // TODO: we should only allow valid namespaces and probably set pagename and
         // namespace in one go
         INamespaceValue nsVal = fNamespace.getNamespace(namespaceLowercase);
         if (nsVal != null) {
