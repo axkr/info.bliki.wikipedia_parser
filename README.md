@@ -13,5 +13,5 @@
   * [online converter][]
 
 [Wiki]: https://bitbucket.org/axelclk/info.bliki.wiki/wiki/Home
-[online converter]: http://w-i-k-i.appspot.com/
+[online converter]: http://wiki-conv.appspot.com/
 [drone.io]: https://drone.io/bitbucket.org/axelclk/info.bliki.wiki
