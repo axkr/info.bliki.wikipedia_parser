@@ -22,7 +22,7 @@ public class MwHtml implements MwInterface {
      * `'".
      */
     private static final String MARKER_SUFFIX = "-QINU`\"'\u007f";
-	private static final String MARKER_PREFIX = "\u007f'\"`UNIQ-";
+    private static final String MARKER_PREFIX = "\u007f'\"`UNIQ-";
 
     @Override
     public String name() {
