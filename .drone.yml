@@ -1,8 +1,0 @@
-image: oraclejdk7
-script:
-  - mvn install -q -DskipTests=true
-  - mvn test
-notify:
-  email:
-    recipients:
-      - jan@berkel.fr
