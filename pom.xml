@@ -40,7 +40,7 @@
     </issueManagement>
 
     <ciManagement>
-        <url>https://drone.io/bitbucket.org/axelclk/info.bliki.wiki</url>
+        <url>https://travis-ci.org/axkr/info.bliki.wikipedia_parser</url>
     </ciManagement>
 
     <licenses>
