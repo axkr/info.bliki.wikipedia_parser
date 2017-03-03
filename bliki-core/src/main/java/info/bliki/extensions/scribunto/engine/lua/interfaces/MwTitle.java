@@ -142,17 +142,17 @@ public class MwTitle implements MwInterface {
         };
     }
 
+    /**
+     *
+     * Creates a title object with title title in namespace namespace, optionally with the
+     * specified fragment and interwiki prefix. namespace may be any key found in mw.site.namespaces.
+     * If the resulting title is not valid, returns nil.
+     * @param $ns           string|int Namespace
+     * @param $text         string Title text
+     * @param $fragment     string URI fragment
+     * @param $interwiki    string Interwiki code
+     */
     private LuaValue makeTitle() {
-        /**
-         *
-         * Creates a title object with title title in namespace namespace, optionally with the
-         * specified fragment and interwiki prefix. namespace may be any key found in mw.site.namespaces.
-         * If the resulting title is not valid, returns nil.
-         * @param $ns           string|int Namespace
-         * @param $text         string Title text
-         * @param $fragment     string URI fragment
-         * @param $interwiki    string Interwiki code
-         */
         return new LibFunction() {
             @Override
             public Varargs invoke(Varargs args) {
@@ -170,8 +170,9 @@ public class MwTitle implements MwInterface {
         return title(
                 toLuaString(namespace != null ? namespace : ""),
                 toLuaString(pageName != null ? pageName : ""),
-                toLuaString("fragment"),
-                toLuaString("interwiki"));
+                LuaValue.NIL,
+                LuaValue.NIL
+        );
     }
 
     private LuaValue title(LuaValue ns, LuaValue title, LuaValue fragment, LuaValue interwiki) {
