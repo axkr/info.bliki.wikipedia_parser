@@ -32,6 +32,16 @@ public class WikiDBTest {
         assertThat(selected).isEqualTo(topicData);
     }
 
+    @Test public void shouldInsertTopicInDbKeyForm() throws Exception {
+        WikiDB db = new WikiDB(tempDir);
+        TopicData topicData = new TopicData("test foo", "someContent");
+
+        db.insertTopic(topicData);
+
+        assertThat(db.selectTopic("test_foo")).isEqualTo(topicData);
+        assertThat(db.selectTopic("test foo")).isEqualTo(topicData);
+    }
+
     @Test public void shouldInsertNewImage() throws Exception {
         WikiDB db = new WikiDB(tempDir);
         ImageData imageData = new ImageData("name", "http://foo.com", new File("/foo"));

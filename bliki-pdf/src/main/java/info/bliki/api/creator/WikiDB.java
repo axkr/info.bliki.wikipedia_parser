@@ -90,7 +90,7 @@ public class WikiDB implements Closeable {
      */
     @Nullable public TopicData selectTopic(String name) throws SQLException {
         TopicData topicData = new TopicData(name);
-        fSelectContent.setString(1, name);
+        fSelectContent.setString(1, topicData.getName());
         try (ResultSet resultSet = fSelectContent.executeQuery()) {
             if (resultSet.next()) {
                 topicData.setContent(resultSet.getString(1));

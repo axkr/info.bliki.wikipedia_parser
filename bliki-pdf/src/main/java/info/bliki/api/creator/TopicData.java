@@ -12,7 +12,7 @@ public class TopicData {
     }
 
     public TopicData(String name, String content) {
-        fTopicName = name;
+        fTopicName = name.replace(' ', '_'); // dbKeyForm
         fTopicContent = content;
     }
 

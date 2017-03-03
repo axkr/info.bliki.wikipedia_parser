@@ -5,6 +5,9 @@ import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TopicDataTest {
+    @Test public void shouldUseDbKeyFormForTitle() throws Exception {
+        assertThat(new TopicData("foo bar").getName()).isEqualTo("foo_bar");
+    }
 
     @Test public void shouldImplementEqualsByName() throws Exception {
         assertThat(new TopicData("foo")).isEqualTo(new TopicData("foo"));
