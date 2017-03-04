@@ -10,4 +10,5 @@ before_script:
 - echo "<settings><servers><server><id>sonatype-oss-snapshots</id><username>${MVN_DEPLOY_USERNAME}</username><password>${MVN_DEPLOY_PASSWORD}</password></server></servers></settings>" > $HOME/.m2/settings.xml
 script:
 - mvn test
+after_success:
 - if [ "${TRAVIS_PULL_REQUEST}" = "false" -a "${TRAVIS_BRANCH}" = "master" ]; then mvn deploy -DskipTests; fi
