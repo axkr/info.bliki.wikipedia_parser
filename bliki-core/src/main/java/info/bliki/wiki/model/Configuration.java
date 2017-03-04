@@ -158,6 +158,12 @@ public class Configuration implements IConfiguration {
     // q
     public static final  HTMLTag HTML_Q_OPEN = new HTMLBlockTag("q", SPECIAL_BLOCK_TAGS);
 
+    // ruby
+    public static final  HTMLTag HTML_RUBY_OPEN = new HTMLTag("ruby");
+    public static final  HTMLTag HTML_RP_OPEN = new HTMLTag("rp");
+    public static final  HTMLTag HTML_RT_OPEN = new HTMLTag("rt");
+
+
     public static final String DEFAULT_WIKI_ID = "enwiki";
 
     private static Map<String, String> TEMPLATE_CALLS_CACHE = null;
@@ -315,6 +321,10 @@ public class Configuration implements IConfiguration {
         TAG_TOKEN_MAP.put("dd", HTML_DD_OPEN);
 
         TAG_TOKEN_MAP.put("q", HTML_Q_OPEN);
+
+        TAG_TOKEN_MAP.put("ruby", HTML_RUBY_OPEN);
+        TAG_TOKEN_MAP.put("rt", HTML_RT_OPEN);
+        TAG_TOKEN_MAP.put("rp", HTML_RP_OPEN);
     }
 
     /**

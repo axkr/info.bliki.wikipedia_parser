@@ -122,7 +122,7 @@ public class EnWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
     }
 
     @Betamax(tape = "limpet", mode = READ_ONLY)
-    @Test public void testLimpet() throws Exception {
+    @Test public void test_limpet() throws Exception {
         testWiktionaryENAPI("limpet");
     }
 
@@ -132,9 +132,14 @@ public class EnWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
     }
 
     @Betamax(tape = "titeln", mode = READ_ONLY)
-    @Ignore @Test public void testtiteln() throws Exception {
+    @Ignore @Test public void testTiteln() throws Exception {
         final Result result = testWiktionaryENAPI("titeln");
         result.assertContains("Template:rfdef");
+    }
+
+    @Betamax(tape = "biombo", mode = READ_ONLY)
+    @Test public void testBiombo() throws Exception {
+        testWiktionaryENAPI("biombo");
     }
 
     @Override

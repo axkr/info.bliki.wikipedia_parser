@@ -1218,6 +1218,10 @@ public class TemplateFilterTest extends FilterTestSupport {
         assertThat(wikiModel.render("<dl><dd>Foo</dd></dl>").trim()).isEqualTo("<dl><dd>Foo</dd></dl>");
     }
 
+    @Test public void testRenderRuby() throws Exception {
+        assertThat(wikiModel.render("<ruby><rp>(</rp><rt>Foo</rt></ruby>").trim()).isEqualTo("<p><ruby><rp>(</rp><rt>Foo</rt></ruby></p>");
+    }
+
     @Test public void testRenderQ() throws Exception {
         assertThat(wikiModel.render("<q>foo</q>").trim()).isEqualTo("<q>foo</q>");
     }

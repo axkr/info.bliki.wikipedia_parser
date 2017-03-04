@@ -17,7 +17,7 @@ public abstract class ScribuntoEngineBase implements ScribuntoEngine {
 
     protected Logger logger = LoggerFactory.getLogger(getClass());
     protected final IWikiModel model;
-    protected final INamespace.INamespaceValue moduleNamespace;
+    private final INamespace.INamespaceValue moduleNamespace;
 
     protected ScribuntoEngineBase(IWikiModel model) {
         this.model = model;
@@ -25,7 +25,7 @@ public abstract class ScribuntoEngineBase implements ScribuntoEngine {
     }
 
     protected ParsedPageName pageNameForModule(String moduleName) {
-        if (moduleName.startsWith(moduleNamespace.getPrimaryText() + ":")) {
+        if (moduleName.toLowerCase().startsWith(moduleNamespace.getPrimaryText().toLowerCase() + ":")) {
             return ParsedPageName.parsePageName(model, moduleName, moduleNamespace, false, false);
         } else {
             return new ParsedPageName(moduleNamespace, moduleName, true);

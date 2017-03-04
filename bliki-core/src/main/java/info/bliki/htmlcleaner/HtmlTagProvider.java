@@ -43,7 +43,7 @@ import java.util.StringTokenizer;
 /**
  * <p>
  * Default HTML tag info provider. Here the basic set of HTML tags is defined, including
- * depricated tags and some Microsoft specific tags. Rules for tag balancing are similar
+ * deprecated tags and some Microsoft specific tags. Rules for tag balancing are similar
  * to that used in most web-browsers.
  * </p>
  *
@@ -82,10 +82,10 @@ public class HtmlTagProvider extends HashMap<String, TagInfo> implements ITagInf
      * @param name
      * @param contentType
      * @param belongsTo
-     * @param dependancies
+     * @param dependencies
      */
-    protected void addTag(String name, String contentType, int belongsTo, String dependancies) {
-        this.put( name.toLowerCase(), new TagInfo(name, contentType, belongsTo, false, false, false, dependancies) );
+    protected void addTag(String name, String contentType, int belongsTo, String dependencies) {
+        this.put( name.toLowerCase(), new TagInfo(name, contentType, belongsTo, false, false, false, dependencies) );
     }
 
     /**
@@ -216,36 +216,36 @@ public class HtmlTagProvider extends HashMap<String, TagInfo> implements ITagInf
 
         String commonTags = "div,p,address,h1,h2,h3,h4,h5,h6,blockquote,pre,listing,ul,ol,li,dl,menu,dir,table,form,fieldset,isindex,marquee,center,embed,param,hr";
 
-        addDependancy("p", commonTags);
-        addDependancy("address", commonTags);
-        addDependancy("label", commonTags);
-        addDependancy("abbr", commonTags);
-        addDependancy("acronym", commonTags);
-        addDependancy("dfn", commonTags);
-        addDependancy("kbd", commonTags);
-        addDependancy("samp", commonTags);
-        addDependancy("var", commonTags);
-        addDependancy("cite", commonTags);
-        addDependancy("code", commonTags);
-        addDependancy("param", commonTags);
-        addDependancy("xml", commonTags);
+        addDependency("p", commonTags);
+        addDependency("address", commonTags);
+        addDependency("label", commonTags);
+        addDependency("abbr", commonTags);
+        addDependency("acronym", commonTags);
+        addDependency("dfn", commonTags);
+        addDependency("kbd", commonTags);
+        addDependency("samp", commonTags);
+        addDependency("var", commonTags);
+        addDependency("cite", commonTags);
+        addDependency("code", commonTags);
+        addDependency("param", commonTags);
+        addDependency("xml", commonTags);
 
-        addDependancy("&a", commonTags);
-        addDependancy("&bdo", commonTags);
-        addDependancy("&strong", commonTags);
-        addDependancy("&em", commonTags);
-        addDependancy("&q", commonTags);
-        addDependancy("&b", commonTags);
-        addDependancy("&i", commonTags);
-        addDependancy("&u", commonTags);
-        addDependancy("&tt", commonTags);
-        addDependancy("&sub", commonTags);
-        addDependancy("&sup", commonTags);
-        addDependancy("&big", commonTags);
-        addDependancy("&small", commonTags);
-        addDependancy("&strike", commonTags);
-        addDependancy("&s", commonTags);
-        addDependancy("&font", commonTags);
+        addDependency("&a", commonTags);
+        addDependency("&bdo", commonTags);
+        addDependency("&strong", commonTags);
+        addDependency("&em", commonTags);
+        addDependency("&q", commonTags);
+        addDependency("&b", commonTags);
+        addDependency("&i", commonTags);
+        addDependency("&u", commonTags);
+        addDependency("&tt", commonTags);
+        addDependency("&sub", commonTags);
+        addDependency("&sup", commonTags);
+        addDependency("&big", commonTags);
+        addDependency("&small", commonTags);
+        addDependency("&strike", commonTags);
+        addDependency("&s", commonTags);
+        addDependency("&font", commonTags);
 
         getTagInfo("applet").setDeprecated(true);
         getTagInfo("basefont").setDeprecated(true);
@@ -259,7 +259,7 @@ public class HtmlTagProvider extends HashMap<String, TagInfo> implements ITagInf
         getTagInfo("u").setDeprecated(true);
     }
 
-    protected void addDependancy(String tagName, String tagList) {
+    protected void addDependency(String tagName, String tagList) {
         if (tagList != null) {
             StringTokenizer tokenizer = new StringTokenizer(tagList, ",.");
             while (tokenizer.hasMoreTokens()) {
@@ -277,10 +277,8 @@ public class HtmlTagProvider extends HashMap<String, TagInfo> implements ITagInf
     @Override
     public TagInfo getTagInfo(String tagName) {
         if (tagName != null) {
-            return (TagInfo) get( tagName.toLowerCase() );
+            return get( tagName.toLowerCase() );
         }
-
         return null;
     }
-
 }
