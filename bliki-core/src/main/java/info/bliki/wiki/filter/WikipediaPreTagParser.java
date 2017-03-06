@@ -337,17 +337,14 @@ public class WikipediaPreTagParser extends AbstractWikipediaParser {
             case TokenBOLDITALIC:
                 if (fWikiModel.stackSize() > 0 && fWikiModel.peekNode().equals(BOLDITALIC)) {
                     fWikiModel.popNode();
-                    // fResultBuffer.append("</i></b>");
                 } else if (fWikiModel.stackSize() > 1 && fWikiModel.peekNode().equals(BOLD)
                         && fWikiModel.getNode(fWikiModel.stackSize() - 2).equals(ITALIC)) {
                     fWikiModel.popNode();
                     fWikiModel.popNode();
-                    // fResultBuffer.append("</b></i>");
                 } else if (fWikiModel.stackSize() > 1 && fWikiModel.peekNode().equals(ITALIC)
                         && fWikiModel.getNode(fWikiModel.stackSize() - 2).equals(BOLD)) {
                     fWikiModel.popNode();
                     fWikiModel.popNode();
-                    // fResultBuffer.append("</i></b>");
                 } else if (fWikiModel.stackSize() > 0 && fWikiModel.peekNode().equals(BOLD)) {
                     fWikiModel.popNode();
                     fWikiModel.pushNode(new WPTag("i"));
@@ -356,33 +353,26 @@ public class WikipediaPreTagParser extends AbstractWikipediaParser {
                     fWikiModel.pushNode(new WPTag("b"));
                 } else {
                     fWikiModel.pushNode(new WPBoldItalicTag());
-                    // fResultBuffer.append("<b><i>");
                 }
                 break;
             case TokenBOLD:
                 if (fWikiModel.stackSize() > 0 && fWikiModel.peekNode().equals(BOLDITALIC)) {
                     fWikiModel.popNode();
                     fWikiModel.pushNode(new WPTag("i"));
-                    // fResultBuffer.append("</b>");
                 } else if (fWikiModel.stackSize() > 0 && fWikiModel.peekNode().equals(BOLD)) {
                     fWikiModel.popNode();
-                    // fResultBuffer.append("</b>");
                 } else {
                     fWikiModel.pushNode(new WPTag("b"));
-                    // fResultBuffer.append("<b>");
                 }
                 break;
             case TokenITALIC:
                 if (fWikiModel.stackSize() > 0 && fWikiModel.peekNode().equals(BOLDITALIC)) {
                     fWikiModel.popNode();
                     fWikiModel.pushNode(new WPTag("b"));
-                    // fResultBuffer.append("</i>");
                 } else if (fWikiModel.stackSize() > 0 && fWikiModel.peekNode().equals(ITALIC)) {
                     fWikiModel.popNode();
-                    // fResultBuffer.append("</i>");
                 } else {
                     fWikiModel.pushNode(new WPTag("i"));
-                    // fResultBuffer.append("<i>");
                 }
                 break;
             }

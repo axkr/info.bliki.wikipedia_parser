@@ -14,7 +14,6 @@ import info.bliki.wiki.tags.HTMLBlockTag;
 import info.bliki.wiki.tags.HTMLTag;
 import info.bliki.wiki.tags.HrTag;
 import info.bliki.wiki.tags.PTag;
-import info.bliki.wiki.tags.WPBoldItalicTag;
 import info.bliki.wiki.tags.WPPreTag;
 import info.bliki.wiki.tags.WPTag;
 import info.bliki.wiki.tags.util.Attribute;
@@ -201,21 +200,10 @@ public class WikipediaParser extends AbstractWikipediaParser {
                     } else {
                         if (fWikiModel.stackSize() == 0) {
                             addParagraph();
-                            // if (fWikiModel.getRecursionLevel() == 1) {
-                            // addParagraph();
-                            // } else {
-                            // if (fCurrentPosition > 1) {
-                            // addParagraph();
-                            // }
-                            // }
                         } else {
                             TagToken tag = fWikiModel.peekNode();
                             if (tag instanceof WPPreTag) {
                                 addPreformattedText();
-                                // } else if (tag instanceof PTag) {
-                                // createContentToken(fWhiteStart,
-                                // fWhiteStartPosition, 2);
-                                // reduceTokenStack(Configuration.HTML_PARAGRAPH_OPEN);
                             } else {
                                 String allowedParents = Configuration.HTML_PARAGRAPH_OPEN
                                         .getParents();
@@ -1210,10 +1198,7 @@ public class WikipediaParser extends AbstractWikipediaParser {
         while ((token = getNextToken()) != TokenEOF) {
             switch (token) {
             case TokenBOLDITALIC:
-                if (fWikiModel.stackSize() > 0
-                        && fWikiModel.peekNode().equals(BOLDITALIC)) {
-                    fWikiModel.popNode();
-                } else if (fWikiModel.stackSize() > 1
+                if (fWikiModel.stackSize() > 1
                         && fWikiModel.peekNode().equals(BOLD)
                         && fWikiModel.getNode(fWikiModel.stackSize() - 2)
                                 .equals(ITALIC)) {
@@ -1221,8 +1206,7 @@ public class WikipediaParser extends AbstractWikipediaParser {
                     fWikiModel.popNode();
                 } else if (fWikiModel.stackSize() > 1
                         && fWikiModel.peekNode().equals(ITALIC)
-                        && fWikiModel.getNode(fWikiModel.stackSize() - 2)
-                                .equals(BOLD)) {
+                        && fWikiModel.getNode(fWikiModel.stackSize() - 2).equals(BOLD)) {
                     fWikiModel.popNode();
                     fWikiModel.popNode();
                 } else if (fWikiModel.stackSize() > 0
@@ -1234,16 +1218,13 @@ public class WikipediaParser extends AbstractWikipediaParser {
                     fWikiModel.popNode();
                     fWikiModel.pushNode(new WPTag("b"));
                 } else {
-                    fWikiModel.pushNode(new WPBoldItalicTag());
+                    // BoldItalic
+                    fWikiModel.pushNode(new WPTag("i"));
+                    fWikiModel.pushNode(new WPTag("b"));
                 }
                 break;
             case TokenBOLD:
                 if (fWikiModel.stackSize() > 0
-                        && fWikiModel.peekNode().equals(BOLDITALIC)) {
-                    fWikiModel.popNode();
-                    fWikiModel.pushNode(new WPTag("i"));
-                    // fResultBuffer.append("</b>");
-                } else if (fWikiModel.stackSize() > 0
                         && fWikiModel.peekNode().equals(BOLD)) {
                     fWikiModel.popNode();
                 } else {
@@ -1251,12 +1232,14 @@ public class WikipediaParser extends AbstractWikipediaParser {
                 }
                 break;
             case TokenITALIC:
-                if (fWikiModel.stackSize() > 0
-                        && fWikiModel.peekNode().equals(BOLDITALIC)) {
+                if (fWikiModel.stackSize() > 0 && fWikiModel.peekNode().equals(ITALIC)) {
                     fWikiModel.popNode();
-                    fWikiModel.pushNode(new WPTag("b"));
-                } else if (fWikiModel.stackSize() > 0
-                        && fWikiModel.peekNode().equals(ITALIC)) {
+                } else if (fWikiModel.stackSize() > 1
+                    && fWikiModel.peekNode().equals(BOLD)
+                    && fWikiModel.getNode(fWikiModel.stackSize() - 2).equals(ITALIC)) {
+                    // assumed order was wrong, swap
+                    fWikiModel.getNode(fWikiModel.stackSize() -2).setName("b");
+                    fWikiModel.peekNode().setName("i");
                     fWikiModel.popNode();
                 } else {
                     fWikiModel.pushNode(new WPTag("i"));

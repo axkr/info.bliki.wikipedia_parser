@@ -91,7 +91,7 @@ public class HTTPUrlFilterTest extends FilterTestSupport {
                 + "\n"
                 + "\n"
                 + "<dl>\n"
-                + "<dd><a class=\"external text\" href=\"http://www.amazon.com/exec/obidos/ASIN/9781413304541\" rel=\"nofollow\" title=\"http://www.amazon.com/exec/obidos/ASIN/9781413304541\">ISBN 978-1413304541</a> <b><i>or</i></b> <a class=\"external text\" href=\"http://www.amazon.com/exec/obidos/ASIN/9781413304541\" rel=\"nofollow\" title=\"http://www.amazon.com/exec/obidos/ASIN/9781413304541\">ISBN 9781413304541</a> (without the dash)</dd>\n</dl>");
+                + "<dd><a class=\"external text\" href=\"http://www.amazon.com/exec/obidos/ASIN/9781413304541\" rel=\"nofollow\" title=\"http://www.amazon.com/exec/obidos/ASIN/9781413304541\">ISBN 978-1413304541</a> <i><b>or</b></i> <a class=\"external text\" href=\"http://www.amazon.com/exec/obidos/ASIN/9781413304541\" rel=\"nofollow\" title=\"http://www.amazon.com/exec/obidos/ASIN/9781413304541\">ISBN 9781413304541</a> (without the dash)</dd>\n</dl>");
     }
 
     @Test public void testMailto001() throws Exception {
