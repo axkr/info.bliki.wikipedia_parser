@@ -235,9 +235,8 @@ public class WikipediaParser extends AbstractWikipediaParser {
                                     createContentToken(5);
                                     return TokenBOLDITALIC;
                                 }
-                                fCurrentPosition -= 1;
-                                fWhiteStart = true;
                                 createContentToken(3);
+                                fWhiteStart = true;
                                 return TokenBOLD;
                             }
                             createContentToken(3);

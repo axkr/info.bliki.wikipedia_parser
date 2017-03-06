@@ -29,7 +29,7 @@ public class BoldFilterTest extends FilterTestSupport {
 
     @Test public void testBold04() throws Exception {
         // see bug #1860386 - bug in emphasize with 4 apostrophes
-        assertThat(wikiModel.render("some''''emphasized''''text", false)).isEqualTo("\n" + "<p>some<b>&#39;emphasized</b>&#39;text</p>");
+        assertThat(wikiModel.render("some''''emphasized''''text", false)).isEqualTo("\n" + "<p>some&#39;<b>emphasized&#39;</b>text</p>");
     }
 
     @Test public void testBold05() throws Exception {
