@@ -51,14 +51,16 @@ public class EmailValidator implements Serializable {
     private static final String WORD = "((" + VALID_CHARS + "|')+|" + QUOTED_USER + ")";
 
     private static final String LEGAL_ASCII_REGEX = "^\\p{ASCII}+$";
-    private static final String EMAIL_REGEX = "^\\s*?(.+)@(.+?)\\s*$";
+    private static final String EMAIL_REGEX = "^\\s*?(.+)@([^\\?]+)(\\?(.*))?\\s*";
     private static final String IP_DOMAIN_REGEX = "^\\[(.*)\\]$";
     private static final String USER_REGEX = "^\\s*" + WORD + "(\\." + WORD + ")*$";
+    private static final String QUERYSTRING_REGEX = "^\\?([^=]+=[^=]+&)+[^=]+(=[^=]+)?$";
 
     private static final Pattern MATCH_ASCII_PATTERN = Pattern.compile(LEGAL_ASCII_REGEX);
     private static final Pattern EMAIL_PATTERN = Pattern.compile(EMAIL_REGEX);
     private static final Pattern IP_DOMAIN_PATTERN = Pattern.compile(IP_DOMAIN_REGEX);
     private static final Pattern USER_PATTERN = Pattern.compile(USER_REGEX);
+    private static final Pattern QUERYSTRING_PATTERN = Pattern.compile(QUERYSTRING_REGEX);
 
     /**
      * Singleton instance of this class.
@@ -112,7 +114,11 @@ public class EmailValidator implements Serializable {
             return false;
         }
 
-        return isValidDomain(emailMatcher.group(2));
+        if (!isValidDomain(emailMatcher.group(2))) {
+            return false;
+        }
+
+        return isValidQueryString(emailMatcher.group(3));
     }
 
     /**
@@ -147,4 +153,13 @@ public class EmailValidator implements Serializable {
         return USER_PATTERN.matcher(user).matches();
     }
 
+    /**
+     * Returns true if the query string component of an email address is valid.
+     *
+     * @param queryString being validated
+     * @return true if the query string is valid.
+     */
+    protected boolean isValidQueryString(String queryString) {
+        return queryString == null || QUERYSTRING_PATTERN.matcher(queryString).matches();
+    }
 }
