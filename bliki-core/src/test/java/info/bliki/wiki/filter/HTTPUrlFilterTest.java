@@ -110,6 +110,14 @@ public class HTTPUrlFilterTest extends FilterTestSupport {
                 + "<a class=\"external free\" href=\"mAilTo:someone@domain.com\" rel=\"nofollow\" title=\"mAilTo:someone@domain.com\">someone</a></p>");
     }
 
+    @Test public void testMailto003() throws Exception {
+        assertThat(wikiModel.render("Linking to an e-mail address works the same way: \n" + "mailto:info@example.org?Subject=URL%20Encoded%20Subject&body=Body%20Text or \n"
+                + "[mailto:info@example.org?Subject=URL%20Encoded%20Subject&body=Body%20Text info]", false)).isEqualTo("\n"
+                + "<p>Linking to an e-mail address works the same way: \n"
+                + "<a class=\"external free\" href=\"mailto:info@example.org?Subject=URL%20Encoded%20Subject&body=Body%20Text\" rel=\"nofollow\" title=\"mailto:info@example.org?Subject=URL%20Encoded%20Subject&body=Body%20Text\">mailto:info@example.org?Subject=URL%20Encoded%20Subject&#38;body=Body%20Text</a> or \n"
+                + "<a class=\"external free\" href=\"mailto:info@example.org?Subject=URL%20Encoded%20Subject&body=Body%20Text\" rel=\"nofollow\" title=\"mailto:info@example.org?Subject=URL%20Encoded%20Subject&body=Body%20Text\">info</a></p>");
+    }
+
     @Test public void testWrongMailto() throws Exception {
         assertThat(wikiModel.render("Linking to an e-mail address works the same way: \n"
                 + "mailto:some one@domain.com or \n" + "[mailto:some one@domain.com someone]", false)).isEqualTo("\n" + "<p>Linking to an e-mail address works the same way: \n" + "mailto:some one@domain.com or \n"
