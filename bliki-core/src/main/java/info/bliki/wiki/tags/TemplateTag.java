@@ -21,6 +21,7 @@ public class TemplateTag extends HTMLTag
     public void renderHTML(ITextConverter converter, Appendable writer, IWikiModel model) throws IOException
     {
         // TODO: not supported yet
+        super.renderHTML(converter, writer, model);
     }
 
     @Override
