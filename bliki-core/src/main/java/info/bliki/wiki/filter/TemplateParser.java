@@ -1,21 +1,24 @@
 package info.bliki.wiki.filter;
 
-import info.bliki.wiki.model.Configuration;
-import info.bliki.wiki.model.IWikiModel;
-import info.bliki.wiki.tags.util.WikiTagNode;
-import info.bliki.wiki.template.ITemplateFunction;
-import info.bliki.wiki.template.Safesubst;
-import info.bliki.wiki.template.Subst;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import javax.annotation.Nullable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
+
+import javax.annotation.Nullable;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import info.bliki.wiki.model.Configuration;
+import info.bliki.wiki.model.IWikiModel;
+import info.bliki.wiki.tags.TemplateTag;
+import info.bliki.wiki.tags.util.WikiTagNode;
+import info.bliki.wiki.template.ITemplateFunction;
+import info.bliki.wiki.template.Safesubst;
+import info.bliki.wiki.template.Subst;
 
 import static info.bliki.wiki.filter.AbstractWikipediaParser.getRedirectedTemplateContent;
 import static info.bliki.wiki.filter.WikipediaParser.parseRedirect;
@@ -829,6 +832,26 @@ public class TemplateParser extends AbstractParser {
             objs[1] = resultList.get(0).trim();
         }
         return objs;
+    }
+
+    /**
+     * Create a {@link TemplateTag} from the passed template call.
+     * 
+     * @return the template tag
+     */
+    public static TemplateTag createTemplateTag(char[] src, int startOffset, int len) {
+        Object[] objs = TemplateParser.createParameterMap(src, startOffset, len);
+
+        @SuppressWarnings("unchecked")
+        List<String> parts = (List<String>) objs[0];
+        String templateName = (String) objs[1];
+
+        TemplateTag tag = new TemplateTag(templateName);
+        for (int i = 0; i < parts.size(); ++i) {
+            tag.addAttribute(String.valueOf(i), parts.get(i), false);
+        }
+
+        return tag;
     }
 
     /**

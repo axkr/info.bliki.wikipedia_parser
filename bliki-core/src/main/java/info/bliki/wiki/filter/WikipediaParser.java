@@ -14,6 +14,7 @@ import info.bliki.wiki.tags.HTMLBlockTag;
 import info.bliki.wiki.tags.HTMLTag;
 import info.bliki.wiki.tags.HrTag;
 import info.bliki.wiki.tags.PTag;
+import info.bliki.wiki.tags.TemplateTag;
 import info.bliki.wiki.tags.WPPreTag;
 import info.bliki.wiki.tags.WPTag;
 import info.bliki.wiki.tags.util.Attribute;
@@ -41,6 +42,7 @@ public class WikipediaParser extends AbstractWikipediaParser {
     private boolean fNoToC;
     private boolean fRenderTemplate;
     private boolean fForceToC;
+    private boolean fTemplateTag;
 
     private IEventListener fEventListener;
 
@@ -139,12 +141,16 @@ public class WikipediaParser extends AbstractWikipediaParser {
                     reduceTokenStackBoldItalic();
                     break;
                 case '{':
-                    // dummy parsing of wikipedia templates for event listeners
+                    // dummy parsing of wikipedia templates for event listeners and generation of a template tag
+                    // if fTemplateTag is enabled
                     if (!parseTemplate()) {
                         // wikipedia table handling
                         if (parseTable()) {
                             continue;
                         }
+                    } else if (fTemplateTag) {
+                        // If template tag is enabled parseTemplate will move fCurrentPosition
+                        continue;
                     }
                     break;
                 case '_': // TOC identifiers __NOTOC__, __FORCETOC__ ...
@@ -921,6 +927,19 @@ public class WikipediaParser extends AbstractWikipediaParser {
                     if (templateEndPosition > 0) {
                         fEventListener.onTemplate(fSource,
                                 templateStartPosition, templateEndPosition - 2);
+
+                        // Add a Template tag is enabled
+                        if (fTemplateTag) {
+                            TemplateTag templateCall = TemplateParser.createTemplateTag(fSource, templateStartPosition,
+                                templateEndPosition - templateStartPosition - 2);
+
+                            createContentToken(1);
+                            fWikiModel.reduceTokenStack(templateCall);
+                            // set pointer behind: "\n|}"
+                            fCurrentPosition = templateEndPosition;
+                            fWikiModel.append(templateCall);
+                        }
+
                         return true;
                     }
                 }
@@ -1259,6 +1278,13 @@ public class WikipediaParser extends AbstractWikipediaParser {
     @Override
     public void setNoToC(boolean noToC) {
         fNoToC = noToC;
+    }
+
+    /**
+     * @param templateTag true if template calls should generate {@link TemplateTag}
+     */
+    public void setTemplateTag(boolean templateTag) {
+        fTemplateTag = templateTag;
     }
 
     /**
