@@ -312,7 +312,7 @@ public class Connector {
         return titlesString.toString();
     }
 
-    private String sendXML(User user, RequestBuilder requestBuilder) {
+    public String sendXML(User user, RequestBuilder requestBuilder) {
         return executeHttpMethod(createAuthenticatedRequest(user, requestBuilder.getParameters()));
     }
 
