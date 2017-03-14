@@ -16,9 +16,7 @@ package info.bliki.api.query;
  *
  * </pre>
  *
- * Example: <a
- * href="https://en.wikipedia.org/w/api.php?action=opensearch&amp;search=Te"
- * >api.php?action=opensearch&amp;search=Te</a>
+ * Example: <a href="https://en.wikipedia.org/w/api.php?action=opensearch&amp;search=Te">api.php?action=opensearch&amp;search=Te</a>
  *
  *
  */
