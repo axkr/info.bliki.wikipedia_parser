@@ -58,7 +58,7 @@
 
     <modules>
         <module>bliki-core</module>
-        <module>bliki-pdf</module>
+        <module>bliki-creator</module>
         <module>bliki-addons</module>
     </modules>
 
