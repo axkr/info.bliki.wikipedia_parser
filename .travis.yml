@@ -4,11 +4,12 @@ env:
   global:
     secure: vUfS7wz0Cn1aDYST61+/B8TpdLeo45nG32iZ4EgT4bcMKbSHTaB5pRQrpUZlyMPEWV38ncwdsxAjQkwSjPw8qu/r+h8QpJMSlekUxkf2303g7wSPQ+M7R2PSYCpN3M2Hm9sgqqX+by+ohCGKZ13r58FHMxrdHClogF3T05fWKqqvZbU5TOCwijhffKzYtmeQqlTnX7d5Vpvq5mBhpuTRwL/r2WNPNyMTpzsbz1R+Ur9IgD+YOvL+AvQrdfs94cBsDvX9NXz7TevL8FqQoMG4inIColTOiZfsMIYOOVKLe3JMjHXxv4Yb3OdTdi1EheqDWIx6OIrC7FOMFPTs04mTDOprZ7jx9C3v60IH1Dg+CkB1I3fWYr30EUCdE9k1any+u8qd08nt1C0QDYJ8l9kW1GyuojhAfga3bZvXHuZRI1a/b31GR8hXAhCdSnHmIcUebZ0aM6Aar0kP6VFZ03xEzDHIChhpGMKiebgen5R1aYqL2m+fZb1YAxViUOs0OoAL0fEwSv3fcDIJuSnyYejGaBQJkZ8EQVe2Iu4aB62dG5/iYcuxOEKZIFax5LSzAFzAhlTxVrfAllEmvcVl1EkjeFMsedIwdyDQAQqCVekogDer98qdXCZifa0/lSUtp4BrKli8ToCbt+kZbMbhBO3vefjixJ6OoPrfRaUi5ip5WwA=
 install:
-- mvn install -q -DskipTests=true
+  - mvn install -q -DskipTests=true
 before_script:
-- mkdir -p $HOME/.m2
-- echo "<settings><servers><server><id>sonatype-oss-snapshots</id><username>${MVN_DEPLOY_USERNAME}</username><password>${MVN_DEPLOY_PASSWORD}</password></server></servers></settings>" > $HOME/.m2/settings.xml
+  - mkdir -p $HOME/.m2
+  - echo "<settings><servers><server><id>sonatype-oss-snapshots</id><username>${MVN_DEPLOY_USERNAME}</username><password>${MVN_DEPLOY_PASSWORD}</password></server></servers></settings>" > $HOME/.m2/settings.xml
 script:
-- mvn test
+  - mvn test
 after_success:
-- if [ "${TRAVIS_PULL_REQUEST}" = "false" -a "${TRAVIS_BRANCH}" = "master" ]; then mvn deploy -DskipTests; fi
+  - if [ "${TRAVIS_PULL_REQUEST}" = "false" -a "${TRAVIS_BRANCH}" = "master" ]; then mvn deploy -DskipTests; fi
+  - bash <(curl -s https://codecov.io/bash)
