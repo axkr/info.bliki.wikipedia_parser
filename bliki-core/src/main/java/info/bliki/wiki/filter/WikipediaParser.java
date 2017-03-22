@@ -928,10 +928,10 @@ public class WikipediaParser extends AbstractWikipediaParser {
                         fEventListener.onTemplate(fSource,
                                 templateStartPosition, templateEndPosition - 2);
 
-                        // Add a Template tag is enabled
+                        // Add a Template tag if enabled
                         if (fTemplateTag) {
                             TemplateTag templateCall = TemplateParser.createTemplateTag(fSource, templateStartPosition,
-                                templateEndPosition - templateStartPosition - 2);
+                                templateEndPosition - templateStartPosition - 2, fWikiModel);
 
                             createContentToken(1);
                             fWikiModel.reduceTokenStack(templateCall);
