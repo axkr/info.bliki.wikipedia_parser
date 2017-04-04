@@ -842,12 +842,24 @@ public class TemplateParser extends AbstractParser {
      * @return the template tag
      */
     public static TemplateTag createTemplateTag(char[] src, int startOffset, int len, IWikiModel model) {
-
         // Parse parameters
         Object[] objs = TemplateParser.createParameterMap(src, startOffset, len);
+        String templateName = (String) objs[1];
+        Map<String, String> parameterMap = createParameterMap(objs, model);
+
+        // Create the tag
+        TemplateTag tag = new TemplateTag(templateName);
+        for (Map.Entry<String, String> entry : parameterMap.entrySet()) {
+            tag.addAttribute(entry.getKey(), entry.getValue(), false);
+        }
+
+        return tag;
+    }
+
+    public static Map<String, String> createParameterMap(Object[] objs, IWikiModel model) {
         @SuppressWarnings("unchecked")
         List<String> parts = (List<String>) objs[0];
-        String templateName = (String) objs[1];
+
         LinkedHashMap<String, String> parameterMap = new LinkedHashMap<>();
         if (parts.size() > 1) {
             List<String> unnamedParameters = new ArrayList<>();
@@ -857,13 +869,7 @@ public class TemplateParser extends AbstractParser {
             mergeParameters(parameterMap, unnamedParameters);
         }
 
-        // Create the tag
-        TemplateTag tag = new TemplateTag(templateName);
-        for (Map.Entry<String, String> entry : parameterMap.entrySet()) {
-            tag.addAttribute(entry.getKey(), entry.getValue(), false);
-        }
-
-        return tag;
+        return parameterMap;
     }
 
     /**
