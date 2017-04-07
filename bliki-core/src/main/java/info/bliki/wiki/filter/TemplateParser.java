@@ -21,6 +21,8 @@ import info.bliki.wiki.template.Safesubst;
 import info.bliki.wiki.template.Subst;
 
 import static info.bliki.wiki.filter.AbstractWikipediaParser.getRedirectedTemplateContent;
+import static info.bliki.wiki.filter.TemplateParser.createSingleParameter;
+import static info.bliki.wiki.filter.TemplateParser.mergeParameters;
 import static info.bliki.wiki.filter.WikipediaParser.parseRedirect;
 
 /**
@@ -839,19 +841,35 @@ public class TemplateParser extends AbstractParser {
      * 
      * @return the template tag
      */
-    public static TemplateTag createTemplateTag(char[] src, int startOffset, int len) {
+    public static TemplateTag createTemplateTag(char[] src, int startOffset, int len, IWikiModel model) {
+        // Parse parameters
         Object[] objs = TemplateParser.createParameterMap(src, startOffset, len);
-
-        @SuppressWarnings("unchecked")
-        List<String> parts = (List<String>) objs[0];
         String templateName = (String) objs[1];
+        Map<String, String> parameterMap = createParameterMap(objs, model);
 
+        // Create the tag
         TemplateTag tag = new TemplateTag(templateName);
-        for (int i = 0; i < parts.size(); ++i) {
-            tag.addAttribute(String.valueOf(i), parts.get(i), false);
+        for (Map.Entry<String, String> entry : parameterMap.entrySet()) {
+            tag.addAttribute(entry.getKey(), entry.getValue(), false);
         }
 
         return tag;
+    }
+
+    public static Map<String, String> createParameterMap(Object[] objs, IWikiModel model) {
+        @SuppressWarnings("unchecked")
+        List<String> parts = (List<String>) objs[0];
+
+        LinkedHashMap<String, String> parameterMap = new LinkedHashMap<>();
+        if (parts.size() > 1) {
+            List<String> unnamedParameters = new ArrayList<>();
+            for (int i = 1; i < parts.size(); ++i) {
+                createSingleParameter(parts.get(i), model, parameterMap, unnamedParameters);
+            }
+            mergeParameters(parameterMap, unnamedParameters);
+        }
+
+        return parameterMap;
     }
 
     /**

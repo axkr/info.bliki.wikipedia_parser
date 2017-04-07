@@ -50,16 +50,7 @@ public class Safesubst extends AbstractTemplateFunction {
             return "";
         }
 
-        LinkedHashMap<String, String> parameterMap = new LinkedHashMap<>();
-        List<String> unnamedParameters = new ArrayList<>();
-        for (int i = 1; i < parts.size(); i++) {
-            if (i == parts.size() - 1) {
-                TemplateParser.createSingleParameter(parts.get(i), model, parameterMap, unnamedParameters);
-            } else {
-                TemplateParser.createSingleParameter(parts.get(i), model, parameterMap, unnamedParameters);
-            }
-        }
-        TemplateParser.mergeParameters(parameterMap, unnamedParameters);
+        Map<String, String> parameterMap = TemplateParser.createParameterMap(objs, model);
 
         final INamespace namespace = model.getNamespace();
         // TODO: remove trailing "#section"?!
