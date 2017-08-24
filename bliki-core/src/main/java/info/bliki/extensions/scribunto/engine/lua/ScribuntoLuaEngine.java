@@ -92,7 +92,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
     }
 
     @Override public ScribuntoModule fetchModuleFromParser(String moduleName) throws ScribuntoException {
-        ParsedPageName pageName = pageNameForModule(moduleName);
+        ParsedPageName pageName = pageNameForModule(moduleName, moduleNamespace);
 
         Prototype prototype = compiledScriptCache.getPrototypeForChunkname(pageName);
         if (prototype == null) {
@@ -402,7 +402,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         return new OneArgFunction() {
             @Override
             public LuaValue call(LuaValue packageName) {
-                return loadModule(pageNameForModule(packageName.tojstring()));
+                return loadModule(pageNameForModule(packageName.tojstring(), model.getNamespace().getMain()));
             }
         };
     }
@@ -445,21 +445,30 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
 
     private @Nonnull InputStream findPackage(ParsedPageName name) throws IOException {
         logger.debug("findPackage("+name+")");
-        final InputStream is = globals.finder.findResource(name.pagename+".lua");
-        if (is != null) {
-            return is;
-        } else {
+        if (name.namespace == moduleNamespace) {
             return findModule(name);
+        } else {
+            InputStream is = globals.finder.findResource(name.pagename+".lua");
+            if (is != null) {
+                return is;
+            } else {
+                throw new IOException("package "+name+" not found");
+            }
         }
     }
 
     private InputStream findModule(final ParsedPageName moduleName) throws IOException {
-        final String name = moduleName.pagename.replaceAll("[/:]", "_");
-        InputStream is = globals.finder.findResource(name);
-        if (is != null) {
-            return is;
-        } else {
+        try {
             return getRawWikiContentStream(moduleName);
+        } catch (FileNotFoundException e) {
+            // fall back to local files
+            final String name = moduleName.pagename.replaceAll("[/:]", "_");
+            InputStream is = globals.finder.findResource(name+".lua");
+            if (is != null) {
+                return is;
+            } else {
+                throw e;
+            }
         }
     }
 
