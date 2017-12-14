@@ -24,12 +24,22 @@ public abstract class ScribuntoEngineBase implements ScribuntoEngine {
         this.moduleNamespace = model.getNamespace().getModule();
     }
 
-    protected ParsedPageName pageNameForModule(String moduleName, INamespace.INamespaceValue fallback) {
-        if (moduleName.toLowerCase().startsWith(moduleNamespace.getPrimaryText().toLowerCase() + ":")) {
+    protected ParsedPageName pageNameForModule(String moduleName,
+        INamespace.INamespaceValue fallback) {
+        if (startsWithModuleNamespace(moduleName)) {
             return ParsedPageName.parsePageName(model, moduleName, moduleNamespace, false, false);
         } else {
             return new ParsedPageName(fallback, moduleName, true);
         }
+    }
+
+    private boolean startsWithModuleNamespace(String moduleName) {
+        for (String n : moduleNamespace.getTexts()) {
+            if (moduleName.toLowerCase().startsWith(n.toLowerCase() + ":")) {
+                return true;
+            }
+        }
+        return false;
     }
 
     protected InputStream getRawWikiContentStream(ParsedPageName pageName) throws FileNotFoundException {
