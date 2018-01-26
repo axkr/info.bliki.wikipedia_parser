@@ -241,6 +241,7 @@ public class StringToTimeTest {
         assertEquals(new SimpleDateFormat("M/d/y").parse("10/26/1981"), new StringToTime("26 October 1981"));
         assertEquals(new SimpleDateFormat("M/d/y").parse("10/26/1981"), new StringToTime("October 26, 1981"));
         assertEquals(new SimpleDateFormat("M/d/y").parse("10/26/1981"), new StringToTime("October 26 1981"));
+        assertEquals(new SimpleDateFormat("M/y").parse("10/1981"), new StringToTime("October 1981"));
         assertEquals(new SimpleDateFormat("M/d/y").parse("10/26/1981"), new StringToTime("26 Oct 1981"));
         assertEquals(new SimpleDateFormat("M/d/y").parse("10/26/1981"), new StringToTime("26 Oct 81"));
 

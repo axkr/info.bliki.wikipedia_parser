@@ -131,6 +131,9 @@ public class StringToTime extends Date {
             // e.g., 26 October 1981, or 26 Oct 1981, or 26 Oct 81
             new PatternAndFormat(Pattern.compile("\\d{1,2} +[a-z]+ +(\\d{2}|\\d{4})", Pattern.CASE_INSENSITIVE), new Format("d MMM y")),
 
+            // e.g., October 1981
+            new PatternAndFormat(Pattern.compile("[a-z]+ +\\d{4}", Pattern.CASE_INSENSITIVE), new Format("MMM yyyy")),
+
             // now or today
             new PatternAndFormat(
                     Pattern
