@@ -145,6 +145,10 @@ public class StringToTime extends Date {
             new PatternAndFormat(Pattern.compile("[a-z]+ +\\d{1,2} *, *(\\d{2}|\\d{4})", Pattern.CASE_INSENSITIVE),
                     new Format("MMM d, y")),
 
+            // e.g., October 26 1981 or Oct 26 1981
+            new PatternAndFormat(Pattern.compile("[a-z]+ +\\d{1,2} +(\\d{2}|\\d{4})", Pattern.CASE_INSENSITIVE),
+                    new Format("MMM d y")),
+
             // e.g., 10/26/1981 or 10/26/81
             new PatternAndFormat(Pattern.compile("\\d{1,2}/\\d{1,2}/\\d{2,4}"), new Format("M/d/y")),
 
@@ -157,8 +161,14 @@ public class StringToTime extends Date {
             // e.g., 1981/10/26
             new PatternAndFormat(Pattern.compile("\\d{4}/\\d{1,2}/\\d{1,2}"), new Format("y/M/d")),
 
+            // e.g., 19811026
+            new PatternAndFormat(Pattern.compile("\\d{4}\\d{2}\\d{2}"), new Format("yyyyMMdd")),
+
             // e.g., 1981-10-26
             new PatternAndFormat(Pattern.compile("\\d{4}\\-\\d{1,2}\\-\\d{1,2}"), new Format("y-M-d")),
+
+            // e.g., 1981-10
+            new PatternAndFormat(Pattern.compile("\\d{4}\\-\\d{2}"), new Format("yyyy-MM")),
 
             // e.g., October or Oct
             new PatternAndFormat(
