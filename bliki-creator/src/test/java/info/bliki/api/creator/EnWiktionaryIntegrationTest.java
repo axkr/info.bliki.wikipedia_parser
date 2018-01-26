@@ -153,6 +153,11 @@ public class EnWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
         testWiktionaryENAPI("biombo");
     }
 
+    @Betamax(tape = "senseid", mode = READ_ONLY)
+    @Test public void testSenseId() throws Exception {
+        testWiktionaryENAPI("User:Jberkel/bliki-testcases/senseid");
+    }
+
     @Override
     protected Configuration getConfiguration() {
         return new Configuration("enwiktionary", CaseSensitive);

@@ -217,6 +217,11 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
                 return NIL;
             }
         });
+        wikibase.set("getBestStatements", new TwoArgFunction() {
+            @Override public LuaValue call(LuaValue id, LuaValue property) {
+                return new LuaTable();
+            }
+        });
         mw.set("wikibase", wikibase);
     }
 
