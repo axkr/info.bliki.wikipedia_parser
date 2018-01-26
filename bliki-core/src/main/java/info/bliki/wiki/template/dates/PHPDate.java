@@ -35,10 +35,10 @@ public class PHPDate {
         // A full textual representation of the day of the week, Sunday through Saturday
         formatMapping.put('l', "EEEE");
 
-        // 	ISO-8601 numeric representation of the day of the week, 1 (for Monday) through 7 (for Sunday)
+        // ISO-8601 numeric representation of the day of the week, 1 (for Monday) through 7 (for Sunday)
         formatMapping.put('N', null);
 
-        // 	English ordinal suffix for the day of the month, 2 characters, st, nd, rd or th.
+        // English ordinal suffix for the day of the month, 2 characters, st, nd, rd or th.
         formatMapping.put('S', null);
 
         // Numeric representation of the day of the week, 0 (for Sunday) through 6 (for Saturday)
@@ -56,10 +56,10 @@ public class PHPDate {
         // Numeric representation of a month, with leading zeros, 01 through 12
         formatMapping.put('m', "MM");
 
-        // 	A short textual representation of a month, three letters, Jan through Dec
+        // A short textual representation of a month, three letters, Jan through Dec
         formatMapping.put('M', "MMM");
 
-        // 	Numeric representation of a month, without leading zeros, 1 through 12
+        // Numeric representation of a month, without leading zeros, 1 through 12
         formatMapping.put('n', "M");
 
         // Number of days in the given month, 28 through 31
