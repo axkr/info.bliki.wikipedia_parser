@@ -205,37 +205,15 @@ public class StringToTime extends Date {
      */
     private Object date;
 
-    public StringToTime() {
-        super();
-        this.date = new Date(this.getTime());
-    }
-
-    public StringToTime(Date date) {
-        super(date.getTime());
-        this.date = new Date(this.getTime());
-    }
-
     public StringToTime(Object dateTimeString) {
         this(dateTimeString, new Date(), defaultSimpleDateFormat);
     }
 
-    public StringToTime(Object dateTimeString, String simpleDateFormat) {
-        this(dateTimeString, new Date(), simpleDateFormat);
-    }
-
-    public StringToTime(Object dateTimeString, Date now) {
+    StringToTime(Object dateTimeString, Date now) {
         this(dateTimeString, now, defaultSimpleDateFormat);
     }
 
-    public StringToTime(Object dateTimeString, Long now) {
-        this(dateTimeString, new Date(now), defaultSimpleDateFormat);
-    }
-
-    public StringToTime(Object dateTimeString, Integer now) {
-        this(dateTimeString, new Date(new Long(now)), defaultSimpleDateFormat);
-    }
-
-    public StringToTime(Object dateTimeString, Date now, String simpleDateFormat) {
+    private StringToTime(Object dateTimeString, Date now, String simpleDateFormat) {
         super(0);
         assert dateTimeString != null;
         assert now != null;
