@@ -1,0 +1,882 @@
+!tape
+name: quote
+interactions:
+- recorded: 2018-01-25T19:03:59.178Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=User%3AJberkel%2Fbliki-testcases%2Fquote&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Backend-Timing: D=33187 t=1516907039038991
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Disposition: inline; filename="api-result.xml"
+      Content-Length: '1136'
+      Content-Type: text/xml; charset=utf-8
+      Date: Thu, 25 Jan 2018 19:03:59 GMT
+      P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
+      Server: mw1343.eqiad.wmnet
+      Set-Cookie: WMF-Last-Access=25-Jan-2018;Path=/;HttpOnly;secure;Expires=Mon, 26 Feb 2018 12:00:00 GMT, WMF-Last-Access-Global=25-Jan-2018;Path=/;Domain=.wiktionary.org;HttpOnly;secure;Expires=Mon, 26 Feb 2018 12:00:00 GMT, GeoIP=DE:BW:Schonau_im_Schwarzwald:47.78:7.90:v4; Path=/; secure; Domain=.wiktionary.org
+      Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+      Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
+      X-Analytics: ns=-1;special=Badtitle;https=1;nocookies=1
+      X-Cache: cp1055 pass, cp3042 pass, cp3042 pass
+      X-Cache-Status: pass
+      X-Client-IP: 217.233.2.240
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.18.6-dev
+      X-Varnish: 679165702, 835626444, 270016986
+    body: |-
+      <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="6532436" pageid="6532436" ns="2" title="User:Jberkel/bliki-testcases/quote"><revisions><rev user="Jberkel" timestamp="2018-01-25T19:02:59Z" comment="Created page with &quot;#* {{quote-magazine|date=2013-06-07|author=David Simpson  |volume=188|issue=26|page=36|magazine={{w|The Guardian Weekly}}  |title=[http://www.guardian.co.uk/books/2013/may/18/...&quot;" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">#* {{quote-magazine|date=2013-06-07|author=David Simpson
+      |volume=188|issue=26|page=36|magazine={{w|The Guardian Weekly}}
+      |title=[http://www.guardian.co.uk/books/2013/may/18/falling-upwards-richard-holmes-review Fantasy of navigation]
+      |passage='''Like''' most human activities, ballooning has sponsored heroes and hucksters and a good deal in between. For every dedicated scientist patiently recording atmospheric pressure and wind speed while shivering at high altitudes, there is a carnival barker with a bevy of pretty girls willing to dangle from a basket or parachute down to earth.}}</rev></revisions></page></pages></query></api>
+- recorded: 2018-01-25T19:03:59.391Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Aw&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: GeoIP=DE:BW:Schonau_im_Schwarzwald:47.78:7.90:v4; WMF-Last-Access=25-Jan-2018; WMF-Last-Access-Global=25-Jan-2018
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Backend-Timing: D=32790 t=1516907039290464
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Disposition: inline; filename="api-result.xml"
+      Content-Type: text/xml; charset=utf-8
+      Date: Thu, 25 Jan 2018 19:03:59 GMT
+      P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
+      Server: mw1345.eqiad.wmnet
+      Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
+      X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=25-Jan-2018;WMF-Last-Access-Global=25-Jan-2018;https=1
+      X-Cache: cp1053 pass, cp3032 pass, cp3042 pass
+      X-Cache-Status: pass
+      X-Client-IP: 217.233.2.240
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.18.6-dev
+      X-Varnish: 840763195, 975280312, 257322189
+    body: '<?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="219980" pageid="219980" ns="10" title="Template:w"><revisions><rev user="TheDaveRoss" timestamp="2016-10-25T20:02:58Z" comment="Changed protection level for &quot;[[Template:w]]&quot;:
+      Adjusting the protection level from &#039;sysop&#039; to &#039;template editor&#039;. ([Edit=Allow only template editors and administrators] (indefinite) [Move=Allow only template editors and administrators] (indefinite))" contentformat="text/x-wiki" contentmodel="wikitext"
+      xml:space="preserve">[[wikipedia:{{&lt;includeonly&gt;safesubst:&lt;/includeonly&gt;#if:{{{lang|}}}|{{{lang}}}:}}{{{1|}}}|{{&lt;includeonly&gt;safesubst:&lt;/includeonly&gt;#if:{{{2|}}}|{{{2}}}|{{{1|}}}}}]]&lt;noinclude&gt;{{documentation}}&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>'
+- recorded: 2018-01-25T19:03:59.582Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Aquote-magazine&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: GeoIP=DE:BW:Schonau_im_Schwarzwald:47.78:7.90:v4; WMF-Last-Access=25-Jan-2018; WMF-Last-Access-Global=25-Jan-2018
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Backend-Timing: D=39298 t=1516907039476503
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Disposition: inline; filename="api-result.xml"
+      Content-Type: text/xml; charset=utf-8
+      Date: Thu, 25 Jan 2018 19:03:59 GMT
+      P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
+      Server: mw1231.eqiad.wmnet
+      Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
+      X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=25-Jan-2018;WMF-Last-Access-Global=25-Jan-2018;https=1
+      X-Cache: cp1066 pass, cp3043 pass, cp3042 pass
+      X-Cache-Status: pass
+      X-Client-IP: 217.233.2.240
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.18.6-dev
+      X-Varnish: 787286082, 779944981, 266286929
+    body: <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="1910880" pageid="1910880" ns="10" title="Template:quote-magazine"><revisions><rev user="Sgconlaw" timestamp="2015-12-25T16:50:29Z" comment="Converted template into redirect" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">#REDIRECT [[Template:quote-journal]]</rev></revisions></page></pages></query></api>
+- recorded: 2018-01-25T19:03:59.764Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Aquote-journal&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: GeoIP=DE:BW:Schonau_im_Schwarzwald:47.78:7.90:v4; WMF-Last-Access=25-Jan-2018; WMF-Last-Access-Global=25-Jan-2018
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Backend-Timing: D=31220 t=1516907039657724
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Disposition: inline; filename="api-result.xml"
+      Content-Type: text/xml; charset=utf-8
+      Date: Thu, 25 Jan 2018 19:03:59 GMT
+      P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
+      Server: mw1281.eqiad.wmnet
+      Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
+      X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=25-Jan-2018;WMF-Last-Access-Global=25-Jan-2018;https=1
+      X-Cache: cp1066 pass, cp3043 pass, cp3042 pass
+      X-Cache-Status: pass
+      X-Client-IP: 217.233.2.240
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.18.6-dev
+      X-Varnish: 745493410, 765749833, 267205253
+    body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"1008227\" pageid=\"1008227\" ns=\"10\" title=\"Template:quote-journal\"><revisions><rev user=\"Sgconlaw\" timestamp=\"2018-01-10T15:57:48Z\" comment=\"Protected &quot;[[Template:quote-journal]]&quot;:\
+      \ Highly visible template/module ([Edit=Allow only template editors and administrators] (indefinite) [Move=Allow only template editors and administrators] (indefinite))\" contentformat=\"text/x-wiki\" contentmodel=\"wikitext\" xml:space=\"preserve\">&lt;includeonly&gt;{{quote-meta\n\
+      |indent1 = {{{i1|{{{indent|}}}}}}\n|source  = {{quote-meta/source\n    |year           = {{{year|{{{1|}}}}}}\n    |year_published = {{{year_published|}}}\n    |month          = {{{month|}}}\n    |date           = {{{date|}}}\n    |start_year     = {{{start_year|}}}\n\
+      \    |start_date     = {{{start_date|}}}\n    |nodate         = {{{nodate|}}}\n    |first          = {{{first|}}}\n    |last           = {{{last|}}}\n    |first2         = {{{first2|}}}\n    |last2          = {{{last2|}}}\n    |first3         = {{{first3|}}}\n\
+      \    |last3          = {{{last3|}}}\n    |first4         = {{{first4|}}}\n    |last4          = {{{last4|}}}\n    |first5         = {{{first5|}}}\n    |last5          = {{{last5|}}}\n    |author         = {{{author|{{{2|}}}}}}\n    |authorlink     = {{{authorlink|}}}\n\
+      \    |author2        = {{{author2|}}}\n    |authorlink2    = {{{authorlink2|}}}\n    |author3        = {{{author3|}}}\n    |authorlink3    = {{{authorlink3|}}}\n    |author4        = {{{author4|}}}\n    |authorlink4    = {{{authorlink4|}}}\n    |author5\
+      \        = {{{author5|}}}\n    |authorlink5    = {{{authorlink5|}}}\n    |coauthors      = {{{coauthors|}}}\n    |quotee         = {{{quotee|}}}\n    |editor         = {{{editor|}}}\n    |editors        = {{{editors|}}}\n    |chapter        = {{{title|{{{3|}}}}}}\n\
+      \    |trans-chapter  = {{{trans-title|}}}\n    |title          = {{{journal|{{{magazine|{{{newspaper|{{{periodical|{{{work|{{{4|}}}}}}}}}}}}}}}}}}\n    |trans-title    = {{{trans-journal|}}}\n    |series         = {{{series|}}}\n    |format         = {{{format|}}}\n\
+      \    |language       = {{{language|}}}\n    |url            = {{{url|{{{5|}}}}}}\n    |archiveurl     = {{{archiveurl|}}}\n    |archivedate    = {{{archivedate|}}}\n    |accessdate     = {{{accessdate|}}}\n    |volume         = {{{vol|{{{volume|}}}}}}\n\
+      \    |volume_plain   = {{{volume_plain|}}}\n    |issue          = {{{issue|{{{number|}}}}}}\n    |bibcode        = {{{bibcode|}}}\n    |doi            = {{{doi|}}}\n    |isbn           = {{{isbn|}}}\n    |issn           = {{{issn|}}}\n    |jstor      \
+      \    = {{{jstor|}}}\n    |lccn           = {{{lccn|}}}\n    |oclc           = {{{oclc|}}}\n    |pmid           = {{{pmid|}}}\n    |ssrn           = {{{ssrn|}}}\n    |id             = {{{id|}}}\n    |city           = {{{city|}}}\n    |location       = {{{location|}}}\n\
+      \    |publisher      = {{{publisher|}}}\n    |section        = {{{section|}}}\n    |sectionurl     = {{{sectionurl|}}}\n    |page           = {{{page|{{{6|}}}}}}\n    |pages          = {{{pages|}}}\n    |pageurl        = {{{pageurl|}}}\n    |column   \
+      \      = {{{column|}}}\n    |columns        = {{{columns|}}}\n    |laysummary     = {{{laysummary|}}}\n    |laysource      = {{{laysource|}}}\n    |laydate        = {{{laydate|}}}\n    |brackets       = {{{brackets|}}}\n  }}\n|passage         = {{{passage|{{{7|}}}}}}\n\
+      |brackets        = {{{brackets|}}}\n|translation     = {{{translation|}}}\n|transliteration = {{{transliteration|}}}\n}}&lt;!--Tracking categories.--&gt;{{#if:{{{archiveurl|}}}\n    | {{#if:{{{archivedate|}}}\n        |&lt;!--Do nothing.--&gt;\n      \
+      \  | [[Category:Quotations using archiveurl without archivedate]]\n      }}\n}}{{#if:{{{date|}}}\n    | {{#if:{{{year|}}}\n        | {{#ifeq:{{#expr:{{#ifeq:{{NAMESPACENUMBER}}|114|1|0}} OR {{#ifeq:{{NAMESPACENUMBER}}|0|1|0}}}}|1\n            | [[Category:Quotation\
+      \ templates using both date and year]] \n          }}\n       }}\n}}&lt;/includeonly&gt;&lt;noinclude&gt;{{documentation}}&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>"
+- recorded: 2018-01-25T19:03:59.975Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Aquote-meta%2Fsource&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: GeoIP=DE:BW:Schonau_im_Schwarzwald:47.78:7.90:v4; WMF-Last-Access=25-Jan-2018; WMF-Last-Access-Global=25-Jan-2018
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Backend-Timing: D=45977 t=1516907039843887
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Disposition: inline; filename="api-result.xml"
+      Content-Type: text/xml; charset=utf-8
+      Date: Thu, 25 Jan 2018 19:03:59 GMT
+      P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
+      Server: mw1226.eqiad.wmnet
+      Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
+      X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=25-Jan-2018;WMF-Last-Access-Global=25-Jan-2018;https=1
+      X-Cache: cp1067 pass, cp3033 pass, cp3042 pass
+      X-Cache-Status: pass
+      X-Client-IP: 217.233.2.240
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.18.6-dev
+      X-Varnish: 133201945, 487970098, 274763047
+    body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"5406347\" pageid=\"5406347\" ns=\"10\" title=\"Template:quote-meta/source\"><revisions><rev user=\"Sgconlaw\" timestamp=\"2018-01-15T03:23:01Z\" comment=\"Added &amp;lrm; (left-to-right\
+      \ mark to manage right-to-left languages) in front of URLs\" contentformat=\"text/x-wiki\" contentmodel=\"wikitext\" xml:space=\"preserve\">&lt;includeonly&gt;{{#ifeq:{{{brackets|}}}|on|[}}{{#invoke:time|quote}}{{#if:{{{origdate|}}}\n  |&amp;#32;[{{{origdate}}}]\n\
+      \  | {{#if:{{{origyear|}}}\n      | {{#if:{{{origmonth|}}}\n          |&amp;#32;[{{{origmonth}}} {{{origyear}}}]\n          |&amp;#32;[{{{origyear}}}]\n        }}\n    }}\n}}{{#if:{{{author|}}}{{{last|}}}\n  | {{#if:{{{nodate|}}}||,&amp;#32;}}&lt;!--Suppress\
+      \ comma if {{{nodate}}} used.--&gt;{{#if:{{{authorlink|}}}\n      |&amp;#32;[[w:{{{authorlink}}}|{{#if:{{{author|}}}\n          | {{{author}}}\n          | {{#if:{{{last|}}}\n              | {{{last}}}{{#if:{{{first|}}}|, {{{first}}}}}\n            }}\n\
+      \        }}]]\n      | {{#if:{{{author|}}}\n          |&amp;#32;{{{author}}}\n          |&amp;#32;{{#if:{{{last|}}}\n              | {{{last}}}{{#if:{{{first|}}}|, {{{first}}}}}\n            }}\n        }}\n    }}{{#if:{{{author2|}}}{{{last2|}}}\n    \
+      \  | {{#if:{{{authorlink2|}}}\n          |&amp;#59;&lt;!--semicolon--&gt; [[w:{{{authorlink2}}}|{{#if:{{{author2|}}}\n              | {{{author2}}}\n              | {{#if:{{{last2|}}}\n                  | {{{last2}}}{{#if:{{{first2|}}}|, {{{first2}}}}}\n\
+      \                }}\n            }}]]\n          |&amp;#59; {{#if:{{{author2|}}}\n              | {{{author2}}}\n              | {{#if:{{{last2|}}}\n                  | {{{last2}}}{{#if:{{{first2|}}}|, {{{first2}}}}}\n                }}\n            }}\n\
+      \        }}\n    }}{{#if:{{{author3|}}}{{{last3|}}}\n      | {{#if:{{{authorlink3|}}}\n          |&amp;#59; [[w:{{{authorlink3}}}|{{#if:{{{author3|}}}\n              | {{{author3}}}\n              | {{#if:{{{last3|}}}\n                  | {{{last3}}}{{#if:{{{first3|}}}|,\
+      \ {{{first3}}}}}\n                }}\n            }}]]\n          |&amp;#59; {{#if:{{{author3|}}}\n              | {{{author3}}}\n              | {{#if:{{{last3|}}}\n                  | {{{last3}}}{{#if:{{{first3|}}}|, {{{first3}}}}}\n                }}\n\
+      \            }}\n        }}\n    }}{{#if:{{{author4|}}}{{{last4|}}}\n      | {{#if:{{{authorlink4|}}}\n          |&amp;#59; [[w:{{{authorlink4}}}|{{#if:{{{author4|}}}\n              | {{{author4}}}\n              | {{#if:{{{last4|}}}\n                \
+      \  | {{{last4}}}{{#if:{{{first4|}}}|, {{{first4}}}}}\n                }}\n            }}]]\n          |&amp;#59; {{#if:{{{author4|}}}\n              | {{{author4}}}\n              | {{#if:{{{last4|}}}\n                  | {{{last4}}}{{#if:{{{first4|}}}|,\
+      \ {{{first4}}}}}\n                }}\n            }}\n        }}\n    }}{{#if:{{{author5|}}}{{{last5|}}}\n      | {{#if:{{{authorlink5|}}}\n          |&amp;#59; [[w:{{{authorlink5}}}|{{#if:{{{author5|}}}\n              | {{{author5}}}\n              |\
+      \ {{#if:{{{last5|}}}\n                  | {{{last5}}}{{#if:{{{first5|}}}|, {{{first5}}}}}\n                }}\n            }}]]\n          |&amp;#59; {{#if:{{{author5|}}}\n              | {{{author5}}}\n              | {{#if:{{{last5|}}}\n            \
+      \      | {{{last5}}}{{#if:{{{first5|}}}|, {{{first5}}}}}\n                }}\n            }}\n        }}\n    }}{{#if:{{{coauthors|}}}\n        |&amp;#59; {{{coauthors}}}\n      }}{{#if:{{{quotee|}}}\n        |, quoting {{{quotee}}}\n      }}\n  | {{#if:{{{year|}}}{{{date|}}}{{{start_year|}}}{{{start_date|}}}\n\
+      \      |,&lt;!--If no author stated but date provided, add a comma.--&gt;\n    }}\n}}{{#if:{{{author|}}}{{{last|}}}{{{quotee|}}}\n  |,\n}}&amp;#32;{{#if:{{{chapter|}}}\n  | {{#if:{{num|{{{chapter|}}}}}&lt;!--Arabic chapter number?--&gt;\n      |&amp;#32;chapter\
+      \ {{#if:{{{chapterurl|}}}\n          | [{{{chapterurl}}} {{{chapter}}}]\n          | {{{chapter}}}\n        }}\n      | {{#if:{{R2A|{{{chapter|}}}|no_error=1}}&lt;!--Roman chapter number?--&gt;\n          |&amp;#32;chapter {{#if:{{{chapterurl|}}}\n   \
+      \           | [{{{chapterurl}}} {{uc:{{{chapter}}}}}]\n              | {{uc:{{{chapter}}}}}\n            }}\n          |&amp;#32;“{{#invoke:italics|unitalicize_brackets|{{#if:{{{chapterurl|}}}&lt;!--Must be a chapter name--&gt;\n              | [{{{chapterurl}}}\
+      \ {{{chapter}}}]\n              | {{{chapter}}}\n            }}}}{{#if:{{{trans-chapter|}}}\n                |&amp;#32;&amp;#91;{{#invoke:italics|unitalicize_brackets|{{{trans-chapter}}}}}&amp;#93;\n              }}”\n        }}\n    }}{{#if:{{{notitle|}}}\n\
+      \        |&lt;!--Do nothing.--&gt;\n        |, in&amp;#32;\n      }}\n}}{{#if:{{{mainauthor|}}}\n  | {{{mainauthor}}},{{#if:{{{editor|}}}{{{editors|}}}|&amp;#32;}}\n}}{{#if:{{{editor|}}}\n  | {{{editor}}}, editor,\n  | {{#if:{{{editors|}}}\n      | {{{editors}}},\
+      \ editors,\n    }}\n}}{{#if:{{{title|}}}\n  | &amp;#32;&lt;cite&gt;{{#invoke:italics|unitalicize_brackets|{{{title}}}}}&lt;/cite&gt;{{#if:{{{trans-title|}}}\n      | &amp;#32;&amp;#91;&lt;cite&gt;{{#invoke:italics|unitalicize_brackets|{{{trans-title}}}}}&lt;/cite&gt;&amp;#93;\n\
+      \    }}{{#if:{{{series|}}}\n      | &amp;#32;({{{series}}}{{#if:{{{seriesvolume|}}}|&amp;#59; {{{seriesvolume}}}}})\n    }}\n  | {{#if:{{{notitle|}}}\n      |&lt;!--Do nothing.--&gt;\n      | {{maintenance line|Please provide the book title or journal\
+      \ name}}\n    }}\n}}{{#if:{{{url|}}}\n  | {{#if:{{{archiveurl|}}}\n      | &amp;lrm;&lt;!--Left-to-right mark to manage right-to-left languages--&gt;&lt;sup&gt;[{{{archiveurl}}}]&lt;/sup&gt;\n      | &amp;lrm;&lt;sup&gt;[{{{url}}}]&lt;/sup&gt;\n    }}\n\
+      }}{{#if:{{{volume|}}}\n  |, volume {{{volume}}}\n  | {{#if:{{{volume_plain|}}}\n      |, {{{volume_plain}}}\n    }}\n}}{{#if:{{{issue|}}}\n  |, number {{{issue}}}\n}}{{#if:{{{genre|}}}\n  | {{#if:{{{format|}}}\n      | {{#if:{{{language|}}}\n         \
+      \ |&amp;#32;({{{genre}}}, {{{format}}}, in {{{language}}})\n          |&amp;#32:({{{genre}}}, {{{format}}})\n        }}\n      | {{#if:{{{language|}}}&lt;!--{{{format}}} not specified.--&gt;\n          |&amp;#32; ({{{genre}}}, in {{{language}}})\n    \
+      \      |&amp;#32; ({{{genre}}})\n        }}\n    }}\n  | {{#if:{{{format|}}}&lt;!--{{{genre}}} not specified.--&gt;\n      | {{#if:{{{language|}}}\n          |&amp;#32; ({{{format}}}, in {{{language}}})\n          |&amp;#32; ({{{format}}})\n        }}\n\
+      \      | {{#if:{{{language|}}}&lt;!--{{{genre}}} and {{{format}}} not specified.--&gt;\n          |&amp;#32; (in {{{language}}})\n        }}\n    }}\n}}{{#if:{{{others|}}}\n  |, {{{others}}}\n}}{{#if:{{{edition|}}}\n  |, {{{edition}}} edition\n}}{{#if:{{{quoted_in|}}}\n\
+      \  |, quoted in {{{quoted_in}}}\n}}{{#if:{{{publisher|}}}\n  | {{#if:{{{city|}}}\n     |, {{{city}}}&amp;#58;&lt;!--colon--&gt;\n     | {{#if:{{{location|}}}\n         |, {{{location}}}&amp;#58;\n         |,\n       }}\n    }} {{{publisher}}}\n  | {{#if:{{{city|}}}\n\
+      \      |, {{{city}}}\n      | {{#if:{{{location|}}}\n          |, {{{location}}}\n        }}\n    }}\n}}{{#if:{{{original|}}}\n  |, translation of &lt;cite&gt;{{{original}}}&lt;/cite&gt;{{#if:{{{by|}}}\n      |&amp;#32;by {{{by|}}}\n    }}\n  | {{#if:{{{by|}}}\n\
+      \      |, {{{type|translation}}} of original by {{{by}}}\n    }}\n}}{{#if:{{{year_published|}}}\n  |, published {{{year_published}}}\n}}{{#if:{{{bibcode|}}}\n  |, &lt;small&gt;[[w:Bibcode|Bibcode]]:&amp;nbsp;[http://adsabs.harvard.edu/abs/{{urlencode:{{{bibcode}}}}}\
+      \ {{{bibcode}}}]&lt;/small&gt;\n}}{{#if:{{{doi|}}}\n  |, &lt;small&gt;[[w:Digital object identifier|DOI]]:&lt;span class=&quot;neverexpand&quot;&gt;[http://dx.doi.org/{{urlencode:{{{doi|{{{doilabel|}}}}}}}} {{#tag:nowiki|{{{doi}}}}}]&lt;/span&gt;&lt;/small&gt;\n\
+      }}{{#if:{{{isbn|}}}\n  |, &lt;small&gt;{{ISBN|{{{isbn}}}}}&lt;/small&gt;\n}}{{#if:{{{issn|}}}\n  |, &lt;small&gt;{{ISSN|{{{issn}}}}}&lt;/small&gt;\n}}{{#if:{{{jstor|}}} \n  |, &lt;small&gt;[[w:JSTOR|JSTOR]] [http://www.jstor.org/stable/{{urlencode:{{{jstor}}}}}\
+      \ {{{jstor}}}]&lt;/small&gt;\n}}{{#if:{{{lccn|}}}\n  |, &lt;small&gt;[[w:Library of Congress Control Number|LCCN]] [http://lccn.loc.gov/{{urlencode:{{{lccn}}}}} {{{lccn}}}]&lt;/small&gt;\n}}{{#if:{{{oclc|}}}\n  |, &lt;small&gt;[[w:OCLC|OCLC]] [http://worldcat.org/oclc/{{urlencode:{{{oclc}}}}}\
+      \ {{{oclc}}}]&lt;/small&gt;\n}}{{#if:{{{ol|}}}\n  |, &lt;small&gt;[[w:Open Library|OL]] [https://openlibrary.org/works/OL{{urlencode:{{{ol}}}}}/ {{{ol}}}]&lt;/small&gt;\n}}{{#if:{{{pmid|}}}\n  |, &lt;small&gt;[[w:PubMed Identifier|PMID]] [http://www.ncbi.nlm.nih.gov/pubmed/{{urlencode:{{{pmid}}}}}\
+      \ {{{pmid}}}]&lt;/small&gt;\n}}{{#if:{{{ssrn|}}}\n  |, &lt;small&gt;[[w:Social Science Research Network|SSRN]] [http://ssrn.com/abstract={{urlencode:{{{ssrn}}}}} {{{ssrn}}}]&lt;/small&gt;\n}}{{#if:{{{id|}}}\n  |, &lt;small&gt;{{{id}}}&lt;/small&gt;\n}}{{#if:{{{archiveurl|}}}\n\
+      \  |, archived from [{{{url}}} the original] on {{#if:{{{archivedate|}}}\n      | {{#formatdate:{{{archivedate}}}}}\n      | {{maintenance line|Please provide the date}}\n    }}\n}}{{#if:{{{accessdate|}}}\n  | {{#if:{{{date|}}}{{{nodate|}}}{{{year|}}}&lt;!--Otherwise\
+      \ do not display here, as already used as a fallback for missing {{{date}}} or {{{year}}} earlier.--&gt;\n      |, retrieved {{#formatdate:{{{accessdate}}}}}\n    }}\n}}{{#if:{{{laysummary|}}}\n  |, [{{{laysummary}}} lay summary]{{#if: {{{laysource|}}}|&amp;nbsp;–\
+      &amp;nbsp;''{{{laysource}}}''}}\n}}{{#if:{{{laydate|}}}\n  | &amp;#32;({{#formatdate:{{{laydate}}}}})\n}}{{#if:{{{section|}}}\n  |, {{#if:{{{sectionurl|}}}\n       | [{{{sectionurl}}} {{{section}}}]\n       | {{{section}}}\n     }}\n}}{{#if:{{{line|}}}\n\
+      \  |, line {{{line}}}\n  | {{#if:{{{lines|}}}\n      |, lines {{{lines}}}\n    }}\n}}{{#if:{{{page|}}}{{{pages|}}}\n  |, {{#if:{{{pageurl|}}} \n       | [{{{pageurl}}} {{#if:{{{pages|}}}\n           | pages {{{pages}}}\n           | page {{{page}}}\n \
+      \        }}]\n       | {{#if:{{{pages|}}}\n           | pages {{{pages}}}\n           | page {{{page}}}\n         }}\n     }}\n}}{{#if:{{{column|}}}\n  |, column {{{column}}}\n  | {{#if:{{{columns|}}}\n      |, columns {{{columns}}}\n    }}\n}}{{#if:{{{other|}}}\n\
+      \  |, {{{other}}}\n}}{{#if:{{{location2|}}}&lt;!--Test for new version of work.--&gt;\n  |&amp;#59;&lt;!--semicolon--&gt; {{#if:{{{newversion|}}}\n      | {{{newversion}}}\n      | {{#if:{{{edition2|}}}\n          |&lt;!--Do nothing.--&gt;\n          |\
+      \ {{#if:{{{2ndauthor|}}}{{{2ndlast|}}}{{{editor2|}}}{{{title2|}}}\n              | republished as\n              | republished\n            }}\n        }}\n    }}&amp;#32;\n}}{{#if:{{{2ndauthor|}}}{{{2ndlast|}}}\n  | {{#if:{{{2ndauthorlink|}}}\n      |\
+      \ &amp;#32;[[w:{{{2ndauthorlink}}}|{{#if:{{{2ndauthor|}}}\n          | {{{2ndauthor}}},&amp;#32;\n          | {{#if:{{{2ndlast|}}}\n              | {{{2ndlast}}}{{#if:{{{2ndfirst|}}}|, {{{2ndfirst}}}}},&amp;#32;\n            }}\n        }}]]\n      | {{#if:{{{2ndauthor|}}}\n\
+      \          | &amp;#32;{{{2ndauthor}}},&amp;#32;\n          | {{#if:{{{2ndlast|}}}\n              | &amp;#32;{{{2ndlast}}}{{#if:{{{2ndfirst|}}}|, {{{2ndfirst}}}}},&amp;#32;\n            }}\n        }}\n    }}\n}}{{#if:{{{chapter2|}}}\n  | {{#if:{{num|{{{chapter2|}}}}}&lt;!--Arabic\
+      \ chapter number?--&gt;\n      |&amp;#32;chapter {{#if:{{{chapterurl2|}}}\n          | [{{{chapterurl2}}} {{{chapter2}}}]\n          | {{{chapter2}}}\n        }}\n      | {{#if:{{R2A|{{{chapter2|}}}|no_error=1}}&lt;!--Roman chapter number?--&gt;\n    \
+      \      |&amp;#32;chapter {{#if:{{{chapterurl2|}}}\n              | [{{{chapterurl2}}} {{uc:{{{chapter2}}}}}]\n              | {{uc:{{{chapter2}}}}}\n            }}\n          |&amp;#32;“{{#invoke:italics|unitalicize_brackets|{{#if:{{{chapterurl2|}}}&lt;!--Must\
+      \ be a chapter name--&gt;\n              | [{{{chapterurl2}}} {{{chapter2}}}]\n              | {{{chapter2}}}\n            }}}}{{#if:{{{trans-chapter2|}}}\n                |&amp;#32;&amp;#91;{{#invoke:italics|unitalicize_brackets|{{{trans-chapter2}}}}}&amp;#93;\n\
+      \              }}”\n        }}\n    }}, in&amp;#32;\n}}{{#if:{{{mainauthor2|}}}\n  | {{{mainauthor2}}},\n}}{{#if:{{{editor2|}}}\n  | {{{editor2}}}, editor,\n  | {{#if:{{{editors2|}}}\n      | {{{editors2}}}, editors,\n    }}\n}}{{#if:{{{title2|}}}\n  |\
+      \ &amp;#32;&lt;cite&gt;{{#invoke:italics|unitalicize_brackets|{{{title2}}}}}&lt;/cite&gt;{{#if:{{{trans-title2|}}}\n      | &amp;#32;&amp;#91;&lt;cite&gt;{{#invoke:italics|unitalicize_brackets|{{{trans-title2}}}}}&lt;/cite&gt;&amp;#93;\n    }}{{#if:{{{series2|}}}\n\
+      \      | &amp;#32;({{{series2}}}{{#if:{{{seriesvolume2|}}}|&amp;#59; {{{seriesvolume2}}}}})\n    }},&amp;#32;\n}}{{#if:{{{url2|}}}\n  | {{#if:{{{archiveurl2|}}}\n      | &amp;lrm;&lt;sup&gt;[{{{archiveurl2}}}]&lt;/sup&gt;\n      | &amp;lrm;&lt;sup&gt;[{{{url2}}}]&lt;/sup&gt;\n\
+      \    }}\n}}{{#if:{{{volume2|}}}\n  | volume {{{volume2}}},&amp;#32;\n  | {{#if:{{{volume_plain2|}}}\n      | {{{volume_plain2}}},&amp;#32;\n    }}\n}}{{#if:{{{issue2|}}}\n  | number {{{issue2}}},&amp;#32;\n}}{{#if:{{{genre2|}}}\n  | {{#if:{{{format2|}}}\n\
+      \      | {{#if:{{{language2|}}}\n          |&amp;#32;({{{genre2}}}, {{{format2}}}, in {{{language2}}})\n          |&amp;#32:({{{genre2}}}, {{{format2}}})\n        }}\n      | {{#if:{{{language2|}}}&lt;!--{{{format2}}} not specified.--&gt;\n          |&amp;#32;\
+      \ ({{{genre2}}}, in {{{language2}}})\n          |&amp;#32; ({{{genre2}}})\n        }}\n    }}\n  | {{#if:{{{format2|}}}&lt;!--{{{genre2}}} not specified.--&gt;\n      | {{#if:{{{language2|}}}\n          |&amp;#32; ({{{format2}}}, in {{{language2}}})\n\
+      \          |&amp;#32; ({{{format2}}})\n        }}\n      | {{#if:{{{language2|}}}&lt;!--{{{genre2}}} and {{{format2}}} not specified.--&gt;\n          |&amp;#32; (in {{{language2}}})\n        }}\n    }}\n}}{{#if:{{{edition2|}}}\n  | {{{edition2}}} edition,&amp;#32;\n\
+      }}{{#if:{{{publisher2|}}}\n  | {{#if:{{{city2|}}}\n     | {{{city2}}}&amp;#58;&lt;!--colon--&gt;\n     | {{#if:{{{location2|}}}\n         | {{{location2}}}&amp;#58;\n       }}\n    }} {{{publisher2}}},&amp;#32;\n  | {{#if:{{{city2|}}}\n      | {{{city2}}},&amp;#32;\n\
+      \      | {{#if:{{{location2|}}}\n          | {{{location2}}},&amp;#32;\n        }}\n    }}\n}}{{#if:{{{location2|}}}&lt;!--Test for new version of work.--&gt;\n  | {{#if:{{{date2|}}}\n      | {{{date2}}}\n      | {{#if:{{{year2|}}}\n          | {{{year2}}}\n\
+      \          | {{maintenance line|Please provide a date or year}}\n        }}\n    }}\n}}{{#if:{{{bibcode2|}}}\n  |, &lt;small&gt;[[w:Bibcode|Bibcode]]:&amp;nbsp;[http://adsabs.harvard.edu/abs/{{urlencode:{{{bibcode2}}}}} {{{bibcode2}}}]&lt;/small&gt;\n\
+      }}{{#if:{{{doi2|}}}\n  |, &lt;small&gt;[[w:Digital object identifier|DOI]]:&lt;span class=&quot;neverexpand&quot;&gt;[http://dx.doi.org/{{urlencode:{{{doi2|}}}}} {{#tag:nowiki|{{{doi2}}}}}]&lt;/span&gt;&lt;/small&gt;\n}}{{#if:{{{isbn2|}}}\n  |, &lt;small&gt;{{ISBN|{{{isbn2}}}}}&lt;/small&gt;\n\
+      }}{{#if:{{{issn2|}}}\n  |, &lt;small&gt;{{ISSN|{{{issn2}}}}}&lt;/small&gt;\n}}{{#if:{{{jstor2|}}} \n  |, &lt;small&gt;[[w:JSTOR|JSTOR]] [http://jstor.org/pss/{{urlencode:{{{jstor2}}}}} {{{jstor2}}}]&lt;/small&gt;\n}}{{#if:{{{lccn2|}}}\n  |, &lt;small&gt;[[w:Library\
+      \ of Congress Control Number|LCCN]] [http://lccn.loc.gov/{{urlencode:{{{lccn2}}}}} {{{lccn2}}}]&lt;/small&gt;\n}}{{#if:{{{oclc2|}}}\n  |, &lt;small&gt;[[w:OCLC|OCLC]] [http://worldcat.org/oclc/{{urlencode:{{{oclc2}}}}} {{{oclc2}}}]&lt;/small&gt;\n}}{{#if:{{{ol2|}}}\n\
+      \  |, &lt;small&gt;[[w:Open Library|OL]] [https://openlibrary.org/works/OL{{urlencode:{{{ol2}}}}}/ {{{ol2}}}]&lt;/small&gt;\n}}{{#if:{{{pmid2|}}}\n  |, &lt;small&gt;[[w:PubMed Identifier|PMID]] [http://www.ncbi.nlm.nih.gov/pubmed/{{urlencode:{{{pmid2}}}}}\
+      \ {{{pmid2}}}]&lt;/small&gt;\n}}{{#if:{{{ssrn2|}}}\n  |, &lt;small&gt;[[w:Social Science Research Network|SSRN]] [http://ssrn.com/abstract={{urlencode:{{{ssrn2}}}}} {{{ssrn2}}}]&lt;/small&gt;\n}}{{#if:{{{id2|}}}\n  |, &lt;small&gt;{{{id2}}}&lt;/small&gt;\n\
+      }}{{#if:{{{archiveurl2|}}}\n  |, archived from [{{{url2}}} the original] on {{#if:{{{archivedate2|}}}\n      | {{#formatdate:{{{archivedate2}}}}}\n      | {{maintenance line|Please provide the date}}\n    }}\n}}{{#if:{{{accessdate2|}}}\n  |, retrieved\
+      \ {{#formatdate:{{{accessdate2}}}}}\n}}{{#if:{{{section2|}}}\n  | {{#if:{{{sectionurl2|}}}\n       |, [{{{sectionurl2}}} {{{section2}}}]\n       |, {{{section2}}}\n     }}\n}}{{#if:{{{line2|}}}\n  |, line {{{line2}}}\n  | {{#if:{{{lines2|}}}\n      |,\
+      \ lines {{{lines2}}}\n    }}\n}}{{#if:{{{page2|}}}{{{pages2|}}}\n  | {{#if:{{{pageurl2|}}} \n       |, [{{{pageurl2}}} {{#if:{{{pages2|}}}\n           | pages {{{pages2}}}\n           | page {{{page2}}}\n         }}]\n       | {{#if:{{{pages2|}}}\n   \
+      \        |, pages {{{pages2}}}\n           |, page {{{page2}}}\n         }}\n     }}\n}}{{#if:{{{column2|}}}\n  |, column {{{column2}}}\n  | {{#if:{{{columns2|}}}\n      |, columns {{{columns2}}}\n    }}\n}}:&lt;/includeonly&gt;&lt;noinclude&gt;{{documentation}}&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>"
+- recorded: 2018-01-25T19:04:00.429Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Atime&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: GeoIP=DE:BW:Schonau_im_Schwarzwald:47.78:7.90:v4; WMF-Last-Access=25-Jan-2018; WMF-Last-Access-Global=25-Jan-2018
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Backend-Timing: D=30027 t=1516907040329098
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Disposition: inline; filename="api-result.xml"
+      Content-Type: text/xml; charset=utf-8
+      Date: Thu, 25 Jan 2018 19:04:00 GMT
+      P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
+      Server: mw1313.eqiad.wmnet
+      Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
+      X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=25-Jan-2018;WMF-Last-Access-Global=25-Jan-2018;https=1
+      X-Cache: cp1066 pass, cp3031 pass, cp3042 pass
+      X-Cache-Status: pass
+      X-Client-IP: 217.233.2.240
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.18.6-dev
+      X-Varnish: 788498277, 793847615, 272080711
+    body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"6061719\" pageid=\"6061719\" ns=\"828\" title=\"Module:time\"><revisions><rev user=\"Erutuon\" timestamp=\"2017-12-16T00:26:35Z\" comment=\"gah! this is what was causing problems\"\
+      \ contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">local export = {}\n\n\nlocal language = mw.getContentLanguage()\nlocal function format(code, timestamp)\n\treturn language:formatDate(code, timestamp)\nend\n\nlocal sub =\
+      \ mw.ustring.sub\nlocal gsub = mw.ustring.gsub\n\n\nlocal abbrs = {\n\t[&quot;a.&quot;] = { anchor = &quot;a.&quot;, full = &quot;ante&quot;, },\n\t[&quot;c.&quot;] = { anchor = &quot;c.&quot;, full = &quot;circa&quot;, },\n\t[&quot;p.&quot;] = { anchor\
+      \ = &quot;p.&quot;, full = &quot;post&quot;, },\n}\n\n\n--[[\n\t&quot;1 January, 2015&quot;, with day of the month before month name\n\tand a comma, is not a valid date format; formatDate will\n\tignore the year &quot;2015&quot; and replace it with the\
+      \ current year.\n\tThe comma therefore has to be removed.\n]]\nlocal function fix_date(date)\n\tif date then\n\t\treturn gsub(date, &quot;(%d+ %a+),&quot;, &quot;%1&quot;)\n\tend\nend\n\n\nfunction export.quote(frame)\n\tlocal params = {\n\t\t[&quot;year&quot;]\
+      \ = {},\n\t\t[&quot;month&quot;] = {},\n\t\t[&quot;date&quot;] = {},\n\t\t[&quot;start_date&quot;] = {},\n\t\t[&quot;start_year&quot;] = {},\n\t\t[&quot;nodate&quot;] = { type = boolean, default = false },\n\t\t[&quot;accessdate&quot;] = {},\n\t\t[&quot;origdate&quot;]\
+      \ = {},\n\t\t[&quot;origyear&quot;] = {},\n\t\t[&quot;origmonth&quot;] = {},\n\t}\n\t\n\tlocal args = require(&quot;Module:parameters&quot;).process(frame:getParent().args, params, true)\n\t\n\tlocal output = {}\n\t\n\tlocal namespace = mw.title.getCurrentTitle().nsText\n\
+      \t\n\tlocal start_date, date = fix_date(args.start_date), fix_date(args.date)\n\t\n\tlocal function insert(text)\n\t\ttable.insert(output, text)\n\tend\n\t\n\tif args.year then\n\t\tlocal prefix = sub(args.year, 1, 2)\n\t\tlocal abbr = abbrs[prefix]\n\t\
+      \t\n\t\tif abbr then\n\t\t\tinsert('\\'\\'[[Appendix:Glossary#' .. abbr.anchor .. '|&lt;abbr title=&quot;' .. abbr.full .. '&quot;&gt;' .. abbr.anchor .. '&lt;/abbr&gt;]]\\'\\' ')\n\t\t\t-- [[Special:WhatLinksHere/Template:tracking/quote/abbr]]\n\t\t\t\
+      require(&quot;Module:debug&quot;).track(&quot;quote/abbr&quot;)\n\t\t\t\n\t\t\t-- Remove lowercase letter, period, and space from beginning of year parameter.\n\t\t\targs.year = gsub(args.year, &quot;%l.%s*&quot;, &quot;&quot;)\n\t\tend\n\t\t\n\t\tif start_date\
+      \ then\n\t\t\tif format(&quot;Y&quot;, start_date) == args.year then\n\t\t\t\tif format(&quot;F&quot;, start_date) == args.month then\n\t\t\t\t\tinsert(\n\t\t\t\t\t\tformat(&quot;'''Y''' F j&quot;, start_date)\n\t\t\t\t\t\t\t.. &quot;–&quot; .. date\n\t\
+      \t\t\t\t)\n\t\t\t\telse\n\t\t\t\t\tinsert(\n\t\t\t\t\t\tformat(&quot;'''Y''' F j&quot;,\n\t\t\t\t\t\t\tstart_date)\n\t\t\t\t\t\t\t.. &quot; – &quot; .. args.month .. &quot; &quot; .. date\n\t\t\t\t\t)\n\t\t\t\tend\n\t\t\tend\n\t\telse\n\t\t\tif args.month\
+      \ then\n\t\t\t\tif args.start_year then\n\t\t\t\t\tinsert(\n\t\t\t\t\t\t&quot;'''&quot; .. args.start_year\n\t\t\t\t\t\t.. &quot;'''&amp;nbsp;– &quot;\n\t\t\t\t\t)\n\t\t\t\tend\n\t\t\t\t\n\t\t\t\tinsert(\n\t\t\t\t\t&quot;'''&quot; .. args.year .. &quot;'''\
+      \ &quot;\n\t\t\t\t\t.. args.month\n\t\t\t\t)\n\t\t\t\t\n\t\t\t\tif date then\n\t\t\t\t\tinsert(&quot; &quot; .. date)\n\t\t\t\tend\n\t\t\telse\n\t\t\t\tif args.start_year then\n\t\t\t\t\tinsert(&quot;'''&quot; .. args.start_year .. &quot;'''–&quot;)\n\t\
+      \t\t\tend\n\t\t\t\t\n\t\t\t\tinsert(&quot;'''&quot; .. args.year .. &quot;'''&quot;)\n\t\t\tend\n\t\tend\n\telse\n\t\tif date then\n\t\t\tif start_date then\n\t\t\t\tif format(&quot;Y&quot;, start_date) == format(&quot;Y&quot;, date) then\n\t\t\t\t\tif\
+      \ format(&quot;n&quot;, start_date) == format(&quot;n&quot;, date) then\n\t\t\t\t\t\tinsert(\n\t\t\t\t\t\t\tformat(&quot;'''Y''' F j&quot;, start_date)\n\t\t\t\t\t\t\t\t.. &quot;–&quot; .. format(&quot;j&quot;, date)\n\t\t\t\t\t\t)\n\t\t\t\t\telse\n\t\t\
+      \t\t\t\tinsert(\n\t\t\t\t\t\t\tformat(&quot;'''Y''' F j&quot;, start_date)\n\t\t\t\t\t\t\t\t.. &quot;–&quot; .. format(&quot;F j&quot;, date)\n\t\t\t\t\t\t)\n\t\t\t\t\tend\n\t\t\t\telse\n\t\t\t\t\tinsert(\n\t\t\t\t\t\tformat(&quot;'''Y''' F j&quot;, start_date)\n\
+      \t\t\t\t\t\t\t.. &quot;–&quot; .. format(&quot;'''Y''' F j&quot;, date)\n\t\t\t\t\t)\n\t\t\t\tend\n\t\t\telse\n\t\t\t\tinsert(\n\t\t\t\t\tformat(&quot;'''Y''' F j&quot;, date)\n\t\t\t\t)\n\t\t\tend\n\t\telse\n\t\t\tif not args.nodate then\n\t\t\t\tif args.accessdate\
+      \ then\n\t\t\t\t\tinsert(\n\t\t\t\t\t\tformat(&quot;'''Y''' F j&quot;, args.accessdate)\n\t\t\t\t\t\t.. &quot; (last accessed)&quot;\n\t\t\t\t\t)\n\t\t\t\telse\n\t\t\t\t\tif namespace ~= &quot;Template&quot; then\n\t\t\t\t\t\tinsert(\n\t\t\t\t\t\t\tframe:expandTemplate{\
+      \ title = &quot;rfdate&quot; }\n\t\t\t\t\t\t)\n\t\t\t\t\tend\n\t\t\t\tend\n\t\t\tend\n\t\tend\n\tend\n\n\treturn table.concat(output)\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
+- recorded: 2018-01-25T19:04:00.623Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Aparameters&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: GeoIP=DE:BW:Schonau_im_Schwarzwald:47.78:7.90:v4; WMF-Last-Access=25-Jan-2018; WMF-Last-Access-Global=25-Jan-2018
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Backend-Timing: D=33400 t=1516907040518165
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Disposition: inline; filename="api-result.xml"
+      Content-Type: text/xml; charset=utf-8
+      Date: Thu, 25 Jan 2018 19:04:00 GMT
+      P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
+      Server: mw1225.eqiad.wmnet
+      Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
+      X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=25-Jan-2018;WMF-Last-Access-Global=25-Jan-2018;https=1
+      X-Cache: cp1055 pass, cp3040 pass, cp3042 pass
+      X-Cache-Status: pass
+      X-Client-IP: 217.233.2.240
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.18.6-dev
+      X-Varnish: 710838254, 191535462, 260537149
+    body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4797340\" pageid=\"4797340\" ns=\"828\" title=\"Module:parameters\"><revisions><rev user=\"Erutuon\" timestamp=\"2018-01-15T08:39:40Z\" comment=\"change level of error message\"\
+      \ contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">local export = {}\n\n-- A helper function to escape magic characters in a string\n-- Magic characters: ^$()%.[]*+-?\nlocal plain = require(&quot;Module:string&quot;).pattern_escape\n\
+      \n-- A helper function that removes empty numeric indexes in a table,\n-- so that the values are tightly packed like in a normal Lua table.\nlocal remove_holes = require(&quot;Module:table&quot;).compressSparseArray\n\nfunction export.process(args, params,\
+      \ return_unknown)\n\tlocal args_new = {}\n\t\n\t-- Process parameters for specific properties\n\tlocal required = {}\n\tlocal patterns = {}\n\tlocal list_from_index = nil\n\t\n\tfor name, param in pairs(params) do\n\t\tif param.required then\n\t\t\tif\
+      \ param.alias_of then\n\t\t\t\trequire(&quot;Module:debug&quot;).track(&quot;parameters/required alias&quot;)\n\t\t\tend\n\t\t\trequired[name] = true\n\t\tend\n\t\t\n\t\tif param.list then\n\t\t\tlocal key = name\n\t\t\tif type(name) == &quot;string&quot;\
+      \ then\n\t\t\t\tkey = string.gsub(name, &quot;=&quot;, &quot;&quot;)\n\t\t\tend\n\t\t\tif param.default ~= nil then\n\t\t\t\targs_new[key] = {param.default, maxindex = 1}\n\t\t\telse\n\t\t\t\targs_new[key] = {maxindex = 0}\n\t\t\tend\n\t\t\t\n\t\t\tif\
+      \ type(param.list) == &quot;string&quot; then\n\t\t\t\t-- If the list property is a string, then it represents the name\n\t\t\t\t-- to be used as the prefix for list items. This is for use with lists\n\t\t\t\t-- where the first item is a numbered parameter\
+      \ and the\n\t\t\t\t-- subsequent ones are named, such as 1, pl2, pl3.\n\t\t\t\tif string.find(param.list, &quot;=&quot;) then\n\t\t\t\t\tpatterns[&quot;^&quot; .. string.gsub(plain(param.list), &quot;=&quot;, &quot;(%%d+)&quot;) .. &quot;$&quot;] = name\n\
+      \t\t\t\telse\n\t\t\t\t\tpatterns[&quot;^&quot; .. plain(param.list) .. &quot;(%d+)$&quot;] = name\n\t\t\t\tend\n\t\t\telseif type(name) == &quot;number&quot; then\n\t\t\t\t-- If the name is a number, then all indexed parameters from\n\t\t\t\t-- this number\
+      \ onwards go in the list.\n\t\t\t\tlist_from_index = name\n\t\t\telse\n\t\t\t\tif string.find(name, &quot;=&quot;) then\n\t\t\t\t\tpatterns[&quot;^&quot; .. string.gsub(plain(name), &quot;=&quot;, &quot;(%%d+)&quot;) .. &quot;$&quot;] = string.gsub(name,\
+      \ &quot;=&quot;, &quot;&quot;)\n\t\t\t\telse\n\t\t\t\t\tpatterns[&quot;^&quot; .. plain(name) .. &quot;(%d+)$&quot;] = name\n\t\t\t\tend\n\t\t\tend\n\t\t\t\n\t\t\tif string.find(name, &quot;=&quot;) then\n\t\t\t\trequire(&quot;Module:debug&quot;).track(&quot;parameters/name\
+      \ with equals&quot;)\n\t\t\t\tparams[string.gsub(name, &quot;=&quot;, &quot;&quot;)] = params[name]\n\t\t\t\tparams[name] = nil\n\t\t\tend\n\t\telseif param.default ~= nil then\n\t\t\targs_new[name] = param.default\n\t\tend\n\tend\n\t\n\t-- Process the\
+      \ arguments\n\tlocal args_unknown = {}\n\t\n\tfor name, val in pairs(args) do\n\t\tlocal index = nil\n\t\t\n\t\tif type(name) == &quot;number&quot; then\n\t\t\tif list_from_index ~= nil and name &gt;= list_from_index then\n\t\t\t\tindex = name - list_from_index\
+      \ + 1\n\t\t\t\tname = list_from_index\n\t\t\tend\n\t\telse\n\t\t\t-- Does this argument name match a pattern?\n\t\t\tfor pattern, pname in pairs(patterns) do\n\t\t\t\tindex = mw.ustring.match(name, pattern)\n\t\t\t\t\n\t\t\t\t-- It matches, so store the\
+      \ parameter name and the\n\t\t\t\t-- numeric index extracted from the argument name.\n\t\t\t\tif index then\n\t\t\t\t\tindex = tonumber(index)\n\t\t\t\t\tname = pname\n\t\t\t\t\tbreak\n\t\t\t\tend\n\t\t\tend\n\t\tend\n\t\t\n\t\t-- If no index was found,\
+      \ use 1 as the default index.\n\t\t-- This makes list parameters like g, g2, g3 put g at index 1.\n\t\tindex = index or 1\n\t\t\n\t\tlocal param = params[name]\n\t\t\n\t\t-- If the argument is not in the list of parameters, trigger an error.\n\t\t-- return_unknown\
+      \ suppresses the error, and stores it in a separate list instead.\n\t\tif not param then\n\t\t\tif return_unknown then\n\t\t\t\targs_unknown[name] = val\n\t\t\telse\n\t\t\t\terror(&quot;The parameter \\&quot;&quot; .. name .. &quot;\\&quot; is not used\
+      \ by this template.&quot;, 2)\n\t\t\tend\n\t\telse\n\t\t\t-- Remove leading and trailing whitespace unless allow_whitespace is true.\n\t\t\tif not param.allow_whitespace then\n\t\t\t\tval = mw.text.trim(val)\n\t\t\tend\n\t\t\t\n\t\t\t-- Empty string is\
+      \ equivalent to nil unless allow_empty is true.\n\t\t\tif val == &quot;&quot; and not param.allow_empty then\n\t\t\t\tval = nil\n\t\t\tend\n\t\t\t\n\t\t\t-- Convert to proper type if necessary.\n\t\t\tif param.type == &quot;boolean&quot; then\n\t\t\t\t\
+      val = not (not val or val == &quot;&quot; or val == &quot;0&quot; or val == &quot;no&quot; or val == &quot;n&quot; or val == &quot;false&quot;)\n\t\t\telseif param.type == &quot;number&quot; and val ~= nil then\n\t\t\t\tval = tonumber(val)\n\t\t\tend\n\
+      \t\t\t\n\t\t\t-- Can't use &quot;if val&quot; alone, because val may be a boolean false.\n\t\t\tif val ~= nil then\n\t\t\t\t-- Mark it as no longer required, as it is present.\n\t\t\t\trequired[param.alias_of or name] = nil\n\t\t\t\t\n\t\t\t\t-- Store\
+      \ the argument value.\n\t\t\t\tif param.list then\n\t\t\t\t\t-- If the parameter is an alias of another, store it as the original,\n\t\t\t\t\t-- but avoid overwriting it; the original takes precedence.\n\t\t\t\t\tif not param.alias_of then\n\t\t\t\t\t\t\
+      args_new[name][index] = val\n\t\t\t\t\t\t\n\t\t\t\t\t\t-- Store the highest index we find.\n\t\t\t\t\t\targs_new[name].maxindex = math.max(index, args_new[name].maxindex)\n\t\t\t\t\telseif args[param.alias_of] == nil then\n\t\t\t\t\t\tif params[param.alias_of]\
+      \ and params[param.alias_of].list then\n\t\t\t\t\t\t\targs_new[param.alias_of][index] = val\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t-- Store the highest index we find.\n\t\t\t\t\t\t\targs_new[param.alias_of].maxindex = math.max(1, args_new[param.alias_of].maxindex)\n\
+      \t\t\t\t\t\telse\n\t\t\t\t\t\t\targs_new[param.alias_of] = val\n\t\t\t\t\t\tend\n\t\t\t\t\tend\n\t\t\t\telse\n\t\t\t\t\t-- If the parameter is an alias of another, store it as the original,\n\t\t\t\t\t-- but avoid overwriting it; the original takes precedence.\n\
+      \t\t\t\t\tif not param.alias_of then\n\t\t\t\t\t\targs_new[name] = val\n\t\t\t\t\telseif args[param.alias_of] == nil then\n\t\t\t\t\t\tif params[param.alias_of] and params[param.alias_of].list then\n\t\t\t\t\t\t\targs_new[param.alias_of][1] = val\n\t\t\
+      \t\t\t\t\t\n\t\t\t\t\t\t\t-- Store the highest index we find.\n\t\t\t\t\t\t\targs_new[param.alias_of].maxindex = math.max(1, args_new[param.alias_of].maxindex)\n\t\t\t\t\t\telse\n\t\t\t\t\t\t\targs_new[param.alias_of] = val\n\t\t\t\t\t\tend\n\t\t\t\t\t\
+      end\n\t\t\t\tend\n\t\t\tend\n\t\tend\n\tend\n\t\n\t-- The required table should now be empty.\n\t-- If any entry remains, trigger an error, unless we're in the template namespace.\n\tif mw.title.getCurrentTitle().nsText ~= &quot;Template&quot; then\n\t\
+      \tlocal list = {}\n\t\tfor name, param in pairs(required) do\n\t\t\ttable.insert(list, name)\n\t\tend\n\t\t\n\t\tlocal count = #list\n\t\tif count == 1 then\n\t\t\terror('The parameter &quot;' .. list[1] .. '&quot; is required.', 2)\n\t\telseif count ==\
+      \ 2 then\n\t\t\terror('The parameters &quot;' .. table.concat(list, '&quot; and &quot;') .. '&quot; are required.', 2)\n\t\telseif count &gt; 2 then\n\t\t\terror('The parameters &quot;' .. mw.text.listToText(list, '&quot;, &quot;', '&quot;, and &quot;')\
+      \ .. '&quot; are required.', 2)\n\t\tend\n\tend\n\t\n\t-- Remove holes in any list parameters if needed.\n\tfor name, val in pairs(args_new) do\n\t\tif type(val) == &quot;table&quot; and not params[name].allow_holes then\n\t\t\targs_new[name] = remove_holes(val)\n\
+      \t\tend\n\tend\n\t\n\tif return_unknown then\n\t\treturn args_new, args_unknown\n\telse\n\t\treturn args_new\n\tend\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
+- recorded: 2018-01-25T19:04:00.833Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Astring&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: GeoIP=DE:BW:Schonau_im_Schwarzwald:47.78:7.90:v4; WMF-Last-Access=25-Jan-2018; WMF-Last-Access-Global=25-Jan-2018
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Backend-Timing: D=34877 t=1516907040716476
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Disposition: inline; filename="api-result.xml"
+      Content-Type: text/xml; charset=utf-8
+      Date: Thu, 25 Jan 2018 19:04:00 GMT
+      P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
+      Server: mw1287.eqiad.wmnet
+      Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
+      X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=25-Jan-2018;WMF-Last-Access-Global=25-Jan-2018;https=1
+      X-Cache: cp1065 pass, cp3040 pass, cp3042 pass
+      X-Cache-Status: pass
+      X-Client-IP: 217.233.2.240
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.18.6-dev
+      X-Varnish: 827907411, 194121845, 269133977
+    body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"4099547\" pageid=\"4099547\" ns=\"828\" title=\"Module:string\"><revisions><rev user=\"Erutuon\" timestamp=\"2018-01-17T08:17:25Z\" comment=\"template-invokable URIdecode\"\
+      \ contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">local str = {}\n\n-- Cannot include null byte.\nlocal UTF8_char = &quot;[\\1-\\127\\194-\\244][\\128-\\191]*&quot;\n\n--[[\nulen\n\nCounts UTF-8 characters. Faster than mw.ustring.len.\n\
+      \nAssumes that the encoding is correct. Unlike mw.ustring.len, does not return nil\nif encoding is invalid.\n\nDoes not count the bytes 192, 193, and 245-255. They are not used in UTF-8 and\nwill not occur if the string is valid. They are replaced with\
+      \ the replacement\ncharacter (U+FFFD) on MediaWiki pages.\n--]]\nfunction str.ulen(text)\n\tlocal _, length = string.gsub(text, UTF8_char, &quot;&quot;)\n\treturn length\nend\n\n--[[\nlen\n\nThis function returns the length of the target string.\n\nUsage:\n\
+      {{#invoke:string|len|target_string|}}\nOR\n{{#invoke:string|len|s=target_string}}\n\nParameters\n    s: The string whose length to report\n\nIf invoked using named parameters, Mediawiki will automatically remove any leading or\ntrailing whitespace from\
+      \ the target string.\n]]\nfunction str.len(frame)\n\tlocal new_args = str._getParameters(frame.args, { 's' });\n\tlocal s = new_args['s'] or '';\n\treturn mw.ustring.len(s)\nend\n\n--[[\nsub\n\nThis function returns a substring of the target string at\
+      \ specified indices.\n\nUsage:\n{{#invoke:string|sub|target_string|start_index|end_index}}\nOR\n{{#invoke:string|sub|s=target_string|i=start_index|j=end_index}}\n\nParameters\n    s: The string to return a subset of\n    i: The fist index of the substring\
+      \ to return, defaults to 1.\n    j: The last index of the string to return, defaults to the last character.\n    \nThe first character of the string is assigned an index of 1.  If either i or j\nis a negative value, it is interpreted the same as selecting\
+      \ a character by\ncounting from the end of the string.  Hence, a value of -1 is the same as\nselecting the last character of the string.\n\nIf the requested indices are out of range for the given string, an error is\nreported.\n]]\nfunction str.sub(frame)\n\
+      \tlocal new_args = str._getParameters(frame.args, { 's', 'i', 'j' });\n\tlocal s = new_args['s'] or '';\n\tlocal i = tonumber(new_args['i']) or 1;\n\tlocal j = tonumber(new_args['j']) or -1;\n\t\n\tlocal len = mw.ustring.len(s);\n\t\n\t-- Convert negatives\
+      \ for range checking\n\tif i &lt; 0 then\n\t\ti = len + i + 1;\n\tend\n\tif j &lt; 0 then\n\t\tj = len + j + 1;\n\tend\n\t\n\tif i &gt; len or j &gt; len or i &lt; 1 or j &lt; 1 then\n\t\treturn str._error('String subset index out of range');\n\tend\n\t\
+      if j &lt; i then\n\t\treturn str._error('String subset indices out of order');\n\tend\n\t\n\treturn mw.ustring.sub(s, i, j)\nend\n\n--[[\nThis function implements that features of {{str sub old}} and is kept in order\nto maintain these older templates.\n\
+      ]]\nfunction str.sublength(frame)\n\tlocal i = tonumber(frame.args.i) or 0\n\tlocal len = tonumber(frame.args.len)\n\treturn mw.ustring.sub(frame.args.s, i + 1, len and (i + len))\nend\n\n--[[\nmatch\n\nThis function returns a substring from the source\
+      \ string that matches a\nspecified pattern.\n\nUsage:\n{{#invoke:string|match|source_string|pattern_string|start_index|match_number|plain_flag|nomatch_output}}\nOR\n{{#invoke:string|pos|s=source_string|pattern=pattern_string|start=start_index\n    |match=match_number|plain=plain_flag|nomatch=nomatch_output}}\n\
+      \nParameters\n    s: The string to search\n    pattern: The pattern or string to find within the string\n    start: The index within the source string to start the search.  The first\n        character of the string has index 1.  Defaults to 1.\n    match:\
+      \ In some cases it may be possible to make multiple matches on a single\n        string.  This specifies which match to return, where the first match is\n        match= 1.  If a negative number is specified then a match is returned\n        counting from\
+      \ the last match.  Hence match = -1 is the same as requesting\n        the last match.  Defaults to 1.\n    plain: A flag indicating that the pattern should be understood as plain\n        text.  Defaults to false.\n    nomatch: If no match is found, output\
+      \ the &quot;nomatch&quot; value rather than an error.\n\nIf invoked using named parameters, Mediawiki will automatically remove any leading or\ntrailing whitespace from each string.  In some circumstances this is desirable, in\nother cases one may want\
+      \ to preserve the whitespace.\n\nIf the match_number or start_index are out of range for the string being queried, then\nthis function generates an error.  An error is also generated if no match is found.\nIf one adds the parameter ignore_errors=true,\
+      \ then the error will be suppressed and\nan empty string will be returned on any failure.\n\nFor information on constructing Lua patterns, a form of [regular expression], see:\n\n* http://www.lua.org/manual/5.1/manual.html#5.4.1\n* http://www.mediawiki.org/wiki/Extension:Scribunto/Lua_reference_manual#Patterns\n\
+      * http://www.mediawiki.org/wiki/Extension:Scribunto/Lua_reference_manual#Ustring_patterns\n\n]]\nfunction str.match(frame)\n\tlocal new_args = str._getParameters(frame.args, { 's', 'pattern', 'start', 'match', 'plain', 'nomatch' });\n\tlocal s = new_args['s']\
+      \ or '';\n\tlocal start = tonumber(new_args['start']) or 1;\n\tlocal plain_flag = str._getBoolean(new_args['plain'] or false);\n\tlocal pattern = new_args['pattern'] or '';\n\tlocal match_index = math.floor(tonumber(new_args['match']) or 1);\n\tlocal nomatch\
+      \ = new_args['nomatch'];\n\t\n\tif s == '' then\n\t\treturn str._error('Target string is empty');\n\tend\n\tif pattern == '' then\n\t\treturn str._error('Pattern string is empty');\n\tend\n\tif math.abs(start) &lt; 1 or math.abs(start) &gt; mw.ustring.len(s)\
+      \ then\n\t\treturn str._error('Requested start is out of range');\n\tend\n\tif match_index == 0 then\n\t\treturn str._error('Match index is out of range');\n\tend\n\tif plain_flag then\n\t\tpattern = str.pattern_escape(pattern);\n\tend\n\t\n\tlocal result\n\
+      \tif match_index == 1 then\n\t\t-- Find first match is simple case\n\t\tresult = mw.ustring.match(s, pattern, start)\n\telse\n\t\tif start &gt; 1 then\n\t\t\ts = mw.ustring.sub(s, start);\n\t\tend\n\t\t\n\t\tlocal iterator = mw.ustring.gmatch(s, pattern);\n\
+      \t\tif match_index &gt; 0 then\n\t\t\t-- Forward search\n\t\t\tfor w in iterator do\n\t\t\t\tmatch_index = match_index - 1;\n\t\t\t\tif match_index == 0 then\n\t\t\t\t\tresult = w;\n\t\t\t\t\tbreak;\n\t\t\t\tend\n\t\t\tend\n\t\telse\n\t\t\t-- Reverse search\n\
+      \t\t\tlocal result_table = {};\n\t\t\tlocal count = 1;\n\t\t\tfor w in iterator do\n\t\t\t\tresult_table[count] = w;\n\t\t\t\tcount = count + 1;\n\t\t\tend\n\t\t\t\n\t\t\tresult = result_table[count + match_index];\n\t\tend\n\tend\n\t\n\tif result == nil\
+      \ then\n\t\tif nomatch == nil then\n\t\t\treturn str._error('Match not found');\n\t\telse\n\t\t\treturn nomatch;\n\t\tend\n\telse\n\t\treturn result;\n\tend\nend\n\n--[[\npos\n\nThis function returns a single character from the target string at position\
+      \ pos.\n\nUsage:\n{{#invoke:string|pos|target_string|index_value}}\nOR\n{{#invoke:string|pos|target=target_string|pos=index_value}}\n\nParameters\n    target: The string to search\n    pos: The index for the character to return\n\nIf invoked using named\
+      \ parameters, Mediawiki will automatically remove any leading or\ntrailing whitespace from the target string.  In some circumstances this is desirable, in\nother cases one may want to preserve the whitespace.\n\nThe first character has an index value of\
+      \ 1.\n\nIf one requests a negative value, this function will select a character by counting backwards\nfrom the end of the string.  In other words pos = -1 is the same as asking for the last character.\n\nA requested value of zero, or a value greater than\
+      \ the length of the string returns an error.\n]]\nfunction str.pos(frame)\n\tlocal new_args = str._getParameters(frame.args, { 'target', 'pos' });\n\tlocal target_str = new_args['target'] or '';\n\tlocal pos = tonumber(new_args['pos']) or 0;\n\t\n\tif\
+      \ pos == 0 or math.abs(pos) &gt; mw.ustring.len(target_str) then\n\t\treturn str._error('String index out of range');\n\tend\n\t\n\treturn mw.ustring.sub(target_str, pos, pos);\nend\n\n--[[\nstr_find\n\nThis function duplicates the behavior of {{str_find}},\
+      \ including all of its quirks.\nThis is provided in order to support existing templates, but is NOT RECOMMENDED for\nnew code and templates.  New code is recommended to use the &quot;find&quot; function instead.\n\nReturns the first index in &quot;source&quot;\
+      \ that is a match to &quot;target&quot;.  Indexing is 1-based,\nand the function returns -1 if the &quot;target&quot; string is not present in &quot;source&quot;.\n\nImportant Note: If the &quot;target&quot; string is empty / missing, this function returns\
+      \ a\nvalue of &quot;1&quot;, which is generally unexpected behavior, and must be accounted for\nseparatetly.\n]]\nfunction str.str_find(frame)\n\tlocal new_args = str._getParameters(frame.args, { 'source', 'target' });\n\tlocal source_str = new_args['source']\
+      \ or '';\n\tlocal target_str = new_args['target'] or '';\n\t\n\tif target_str == '' then\n\t\treturn 1;\n\tend\n\t\n\tlocal start = mw.ustring.find(source_str, target_str, 1, true)\n\tif start == nil then\n\t\tstart = -1\n\tend\n\t\n\treturn start\nend\n\
+      \n--[[\nfind\n\nThis function allows one to search for a target string or pattern within another\nstring.\n\nUsage:\n{{#invoke:string|find|source_str|target_string|start_index|plain_flag}}\nOR\n{{#invoke:string|find|source=source_str|target=target_str|start=start_index|plain=plain_flag}}\n\
+      \nParameters\n    source: The string to search\n    target: The string or pattern to find within source\n    start: The index within the source string to start the search, defaults to 1\n    plain: Boolean flag indicating that target should be understood\
+      \ as plain\n        text and not as a Lua style regular expression, defaults to true\n\nIf invoked using named parameters, Mediawiki will automatically remove any leading or\ntrailing whitespace from the parameter.  In some circumstances this is desirable,\
+      \ in\nother cases one may want to preserve the whitespace.\n\nThis function returns the first index &gt;= &quot;start&quot; where &quot;target&quot; can be found\nwithin &quot;source&quot;.  Indices are 1-based.  If &quot;target&quot; is not found, then\
+      \ this\nfunction returns an empty string.  If either &quot;source&quot; or &quot;target&quot; are missing / empty, this\nfunction also returns an empty string.\n\nThis function should be safe for UTF-8 strings.\n]]\nfunction str.find(frame)\n\tlocal params\
+      \ = {\n\t\t[1] = { required = true },\n\t\t[2] = { required = true },\n\t\t[3] = { type = &quot;number&quot; },\n\t\t[4] = { type = &quot;boolean&quot; },\n\t}\n\t\n\tlocal args = require(&quot;Module:parameters&quot;).process(frame.args, params)\n\t\n\
+      \treturn mw.ustring.find(args[1], args[2], args[3], args[4])\nend\n\n--[[\nreplace\n\nThis function allows one to replace a target string or pattern within another\nstring.\n\nUsage:\n{{#invoke:string|replace|source_str|pattern_string|replace_string|replacement_count|plain_flag}}\n\
+      OR\n{{#invoke:string|replace|source=source_string|pattern=pattern_string|replace=replace_string|\n   count=replacement_count|plain=plain_flag}}\n\nParameters\n    source: The string to search\n    pattern: The string or pattern to find within source\n\
+      \    replace: The replacement text\n    count: The number of occurences to replace, defaults to all.\n    plain: Boolean flag indicating that pattern should be understood as plain\n        text and not as a Lua style regular expression, defaults to true\n\
+      ]]\nfunction str.replace(frame)\n\tlocal new_args = str._getParameters(frame.args, { 'source', 'pattern', 'replace', 'count', 'plain' });\n\tlocal source_str = new_args['source'] or '';\n\tlocal pattern = new_args['pattern'] or '';\n\tlocal replace = new_args['replace']\
+      \ or '';\n\tlocal count = tonumber(new_args['count']);\n\tlocal plain = new_args['plain'] or true;\n\t\n\tif source_str == '' or pattern == '' then\n\t\treturn source_str;\n\tend\n\tplain = str._getBoolean(plain);\n\t\n\tif plain then\n\t\tpattern = str.pattern_escape(pattern);\n\
+      \t\treplace = mw.ustring.gsub(replace, &quot;%%&quot;, &quot;%%%%&quot;); --Only need to escape replacement sequences.\n\tend\n\t\n\tlocal result;\n\t\n\tif count ~= nil then\n\t\tresult = mw.ustring.gsub(source_str, pattern, replace, count);\n\telse\n\
+      \t\tresult = mw.ustring.gsub(source_str, pattern, replace);\n\tend\n\t\n\treturn result;\nend\n\n\nfunction str.gsub(frame)\n\tlocal params = {\n\t\t[1] = { required = true, allow_empty = true },\n\t\t[2] = { required = true, allow_empty = true },\n\t\t\
+      [3] = { required = true, allow_empty = true },\n\t\t[4] = { type = &quot;number&quot; },\n\t}\n\t\n\tlocal args = require(&quot;Module:parameters&quot;).process(frame.args, params)\n\t\n\treturn (mw.ustring.gsub(args[1], args[2], args[3], args[4]))\nend\n\
+      \n\n--[[\n    simple function to pipe string.rep to templates.\n]]\n\nfunction str.rep(frame)\n\tlocal repetitions = tonumber(frame.args[2])\n\tif not repetitions then\n\t\treturn str._error('function rep expects a number as second parameter, received\
+      \ &quot;' .. (frame.args[2] or '') .. '&quot;')\n\tend\n\treturn string.rep(frame.args[1] or '', repetitions)\nend\n\nfunction str.lower(frame)\n\tlocal text = frame.args[1] or ''\n\treturn mw.ustring.lower(text)\nend\n\nstr.lc = str.lower\n\n--[[\nHelper\
+      \ function that populates the argument list given that user may need to use a mix of\nnamed and unnamed parameters.  This is relevant because named parameters are not\nidentical to unnamed parameters due to string trimming, and when dealing with strings\n\
+      we sometimes want to either preserve or remove that whitespace depending on the application.\n]]\nfunction str._getParameters(frame_args, arg_list)\n\tlocal new_args = {};\n\tlocal index = 1;\n\tlocal value;\n\t\n\tfor _, arg in ipairs(arg_list) do\n\t\
+      \tvalue = frame_args[arg]\n\t\tif value == nil then\n\t\t\tvalue = frame_args[index];\n\t\t\tindex = index + 1;\n\t\tend\n\t\tnew_args[arg] = value;\n\tend\n\t\n\treturn new_args;\nend\n\n--[[\nHelper function to handle error messages.\n]]\nfunction str._error(error_str)\n\
+      \tlocal frame = mw.getCurrentFrame();\n\tlocal error_category = frame.args.error_category or 'Errors reported by Module String';\n\tlocal ignore_errors = frame.args.ignore_errors or false;\n\tlocal no_category = frame.args.no_category or false;\n\t\n\t\
+      if str._getBoolean(ignore_errors) then\n\t\treturn '';\n\tend\n\t\n\tlocal error_str = '&lt;strong class=&quot;error&quot;&gt;String Module Error: ' .. error_str .. '&lt;/strong&gt;';\n\tif error_category ~= '' and not str._getBoolean(no_category) then\n\
+      \t\terror_str = '[[Category:' .. error_category .. ']]' .. error_str;\n\tend\n\t\n\treturn error_str;\nend\n\n--[[\nHelper Function to interpret boolean strings\n]]\nfunction str._getBoolean(boolean_str)\n\tlocal boolean_value;\n\t\n\tif type(boolean_str)\
+      \ == 'string' then\n\t\tboolean_str = boolean_str:lower();\n\t\tif boolean_str == 'false' or boolean_str == 'no' or boolean_str == '0'\n\t\t\t\tor boolean_str == '' then\n\t\t\tboolean_value = false;\n\t\telse\n\t\t\tboolean_value = true;\n\t\tend\n\t\
+      elseif type(boolean_str) == 'boolean' then\n\t\tboolean_value = boolean_str;\n\telse\n\t\terror('No boolean value found');\n\tend\n\treturn boolean_value\nend\n\n--[[\nHelper function that escapes all pattern characters – ().%+-*?[^$] – so that they will\
+      \ be treated\nas plain text.\n]]\nfunction str.pattern_escape(pattern_str)\n\tlocal invoked = false\n\t\n\tif type(pattern_str) == &quot;table&quot; then\n\t\tif pattern_str.args then\n\t\t\tlocal frame = pattern_str\n\t\t\tinvoked = true\n\t\t\t\n\t\t\
+      \tif frame.args[1] then\n\t\t\t\tpattern_str = frame.args[1]\n\t\t\telse\n\t\t\t\tpattern_str = frame:getParent().args[1]\n\t\t\tend\n\t\telse\n\t\t\terror(&quot;First argument to pattern_escape should be a string, a number, or a frame object.&quot;)\n\
+      \t\tend\n\telseif not (type(pattern_str) == &quot;string&quot; or type(pattern_str) == &quot;number&quot;) then\n\t\terror(&quot;First argument to pattern_escape should be a string or a number.&quot;)\n\tend\n\t\n\tif invoked then\n\t\tlocal escaped =\
+      \ mw.ustring.gsub(pattern_str, &quot;([%(%)%.%%%+%-%*%?%[%^%$%]])&quot;, &quot;%%%1&quot;)\n\t\treturn escaped\n\telse\n\t\treturn mw.ustring.gsub(pattern_str, &quot;([%(%)%.%%%+%-%*%?%[%^%$%]])&quot;, &quot;%%%1&quot;);\n\tend\nend\n\nfunction str.count(text,\
+      \ pattern, plain)\n\tif not (type(text) == &quot;string&quot; or type(text) == &quot;number&quot;) then\n\t\terror('The first argument to the function &quot;count&quot; must be a string or a number, not a ' .. type(text) .. '.')\n\tend\n\t\n\tif not (type(pattern)\
+      \ == &quot;string&quot; or type(pattern) == &quot;number&quot;) then\n\t\terror('The first argument to the function &quot;count&quot; must be a string or a number, not a ' .. type(text) .. '.')\n\tend\n\t\n\tif plain then\n\t\tpattern = str.pattern_escape(pattern)\n\
+      \tend\n\t\n\tlocal _, count = mw.ustring.gsub(text, pattern, &quot;&quot;)\n\t\n\treturn count\nend\n\nfunction str.plain_gsub(text, pattern, replacement)\n\tlocal invoked = false\n\t\n\tif type(text) == &quot;table&quot; then\n\t\tinvoked = true\n\t\t\
+      \n\t\tif text.args then\n\t\t\tlocal frame = text\n\t\t\t\n\t\t\tlocal params = {\n\t\t\t\t[1] = {},\n\t\t\t\t[2] = {},\n\t\t\t\t[3] = { allow_empty = true },\n\t\t\t}\n\t\t\t\n\t\t\tlocal args = require(&quot;Module:parameters&quot;).process(frame.args,\
+      \ params)\n\t\t\t\n\t\t\ttext = args[1]\n\t\t\tpattern = args[2]\n\t\t\treplacement = args[3]\n\t\telse\n\t\t\terror(&quot;If the first argument to plain_gsub is a table, it should be a frame object.&quot;)\n\t\tend\n\telse\n\t\tif not (type(pattern) ==\
+      \ &quot;string&quot; or type(pattern) == &quot;number&quot;) then\n\t\t\terror(&quot;The second argument to plain_gsub should be a string or a number.&quot;)\n\t\tend\n\t\t\n\t\tif not (type(replacement) == &quot;string&quot; or type(replacement) == &quot;number&quot;)\
+      \ then\n\t\t\terror(&quot;The third argument to plain_gsub should be a string or a number.&quot;)\n\t\tend\n\tend\n\t\n\tpattern = str.pattern_escape(pattern)\n\t\n\tif invoked then\n\t\ttext = mw.ustring.gsub(text, pattern, replacement)\n\t\treturn text\n\
+      \telse\n\t\treturn mw.ustring.gsub(text, pattern, replacement)\n\tend\nend\n\nfunction str.matchToArray(text, pattern)\n\tlocal invoked = false\n\t\n\tif type(text) == &quot;table&quot; then\n\t\tinvoked = true\n\t\t\n\t\tif text.args then\n\t\t\tlocal\
+      \ frame = text\n\t\t\t\n\t\t\tlocal params = {\n\t\t\t\t[1] = { required = true },\n\t\t\t\t[2] = { required = true },\n\t\t\t}\n\t\t\t\n\t\t\tlocal args = require(&quot;Module:parameters&quot;).process(frame.args, params)\n\t\t\t\n\t\t\ttext = args[1]\n\
+      \t\t\tpattern = args[2]\n\t\telse\n\t\t\terror(&quot;If the first argument to plain_gsub is a table, it should be a frame object.&quot;)\n\t\tend\n\telse\n\t\tif not (type(pattern) == &quot;string&quot; or type(pattern) == &quot;number&quot;) then\n\t\t\
+      \terror(&quot;The second argument to plain_gsub should be a string or a number.&quot;)\n\t\tend\n\tend\n\t\n\tlocal matches = {}\n\tlocal i = 0\n\tfor match in mw.ustring.gmatch(text, pattern) do\n\t\ti = i + 1\n\t\tmatches[i] = match\n\tend\n\t\n\tif\
+      \ i &gt; 0 then\n\t\tif invoked then\n\t\t\treturn table.concat(matches, &quot;, &quot;)\n\t\telse\n\t\t\treturn matches\n\t\tend\n\telse\n\t\tif invoked then\n\t\t\treturn &quot;&quot;\n\t\telse\n\t\t\treturn nil\n\t\tend\n\tend\nend\n\n--[=[\n\tSimilar\
+      \ to gmatch, but it returns the count of the match in addition to the\n\tlist of captures, something like ipairs().\n\t\n\tIf the pattern doesn't contain any captures, the whole match is returned.\n\t\n\tInvoke thus:\n\t\n\t\tfor i, whole_match in require(&quot;Module:string&quot;).imatch(text,\
+      \ pattern) do\n\t\t\t[ do something with i and whole_match ]\n\t\tend\n\t\n\tor\n\t\n\t\tfor i, capture1[, capture2[, capture3[, ...]]] in require(&quot;Module:string&quot;).imatch(text, pattern) do\n\t\t\t[ do something with i and capture1 ]\n\t\tend\n\
+      \t\n\tFor example, this code\n\t\tfor i, whole_match in require(&quot;Module:string&quot;).imatch(&quot;a b c&quot;, &quot;[a-z]&quot;) do\n\t\t\tmw.log(i, whole_match)\n\t\tend\n\twill log\n\t\t1\ta\n\t\t2\tb\n\t\t3\tc\n]=]\nfunction str.imatch(text,\
+      \ pattern, pos, plain, use_basic_Lua_function)\n\tlocal i = 0\n\tpos = pos or 0\n\tif not string.find(pattern, &quot;%b()&quot;) then\n\t\tpattern = &quot;(&quot; .. pattern .. &quot;)&quot;\n\tend\n\tlocal find = use_basic_Lua_function and string.find\
+      \ or mw.ustring.find\n\treturn function()\n\t\ti = i + 1\n\t\tlocal return_values = { find(text, pattern, pos, plain) }\n\t\tlocal j = return_values[2]\n\t\t\n\t\tif return_values[3] then\n\t\t\tpos = j + 1\n\t\t\t-- Skip the first two returned values,\
+      \ which are the indices of the\n\t\t\t-- whole match.\n\t\t\treturn i, unpack(return_values, 3)\n\t\tend\n\tend\nend\n\nfunction str.escapebytes(s)\n\treturn (string.gsub(s,\n\t\t'.',\n\t\tfunction(char)\n\t\t\treturn ('\\\\%03d'):format(string.byte(char))\n\
+      \t\tend))\nend\n\nfunction str.URIdecode(frame)\n\treturn mw.uri.decode(frame.args[1], frame.args[2] or &quot;PATH&quot;)\nend\n\nreturn str</rev></revisions></page></pages></query></api>"
+- recorded: 2018-01-25T19:04:01.038Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Atable&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: GeoIP=DE:BW:Schonau_im_Schwarzwald:47.78:7.90:v4; WMF-Last-Access=25-Jan-2018; WMF-Last-Access-Global=25-Jan-2018
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Backend-Timing: D=30599 t=1516907040926080
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Disposition: inline; filename="api-result.xml"
+      Content-Type: text/xml; charset=utf-8
+      Date: Thu, 25 Jan 2018 19:04:01 GMT
+      P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
+      Server: mw1339.eqiad.wmnet
+      Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
+      X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=25-Jan-2018;WMF-Last-Access-Global=25-Jan-2018;https=1
+      X-Cache: cp1055 pass, cp3041 pass, cp3042 pass
+      X-Cache-Status: pass
+      X-Client-IP: 217.233.2.240
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.18.6-dev
+      X-Varnish: 655849528, 93161882, 273617457
+    body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"5122966\" pageid=\"5122966\" ns=\"828\" title=\"Module:table\"><revisions><rev user=\"Erutuon\" timestamp=\"2018-01-11T21:59:13Z\" comment=\"deepcopy that preserves identity\
+      \ of subtables in a manner similar to mw.loadData, from [[Module:table/sandbox]]\" contentformat=\"text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">--[[\n------------------------------------------------------------------------------------\n\
+      --                      table (formerly TableTools)                               --\n--                                                                                --\n-- This module includes a number of functions for dealing with Lua tables.     \
+      \   --\n-- It is a meta-module, meant to be called from other Lua modules, and should     --\n-- not be called directly from #invoke.                                           --\n------------------------------------------------------------------------------------\n\
+      --]]\n\n--[[\n\tInserting new values into a table using a local &quot;index&quot; variable, which is\n\tincremented each time, is faster than using &quot;table.insert(t, x)&quot; or\n\t&quot;t[#t + 1] = x&quot;. See the talk page.\n]]\n\nlocal libraryUtil\
+      \ = require('libraryUtil')\n\nlocal export = {}\n\n-- Define often-used variables and functions.\nlocal floor = math.floor\nlocal infinity = math.huge\nlocal checkType = libraryUtil.checkType\nlocal checkTypeMulti = libraryUtil.checkTypeMulti\n\nlocal\
+      \ function _check(funcName, expectType)\n\tif type(expectType) == &quot;string&quot; then\n\t\treturn function(argIndex, arg, nilOk)\n\t\t\tcheckType(funcName, argIndex, arg, expectType, nilOk)\n\t\tend\n\telse\n\t\treturn function(argIndex, arg, expectType,\
+      \ nilOk)\n\t\t\tif type(expectType) == &quot;table&quot; then\n\t\t\t\tcheckTypeMulti(funcName, argIndex, arg, expectType, nilOk)\n\t\t\telse\n\t\t\t\tcheckType(funcName, argIndex, arg, expectType, nilOk)\n\t\t\tend\n\t\tend\n\tend\nend\n\n--[[\n------------------------------------------------------------------------------------\n\
+      -- isPositiveInteger\n--\n-- This function returns true if the given value is a positive integer, and false\n-- if not. Although it doesn't operate on tables, it is included here as it is\n-- useful for determining whether a given table key is in the array\
+      \ part or the\n-- hash part of a table.\n------------------------------------------------------------------------------------\n--]]\nfunction export.isPositiveInteger(v)\n\tif type(v) == 'number' and v &gt;= 1 and floor(v) == v and v &lt; infinity then\n\
+      \t\treturn true\n\telse\n\t\treturn false\n\tend\nend\n\n--[[\n------------------------------------------------------------------------------------\n-- isNan\n--\n-- This function returns true if the given number is a NaN value, and false\n-- if not. Although\
+      \ it doesn't operate on tables, it is included here as it is\n-- useful for determining whether a value can be a valid table key. Lua will\n-- generate an error if a NaN is used as a table key.\n------------------------------------------------------------------------------------\n\
+      --]]\nfunction export.isNan(v)\n\tif type(v) == 'number' and tostring(v) == '-nan' then\n\t\treturn true\n\telse\n\t\treturn false\n\tend\nend\n\n--[[\n------------------------------------------------------------------------------------\n-- shallowClone\n\
+      --\n-- This returns a clone of a table. The value returned is a new table, but all\n-- subtables and functions are shared. Metamethods are respected, but the returned\n-- table will have no metatable of its own.\n------------------------------------------------------------------------------------\n\
+      --]]\nfunction export.shallowClone(t)\n\tlocal ret = {}\n\tfor k, v in pairs(t) do\n\t\tret[k] = v\n\tend\n\treturn ret\nend\n\n--[[\nShallow copy\n]]\nfunction export.shallowcopy(orig)\n\tlocal orig_type = type(orig)\n\tlocal copy\n\tif orig_type == 'table'\
+      \ then\n\t\tcopy = {}\n\t\tfor orig_key, orig_value in pairs(orig) do\n\t\t\tcopy[orig_key] = orig_value\n\t\tend\n\telse -- number, string, boolean, etc\n\t\tcopy = orig\n\tend\n\treturn copy\nend\n\n--[[\n\tRecursive deep copy function\n\tEquivalent\
+      \ to mw.clone?\n]]\nlocal function deepcopy(orig, includeMetatable, already_seen)\n\t-- Stores copies of tables indexed by the original table.\n\talready_seen = already_seen or {}\n\t\n\tlocal copy = already_seen[orig]\n\tif copy ~= nil then\n\t\treturn\
+      \ copy\n\tend\n\t\n\tif type(orig) == 'table' then\n\t\tcopy = {}\n\t\tfor orig_key, orig_value in pairs(orig) do\n\t\t\tcopy[deepcopy(orig_key, includeMetatable, already_seen)] = deepcopy(orig_value, includeMetatable, already_seen)\n\t\tend\n\t\talready_seen[orig]\
+      \ = copy\n\t\t\n\t\tif includeMetatable then\n\t\t\tlocal mt = getmetatable(orig)\n\t\t\tif mt ~= nil then\n\t\t\t\tlocal mt_copy = deepcopy(mt, includeMetatable, already_seen)\n\t\t\t\tsetmetatable(copy, mt_copy)\n\t\t\t\talready_seen[mt] = mt_copy\n\t\
+      \t\tend\n\t\tend\n\telse -- number, string, boolean, etc\n\t\tcopy = orig\n\tend\n\treturn copy\nend\n\nfunction export.deepcopy(orig, noMetatable, already_seen)\n\tcheckType(&quot;deepcopy&quot;, 3, already_seen, &quot;table&quot;, true)\n\t\n\treturn\
+      \ deepcopy(orig, not noMetatable, already_seen)\nend\n\n--[[\n------------------------------------------------------------------------------------\n-- removeDuplicates\n--\n-- This removes duplicate values from an array. Non-positive-integer keys are\n\
+      -- ignored. The earliest value is kept, and all subsequent duplicate values are\n-- removed, but otherwise the array order is unchanged.\n------------------------------------------------------------------------------------\n--]]\nfunction export.removeDuplicates(t)\n\
+      \tcheckType('removeDuplicates', 1, t, 'table')\n\tlocal isNan = export.isNan\n\tlocal ret, exists = {}, {}\n\tlocal index = 1\n\tfor _, v in ipairs(t) do\n\t\tif isNan(v) then\n\t\t\t-- NaNs can't be table keys, and they are also unique, so we don't need\
+      \ to check existence.\n\t\t\tret[index] = v\n\t\t\tindex = index + 1\n\t\telse\n\t\t\tif not exists[v] then\n\t\t\t\tret[index] = v\n\t\t\t\tindex = index + 1\n\t\t\t\texists[v] = true\n\t\t\tend\n\t\tend\n\tend\n\treturn ret\nend\n\n--[[\n------------------------------------------------------------------------------------\n\
+      -- numKeys\n--\n-- This takes a table and returns an array containing the numbers of any numerical\n-- keys that have non-nil values, sorted in numerical order.\n------------------------------------------------------------------------------------\n--]]\n\
+      function export.numKeys(t)\n\tcheckType('numKeys', 1, t, 'table')\n\tlocal isPositiveInteger = export.isPositiveInteger\n\tlocal nums = {}\n\tlocal index = 1\n\tfor k, _ in pairs(t) do\n\t\tif isPositiveInteger(k) then\n\t\t\tnums[index] = k\n\t\t\tindex\
+      \ = index + 1\n\t\tend\n\tend\n\ttable.sort(nums)\n\treturn nums\nend\n\n--[[\n------------------------------------------------------------------------------------\n-- affixNums\n--\n-- This takes a table and returns an array containing the numbers of\
+      \ keys with the\n-- specified prefix and suffix.\n-- affixNums({a1 = 'foo', a3 = 'bar', a6 = 'baz'}, &quot;a&quot;)\n--\t\t↓\n-- {1, 3, 6}.\n------------------------------------------------------------------------------------\n--]]\nfunction export.affixNums(t,\
+      \ prefix, suffix)\n\tlocal check = _check('affixNums')\n\tcheck(1, t, 'table')\n\tcheck(2, prefix, 'string', true)\n\tcheck(3, suffix, 'string', true)\n\t\n\tlocal function cleanPattern(s)\n\t\t-- Cleans a pattern so that the magic characters ()%.[]*+-?^$\
+      \ are interpreted literally.\n\t\ts = s:gsub('([%(%)%%%.%[%]%*%+%-%?%^%$])', '%%%1')\n\t\treturn s\n\tend\n\t\n\tprefix = prefix or ''\n\tsuffix = suffix or ''\n\tprefix = cleanPattern(prefix)\n\tsuffix = cleanPattern(suffix)\n\tlocal pattern = '^' ..\
+      \ prefix .. '([1-9]%d*)' .. suffix .. '$'\n\t\n\tlocal nums = {}\n\tlocal index = 1\n\tfor k, _ in pairs(t) do\n\t\tif type(k) == 'string' then\n\t\t\tlocal num = mw.ustring.match(k, pattern)\n\t\t\tif num then\n\t\t\t\tnums[index] = tonumber(num)\n\t\t\
+      \t\tindex = index + 1\n\t\t\tend\n\t\tend\n\tend\n\ttable.sort(nums)\n\treturn nums\nend\n\n--[[\n------------------------------------------------------------------------------------\n-- numData\n--\n-- Given a table with keys like (&quot;foo1&quot;, &quot;bar1&quot;,\
+      \ &quot;foo2&quot;, &quot;baz2&quot;), returns a table\n-- of subtables in the format\n-- { [1] = {foo = 'text', bar = 'text'}, [2] = {foo = 'text', baz = 'text'} }\n-- Keys that don't end with an integer are stored in a subtable named &quot;other&quot;.\n\
+      -- The compress option compresses the table so that it can be iterated over with\n-- ipairs.\n------------------------------------------------------------------------------------\n--]]\nfunction export.numData(t, compress)\n\tlocal check = _check('numData')\n\
+      \tcheck(1, t, 'table')\n\tcheck(2, compress, 'boolean', true)\n\t\n\tlocal ret = {}\n\tfor k, v in pairs(t) do\n\t\tlocal prefix, num = tostring(k):match('^([^0-9]*)([1-9][0-9]*)$')\n\t\tif num then\n\t\t\tnum = tonumber(num)\n\t\t\tlocal subtable = ret[num]\
+      \ or {}\n\t\t\tif prefix == '' then\n\t\t\t\t-- Positional parameters match the blank string; put them at the start of the subtable instead.\n\t\t\t\tprefix = 1\n\t\t\tend\n\t\t\tsubtable[prefix] = v\n\t\t\tret[num] = subtable\n\t\telse\n\t\t\tlocal subtable\
+      \ = ret.other or {}\n\t\t\tsubtable[k] = v\n\t\t\tret.other = subtable\n\t\tend\n\tend\n\tif compress then\n\t\tlocal other = ret.other\n\t\tret = export.compressSparseArray(ret)\n\t\tret.other = other\n\tend\n\treturn ret\nend\n\n--[[\n------------------------------------------------------------------------------------\n\
+      -- compressSparseArray\n--\n-- This takes an array with one or more nil values, and removes the nil values\n-- while preserving the order, so that the array can be safely traversed with\n-- ipairs.\n------------------------------------------------------------------------------------\n\
+      --]]\nfunction export.compressSparseArray(t)\n\tcheckType('compressSparseArray', 1, t, 'table')\n\tlocal ret = {}\n\tlocal index = 1\n\tlocal nums = export.numKeys(t)\n\tfor _, num in ipairs(nums) do\n\t\tret[index] = t[num]\n\t\tindex = index + 1\n\t\
+      end\n\treturn ret\nend\n\n--[[\n------------------------------------------------------------------------------------\n-- sparseIpairs\n--\n-- This is an iterator for sparse arrays. It can be used like ipairs, but can\n-- handle nil values.\n------------------------------------------------------------------------------------\n\
+      --]]\nfunction export.sparseIpairs(t)\n\tcheckType('sparseIpairs', 1, t, 'table')\n\tlocal nums = export.numKeys(t)\n\tlocal i = 0\n\treturn function()\n\t\ti = i + 1\n\t\tlocal key = nums[i]\n\t\tif key then\n\t\t\treturn key, t[key]\n\t\telse\n\t\t\t\
+      return nil, nil\n\t\tend\n\tend\nend\n\n--[[\n------------------------------------------------------------------------------------\n-- size\n--\n-- This returns the size of a key/value pair table. It will also work on arrays,\n-- but for arrays it is more\
+      \ efficient to use the # operator.\n------------------------------------------------------------------------------------\n--]]\nfunction export.size(t)\n\tcheckType('size', 1, t, 'table')\n\tlocal i = 0\n\tfor _ in pairs(t) do\n\t\ti = i + 1\n\tend\n\t\
+      return i\nend\n\n--[[\n-- This returns the length of a table, or the first integer key n counting from\n-- 1 such that t[n + 1] is nil. It is similar to the operator #, but may return\n-- a different value when there are gaps in the array portion of the\
+      \ table.\n-- Intended to be used on data loaded with mw.loadData. For other tables, use #.\n--]]\nfunction export.length(t)\n\tlocal i = 0\n\trepeat\n\t\ti = i + 1\n\tuntil t[i] == nil\n\treturn i - 1\nend\n\n--[[\nTakes table and a value to be found.\n\
+      If the value is in the array portion of the table, return true.\nIf the value is in the hashmap or not in the table, return false.\n]]\nfunction export.contains(list, x)\n\tfor _, v in ipairs(list) do\n\t\tif v == x then return true end\n\tend\n\treturn\
+      \ false\nend\n\n--[[\n\tFinds key for specified value in a given table.\n\tRoughly equivalent to reversing the key-value pairs in the table –\n\t\treversed_table = { [value1] = key1, [value2] = key2, ... }\n\t– and then returning reversed_table[valueToFind].\n\
+      \t\n\tThe value can only be a string or a number\n\t(not nil, a boolean, a table, or a function).\n\t\n\tOnly reliable if there is just one key with the specified value.\n\tOtherwise, the function returns the first key found,\n\tand the output is unpredictable.\n\
+      ]]\nfunction export.keyFor(t, valueToFind)\n\tlocal check = _check('keyFor')\n\tcheck(1, t, 'table')\n\tcheck(2, valueToFind, { 'string', 'number' })\n\t\n\tfor key, value in pairs(t) do\n\t\tif value == valueToFind then\n\t\t\treturn key\n\t\tend\n\t\
+      end\n\t\n\treturn nil\nend\n\n--[[\n\tThe default sorting function used in export.keysToList if no keySort\n\tis defined.\n]]\nlocal function defaultKeySort(key1, key2)\n\t-- &quot;number&quot; &lt; &quot;string&quot;, so numbers will be sorted before\
+      \ strings.\n\tlocal type1, type2 = type(key1), type(key2)\n\tif type1 ~= type2 then\n\t\treturn type1 &lt; type2\n\telse\n\t\treturn key1 &lt; key2\n\tend\nend\n\n--[[\n\tReturns a list of the keys in a table, sorted using either the default\n\ttable.sort\
+      \ function or a custom keySort function.\n\tIf there are only numerical keys, numKeys is probably more efficient.\n]]\nfunction export.keysToList(t, keySort, checked)\n\tif not checked then\n\t\tlocal check = _check('keysToList')\n\t\tcheck(1, t, 'table')\n\
+      \t\tcheck(2, keySort, 'function', true)\n\tend\n\t\n\tlocal list = {}\n\tlocal index = 1\n\tfor key, _ in pairs(t) do\n\t\tlist[index] = key\n\t\tindex = index + 1\n\tend\n\t\n\t-- Place numbers before strings, otherwise sort using &lt;.\n\tif not keySort\
+      \ then\n\t\tkeySort = defaultKeySort\n\tend\n\t\n\ttable.sort(list, keySort)\n\t\n\treturn list\nend\n\n--[[\n\tIterates through a table, with the keys sorted using the keysToList function.\n\tIf there are only numerical keys, sparseIpairs is probably\
+      \ more efficient.\n]]\nfunction export.sortedPairs(t, keySort)\n\tlocal check = _check('keysToList')\n\tcheck(1, t, 'table')\n\tcheck(2, keySort, 'function', true)\n\t\n\tlocal list = export.keysToList(t, keySort, true)\n\t\n\tlocal i = 0\n\treturn function()\n\
+      \t\ti = i + 1\n\t\tlocal key = list[i]\n\t\tif key ~= nil then\n\t\t\treturn key, t[key]\n\t\telse\n\t\t\treturn nil, nil\n\t\tend\n\tend\nend\n\nfunction export.reverseIpairs(list)\n\tcheckType('reverse_ipairs', 1, list, 'table')\n\t\n\tlocal i = #list\
+      \ + 1\n\treturn function()\n\t\ti = i - 1\n\t\tif list[i] ~= nil then\n\t\t\treturn i, list[i]\n\t\telse\n\t\t\treturn nil, nil\n\t\tend\n\tend\nend\n\n--[=[\n\tJoins an array with serial comma and serial &quot;and&quot;. An improvement on\n\tmw.text.listToText,\
+      \ which doesn't properly handle serial commas.\n\t\n\tOptions:\n\t\t- italicizeConj\n\t\t\tItalicize conjunction: for [[Module:Template:also]]\n\t\t- dontTag\n\t\t\tDon't tag the serial comma and serial &quot;and&quot;. For error messages, in\n\t\t\twhich\
+      \ HTML cannot be used.\n]=]\nfunction export.serialCommaJoin(seq, options)\n\tlocal check = _check(&quot;serialCommaJoin&quot;, &quot;table&quot;)\n\tcheck(1, seq)\n\tcheck(2, options, true)\n\t\n\tlocal length = #seq\n\t\n\tif not options then\n\t\toptions\
+      \ = {}\n\tend\n\t\n\tlocal conj\n\tif length &gt; 1 then\n\t\tconj = &quot;and&quot;\n\t\tif options.italicizeConj then\n\t\t\tconj = &quot;''&quot; .. conj .. &quot;''&quot;\n\t\tend\n\tend\n\t\n\tif length == 0 then\n\t\treturn &quot;&quot;\n\telseif\
+      \ length == 1 then\n\t\treturn seq[1] -- nothing to join\n\telseif length == 2 then\n\t\treturn seq[1] .. &quot; &quot; .. conj .. &quot; &quot; .. seq[2]\n\telse\n\t\tlocal comma = options.dontTag and &quot;,&quot; or '&lt;span class=&quot;serial-comma&quot;&gt;,&lt;/span&gt;'\n\
+      \t\tconj = options.dontTag and ' ' .. conj .. &quot; &quot; or '&lt;span class=&quot;serial-and&quot;&gt; ' .. conj .. '&lt;/span&gt; '\n\t\treturn table.concat(seq, &quot;, &quot;, 1, length - 1) ..\n\t\t\t\tcomma .. conj .. seq[length]\n\tend\nend\n\n\
+      --[[\n\tConcatenates all values in the table that are indexed by a number, in order.\n\tsparseConcat{ a, nil, c, d }  =&gt;  &quot;acd&quot;\n\tsparseConcat{ nil, b, c, d }  =&gt;  &quot;bcd&quot;\n]]\nfunction export.sparseConcat(t, sep, i, j)\n\tlocal\
+      \ list = {}\n\t\n\tlocal list_i = 0\n\tfor _, v in export.sparseIpairs(t) do\n\t\tlist_i = list_i + 1\n\t\tlist[list_i] = v\n\tend\n\t\n\treturn table.concat(list, sep, i, j)\nend\n\n--[[\n\tValues of numberic keys in array portion of table are reversed:\n\
+      \t{ &quot;a&quot;, &quot;b&quot;, &quot;c&quot; } -&gt; { &quot;c&quot;, &quot;b&quot;, &quot;a&quot; }\n--]]\nfunction export.reverse(t)\n\tcheckType(&quot;reverse&quot;, 1, t, &quot;table&quot;)\n\t\n\tlocal new_t = {}\n\tlocal new_t_i = 1\n\tfor i =\
+      \ #t, 1, -1 do\n\t\tnew_t[new_t_i] = t[i]\n\t\tnew_t_i = new_t_i + 1\n\tend\n\treturn new_t\nend\n\nfunction export.reverseConcat(t, sep, i, j)\n\treturn table.concat(export.reverse(t), sep, i, j)\nend\n\n-- { &quot;a&quot;, &quot;b&quot;, &quot;c&quot;\
+      \ } -&gt; { a = 1, b = 2, c = 3 }\nfunction export.invert(array)\n\tcheckType(&quot;invert&quot;, 1, array, &quot;table&quot;)\n\t\n\tlocal map = {}\n\tfor i, v in ipairs(array) do\n\t\tmap[v] = i\n\tend\n\t\n\treturn map\nend\n\n--[[\n\t{ &quot;a&quot;,\
+      \ &quot;b&quot;, &quot;c&quot; } -&gt; { [&quot;a&quot;] = true, [&quot;b&quot;] = true, [&quot;c&quot;] = true }\n--]]\nfunction export.listToSet(t)\n\tcheckType(&quot;listToSet&quot;, 1, t, &quot;table&quot;)\n\t\n\tlocal set = {}\n\tfor _, item in ipairs(t)\
+      \ do\n\t\tset[item] = true\n\tend\n\treturn set\nend\n\n--[[\n\tReturns true if all keys in the table are consecutive integers starting at 1.\n--]]\nfunction export.isArray(t)\n\tcheckType(&quot;isArray&quot;, 1, t, &quot;table&quot;)\n\t\n\tlocal i =\
+      \ 0\n\tfor _ in pairs(t) do\n\t\ti = i + 1\n\t\tif t[i] == nil then\n\t\t\treturn false\n\t\tend\n\tend\n\treturn true\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
+- recorded: 2018-01-25T19:04:01.365Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Aquote-meta&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: GeoIP=DE:BW:Schonau_im_Schwarzwald:47.78:7.90:v4; WMF-Last-Access=25-Jan-2018; WMF-Last-Access-Global=25-Jan-2018
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Backend-Timing: D=29072 t=1516907041263354
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Disposition: inline; filename="api-result.xml"
+      Content-Type: text/xml; charset=utf-8
+      Date: Thu, 25 Jan 2018 19:04:01 GMT
+      P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
+      Server: mw1342.eqiad.wmnet
+      Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
+      X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=25-Jan-2018;WMF-Last-Access-Global=25-Jan-2018;https=1
+      X-Cache: cp1068 pass, cp3030 pass, cp3042 pass
+      X-Cache-Status: pass
+      X-Client-IP: 217.233.2.240
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.18.6-dev
+      X-Varnish: 175802006, 925005906, 275417109
+    body: |-
+      <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="761997" pageid="761997" ns="10" title="Template:quote-meta"><revisions><rev user="Sgconlaw" timestamp="2018-01-22T11:17:48Z" comment="OK, let&#039;s try this" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;noinclude&gt;# {{n-g|A word that means something}}.
+      &lt;/noinclude&gt;{{{indent1|#*}}} &lt;div class=&quot;citation-whole&quot;&gt;&lt;span class=&quot;cited-source&quot;&gt;{{{1|{{{source&lt;includeonly&gt;|&lt;/includeonly&gt;}}}}}}&lt;/span&gt;{{#if:{{{2|{{{passage&lt;includeonly&gt;|&lt;/includeonly&gt;}}}}}}{{{3|{{{translation|}}}}}}{{{4|{{{transliteration|}}}}}}
+        |&lt;dl&gt;&lt;dd&gt;{{#if:{{{2|{{{passage&lt;includeonly&gt;|&lt;/includeonly&gt;}}}}}}
+            |&lt;span class=&quot;cited-passage&quot;&gt;{{{2|{{{passage}}}}}}{{#ifeq:{{{brackets|}}}|on
+                | {{#if:{{{translation|}}}{{{3|}}}{{{transliteration|}}}{{{4|}}}
+                    |&lt;!--display nothing--&gt;
+                    |&amp;#93;&lt;!--right bracket--&gt;
+                  }}
+              }}&lt;/span&gt;
+          }}{{#if:{{{3|{{{translation&lt;includeonly&gt;|&lt;/includeonly&gt;}}}}}}{{{4|{{{transliteration}}}}}}
+            |&lt;dl&gt;{{#if:{{{4|{{{transliteration&lt;includeonly&gt;|&lt;/includeonly&gt;}}}}}}
+                   |&lt;dd&gt;{{{4|{{{transliteration}}}}}}{{#ifeq:{{{brackets|}}}|on
+                       | {{#if:{{{translation|}}}{{{3|}}}
+                           |&lt;!--display nothing--&gt;
+                           |&amp;#93;
+                         }}
+                     }}&lt;/dd&gt;
+              }}{{#if:{{{3|{{{translation&lt;includeonly&gt;|&lt;/includeonly&gt;}}}}}}
+                       |&lt;dd&gt;{{{3|{{{translation}}}}}}{{#ifeq:{{{brackets|}}}|on|&amp;#93;}}&lt;/dd&gt;
+                     }}&lt;/dl&gt;
+                 }}&lt;/dd&gt;&lt;/dl&gt;
+      }}&lt;/div&gt;&lt;noinclude&gt;{{documentation}}&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
+- recorded: 2018-01-26T00:19:47.443Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3Anum&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: 26 Feb 2018 12:00:00 GMT=; GeoIP=DE:BW:Schonau_im_Schwarzwald:47.78:7.90:v4
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Backend-Timing: D=35999 t=1516925987314452
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Disposition: inline; filename="api-result.xml"
+      Content-Length: '528'
+      Content-Type: text/xml; charset=utf-8
+      Date: Fri, 26 Jan 2018 00:19:47 GMT
+      P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
+      Server: mw1225.eqiad.wmnet
+      Set-Cookie: WMF-Last-Access=26-Jan-2018;Path=/;HttpOnly;secure;Expires=Tue, 27 Feb 2018 00:00:00 GMT, WMF-Last-Access-Global=26-Jan-2018;Path=/;Domain=.wiktionary.org;HttpOnly;secure;Expires=Tue, 27 Feb 2018 00:00:00 GMT
+      Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+      Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
+      X-Analytics: ns=-1;special=Badtitle;https=1
+      X-Cache: cp1055 pass, cp3041 pass, cp3042 pass
+      X-Cache-Status: pass
+      X-Client-IP: 217.233.2.240
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.18.6-dev
+      X-Varnish: 942405559, 201426522, 616012033
+    body: <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="6087681" pageid="6087681" ns="10" title="Template:num"><revisions><rev user="JohnC5" timestamp="2017-04-12T15:33:50Z" comment="Created page with &quot;{{#invoke:number-utilities|is_number}}&lt;noinclude&gt;{{documentation}}&lt;/noinclude&gt;&quot;" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{#invoke:number-utilities|is_number}}&lt;noinclude&gt;{{documentation}}&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
+- recorded: 2018-01-26T00:19:47.678Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Anumber-utilities&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: 26 Feb 2018 12:00:00 GMT=; GeoIP=DE:BW:Schonau_im_Schwarzwald:47.78:7.90:v4; WMF-Last-Access=26-Jan-2018; WMF-Last-Access-Global=26-Jan-2018
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Backend-Timing: D=48416 t=1516925987543744
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Disposition: inline; filename="api-result.xml"
+      Content-Length: '984'
+      Content-Type: text/xml; charset=utf-8
+      Date: Fri, 26 Jan 2018 00:19:47 GMT
+      P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
+      Server: mw1234.eqiad.wmnet
+      Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+      Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
+      X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=26-Jan-2018;WMF-Last-Access-Global=26-Jan-2018;https=1
+      X-Cache: cp1067 pass, cp3033 pass, cp3042 pass
+      X-Cache-Status: pass
+      X-Client-IP: 217.233.2.240
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.18.6-dev
+      X-Varnish: 303159840, 605965083, 615334550
+    body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"6087680\" pageid=\"6087680\" ns=\"828\" title=\"Module:number-utilities\"><revisions><rev user=\"JohnC5\" timestamp=\"2017-04-12T15:32:22Z\" comment=\"Created page with &quot;local\
+      \ export = {}  function export.get_number(text) &#9;if text == &#039;&#039; or text == nil then return nil end &#9; &#9;if type(text) == &#039;string&#039; then &#9;&#9;text = mw.ustring.gsub(text, &quot;,&quot;, &quot;&quot;)...&quot;\" contentformat=\"\
+      text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">local export = {}\n\nfunction export.get_number(text)\n\tif text == '' or text == nil then return nil end\n\t\n\tif type(text) == 'string' then\n\t\ttext = mw.ustring.gsub(text, &quot;,&quot;,\
+      \ &quot;&quot;)\n\tend\n\t\n\tlocal j = tonumber(text)\n\tif j ~= nil then\n\t\treturn j\n\telse\n\t\treturn nil\n\tend\nend\n\nfunction export.is_number(frame)\n\treturn export.get_number(frame:getParent().args[1])\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
+- recorded: 2018-01-26T00:19:47.883Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3AR2A&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: 26 Feb 2018 12:00:00 GMT=; GeoIP=DE:BW:Schonau_im_Schwarzwald:47.78:7.90:v4; WMF-Last-Access=26-Jan-2018; WMF-Last-Access-Global=26-Jan-2018
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Backend-Timing: D=47832 t=1516925987751974
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Disposition: inline; filename="api-result.xml"
+      Content-Length: '414'
+      Content-Type: text/xml; charset=utf-8
+      Date: Fri, 26 Jan 2018 00:19:47 GMT
+      P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
+      Server: mw1312.eqiad.wmnet
+      Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+      Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
+      X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=26-Jan-2018;WMF-Last-Access-Global=26-Jan-2018;https=1
+      X-Cache: cp1067 pass, cp3030 pass, cp3042 pass
+      X-Cache-Status: pass
+      X-Client-IP: 217.233.2.240
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.18.6-dev
+      X-Varnish: 294772150, 1040141398, 566770655
+    body: <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="6086678" pageid="6086678" ns="10" title="Template:R2A"><revisions><rev user="JohnC5" timestamp="2017-04-12T00:48:34Z" comment="" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{#invoke:roman numerals|roman_to_arabic_t}}&lt;noinclude&gt;{{documentation}}&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
+- recorded: 2018-01-26T00:19:48.098Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Aroman+numerals&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: 26 Feb 2018 12:00:00 GMT=; GeoIP=DE:BW:Schonau_im_Schwarzwald:47.78:7.90:v4; WMF-Last-Access=26-Jan-2018; WMF-Last-Access-Global=26-Jan-2018
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Backend-Timing: D=40873 t=1516925987971803
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Disposition: inline; filename="api-result.xml"
+      Content-Length: '3143'
+      Content-Type: text/xml; charset=utf-8
+      Date: Fri, 26 Jan 2018 00:19:48 GMT
+      P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
+      Server: mw1316.eqiad.wmnet
+      Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+      Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
+      X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=26-Jan-2018;WMF-Last-Access-Global=26-Jan-2018;https=1
+      X-Cache: cp1055 pass, cp3033 pass, cp3042 pass
+      X-Cache-Status: pass
+      X-Client-IP: 217.233.2.240
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.18.6-dev
+      X-Varnish: 948734005, 579582247, 582489881
+    body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"6086616\" pageid=\"6086616\" ns=\"828\" title=\"Module:roman numerals\"><revisions><rev user=\"Erutuon\" timestamp=\"2017-12-11T23:04:42Z\" comment=\"\" contentformat=\"text/plain\"\
+      \ contentmodel=\"Scribunto\" xml:space=\"preserve\">local roman_dict = {M = 1000, D = 500, C = 100, L = 50, X = 10, V = 5, I = 1}\nlocal repeatable = {M = true, C = true, X = true, I = true}\nlocal roman_table =  {'M',  'CM', 'D', 'CD', 'C', 'XC', 'L',\
+      \ 'XL', 'X', 'IX', 'V', 'IV', 'I'}\nlocal arabic_table = {1000, 900,  500, 400,  100, 90,   50,  40,   10,  9,    5,   4,    1  }\n\nlocal export = {}\n\nlocal function nil_or_error(msg, no_error)\n\tif no_error then\n\t\treturn nil\n\telse\n\t\terror(msg,\
+      \ 2)\n\tend\nend\n\nfunction export.arabic_to_roman(arabic, no_error, to_lower)\n\tif arabic == '' or arabic == nil then return nil end\n\t\n\tarabic = mw.ustring.gsub(arabic, &quot;,&quot;, &quot;&quot;)\n\t\n\tlocal j = tonumber(arabic)\n\t\n\tif j ==\
+      \ nil then return nil end\n\t\n\tif j &lt;= 0 or j &gt; 3999 then\n\t\treturn nil_or_error(&quot;Out of valid range&quot;, no_error)\n\tend\n\n\tlocal result = {}\n\tlocal a, count\n\t\n\tfor i, r in ipairs(roman_table) do\n\t\ta = arabic_table[i]\n\t\t\
+      count = math.floor(j / a)\n\t\ttable.insert(result, string.rep(r, count))\n\t\tj = j % a\n\t\tif j &lt;= 0 then break end\n\tend\n\t\n\tlocal out = table.concat(result)\n\tif to_lower then out = mw.ustring.lower(out) end\n\t\n\treturn out\nend\n\nfunction\
+      \ export.roman_to_arabic(roman, no_error)\n\tif roman == '' or roman == nil then\n\t\treturn nil\n\telse\n\t\troman = mw.ustring.upper(roman)\n\tend\n\t\n\tif not mw.ustring.match(roman, &quot;^[MDCLXVI]+$&quot;) then\n\t\treturn nil_or_error(&quot;Illegal\
+      \ Roman numeral format&quot;, no_error)\n\tend\n\t\n\tlocal result = 0\n\t\n\tlocal i = 1\n\tlocal s1, s2, c2\n\tlocal length = #roman\n\t\n\twhile i &lt;= length do\n\t\ts1 = roman_dict[roman:sub(i, i)]\n\t\tif s1 == nil then\n\t\t\treturn nil_or_error(&quot;Unrecognized\
+      \ character in input&quot;, no_error)\n\t\telseif (i + 1) &lt;= length then\n\t\t\tc2 = roman:sub(i + 1, i + 1)\n\t\t\ts2 = roman_dict[c2]\n\t\t\tif s2 == nil then \n\t\t\t\treturn nil_or_error(&quot;Unrecognized character in input&quot;, no_error)\n\t\
+      \t\telseif s1 &gt;= s2 then\n\t\t\t\tif s1 == s2 and not repeatable[c2] then\n\t\t\t\t\treturn nil_or_error(&quot;Illegal Roman numeral format: “&quot; .. c2 .. &quot;” may not appear adjacent to itself&quot;, no_error)\n\t\t\t\tend\n\t\t\t\tresult = result\
+      \ + s1\n\t\t\telse\n\t\t\t\tresult = result + s2 - s1\n\t\t\t\ti = i + 1\n\t\t\tend\n\t\telse\n\t\t\tresult = result + s1\n\t\tend\n\t\ti = i + 1\n\tend\n\t\n\treturn result\n\t\nend\n\nfunction export.roman_to_arabic_t(frame)\n\tlocal params = {\n\t\t\
+      [1] = {},\n\t\t['no_error'] = {type = 'boolean'},\n\t}\n\t\n\tlocal args = require(&quot;Module:parameters&quot;).process(frame:getParent().args, params)\n\t\n\treturn export.roman_to_arabic(args[1], args.no_error)\nend\n\nfunction export.arabic_to_roman_t(frame)\n\
+      \tlocal params = {\n\t\t[1] = {},\n\t\t['lower'] = {type = 'boolean'},\n\t\t['no_error'] = {type = 'boolean'},\n\t}\n\t\n\tlocal args = require(&quot;Module:parameters&quot;).process(frame:getParent().args, params)\n\t\n\treturn export.arabic_to_roman(args[1],\
+      \ args.no_error, args.lower)\nend\n\nreturn export</rev></revisions></page></pages></query></api>"
+- recorded: 2018-01-26T00:19:48.325Z
+  request:
+    method: GET
+    uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Module%3Aitalics&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
+    headers:
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Cookie: 26 Feb 2018 12:00:00 GMT=; GeoIP=DE:BW:Schonau_im_Schwarzwald:47.78:7.90:v4; WMF-Last-Access=26-Jan-2018; WMF-Last-Access-Global=26-Jan-2018
+      Cookie2: $Version=1
+      Host: en.wiktionary.org
+      User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
+  response:
+    status: 200
+    headers:
+      Accept-Ranges: bytes
+      Age: '0'
+      Backend-Timing: D=32573 t=1516925988205026
+      Cache-control: private, must-revalidate, max-age=0
+      Connection: keep-alive
+      Content-Disposition: inline; filename="api-result.xml"
+      Content-Length: '3487'
+      Content-Type: text/xml; charset=utf-8
+      Date: Fri, 26 Jan 2018 00:19:48 GMT
+      P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
+      Server: mw1312.eqiad.wmnet
+      Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+      Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
+      X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=26-Jan-2018;WMF-Last-Access-Global=26-Jan-2018;https=1
+      X-Cache: cp1066 pass, cp3030 pass, cp3042 pass
+      X-Cache-Status: pass
+      X-Client-IP: 217.233.2.240
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Powered-By: HHVM/3.18.6-dev
+      X-Varnish: 957624095, 1040141405, 603843077
+    body: "<?xml version=\"1.0\"?><api batchcomplete=\"\"><query><pages><page _idx=\"5880637\" pageid=\"5880637\" ns=\"828\" title=\"Module:italics\"><revisions><rev user=\"Erutuon\" timestamp=\"2018-01-19T04:23:08Z\" comment=\"unitalicize ellipses\" contentformat=\"\
+      text/plain\" contentmodel=\"Scribunto\" xml:space=\"preserve\">local export = {}\nlocal find = mw.ustring.find\nlocal match = mw.ustring.match\nlocal gsub = mw.ustring.gsub\n\nfunction export.i(text)\n\tif text == &quot;&quot; or text == nil then\n\t\t\
+      return nil\n\tend\n\t\n\tif type(text) == &quot;table&quot; and text.args then\n\t\ttext = text.args[1]\n\tend\n\t\n\t-- Remove whitespace from beginning and end of text.\n\ttext = mw.text.trim(text)\n\t\n\t-- Find parenthesized text.\n\tlocal parenthesis\
+      \ = &quot;&quot;\n\tif find(text, &quot;%b()$&quot;) then\n\t\ttext, parenthesis = match(text, &quot;^(.*)(%b())$&quot;)\n\t\tif text == &quot;&quot; or text == nil then\n\t\t\terror(&quot;Malformed page name: &quot; .. text)\n\t\tend\n\tend\n\t\n\ttext\
+      \ = &quot;''&quot; .. text .. &quot;''&quot;\n\t\n\t--[[ Adds italics toggle ('') around the whitespace\n\t\tthat surrounds various things that aren't supposed to be italicized:\n\t\tfor instance, Fragaria × ananassa becomes ''Fragaria'' × ''ananassa''.\n\
+      \t\t(The hybridization symbol × isn't supposed to be italicized.) ]]\n\tlocal notItalicized = {\n\t\t[&quot;subsp.&quot;] = true, [&quot;ssp.&quot;] = true, [&quot;var.&quot;] = true, [&quot;f.&quot;] = true,\n\t\t[&quot;sect.&quot;] = true, [&quot;subsect.&quot;]\
+      \ = true, [&quot;subg.&quot;] = true,\n\t}\n\tlocal hybrid = &quot;×&quot;\n\t\n\ttext = text:gsub(&quot;(%s*([a-z]+%.)%s*)&quot;,\n\t\tfunction(wholeMatch, abbreviation)\n\t\t\tif notItalicized[abbreviation] then\n\t\t\t\treturn &quot;''&quot; .. wholeMatch\
+      \ .. &quot;''&quot;\n\t\t\tend\n\t\tend)\n\t\n\ttext = text:gsub(&quot;%s*&quot; .. hybrid .. &quot;%s*&quot;, &quot;''%0''&quot;)\n\t\n\treturn text .. parenthesis\nend\n\nfunction export.unitalicize_brackets(text)\n\tif type(text) == &quot;table&quot;\
+      \ and text.args then\n\t\ttext = text.args[1]\n\tend\n\t\n\tif not text or text == &quot;&quot; then\n\t\treturn nil\n\tend\n\t\n\tlocal function unitalicize(text)\n\t\treturn '&lt;span style=&quot;font-style: normal;&quot;&gt;' .. text .. '&lt;/span&gt;'\n\
+      \tend\n\t\n\tlocal function process(text)\n\t\tif text:find(&quot;[[&quot;, 1, true) then\n\t\t\tif text:find(&quot;|&quot;) then\n\t\t\t\treturn text:gsub(\n\t\t\t\t\t&quot;|.-%]%]&quot;,\n\t\t\t\t\tfunction (piping)\n\t\t\t\t\t\treturn piping:gsub(&quot;%b[]&quot;,\
+      \ process)\n\t\t\t\t\tend)\n\t\t\tend\n\t\t\t-- do nothing with un-piped wikilinks\n\t\t--[=[\n\t\telseif text:find(&quot;[http&quot;, 1, true) then\n\t\t\treturn text:gsub(\n\t\t\t\t&quot;%[([^ ]+ )([^%]]+)%]&quot;,\n\t\t\t\tfunction (URL, link_text)\n\
+      \t\t\t\t\treturn &quot;[&quot; .. URL .. process(link_text) .. &quot;]&quot;\n\t\t\t\tend)\n\t\t--]=]\n\t\telseif text:find(&quot;^%[https?://&quot;) then\n\t\t\t\treturn text:gsub(\n\t\t\t\t\t&quot; .+&quot;,\n\t\t\t\t\tfunction (link_text)\n\t\t\t\t\t\
+      \treturn link_text:gsub(&quot;%b[]&quot;, process)\n\t\t\t\t\tend)\n\t\telse\n\t\t\tlocal inside_brackets = text:sub(2, -2)\n\t\t\tif inside_brackets == &quot;...&quot; or inside_brackets == &quot;…&quot; then\n\t\t\t\treturn unitalicize(text)\n\t\t\t\
+      else\n\t\t\t\treturn unitalicize(&quot;[&quot;) .. inside_brackets .. unitalicize(&quot;]&quot;)\n\t\t\tend\n\t\tend\n\tend\n\t\n\ttext = text:gsub(&quot;%b[]&quot;, process)\n\t\n\treturn text\nend\n\nfunction export.test(frame)\n\tlocal text = frame.args[1]\n\
+      \tlocal quote = require(&quot;Module:yesno&quot;)(frame.args.quote)\n\tif quote then\n\t\treturn export.unitalicize_brackets(text)\n\telse\n\t\treturn export.i(text)\n\tend\nend\n\nreturn export</rev></revisions></page></pages></query></api>"

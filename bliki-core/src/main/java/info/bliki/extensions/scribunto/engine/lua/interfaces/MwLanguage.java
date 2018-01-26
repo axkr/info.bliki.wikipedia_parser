@@ -1,7 +1,9 @@
 package info.bliki.extensions.scribunto.engine.lua.interfaces;
 
 import info.bliki.wiki.model.IWikiModel;
+import info.bliki.wiki.template.dates.PHPDate;
 import info.bliki.wiki.template.dates.StringToTime;
+import org.luaj.vm2.LuaError;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.OneArgFunction;
@@ -9,18 +11,24 @@ import org.luaj.vm2.lib.ThreeArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
 import org.luaj.vm2.lib.ZeroArgFunction;
 
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 import java.util.Date;
 import java.util.Locale;
 
 import static info.bliki.extensions.scribunto.engine.lua.ScribuntoLuaEngine.toLuaString;
 import static info.bliki.extensions.scribunto.engine.lua.interfaces.MwInterface.DefaultFunction.defaultFunction;
+import static java.time.ZoneOffset.UTC;
 
 public class MwLanguage implements MwInterface {
     private Languages languages = new Languages();
     private final IWikiModel wikiModel;
+    private final PHPDate phpDate;
 
     public MwLanguage(IWikiModel wikiModel) {
         this.wikiModel = wikiModel;
+        this.phpDate = new PHPDate();
     }
 
     @Override
@@ -88,19 +96,25 @@ public class MwLanguage implements MwInterface {
         };
     }
 
-    private LuaValue formatDate() {
+    protected LuaValue formatDate() {
         return new ThreeArgFunction() {
             @Override public LuaValue call(LuaValue lang, LuaValue format, LuaValue date) {
                 // https://php.net/manual/en/function.date.php
                 final String formatString = format.checkjstring();
                 final String dateString = date.checkjstring();
-                final Date time = dateString.isEmpty() ? wikiModel.getCurrentTimeStamp() : (Date) StringToTime.date(dateString);
-
-                if ("U".equals(formatString)) {
-                    // seconds since epoch
-                    return toLuaString(String.valueOf(time.getTime() / 1000));
+                final Date time;
+                if (dateString.isEmpty()) {
+                    time = wikiModel.getCurrentTimeStamp();
+                } else {
+                    Object parseDate = StringToTime.date(dateString);
+                    if (parseDate instanceof Date) {
+                        time = (Date) parseDate;
+                    } else {
+                        throw new LuaError("Could not parse date '"+dateString+"'");
+                    }
                 }
-                throw new UnsupportedOperationException();
+                return toLuaString(phpDate.format(formatString,
+                        ZonedDateTime.ofInstant(time.toInstant(), ZoneId.systemDefault())));
             }
         };
     }

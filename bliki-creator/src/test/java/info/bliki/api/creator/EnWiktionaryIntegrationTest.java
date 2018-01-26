@@ -102,6 +102,11 @@ public class EnWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
         result.assertContains("ʾaʿdād");
     }
 
+    @Betamax(tape = "quote", mode = READ_ONLY)
+    @Test public void testQuote() throws Exception {
+        testWiktionaryENAPI("User:Jberkel/bliki-testcases/quote");
+    }
+
     @Betamax(tape = "inh", mode = READ_ONLY)
     @Test public void testInh() throws Exception {
         final Result result = testWiktionaryENAPI("User:Jberkel/bliki-testcases/inh");
