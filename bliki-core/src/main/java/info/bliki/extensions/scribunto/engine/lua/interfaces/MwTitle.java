@@ -1,6 +1,7 @@
 package info.bliki.extensions.scribunto.engine.lua.interfaces;
 
 import info.bliki.wiki.model.IWikiModel;
+import org.luaj.vm2.LuaError;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.Varargs;
@@ -134,10 +135,18 @@ public class MwTitle implements MwInterface {
              */
             @Override
             public LuaValue call(LuaValue text_or_id, LuaValue defaultNamespace) {
-                return title(defaultNamespace,
+                if (text_or_id.isnumber()) {
+                    // no database lookup
+                    return new LuaTable();
+                } else if (text_or_id.isstring()) {
+                    return title(
+                        defaultNamespace,
                         text_or_id,
                         toLuaString("fragment"),
                         toLuaString("interwiki"));
+                } else {
+                    throw new LuaError("Invalid title: "+text_or_id);
+                }
             }
         };
     }
