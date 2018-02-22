@@ -222,6 +222,12 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
                 return new LuaTable();
             }
         });
+        wikibase.set("sitelink", new TwoArgFunction() {
+            @Override
+            public LuaValue call(LuaValue itemId, LuaValue siteId) {
+                return NIL;
+            }
+        });
         mw.set("wikibase", wikibase);
     }
 
