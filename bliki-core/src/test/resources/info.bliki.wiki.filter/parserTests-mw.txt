@@ -641,6 +641,16 @@ Numbered: <a rel="nofollow" class="external autonumber" href="http://example.com
 !!end
 
 !! test
+External links: external links has priority over wiki links
+!! input
+[[http://example.com]]
+word1 [[http://example.com]] word2
+!! result
+[<a class="external autonumber" href="http://example.com" rel="nofollow">[1]</a>]
+word1 [<a class="external autonumber" href="http://example.net" rel="nofollow">[2]</a>] word2
+!!end
+
+!! test
 External links: specified text
 !! input
 Specified text: [http://example.com link]
