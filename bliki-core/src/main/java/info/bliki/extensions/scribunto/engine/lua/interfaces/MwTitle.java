@@ -8,6 +8,7 @@ import org.luaj.vm2.Varargs;
 import org.luaj.vm2.lib.LibFunction;
 import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
+import org.luaj.vm2.lib.ZeroArgFunction;
 
 import static info.bliki.extensions.scribunto.engine.lua.ScribuntoLuaEngine.toLuaString;
 import static info.bliki.wiki.namespaces.INamespace.NamespaceCode.MAIN_NAMESPACE_KEY;
@@ -197,6 +198,12 @@ public class MwTitle implements MwInterface {
         table.set("fragment", fragment.isnil() ? EMPTYSTRING : fragment);
         table.set("contentModel", EMPTYSTRING);
         table.set("thePartialUrl", EMPTYSTRING);
+        table.set("getContent", new ZeroArgFunction() {
+            @Override public LuaValue call() {
+                // TODO: provide a handler to stub out arbitrary content
+                return EMPTYSTRING;
+            }
+        });
         return table;
     }
 }
