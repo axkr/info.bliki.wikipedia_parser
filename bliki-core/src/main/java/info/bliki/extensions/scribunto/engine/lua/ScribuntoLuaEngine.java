@@ -278,7 +278,8 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
                 MagicWord.MagicWordE magic =
                         MagicWord.getMagicWord(functionName);
                 if (magic != null) {
-                    final String argument = args.optjstring(null);
+                    final LuaTable arguments = args.checktable();
+                    final String argument = arguments.get(1).checkjstring();
                     final String processed = processMagicWord(magic, argument, model);
                     return toLuaString(processed);
                 }
