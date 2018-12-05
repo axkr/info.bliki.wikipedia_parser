@@ -12,6 +12,5 @@
 ## Links
 
   * [Wiki][]
-  * [online converter][]
 
 [Wiki]: https://bitbucket.org/axelclk/info.bliki.wiki/wiki/Home 
