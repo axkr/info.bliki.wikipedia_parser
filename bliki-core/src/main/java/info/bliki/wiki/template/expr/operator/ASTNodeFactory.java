@@ -108,7 +108,7 @@ public class ASTNodeFactory implements IParserFactory {
 
     @Override
     public Operator get(final String identifier) {
-        return (Operator) fOperatorMap.get(identifier);
+        return fOperatorMap.get(identifier);
     }
 
     /**

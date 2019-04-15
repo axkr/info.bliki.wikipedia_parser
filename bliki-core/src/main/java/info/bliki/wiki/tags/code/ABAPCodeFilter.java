@@ -94,7 +94,7 @@ public class ABAPCodeFilter extends AbstractCodeFormatter {
         if (!isKeywordLowerCase()) {
             keywordIdent = keywordIdent.toLowerCase();
         }
-        String keywordValue = (String) keywords.get(keywordIdent);
+        String keywordValue = keywords.get(keywordIdent);
         if (keywordValue != null) {
             result.append(keywordValue);
             // } else if (objectWords != null && objectWords.contains(originalIdent))

@@ -6,6 +6,8 @@ package info.bliki.wiki.model;
  *
  */
 public class WikiModelContentException extends Exception {
+    static final long serialVersionUID = 6992235128508021824L;
+
     public WikiModelContentException(String message, Throwable exception) {
         super(message, exception);
 

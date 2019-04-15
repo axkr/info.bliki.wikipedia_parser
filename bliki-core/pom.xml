@@ -109,7 +109,7 @@
 
         <resources>
             <resource>
-                <directory>${basedir}/src/main/scribunto/engines/LuaCommon/lualib</directory>
+                <directory>${basedir}/src/main/scribunto/includes/engines/LuaCommon/lualib</directory>
                 <filtering>false</filtering>
             </resource>
             <resource>
@@ -119,7 +119,7 @@
 
         <testResources>
             <testResource>
-                <directory>${basedir}/src/main/scribunto/tests/engines/LuaCommon</directory>
+                <directory>${basedir}/src/main/scribunto/tests/phpunit/engines/LuaCommon</directory>
                 <filtering>false</filtering>
             </testResource>
             <testResource>

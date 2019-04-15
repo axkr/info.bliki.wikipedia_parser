@@ -197,6 +197,7 @@ public class Namespace implements INamespace {
                 } else {
                     namespace.setTexts(ns1);
                 }
+                break;
             case APPEND_AS_ALIASES:
                 namespace.addAlias(ns1);
                 if (ns2 != null) {

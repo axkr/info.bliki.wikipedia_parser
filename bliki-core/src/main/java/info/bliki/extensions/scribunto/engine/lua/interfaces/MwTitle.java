@@ -1,7 +1,6 @@
 package info.bliki.extensions.scribunto.engine.lua.interfaces;
 
 import info.bliki.wiki.model.IWikiModel;
-import org.luaj.vm2.LuaError;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.Varargs;
@@ -143,27 +142,40 @@ public class MwTitle implements MwInterface {
                     // no database lookup
                     return new LuaTable();
                 } else if (text_or_id.isstring()) {
-                    return title(
-                        defaultNamespace,
-                        text_or_id,
-                        toLuaString("fragment"),
-                        toLuaString("interwiki"));
+                    if (isValidTitle(text_or_id, defaultNamespace)) {
+                        return title(
+                            defaultNamespace,
+                            text_or_id,
+                            toLuaString("fragment"),
+                            toLuaString("interwiki"));
+                    } else {
+                        return NIL;
+                    }
                 } else {
-                    throw new LuaError("Invalid title: "+text_or_id);
+                   return NIL;
                 }
             }
         };
     }
 
+    private boolean isValidTitle(LuaValue title, LuaValue defaultNamespace) {
+        // To be complete, this method would have to replicate the logic in
+        // MediaWikiTitleCodec.php#splitTitleString
+        //
+        // https://github.com/wikimedia/mediawiki/blob/c13fee87d42bdd6fdf6764edb6f6475c14c27749/includes/title/MediaWikiTitleCodec.php#L252
+        return !title.checkjstring().trim().isEmpty();
+    }
+
     /**
-     *
      * Creates a title object with title title in namespace namespace, optionally with the
      * specified fragment and interwiki prefix. namespace may be any key found in mw.site.namespaces.
-     * If the resulting title is not valid, returns nil.
+     *
      * @param $ns           string|int Namespace
      * @param $text         string Title text
      * @param $fragment     string URI fragment
      * @param $interwiki    string Interwiki code
+     *
+     * @return if the resulting title is not valid, returns nil.
      */
     private LuaValue makeTitle() {
         return new LibFunction() {
@@ -173,7 +185,12 @@ public class MwTitle implements MwInterface {
                 LuaValue title = args.arg(2);
                 LuaValue fragment = args.arg(3);
                 LuaValue interwiki = args.arg(4);
-                return title(ns, title, fragment, interwiki);
+
+                if (isValidTitle(title, ns)) {
+                    return title(ns, title, fragment, interwiki);
+                } else {
+                    return NIL;
+                }
             }
         };
     }

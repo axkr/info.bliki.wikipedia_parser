@@ -39,10 +39,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
 import static info.bliki.wiki.filter.MagicWord.processMagicWord;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
  * scribunto/engines/LuaCommon/LuaCommon.php
@@ -136,7 +138,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
             LuaValue executeFunction = globals.get("mw").get("executeFunction");
             logger.trace("executing " + luaFunction);
             final LuaString result = executeFunction.call(luaFunction).checkstring();
-            return new String(result.m_bytes, result.m_offset, result.m_length, UTF8);
+            return new String(result.m_bytes, result.m_offset, result.m_length, UTF_8);
         } finally {
             currentFrame = null;
         }
@@ -541,7 +543,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
      * since it does not handle surrogates properly.
      */
     public static LuaString toLuaString(String string) {
-        return LuaString.valueOf(string.getBytes(UTF8));
+        return LuaString.valueOf(string.getBytes(UTF_8));
     }
 
     private static Map<String,String> luaParams(LuaValue args) {

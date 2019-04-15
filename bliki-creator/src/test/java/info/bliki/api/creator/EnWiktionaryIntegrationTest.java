@@ -52,6 +52,11 @@ public class EnWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
         testWiktionaryENAPI("Vadimas");
     }
 
+    @Betamax(tape = "nectar", mode = READ_ONLY)
+    @Test public void testNectar() throws Exception {
+        testWiktionaryENAPI("nectar");
+    }
+
     @Betamax(tape = "AB", mode = READ_ONLY)
     @Test public void testAB() throws Exception {
         testWiktionaryENAPI("AB");
