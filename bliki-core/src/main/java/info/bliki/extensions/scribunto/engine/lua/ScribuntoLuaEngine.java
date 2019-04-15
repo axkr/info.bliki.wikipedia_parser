@@ -17,6 +17,7 @@ import info.bliki.extensions.scribunto.template.Frame;
 import info.bliki.wiki.filter.MagicWord;
 import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.model.IWikiModel;
+import info.bliki.wiki.template.ITemplateFunction;
 import org.luaj.vm2.Globals;
 import org.luaj.vm2.LuaClosure;
 import org.luaj.vm2.LuaError;
@@ -39,8 +40,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
-import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static info.bliki.wiki.filter.MagicWord.processMagicWord;
@@ -277,15 +279,37 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
             @Override
             public LuaValue call(LuaValue frameId, LuaValue function, LuaValue args) {
                 final String functionName = function.checkjstring();
-                MagicWord.MagicWordE magic =
-                        MagicWord.getMagicWord(functionName);
-                if (magic != null) {
-                    final LuaTable arguments = args.checktable();
-                    final String argument = arguments.get(1).checkjstring();
-                    final String processed = processMagicWord(magic, argument, model);
-                    return toLuaString(processed);
+
+                if (functionName.startsWith("#")) {
+                    final ITemplateFunction templateFunction = model.getTemplateFunction(functionName);
+                    if (templateFunction != null) {
+                        LuaTable arguments = args.checktable();
+                        List<String> parts = new ArrayList<>();
+                        for (int i=1; i<=arguments.length(); i++) {
+                            parts.add(arguments.get(i).checkjstring());
+                        }
+                        try {
+                            final String ret = templateFunction.parseFunction(parts, model,
+                                    new char[0], 0, 0, false);
+                            return ret == null ? NIL : LuaString.valueOf(ret);
+                        } catch (IOException e) {
+                            return NIL;
+                        }
+                    } else {
+                        return NIL;
+                    }
+
+                } else {
+                    MagicWord.MagicWordE magic = MagicWord.getMagicWord(functionName);
+                    if (magic != null) {
+                        final LuaTable arguments = args.checktable();
+                        final String argument = arguments.get(1).checkjstring();
+                        final String processed = processMagicWord(magic, argument, model);
+                        return processed == null ? NIL : toLuaString(processed);
+                    } else {
+                        return NIL;
+                    }
                 }
-                return NIL;
             }
         };
     }

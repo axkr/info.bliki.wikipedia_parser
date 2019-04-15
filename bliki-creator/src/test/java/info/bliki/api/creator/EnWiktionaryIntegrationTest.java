@@ -40,10 +40,10 @@ public class EnWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
         Result result = testWiktionaryENAPI("-yer");
         assertThat(result.categories.keySet()).contains(
             "English terms derived from Middle English",
+            "English terms inherited from Middle English",
             "English terms with rare senses",
             "English lemmas",
-            "English suffixes",
-            "etyl cleanup/en"
+            "English suffixes"
         );
     }
 
@@ -93,12 +93,6 @@ public class EnWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
     @Test public void testHangul2() throws Exception {
         // {{ko-usex|[[ ]] {{=}} | ... => TemplateParserError
         testWiktionaryENAPI("터");
-    }
-
-    @Betamax(tape = "colon", mode = READ_ONLY)
-    @Test public void testColon() throws Exception {
-        final Result result = testWiktionaryENAPI("colon");
-        result.assertNoTemplatesLeft();
     }
 
     @Betamax(tape = "ar-translit", mode = READ_ONLY)
