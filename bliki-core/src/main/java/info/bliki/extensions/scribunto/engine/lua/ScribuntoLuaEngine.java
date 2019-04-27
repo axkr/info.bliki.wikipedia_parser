@@ -350,15 +350,9 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         return new ThreeArgFunction() {
             @Override
             public LuaValue call(LuaValue frameId, LuaValue title, LuaValue args) {
-                final Frame frame = getFrameById(frameId);
-                final Map<String, String> parameterMap = frame.getTemplateParameters();
-                parameterMap.putAll(luaParams(args));
-                // remove unexpanded parameters
-                parameterMap.values().removeIf(s -> s.startsWith("{{{"));
-
                 StringWriter writer = new StringWriter();
                 try {
-                    model.substituteTemplateCall(title.tojstring(), parameterMap, writer);
+                    model.substituteTemplateCall(title.tojstring(), luaParams(args), writer);
                     return toLuaString(writer.toString());
                 } catch (IOException e) {
                     throw new RuntimeException(e);
