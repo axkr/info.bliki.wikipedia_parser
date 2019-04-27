@@ -35,6 +35,7 @@ public class EnWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
             "en:Electronics"
         );
     }
+
     @Betamax(tape = "-yer", mode = READ_ONLY)
     @Test public void testCategoriesWithExtraSpaces() throws Exception {
         Result result = testWiktionaryENAPI("-yer");
@@ -50,6 +51,11 @@ public class EnWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
     @Betamax(tape = "Vadimas", mode = READ_ONLY)
     @Test public void testVadimas() throws Exception {
         testWiktionaryENAPI("Vadimas");
+    }
+
+    @Betamax(tape = "koramiko", mode = READ_ONLY)
+    @Test public void testKoramiko() throws Exception {
+        testWiktionaryENAPI("koramiko");
     }
 
     @Betamax(tape = "nectar", mode = READ_ONLY)

@@ -353,6 +353,9 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
                 final Frame frame = getFrameById(frameId);
                 final Map<String, String> parameterMap = frame.getTemplateParameters();
                 parameterMap.putAll(luaParams(args));
+                // remove unexpanded parameters
+                parameterMap.values().removeIf(s -> s.startsWith("{{{"));
+
                 StringWriter writer = new StringWriter();
                 try {
                     model.substituteTemplateCall(title.tojstring(), parameterMap, writer);
