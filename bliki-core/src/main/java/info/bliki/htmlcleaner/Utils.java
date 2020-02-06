@@ -320,7 +320,7 @@ public class Utils {
                             int semiIndex = seq.indexOf(';');
                             if (semiIndex > 0) {
                                 String entity = seq.substring(1, semiIndex);
-                                Integer code = (Integer) SpecialEntities.entities.get(entity);
+                                Integer code = SpecialEntities.entities.get(entity);
                                 if (code != null) {
                                     int entityLen = entity.length();
                                     if (recognizeUnicodeChars) {

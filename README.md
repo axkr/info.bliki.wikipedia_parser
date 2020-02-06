@@ -12,7 +12,5 @@
 ## Links
 
   * [Wiki][]
-  * [online converter][]
 
-[Wiki]: https://bitbucket.org/axelclk/info.bliki.wiki/wiki/Home
-[online converter]: http://wiki-conv.appspot.com/
+[Wiki]: https://bitbucket.org/axelclk/info.bliki.wiki/wiki/Home 

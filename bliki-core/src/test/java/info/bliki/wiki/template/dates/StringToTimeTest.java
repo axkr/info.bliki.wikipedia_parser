@@ -223,8 +223,6 @@ public class StringToTimeTest {
         assertEquals(new StringToTime("this afternoon +24 hours", now), new StringToTime("tomorrow afternoon", now));
     }
 
-
-
     @Test public void testTomorrowEvening() {
         Date now = now();
         assertEquals(new StringToTime("this evening +24 hours", now), new StringToTime("tomorrow evening", now));
@@ -241,6 +239,9 @@ public class StringToTimeTest {
         assertEquals(new SimpleDateFormat("M/d/y").parse("10/26/1981"), new StringToTime("Oct 26, 1981"));
 
         assertEquals(new SimpleDateFormat("M/d/y").parse("10/26/1981"), new StringToTime("26 October 1981"));
+        assertEquals(new SimpleDateFormat("M/d/y").parse("10/26/1981"), new StringToTime("October 26, 1981"));
+        assertEquals(new SimpleDateFormat("M/d/y").parse("10/26/1981"), new StringToTime("October 26 1981"));
+        assertEquals(new SimpleDateFormat("M/y").parse("10/1981"), new StringToTime("October 1981"));
         assertEquals(new SimpleDateFormat("M/d/y").parse("10/26/1981"), new StringToTime("26 Oct 1981"));
         assertEquals(new SimpleDateFormat("M/d/y").parse("10/26/1981"), new StringToTime("26 Oct 81"));
 
@@ -256,7 +257,7 @@ public class StringToTimeTest {
     }
 
     // e.g., 10/26/1981 or 10/26/81
-    @Test public void testWithSlahesMonthFirst() throws Exception {
+    @Test public void testWithSlashesMonthFirst() throws Exception {
         assertEquals(new SimpleDateFormat("M/d/y").parse("10/26/1981"), new StringToTime("10/26/1981"));
         assertEquals(new SimpleDateFormat("M/d/y").parse("10/26/1981"), new StringToTime("10/26/81"));
     }
@@ -264,6 +265,16 @@ public class StringToTimeTest {
     // e.g., 1981/10/26
     @Test public void testWithSlashesYearFirst() throws Exception {
         assertEquals(new SimpleDateFormat("M/d/y").parse("10/26/1981"), new StringToTime("1981/10/26"));
+    }
+
+    // e.g., 19811026
+    @Test public void testYearMonthDay() throws Exception {
+        assertEquals(new SimpleDateFormat("M/d/y").parse("10/26/1981"), new StringToTime("19811026"));
+    }
+
+    // e.g., 1981-10
+    @Test public void testYearMonth() throws Exception {
+        assertEquals(new SimpleDateFormat("M/y").parse("10/1981"), new StringToTime("1981-10"));
     }
 
     // e.g., October 26 and Oct 26
@@ -298,7 +309,7 @@ public class StringToTimeTest {
         assertEquals(cal.get(Calendar.YEAR), new StringToTime("December", now).getCal().get(Calendar.YEAR));
     }
 
-    @Ignore  @Test public void testDayOfWeek() throws Exception {
+    @Ignore @Test public void testDayOfWeek() throws Exception {
         Date now = now();
         assertEquals(StringToTime.date("Friday", now), StringToTime.date("Fri", now));
 

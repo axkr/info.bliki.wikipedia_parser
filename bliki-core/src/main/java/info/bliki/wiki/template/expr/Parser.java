@@ -54,7 +54,7 @@ public class Parser extends Scanner {
     private PrefixOperator determinePrefixOperator() {
         Operator oper = null;
         for (int i = 0; i < fOperList.size(); i++) {
-            oper = (Operator) fOperList.get(i);
+            oper = fOperList.get(i);
             if (oper instanceof PrefixOperator) {
                 return (PrefixOperator) oper;
             }
@@ -68,9 +68,9 @@ public class Parser extends Scanner {
      * @return <code>null</code> if no postfix operator could be determined
      */
     private PostfixOperator determinePostfixOperator() {
-        Operator oper = null;
+        Operator oper;
         for (int i = 0; i < fOperList.size(); i++) {
-            oper = (Operator) fOperList.get(i);
+            oper = fOperList.get(i);
             if (oper instanceof PostfixOperator) {
                 return (PostfixOperator) oper;
             }
@@ -84,9 +84,9 @@ public class Parser extends Scanner {
      * @return <code>null</code> if no binary operator could be determined
      */
     private InfixOperator determineBinaryOperator() {
-        Operator oper = null;
+        Operator oper;
         for (int i = 0; i < fOperList.size(); i++) {
-            oper = (Operator) fOperList.get(i);
+            oper = fOperList.get(i);
             if (oper instanceof InfixOperator) {
                 return (InfixOperator) oper;
             }

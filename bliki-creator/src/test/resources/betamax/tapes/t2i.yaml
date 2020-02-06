@@ -1,7 +1,7 @@
 !tape
 name: t2i
 interactions:
-- recorded: 2015-09-02T13:14:24.298Z
+- recorded: 2019-04-15T21:04:45.879Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=User%3AJberkel%2Fbliki-testcases%2Ft2i&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
@@ -15,30 +15,36 @@ interactions:
     headers:
       Accept-Ranges: bytes
       Age: '0'
+      Backend-Timing: D=45234 t=1555362285784626
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
-      Content-Length: '362'
+      Content-Disposition: inline; filename=api-result.xml
+      Content-Length: '897'
       Content-Type: text/xml; charset=utf-8
-      Date: Wed, 02 Sep 2015 13:14:24 GMT
-      Server: nginx/1.9.3
-      Set-Cookie: GeoIP=PT:::38.7139:-9.1394:v4; Path=/; Domain=.wiktionary.org, WMF-Last-Access=02-Sep-2015;Path=/;HttpOnly;Expires=Sun, 04 Oct 2015 12:00:00 GMT
-      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-      Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1
-      X-Cache: cp1053 miss (0), cp3040 miss (0), cp3030 frontend miss (0)
+      Date: Mon, 15 Apr 2019 21:04:45 GMT
+      P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
+      Server: mw1288.eqiad.wmnet
+      Server-Timing: cache;desc="pass"
+      Set-Cookie: WMF-Last-Access=15-Apr-2019;Path=/;HttpOnly;secure;Expires=Fri, 17 May 2019 12:00:00 GMT, WMF-Last-Access-Global=15-Apr-2019;Path=/;Domain=.wiktionary.org;HttpOnly;secure;Expires=Fri, 17 May 2019 12:00:00 GMT, GeoIP=DE:BW:Laufenburg:47.57:8.06:v4; Path=/; secure; Domain=.wiktionary.org
+      Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+      Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization,X-Seven
+      X-Analytics: ns=-1;special=Badtitle;https=1;nocookies=1
+      X-Cache: cp1075 pass, cp3040 pass, cp3040 pass
+      X-Cache-Status: pass
+      X-Client-IP: 217.233.11.52
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
-      X-Powered-By: HHVM/3.6.5
-      X-Varnish: 1768497372, 2482471801, 2412073974
-    body: <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="4973062" pageid="4973062" ns="2" title="User:Jberkel/bliki-testcases/t2i"><revisions><rev user="Jberkel" timestamp="2015-09-02T12:06:20Z" comment="" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">{{t2i|sc=Phnx|q|ʾ|r|t}}</rev></revisions></page></pages></query></api>
-- recorded: 2015-09-02T13:14:24.547Z
+      X-Powered-By: HHVM/3.18.6-dev
+      X-Varnish: 588103656, 552519531, 530572951
+    body: <?xml version="1.0"?><api batchcomplete=""><warnings><main xml:space="preserve">Subscribe to the mediawiki-api-announce mailing list at &lt;https://lists.wikimedia.org/mailman/listinfo/mediawiki-api-announce&gt; for notice of API deprecations and breaking changes. Use [[Special:ApiFeatureUsage]] to see usage of deprecated features by your application.</main><revisions xml:space="preserve">Because "rvslots" was not specified, a legacy format has been used for the output. This format is deprecated, and in the future the new format will always be used.</revisions></warnings><query><pages><page _idx="4973062" pageid="4973062" ns="2" title="User:Jberkel/bliki-testcases/t2i"><revisions><rev user="Jberkel" timestamp="2015-09-02T12:06:20Z" contentformat="text/x-wiki" contentmodel="wikitext" comment="" xml:space="preserve">{{t2i|sc=Phnx|q|ʾ|r|t}}</rev></revisions></page></pages></query></api>
+- recorded: 2019-04-15T21:04:46.042Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3At2i&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:::38.7139:-9.1394:v4; WMF-Last-Access=02-Sep-2015
+      Cookie: GeoIP=DE:BW:Laufenburg:47.57:8.06:v4; WMF-Last-Access=15-Apr-2019; WMF-Last-Access-Global=15-Apr-2019
       Cookie2: $Version=1
       Host: en.wiktionary.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -47,22 +53,28 @@ interactions:
     headers:
       Accept-Ranges: bytes
       Age: '0'
+      Backend-Timing: D=44735 t=1555362285947945
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
-      Content-Length: '2317'
+      Content-Disposition: inline; filename=api-result.xml
+      Content-Length: '2842'
       Content-Type: text/xml; charset=utf-8
-      Date: Wed, 02 Sep 2015 13:14:24 GMT
-      Server: nginx/1.9.3
-      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-      Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=02-Sep-2015
-      X-Cache: cp1052 miss (0), cp3008 miss (0), cp3030 frontend miss (0)
+      Date: Mon, 15 Apr 2019 21:04:46 GMT
+      P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
+      Server: mw1226.eqiad.wmnet
+      Server-Timing: cache;desc="pass"
+      Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+      Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization,X-Seven
+      X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Apr-2019;WMF-Last-Access-Global=15-Apr-2019;https=1
+      X-Cache: cp1083 pass, cp3042 pass, cp3040 pass
+      X-Cache-Status: pass
+      X-Client-IP: 217.233.11.52
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
-      X-Powered-By: HHVM/3.6.5
-      X-Varnish: 2988140534, 3546982749, 2412076316
+      X-Powered-By: HHVM/3.18.6-dev
+      X-Varnish: 923013632, 817059399, 696818525
     body: |-
-      <?xml version="1.0"?><api batchcomplete=""><query><pages><page _idx="1008175" pageid="1008175" ns="10" title="Template:t2i"><revisions><rev user="ZxxZxxZ" timestamp="2013-02-15T10:09:34Z" comment="alt text" contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">&lt;includeonly&gt;&lt;onlyinclude&gt;&lt;span class=&quot;t2i&quot;&gt;&lt;!--
+      <?xml version="1.0"?><api batchcomplete=""><warnings><main xml:space="preserve">Subscribe to the mediawiki-api-announce mailing list at &lt;https://lists.wikimedia.org/mailman/listinfo/mediawiki-api-announce&gt; for notice of API deprecations and breaking changes. Use [[Special:ApiFeatureUsage]] to see usage of deprecated features by your application.</main><revisions xml:space="preserve">Because "rvslots" was not specified, a legacy format has been used for the output. This format is deprecated, and in the future the new format will always be used.</revisions></warnings><query><pages><page _idx="1008175" pageid="1008175" ns="10" title="Template:t2i"><revisions><rev user="ZxxZxxZ" timestamp="2013-02-15T10:09:34Z" contentformat="text/x-wiki" contentmodel="wikitext" comment="alt text" xml:space="preserve">&lt;includeonly&gt;&lt;onlyinclude&gt;&lt;span class="t2i"&gt;&lt;!--
       --&gt;{{#if:{{{1|}}}|[[Image:{{{{{sc}}}2img|{{{1}}}}}|{{{size|15}}}px|{{{1}}}]]}}&lt;!--
       --&gt;{{#if:{{{2|}}}|[[Image:{{{{{sc}}}2img|{{{2}}}}}|{{{size|15}}}px|{{{2}}}]]}}&lt;!--
       --&gt;{{#if:{{{3|}}}|[[Image:{{{{{sc}}}2img|{{{3}}}}}|{{{size|15}}}px|{{{3}}}]]}}&lt;!--
@@ -83,14 +95,14 @@ interactions:
       --&gt;{{#if:{{{18|}}}|[[Image:{{{{{sc}}}2img|{{{18}}}}}|{{{size|15}}}px|{{{18}}}]]}}&lt;!--
       --&gt;{{#if:{{{19|}}}|[[Image:{{{{{sc}}}2img|{{{19}}}}}|{{{size|15}}}px|{{{19}}}]]}}&lt;!--
       --&gt;{{#if:{{{20|}}}|[[Image:{{{{{sc}}}2img|{{{20}}}}}|{{{size|15}}}px|{{{20}}}]]}}&lt;/span&gt;&lt;/onlyinclude&gt;&lt;/includeonly&gt;&lt;noinclude&gt;{{documentation}}&lt;/noinclude&gt;</rev></revisions></page></pages></query></api>
-- recorded: 2015-09-02T13:14:24.797Z
+- recorded: 2019-04-15T21:04:46.216Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=Template%3APhnx2img&prop=revisions&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:::38.7139:-9.1394:v4; WMF-Last-Access=02-Sep-2015
+      Cookie: GeoIP=DE:BW:Laufenburg:47.57:8.06:v4; WMF-Last-Access=15-Apr-2019; WMF-Last-Access-Global=15-Apr-2019
       Cookie2: $Version=1
       Host: en.wiktionary.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
@@ -99,139 +111,173 @@ interactions:
     headers:
       Accept-Ranges: bytes
       Age: '0'
+      Backend-Timing: D=43031 t=1555362286125338
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
-      Content-Length: '1199'
+      Content-Disposition: inline; filename=api-result.xml
+      Content-Length: '1666'
       Content-Type: text/xml; charset=utf-8
-      Date: Wed, 02 Sep 2015 13:14:24 GMT
-      Server: nginx/1.9.3
-      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-      Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=02-Sep-2015
-      X-Cache: cp1067 miss (0), cp3007 miss (0), cp3030 frontend miss (0)
+      Date: Mon, 15 Apr 2019 21:04:46 GMT
+      P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
+      Server: mw1345.eqiad.wmnet
+      Server-Timing: cache;desc="pass"
+      Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+      Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization,X-Seven
+      X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Apr-2019;WMF-Last-Access-Global=15-Apr-2019;https=1
+      X-Cache: cp1075 pass, cp3040 pass, cp3040 pass
+      X-Cache-Status: pass
+      X-Client-IP: 217.233.11.52
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
-      X-Powered-By: HHVM/3.6.5
-      X-Varnish: 3273202172, 147396099, 2412078173
+      X-Powered-By: HHVM/3.18.6-dev
+      X-Varnish: 586472300, 557201851, 663451515
     body: !!binary |-
-      PD94bWwgdmVyc2lvbj0iMS4wIj8+PGFwaSBiYXRjaGNvbXBsZXRlPSIiPjxxdWVyeT48cGFnZXM+PHBhZ2UgX2lkeD0iMTAwODE2OSIgcGFnZWlkPSIxMDA4MTY5IiBucz0iMTAiIHRpdGxlPSJUZW1wbGF0ZTpQaG54MmltZyI+PHJldmlzaW9ucz48cmV2IHVzZXI9IkJlcXV3IiB0aW1lc3RhbXA9IjIwMTAtMDctMDJUMTg6MDE6NDVaIiBjb21tZW50PSJyZW1vdmluZyB7e3NlZVRhbGt9fSB3aGVuIG5vIHRhbGsgcGFnZS4gVXNlIHt7ZG9jdW1lbnRhaXRvbn19IHVzaW5nIFtbUHJvamVjdDpBV0J8QVdCXV0iIGNvbnRlbnRmb3JtYXQ9InRleHQveC13aWtpIiBjb250ZW50bW9kZWw9Indpa2l0ZXh0IiB4bWw6c3BhY2U9InByZXNlcnZlIj4mbHQ7bm9pbmNsdWRlJmd0O1tbQ2F0ZWdvcnk6VGVtcGxhdGVzXV0mbHQ7L25vaW5jbHVkZSZndDsKJmx0O2luY2x1ZGVvbmx5Jmd0OyZsdDtvbmx5aW5jbHVkZSZndDt7eyNzd2l0Y2g6e3t7MXx9fX0KfPCQpIB8yr49cGhvZW5pY2lhbl9hbGVwaC5wbmcKfPCQpIF8Yj1waG9lbmljaWFuX2JldGgucG5nCnzwkKSCfGc9cGhvZW5pY2lhbl9naW1lbC5wbmcKfPCQpIN8ZD1waG9lbmljaWFuX2RhbGV0aC5wbmcKfPCQpIR8aD1waG9lbmljaWFuX2hlLnBuZwp88JCkhXx3PXBob2VuaWNpYW5fd2F3LnBuZwp88JCkhnx6PXBob2VuaWNpYW5femF5aW4ucG5nCnzwkKSHfOG4pT1waG9lbmljaWFuX2hldGgucG5nCnzwkKSIfOG5rT1waG9lbmljaWFuX3RldGgucG5nCnzwkKSJfHk9cGhvZW5pY2lhbl95b2RoLnBuZwp88JCkinxrPXBob2VuaWNpYW5fa2FwaC5wbmcKfPCQpIt8bD1waG9lbmljaWFuX2xhbWVkaC5wbmcKfPCQpIx8bT1waG9lbmljaWFuX21lbS5wbmcKfPCQpI18bj1waG9lbmljaWFuX251bi5wbmcKfPCQpI58cz1waG9lbmljaWFuX3NhbWVraC5wbmcKfPCQpI98yr89cGhvZW5pY2lhbl9heWluLnBuZwp88JCkkHxwPXBob2VuaWNpYW5fcGUucG5nCnzwkKSRfOG5oz1waG9lbmljaWFuX3NhZGUucG5nCnzwkKSSfHE9cGhvZW5pY2lhbl9xb2YucG5nCnzwkKSTfHI9cGhvZW5pY2lhbl9yZXMucG5nCnzwkKSUfMWhPXBob2VuaWNpYW5fc2luLnBuZwp88JCklXx0PXBob2VuaWNpYW5fdGF3LnBuZwp8I2RlZmF1bHQ9fX0mbHQ7L29ubHlpbmNsdWRlJmd0OyZsdDsvaW5jbHVkZW9ubHkmZ3Q7PC9yZXY+PC9yZXZpc2lvbnM+PC9wYWdlPjwvcGFnZXM+PC9xdWVyeT48L2FwaT4=
-- recorded: 2015-09-02T13:14:25.094Z
+      PD94bWwgdmVyc2lvbj0iMS4wIj8+PGFwaSBiYXRjaGNvbXBsZXRlPSIiPjx3YXJuaW5ncz48bWFpbiB4bWw6c3BhY2U9InByZXNlcnZlIj5TdWJzY3JpYmUgdG8gdGhlIG1lZGlhd2lraS1hcGktYW5ub3VuY2UgbWFpbGluZyBsaXN0IGF0ICZsdDtodHRwczovL2xpc3RzLndpa2ltZWRpYS5vcmcvbWFpbG1hbi9saXN0aW5mby9tZWRpYXdpa2ktYXBpLWFubm91bmNlJmd0OyBmb3Igbm90aWNlIG9mIEFQSSBkZXByZWNhdGlvbnMgYW5kIGJyZWFraW5nIGNoYW5nZXMuIFVzZSBbW1NwZWNpYWw6QXBpRmVhdHVyZVVzYWdlXV0gdG8gc2VlIHVzYWdlIG9mIGRlcHJlY2F0ZWQgZmVhdHVyZXMgYnkgeW91ciBhcHBsaWNhdGlvbi48L21haW4+PHJldmlzaW9ucyB4bWw6c3BhY2U9InByZXNlcnZlIj5CZWNhdXNlICJydnNsb3RzIiB3YXMgbm90IHNwZWNpZmllZCwgYSBsZWdhY3kgZm9ybWF0IGhhcyBiZWVuIHVzZWQgZm9yIHRoZSBvdXRwdXQuIFRoaXMgZm9ybWF0IGlzIGRlcHJlY2F0ZWQsIGFuZCBpbiB0aGUgZnV0dXJlIHRoZSBuZXcgZm9ybWF0IHdpbGwgYWx3YXlzIGJlIHVzZWQuPC9yZXZpc2lvbnM+PC93YXJuaW5ncz48cXVlcnk+PHBhZ2VzPjxwYWdlIF9pZHg9IjEwMDgxNjkiIHBhZ2VpZD0iMTAwODE2OSIgbnM9IjEwIiB0aXRsZT0iVGVtcGxhdGU6UGhueDJpbWciPjxyZXZpc2lvbnM+PHJldiB1c2VyPSJFcnV0dW9uIiB0aW1lc3RhbXA9IjIwMTctMDYtMjNUMDA6NTU6NTJaIiBjb250ZW50Zm9ybWF0PSJ0ZXh0L3gtd2lraSIgY29udGVudG1vZGVsPSJ3aWtpdGV4dCIgY29tbWVudD0iZG9jdW1lbnRhdGlvbiB0ZW1wbGF0ZSIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+Jmx0O2luY2x1ZGVvbmx5Jmd0OyZsdDtvbmx5aW5jbHVkZSZndDt7eyNzd2l0Y2g6e3t7MXx9fX0KfPCQpIB8yr49cGhvZW5pY2lhbl9hbGVwaC5wbmcKfPCQpIF8Yj1waG9lbmljaWFuX2JldGgucG5nCnzwkKSCfGc9cGhvZW5pY2lhbl9naW1lbC5wbmcKfPCQpIN8ZD1waG9lbmljaWFuX2RhbGV0aC5wbmcKfPCQpIR8aD1waG9lbmljaWFuX2hlLnBuZwp88JCkhXx3PXBob2VuaWNpYW5fd2F3LnBuZwp88JCkhnx6PXBob2VuaWNpYW5femF5aW4ucG5nCnzwkKSHfOG4pT1waG9lbmljaWFuX2hldGgucG5nCnzwkKSIfOG5rT1waG9lbmljaWFuX3RldGgucG5nCnzwkKSJfHk9cGhvZW5pY2lhbl95b2RoLnBuZwp88JCkinxrPXBob2VuaWNpYW5fa2FwaC5wbmcKfPCQpIt8bD1waG9lbmljaWFuX2xhbWVkaC5wbmcKfPCQpIx8bT1waG9lbmljaWFuX21lbS5wbmcKfPCQpI18bj1waG9lbmljaWFuX251bi5wbmcKfPCQpI58cz1waG9lbmljaWFuX3NhbWVraC5wbmcKfPCQpI98yr89cGhvZW5pY2lhbl9heWluLnBuZwp88JCkkHxwPXBob2VuaWNpYW5fcGUucG5nCnzwkKSRfOG5oz1waG9lbmljaWFuX3NhZGUucG5nCnzwkKSSfHE9cGhvZW5pY2lhbl9xb2YucG5nCnzwkKSTfHI9cGhvZW5pY2lhbl9yZXMucG5nCnzwkKSUfMWhPXBob2VuaWNpYW5fc2luLnBuZwp88JCklXx0PXBob2VuaWNpYW5fdGF3LnBuZwp8I2RlZmF1bHQ9fX0mbHQ7L29ubHlpbmNsdWRlJmd0OyZsdDsvaW5jbHVkZW9ubHkmZ3Q7CiZsdDtub2luY2x1ZGUmZ3Q7e3tkb2N1bWVudGF0aW9ufX0mbHQ7L25vaW5jbHVkZSZndDs8L3Jldj48L3JldmlzaW9ucz48L3BhZ2U+PC9wYWdlcz48L3F1ZXJ5PjwvYXBpPg==
+- recorded: 2019-04-15T21:04:46.396Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=File%3Aphoenician_qof.png&prop=imageinfo&iiprop=url&iiurlwidth=15
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:::38.7139:-9.1394:v4; WMF-Last-Access=02-Sep-2015
+      Cookie: GeoIP=DE:BW:Laufenburg:47.57:8.06:v4; WMF-Last-Access=15-Apr-2019; WMF-Last-Access-Global=15-Apr-2019
       Cookie2: $Version=1
       Host: en.wiktionary.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
   response:
     status: 200
     headers:
+      Accept-Ranges: bytes
       Age: '0'
+      Backend-Timing: D=55125 t=1555362286293750
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
+      Content-Disposition: inline; filename=api-result.xml
+      Content-Length: '719'
       Content-Type: text/xml; charset=utf-8
-      Date: Wed, 02 Sep 2015 13:14:25 GMT
-      Server: nginx/1.9.3
-      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-      Transfer-Encoding: chunked
-      Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=02-Sep-2015
-      X-Cache: cp1068 miss (0), cp3007 miss (0), cp3030 frontend miss (0)
+      Date: Mon, 15 Apr 2019 21:04:46 GMT
+      P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
+      Server: mw1226.eqiad.wmnet
+      Server-Timing: cache;desc="pass"
+      Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+      Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization,X-Seven
+      X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Apr-2019;WMF-Last-Access-Global=15-Apr-2019;https=1
+      X-Cache: cp1085 pass, cp3030 pass, cp3040 pass
+      X-Cache-Status: pass
+      X-Client-IP: 217.233.11.52
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
-      X-Powered-By: HHVM/3.6.5
-      X-Varnish: 3477824743, 147396605, 2412079529
-    body: <?xml version="1.0"?><api><continue iistart="2005-04-05T08:21:55Z" continue="||" /><query><normalized><n from="File:phoenician_qof.png" to="File:phoenician qof.png" /></normalized><pages><page _idx="-1" ns="6" title="File:phoenician qof.png" missing="" imagerepository="shared"><imageinfo><ii thumburl="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Phoenician_qof.png/15px-Phoenician_qof.png" thumbwidth="15" thumbheight="15" url="https://upload.wikimedia.org/wikipedia/commons/f/f7/Phoenician_qof.png" descriptionurl="https://commons.wikimedia.org/wiki/File:Phoenician_qof.png" /></imageinfo></page></pages></query></api>
-- recorded: 2015-09-02T13:14:26.299Z
+      X-Powered-By: HHVM/3.18.6-dev
+      X-Varnish: 584159812, 634079862, 694985226
+    body: <?xml version="1.0"?><api><continue iistart="2005-04-05T08:21:55Z" continue="||" /><query><normalized><n from="File:phoenician_qof.png" to="File:phoenician qof.png" /></normalized><pages><page _idx="-1" ns="6" title="File:phoenician qof.png" missing="" known="" imagerepository="shared"><imageinfo><ii thumburl="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Phoenician_qof.png/15px-Phoenician_qof.png" thumbwidth="15" thumbheight="15" url="https://upload.wikimedia.org/wikipedia/commons/f/f7/Phoenician_qof.png" descriptionurl="https://commons.wikimedia.org/wiki/File:Phoenician_qof.png" descriptionshorturl="https://commons.wikimedia.org/w/index.php?curid=98119" /></imageinfo></page></pages></query></api>
+- recorded: 2019-04-15T21:04:46.670Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=File%3Aphoenician_aleph.png&prop=imageinfo&iiprop=url&iiurlwidth=15
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:::38.7139:-9.1394:v4; WMF-Last-Access=02-Sep-2015
+      Cookie: GeoIP=DE:BW:Laufenburg:47.57:8.06:v4; WMF-Last-Access=15-Apr-2019; WMF-Last-Access-Global=15-Apr-2019
       Cookie2: $Version=1
       Host: en.wiktionary.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
   response:
     status: 200
     headers:
+      Accept-Ranges: bytes
       Age: '0'
+      Backend-Timing: D=44541 t=1555362286576194
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
+      Content-Disposition: inline; filename=api-result.xml
+      Content-Length: '733'
       Content-Type: text/xml; charset=utf-8
-      Date: Wed, 02 Sep 2015 13:14:26 GMT
-      Server: nginx/1.9.3
-      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-      Transfer-Encoding: chunked
-      Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=02-Sep-2015
-      X-Cache: cp1068 miss (0), cp3007 miss (0), cp3030 frontend miss (0)
+      Date: Mon, 15 Apr 2019 21:04:46 GMT
+      P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
+      Server: mw1234.eqiad.wmnet
+      Server-Timing: cache;desc="pass"
+      Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+      Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization,X-Seven
+      X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Apr-2019;WMF-Last-Access-Global=15-Apr-2019;https=1
+      X-Cache: cp1083 pass, cp3040 pass, cp3040 pass
+      X-Cache-Status: pass
+      X-Client-IP: 217.233.11.52
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
-      X-Powered-By: HHVM/3.6.5
-      X-Varnish: 3477826992, 147398122, 2412085876
-    body: <?xml version="1.0"?><api><continue iistart="2005-04-05T08:30:01Z" continue="||" /><query><normalized><n from="File:phoenician_aleph.png" to="File:phoenician aleph.png" /></normalized><pages><page _idx="-1" ns="6" title="File:phoenician aleph.png" missing="" imagerepository="shared"><imageinfo><ii thumburl="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Phoenician_aleph.png/15px-Phoenician_aleph.png" thumbwidth="15" thumbheight="15" url="https://upload.wikimedia.org/wikipedia/commons/f/fb/Phoenician_aleph.png" descriptionurl="https://commons.wikimedia.org/wiki/File:Phoenician_aleph.png" /></imageinfo></page></pages></query></api>
-- recorded: 2015-09-02T13:14:27.080Z
+      X-Powered-By: HHVM/3.18.6-dev
+      X-Varnish: 919610932, 554911206, 675900917
+    body: <?xml version="1.0"?><api><continue iistart="2005-04-05T08:30:01Z" continue="||" /><query><normalized><n from="File:phoenician_aleph.png" to="File:phoenician aleph.png" /></normalized><pages><page _idx="-1" ns="6" title="File:phoenician aleph.png" missing="" known="" imagerepository="shared"><imageinfo><ii thumburl="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Phoenician_aleph.png/15px-Phoenician_aleph.png" thumbwidth="15" thumbheight="15" url="https://upload.wikimedia.org/wikipedia/commons/f/fb/Phoenician_aleph.png" descriptionurl="https://commons.wikimedia.org/wiki/File:Phoenician_aleph.png" descriptionshorturl="https://commons.wikimedia.org/w/index.php?curid=98085" /></imageinfo></page></pages></query></api>
+- recorded: 2019-04-15T21:04:46.964Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=File%3Aphoenician_res.png&prop=imageinfo&iiprop=url&iiurlwidth=15
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:::38.7139:-9.1394:v4; WMF-Last-Access=02-Sep-2015
+      Cookie: GeoIP=DE:BW:Laufenburg:47.57:8.06:v4; WMF-Last-Access=15-Apr-2019; WMF-Last-Access-Global=15-Apr-2019
       Cookie2: $Version=1
       Host: en.wiktionary.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
   response:
     status: 200
     headers:
+      Accept-Ranges: bytes
       Age: '0'
+      Backend-Timing: D=71389 t=1555362286845887
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
+      Content-Disposition: inline; filename=api-result.xml
+      Content-Length: '719'
       Content-Type: text/xml; charset=utf-8
-      Date: Wed, 02 Sep 2015 13:14:27 GMT
-      Server: nginx/1.9.3
-      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-      Transfer-Encoding: chunked
-      Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=02-Sep-2015
-      X-Cache: cp1055 miss (0), cp3004 miss (0), cp3030 frontend miss (0)
+      Date: Mon, 15 Apr 2019 21:04:46 GMT
+      P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
+      Server: mw1222.eqiad.wmnet
+      Server-Timing: cache;desc="pass"
+      Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+      Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization,X-Seven
+      X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Apr-2019;WMF-Last-Access-Global=15-Apr-2019;https=1
+      X-Cache: cp1085 pass, cp3032 pass, cp3040 pass
+      X-Cache-Status: pass
+      X-Client-IP: 217.233.11.52
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
-      X-Powered-By: HHVM/3.6.5
-      X-Varnish: 110543500, 116190531, 2412089861
-    body: <?xml version="1.0"?><api><continue iistart="2005-04-05T08:22:11Z" continue="||" /><query><normalized><n from="File:phoenician_res.png" to="File:phoenician res.png" /></normalized><pages><page _idx="-1" ns="6" title="File:phoenician res.png" missing="" imagerepository="shared"><imageinfo><ii thumburl="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Phoenician_res.png/15px-Phoenician_res.png" thumbwidth="15" thumbheight="15" url="https://upload.wikimedia.org/wikipedia/commons/b/b2/Phoenician_res.png" descriptionurl="https://commons.wikimedia.org/wiki/File:Phoenician_res.png" /></imageinfo></page></pages></query></api>
-- recorded: 2015-09-02T13:14:27.797Z
+      X-Powered-By: HHVM/3.18.6-dev
+      X-Varnish: 567331355, 244366052, 690276675
+    body: <?xml version="1.0"?><api><continue iistart="2005-04-05T08:22:11Z" continue="||" /><query><normalized><n from="File:phoenician_res.png" to="File:phoenician res.png" /></normalized><pages><page _idx="-1" ns="6" title="File:phoenician res.png" missing="" known="" imagerepository="shared"><imageinfo><ii thumburl="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Phoenician_res.png/15px-Phoenician_res.png" thumbwidth="15" thumbheight="15" url="https://upload.wikimedia.org/wikipedia/commons/b/b2/Phoenician_res.png" descriptionurl="https://commons.wikimedia.org/wiki/File:Phoenician_res.png" descriptionshorturl="https://commons.wikimedia.org/w/index.php?curid=98120" /></imageinfo></page></pages></query></api>
+- recorded: 2019-04-15T21:04:47.268Z
   request:
     method: GET
     uri: https://en.wiktionary.org/w/api.php?format=xml&action=query&continue=&titles=File%3Aphoenician_taw.png&prop=imageinfo&iiprop=url&iiurlwidth=15
     headers:
       Connection: Keep-Alive
       Content-Length: '0'
-      Cookie: GeoIP=PT:::38.7139:-9.1394:v4; WMF-Last-Access=02-Sep-2015
+      Cookie: GeoIP=DE:BW:Laufenburg:47.57:8.06:v4; WMF-Last-Access=15-Apr-2019; WMF-Last-Access-Global=15-Apr-2019
       Cookie2: $Version=1
       Host: en.wiktionary.org
       User-Agent: JavaWikipediaAPI/3.1-SNAPSHOT https://bitbucket.org/axelclk/info.bliki.wiki/
   response:
     status: 200
     headers:
+      Accept-Ranges: bytes
       Age: '0'
+      Backend-Timing: D=84108 t=1555362287134734
       Cache-control: private, must-revalidate, max-age=0
       Connection: keep-alive
+      Content-Disposition: inline; filename=api-result.xml
+      Content-Length: '719'
       Content-Type: text/xml; charset=utf-8
-      Date: Wed, 02 Sep 2015 13:14:27 GMT
-      Server: nginx/1.9.3
-      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-      Transfer-Encoding: chunked
-      Vary: Accept-Encoding,X-Forwarded-Proto,Cookie
-      X-Analytics: https=1;WMF-Last-Access=02-Sep-2015
-      X-Cache: cp1053 miss (0), cp3003 miss (0), cp3030 frontend miss (0)
+      Date: Mon, 15 Apr 2019 21:04:47 GMT
+      P3P: CP="This is not a P3P policy! See https://en.wiktionary.org/wiki/Special:CentralAutoLogin/P3P for more info."
+      Server: mw1290.eqiad.wmnet
+      Server-Timing: cache;desc="pass"
+      Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+      Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization,X-Seven
+      X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=15-Apr-2019;WMF-Last-Access-Global=15-Apr-2019;https=1
+      X-Cache: cp1077 pass, cp3042 pass, cp3040 pass
+      X-Cache-Status: pass
+      X-Client-IP: 217.233.11.52
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
-      X-Powered-By: HHVM/3.6.5
-      X-Varnish: 1768505566, 3251863185, 2412095315
-    body: <?xml version="1.0"?><api><continue iistart="2005-04-05T08:23:30Z" continue="||" /><query><normalized><n from="File:phoenician_taw.png" to="File:phoenician taw.png" /></normalized><pages><page _idx="-1" ns="6" title="File:phoenician taw.png" missing="" imagerepository="shared"><imageinfo><ii thumburl="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Phoenician_taw.png/15px-Phoenician_taw.png" thumbwidth="15" thumbheight="15" url="https://upload.wikimedia.org/wikipedia/commons/8/83/Phoenician_taw.png" descriptionurl="https://commons.wikimedia.org/wiki/File:Phoenician_taw.png" /></imageinfo></page></pages></query></api>
+      X-Powered-By: HHVM/3.18.6-dev
+      X-Varnish: 400319847, 825798049, 682979998
+    body: <?xml version="1.0"?><api><continue iistart="2005-04-05T08:23:30Z" continue="||" /><query><normalized><n from="File:phoenician_taw.png" to="File:phoenician taw.png" /></normalized><pages><page _idx="-1" ns="6" title="File:phoenician taw.png" missing="" known="" imagerepository="shared"><imageinfo><ii thumburl="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Phoenician_taw.png/15px-Phoenician_taw.png" thumbwidth="15" thumbheight="15" url="https://upload.wikimedia.org/wikipedia/commons/8/83/Phoenician_taw.png" descriptionurl="https://commons.wikimedia.org/wiki/File:Phoenician_taw.png" descriptionshorturl="https://commons.wikimedia.org/w/index.php?curid=98127" /></imageinfo></page></pages></query></api>

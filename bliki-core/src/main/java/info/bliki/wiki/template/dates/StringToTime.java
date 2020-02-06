@@ -131,6 +131,9 @@ public class StringToTime extends Date {
             // e.g., 26 October 1981, or 26 Oct 1981, or 26 Oct 81
             new PatternAndFormat(Pattern.compile("\\d{1,2} +[a-z]+ +(\\d{2}|\\d{4})", Pattern.CASE_INSENSITIVE), new Format("d MMM y")),
 
+            // e.g., October 1981
+            new PatternAndFormat(Pattern.compile("[a-z]+ +\\d{4}", Pattern.CASE_INSENSITIVE), new Format("MMM yyyy")),
+
             // now or today
             new PatternAndFormat(
                     Pattern
@@ -145,6 +148,10 @@ public class StringToTime extends Date {
             new PatternAndFormat(Pattern.compile("[a-z]+ +\\d{1,2} *, *(\\d{2}|\\d{4})", Pattern.CASE_INSENSITIVE),
                     new Format("MMM d, y")),
 
+            // e.g., October 26 1981 or Oct 26 1981
+            new PatternAndFormat(Pattern.compile("[a-z]+ +\\d{1,2} +(\\d{2}|\\d{4})", Pattern.CASE_INSENSITIVE),
+                    new Format("MMM d y")),
+
             // e.g., 10/26/1981 or 10/26/81
             new PatternAndFormat(Pattern.compile("\\d{1,2}/\\d{1,2}/\\d{2,4}"), new Format("M/d/y")),
 
@@ -157,8 +164,14 @@ public class StringToTime extends Date {
             // e.g., 1981/10/26
             new PatternAndFormat(Pattern.compile("\\d{4}/\\d{1,2}/\\d{1,2}"), new Format("y/M/d")),
 
+            // e.g., 19811026
+            new PatternAndFormat(Pattern.compile("\\d{4}\\d{2}\\d{2}"), new Format("yyyyMMdd")),
+
             // e.g., 1981-10-26
             new PatternAndFormat(Pattern.compile("\\d{4}\\-\\d{1,2}\\-\\d{1,2}"), new Format("y-M-d")),
+
+            // e.g., 1981-10
+            new PatternAndFormat(Pattern.compile("\\d{4}\\-\\d{2}"), new Format("yyyy-MM")),
 
             // e.g., October or Oct
             new PatternAndFormat(
@@ -195,37 +208,15 @@ public class StringToTime extends Date {
      */
     private Object date;
 
-    public StringToTime() {
-        super();
-        this.date = new Date(this.getTime());
-    }
-
-    public StringToTime(Date date) {
-        super(date.getTime());
-        this.date = new Date(this.getTime());
-    }
-
     public StringToTime(Object dateTimeString) {
         this(dateTimeString, new Date(), defaultSimpleDateFormat);
     }
 
-    public StringToTime(Object dateTimeString, String simpleDateFormat) {
-        this(dateTimeString, new Date(), simpleDateFormat);
-    }
-
-    public StringToTime(Object dateTimeString, Date now) {
+    StringToTime(Object dateTimeString, Date now) {
         this(dateTimeString, now, defaultSimpleDateFormat);
     }
 
-    public StringToTime(Object dateTimeString, Long now) {
-        this(dateTimeString, new Date(now), defaultSimpleDateFormat);
-    }
-
-    public StringToTime(Object dateTimeString, Integer now) {
-        this(dateTimeString, new Date(new Long(now)), defaultSimpleDateFormat);
-    }
-
-    public StringToTime(Object dateTimeString, Date now, String simpleDateFormat) {
+    private StringToTime(Object dateTimeString, Date now, String simpleDateFormat) {
         super(0);
         assert dateTimeString != null;
         assert now != null;

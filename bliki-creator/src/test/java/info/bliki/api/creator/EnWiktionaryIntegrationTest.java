@@ -35,21 +35,32 @@ public class EnWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
             "en:Electronics"
         );
     }
+
     @Betamax(tape = "-yer", mode = READ_ONLY)
     @Test public void testCategoriesWithExtraSpaces() throws Exception {
         Result result = testWiktionaryENAPI("-yer");
         assertThat(result.categories.keySet()).contains(
             "English terms derived from Middle English",
+            "English terms inherited from Middle English",
             "English terms with rare senses",
             "English lemmas",
-            "English suffixes",
-            "etyl cleanup/en"
+            "English suffixes"
         );
     }
 
     @Betamax(tape = "Vadimas", mode = READ_ONLY)
     @Test public void testVadimas() throws Exception {
         testWiktionaryENAPI("Vadimas");
+    }
+
+    @Betamax(tape = "koramiko", mode = READ_ONLY)
+    @Test public void testKoramiko() throws Exception {
+        testWiktionaryENAPI("koramiko");
+    }
+
+    @Betamax(tape = "nectar", mode = READ_ONLY)
+    @Test public void testNectar() throws Exception {
+        testWiktionaryENAPI("nectar");
     }
 
     @Betamax(tape = "AB", mode = READ_ONLY)
@@ -90,16 +101,15 @@ public class EnWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
         testWiktionaryENAPI("터");
     }
 
-    @Betamax(tape = "colon", mode = READ_ONLY)
-    @Test public void testColon() throws Exception {
-        final Result result = testWiktionaryENAPI("colon");
-        result.assertNoTemplatesLeft();
-    }
-
     @Betamax(tape = "ar-translit", mode = READ_ONLY)
     @Test public void testArTranslit() throws Exception {
         final Result result = testWiktionaryENAPI("User:Jberkel/bliki-testcases/ar-translit");
         result.assertContains("ʾaʿdād");
+    }
+
+    @Betamax(tape = "quote", mode = READ_ONLY)
+    @Test public void testQuote() throws Exception {
+        testWiktionaryENAPI("User:Jberkel/bliki-testcases/quote");
     }
 
     @Betamax(tape = "inh", mode = READ_ONLY)
@@ -146,6 +156,11 @@ public class EnWiktionaryIntegrationTest extends HTMLCreatorIntegrationTest {
     @Betamax(tape = "biombo", mode = READ_ONLY)
     @Test public void testBiombo() throws Exception {
         testWiktionaryENAPI("biombo");
+    }
+
+    @Betamax(tape = "senseid", mode = READ_ONLY)
+    @Test public void testSenseId() throws Exception {
+        testWiktionaryENAPI("User:Jberkel/bliki-testcases/senseid");
     }
 
     @Override

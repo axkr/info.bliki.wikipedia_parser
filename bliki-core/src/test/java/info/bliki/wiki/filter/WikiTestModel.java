@@ -69,10 +69,10 @@ public class WikiTestModel extends WikiModel {
                 switch (name) {
                     case "Include_Page": return "an include page";
                     case "FOO":          return MAIN_FOO;
+                    default:             return null;
                 }
-            default: {
+            default:
                 return null;
-            }
         }
     }
 

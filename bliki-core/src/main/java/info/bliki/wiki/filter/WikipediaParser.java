@@ -664,13 +664,45 @@ public class WikipediaParser extends AbstractWikipediaParser {
         return false;
     }
 
+    private boolean parseExternalLink()
+    {
+        int startLinkPosition = fCurrentPosition;
+
+        if (readUntilCharOrStopAtEOL(']')) {
+            String name = fStringSource.substring(startLinkPosition,
+                    fCurrentPosition - 1);
+
+            if (isExternalLink(name)) {
+        	// Now that we know it's an external link we print the characters before it
+        	int endLinkPosition = fCurrentPosition;
+        	fCurrentPosition = startLinkPosition;
+        	fWhiteStart = true;
+                createContentToken(1);
+                fCurrentPosition = endLinkPosition;
+
+                if (handleHTTPLink(name)) {
+                    return true;
+                }
+            }
+        }
+        fCurrentPosition = startLinkPosition;
+
+        return false;
+    }
+
     /**
      * Parse a wiki section starting with a '[[' sequence
      *
      * @return <code>true</code> if a correct link was found
      */
     private boolean parseWikiTag() {
+        // External links syntax have priority over wiki link syntax
+        if (parseExternalLink()) {
+            return true;
+        }
+
         int startLinkPosition = fCurrentPosition;
+
         int endLinkPosition;
         // wikipedia link style
         createContentToken(2);
@@ -1078,6 +1110,32 @@ public class WikipediaParser extends AbstractWikipediaParser {
         }
 
         handleTag(tag, tagNode, macroBodyString);
+    }
+
+    private boolean isExternalLink(String str) {
+        String urlString = str.trim();
+        if (urlString.length() >= 2 && urlString.charAt(0) == '/'
+        	&& urlString.charAt(1) == '/') {
+            // issue 89
+            return true;
+        } else {
+            try {
+                int index = urlString.indexOf(':', 1);
+                if (index > 0) {
+                    String uriSchemeName = urlString.substring(0, index);
+                    if (uriSchemeName.equalsIgnoreCase("mailto")) {
+                        return true;
+                    } else {
+                        if (fWikiModel.isValidUriScheme(uriSchemeName)) {
+                            return true;
+                        }
+                    }
+                }
+            } catch (IndexOutOfBoundsException ignored) {
+            }
+        }
+
+        return false;
     }
 
     private boolean handleHTTPLink(String name) {

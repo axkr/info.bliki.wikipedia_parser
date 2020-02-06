@@ -17,6 +17,7 @@ import info.bliki.extensions.scribunto.template.Frame;
 import info.bliki.wiki.filter.MagicWord;
 import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.model.IWikiModel;
+import info.bliki.wiki.template.ITemplateFunction;
 import org.luaj.vm2.Globals;
 import org.luaj.vm2.LuaClosure;
 import org.luaj.vm2.LuaError;
@@ -39,10 +40,13 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static info.bliki.wiki.filter.MagicWord.processMagicWord;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
  * scribunto/engines/LuaCommon/LuaCommon.php
@@ -136,7 +140,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
             LuaValue executeFunction = globals.get("mw").get("executeFunction");
             logger.trace("executing " + luaFunction);
             final LuaString result = executeFunction.call(luaFunction).checkstring();
-            return new String(result.m_bytes, result.m_offset, result.m_length, UTF8);
+            return new String(result.m_bytes, result.m_offset, result.m_length, UTF_8);
         } finally {
             currentFrame = null;
         }
@@ -217,6 +221,17 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
                 return NIL;
             }
         });
+        wikibase.set("getBestStatements", new TwoArgFunction() {
+            @Override public LuaValue call(LuaValue id, LuaValue property) {
+                return new LuaTable();
+            }
+        });
+        wikibase.set("sitelink", new TwoArgFunction() {
+            @Override
+            public LuaValue call(LuaValue itemId, LuaValue siteId) {
+                return NIL;
+            }
+        });
         mw.set("wikibase", wikibase);
     }
 
@@ -264,14 +279,37 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
             @Override
             public LuaValue call(LuaValue frameId, LuaValue function, LuaValue args) {
                 final String functionName = function.checkjstring();
-                MagicWord.MagicWordE magic =
-                        MagicWord.getMagicWord(functionName);
-                if (magic != null) {
-                    final String argument = args.optjstring(null);
-                    final String processed = processMagicWord(magic, argument, model);
-                    return toLuaString(processed);
+
+                if (functionName.startsWith("#")) {
+                    final ITemplateFunction templateFunction = model.getTemplateFunction(functionName);
+                    if (templateFunction != null) {
+                        LuaTable arguments = args.checktable();
+                        List<String> parts = new ArrayList<>();
+                        for (int i=1; i<=arguments.length(); i++) {
+                            parts.add(arguments.get(i).checkjstring());
+                        }
+                        try {
+                            final String ret = templateFunction.parseFunction(parts, model,
+                                    new char[0], 0, 0, false);
+                            return ret == null ? NIL : LuaString.valueOf(ret);
+                        } catch (IOException e) {
+                            return NIL;
+                        }
+                    } else {
+                        return NIL;
+                    }
+
+                } else {
+                    MagicWord.MagicWordE magic = MagicWord.getMagicWord(functionName);
+                    if (magic != null) {
+                        final LuaTable arguments = args.checktable();
+                        final String argument = arguments.get(1).checkjstring();
+                        final String processed = processMagicWord(magic, argument, model);
+                        return processed == null ? NIL : toLuaString(processed);
+                    } else {
+                        return NIL;
+                    }
                 }
-                return NIL;
             }
         };
     }
@@ -312,12 +350,9 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         return new ThreeArgFunction() {
             @Override
             public LuaValue call(LuaValue frameId, LuaValue title, LuaValue args) {
-                final Frame frame = getFrameById(frameId);
-                final Map<String, String> parameterMap = frame.getTemplateParameters();
-                parameterMap.putAll(luaParams(args));
                 StringWriter writer = new StringWriter();
                 try {
-                    model.substituteTemplateCall(title.tojstring(), parameterMap, writer);
+                    model.substituteTemplateCall(title.tojstring(), luaParams(args), writer);
                     return toLuaString(writer.toString());
                 } catch (IOException e) {
                     throw new RuntimeException(e);
@@ -529,7 +564,7 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
      * since it does not handle surrogates properly.
      */
     public static LuaString toLuaString(String string) {
-        return LuaString.valueOf(string.getBytes(UTF8));
+        return LuaString.valueOf(string.getBytes(UTF_8));
     }
 
     private static Map<String,String> luaParams(LuaValue args) {
