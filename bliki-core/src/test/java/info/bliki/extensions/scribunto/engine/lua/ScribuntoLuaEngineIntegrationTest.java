@@ -56,4 +56,9 @@ public class ScribuntoLuaEngineIntegrationTest {
         assertThat(wikiModel.render(new HTMLConverter(), "{{ja-r|屏風|びょうぶ|gloss=folding screen}}").trim())
                 .isEqualTo("<p><span class=\"Jpan\" lang=\"ja\"><a href=\"http://www.bliki.info/wiki/%E5%B1%8F%E9%A2%A8#Japanese\" title=\"屏風\"><span style=\"font-size: 1.2em\"><ruby>屏風<rp> (</rp><rt>びょうぶ</rt><rp>)</rp></ruby></span></a></span> (<span class=\"tr\"><i>byōbu</i></span>, <span class=\"mention-gloss-double-quote\">“</span><span class=\"mention-gloss\">folding screen</span><span class=\"mention-gloss-double-quote\">”</span>)</p>");
     }
+
+    @Test public void test_langname() throws Exception {
+        assertThat(wikiModel.render(new HTMLConverter(), "Requests for example sentences in {{langname|en}}").trim())
+            .isEqualTo("<p>Requests for example sentences in English</p>");
+    }
 }
