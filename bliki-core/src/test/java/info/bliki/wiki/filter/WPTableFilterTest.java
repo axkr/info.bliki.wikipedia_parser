@@ -415,4 +415,17 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "";
         assertThat(wikiModel.render(raw, false)).isEqualTo(expected);
     }
+
+    @Test public void testPutEmptyHeaderCell() throws Exception {
+        String raw = "{|\n" +
+                "|-\n" +
+                "!\n" +
+                "! FOO\n" +
+                "! BAR\n" +
+                "|}";
+        String expected = "<tr>\n<th></th>\n<th>FOO</th>\n<th>BAR</th></tr>";
+
+        String actual = wikiModel.render(raw);
+        assertThat(actual).contains(expected);
+    }
 }

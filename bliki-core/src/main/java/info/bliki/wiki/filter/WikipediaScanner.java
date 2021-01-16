@@ -154,6 +154,11 @@ public class WikipediaScanner {
                         cell.setType(WPCell.TH);
                         cells.add(cell);
 
+                        // If the next character is "\n", the parser should restart at "\n".
+                        if (ch == '\n') {
+                            fScannerPosition--;
+                        }
+
                         break;
                     case '{': // "\n {"
                         if (fSource[fScannerPosition] == '|') {
