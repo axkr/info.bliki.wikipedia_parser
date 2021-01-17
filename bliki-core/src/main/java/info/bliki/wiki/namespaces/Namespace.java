@@ -54,11 +54,11 @@ public class Namespace implements INamespace {
     /**
      * The "Meta talk" namespace for the current language.
      */
-    public final NamespaceValue PROJECT_TALK = new NamespaceValue(PROJECT_TALK_NAMESPACE_KEY, "Project_talk", "Meta_talk");
+    public final NamespaceValue PROJECT_TALK = new NamespaceValue(PROJECT_TALK_NAMESPACE_KEY, "Project_talk", "Meta_talk", "Wiktionary_talk");
     /**
      * The "Meta" namespace for the current language.
      */
-    public final NamespaceValue PROJECT = new NamespaceValue(PROJECT_NAMESPACE_KEY, PROJECT_TALK, "Project", "Meta");
+    public final NamespaceValue PROJECT = new NamespaceValue(PROJECT_NAMESPACE_KEY, PROJECT_TALK, "Project", "Meta", "Wiktionary");
 
     /**
      * NS_IMAGE and NS_IMAGE_TALK are the pre-v1.14 names for NS_FILE and
@@ -83,7 +83,7 @@ public class Namespace implements INamespace {
     /**
      * The "Module" namespace for the current language.
      */
-    public final NamespaceValue MODULE = new NamespaceValue(MODULE_NAMESPACE_KEY, MODULE_TALK, "Module");
+    public final NamespaceValue MODULE = new NamespaceValue(MODULE_NAMESPACE_KEY, MODULE_TALK, "Module", "MOD");
     /**
      * The "Template talk" namespace for the current language.
      */
@@ -91,7 +91,7 @@ public class Namespace implements INamespace {
     /**
      * The "Template" namespace for the current language.
      */
-    public final NamespaceValue TEMPLATE = new NamespaceValue(TEMPLATE_NAMESPACE_KEY, TEMPLATE_TALK, "Template");
+    public final NamespaceValue TEMPLATE = new NamespaceValue(TEMPLATE_NAMESPACE_KEY, TEMPLATE_TALK, "Template", "T");
 
     /**
      * The "Help talk" namespace for the current language.
@@ -108,21 +108,21 @@ public class Namespace implements INamespace {
     /**
      * The "Category" namespace for the current language.
      */
-    public final NamespaceValue CATEGORY = new NamespaceValue(CATEGORY_NAMESPACE_KEY, CATEGORY_TALK, "Category");
+    public final NamespaceValue CATEGORY = new NamespaceValue(CATEGORY_NAMESPACE_KEY, CATEGORY_TALK, "Category", "CAT");
     /**
      * The "Portal talk" namespace for the current language.
      */
-    public final NamespaceValue PORTAL_TALK = new NamespaceValue(PORTAL_TALK_NAMESPACE_KEY, "Portal_talk");
+    public final NamespaceValue PORTAL_TALK = new NamespaceValue(PORTAL_TALK_NAMESPACE_KEY, "Portal_talk", "Appendix_talk");
     /**
      * The "Portal" namespace for the current language.
      */
-    public final NamespaceValue PORTAL = new NamespaceValue(PORTAL_NAMESPACE_KEY, PORTAL_TALK, "Portal");
+    public final NamespaceValue PORTAL = new NamespaceValue(PORTAL_NAMESPACE_KEY, PORTAL_TALK, "Portal", "Appendix", "AP");
 
-    public final NamespaceValue BOOK_TALK = new NamespaceValue(BOOK_TALK_NAMESPACE_KEY, "Book_talk");
-    public final NamespaceValue BOOK = new NamespaceValue(BOOK_NAMESPACE_KEY, BOOK_TALK, "Book");
+    public final NamespaceValue BOOK_TALK = new NamespaceValue(BOOK_TALK_NAMESPACE_KEY, "Book_talk", "Transwiki_talk");
+    public final NamespaceValue BOOK = new NamespaceValue(BOOK_NAMESPACE_KEY, BOOK_TALK, "Book", "Transwiki");
 
-    public final NamespaceValue DRAFT_TALK = new NamespaceValue(DRAFT_TALK_NAMESPACE_KEY, "Draft_talk");
-    public final NamespaceValue DRAFT = new NamespaceValue(DRAFT_NAMESPACE_KEY, DRAFT_TALK, "Draft");
+    public final NamespaceValue DRAFT_TALK = new NamespaceValue(DRAFT_TALK_NAMESPACE_KEY, "Draft_talk", "Reconstruction_talk");
+    public final NamespaceValue DRAFT = new NamespaceValue(DRAFT_NAMESPACE_KEY, DRAFT_TALK, "Draft", "Reconstruction", "RC");
 
     public final NamespaceValue EP_TALK = new NamespaceValue(EP_TALK_NAMESPACE_KEY, "Education_Program_talk");
     public final NamespaceValue EP = new NamespaceValue(EP_NAMESPACE_KEY, EP_TALK, "Education_Program");
@@ -131,6 +131,30 @@ public class Namespace implements INamespace {
     public final NamespaceValue TIMEDTEXT = new NamespaceValue(TIMEDTEXT_NAMESPACE_KEY, TIMEDTEXT_TALK, "TimedText");
 
     public final NamespaceValue TOPIC = new NamespaceValue(TOPIC_NAMESPACE_KEY, "Topic");
+
+    public final NamespaceValue THREAD_TALK = new NamespaceValue(THREAD_TALK_NAMESPACE_KEY, "Thread_talk");
+    public final NamespaceValue THREAD = new NamespaceValue(THREAD_NAMESPACE_KEY, THREAD_TALK, "Thread");
+
+    public final NamespaceValue SUMMARY_TALK = new NamespaceValue(SUMMARY_TALK_NAMESPACE_KEY, "Summary_talk");
+    public final NamespaceValue SUMMARY = new NamespaceValue(SUMMARY_NAMESPACE_KEY, SUMMARY_TALK, "Summary");
+
+    public final NamespaceValue CONCORDANCE_TALK = new NamespaceValue(CONCORDANCE_TALK_NAMESPACE_KEY, "Concordance_talk");
+    public final NamespaceValue CONCORDANCE = new NamespaceValue(CONCORDANCE_NAMESPACE_KEY, CONCORDANCE_TALK, "Concordance");
+
+    public final NamespaceValue INDEX_TALK = new NamespaceValue(INDEX_TALK_NAMESPACE_KEY, "Index_talk");
+    public final NamespaceValue INDEX = new NamespaceValue(INDEX_NAMESPACE_KEY, INDEX_TALK, "Index");
+
+    public final NamespaceValue RHYMES_TALK = new NamespaceValue(RHYMES_TALK_NAMESPACE_KEY, "Rhymes_talk");
+    public final NamespaceValue RHYMES = new NamespaceValue(RHYMES_NAMESPACE_KEY, RHYMES_TALK, "Rhymes");
+
+    public final NamespaceValue THESAURUS_TALK = new NamespaceValue(THESAURUS_TALK_NAMESPACE_KEY, "Thesaurus_talk", "Wikisaurus talk");
+    public final NamespaceValue THESAURUS = new NamespaceValue(THESAURUS_NAMESPACE_KEY, THESAURUS_TALK, "Thesaurus", "Wikisaurus", "WS");
+
+    public final NamespaceValue CITATIONS_TALK = new NamespaceValue(CITATIONS_TALK_NAMESPACE_KEY, "Citations_talk");
+    public final NamespaceValue CITATIONS = new NamespaceValue(CITATIONS_NAMESPACE_KEY, CITATIONS_TALK, "Citations");
+
+    public final NamespaceValue SIGN_GLOSS_TALK = new NamespaceValue(SIGN_GLOSS_TALK_NAMESPACE_KEY, "Sign_gloss_talk");
+    public final NamespaceValue SIGN_GLOSS = new NamespaceValue(SIGN_GLOSS_NAMESPACE_KEY, SIGN_GLOSS_TALK, "Sign_gloss");
 
     protected ResourceBundle fResourceBundle, fResourceBundleEn;
 
@@ -247,6 +271,18 @@ public class Namespace implements INamespace {
         // already in the English resource bundle:
         // IMAGE.addAlias("Image");
         // IMAGE_TALK.addAlias("Image_talk");
+
+        // Re-adds Wiktionary's aliases.
+        // Note: Wiktionary's "WT" alias (related to "PROJECT" namespace) is not implemented.
+        PORTAL.addAlias("AP");
+        PORTAL.addAlias("Appendix");
+        PORTAL_TALK.addAlias("Appendix_talk");
+        CATEGORY.addAlias("CAT");
+        MODULE.addAlias("MOD");
+        DRAFT.addAlias("RC");
+        TEMPLATE.addAlias("T");
+        PROJECT.addAlias("Wiktionary");
+        PROJECT_TALK.addAlias("Wiktionary_talk");
     }
 
     @Override
