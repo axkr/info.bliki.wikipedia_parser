@@ -18,6 +18,8 @@ import info.bliki.wiki.filter.MagicWord;
 import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.model.IWikiModel;
 import info.bliki.wiki.template.ITemplateFunction;
+import info.bliki.wiki.template.namedargs.INamedArgsTemplateFunction;
+import info.bliki.wiki.template.namedargs.NamedArgs;
 import org.luaj.vm2.Globals;
 import org.luaj.vm2.LuaClosure;
 import org.luaj.vm2.LuaError;
@@ -284,6 +286,21 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
                     final ITemplateFunction templateFunction = model.getTemplateFunction(functionName);
                     if (templateFunction != null) {
                         LuaTable arguments = args.checktable();
+
+                        // If the template function supports named arguments,
+                        // the function is invoked with a wrapped LuaTable.
+                        if (templateFunction instanceof INamedArgsTemplateFunction) {
+                            NamedArgs namedArgs = new NamedArgs(arguments);
+                            try {
+                                final String ret = ((INamedArgsTemplateFunction) templateFunction).parseFunction(
+                                        namedArgs,model, new char[0], 0, 0, false);
+                                return ret == null ? NIL : LuaString.valueOf(ret);
+                            } catch (IOException e) {
+                                return NIL;
+                            }
+                        }
+
+                        // Otherwise case, the function is invoked with only a listed arguments.
                         List<String> parts = new ArrayList<>();
                         for (int i=1; i<=arguments.length(); i++) {
                             parts.add(arguments.get(i).checkjstring());
