@@ -415,4 +415,16 @@ public class WPTableFilterTest extends FilterTestSupport {
                 "";
         assertThat(wikiModel.render(raw, false)).isEqualTo(expected);
     }
+
+    @Test public void testSkipHtmlTagInCell() throws Exception {
+        // the simplified output of Wiktionary's ru-verb module.
+        String targetHtmlTag = "<span class=\"... pres|act|part-form-of ...\">";
+        String raw ="{|\n" +
+                "|-\n" +
+                "| " + targetHtmlTag + " ... SOMETHING_TEXT\n" +
+                "|}\n";
+
+        String actual = wikiModel.render(raw, false);
+        assertThat(actual).contains(targetHtmlTag); // must be preserve the HTML tag.
+    }
 }
