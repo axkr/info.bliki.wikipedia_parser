@@ -166,7 +166,11 @@ public class Configuration implements IConfiguration {
 
     public static final String DEFAULT_WIKI_ID = "enwiki";
 
-    private static Map<String, String> TEMPLATE_CALLS_CACHE = null;
+    // REUSABILITY OF LUA ENGINE / WIKIMODEL INSTANCES: as a LuaEngine/WikiModel may be reused for the transclusion
+    // of several successive pages, the cache cannot be shared among different models as the same template may be
+    // transcluded differently depending on the page name.
+    // private static Map<String, String> TEMPLATE_CALLS_CACHE = null;
+    private Map<String, String> fTemplateCache = null;
 
     /**
      * Map from the interwiki shortcut to the real Interwiki-URL
@@ -443,12 +447,12 @@ public class Configuration implements IConfiguration {
 
     @Override
     public Map<String, String> getTemplateCallsCache() {
-        return TEMPLATE_CALLS_CACHE;
+        return fTemplateCache;
     }
 
     @Override
     public void setTemplateCallsCache(Map<String, String> map) {
-        TEMPLATE_CALLS_CACHE = map;
+        fTemplateCache = map;
     }
 
     @Override

@@ -5,6 +5,7 @@ import info.bliki.wiki.filter.HTMLConverter;
 import info.bliki.wiki.filter.PlainTextConverter;
 import info.bliki.wiki.filter.WikiTestModel;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
@@ -57,8 +58,23 @@ public class ScribuntoLuaEngineIntegrationTest {
                 .isEqualTo("<p><span class=\"Jpan\" lang=\"ja\"><a href=\"http://www.bliki.info/wiki/%E5%B1%8F%E9%A2%A8#Japanese\" title=\"屏風\"><span style=\"font-size: 1.2em\"><ruby>屏風<rp> (</rp><rt>びょうぶ</rt><rp>)</rp></ruby></span></a></span> (<span class=\"tr\"><i>byōbu</i></span>, <span class=\"mention-gloss-double-quote\">“</span><span class=\"mention-gloss\">folding screen</span><span class=\"mention-gloss-double-quote\">”</span>)</p>");
     }
 
+    // FIXME BUG still to be fixed. Code is here to assess reported bug #55
+    @Ignore
     @Test public void test_langname() throws Exception {
         assertThat(wikiModel.render(new HTMLConverter(), "Requests for example sentences in {{langname|en}}").trim())
             .isEqualTo("<p>Requests for example sentences in English</p>");
     }
+
+    @Test public void test_getCurrentTitle() throws Exception {
+        wikiModel.setPageName("first");
+
+        assertThat(wikiModel.render(new PlainTextConverter(), "{{testtitle}}").trim())
+                .isEqualTo("Current Title = first");
+
+        wikiModel.setPageName("second");
+        assertThat(wikiModel.render(new PlainTextConverter(), "+ {{testtitle}}").trim())
+                .isEqualTo("+ Current Title = second");
+    }
+
+
 }

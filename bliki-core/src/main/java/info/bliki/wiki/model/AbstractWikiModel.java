@@ -4,23 +4,9 @@ import info.bliki.extensions.scribunto.engine.ScribuntoEngine;
 import info.bliki.extensions.scribunto.engine.lua.CompiledScriptCache;
 import info.bliki.extensions.scribunto.engine.lua.ScribuntoLuaEngine;
 import info.bliki.extensions.scribunto.template.Frame;
-import info.bliki.htmlcleaner.BaseToken;
-import info.bliki.htmlcleaner.ContentToken;
-import info.bliki.htmlcleaner.TagNode;
-import info.bliki.htmlcleaner.TagToken;
-import info.bliki.htmlcleaner.Utils;
-import info.bliki.wiki.filter.AbstractWikipediaParser;
-import info.bliki.wiki.filter.ParsedPageName;
-import info.bliki.wiki.filter.Encoder;
-import info.bliki.wiki.filter.HTMLConverter;
-import info.bliki.wiki.filter.ITextConverter;
-import info.bliki.wiki.filter.MagicWord;
+import info.bliki.htmlcleaner.*;
+import info.bliki.wiki.filter.*;
 import info.bliki.wiki.filter.MagicWord.MagicWordE;
-import info.bliki.wiki.filter.PDFConverter;
-import info.bliki.wiki.filter.SectionHeader;
-import info.bliki.wiki.filter.TemplateParser;
-import info.bliki.wiki.filter.WikipediaParser;
-import info.bliki.wiki.filter.WikipediaPreTagParser;
 import info.bliki.wiki.namespaces.INamespace;
 import info.bliki.wiki.namespaces.INamespace.INamespaceValue;
 import info.bliki.wiki.namespaces.INamespace.NamespaceCode;
@@ -40,21 +26,10 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.ResourceBundle;
-import java.util.Set;
-import java.util.TimeZone;
 
-import static info.bliki.wiki.tags.WPATag.CLASS;
-import static info.bliki.wiki.tags.WPATag.HREF;
-import static info.bliki.wiki.tags.WPATag.WIKILINK;
+import static info.bliki.wiki.tags.WPATag.*;
 
 /**
  * Standard model implementation for the Wikipedia syntax.
@@ -84,6 +59,7 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 
     protected int fExternalLinksCounter;
     private CompiledScriptCache compiledScriptCache = new CompiledScriptCache();
+    private ScribuntoEngine fScribuntoEngine = null;
 
     private TableOfContentTag fTableOfContentTag = null;
     private SimpleDateFormat fFormatter = null;
@@ -1047,11 +1023,13 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
             fReferenceNames = null;
             fRecursionLevel = 0;
             fTemplateRecursionCount = 0;
+            fRedirectLink = null;
             fSectionCounter = 0;
             fExternalLinksCounter = 0;
             fInitialized = true;
             fFrame = null;
             fTemplates = new HashMap<>();
+            fParameterParsingMode = false;
         }
     }
 
@@ -1352,7 +1330,14 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 
     @Override
     public void setPageName(String pageTitle) {
+        if (null != pageTitle && pageTitle.equals(fPageTitle)) {
+            return;
+        }
         fPageTitle = pageTitle;
+        // Invalidate all call caches as they may depend on the current pageTitle and caching breaks reusability
+        if (null != this.getTemplateCallsCache())
+            this.getTemplateCallsCache().clear();
+        this.setUp();
     }
 
     @Override
@@ -1586,17 +1571,25 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
     @Override
     public void setNamespaceName(String namespaceLowercase) {
         if (namespaceLowercase == null) {
+            if ("".equals(fNamespaceName)) return;
             fNamespaceName = "";
-            return;
-        }
-        // TODO: we should only allow valid namespaces and probably set pagename and
-        // namespace in one go
-        INamespaceValue nsVal = fNamespace.getNamespace(namespaceLowercase);
-        if (nsVal != null) {
-            fNamespaceName = nsVal.getPrimaryText();
         } else {
-            fNamespaceName = namespaceLowercase;
+            // TODO: we should only allow valid namespaces and probably set pagename and
+            // namespace in one go
+            INamespaceValue nsVal = fNamespace.getNamespace(namespaceLowercase);
+            String newNamespaceName;
+            if (nsVal != null) {
+                newNamespaceName = nsVal.getPrimaryText();
+            } else {
+                newNamespaceName = namespaceLowercase;
+            }
+            if (newNamespaceName.equals(fNamespaceName)) return;
+            fNamespaceName = newNamespaceName;
         }
+        // Invalidate all call caches as they may depend on the current pageTitle and caching breaks reusability
+        if (null != this.getTemplateCallsCache())
+            this.getTemplateCallsCache().clear();
+        this.setUp();
     }
 
     @Override
@@ -1641,6 +1634,8 @@ public abstract class AbstractWikiModel implements IWikiModel, IContext {
 
     @Override
     public ScribuntoEngine createScribuntoEngine() {
-        return new ScribuntoLuaEngine(this, compiledScriptCache);
+        if (null == fScribuntoEngine)
+            fScribuntoEngine = new ScribuntoLuaEngine(this, compiledScriptCache);
+        return fScribuntoEngine;
     }
 }
