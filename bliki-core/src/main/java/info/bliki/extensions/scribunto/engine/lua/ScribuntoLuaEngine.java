@@ -77,22 +77,26 @@ public class ScribuntoLuaEngine extends ScribuntoEngineBase implements MwInterfa
         this.globals.finder = new LuaResourceFinder(globals.finder);
         extendGlobals(globals);
 
-        this.interfaces = new MwInterface[] {
-            new MwSite(model),
-            new MwUstring(),
-            new MwTitle(model),
-            new MwText(),
-            new MwUri(),
-            new MwMessage(),
-            new MwHtml(),
-            new MwLanguage(model),
-        };
+        this.interfaces = getMwInterfaces(model);
 
         try {
             load();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    protected MwInterface[] getMwInterfaces(IWikiModel model) {
+        return new MwInterface[]{
+                new MwSite(model),
+                new MwUstring(),
+                new MwTitle(model),
+                new MwText(),
+                new MwUri(),
+                new MwMessage(),
+                new MwHtml(),
+                new MwLanguage(model),
+        };
     }
 
     @Override public ScribuntoModule fetchModuleFromParser(String moduleName) throws ScribuntoException {

@@ -7,6 +7,7 @@ import org.luaj.vm2.Varargs;
 import org.luaj.vm2.lib.LibFunction;
 import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
+import org.luaj.vm2.lib.ZeroArgFunction;
 
 import static info.bliki.extensions.scribunto.engine.lua.ScribuntoLuaEngine.toLuaString;
 import static info.bliki.wiki.namespaces.INamespace.NamespaceCode.MAIN_NAMESPACE_KEY;
@@ -24,7 +25,7 @@ public class MwTitle implements MwInterface {
 
     @Override
     public String name() {
-        return "mw.title";
+        return "mw.title.reusable";
     }
 
     @Override
@@ -39,6 +40,7 @@ public class MwTitle implements MwInterface {
         table.set("getFileInfo", getFileInfo());
         table.set("protectionLevels", protectionLevels());
         table.set("cascadingProtection", cascadingProtection());
+        table.set("getCurrentTitle", getCurrentTitle());
         return table;
     }
 
@@ -194,6 +196,23 @@ public class MwTitle implements MwInterface {
             }
         };
     }
+
+    /**
+     * Return the current title object, as given by the model.
+     *
+     * @return if the resulting title is not valid, returns nil.
+     */
+    private LuaValue getCurrentTitle() {
+        return new ZeroArgFunction() {
+            /**
+             * @return the title of the current page as given by the model.
+             */
+            @Override public LuaValue call() {
+                return title(wikiModel.getNamespaceName(), wikiModel.getPageName());
+            }
+        };
+    }
+
 
 
     private LuaValue title(String namespace, String pageName) {
