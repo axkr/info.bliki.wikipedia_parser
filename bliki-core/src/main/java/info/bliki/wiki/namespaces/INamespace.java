@@ -13,6 +13,7 @@ import java.util.ResourceBundle;
  * @see <a href="https://www.mediawiki.org/wiki/Manual:Namespace#Built-in_namespaces">Mediawiki - Manual:Namespace</a>
  * @see <a href="https://www.mediawiki.org/wiki/Extension_default_namespaces">Extension default namespaces</a>
  * @see <a href="https://github.com/wikimedia/mediawiki-core/blob/master/includes/Defines.php">Defines.php</a>
+ * @see <a href="https://en.wiktionary.org/wiki/Wiktionary:Namespace">Wiktionary namespaces</a>
  *
  */
 public interface INamespace {
@@ -108,6 +109,24 @@ public interface INamespace {
         CATEGORY_TALK_NAMESPACE_KEY(15),
 
         /**
+         * Wiktionary's "Thread".
+         */
+        THREAD_NAMESPACE_KEY(90),
+        /**
+         * Wiktionary's "Thread talk".
+         */
+        THREAD_TALK_NAMESPACE_KEY(91),
+
+        /**
+         * Wiktionary's "Summary".
+         */
+        SUMMARY_NAMESPACE_KEY(92),
+        /**
+         * Wiktionary's "Summary talk".
+         */
+        SUMMARY_TALK_NAMESPACE_KEY(93),
+
+        /**
          * Portal pages.
          */
         PORTAL_NAMESPACE_KEY(100),
@@ -117,8 +136,44 @@ public interface INamespace {
          */
         PORTAL_TALK_NAMESPACE_KEY(101),
 
+        /**
+         * Wiktionary's "Concordance".
+         */
+        CONCORDANCE_NAMESPACE_KEY(102),
+        CONCORDANCE_TALK_NAMESPACE_KEY(103),
+
+        /**
+         * Wiktionary's "Index".
+         */
+        INDEX_NAMESPACE_KEY(104),
+        INDEX_TALK_NAMESPACE_KEY(105),
+
+        /**
+         * Wiktionary's "Rhymes".
+         */
+        RHYMES_NAMESPACE_KEY(106),
+        RHYMES_TALK_NAMESPACE_KEY(107),
+
         BOOK_NAMESPACE_KEY(108),
         BOOK_TALK_NAMESPACE_KEY(109),
+
+        /**
+         * Wiktionary's "Thesaurus".
+         */
+        THESAURUS_NAMESPACE_KEY(110),
+        THESAURUS_TALK_NAMESPACE_KEY(111),
+
+        /**
+         * Wiktionary's "Citations".
+         */
+        CITATIONS_NAMESPACE_KEY(114),
+        CITATIONS_TALK_NAMESPACE_KEY(115),
+
+        /**
+         * Wiktionary's "Sign gloss".
+         */
+        SIGN_GLOSS_NAMESPACE_KEY(116),
+        SIGN_GLOSS_TALK_NAMESPACE_KEY(117),
 
         DRAFT_NAMESPACE_KEY(118),
         DRAFT_TALK_NAMESPACE_KEY(119),
