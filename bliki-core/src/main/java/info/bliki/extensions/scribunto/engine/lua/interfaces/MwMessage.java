@@ -73,7 +73,7 @@ public class MwMessage implements MwInterface {
         }
 
         private String replace(String msg, LuaTable params) {
-            for (int i=1; i<params.length()+1; i++) {
+            for (int i=params.length(); i>0; i--) {
                 LuaValue param = params.get(i);
                 String actualParam;
                 if (param.istable()) {
